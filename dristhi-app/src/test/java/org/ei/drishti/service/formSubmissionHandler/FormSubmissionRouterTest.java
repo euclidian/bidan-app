@@ -1,5 +1,7 @@
 package org.ei.drishti.service.formSubmissionHandler;
 
+import org.ei.drishti.bidan.kartuibu.KartuIbuCloseHandler;
+import org.ei.drishti.bidan.kartuibu.KartuIbuRegistrationHandler;
 import org.robolectric.RobolectricTestRunner;
 import org.ei.drishti.domain.form.FormSubmission;
 import org.ei.drishti.event.Listener;
@@ -71,6 +73,8 @@ public class FormSubmissionRouterTest {
     private ANCInvestigationsHandler ancInvestigationsHandler;
     @Mock
     private Listener<String> formSubmittedListener;
+    @Mock
+    private KartuIbuRegistrationHandler kartuIbuRegistrationHandler;
 
     private FormSubmissionRouter router;
 
@@ -95,7 +99,8 @@ public class FormSubmissionRouterTest {
                 pncCloseHandler,
                 pncVisitHandler,
                 childImmunizationsHandler, childRegistrationECHandler, childRegistrationOAHandler, childCloseHandler,
-                childIllnessHandler, vitaminAHandler, deliveryPlanHandler, ecEditHandler, ancInvestigationsHandler);
+                childIllnessHandler, vitaminAHandler, deliveryPlanHandler, ecEditHandler, ancInvestigationsHandler,
+                kartuIbuRegistrationHandler);
     }
 
     @Test
