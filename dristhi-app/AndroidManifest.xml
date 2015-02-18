@@ -157,6 +157,9 @@
                 android:screenOrientation="landscape"
                 android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
 
+        <activity android:name=".view.activity.NativeKISmartRegisterActivity"
+                  android:screenOrientation="landscape"
+                  android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
 
         <activity
                 android:name=".view.activity.NativePNCSmartRegisterActivity"
