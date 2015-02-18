@@ -1,7 +1,7 @@
 {
     "form_data_definition_version": "1",
     "form": {
-        "bind_type": "bidan",
+        "bind_type": "kartu_ibu",
         "default_bind_path": "/model/instance/kartu_ibu/",
         "fields": [
             {

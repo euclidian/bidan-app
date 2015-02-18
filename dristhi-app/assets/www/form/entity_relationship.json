@@ -1,14 +1,5 @@
 [
     {
-        "parent" : "bidan",
-        "child" : "",
-        "field": "",
-        "kind": "",
-        "from": "",
-        "to": ""
-    },
-    }
-    {
         "parent": "eligible_couple",
         "child": "mother",
         "field": "wife",
