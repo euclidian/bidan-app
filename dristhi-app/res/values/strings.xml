@@ -48,6 +48,9 @@
     <string name="header_status">STATUS</string>
     <string name="header_edit"></string>
 
+    <string name="puskesmas">Puskesmas</string>
+    <string name="kartu_ibu_selection">Kartu Ibu</string>
+
     <string name="couple_selection">All Eligible Couples</string>
     <string name="str_ec_search_hint">Search EC Register</string>
     <string name="str_fp_search_hint">Search FP Register</string>
@@ -91,6 +94,7 @@
     <string name="filter_by_out_of_area_label">O/A</string>
     <string name="filter_by_leave_the_place_label">L/P</string>
     <string name="ec_register_title_in_short">EC:</string>
+    <string name="ki_register_title_in_short">KI:</string>
 
     <string name="str_register_anc_form">Register ANC</string>
     <string name="str_register_fp_form">Register FP</string>
