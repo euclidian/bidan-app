@@ -21,7 +21,7 @@
                 "bind": "/model/instance/kartu_ibu/B01009"
             },
             {
-                "name": "phc",
+                "name": "puskesmas",
                 "bind": "/model/instance/kartu_ibu/B01001"
             },
             {
