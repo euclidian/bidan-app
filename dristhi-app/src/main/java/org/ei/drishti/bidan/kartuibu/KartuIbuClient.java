@@ -8,33 +8,29 @@ import org.ei.drishti.view.contract.SmartRegisterClient;
 public class KartuIbuClient implements SmartRegisterClient {
 
     private String entityId;
-    private String caseId;
-    private String name;
-    private String district;
-    private String Province;
-    private String Kabupaten;
+    private String puskesmas;
+    private String province;
+    private String kabupaten;
     private String phc;
     private String householdAddress;
     private String ecNumber;
     private String wifeName;
     private String wifeAge;
-    private String Golongan_darah;
-    private String Riwayat_komplikasi;
+    private String golonganDarah;
+    private String riwayatKomplikasi;
 
-    public KartuIbuClient(String entityId, String caseId, String name, String district, String province, String kabupaten, String phc, String householdAddress, String ecNumber, String wifeName, String wifeAge, String golongan_darah, String riwayat_komplikasi) {
+    public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String phc, String householdAddress, String ecNumber, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi) {
         this.entityId = entityId;
-        this.caseId = caseId;
-        this.name = name;
-        this.district = district;
-        Province = province;
-        Kabupaten = kabupaten;
+        this.puskesmas = puskesmas;
+        this.province = province;
+        this.kabupaten = kabupaten;
         this.phc = phc;
         this.householdAddress = householdAddress;
         this.ecNumber = ecNumber;
         this.wifeName = wifeName;
         this.wifeAge = wifeAge;
-        this.Golongan_darah = golongan_darah;
-        this.Riwayat_komplikasi = riwayat_komplikasi;
+        this.golonganDarah = golonganDarah;
+        this.riwayatKomplikasi = riwayatKomplikasi;
     }
 
     // Getter
@@ -42,24 +38,16 @@ public class KartuIbuClient implements SmartRegisterClient {
         return entityId;
     }
 
-    public String getCaseId() {
-        return caseId;
-    }
-
-    public String getName() {
-        return name != null ? name : "";
-    }
-
-    public String getDistrict() {
-        return district;
+    public String getPuskesmas() {
+        return puskesmas;
     }
 
     public String getProvince() {
-        return Province;
+        return province;
     }
 
     public String getKabupaten() {
-        return Kabupaten;
+        return kabupaten;
     }
 
     public String getPhc() {
@@ -83,11 +71,11 @@ public class KartuIbuClient implements SmartRegisterClient {
     }
 
     public String getGolongan_darah() {
-        return Golongan_darah;
+        return golonganDarah;
     }
 
     public String getRiwayat_komplikasi() {
-        return Riwayat_komplikasi;
+        return riwayatKomplikasi;
     }
 
     // Setter
@@ -95,24 +83,16 @@ public class KartuIbuClient implements SmartRegisterClient {
         this.entityId = entityId;
     }
 
-    public void setCaseId(String caseId) {
-        this.caseId = caseId;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDistrict(String district) {
-        this.district = district;
+    public void setPuskesmas(String district) {
+        this.puskesmas = district;
     }
 
     public void setProvince(String province) {
-        Province = province;
+        this.province = province;
     }
 
     public void setKabupaten(String kabupaten) {
-        Kabupaten = kabupaten;
+        this.kabupaten = kabupaten;
     }
 
     public void setPhc(String phc) {
@@ -135,12 +115,12 @@ public class KartuIbuClient implements SmartRegisterClient {
         this.wifeAge = wifeAge;
     }
 
-    public void setGolongan_darah(String golongan_darah) {
-        Golongan_darah = golongan_darah;
+    public void setGolonganDarah(String golonganDarah) {
+       this.golonganDarah = golonganDarah;
     }
 
-    public void setRiwayat_komplikasi(String riwayat_komplikasi) {
-        Riwayat_komplikasi = riwayat_komplikasi;
+    public void setRiwayatKomplikasi(String riwayatKomplikasi) {
+        this.riwayatKomplikasi = riwayatKomplikasi;
     }
 
     @Override
