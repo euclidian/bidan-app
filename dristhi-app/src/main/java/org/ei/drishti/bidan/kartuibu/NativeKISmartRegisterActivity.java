@@ -1,4 +1,4 @@
-package org.ei.drishti.view.activity;
+package org.ei.drishti.bidan.kartuibu;
 
 import android.view.View;
 
@@ -10,6 +10,7 @@ import org.ei.drishti.bidan.kartuibu.KartuIbuRegisterController;
 import org.ei.drishti.bidan.kartuibu.WifeAgeSort;
 import org.ei.drishti.domain.form.FieldOverrides;
 import org.ei.drishti.provider.SmartRegisterClientsProvider;
+import org.ei.drishti.view.activity.SecuredNativeSmartRegisterActivity;
 import org.ei.drishti.view.controller.VillageController;
 import org.ei.drishti.view.dialog.AllClientsFilter;
 import org.ei.drishti.view.dialog.DialogOption;
@@ -26,7 +27,7 @@ import static org.ei.drishti.AllConstants.FormNames.KARTU_IBU_REGISTRATION;
 /**
  * Created by Dimas Ciputra on 2/18/15.
  */
-public class NativeKISmartRegisterActivity extends SecuredNativeSmartRegisterActivity{
+public class NativeKISmartRegisterActivity extends SecuredNativeSmartRegisterActivity {
 
     private SmartRegisterClientsProvider clientProvider = null;
     private KartuIbuRegisterController controller;

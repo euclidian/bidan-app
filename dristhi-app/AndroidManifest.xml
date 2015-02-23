@@ -157,7 +157,7 @@
                 android:screenOrientation="landscape"
                 android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
 
-        <activity android:name=".view.activity.NativeKISmartRegisterActivity"
+        <activity android:name=".bidan.kartuibu.NativeKISmartRegisterActivity"
                   android:screenOrientation="landscape"
                   android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
 
