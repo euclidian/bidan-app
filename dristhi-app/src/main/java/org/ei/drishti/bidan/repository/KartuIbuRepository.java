@@ -1,4 +1,4 @@
-package org.ei.drishti.bidan.kartuibu;
+package org.ei.drishti.bidan.repository;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -8,6 +8,7 @@ import com.google.gson.reflect.TypeToken;
 
 import net.sqlcipher.database.SQLiteDatabase;
 
+import org.ei.drishti.bidan.domain.KartuIbu;
 import org.ei.drishti.repository.DrishtiRepository;
 
 import java.util.ArrayList;

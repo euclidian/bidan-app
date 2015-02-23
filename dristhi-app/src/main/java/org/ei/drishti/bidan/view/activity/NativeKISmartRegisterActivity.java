@@ -1,13 +1,13 @@
-package org.ei.drishti.bidan.kartuibu;
+package org.ei.drishti.bidan.view.activity;
 
 import android.view.View;
 
 import org.ei.drishti.R;
 import org.ei.drishti.adapter.SmartRegisterPaginatedAdapter;
-import org.ei.drishti.bidan.kartuibu.AllKartuIbuServiceMode;
-import org.ei.drishti.bidan.kartuibu.KIClientsProvider;
-import org.ei.drishti.bidan.kartuibu.KartuIbuRegisterController;
-import org.ei.drishti.bidan.kartuibu.WifeAgeSort;
+import org.ei.drishti.bidan.view.dialog.AllKartuIbuServiceMode;
+import org.ei.drishti.bidan.view.controller.KartuIbuRegisterController;
+import org.ei.drishti.bidan.view.dialog.WifeAgeSort;
+import org.ei.drishti.bidan.provider.KIClientsProvider;
 import org.ei.drishti.domain.form.FieldOverrides;
 import org.ei.drishti.provider.SmartRegisterClientsProvider;
 import org.ei.drishti.view.activity.SecuredNativeSmartRegisterActivity;
@@ -21,7 +21,6 @@ import org.ei.drishti.view.dialog.ServiceModeOption;
 import org.ei.drishti.view.dialog.SortOption;
 
 import static com.google.common.collect.Iterables.concat;
-import static com.google.common.collect.Iterables.toArray;
 import static org.ei.drishti.AllConstants.FormNames.KARTU_IBU_REGISTRATION;
 
 /**

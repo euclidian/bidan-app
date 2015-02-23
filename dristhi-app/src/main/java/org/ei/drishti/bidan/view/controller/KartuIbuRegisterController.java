@@ -1,8 +1,11 @@
-package org.ei.drishti.bidan.kartuibu;
+package org.ei.drishti.bidan.view.controller;
 
+import org.ei.drishti.bidan.domain.KartuIbu;
+import org.ei.drishti.bidan.view.contract.KartuIbuClient;
+import org.ei.drishti.bidan.view.contract.KartuIbuClients;
+import org.ei.drishti.bidan.repository.AllKartuIbus;
 import org.ei.drishti.util.Cache;
 import org.ei.drishti.util.CacheableData;
-import org.ei.drishti.view.contract.ECClient;
 import org.ei.drishti.view.contract.SmartRegisterClient;
 
 import java.util.Comparator;

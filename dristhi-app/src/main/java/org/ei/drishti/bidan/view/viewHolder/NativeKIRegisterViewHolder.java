@@ -1,13 +1,12 @@
-package org.ei.drishti.bidan.kartuibu;
+package org.ei.drishti.bidan.view.viewHolder;
 
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.ei.drishti.R;
-import org.ei.drishti.view.contract.SmartRegisterClient;
+import org.ei.drishti.bidan.view.contract.KartuIbuClient;
 import org.ei.drishti.view.viewHolder.ProfilePhotoLoader;
 
 /**

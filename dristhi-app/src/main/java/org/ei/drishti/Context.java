@@ -3,12 +3,12 @@ package org.ei.drishti;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 
-import org.ei.drishti.bidan.kartuibu.AllKartuIbus;
-import org.ei.drishti.bidan.kartuibu.KartuIbuClients;
-import org.ei.drishti.bidan.kartuibu.KartuIbuCloseHandler;
-import org.ei.drishti.bidan.kartuibu.KartuIbuRegistrationHandler;
-import org.ei.drishti.bidan.kartuibu.KartuIbuRepository;
-import org.ei.drishti.bidan.kartuibu.KartuIbuService;
+import org.ei.drishti.bidan.repository.AllKartuIbus;
+import org.ei.drishti.bidan.view.contract.KartuIbuClients;
+import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuCloseHandler;
+import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuRegistrationHandler;
+import org.ei.drishti.bidan.repository.KartuIbuRepository;
+import org.ei.drishti.bidan.service.KartuIbuService;
 import org.ei.drishti.repository.*;
 import org.ei.drishti.service.*;
 import org.ei.drishti.service.formSubmissionHandler.*;
@@ -577,7 +577,7 @@ public class Context {
 
     public ANMService anmService() {
         if (anmService == null) {
-            anmService = new ANMService(allSharedPreferences(), allBeneficiaries(), allEligibleCouples());
+            anmService = new ANMService(allSharedPreferences(), allBeneficiaries(), allEligibleCouples(), allKartuIbus());
         }
         return anmService;
     }
@@ -734,5 +734,13 @@ public class Context {
             kartuIbuRepository = new KartuIbuRepository();
         }
         return kartuIbuRepository;
+    }
+
+    public Cache<KartuIbuClients> kiClientsCache() {
+        if (kartuIbuClientsCache == null) {
+            kartuIbuClientsCache = new Cache<KartuIbuClients>();
+        }
+        return kartuIbuClientsCache;
+
     }
 }

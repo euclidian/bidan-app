@@ -6,7 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import net.sqlcipher.database.SQLiteDatabase;
 
-import org.ei.drishti.bidan.kartuibu.KartuIbuRepository;
+import org.ei.drishti.bidan.repository.KartuIbuRepository;
 import org.ei.drishti.domain.SyncStatus;
 import org.ei.drishti.domain.form.FormSubmission;
 

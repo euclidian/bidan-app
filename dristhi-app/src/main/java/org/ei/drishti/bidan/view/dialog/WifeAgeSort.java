@@ -1,4 +1,4 @@
-package org.ei.drishti.bidan.kartuibu;
+package org.ei.drishti.bidan.view.dialog;
 
 import org.ei.drishti.Context;
 import org.ei.drishti.R;

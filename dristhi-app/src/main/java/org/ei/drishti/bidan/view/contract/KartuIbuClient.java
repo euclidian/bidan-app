@@ -1,4 +1,4 @@
-package org.ei.drishti.bidan.kartuibu;
+package org.ei.drishti.bidan.view.contract;
 
 import android.util.Log;
 

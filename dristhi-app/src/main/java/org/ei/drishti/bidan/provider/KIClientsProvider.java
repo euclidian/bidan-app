@@ -1,4 +1,4 @@
-package org.ei.drishti.bidan.kartuibu;
+package org.ei.drishti.bidan.provider;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 
 import org.ei.drishti.R;
+import org.ei.drishti.bidan.view.contract.KartuIbuClient;
+import org.ei.drishti.bidan.view.controller.KartuIbuRegisterController;
+import org.ei.drishti.bidan.view.viewHolder.NativeKIRegisterViewHolder;
 import org.ei.drishti.provider.SmartRegisterClientsProvider;
 import org.ei.drishti.view.contract.SmartRegisterClient;
 import org.ei.drishti.view.contract.SmartRegisterClients;
@@ -14,7 +17,6 @@ import org.ei.drishti.view.dialog.FilterOption;
 import org.ei.drishti.view.dialog.ServiceModeOption;
 import org.ei.drishti.view.dialog.SortOption;
 import org.ei.drishti.view.viewHolder.ECProfilePhotoLoader;
-import org.ei.drishti.view.viewHolder.NativeECSmartRegisterViewHolder;
 import org.ei.drishti.view.viewHolder.OnClickFormLauncher;
 import org.ei.drishti.view.viewHolder.ProfilePhotoLoader;
 

@@ -1,7 +1,8 @@
-package org.ei.drishti.bidan.kartuibu;
+package org.ei.drishti.bidan.repository;
 
+import org.ei.drishti.bidan.domain.KartuIbu;
+import org.ei.drishti.bidan.repository.KartuIbuRepository;
 import org.ei.drishti.repository.AlertRepository;
-import org.ei.drishti.repository.EligibleCoupleRepository;
 import org.ei.drishti.repository.TimelineEventRepository;
 
 import java.util.List;

@@ -1,8 +1,7 @@
 package org.ei.drishti.service.formSubmissionHandler;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.ei.drishti.bidan.kartuibu.KartuIbuCloseHandler;
-import org.ei.drishti.bidan.kartuibu.KartuIbuRegistrationHandler;
+import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuRegistrationHandler;
 import org.ei.drishti.domain.form.FormSubmission;
 import org.ei.drishti.repository.FormDataRepository;
 import org.ei.drishti.util.Log;
