@@ -73,9 +73,7 @@ public class NativeKISmartRegisterActivity extends SecuredNativeSmartRegisterAct
 
             @Override
             public DialogOption[] filterOptions() {
-                Iterable<? extends DialogOption> villageFilterOptions =
-                        dialogOptionMapper.mapToVillageFilterOptions(villageController.getVillages());
-                return toArray(concat(DEFAULT_FILTER_OPTIONS, villageFilterOptions), DialogOption.class);
+                return new DialogOption[]{new AllClientsFilter()};
             }
 
             @Override
