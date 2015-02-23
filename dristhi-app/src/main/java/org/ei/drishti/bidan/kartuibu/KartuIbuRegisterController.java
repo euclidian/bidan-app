@@ -2,8 +2,12 @@ package org.ei.drishti.bidan.kartuibu;
 
 import org.ei.drishti.util.Cache;
 import org.ei.drishti.util.CacheableData;
+import org.ei.drishti.view.contract.ECClient;
+import org.ei.drishti.view.contract.SmartRegisterClient;
 
+import java.util.Comparator;
 import java.util.List;
+import static java.util.Collections.sort;
 
 /**
  * Created by Dimas Ciputra on 2/18/15.
@@ -38,7 +42,17 @@ public class KartuIbuRegisterController {
 
                     kartuIbuClients.add(kartuIbuClient);
                 }
+                sortByName(kartuIbuClients);
                 return kartuIbuClients;
+            }
+        });
+    }
+
+    private void sortByName(List<?extends SmartRegisterClient> kiClients) {
+        sort(kiClients, new Comparator<SmartRegisterClient>() {
+            @Override
+            public int compare(SmartRegisterClient o1, SmartRegisterClient o2) {
+                return o1.wifeName().compareToIgnoreCase(o2.wifeName());
             }
         });
     }

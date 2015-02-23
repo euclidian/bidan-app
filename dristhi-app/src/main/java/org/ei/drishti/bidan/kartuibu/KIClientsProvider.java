@@ -87,7 +87,7 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
 
     @Override
     public SmartRegisterClients updateClients(FilterOption villageFilter, ServiceModeOption serviceModeOption, FilterOption searchFilter, SortOption sortOption) {
-        return null;
+        return getClients().applyFilter(villageFilter, serviceModeOption, searchFilter, sortOption);
     }
 
     @Override

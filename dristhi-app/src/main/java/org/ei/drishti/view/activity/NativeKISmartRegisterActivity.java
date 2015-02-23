@@ -7,6 +7,7 @@ import org.ei.drishti.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.drishti.bidan.kartuibu.AllKartuIbuServiceMode;
 import org.ei.drishti.bidan.kartuibu.KIClientsProvider;
 import org.ei.drishti.bidan.kartuibu.KartuIbuRegisterController;
+import org.ei.drishti.bidan.kartuibu.WifeAgeSort;
 import org.ei.drishti.domain.form.FieldOverrides;
 import org.ei.drishti.provider.SmartRegisterClientsProvider;
 import org.ei.drishti.view.controller.VillageController;
@@ -83,12 +84,12 @@ public class NativeKISmartRegisterActivity extends SecuredNativeSmartRegisterAct
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort()};
+                return new DialogOption[]{new NameSort(), new WifeAgeSort()};
             }
 
             @Override
             public String searchHint() {
-                return getString(R.string.str_ec_search_hint);
+                return getString(R.string.str_ki_search_hint);
             }
         };
     }

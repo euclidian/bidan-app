@@ -50,6 +50,7 @@
 
     <string name="puskesmas">Puskesmas</string>
     <string name="kartu_ibu_selection">Kartu Ibu</string>
+    <string name="str_ki_search_hint">Search KI Register</string>
 
     <string name="couple_selection">All Eligible Couples</string>
     <string name="str_ec_search_hint">Search EC Register</string>
@@ -81,6 +82,7 @@
     <string name="str_out_of_area">(O/A)</string>
 
     <string name="sort_by_name_label">Name (A to Z)</string>
+    <string name="sort_by_wife_age_label">Age</string>
     <string name="sort_by_ec_number_label">EC Number</string>
     <string name="sort_by_date_of_delivery_label">Date of Delivery</string>
     <string name="sort_by_sc_label">SC</string>

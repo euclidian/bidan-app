@@ -1,6 +1,15 @@
 package org.ei.drishti.bidan.kartuibu;
 
+import android.util.Log;
+
+import org.ei.drishti.util.DateUtil;
+import org.ei.drishti.util.IntegerUtil;
 import org.ei.drishti.view.contract.SmartRegisterClient;
+import org.joda.time.Days;
+import org.joda.time.LocalDate;
+
+import static org.apache.commons.lang3.StringUtils.isBlank;
+import static org.ei.drishti.util.StringUtil.humanize;
 
 /**
  * Created by Dimas Ciputra on 2/17/15.
@@ -145,7 +154,7 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     @Override
     public String wifeName() {
-        return null;
+        return humanize(wifeName);
     }
 
     @Override
@@ -160,7 +169,7 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     @Override
     public int ageInDays() {
-        return 0;
+        return isBlank(this.wifeAge) ? 0 : Integer.parseInt(this.wifeAge);
     }
 
     @Override
@@ -210,6 +219,6 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     @Override
     public int compareName(SmartRegisterClient client) {
-        return 0;
+        return this.wifeName().compareToIgnoreCase(client.wifeName());
     }
 }
