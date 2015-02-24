@@ -2,6 +2,8 @@ package org.ei.drishti.bidan.view.contract;
 
 import android.util.Log;
 
+import com.google.common.base.Strings;
+
 import org.ei.drishti.util.DateUtil;
 import org.ei.drishti.util.IntegerUtil;
 import org.ei.drishti.view.contract.SmartRegisterClient;
@@ -154,7 +156,7 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     @Override
     public String wifeName() {
-        return humanize(wifeName);
+        return Strings.isNullOrEmpty(this.wifeName) ? "" : humanize(this.wifeName);
     }
 
     @Override
@@ -169,7 +171,7 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     @Override
     public int ageInDays() {
-        return isBlank(this.wifeAge) ? 0 : Integer.parseInt(this.wifeAge);
+        return Strings.isNullOrEmpty(this.wifeAge) ? 0 : Integer.parseInt(this.wifeAge);
     }
 
     @Override
