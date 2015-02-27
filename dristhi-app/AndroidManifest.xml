@@ -171,6 +171,10 @@
                   android:screenOrientation="landscape">
         </activity>
 
+        <activity android:name=".bidan.view.activity.BidanHomeActivity"
+            android:screenOrientation="landscape">
+        </activity>
+
         <receiver android:name=".view.receiver.SyncBroadcastReceiver"/>
         <receiver android:name=".view.receiver.ConnectivityChangeReceiver">
             <intent-filter>

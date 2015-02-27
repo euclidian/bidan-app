@@ -2,6 +2,8 @@ package org.ei.drishti.view.controller;
 
 import android.app.Activity;
 import android.content.Intent;
+
+import org.ei.drishti.bidan.view.activity.NativeKISmartRegisterActivity;
 import org.ei.drishti.view.activity.*;
 
 import static org.ei.drishti.view.controller.ProfileNavigationController.*;
@@ -41,6 +43,10 @@ public class NavigationController {
 
     public void startChildSmartRegistry() {
         activity.startActivity(new Intent(activity, NativeChildSmartRegisterActivity.class));
+    }
+
+    public void startKartuIbuRegistry() {
+        activity.startActivity(new Intent(activity, NativeKISmartRegisterActivity.class));
     }
 
     public String get() {

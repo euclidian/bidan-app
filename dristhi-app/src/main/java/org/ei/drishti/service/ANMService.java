@@ -1,5 +1,6 @@
 package org.ei.drishti.service;
 
+import org.ei.drishti.Context;
 import org.ei.drishti.bidan.repository.AllKartuIbus;
 import org.ei.drishti.domain.ANM;
 import org.ei.drishti.repository.AllBeneficiaries;
@@ -20,13 +21,13 @@ public class ANMService {
     }
 
     public ANM fetchDetails() {
-        /*
-        return new ANM(allSharedPreferences.fetchRegisteredANM(), allEligibleCouples.count(), allEligibleCouples.fpCount(),
-                allBeneficiaries.ancCount(), allBeneficiaries.pncCount(), allBeneficiaries.childCount());
-        */
-
-        return new ANM(allSharedPreferences.fetchRegisteredANM(), allEligibleCouples.count(), allEligibleCouples.fpCount(),
-                allBeneficiaries.ancCount(), allBeneficiaries.pncCount(), allKartuIbus.count());
-
+        if(Context.getInstance().configuration().getAppName().equals("BIDAN")) {
+            return new ANM(allSharedPreferences.fetchRegisteredANM(), allEligibleCouples.count(), allEligibleCouples.fpCount(),
+                    allBeneficiaries.ancCount(), allBeneficiaries.pncCount(), allBeneficiaries.childCount())
+                    .withBidan(allKartuIbus.count());
+        } else {
+            return new ANM(allSharedPreferences.fetchRegisteredANM(), allEligibleCouples.count(), allEligibleCouples.fpCount(),
+                    allBeneficiaries.ancCount(), allBeneficiaries.pncCount(), allBeneficiaries.childCount());
+        }
     }
 }

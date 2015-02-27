@@ -11,6 +11,7 @@ public class ANM {
     private final long ancCount;
     private final long pncCount;
     private final long childCount;
+    private long kartuIbuCount;
 
     public ANM(String name, long eligibleCoupleCount, long fpCount, long ancCount, long pncCount, long childCount) {
         this.name = name;
@@ -19,6 +20,11 @@ public class ANM {
         this.ancCount = ancCount;
         this.pncCount = pncCount;
         this.childCount = childCount;
+    }
+
+    public ANM withBidan(long kartuIbuCount) {
+        this.kartuIbuCount = kartuIbuCount;
+        return this;
     }
 
     public String name() {
@@ -44,6 +50,8 @@ public class ANM {
     public long fpCount() {
         return fpCount;
     }
+
+    public long getKartuIbuCount() { return kartuIbuCount; }
 
     @Override
     public boolean equals(Object o) {
