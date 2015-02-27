@@ -16,15 +16,19 @@ public class CustomFontTextView extends TextView {
     @SuppressWarnings("UnusedDeclaration")
     public CustomFontTextView(Context context) {
         this(context, null, 0);
+        if (isInEditMode()) return;
     }
 
     @SuppressWarnings("UnusedDeclaration")
     public CustomFontTextView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
+        if (isInEditMode()) return;
     }
 
     public CustomFontTextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, 0);
+        if (isInEditMode()) return;
+
         cache = org.ei.drishti.Context.getInstance().typefaceCache();
         TypedArray attributes = context.obtainStyledAttributes(
                 attrs, R.styleable.org_ei_drishti_view_customControls_CustomFontTextView, 0, defStyle);
@@ -40,6 +44,7 @@ public class CustomFontTextView extends TextView {
     }
 
     public void setFontVariant(final FontVariant variant) {
+        if (isInEditMode()) return;
         setTypeface(cache.get(variant.name(), new CacheableData<Typeface>() {
             @Override
             public Typeface fetch() {
@@ -49,5 +54,6 @@ public class CustomFontTextView extends TextView {
 
             }
         }));
+
     }
 }
