@@ -121,16 +121,15 @@ public class NativeKISmartRegisterActivity extends SecuredNativeSmartRegisterAct
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.profile_info_layout:
+                    // TODO : show info of timeline event
                     // showProfileView((ECClient) view.getTag());
                     break;
                 case R.id.btn_edit:
+                    // TODO : show edit dialog for add ANC and PNC
                     // showFragmentDialog(new EditDialogOptionModel(), view.getTag());
                     break;
             }
         }
 
-//        private void showProfileView(ECClient client) {
-//            navigationController.startEC(client.entityId());
-//        }
     }
 }

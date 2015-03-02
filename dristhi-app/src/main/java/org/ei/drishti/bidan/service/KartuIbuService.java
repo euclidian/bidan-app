@@ -21,6 +21,7 @@ public class KartuIbuService {
 
     public void register(FormSubmission submission) {
         if (isNotBlank(submission.getFieldValue(AllConstants.CommonFormFields.SUBMISSION_DATE))) {
+            // TODO : add to timeline event repository
             // allTimelineEvents.add(TimelineEvent.forECRegistered(submission.entityId(), submission.getFieldValue(AllConstants.CommonFormFields.SUBMISSION_DATE)));
         }
     }
