@@ -9,7 +9,7 @@
                 "shouldLoadValue": true
             },
             {
-                "name": "district",
+                "name": "District",
                 "bind": "/model/instance/kartu_ibu/B01010"
             },
             {
@@ -25,7 +25,7 @@
                 "bind": "/model/instance/kartu_ibu/B01001"
             },
             {
-                "name": "subCenter",
+                "name": "SubCenter",
                 "bind": "/model/instance/kartu_ibu/B01016"
             },
             {
