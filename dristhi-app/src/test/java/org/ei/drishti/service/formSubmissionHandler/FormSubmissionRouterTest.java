@@ -1,7 +1,7 @@
 package org.ei.drishti.service.formSubmissionHandler;
 
-import org.ei.drishti.bidan.kartuibu.KartuIbuCloseHandler;
-import org.ei.drishti.bidan.kartuibu.KartuIbuRegistrationHandler;
+import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuCloseHandler;
+import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuRegistrationHandler;
 import org.robolectric.RobolectricTestRunner;
 import org.ei.drishti.domain.form.FormSubmission;
 import org.ei.drishti.event.Listener;
