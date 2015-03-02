@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import org.ei.drishti.Context;
 import org.ei.drishti.R;
+import org.ei.drishti.bidan.view.activity.BidanHomeActivity;
 import org.ei.drishti.domain.LoginResponse;
 import org.ei.drishti.event.Listener;
 import org.ei.drishti.sync.DrishtiSyncScheduler;
@@ -200,7 +201,20 @@ public class LoginActivity extends Activity {
     }
 
     private void goToHome() {
+        if(context.configuration().getAppName().equals("BIDAN")) {
+            goToHomeBidan();
+        } else {
+            goToHomeNative();
+        }
+    }
+
+    private void goToHomeNative() {
         startActivity(new Intent(this, NativeHomeActivity.class));
+        finish();
+    }
+
+    private void goToHomeBidan() {
+        startActivity(new Intent(this, BidanHomeActivity.class));
         finish();
     }
 

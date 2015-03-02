@@ -196,6 +196,19 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="CustomFontTextViewStyle.Badge2">
+        <item name="fontVariant">bold</item>
+        <item name="android:layout_gravity">top|center</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginRight">-50dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/badge</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
     <style name="FPModalTabStyle" parent="CustomFontTextViewStyle.ListView.Medium">
         <item name="android:layout_height">@dimen/fp_modal_header_text_height</item>
         <item name="android:padding">5dp</item>

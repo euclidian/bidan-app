@@ -2,6 +2,13 @@ package org.ei.drishti;
 
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+
+import org.ei.drishti.bidan.repository.AllKartuIbus;
+import org.ei.drishti.bidan.view.contract.KartuIbuClients;
+import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuCloseHandler;
+import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuRegistrationHandler;
+import org.ei.drishti.bidan.repository.KartuIbuRepository;
+import org.ei.drishti.bidan.service.KartuIbuService;
 import org.ei.drishti.repository.*;
 import org.ei.drishti.service.*;
 import org.ei.drishti.service.formSubmissionHandler.*;
@@ -29,6 +36,7 @@ public class Context {
     private ReportRepository reportRepository;
     private FormDataRepository formDataRepository;
     private ServiceProvidedRepository serviceProvidedRepository;
+    private KartuIbuRepository kartuIbuRepository;
 
     private AllSettings allSettings;
     private AllSharedPreferences allSharedPreferences;
@@ -38,6 +46,7 @@ public class Context {
     private AllTimelineEvents allTimelineEvents;
     private AllReports allReports;
     private AllServicesProvided allServicesProvided;
+    private AllKartuIbus allKartuIbus;
 
     private DrishtiService drishtiService;
     private ActionService actionService;
@@ -53,6 +62,7 @@ public class Context {
     private BeneficiaryService beneficiaryService;
     private ServiceProvidedService serviceProvidedService;
     private PendingFormSubmissionService pendingFormSubmissionService;
+    private KartuIbuService kartuIbuService;
 
     private Session session;
     private Cache<String> listCache;
@@ -64,6 +74,7 @@ public class Context {
     private Cache<PNCClients> pncClientsCache;
     private Cache<Villages> villagesCache;
     private Cache<Typeface> typefaceCache;
+    private Cache<KartuIbuClients> kartuIbuClientsCache;
 
     private HTTPAgent httpAgent;
     private ZiggyFileLoader ziggyFileLoader;
@@ -95,6 +106,8 @@ public class Context {
     private ECEditHandler ecEditHandler;
     private ANCInvestigationsHandler ancInvestigationsHandler;
     private SaveANMLocationTask saveANMLocationTask;
+    private KartuIbuRegistrationHandler kartuIbuRegistrationHandler;
+    private KartuIbuCloseHandler kartuIbuCloseHandler;
 
     private ANMController anmController;
     private ANMLocationController anmLocationController;
@@ -161,7 +174,7 @@ public class Context {
                     ttHandler(), ifaHandler(), hbTestHandler(), deliveryOutcomeHandler(), pncRegistrationOAHandler(),
                     pncCloseHandler(), pncVisitHandler(), childImmunizationsHandler(), childRegistrationECHandler(),
                     childRegistrationOAHandler(), childCloseHandler(), childIllnessHandler(), vitaminAHandler(),
-                    deliveryPlanHandler(), ecEditHandler(), ancInvestigationsHandler());
+                    deliveryPlanHandler(), ecEditHandler(), ancInvestigationsHandler(), kartuIbuRegistrationHandler());
         }
         return formSubmissionRouter;
     }
@@ -374,7 +387,7 @@ public class Context {
         if (repository == null) {
             repository = new Repository(this.applicationContext, session(), settingsRepository(), alertRepository(),
                     eligibleCoupleRepository(), childRepository(), timelineEventRepository(), motherRepository(), reportRepository(),
-                    formDataRepository(), serviceProvidedRepository());
+                    formDataRepository(), serviceProvidedRepository(), kartuIbuRepository());
         }
         return repository;
     }
@@ -564,7 +577,7 @@ public class Context {
 
     public ANMService anmService() {
         if (anmService == null) {
-            anmService = new ANMService(allSharedPreferences(), allBeneficiaries(), allEligibleCouples());
+            anmService = new ANMService(allSharedPreferences(), allBeneficiaries(), allEligibleCouples(), allKartuIbus());
         }
         return anmService;
     }
@@ -684,5 +697,50 @@ public class Context {
 
     public Drawable getDrawableResource(int id) {
         return applicationContext().getResources().getDrawable(id);
+    }
+
+    // Kartu Ibu Functions
+    private KartuIbuRegistrationHandler kartuIbuRegistrationHandler() {
+        if (kartuIbuRegistrationHandler == null) {
+            kartuIbuRegistrationHandler = new KartuIbuRegistrationHandler(kartuIbuService());
+        }
+        return kartuIbuRegistrationHandler;
+    }
+
+    private KartuIbuCloseHandler kartuIbuCloseHandler() {
+        if (kartuIbuCloseHandler == null) {
+            kartuIbuCloseHandler = new KartuIbuCloseHandler(kartuIbuService());
+        }
+        return kartuIbuCloseHandler;
+    }
+
+    private KartuIbuService kartuIbuService() {
+        if(kartuIbuService == null) {
+            kartuIbuService = new KartuIbuService(allKartuIbus(), allTimelineEvents());
+        }
+        return kartuIbuService;
+    }
+
+    public AllKartuIbus allKartuIbus() {
+        initRepository();
+        if (allKartuIbus == null) {
+            allKartuIbus = new AllKartuIbus(kartuIbuRepository(), alertRepository(), timelineEventRepository());
+        }
+        return allKartuIbus;
+    }
+
+    private KartuIbuRepository kartuIbuRepository() {
+        if (kartuIbuRepository == null) {
+            kartuIbuRepository = new KartuIbuRepository();
+        }
+        return kartuIbuRepository;
+    }
+
+    public Cache<KartuIbuClients> kiClientsCache() {
+        if (kartuIbuClientsCache == null) {
+            kartuIbuClientsCache = new Cache<KartuIbuClients>();
+        }
+        return kartuIbuClientsCache;
+
     }
 }

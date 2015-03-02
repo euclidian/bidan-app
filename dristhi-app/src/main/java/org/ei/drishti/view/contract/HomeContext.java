@@ -9,6 +9,7 @@ public class HomeContext {
     private long pncCount;
     private long childCount;
     private long eligibleCoupleCount;
+    private long kartuIbuCount;
 
     public HomeContext(ANM anm) {
         this.anmName = anm.name();
@@ -17,6 +18,7 @@ public class HomeContext {
         this.childCount = anm.childCount();
         this.eligibleCoupleCount = anm.ecCount();
         this.fpCount = anm.fpCount();
+        this.kartuIbuCount = anm.getKartuIbuCount();
     }
 
     public long fpCount() {
@@ -38,4 +40,6 @@ public class HomeContext {
     public long eligibleCoupleCount() {
         return eligibleCoupleCount;
     }
+
+    public long kartuIbuCount() { return kartuIbuCount; }
 }
