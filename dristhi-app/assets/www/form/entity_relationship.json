@@ -1,11 +1,11 @@
 [
     {
         "parent":"kartu_ibu",
-        "child": "mother",
+        "child": "ibu",
         "field":"wife",
         "kind":"one_to_one",
         "form":"kartu_ibu.id",
-        "to":"mother.ecCaseId"
+        "to":"ibu.kartuIbuId"
     },
     {
         "parent": "eligible_couple",
