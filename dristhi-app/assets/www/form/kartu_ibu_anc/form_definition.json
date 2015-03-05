@@ -41,11 +41,11 @@
                 "bind": "/model/instance/Kartu_ibu_ANC/B01048",
             },
             {
-                "name": "TD(Sistolik)",
+                "name": "TDSistolik",
                 "bind": "/model/instance/Kartu_ibu_ANC/B01049",
             },
             {
-                "name": "TD(Diastolik)",
+                "name": "TDDiastolik",
                 "bind": "/model/instance/Kartu_ibu_ANC/B01050",
             },
             {
