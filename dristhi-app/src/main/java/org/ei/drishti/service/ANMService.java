@@ -11,23 +11,15 @@ public class ANMService {
     private AllSharedPreferences allSharedPreferences;
     private AllBeneficiaries allBeneficiaries;
     private AllEligibleCouples allEligibleCouples;
-    private AllKartuIbus allKartuIbus;
 
-    public ANMService(AllSharedPreferences allSharedPreferences, AllBeneficiaries allBeneficiaries, AllEligibleCouples allEligibleCouples, AllKartuIbus allKartuIbus) {
+    public ANMService(AllSharedPreferences allSharedPreferences, AllBeneficiaries allBeneficiaries, AllEligibleCouples allEligibleCouples) {
         this.allSharedPreferences = allSharedPreferences;
         this.allBeneficiaries = allBeneficiaries;
         this.allEligibleCouples = allEligibleCouples;
-        this.allKartuIbus = allKartuIbus;
     }
 
     public ANM fetchDetails() {
-        if(Context.getInstance().configuration().getAppName().equals("BIDAN")) {
-            return new ANM(allSharedPreferences.fetchRegisteredANM(), allEligibleCouples.count(), allEligibleCouples.fpCount(),
-                    allBeneficiaries.ancCount(), allBeneficiaries.pncCount(), allBeneficiaries.childCount())
-                    .withBidan(allKartuIbus.count());
-        } else {
             return new ANM(allSharedPreferences.fetchRegisteredANM(), allEligibleCouples.count(), allEligibleCouples.fpCount(),
                     allBeneficiaries.ancCount(), allBeneficiaries.pncCount(), allBeneficiaries.childCount());
-        }
     }
 }

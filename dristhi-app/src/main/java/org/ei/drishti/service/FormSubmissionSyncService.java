@@ -66,7 +66,7 @@ public class FormSubmissionSyncService {
 
     public FetchStatus pullFromServer() {
         FetchStatus dataStatus = nothingFetched;
-        String anmId = allSharedPreferences.fetchRegisteredANM();
+        String anmId = allSharedPreferences.fetchRegistered();
         int downloadBatchSize = configuration.syncDownloadBatchSize();
         String baseURL = configuration.dristhiBaseURL();
         while (true) {
@@ -96,7 +96,7 @@ public class FormSubmissionSyncService {
     private String mapToFormSubmissionDTO(List<FormSubmission> pendingFormSubmissions) {
         List<org.ei.drishti.dto.form.FormSubmissionDTO> formSubmissions = new ArrayList<org.ei.drishti.dto.form.FormSubmissionDTO>();
         for (FormSubmission pendingFormSubmission : pendingFormSubmissions) {
-            formSubmissions.add(new org.ei.drishti.dto.form.FormSubmissionDTO(allSharedPreferences.fetchRegisteredANM(), pendingFormSubmission.instanceId(),
+            formSubmissions.add(new org.ei.drishti.dto.form.FormSubmissionDTO(allSharedPreferences.fetchRegistered(), pendingFormSubmission.instanceId(),
                     pendingFormSubmission.entityId(), pendingFormSubmission.formName(), pendingFormSubmission.instance(), pendingFormSubmission.version(),
                     pendingFormSubmission.formDataDefinitionVersion()));
         }

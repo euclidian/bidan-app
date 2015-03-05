@@ -178,7 +178,7 @@ public class LoginActivity extends Activity {
 
     private void fillUserIfExists() {
         if (context.userService().hasARegisteredUser()) {
-            userNameEditText.setText(context.allSharedPreferences().fetchRegisteredANM());
+            userNameEditText.setText(context.allSharedPreferences().fetchRegistered());
             userNameEditText.setEnabled(false);
         }
     }

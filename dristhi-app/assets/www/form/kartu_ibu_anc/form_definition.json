@@ -10,7 +10,7 @@
             },
             {
                 "name": "motherId",
-                "source": "mother.kartu_ibu.id"
+                "source": "kartu_ibu.ibu.id"
             },
 			{
                 "name": "ANC_date",

@@ -7,15 +7,15 @@ import android.widget.TextView;
 
 import org.ei.drishti.Context;
 import org.ei.drishti.R;
+import org.ei.drishti.bidan.view.contract.BidanHomeContext;
+import org.ei.drishti.bidan.view.controller.NativeAfterBidanDetailsFetchListener;
+import org.ei.drishti.bidan.view.controller.NativeUpdateBidanDetailsTask;
 import org.ei.drishti.event.Listener;
 import org.ei.drishti.service.PendingFormSubmissionService;
 import org.ei.drishti.sync.SyncAfterFetchListener;
 import org.ei.drishti.sync.SyncProgressIndicator;
 import org.ei.drishti.sync.UpdateActionsTask;
 import org.ei.drishti.view.activity.SecuredActivity;
-import org.ei.drishti.view.contract.HomeContext;
-import org.ei.drishti.view.controller.NativeAfterANMDetailsFetchListener;
-import org.ei.drishti.view.controller.NativeUpdateANMDetailsTask;
 
 import static java.lang.String.valueOf;
 import static org.ei.drishti.event.Event.ACTION_HANDLED;
@@ -100,17 +100,17 @@ public class BidanHomeActivity extends SecuredActivity {
     }
 
     private void updateRegisterCounts() {
-        NativeUpdateANMDetailsTask task = new NativeUpdateANMDetailsTask(Context.getInstance().anmController());
-        task.fetch(new NativeAfterANMDetailsFetchListener() {
+        NativeUpdateBidanDetailsTask task = new NativeUpdateBidanDetailsTask(Context.getInstance().bidanController());
+        task.fetch(new NativeAfterBidanDetailsFetchListener() {
             @Override
-            public void afterFetch(HomeContext anmDetails) {
-                updateRegisterCounts(anmDetails);
+            public void afterFetch(BidanHomeContext bidanDetails) {
+                updateRegisterCounts(bidanDetails);
             }
         });
     }
 
-    private void updateRegisterCounts(HomeContext homeContext) {
-        kartuIbuRegisterClientCountView.setText(valueOf(homeContext.kartuIbuCount()));
+    private void updateRegisterCounts(BidanHomeContext homeContext) {
+        kartuIbuRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuCount()));
     }
 
     @Override
