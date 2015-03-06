@@ -2,9 +2,9 @@
     {
         "parent":"kartu_ibu",
         "child": "ibu",
-        "field":"wife",
+        "field":"",
         "kind":"one_to_one",
-        "form":"kartu_ibu.id",
+        "from":"kartu_ibu.id",
         "to":"ibu.kartuIbuId"
     },
     {
