@@ -4,32 +4,29 @@ import android.view.View;
 
 import org.ei.drishti.R;
 import org.ei.drishti.adapter.SmartRegisterPaginatedAdapter;
-import org.ei.drishti.bidan.view.dialog.AllKartuIbuServiceMode;
-import org.ei.drishti.bidan.view.controller.KartuIbuRegisterController;
+import org.ei.drishti.bidan.provider.KartuIbuANCClientsProvider;
+import org.ei.drishti.bidan.view.controller.KartuIbuANCRegisterController;
+import org.ei.drishti.bidan.view.dialog.KartuIbuANCOverviewServiceMode;
 import org.ei.drishti.bidan.view.dialog.WifeAgeSort;
-import org.ei.drishti.bidan.provider.KIClientsProvider;
 import org.ei.drishti.domain.form.FieldOverrides;
 import org.ei.drishti.provider.SmartRegisterClientsProvider;
 import org.ei.drishti.view.activity.SecuredNativeSmartRegisterActivity;
 import org.ei.drishti.view.dialog.AllClientsFilter;
 import org.ei.drishti.view.dialog.DialogOption;
-import org.ei.drishti.view.dialog.DialogOptionMapper;
 import org.ei.drishti.view.dialog.FilterOption;
 import org.ei.drishti.view.dialog.NameSort;
 import org.ei.drishti.view.dialog.ServiceModeOption;
 import org.ei.drishti.view.dialog.SortOption;
 
-import static org.ei.drishti.AllConstants.FormNames.KARTU_IBU_REGISTRATION;
+import static org.ei.drishti.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
 
 /**
- * Created by Dimas Ciputra on 2/18/15.
+ * Created by Dimas Ciputra on 3/5/15.
  */
-public class NativeKISmartRegisterActivity extends SecuredNativeSmartRegisterActivity {
+public class NativeKIANCSmartRegisterActivity extends SecuredNativeSmartRegisterActivity{
 
     private SmartRegisterClientsProvider clientProvider = null;
-    private KartuIbuRegisterController controller;
-    private DialogOptionMapper dialogOptionMapper;
-
+    private KartuIbuANCRegisterController controller;
     private final ClientActionHandler clientActionHandler = new ClientActionHandler();
 
     @Override
@@ -40,10 +37,9 @@ public class NativeKISmartRegisterActivity extends SecuredNativeSmartRegisterAct
     @Override
     protected DefaultOptionsProvider getDefaultOptionsProvider() {
         return new DefaultOptionsProvider() {
-
             @Override
             public ServiceModeOption serviceMode() {
-                return new AllKartuIbuServiceMode(clientsProvider());
+                return new KartuIbuANCOverviewServiceMode(clientsProvider());
             }
 
             @Override
@@ -58,7 +54,7 @@ public class NativeKISmartRegisterActivity extends SecuredNativeSmartRegisterAct
 
             @Override
             public String nameInShortFormForTitle() {
-                return getResources().getString(R.string.ki_register_title_in_short);
+                return getResources().getString(R.string.anc_label);
             }
         };
     }
@@ -79,7 +75,7 @@ public class NativeKISmartRegisterActivity extends SecuredNativeSmartRegisterAct
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort(), new WifeAgeSort()};
+                return new DialogOption[]{new NameSort()};
             }
 
             @Override
@@ -91,24 +87,22 @@ public class NativeKISmartRegisterActivity extends SecuredNativeSmartRegisterAct
 
     @Override
     protected SmartRegisterClientsProvider clientsProvider() {
-        if (clientProvider == null) {
-            clientProvider = new KIClientsProvider(
-                    this, clientActionHandler, controller);
+        if(clientProvider == null) {
+            clientProvider = new KartuIbuANCClientsProvider(this, clientActionHandler, controller);
         }
         return clientProvider;
     }
 
     @Override
     protected void onInitialization() {
-        controller = new KartuIbuRegisterController(context.allKartuIbus(),
-                context.listCache(),context.kiClientsCache());
-        dialogOptionMapper = new DialogOptionMapper();
+        controller = new KartuIbuANCRegisterController(context.allIbu(),
+                context.listCache(),context.kartuIbuANCClientsCache());
     }
 
     @Override
     protected void startRegistration() {
         FieldOverrides fieldOverrides = new FieldOverrides(context.anmLocationController().getLocationJSON());
-        startFormActivity(KARTU_IBU_REGISTRATION, null, fieldOverrides.getJSONString());
+        startFormActivity(KARTU_IBU_ANC_REGISTRATION, null, fieldOverrides.getJSONString());
     }
 
     private class ClientActionHandler implements View.OnClickListener {

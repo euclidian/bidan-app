@@ -47,10 +47,11 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     private String entityIdToSavePhoto;
     private Map<String, Visits> serviceToVisitsMap;
 
-    public KartuIbuANCClient(String entityId, String puskesmas, String name) {
+    public KartuIbuANCClient(String entityId,String puskesmas, String name, String age) {
         this.entityId = entityId;
         this.puskesmas = puskesmas;
         this.name = name;
+        this.age = age;
         this.serviceToVisitsMap = new HashMap<String, Visits>();
     }
 

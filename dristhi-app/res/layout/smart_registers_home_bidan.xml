@@ -29,7 +29,7 @@
                     android:layout_weight="1">
 
                 <ImageButton
-                        android:id="@+id/btn_child_register"
+                        android:id="@+id/btn_kartu_ibu_register"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/register_ec"
@@ -48,10 +48,42 @@
                         style="@style/CustomFontTextViewStyle.Home.RegisterLabel"/>
 
                 <org.ei.drishti.view.customControls.CustomFontTextView
-                        android:id="@+id/txt_child_register_client_count"
+                        android:id="@+id/txt_kartu_ibu_register_client_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         style="@style/CustomFontTextViewStyle.Badge2"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/btn_kartu_ibu_anc_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/register_anc"
+                    style="@style/ImageButton.Home.Register"/>
+
+                <org.ei.drishti.view.customControls.CustomFontTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ANC"
+                    style="@style/CustomFontTextViewStyle.Home.RegisterName"/>
+
+                <org.ei.drishti.view.customControls.CustomFontTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="REGISTER"
+                    style="@style/CustomFontTextViewStyle.Home.RegisterLabel"/>
+
+                <org.ei.drishti.view.customControls.CustomFontTextView
+                    android:id="@+id/txt_kartu_ibu_anc_register_client_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/CustomFontTextViewStyle.Badge2"/>
 
             </FrameLayout>
 

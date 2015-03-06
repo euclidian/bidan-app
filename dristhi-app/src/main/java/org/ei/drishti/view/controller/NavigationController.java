@@ -3,6 +3,7 @@ package org.ei.drishti.view.controller;
 import android.app.Activity;
 import android.content.Intent;
 
+import org.ei.drishti.bidan.view.activity.NativeKIANCSmartRegisterActivity;
 import org.ei.drishti.bidan.view.activity.NativeKISmartRegisterActivity;
 import org.ei.drishti.view.activity.*;
 
@@ -47,6 +48,10 @@ public class NavigationController {
 
     public void startKartuIbuRegistry() {
         activity.startActivity(new Intent(activity, NativeKISmartRegisterActivity.class));
+    }
+
+    public void startKartuIbuANCRegistry() {
+        activity.startActivity(new Intent(activity, NativeKIANCSmartRegisterActivity.class));
     }
 
     public String get() {
