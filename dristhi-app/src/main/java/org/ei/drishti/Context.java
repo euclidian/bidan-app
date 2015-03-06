@@ -3,11 +3,13 @@ package org.ei.drishti;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 
+import org.ei.drishti.bidan.repository.AllIbu;
 import org.ei.drishti.bidan.repository.AllKartuIbus;
 import org.ei.drishti.bidan.repository.IbuRepository;
 import org.ei.drishti.bidan.service.BidanService;
 import org.ei.drishti.bidan.service.IbuService;
 import org.ei.drishti.bidan.view.contract.BidanHomeContext;
+import org.ei.drishti.bidan.view.contract.KartuIbuANCClients;
 import org.ei.drishti.bidan.view.contract.KartuIbuClients;
 import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuCloseHandler;
 import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuRegistrationHandler;
@@ -53,6 +55,7 @@ public class Context {
     private AllReports allReports;
     private AllServicesProvided allServicesProvided;
     private AllKartuIbus allKartuIbus;
+    private AllIbu allIbu;
 
     private DrishtiService drishtiService;
     private ActionService actionService;
@@ -84,6 +87,7 @@ public class Context {
     private Cache<Typeface> typefaceCache;
     private Cache<KartuIbuClients> kartuIbuClientsCache;
     private Cache<BidanHomeContext> bidanHomeContextCache;
+    private Cache<KartuIbuANCClients> kartuIbuANCClientsCache;
 
     private HTTPAgent httpAgent;
     private ZiggyFileLoader ziggyFileLoader;
@@ -781,6 +785,20 @@ public class Context {
             ibuService = new IbuService(allKartuIbus(), allTimelineEvents(), serviceProvidedService());
         }
         return ibuService;
+    }
+
+    public AllIbu allIbu() {
+        if(allIbu == null) {
+            allIbu = new AllIbu(ibuRepository(), alertRepository(), timelineEventRepository());
+        }
+        return allIbu;
+    }
+
+    public Cache<KartuIbuANCClients> kartuIbuANCClientsCache() {
+        if(kartuIbuANCClientsCache == null){
+            kartuIbuANCClientsCache = new Cache<KartuIbuANCClients>();
+        }
+        return kartuIbuANCClientsCache;
     }
 
     public Cache<BidanHomeContext> bidanHomeContextCache() {

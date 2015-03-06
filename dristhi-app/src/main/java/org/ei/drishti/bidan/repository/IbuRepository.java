@@ -9,12 +9,20 @@ import com.google.gson.reflect.TypeToken;
 import net.sqlcipher.DatabaseUtils;
 import net.sqlcipher.database.SQLiteDatabase;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.ei.drishti.bidan.domain.Ibu;
+import org.ei.drishti.bidan.domain.KartuIbu;
 import org.ei.drishti.repository.DrishtiRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import static java.lang.Boolean.TRUE;
+import static org.apache.commons.lang3.StringUtils.join;
+import static org.ei.drishti.bidan.repository.KartuIbuRepository.*;
+
+import static org.apache.commons.lang3.StringUtils.repeat;
 
 /**
  * Created by Dimas Ciputra on 3/3/15.
@@ -59,6 +67,77 @@ public class IbuRepository extends DrishtiRepository {
         Cursor cursor = database.query(IBU_TABLE_NAME, IBU_TABLE_COLUMNS, ID_COLUMN + " = ?", new String[]{id},
                 null, null, null, null);
         return readAll(cursor).get(0);
+    }
+
+    public List<Ibu> findByCaseIds(String... caseIds) {
+        SQLiteDatabase database = masterRepository.getReadableDatabase();
+        Cursor cursor = database.rawQuery(String.format("SELECT * FROM %s WHERE %s IN (%s)", IBU_TABLE_NAME, ID_COLUMN, insertPlaceholdersForInClause(caseIds.length)), caseIds);
+        return readAll(cursor);
+    }
+
+    public List<Pair<Ibu, KartuIbu>> allIbuOfATypeWithKartuIbu(String type) {
+        SQLiteDatabase database = masterRepository.getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT " + tableColumnsForQuery(IBU_TABLE_NAME, IBU_TABLE_COLUMNS) + ", " + tableColumnsForQuery(KI_TABLE_NAME, KI_TABLE_COLUMNS) +
+                " FROM " + IBU_TABLE_NAME + ", " + KI_TABLE_NAME +
+                " WHERE " + TYPE_COLUMN + "='" + type +
+                "' AND " + IBU_TABLE_NAME + "." + IS_CLOSED_COLUMN + "= '" + NOT_CLOSED + "' AND " +
+                IBU_TABLE_NAME + "." + KI_ID_COLUMN + " = " + KI_TABLE_NAME + "." + KartuIbuRepository.ID_COLUMN, null);
+        return readAllIbuWithKartuIbu(cursor);
+    }
+
+    private List<Pair<Ibu, KartuIbu>> readAllIbuWithKartuIbu(Cursor cursor) {
+        cursor.moveToFirst();
+        List<Pair<Ibu, KartuIbu>> ancsWithKartuIbu = new ArrayList<Pair<Ibu, KartuIbu>>();
+        while (!cursor.isAfterLast()) {
+            Ibu ibu = new Ibu(cursor.getString(0), cursor.getString(1), cursor.getString(2))
+                    .setIsClosed(Boolean.valueOf(cursor.getString(5)))
+                    .withType(cursor.getString(cursor.getColumnIndex(TYPE_COLUMN)))
+                    .withDetails(new Gson().<Map<String, String>>fromJson(cursor.getString(4),
+                            new TypeToken<Map<String, String>>() {}.getType()));
+
+            KartuIbu kartuIbu = new KartuIbu(cursor.getString(0),
+                    new Gson().<Map<String, String>>fromJson(cursor.getString(1), new TypeToken<Map<String, String>>() {
+                    }.getType()));
+
+            ancsWithKartuIbu.add(Pair.of(ibu, kartuIbu));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return ancsWithKartuIbu;
+    }
+
+    public List<Ibu> findAllCasesForKartuIbu(String kartuIbuid) {
+        SQLiteDatabase database = masterRepository.getReadableDatabase();
+        Cursor cursor = database.query(IBU_TABLE_NAME, IBU_TABLE_COLUMNS, KI_ID_COLUMN + " = ?", new String[]{kartuIbuid}, null, null, null, null);
+        return readAll(cursor);
+    }
+
+    public void update(Ibu ibu) {
+        SQLiteDatabase database = masterRepository.getWritableDatabase();
+        database.update(IBU_TABLE_NAME, createValuesFor(ibu, TYPE_ANC), ID_COLUMN + " = ?", new String[]{ibu.getId()});
+    }
+
+    public void close(String caseId) {
+        ContentValues values = new ContentValues();
+        values.put(IS_CLOSED_COLUMN, TRUE.toString());
+        masterRepository.getWritableDatabase().update(IBU_TABLE_NAME, values, ID_COLUMN + " = ?", new String[]{caseId});
+    }
+
+    private String insertPlaceholdersForInClause(int length) {
+        return repeat("?", ",", length);
+    }
+
+    private String tableColumnsForQuery(String tableName, String[] tableColumns) {
+        return join(prepend(tableColumns, tableName + "."), ", ");
+    }
+
+    private String[] prepend(String[] input, String textToPrepend) {
+        int length = input.length;
+        String[] output = new String[length];
+        for (int index = 0; index < length; index++) {
+            output[index] = textToPrepend + input[index];
+        }
+        return output;
     }
 
     public long ancCount() {
