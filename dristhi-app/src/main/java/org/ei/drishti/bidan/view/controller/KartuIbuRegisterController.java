@@ -37,11 +37,13 @@ public class KartuIbuRegisterController {
 
                 for (KartuIbu kartuIbu : kartuIbus) {
                     KartuIbuClient kartuIbuClient = new KartuIbuClient(kartuIbu.getCaseId(),
-                            kartuIbu.getDetails().get("puskesmas"), kartuIbu.getDetails().get("Province"),
-                            kartuIbu.getDetails().get("Kabupaten"), kartuIbu.getDetails().get("phc"),
-                            kartuIbu.getDetails().get("householdAddress"), kartuIbu.getDetails().get("ecNumber"),
-                            kartuIbu.getDetails().get("wifeName"), kartuIbu.getDetails().get("wifeAge"),
-                            kartuIbu.getDetails().get("Golongan_darah"), kartuIbu.getDetails().get("Riwayat_komplikasi"));
+                            kartuIbu.getDetails().get("puskesmas"), kartuIbu.getDetails().get("Propinsi"),
+                            kartuIbu.getDetails().get("Kabupaten"), kartuIbu.getDetails().get("Posyandu"),
+                            kartuIbu.getDetails().get("Alamatdomisili"), kartuIbu.getDetails().get("NoIbu"),
+                            kartuIbu.getDetails().get("Namalengkap"), kartuIbu.getDetails().get("Umur"),
+                            kartuIbu.getDetails().get("GolonganDarah"), kartuIbu.getDetails().get("RiwayatKomplikasiKebidanan"),
+                            kartuIbu.getDetails().get("Namasuami"), kartuIbu.getDetails().get("TanggalPeriksa"),
+                            kartuIbu.getDetails().get("EDD"), kartuIbu.getDetails().get("Desa"));
 
                     kartuIbuClients.add(kartuIbuClient);
                 }

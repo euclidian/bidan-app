@@ -22,26 +22,34 @@ public class KartuIbuClient implements SmartRegisterClient {
     private String puskesmas;
     private String province;
     private String kabupaten;
-    private String phc;
+    private String posyandu;
     private String householdAddress;
-    private String ecNumber;
+    private String noIbu;
     private String wifeName;
     private String wifeAge;
     private String golonganDarah;
     private String riwayatKomplikasi;
+    private String husbandName;
+    private String tglPeriksa;
+    private String edd;
+    private String village;
 
-    public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String phc, String householdAddress, String ecNumber, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi) {
+    public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi, String husbandName, String tglPeriksa, String edd, String village) {
         this.entityId = entityId;
         this.puskesmas = puskesmas;
         this.province = province;
         this.kabupaten = kabupaten;
-        this.phc = phc;
+        this.posyandu = posyandu;
         this.householdAddress = householdAddress;
-        this.ecNumber = ecNumber;
+        this.noIbu = noIbu;
         this.wifeName = wifeName;
         this.wifeAge = wifeAge;
         this.golonganDarah = golonganDarah;
         this.riwayatKomplikasi = riwayatKomplikasi;
+        this.husbandName = husbandName;
+        this.tglPeriksa = tglPeriksa;
+        this.edd = edd;
+        this.village = village;
     }
 
     // Getter
@@ -61,16 +69,16 @@ public class KartuIbuClient implements SmartRegisterClient {
         return kabupaten;
     }
 
-    public String getPhc() {
-        return phc;
+    public String getPosyandu() {
+        return posyandu;
     }
 
     public String getHouseholdAddress() {
         return householdAddress;
     }
 
-    public String getEcNumber() {
-        return ecNumber;
+    public String getNoIbu() {
+        return noIbu;
     }
 
     public String getWifeName() {
@@ -87,6 +95,14 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     public String getRiwayat_komplikasi() {
         return riwayatKomplikasi;
+    }
+
+    public String getTglPeriksa() { return tglPeriksa; }
+
+    public String getEdd() { return edd; }
+
+    public String getVillage() {
+        return village;
     }
 
     // Setter
@@ -106,16 +122,16 @@ public class KartuIbuClient implements SmartRegisterClient {
         this.kabupaten = kabupaten;
     }
 
-    public void setPhc(String phc) {
-        this.phc = phc;
+    public void setPosyandu(String posyandu) {
+        this.posyandu = posyandu;
     }
 
     public void setHouseholdAddress(String householdAddress) {
         this.householdAddress = householdAddress;
     }
 
-    public void setEcNumber(String ecNumber) {
-        this.ecNumber = ecNumber;
+    public void setNoIbu(String noIbu) {
+        this.noIbu = noIbu;
     }
 
     public void setWifeName(String wifeName) {
@@ -132,6 +148,16 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     public void setRiwayatKomplikasi(String riwayatKomplikasi) {
         this.riwayatKomplikasi = riwayatKomplikasi;
+    }
+
+    public void setTglPeriksa(String tglPeriksa) {
+        this.tglPeriksa = tglPeriksa;
+    }
+
+    public void setEdd(String edd) { this.edd = edd; }
+
+    public void setVillage(String village) {
+        this.village = village;
     }
 
     @Override
@@ -151,7 +177,7 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     @Override
     public String village() {
-        return null;
+        return getVillage();
     }
 
     @Override
@@ -161,7 +187,7 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     @Override
     public String husbandName() {
-        return null;
+        return Strings.isNullOrEmpty(this.husbandName) ? "" : humanize(this.husbandName);
     }
 
     @Override

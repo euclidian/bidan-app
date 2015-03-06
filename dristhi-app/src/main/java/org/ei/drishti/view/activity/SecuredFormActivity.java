@@ -27,7 +27,7 @@ public abstract class SecuredFormActivity extends SecuredWebActivity {
 
     public SecuredFormActivity() {
         super();
-        shouldDismissProgressBarOnProgressComplete = false;
+        shouldDismissProgressBarOnProgressComplete = true;
     }
 
     @Override
@@ -51,8 +51,6 @@ public abstract class SecuredFormActivity extends SecuredWebActivity {
     }
 
     private void webViewInitialization() {
-        // TODO : remove this
-        closeDialog();
         WebSettings webViewSettings = webView.getSettings();
         webViewSettings.setJavaScriptEnabled(true);
         webViewSettings.setDatabaseEnabled(true);
@@ -74,6 +72,9 @@ public abstract class SecuredFormActivity extends SecuredWebActivity {
                 ENTITY_ID_PARAM, entityId,
                 INSTANCE_ID_PARAM, randomUUID(),
                 FIELD_OVERRIDES_PARAM, encodedFieldOverrides));
+
+        // TODO : remove this
+         //closeDialog();
     }
 
     @Override

@@ -31,7 +31,7 @@ public class NativeKIANCRegisterViewHolder {
         this.imgProfileView = (ImageView) layout.findViewById(R.id.img_profile);
         this.txtNameView = (TextView) layout.findViewById(R.id.wife_name);
         this.txtAgeView = (TextView) layout.findViewById(R.id.wife_age);
-        this.txtVillageNameView = (TextView) layout.findViewById(R.id.village_name);
+        this.txtVillageNameView = (TextView) layout.findViewById(R.id.txt_village_name);
         this.txtOutOfArea = (TextView) layout.findViewById(R.id.is_out_of_area);
     }
 

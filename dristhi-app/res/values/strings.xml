@@ -48,7 +48,13 @@
     <string name="header_status">STATUS</string>
     <string name="header_edit"></string>
 
-    <string name="puskesmas">Puskesmas</string>
+    <string name="header_puskesmas">Puskesmas</string>
+    <string name="header_nama">Nama</string>
+    <string name="header_tgl_periksa">Tgl Periksa</string>
+    <string name="header_edd">EDD</string>
+    <string name="header_no_ibu">No Ibu</string>
+    <string name="header_status_b">Status</string>
+    
     <string name="kartu_ibu_selection">Kartu Ibu</string>
     <string name="str_ki_search_hint">Search KI Register</string>
 

@@ -38,19 +38,19 @@ public class AllKartuIbuServiceMode extends ServiceModeOption {
 
             @Override
             public int weightSum() {
-                return 1000;
+                return 100;
             }
 
             @Override
             public int[] weights() {
-                return new int[]{239, 113, 63, 107, 158, 221, 87};
+                return new int[]{24, 8, 12, 12, 13, 20, 9};
             }
 
             @Override
             public int[] headerTextResourceIds() {
                 return new int[]{
-                        R.string.header_name, R.string.puskesmas, R.string.header_edit,
-                        R.string.header_edit, R.string.header_edit, R.string.header_edit,
+                        R.string.header_nama, R.string.header_no_ibu, R.string.header_tgl_periksa,
+                        R.string.header_edd, R.string.header_puskesmas, R.string.header_status_b,
                         R.string.header_edit};
             }
         };
