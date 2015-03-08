@@ -45,8 +45,12 @@ public class KartuIbuANCRegisterController {
                     KartuIbu ki = ancsWithKi.getRight();
 
                     KartuIbuANCClient kartuIbuClient = new KartuIbuANCClient(anc.getId(),
-                            anc.getDetails().get("Jamkesmas"), anc.getDetails().get("AnamnesisIbu"),
-                            anc.getDetails().get("UsiaKlinis"));
+                            ki.getDetails().get("Desa"), ki.getDetails().get("puskesmas"),
+                            ki.getDetails().get("Namalengkap"), ki.getDetails().get("Umur")
+                    )
+                            .withHusband(ki.getDetails().get("Namasuami"))
+                            .withKINumber(ki.getDetails().get("NoIbu"))
+                            .withEDD(ki.getDetails().get("EDD"));
 
                     ancClients.add(kartuIbuClient);
                 }

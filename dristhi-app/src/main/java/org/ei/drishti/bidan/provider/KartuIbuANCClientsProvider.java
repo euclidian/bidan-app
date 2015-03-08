@@ -11,6 +11,7 @@ import org.ei.drishti.bidan.view.contract.KartuIbuANCClient;
 import org.ei.drishti.bidan.view.controller.KartuIbuANCRegisterController;
 import org.ei.drishti.bidan.view.viewHolder.NativeKIANCRegisterViewHolder;
 import org.ei.drishti.provider.SmartRegisterClientsProvider;
+import org.ei.drishti.view.activity.SecuredActivity;
 import org.ei.drishti.view.contract.SmartRegisterClient;
 import org.ei.drishti.view.contract.SmartRegisterClients;
 import org.ei.drishti.view.dialog.FilterOption;
@@ -28,7 +29,7 @@ import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider {
 
     private final LayoutInflater inflater;
-    private final Context context;
+    private final SecuredActivity activity;
     private final View.OnClickListener onClickListener;
     private final ProfilePhotoLoader photoLoader;
 
@@ -36,17 +37,17 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
 
     protected KartuIbuANCRegisterController controller;
 
-    public KartuIbuANCClientsProvider(Context context, View.OnClickListener onClickListener, KartuIbuANCRegisterController controller) {
-        this.context = context;
+    public KartuIbuANCClientsProvider(SecuredActivity activity, View.OnClickListener onClickListener, KartuIbuANCRegisterController controller) {
+        this.activity = activity;
         this.onClickListener = onClickListener;
         this.controller = controller;
-        this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        photoLoader = new ECProfilePhotoLoader(context.getResources(),
-                context.getResources().getDrawable(R.drawable.woman_placeholder));
+        photoLoader = new ECProfilePhotoLoader(activity.getResources(),
+                activity.getResources().getDrawable(R.drawable.woman_placeholder));
 
         clientViewLayoutParams = new AbsListView.LayoutParams(MATCH_PARENT,
-                (int) context.getResources().getDimension(R.dimen.list_item_height));
+                (int) activity.getResources().getDimension(R.dimen.list_item_height));
 
     }
 
@@ -93,7 +94,7 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
 
     @Override
     public OnClickFormLauncher newFormLauncher(String formName, String entityId, String metaData) {
-        return null;
+        return new OnClickFormLauncher(activity, formName, entityId, metaData);
     }
 
     public LayoutInflater inflater() {
