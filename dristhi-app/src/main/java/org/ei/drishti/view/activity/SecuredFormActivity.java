@@ -73,8 +73,6 @@ public abstract class SecuredFormActivity extends SecuredWebActivity {
                 INSTANCE_ID_PARAM, randomUUID(),
                 FIELD_OVERRIDES_PARAM, encodedFieldOverrides));
 
-        // TODO : remove this
-         //closeDialog();
     }
 
     @Override
