@@ -2,7 +2,7 @@
     {
         "parent":"kartu_ibu",
         "child": "ibu",
-        "field":"",
+        "field":"istri",
         "kind":"one_to_one",
         "from":"kartu_ibu.id",
         "to":"ibu.kartuIbuId"

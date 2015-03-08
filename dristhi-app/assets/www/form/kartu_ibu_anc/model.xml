@@ -1,6 +1,6 @@
 <model>
     <instance>
-        <Kartu_ibu_ANC id="kartu_ibu_ANC" version="201503020913">
+        <Kartu_ibu_ANC id="Kartu_ibu_ANC" version="201503020913">
           <formhub>
             <uuid/>
           </formhub>
