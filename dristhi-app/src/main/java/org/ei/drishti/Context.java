@@ -8,6 +8,7 @@ import org.ei.drishti.bidan.repository.AllKartuIbus;
 import org.ei.drishti.bidan.repository.IbuRepository;
 import org.ei.drishti.bidan.service.BidanService;
 import org.ei.drishti.bidan.service.IbuService;
+import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuANCRegistrationHandler;
 import org.ei.drishti.bidan.view.contract.BidanHomeContext;
 import org.ei.drishti.bidan.view.contract.KartuIbuANCClients;
 import org.ei.drishti.bidan.view.contract.KartuIbuClients;
@@ -121,6 +122,7 @@ public class Context {
     private SaveANMLocationTask saveANMLocationTask;
     private KartuIbuRegistrationHandler kartuIbuRegistrationHandler;
     private KartuIbuCloseHandler kartuIbuCloseHandler;
+    private KartuIbuANCRegistrationHandler kartuIbuANCRegistrationHandler;
 
     private ANMController anmController;
     private ANMLocationController anmLocationController;
@@ -189,7 +191,8 @@ public class Context {
                     ttHandler(), ifaHandler(), hbTestHandler(), deliveryOutcomeHandler(), pncRegistrationOAHandler(),
                     pncCloseHandler(), pncVisitHandler(), childImmunizationsHandler(), childRegistrationECHandler(),
                     childRegistrationOAHandler(), childCloseHandler(), childIllnessHandler(), vitaminAHandler(),
-                    deliveryPlanHandler(), ecEditHandler(), ancInvestigationsHandler(), kartuIbuRegistrationHandler());
+                    deliveryPlanHandler(), ecEditHandler(), ancInvestigationsHandler(),
+                    kartuIbuRegistrationHandler(), kartuIbuANCRegistrationHandler());
         }
         return formSubmissionRouter;
     }
@@ -822,4 +825,10 @@ public class Context {
         return bidanService;
     }
 
+    public KartuIbuANCRegistrationHandler kartuIbuANCRegistrationHandler() {
+        if(kartuIbuANCRegistrationHandler == null) {
+            kartuIbuANCRegistrationHandler = new KartuIbuANCRegistrationHandler(ibuService());
+        }
+        return kartuIbuANCRegistrationHandler;
+    }
 }
