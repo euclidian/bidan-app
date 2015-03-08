@@ -10,21 +10,25 @@ import org.ei.drishti.bidan.view.dialog.WifeAgeSort;
 import org.ei.drishti.bidan.provider.KIClientsProvider;
 import org.ei.drishti.domain.form.FieldOverrides;
 import org.ei.drishti.provider.SmartRegisterClientsProvider;
-import org.ei.drishti.view.activity.SecuredNativeSmartRegisterActivity;
+import org.ei.drishti.view.contract.SmartRegisterClient;
 import org.ei.drishti.view.dialog.AllClientsFilter;
 import org.ei.drishti.view.dialog.DialogOption;
 import org.ei.drishti.view.dialog.DialogOptionMapper;
+import org.ei.drishti.view.dialog.DialogOptionModel;
+import org.ei.drishti.view.dialog.EditOption;
 import org.ei.drishti.view.dialog.FilterOption;
 import org.ei.drishti.view.dialog.NameSort;
+import org.ei.drishti.view.dialog.OpenFormOption;
 import org.ei.drishti.view.dialog.ServiceModeOption;
 import org.ei.drishti.view.dialog.SortOption;
 
+import static org.ei.drishti.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
 import static org.ei.drishti.AllConstants.FormNames.KARTU_IBU_REGISTRATION;
 
 /**
  * Created by Dimas Ciputra on 2/18/15.
  */
-public class NativeKISmartRegisterActivity extends SecuredNativeSmartRegisterActivity {
+public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegisterActivity {
 
     private SmartRegisterClientsProvider clientProvider = null;
     private KartuIbuRegisterController controller;
@@ -35,6 +39,12 @@ public class NativeKISmartRegisterActivity extends SecuredNativeSmartRegisterAct
     @Override
     protected SmartRegisterPaginatedAdapter adapter() {
         return new SmartRegisterPaginatedAdapter(clientsProvider());
+    }
+
+    private DialogOption[] getEditOptions() {
+        return new DialogOption[]{
+                new OpenFormOption(getString(R.string.str_register_anc_form), KARTU_IBU_ANC_REGISTRATION, formController)
+        };
     }
 
     @Override
@@ -120,11 +130,21 @@ public class NativeKISmartRegisterActivity extends SecuredNativeSmartRegisterAct
                     // showProfileView((ECClient) view.getTag());
                     break;
                 case R.id.btn_edit:
-                    // TODO : show edit dialog for add ANC and PNC
-                    // showFragmentDialog(new EditDialogOptionModel(), view.getTag());
+                    showFragmentDialog(new EditDialogOptionModel(), view.getTag());
                     break;
             }
         }
+    }
 
+    private class EditDialogOptionModel implements DialogOptionModel {
+        @Override
+        public DialogOption[] getDialogOptions() {
+            return getEditOptions();
+        }
+
+        @Override
+        public void onDialogOptionSelection(DialogOption option, Object tag) {
+            onEditSelection((EditOption) option, (SmartRegisterClient) tag);
+        }
     }
 }
