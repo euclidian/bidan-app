@@ -30,7 +30,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
             CATEGORY_HB};
 
     private String entityId;
-    private String ki_id;
+    private String kiNumber;
     private String puskesmas;
     private String name;
     private String ancNumber;
@@ -41,17 +41,20 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     private boolean isHighRisk;
     private String riskFactors;
     private String locationStatus;
+    private String edd;
+    private String village;
 
     private List<AlertDTO> alerts;
     private List<ServiceProvidedDTO> services_provided;
     private String entityIdToSavePhoto;
     private Map<String, Visits> serviceToVisitsMap;
 
-    public KartuIbuANCClient(String entityId,String puskesmas, String name, String age) {
+    public KartuIbuANCClient(String entityId, String village, String puskesmas, String name, String age) {
         this.entityId = entityId;
         this.puskesmas = puskesmas;
         this.name = name;
         this.age = age;
+        this.village = village;
         this.serviceToVisitsMap = new HashMap<String, Visits>();
     }
 
@@ -62,7 +65,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public LocalDateTime edd() {
-        return null;
+        return parse(edd);
     }
 
     @Override
@@ -147,12 +150,12 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public String village() {
-        return puskesmas;
+        return village;
     }
 
     @Override
     public String wifeName() {
-        return null;
+        return name;
     }
 
     @Override
@@ -219,4 +222,24 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     public int compareName(SmartRegisterClient client) {
         return 0;
     }
+
+    public String getPuskesmas() {
+        return puskesmas;
+    }
+
+    public KartuIbuANCClient withHusband(String husbandName) {
+        this.husbandName = husbandName;
+        return this;
+    }
+
+    public KartuIbuANCClient withKINumber(String kiNumber) {
+        this.kiNumber = kiNumber;
+        return this;
+    }
+
+    public KartuIbuANCClient withEDD(String edd) {
+        this.edd = edd;
+        return this;
+    }
+
 }

@@ -162,17 +162,17 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     @Override
     public String entityId() {
-        return null;
+        return entityId;
     }
 
     @Override
     public String name() {
-        return null;
+        return getWifeName();
     }
 
     @Override
     public String displayName() {
-        return null;
+        return getWifeName();
     }
 
     @Override
