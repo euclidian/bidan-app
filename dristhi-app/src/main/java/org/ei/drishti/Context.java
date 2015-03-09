@@ -820,7 +820,7 @@ public class Context {
 
     public BidanService bidanService() {
         if(bidanService == null) {
-            bidanService = new BidanService(allSharedPreferences(), allKartuIbus());
+            bidanService = new BidanService(allSharedPreferences(), allKartuIbus(), allIbu());
         }
         return bidanService;
     }
