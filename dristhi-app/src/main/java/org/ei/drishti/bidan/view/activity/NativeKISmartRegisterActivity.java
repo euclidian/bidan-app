@@ -74,6 +74,11 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
     }
 
     @Override
+    public void setupViews() {
+        super.setupViews();
+    }
+
+    @Override
     protected NavBarOptionsProvider getNavBarOptionsProvider() {
         return new NavBarOptionsProvider() {
 

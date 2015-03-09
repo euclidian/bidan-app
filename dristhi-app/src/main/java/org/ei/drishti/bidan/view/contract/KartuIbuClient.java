@@ -12,6 +12,7 @@ import org.joda.time.Days;
 import org.joda.time.LocalDate;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
@@ -248,7 +249,9 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     @Override
     public boolean satisfiesFilter(String filterCriterion) {
-        return false;
+        return wifeName.toLowerCase(Locale.getDefault()).startsWith(filterCriterion.toLowerCase())
+                || String.valueOf(noIbu).startsWith(filterCriterion)
+                || String.valueOf(puskesmas).startsWith(filterCriterion);
     }
 
     @Override
