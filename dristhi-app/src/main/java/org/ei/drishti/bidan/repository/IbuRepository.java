@@ -95,8 +95,8 @@ public class IbuRepository extends DrishtiRepository {
                     .withDetails(new Gson().<Map<String, String>>fromJson(cursor.getString(4),
                             new TypeToken<Map<String, String>>() {}.getType()));
 
-            KartuIbu kartuIbu = new KartuIbu(cursor.getString(0),
-                    new Gson().<Map<String, String>>fromJson(cursor.getString(1), new TypeToken<Map<String, String>>() {
+            KartuIbu kartuIbu = new KartuIbu(cursor.getString(6),
+                    new Gson().<Map<String, String>>fromJson(cursor.getString(7), new TypeToken<Map<String, String>>() {
                     }.getType()));
 
             ancsWithKartuIbu.add(Pair.of(ibu, kartuIbu));
