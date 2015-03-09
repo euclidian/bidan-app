@@ -168,7 +168,7 @@ public class IbuRepository extends DrishtiRepository {
             Map<String, String> details = new Gson().fromJson(cursor.getString(4), new TypeToken<Map<String, String>>() {
             }.getType());
 
-            ibus.add(new Ibu(cursor.getString(0), cursor.getString(1), cursor.getString(2))
+            ibus.add(new Ibu(cursor.getString(0), cursor.getString(1), cursor.getString(3))
                     .withDetails(details)
                     .setIsClosed(Boolean.valueOf(cursor.getString(5)))
                     .withType(cursor.getString(cursor.getColumnIndex(TYPE_COLUMN))));

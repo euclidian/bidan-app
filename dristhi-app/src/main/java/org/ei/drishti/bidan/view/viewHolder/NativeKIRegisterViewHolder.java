@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import org.ei.drishti.R;
 import org.ei.drishti.bidan.view.customControls.BidanClientProfileView;
+import org.ei.drishti.bidan.view.customControls.BidanClientStatusView;
 
 /**
  * Created by Dimas Ciputra on 2/18/15.
@@ -16,11 +17,15 @@ public class NativeKIRegisterViewHolder {
     private TextView txtTglPeriksa;
     private TextView txtEdd;
     private TextView txtNoIbu;
+    private final BidanClientStatusView statusView;
     private final ImageButton editButton;
 
     public NativeKIRegisterViewHolder(ViewGroup itemView) {
         this.profileInfoLayout = (BidanClientProfileView) itemView.findViewById(R.id.profile_info_layout_ki);
         this.profileInfoLayout.initialize();
+
+        statusView = (BidanClientStatusView) itemView.findViewById(R.id.status_layout);
+        statusView.initialize();
 
         this.txtPuskesmas = (TextView) itemView.findViewById(R.id.puskesmas);
         this.txtTglPeriksa = (TextView) itemView.findViewById(R.id.tgl_periksa);
@@ -33,6 +38,7 @@ public class NativeKIRegisterViewHolder {
     public BidanClientProfileView profileInfoLayout() {
         return profileInfoLayout;
     }
+    public BidanClientStatusView statusView() { return statusView; }
     public TextView txtPuskesmas() {
         return txtPuskesmas;
     }

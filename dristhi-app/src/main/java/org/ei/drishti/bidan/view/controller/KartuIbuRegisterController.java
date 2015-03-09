@@ -1,31 +1,49 @@
 package org.ei.drishti.bidan.view.controller;
 
+import org.ei.drishti.AllConstants;
+import org.ei.drishti.bidan.domain.Ibu;
 import org.ei.drishti.bidan.domain.KartuIbu;
+import org.ei.drishti.bidan.repository.AllIbu;
 import org.ei.drishti.bidan.view.contract.KartuIbuClient;
 import org.ei.drishti.bidan.view.contract.KartuIbuClients;
 import org.ei.drishti.bidan.repository.AllKartuIbus;
+import org.ei.drishti.domain.EligibleCouple;
+import org.ei.drishti.domain.Mother;
 import org.ei.drishti.util.Cache;
 import org.ei.drishti.util.CacheableData;
+import org.ei.drishti.util.EasyMap;
+import org.ei.drishti.view.contract.ECClient;
 import org.ei.drishti.view.contract.SmartRegisterClient;
+import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
 
 import java.util.Comparator;
 import java.util.List;
 import static java.util.Collections.sort;
+import static org.ei.drishti.AllConstants.ANCRegistrationFields.EDD;
+import static org.ei.drishti.AllConstants.ECRegistrationFields.FAMILY_PLANNING_METHOD_CHANGE_DATE;
+import static org.ei.drishti.AllConstants.ECRegistrationFields.REGISTRATION_DATE;
 
 /**
  * Created by Dimas Ciputra on 2/18/15.
  */
 public class KartuIbuRegisterController {
     private static final String KI_CLIENTS_LIST = "KIClientsList";
+    public static final String STATUS_DATE_FIELD = "date";
+    public static final String ANC_STATUS = "anc";
+    public static final String STATUS_TYPE_FIELD = "type";
+    public static final String STATUS_EDD_FIELD = "edd";
 
     private final AllKartuIbus allKartuIbus;
     private final Cache<String> cache;
     private final Cache<KartuIbuClients> kartuIbuClientsCache;
+    private final AllIbu allIbu;
 
-    public KartuIbuRegisterController(AllKartuIbus allKartuIbus, Cache<String> cache, Cache<KartuIbuClients> kartuIbuClientsCache) {
+    public KartuIbuRegisterController(AllKartuIbus allKartuIbus, Cache<String> cache, Cache<KartuIbuClients> kartuIbuClientsCache, AllIbu allIbu) {
         this.allKartuIbus = allKartuIbus;
         this.cache = cache;
         this.kartuIbuClientsCache = kartuIbuClientsCache;
+        this.allIbu = allIbu;
     }
 
     public KartuIbuClients getKartuIbuClients() {
@@ -45,7 +63,7 @@ public class KartuIbuRegisterController {
                             kartuIbu.getDetails().get("Namasuami"), kartuIbu.getDetails().get("TanggalPeriksa"),
                             kartuIbu.getDetails().get("EDD"), kartuIbu.getDetails().get("Desa"))
                             .withDateOfBirth(kartuIbu.getDetails().get("Tanggallahir"));
-
+                    updateStatusInformation(kartuIbu, kartuIbuClient);
                     kartuIbuClients.add(kartuIbuClient);
                 }
                 sortByName(kartuIbuClients);
@@ -61,5 +79,17 @@ public class KartuIbuRegisterController {
                 return o1.wifeName().compareToIgnoreCase(o2.wifeName());
             }
         });
+    }
+
+    //#TODO: Needs refactoring
+    private void updateStatusInformation(KartuIbu kartuIbu, KartuIbuClient kartuIbuClient) {
+        Ibu ibu = allIbu.findIbuByKartuIbuId(kartuIbu.getCaseId());
+
+        if (ibu != null && ibu.isANC()) {
+            kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, ANC_STATUS)
+                    .put(STATUS_DATE_FIELD, ibu.getReferenceDate())
+                    .put(STATUS_EDD_FIELD, kartuIbu.getDetails().get("EDD")).map());
+            return;
+        }
     }
 }

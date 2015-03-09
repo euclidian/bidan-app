@@ -11,6 +11,9 @@ import org.ei.drishti.view.contract.SmartRegisterClient;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.ei.drishti.util.StringUtil.humanize;
 
@@ -35,6 +38,7 @@ public class KartuIbuClient implements SmartRegisterClient {
     private String edd;
     private String village;
     private String dateOfBirth;
+    private Map<String, String> status = new HashMap<String, String>();
 
     public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi, String husbandName, String tglPeriksa, String edd, String village) {
         this.entityId = entityId;
@@ -252,8 +256,17 @@ public class KartuIbuClient implements SmartRegisterClient {
         return this.wifeName().compareToIgnoreCase(client.wifeName());
     }
 
+    public Map<String, String> status() {
+        return status;
+    }
+
     public KartuIbuClient withDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+        return this;
+    }
+
+    public KartuIbuClient withStatus(Map<String, String> status) {
+        this.status = status;
         return this;
     }
 }

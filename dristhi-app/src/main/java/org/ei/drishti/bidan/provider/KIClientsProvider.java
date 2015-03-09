@@ -74,6 +74,7 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
         setupClientNoIbuView(kartuIbuClient, viewHolder);
         setupClientTglPeriksaView(kartuIbuClient, viewHolder);
         setupClientEDDView(kartuIbuClient, viewHolder);
+        setupStatusView(kartuIbuClient, viewHolder);
 
         itemView.setLayoutParams(clientViewLayoutParams);
         return itemView;
@@ -108,6 +109,10 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
         viewHolder.editButton().setImageDrawable(iconPencilDrawable);
         viewHolder.editButton().setOnClickListener(onClickListener);
         viewHolder.editButton().setTag(client);
+    }
+
+    private void setupStatusView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {
+        viewHolder.statusView().bindData(client);
     }
 
     @Override
