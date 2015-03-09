@@ -46,12 +46,11 @@ public class BidanClientProfileView extends RelativeLayout {
         this.txtVillageNameView = (TextView) findViewById(R.id.txt_village_name);
     }
 
-    //TODO : change kartuIbuclient to smartRegisterClient
-    public void bindData(KartuIbuClient client, ProfilePhotoLoader photoLoader) {
+    public void bindData(SmartRegisterClient client, ProfilePhotoLoader photoLoader) {
         this.imgProfileView.setBackground(photoLoader.get(client));
-        this.txtNameView.setText(client.getWifeName() != null ? client.getWifeName() : "");
+        this.txtNameView.setText(client.wifeName() != null ? client.wifeName() : "");
         this.txtVillageNameView.setText(client.village() != null ? client.village() : "");
-        this.txtAgeView.setText(client.getWifeAge() != null ? "("+ client.getWifeAge() + ")" : "");
+        this.txtAgeView.setText(client.ageInString() != null ? client.ageInString() : "");
         this.txtHusbandName.setText(client.husbandName() != null ? client.husbandName() : "-");
     }
 

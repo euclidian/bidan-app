@@ -23,7 +23,7 @@ import static org.ei.drishti.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
 /**
  * Created by Dimas Ciputra on 3/5/15.
  */
-public class NativeKIANCSmartRegisterActivity extends SecuredNativeSmartRegisterActivity{
+public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartRegisterActivity{
 
     private SmartRegisterClientsProvider clientProvider = null;
     private KartuIbuANCRegisterController controller;

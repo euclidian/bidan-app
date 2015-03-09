@@ -160,7 +160,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public String husbandName() {
-        return null;
+        return husbandName;
     }
 
     @Override

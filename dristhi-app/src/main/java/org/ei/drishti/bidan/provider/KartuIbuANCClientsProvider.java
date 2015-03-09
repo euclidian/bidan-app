@@ -72,7 +72,7 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
     }
 
     private void setupClientProfileView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
-        viewHolder.bindDataProfile(client, photoLoader);
+        viewHolder.profileInfoLayout().bindData(client, photoLoader);
         viewHolder.profileInfoLayout().setOnClickListener(onClickListener);
         viewHolder.profileInfoLayout().setTag(client);
     }

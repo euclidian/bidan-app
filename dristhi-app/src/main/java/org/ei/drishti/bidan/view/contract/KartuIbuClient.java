@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.google.common.base.Strings;
 
+import org.apache.commons.lang3.StringUtils;
 import org.ei.drishti.util.DateUtil;
 import org.ei.drishti.util.IntegerUtil;
 import org.ei.drishti.view.contract.SmartRegisterClient;
@@ -33,6 +34,7 @@ public class KartuIbuClient implements SmartRegisterClient {
     private String tglPeriksa;
     private String edd;
     private String village;
+    private String dateOfBirth;
 
     public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi, String husbandName, String tglPeriksa, String edd, String village) {
         this.entityId = entityId;
@@ -192,17 +194,17 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     @Override
     public int age() {
-        return 0;
+        return Integer.parseInt(wifeAge);
     }
 
     @Override
     public int ageInDays() {
-        return Strings.isNullOrEmpty(this.wifeAge) ? 0 : Integer.parseInt(this.wifeAge);
+        return StringUtils.isBlank(dateOfBirth) ? 0 : Days.daysBetween(LocalDate.parse(dateOfBirth), DateUtil.today()).getDays();
     }
 
     @Override
     public String ageInString() {
-        return null;
+        return "(" + age() + ")";
     }
 
     @Override
@@ -248,5 +250,10 @@ public class KartuIbuClient implements SmartRegisterClient {
     @Override
     public int compareName(SmartRegisterClient client) {
         return this.wifeName().compareToIgnoreCase(client.wifeName());
+    }
+
+    public KartuIbuClient withDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+        return this;
     }
 }

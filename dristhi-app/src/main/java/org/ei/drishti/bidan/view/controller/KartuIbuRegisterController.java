@@ -43,7 +43,8 @@ public class KartuIbuRegisterController {
                             kartuIbu.getDetails().get("Namalengkap"), kartuIbu.getDetails().get("Umur"),
                             kartuIbu.getDetails().get("GolonganDarah"), kartuIbu.getDetails().get("RiwayatKomplikasiKebidanan"),
                             kartuIbu.getDetails().get("Namasuami"), kartuIbu.getDetails().get("TanggalPeriksa"),
-                            kartuIbu.getDetails().get("EDD"), kartuIbu.getDetails().get("Desa"));
+                            kartuIbu.getDetails().get("EDD"), kartuIbu.getDetails().get("Desa"))
+                            .withDateOfBirth(kartuIbu.getDetails().get("Tanggallahir"));
 
                     kartuIbuClients.add(kartuIbuClient);
                 }
