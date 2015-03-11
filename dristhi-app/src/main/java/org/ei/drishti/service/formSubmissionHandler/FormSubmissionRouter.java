@@ -1,6 +1,7 @@
 package org.ei.drishti.service.formSubmissionHandler;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuANCRegistrationHandler;
 import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuRegistrationHandler;
 import org.ei.drishti.domain.form.FormSubmission;
 import org.ei.drishti.repository.FormDataRepository;
@@ -42,7 +43,8 @@ public class FormSubmissionRouter {
                                 ChildCloseHandler childCloseHandler, ChildIllnessHandler childIllnessHandler,
                                 VitaminAHandler vitaminAHandler, DeliveryPlanHandler deliveryPlanHandler,
                                 ECEditHandler ecEditHandler, ANCInvestigationsHandler ancInvestigationsHandler,
-                                KartuIbuRegistrationHandler kartuIbuRegistrationHandler) {
+                                KartuIbuRegistrationHandler kartuIbuRegistrationHandler,
+                                KartuIbuANCRegistrationHandler kartuIbuANCRegistrationHandler) {
         this.formDataRepository = formDataRepository;
         handlerMap = new HashMap<String, FormSubmissionHandler>();
         handlerMap.put(EC_REGISTRATION, ecRegistrationHandler);
@@ -74,6 +76,7 @@ public class FormSubmissionRouter {
         handlerMap.put(EC_EDIT, ecEditHandler);
         handlerMap.put(ANC_INVESTIGATIONS, ancInvestigationsHandler);
         handlerMap.put(KARTU_IBU_REGISTRATION, kartuIbuRegistrationHandler);
+        handlerMap.put(KARTU_IBU_ANC_REGISTRATION, kartuIbuANCRegistrationHandler);
     }
 
     public void route(String instanceId) throws Exception {

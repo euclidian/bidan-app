@@ -1,5 +1,13 @@
 [
     {
+        "parent":"kartu_ibu",
+        "child": "ibu",
+        "field":"istri",
+        "kind":"one_to_one",
+        "from":"kartu_ibu.id",
+        "to":"ibu.kartuIbuId"
+    },
+    {
         "parent": "eligible_couple",
         "child": "mother",
         "field": "wife",

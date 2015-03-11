@@ -7,15 +7,15 @@ import android.widget.TextView;
 
 import org.ei.drishti.Context;
 import org.ei.drishti.R;
+import org.ei.drishti.bidan.view.contract.BidanHomeContext;
+import org.ei.drishti.bidan.view.controller.NativeAfterBidanDetailsFetchListener;
+import org.ei.drishti.bidan.view.controller.NativeUpdateBidanDetailsTask;
 import org.ei.drishti.event.Listener;
 import org.ei.drishti.service.PendingFormSubmissionService;
 import org.ei.drishti.sync.SyncAfterFetchListener;
 import org.ei.drishti.sync.SyncProgressIndicator;
 import org.ei.drishti.sync.UpdateActionsTask;
 import org.ei.drishti.view.activity.SecuredActivity;
-import org.ei.drishti.view.contract.HomeContext;
-import org.ei.drishti.view.controller.NativeAfterANMDetailsFetchListener;
-import org.ei.drishti.view.controller.NativeUpdateANMDetailsTask;
 
 import static java.lang.String.valueOf;
 import static org.ei.drishti.event.Event.ACTION_HANDLED;
@@ -67,6 +67,7 @@ public class BidanHomeActivity extends SecuredActivity {
     };
 
     private TextView kartuIbuRegisterClientCountView;
+    private TextView kartuIbuANCRegisterClientCountView;
 
     @Override
     protected void onCreation() {
@@ -76,12 +77,14 @@ public class BidanHomeActivity extends SecuredActivity {
     }
 
     private void setupViews() {
-        findViewById(R.id.btn_child_register).setOnClickListener(onRegisterStartListener);
+        findViewById(R.id.btn_kartu_ibu_register).setOnClickListener(onRegisterStartListener);
+        findViewById(R.id.btn_kartu_ibu_anc_register).setOnClickListener(onRegisterStartListener);
 
         findViewById(R.id.btn_reporting).setOnClickListener(onButtonsClickListener);
         findViewById(R.id.btn_videos).setOnClickListener(onButtonsClickListener);
 
-        kartuIbuRegisterClientCountView = (TextView) findViewById(R.id.txt_child_register_client_count);
+        kartuIbuRegisterClientCountView = (TextView) findViewById(R.id.txt_kartu_ibu_register_client_count);
+        kartuIbuANCRegisterClientCountView = (TextView) findViewById(R.id.txt_kartu_ibu_anc_register_client_count);
     }
 
     private void initialize() {
@@ -100,17 +103,18 @@ public class BidanHomeActivity extends SecuredActivity {
     }
 
     private void updateRegisterCounts() {
-        NativeUpdateANMDetailsTask task = new NativeUpdateANMDetailsTask(Context.getInstance().anmController());
-        task.fetch(new NativeAfterANMDetailsFetchListener() {
+        NativeUpdateBidanDetailsTask task = new NativeUpdateBidanDetailsTask(Context.getInstance().bidanController());
+        task.fetch(new NativeAfterBidanDetailsFetchListener() {
             @Override
-            public void afterFetch(HomeContext anmDetails) {
-                updateRegisterCounts(anmDetails);
+            public void afterFetch(BidanHomeContext bidanDetails) {
+                updateRegisterCounts(bidanDetails);
             }
         });
     }
 
-    private void updateRegisterCounts(HomeContext homeContext) {
-        kartuIbuRegisterClientCountView.setText(valueOf(homeContext.kartuIbuCount()));
+    private void updateRegisterCounts(BidanHomeContext homeContext) {
+        kartuIbuRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuCount()));
+        kartuIbuANCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuANCCount()));
     }
 
     @Override
@@ -179,8 +183,11 @@ public class BidanHomeActivity extends SecuredActivity {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.btn_child_register:
+                case R.id.btn_kartu_ibu_register:
                     navigationController.startKartuIbuRegistry();
+                    break;
+                case R.id.btn_kartu_ibu_anc_register:
+                    navigationController.startKartuIbuANCRegistry();
                     break;
             }
         }

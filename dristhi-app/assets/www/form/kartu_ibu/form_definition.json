@@ -9,11 +9,35 @@
                 "shouldLoadValue": true
             },
             {
-                "name": "District",
-                "bind": "/model/instance/kartu_ibu/B01010"
+                "name": "puskesmas",
+                "bind": "/model/instance/kartu_ibu/B01001"
             },
             {
-                "name": "Province",
+                "name": "NoIbu",
+                "bind": "/model/instance/kartu_ibu/B01002"
+            },
+            {
+                "name": "Namalengkap",
+                "bind": "/model/instance/kartu_ibu/B01003"
+            },
+            {
+                "name": "Namasuami",
+                "bind": "/model/instance/kartu_ibu/B01004"
+            },
+            {
+                "name": "Tanggallahir",
+                "bind": "/model/instance/kartu_ibu/B01005"
+            },
+            {
+                "name": "Umur",
+                "bind": "/model/instance/kartu_ibu/B01006"
+            },
+            {
+                "name": "Alamatdomisili",
+                "bind": "/model/instance/kartu_ibu/B01007"
+            },
+            {
+                "name": "Propinsi",
                 "bind": "/model/instance/kartu_ibu/B01008"
             },
             {
@@ -21,99 +45,83 @@
                 "bind": "/model/instance/kartu_ibu/B01009"
             },
             {
-                "name": "puskesmas",
-                "bind": "/model/instance/kartu_ibu/B01001"
+                "name": "Kecamatan",
+                "bind": "/model/instance/kartu_ibu/B01010"
             },
             {
-                "name": "SubCenter",
-                "bind": "/model/instance/kartu_ibu/B01016"
-            },
-            {
-                "name": "RT/RW",
-                "bind": "/model/instance/kartu_ibu/B01012"
-            },
-            {
-                "name": "village",
+                "name": "Desa",
                 "bind": "/model/instance/kartu_ibu/B01011"
             },
             {
-                "name": "householdAddress",
-                "bind": "/model/instance/kartu_ibu/B01007"
+                "name": "RTRW",
+                "bind": "/model/instance/kartu_ibu/B01012"
             },
             {
-                "name": "headOfHousehold",
-                "bind": "/model/instance/kartu_ibu/B01004"
+                "name": "Pendidikan",
+                "bind": "/model/instance/kartu_ibu/B01013"
             },
             {
-                "name": "ecNumber",
-                "bind": "/model/instance/kartu_ibu/B01002"
-            },
-            {
-                "name": "wifeName",
-                "bind": "/model/instance/kartu_ibu/B01003"
-            },
-            {
-                "name": "wifeAge",
-                "bind": "/model/instance/kartu_ibu/B01006"
-            },
-            {
-                "name": "womanDOB",
-                "bind": "/model/instance/kartu_ibu/B01005"
-            },
-            {
-                "name": "phoneNumber",
-                "bind": "/model/instance/kartu_ibu/B01021"
+                "name": "Agama",
+                "bind": "/model/instance/kartu_ibu/B01014"
             },
             {
                 "name": "Pekerjaan",
                 "bind": "/model/instance/kartu_ibu/B01015"
             },
             {
-                "name": "pendidikan",
-                "bind": "/model/instance/kartu_ibu/B01013"
+                "name": "Posyandu",
+                "bind": "/model/instance/kartu_ibu/B01016"
             },
             {
-                "name": "religion",
-		"bind": "/model/instance/kartu_ibu/B01014"
+                "name": "NamaKader",
+				"bind": "/model/instance/kartu_ibu/B01017"
             },
             {
-                "name": "Asuransi",
-                "bind": "/model/instance/kartu_ibu/B01019"
-            },
-            {
-                "name": "Nama_Kader",
-                "bind": "/model/instance/kartu_ibu/B01017"
-            },
-            {
-                "name": "alamat",
-                "bind": "/model/instance/kartu_ibu/B01007"
-            },
-	    {
-                "name": "Nama_dukun",
+                "name": "NamaDukun",
                 "bind": "/model/instance/kartu_ibu/B01018"
             },
-	    {
-                "name": "Asuransi_jiwa",
+            {
+                "name": "AsuransiJiwa",
                 "bind": "/model/instance/kartu_ibu/B01019"
             },
             {
-                "name": "Tanggal_periksa",
+                "name": "GolonganDarah",
+                "bind": "/model/instance/kartu_ibu/B01020"
+            },
+			{
+                "name": "NomorTelponHp",
+                "bind": "/model/instance/kartu_ibu/B01021"
+            },
+			{
+                "name": "Gravida",
+                "bind": "/model/instance/kartu_ibu/B01022"
+            },
+            {
+                "name": "Partus",
+                "bind": "/model/instance/kartu_ibu/B01023"
+            },
+            {
+                "name": "Abortus",
+                "bind": "/model/instance/kartu_ibu/B01024"
+            },
+            {
+                "name": "Hidup",
                 "bind": "/model/instance/kartu_ibu/B01025"
+            },
+            {
+                "name": "TanggalPeriksa",
+                "bind": "/model/instance/kartu_ibu/B01026"
+            },
+            {
+                "name": "TanggalHPHT",
+                "bind": "/model/instance/kartu_ibu/B01027"
             },
             {
                 "name": "EDD",
                 "bind": "/model/instance/kartu_ibu/B01028"
             },
             {
-                "name": "tanggal_hpht",
-                "bind": "/model/instance/kartu_ibu/B01027"
-            },
-            {
-                "name": "Golongan_darah",
-                "bind": "/model/instance/kartu_ibu/B01020"
-            },
-            {
-                "name": "Persalinan_sebelumnya",
+                "name": "PersalinanSebelumnya",
                 "bind": "/model/instance/kartu_ibu/B01029"
             },
             {
@@ -125,15 +133,15 @@
                 "bind": "/model/instance/kartu_ibu/B01031"
             },
             {
-                "name": "Buku_KIA",
+                "name": "BukuKIA",
                 "bind": "/model/instance/kartu_ibu/B01032"
             },
             {
-                "name": "Riwayat_komplikasi",
+                "name": "RiwayatKomplikasiKebidanan",
                 "bind": "/model/instance/kartu_ibu/B01033"
             },
             {
-                "name": "Penyakit_kronis",
+                "name": "PenyakitKronis",
                 "bind": "/model/instance/kartu_ibu/B01034"
             },
             {
@@ -141,15 +149,15 @@
                 "bind": "/model/instance/kartu_ibu/B01035"
             },
             {
-                "name": "Rencana_persalinan",
+                "name": "RencanaPenolongPersalinan",
                 "bind": "/model/instance/kartu_ibu/B01036"
             },
             {
-                "name": "Tempat_persalinan",
+                "name": "TempatRencanaPersalinan",
                 "bind": "/model/instance/kartu_ibu/B01037"
             },
             {
-                "name": "Rencana_pendamping",
+                "name": "RencanaPendampingPersalinan",
                 "bind": "/model/instance/kartu_ibu/B01038"
             },
             {
@@ -157,40 +165,16 @@
                 "bind": "/model/instance/kartu_ibu/B01039"
             },
             {
-                "name": "pendonor",
+                "name": "Pendonor",
                 "bind": "/model/instance/kartu_ibu/B01040"
             },
             {
-                "name": "Kondisi_rumah",
+                "name": "KondisiRumah",
                 "bind": "/model/instance/kartu_ibu/B01041"
             },
             {
-                "name": "persediaan_perlengkapan_persalinan",
-                "bind": "/model/instance/kartu_ibu/B01013"
-            },
-            {
-                "name": "educationalLevel",
-                "bind": "/model/instance/kartu_ibu/B01013"
-            },
-            {
-                "name": "numberOfPregnancies",
-                "bind": "/model/instance/kartu_ibu/B01022"
-            },
-            {
-                "name": "numberOfLiveBirths",
-                "bind": "/model/instance/kartu_ibu/B01023"
-            },
-            {
-                "name": "numberOfAbortions",
-                "bind": "/model/instance/kartu_ibu/B01024"
-            },
-            {
-                "name": "numberOfStillBirths",
-                "bind": "/model/instance/kartu_ibu/B01024"
-            },
-            {
-                "name": "numberOfLivingChildren",
-                "bind": "/model/instance/kartu_ibu/B01025"
+                "name": "PersediaanPerlengkapanPersalinan",
+                "bind": "/model/instance/kartu_ibu/B01042"
             },
             {
                 "name": "isOutOfArea",
@@ -207,13 +191,7 @@
             {
                 "name": "registrationDate",
                 "bind": "/model/instance/kartu_ibu/today"
-            },
-
-            {
-                "name": "lmpDate",
-                "bind": "/model/instance/kartu_ibu/B01027"
             }
-           
         ]
     }
 }

@@ -32,7 +32,7 @@ public class UserService {
     }
 
     public boolean isValidLocalLogin(String userName, String password) {
-        return allSharedPreferences.fetchRegisteredANM().equals(userName) && repository.canUseThisPassword(password);
+        return isUserRegistered(userName) && repository.canUseThisPassword(password);
     }
 
     public LoginResponse isValidRemoteLogin(String userName, String password) {
@@ -42,7 +42,7 @@ public class UserService {
 
     private void loginWith(String userName, String password) {
         setupContextForLogin(userName, password);
-        allSettings.registerANM(userName, password);
+        changeUserRegistration(userName, password);
     }
 
     public void localLogin(String userName, String password) {
@@ -55,12 +55,12 @@ public class UserService {
     }
 
     public boolean hasARegisteredUser() {
-        return !allSharedPreferences.fetchRegisteredANM().equals("");
+        return !isUserRegistered("");
     }
 
     public void logout() {
         logoutSession();
-        allSettings.registerANM("", "");
+        changeUserRegistration("", "");
         allSettings.savePreviousFetchIndex("0");
         repository.deleteRepository();
     }
@@ -92,5 +92,17 @@ public class UserService {
             allSharedPreferences.saveLanguagePreference(ENGLISH_LOCALE);
             return ENGLISH_LANGUAGE;
         }
+    }
+
+    private void changeUserRegistration(String userName, String password) {
+        if(this.configuration.getAppName().equals("BIDAN")) {
+            allSettings.registerBidan(userName, password);
+        } else {
+            allSettings.registerANM(userName, password);
+        }
+    }
+
+    private boolean isUserRegistered(String userName) {
+        return allSharedPreferences.fetchRegistered().equals(userName);
     }
 }

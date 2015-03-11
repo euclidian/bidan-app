@@ -1,55 +1,49 @@
 package org.ei.drishti.bidan.view.viewHolder;
 
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.ei.drishti.R;
-import org.ei.drishti.bidan.view.contract.KartuIbuClient;
-import org.ei.drishti.view.viewHolder.ProfilePhotoLoader;
+import org.ei.drishti.bidan.view.customControls.BidanClientProfileView;
+import org.ei.drishti.bidan.view.customControls.BidanClientStatusView;
 
 /**
  * Created by Dimas Ciputra on 2/18/15.
  */
 public class NativeKIRegisterViewHolder {
-    private final RelativeLayout profileInfoLayout;
+    private final BidanClientProfileView profileInfoLayout;
     private final TextView txtPuskesmas;
-    private ImageView imgProfileView;
-    private TextView txtNameView;
-    private TextView txtAgeView;
-    private TextView txtVillageNameView;
-    private TextView txtOutOfArea;
+    private TextView txtTglPeriksa;
+    private TextView txtEdd;
+    private TextView txtNoIbu;
+    private final BidanClientStatusView statusView;
+    private final ImageButton editButton;
 
     public NativeKIRegisterViewHolder(ViewGroup itemView) {
-        this.profileInfoLayout = (RelativeLayout) itemView.findViewById(R.id.profile_info_layout_ki);
+        this.profileInfoLayout = (BidanClientProfileView) itemView.findViewById(R.id.profile_info_layout_ki);
+        this.profileInfoLayout.initialize();
 
-        this.txtPuskesmas = (TextView) itemView.findViewById(R.id.txt_puskesmas);
+        statusView = (BidanClientStatusView) itemView.findViewById(R.id.status_layout);
+        statusView.initialize();
 
-        // Initialize profile info layout
-        initializeProfileInfoLayout(this.profileInfoLayout);
+        this.txtPuskesmas = (TextView) itemView.findViewById(R.id.puskesmas);
+        this.txtTglPeriksa = (TextView) itemView.findViewById(R.id.tgl_periksa);
+        this.txtEdd = (TextView) itemView.findViewById(R.id.edd);
+        this.txtNoIbu = (TextView) itemView.findViewById(R.id.no_ibu);
+
+        this.editButton = (ImageButton) itemView.findViewById(R.id.btn_edit);
     }
 
-    private void initializeProfileInfoLayout(RelativeLayout layout) {
-        this.imgProfileView = (ImageView) layout.findViewById(R.id.img_profile);
-        this.txtNameView = (TextView) layout.findViewById(R.id.wife_name);
-        this.txtAgeView = (TextView) layout.findViewById(R.id.wife_age);
-        this.txtVillageNameView = (TextView) layout.findViewById(R.id.village_name);
-        this.txtOutOfArea = (TextView) layout.findViewById(R.id.is_out_of_area);
-    }
-
-    public RelativeLayout profileInfoLayout() {
+    public BidanClientProfileView profileInfoLayout() {
         return profileInfoLayout;
     }
+    public BidanClientStatusView statusView() { return statusView; }
     public TextView txtPuskesmas() {
         return txtPuskesmas;
     }
-
-    public void bindDataProfile(KartuIbuClient client, ProfilePhotoLoader photoLoader) {
-        this.imgProfileView.setBackground(photoLoader.get(client));
-        this.txtNameView.setText(client.getWifeName() != null ? client.getWifeName() : "");
-        this.txtVillageNameView.setText(client.getKabupaten() != null ? client.getKabupaten() : "");
-        this.txtAgeView.setText(client.getWifeAge() != null ? "("+ client.getWifeAge() + ")" : "");
-        this.txtOutOfArea.setText("");
-    }
+    public TextView txtNoIbu() { return txtNoIbu; }
+    public TextView txtTglPeriksa() { return txtTglPeriksa; }
+    public TextView txtEdd() { return txtEdd; }
+    public ImageButton editButton() { return editButton; }
 }

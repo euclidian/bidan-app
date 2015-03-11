@@ -37,7 +37,7 @@ public class ActionService {
 
     public FetchStatus fetchNewActions() {
         String previousFetchIndex = allSettings.fetchPreviousFetchIndex();
-        Response<List<Action>> response = drishtiService.fetchNewActions(allSharedPreference.fetchRegisteredANM(), previousFetchIndex);
+        Response<List<Action>> response = drishtiService.fetchNewActions(allSharedPreference.fetchRegistered(), previousFetchIndex);
 
         if (response.isFailure()) {
             return fetchedFailed;

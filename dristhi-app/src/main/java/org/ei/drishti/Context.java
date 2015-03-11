@@ -3,12 +3,20 @@ package org.ei.drishti;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 
+import org.ei.drishti.bidan.repository.AllIbu;
 import org.ei.drishti.bidan.repository.AllKartuIbus;
+import org.ei.drishti.bidan.repository.IbuRepository;
+import org.ei.drishti.bidan.service.BidanService;
+import org.ei.drishti.bidan.service.IbuService;
+import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuANCRegistrationHandler;
+import org.ei.drishti.bidan.view.contract.BidanHomeContext;
+import org.ei.drishti.bidan.view.contract.KartuIbuANCClients;
 import org.ei.drishti.bidan.view.contract.KartuIbuClients;
 import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuCloseHandler;
 import org.ei.drishti.bidan.service.formSubmissionHandler.KartuIbuRegistrationHandler;
 import org.ei.drishti.bidan.repository.KartuIbuRepository;
 import org.ei.drishti.bidan.service.KartuIbuService;
+import org.ei.drishti.bidan.view.controller.BidanController;
 import org.ei.drishti.repository.*;
 import org.ei.drishti.service.*;
 import org.ei.drishti.service.formSubmissionHandler.*;
@@ -37,6 +45,7 @@ public class Context {
     private FormDataRepository formDataRepository;
     private ServiceProvidedRepository serviceProvidedRepository;
     private KartuIbuRepository kartuIbuRepository;
+    private IbuRepository ibuRepository;
 
     private AllSettings allSettings;
     private AllSharedPreferences allSharedPreferences;
@@ -47,6 +56,7 @@ public class Context {
     private AllReports allReports;
     private AllServicesProvided allServicesProvided;
     private AllKartuIbus allKartuIbus;
+    private AllIbu allIbu;
 
     private DrishtiService drishtiService;
     private ActionService actionService;
@@ -63,6 +73,8 @@ public class Context {
     private ServiceProvidedService serviceProvidedService;
     private PendingFormSubmissionService pendingFormSubmissionService;
     private KartuIbuService kartuIbuService;
+    private BidanService bidanService;
+    private IbuService ibuService;
 
     private Session session;
     private Cache<String> listCache;
@@ -75,6 +87,8 @@ public class Context {
     private Cache<Villages> villagesCache;
     private Cache<Typeface> typefaceCache;
     private Cache<KartuIbuClients> kartuIbuClientsCache;
+    private Cache<BidanHomeContext> bidanHomeContextCache;
+    private Cache<KartuIbuANCClients> kartuIbuANCClientsCache;
 
     private HTTPAgent httpAgent;
     private ZiggyFileLoader ziggyFileLoader;
@@ -108,9 +122,12 @@ public class Context {
     private SaveANMLocationTask saveANMLocationTask;
     private KartuIbuRegistrationHandler kartuIbuRegistrationHandler;
     private KartuIbuCloseHandler kartuIbuCloseHandler;
+    private KartuIbuANCRegistrationHandler kartuIbuANCRegistrationHandler;
 
     private ANMController anmController;
     private ANMLocationController anmLocationController;
+
+    private BidanController bidanController;
 
     private DristhiConfiguration configuration;
 
@@ -174,7 +191,8 @@ public class Context {
                     ttHandler(), ifaHandler(), hbTestHandler(), deliveryOutcomeHandler(), pncRegistrationOAHandler(),
                     pncCloseHandler(), pncVisitHandler(), childImmunizationsHandler(), childRegistrationECHandler(),
                     childRegistrationOAHandler(), childCloseHandler(), childIllnessHandler(), vitaminAHandler(),
-                    deliveryPlanHandler(), ecEditHandler(), ancInvestigationsHandler(), kartuIbuRegistrationHandler());
+                    deliveryPlanHandler(), ecEditHandler(), ancInvestigationsHandler(),
+                    kartuIbuRegistrationHandler(), kartuIbuANCRegistrationHandler());
         }
         return formSubmissionRouter;
     }
@@ -385,11 +403,25 @@ public class Context {
 
     private Repository initRepository() {
         if (repository == null) {
-            repository = new Repository(this.applicationContext, session(), settingsRepository(), alertRepository(),
-                    eligibleCoupleRepository(), childRepository(), timelineEventRepository(), motherRepository(), reportRepository(),
-                    formDataRepository(), serviceProvidedRepository(), kartuIbuRepository());
+            if(this.configuration().getAppName().equals("BIDAN")) {
+                repository = initBidanRepository();
+            } else {
+                repository = initDefaultRepository();
+            }
         }
         return repository;
+    }
+
+    private Repository initBidanRepository() {
+        return new Repository(this.applicationContext, session(), settingsRepository(),
+                alertRepository(), timelineEventRepository(), reportRepository(),
+                formDataRepository(), serviceProvidedRepository(), kartuIbuRepository(), ibuRepository());
+    }
+
+    private Repository initDefaultRepository() {
+        return new Repository(this.applicationContext, session(), settingsRepository(), alertRepository(),
+                eligibleCoupleRepository(), childRepository(), timelineEventRepository(), motherRepository(), reportRepository(),
+                formDataRepository(), serviceProvidedRepository());
     }
 
     public AllEligibleCouples allEligibleCouples() {
@@ -577,7 +609,7 @@ public class Context {
 
     public ANMService anmService() {
         if (anmService == null) {
-            anmService = new ANMService(allSharedPreferences(), allBeneficiaries(), allEligibleCouples(), allKartuIbus());
+            anmService = new ANMService(allSharedPreferences(), allBeneficiaries(), allEligibleCouples());
         }
         return anmService;
     }
@@ -742,5 +774,61 @@ public class Context {
         }
         return kartuIbuClientsCache;
 
+    }
+
+    private IbuRepository ibuRepository() {
+        if(ibuRepository == null) {
+            ibuRepository = new IbuRepository();
+        }
+        return ibuRepository;
+    }
+
+    private IbuService ibuService() {
+        if(ibuService == null) {
+            ibuService = new IbuService(allKartuIbus(), allTimelineEvents(), serviceProvidedService());
+        }
+        return ibuService;
+    }
+
+    public AllIbu allIbu() {
+        if(allIbu == null) {
+            allIbu = new AllIbu(ibuRepository(), alertRepository(), timelineEventRepository());
+        }
+        return allIbu;
+    }
+
+    public Cache<KartuIbuANCClients> kartuIbuANCClientsCache() {
+        if(kartuIbuANCClientsCache == null){
+            kartuIbuANCClientsCache = new Cache<KartuIbuANCClients>();
+        }
+        return kartuIbuANCClientsCache;
+    }
+
+    public Cache<BidanHomeContext> bidanHomeContextCache() {
+        if (bidanHomeContextCache == null) {
+            bidanHomeContextCache = new Cache<BidanHomeContext>();
+        }
+        return bidanHomeContextCache;
+    }
+
+    public BidanController bidanController() {
+        if (bidanController == null) {
+            bidanController = new BidanController(bidanService(), listCache(), bidanHomeContextCache());
+        }
+        return bidanController;
+    }
+
+    public BidanService bidanService() {
+        if(bidanService == null) {
+            bidanService = new BidanService(allSharedPreferences(), allKartuIbus(), allIbu());
+        }
+        return bidanService;
+    }
+
+    public KartuIbuANCRegistrationHandler kartuIbuANCRegistrationHandler() {
+        if(kartuIbuANCRegistrationHandler == null) {
+            kartuIbuANCRegistrationHandler = new KartuIbuANCRegistrationHandler(ibuService());
+        }
+        return kartuIbuANCRegistrationHandler;
     }
 }

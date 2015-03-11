@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/list_item_height"
+              android:weightSum="@integer/ec_list_item_weight_count">
+
+    <include
+            android:id="@+id/profile_info_layout_ki"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="@integer/ec_list_profile_box_weight"
+            layout="@layout/smart_register_client_profile_ki"/>
+
+    <ImageView
+            android:layout_width="@dimen/smart_register_client_divider_height"
+            android:layout_height="fill_parent"
+            android:src="@color/smart_register_client_divider_color"/>
+
+    <org.ei.drishti.view.customControls.CustomFontTextView
+        android:id="@+id/anc_id"
+        android:layout_width="@dimen/list_ec_no_view_width"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="@integer/ec_list_ec_no_view_weight"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+
+    <TextView
+        android:id="@+id/anc_status"
+        android:layout_width="@dimen/list_ec_no_view_width"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="@integer/ec_list_gplsa_view_weight"
+        android:scrollHorizontally="false"
+        android:ellipsize="none"
+        android:singleLine="false"
+        android:maxLines="3"
+        android:paddingLeft="10dp"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+    <!--
+
+    <include
+            android:id="@+id/client_id_details_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="@integer/anc_list_id_no_view_weight"
+            layout="@layout/anc_smart_register_id_details"/>
+
+    <ImageView
+            android:layout_width="@dimen/smart_register_client_divider_height"
+            android:layout_height="fill_parent"
+            android:src="@color/smart_register_client_divider_color"/>
+
+    <include
+            android:id="@+id/client_status_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="@integer/anc_list_status_view_weight"
+            layout="@layout/anc_smart_register_status"/>
+
+    <ImageView
+            android:layout_width="@dimen/smart_register_client_divider_height"
+            android:layout_height="fill_parent"
+            android:src="@color/smart_register_client_divider_color"/>
+
+    <LinearLayout
+            android:id="@+id/anc_register_service_mode_options_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="@integer/anc_list_service_mode_views_section_weight"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+        <include
+                android:id="@+id/overview_service_mode_views"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                layout="@layout/anc_register_overview_service_mode_views"/>
+
+    </LinearLayout>
+
+    -->
+</LinearLayout>

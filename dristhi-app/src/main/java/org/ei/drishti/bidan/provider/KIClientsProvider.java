@@ -1,12 +1,14 @@
 package org.ei.drishti.bidan.provider;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 
 import org.ei.drishti.R;
+import org.ei.drishti.bidan.domain.KartuIbu;
 import org.ei.drishti.bidan.view.contract.KartuIbuClient;
 import org.ei.drishti.bidan.view.controller.KartuIbuRegisterController;
 import org.ei.drishti.bidan.view.viewHolder.NativeKIRegisterViewHolder;
@@ -33,6 +35,8 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
     private final ProfilePhotoLoader photoLoader;
 
     private final AbsListView.LayoutParams clientViewLayoutParams;
+
+    private Drawable iconPencilDrawable;
 
     protected KartuIbuRegisterController controller;
 
@@ -66,13 +70,18 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
         KartuIbuClient kartuIbuClient = (KartuIbuClient) client;
         setupClientProfileView(kartuIbuClient, viewHolder);
         setupClientPuskesmasView(kartuIbuClient, viewHolder);
+        setupEditView(kartuIbuClient, viewHolder);
+        setupClientNoIbuView(kartuIbuClient, viewHolder);
+        setupClientTglPeriksaView(kartuIbuClient, viewHolder);
+        setupClientEDDView(kartuIbuClient, viewHolder);
+        setupStatusView(kartuIbuClient, viewHolder);
 
         itemView.setLayoutParams(clientViewLayoutParams);
         return itemView;
     }
 
     private void setupClientProfileView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {
-        viewHolder.bindDataProfile(client, photoLoader);
+        viewHolder.profileInfoLayout().bindData(client, photoLoader);
         viewHolder.profileInfoLayout().setOnClickListener(onClickListener);
         viewHolder.profileInfoLayout().setTag(client);
     }
@@ -81,6 +90,30 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
         viewHolder.txtPuskesmas().setText(String.valueOf(client.getPuskesmas()));
     }
 
+    private void setupClientNoIbuView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {
+        viewHolder.txtNoIbu().setText(String.valueOf(client.getNoIbu()));
+    }
+
+    private void setupClientTglPeriksaView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {
+        viewHolder.txtTglPeriksa().setText(String.valueOf(client.getTglPeriksa()));
+    }
+
+    private void setupClientEDDView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {
+        viewHolder.txtEdd().setText(String.valueOf(client.getEdd()));
+    }
+
+    private void setupEditView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {
+        if (iconPencilDrawable == null) {
+            iconPencilDrawable = context.getResources().getDrawable(R.drawable.ic_pencil);
+        }
+        viewHolder.editButton().setImageDrawable(iconPencilDrawable);
+        viewHolder.editButton().setOnClickListener(onClickListener);
+        viewHolder.editButton().setTag(client);
+    }
+
+    private void setupStatusView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {
+        viewHolder.statusView().bindData(client);
+    }
 
     @Override
     public SmartRegisterClients getClients() {

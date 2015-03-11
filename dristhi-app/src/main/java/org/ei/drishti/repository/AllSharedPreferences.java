@@ -2,10 +2,13 @@ package org.ei.drishti.repository;
 
 import android.content.SharedPreferences;
 
+import org.ei.drishti.Context;
+
 import static org.ei.drishti.AllConstants.*;
 
 public class AllSharedPreferences {
     public static final String ANM_IDENTIFIER_PREFERENCE_KEY = "anmIdentifier";
+    public static final String BIDAN_IDENTIFIER_PREFERENCE_KEY = "bidanIdentifier";
 
     private SharedPreferences preferences;
 
@@ -17,8 +20,21 @@ public class AllSharedPreferences {
         preferences.edit().putString(ANM_IDENTIFIER_PREFERENCE_KEY, userName).commit();
     }
 
+    public void updateBidanUserName(String userName) {
+        preferences.edit().putString(BIDAN_IDENTIFIER_PREFERENCE_KEY, userName).commit();
+    }
+
+    public String fetchRegistered() {
+        String appName = Context.getInstance().configuration().getAppName();
+        return appName.equals("BIDAN") ? fetchRegisteredBidan() : fetchRegisteredANM();
+    }
+
     public String fetchRegisteredANM() {
         return preferences.getString(ANM_IDENTIFIER_PREFERENCE_KEY, "").trim();
+    }
+
+    public String fetchRegisteredBidan() {
+        return preferences.getString(BIDAN_IDENTIFIER_PREFERENCE_KEY, "").trim();
     }
 
     public String fetchLanguagePreference() {

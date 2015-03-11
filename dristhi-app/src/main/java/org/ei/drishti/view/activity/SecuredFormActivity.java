@@ -27,7 +27,7 @@ public abstract class SecuredFormActivity extends SecuredWebActivity {
 
     public SecuredFormActivity() {
         super();
-        shouldDismissProgressBarOnProgressComplete = false;
+        shouldDismissProgressBarOnProgressComplete = true;
     }
 
     @Override
@@ -72,6 +72,7 @@ public abstract class SecuredFormActivity extends SecuredWebActivity {
                 ENTITY_ID_PARAM, entityId,
                 INSTANCE_ID_PARAM, randomUUID(),
                 FIELD_OVERRIDES_PARAM, encodedFieldOverrides));
+
     }
 
     @Override

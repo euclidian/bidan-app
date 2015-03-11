@@ -4,33 +4,38 @@ import android.view.View;
 
 import org.ei.drishti.Context;
 import org.ei.drishti.R;
+import org.ei.drishti.bidan.view.contract.KartuIbuANCClient;
+import org.ei.drishti.bidan.view.contract.KartuIbuClient;
+import org.ei.drishti.bidan.view.viewHolder.NativeKIANCRegisterViewHolder;
+import org.ei.drishti.bidan.view.viewHolder.NativeKIRegisterViewHolder;
 import org.ei.drishti.provider.SmartRegisterClientsProvider;
+import org.ei.drishti.view.activity.SecuredNativeSmartRegisterActivity;
 import org.ei.drishti.view.contract.ANCSmartRegisterClient;
 import org.ei.drishti.view.contract.ChildSmartRegisterClient;
 import org.ei.drishti.view.contract.FPSmartRegisterClient;
 import org.ei.drishti.view.contract.pnc.PNCSmartRegisterClient;
-import org.ei.drishti.view.dialog.ServiceModeOption;
 import org.ei.drishti.view.viewHolder.NativeANCSmartRegisterViewHolder;
 import org.ei.drishti.view.viewHolder.NativeChildSmartRegisterViewHolder;
 import org.ei.drishti.view.viewHolder.NativeFPSmartRegisterViewHolder;
 import org.ei.drishti.view.viewHolder.NativePNCSmartRegisterViewHolder;
 
-import static org.ei.drishti.view.activity.SecuredNativeSmartRegisterActivity.ClientsHeaderProvider;
+/**
+ * Created by Dimas Ciputra on 3/4/15.
+ */
+public class KartuIbuANCOverviewServiceMode extends BidanServiceModeOption {
 
-public class AllKartuIbuServiceMode extends ServiceModeOption {
-
-    public AllKartuIbuServiceMode(SmartRegisterClientsProvider provider) {
+    public KartuIbuANCOverviewServiceMode(SmartRegisterClientsProvider provider) {
         super(provider);
     }
 
     @Override
     public String name() {
-        return Context.getInstance().getStringResource(R.string.kartu_ibu_selection);
+        return Context.getInstance().getStringResource(R.string.anc_service_mode_overview);
     }
 
     @Override
-    public ClientsHeaderProvider getHeaderProvider() {
-        return new ClientsHeaderProvider() {
+    public SecuredNativeSmartRegisterActivity.ClientsHeaderProvider getHeaderProvider() {
+        return new SecuredNativeSmartRegisterActivity.ClientsHeaderProvider() {
             @Override
             public int count() {
                 return 7;
@@ -43,23 +48,21 @@ public class AllKartuIbuServiceMode extends ServiceModeOption {
 
             @Override
             public int[] weights() {
-                return new int[]{24, 8, 12, 12, 13, 20, 9};
+                return new int[]{24, 9, 12, 12, 12, 12, 19};
             }
 
             @Override
             public int[] headerTextResourceIds() {
                 return new int[]{
-                        R.string.header_nama, R.string.header_no_ibu, R.string.header_tgl_periksa,
-                        R.string.header_edd, R.string.header_puskesmas, R.string.header_status_b,
+                        R.string.header_name, R.string.header_id, R.string.header_anc_status,
+                        R.string.header_risk_factors, R.string.header_visits, R.string.header_tt,
                         R.string.header_edit};
             }
         };
     }
 
     @Override
-    public void setupListView(ChildSmartRegisterClient client,
-                              NativeChildSmartRegisterViewHolder viewHolder,
-                              View.OnClickListener clientSectionClickListener) {
+    public void setupListView(ChildSmartRegisterClient client, NativeChildSmartRegisterViewHolder viewHolder, View.OnClickListener clientSectionClickListener) {
 
     }
 
@@ -75,6 +78,16 @@ public class AllKartuIbuServiceMode extends ServiceModeOption {
 
     @Override
     public void setupListView(PNCSmartRegisterClient client, NativePNCSmartRegisterViewHolder viewHolder, View.OnClickListener clientSectionClickListener) {
+
+    }
+
+    @Override
+    public void setupListView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder, View.OnClickListener clientSectionClickListener) {
+
+    }
+
+    @Override
+    public void setupListView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder, View.OnClickListener clientSectionClickListener) {
 
     }
 }

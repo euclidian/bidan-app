@@ -69,7 +69,7 @@ public class HTTPAgent {
 
     public Response<String> fetch(String requestURLPath) {
         try {
-            setCredentials(allSharedPreferences.fetchRegisteredANM(), settings.fetchANMPassword());
+            setCredentials(allSharedPreferences.fetchRegistered(), settings.fetchPassword());
             String responseContent = IOUtils.toString(httpClient.fetchContent(new HttpGet(requestURLPath)));
             return new Response<String>(ResponseStatus.success, responseContent);
         } catch (Exception e) {
@@ -80,7 +80,7 @@ public class HTTPAgent {
 
     public Response<String> post(String postURLPath, String jsonPayload) {
         try {
-            setCredentials(allSharedPreferences.fetchRegisteredANM(), settings.fetchANMPassword());
+            setCredentials(allSharedPreferences.fetchRegistered(), settings.fetchPassword());
             HttpPost httpPost = new HttpPost(postURLPath);
             StringEntity entity = new StringEntity(jsonPayload, HTTP.UTF_8);
             entity.setContentType("application/json; charset=utf-8");

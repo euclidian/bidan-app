@@ -4,11 +4,16 @@ import android.util.Log;
 
 import com.google.common.base.Strings;
 
+import org.apache.commons.lang3.StringUtils;
 import org.ei.drishti.util.DateUtil;
 import org.ei.drishti.util.IntegerUtil;
 import org.ei.drishti.view.contract.SmartRegisterClient;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
+
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.ei.drishti.util.StringUtil.humanize;
@@ -22,26 +27,36 @@ public class KartuIbuClient implements SmartRegisterClient {
     private String puskesmas;
     private String province;
     private String kabupaten;
-    private String phc;
+    private String posyandu;
     private String householdAddress;
-    private String ecNumber;
+    private String noIbu;
     private String wifeName;
     private String wifeAge;
     private String golonganDarah;
     private String riwayatKomplikasi;
+    private String husbandName;
+    private String tglPeriksa;
+    private String edd;
+    private String village;
+    private String dateOfBirth;
+    private Map<String, String> status = new HashMap<String, String>();
 
-    public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String phc, String householdAddress, String ecNumber, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi) {
+    public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi, String husbandName, String tglPeriksa, String edd, String village) {
         this.entityId = entityId;
         this.puskesmas = puskesmas;
         this.province = province;
         this.kabupaten = kabupaten;
-        this.phc = phc;
+        this.posyandu = posyandu;
         this.householdAddress = householdAddress;
-        this.ecNumber = ecNumber;
+        this.noIbu = noIbu;
         this.wifeName = wifeName;
         this.wifeAge = wifeAge;
         this.golonganDarah = golonganDarah;
         this.riwayatKomplikasi = riwayatKomplikasi;
+        this.husbandName = husbandName;
+        this.tglPeriksa = tglPeriksa;
+        this.edd = edd;
+        this.village = village;
     }
 
     // Getter
@@ -61,16 +76,16 @@ public class KartuIbuClient implements SmartRegisterClient {
         return kabupaten;
     }
 
-    public String getPhc() {
-        return phc;
+    public String getPosyandu() {
+        return posyandu;
     }
 
     public String getHouseholdAddress() {
         return householdAddress;
     }
 
-    public String getEcNumber() {
-        return ecNumber;
+    public String getNoIbu() {
+        return noIbu;
     }
 
     public String getWifeName() {
@@ -87,6 +102,14 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     public String getRiwayat_komplikasi() {
         return riwayatKomplikasi;
+    }
+
+    public String getTglPeriksa() { return tglPeriksa; }
+
+    public String getEdd() { return edd; }
+
+    public String getVillage() {
+        return village;
     }
 
     // Setter
@@ -106,16 +129,16 @@ public class KartuIbuClient implements SmartRegisterClient {
         this.kabupaten = kabupaten;
     }
 
-    public void setPhc(String phc) {
-        this.phc = phc;
+    public void setPosyandu(String posyandu) {
+        this.posyandu = posyandu;
     }
 
     public void setHouseholdAddress(String householdAddress) {
         this.householdAddress = householdAddress;
     }
 
-    public void setEcNumber(String ecNumber) {
-        this.ecNumber = ecNumber;
+    public void setNoIbu(String noIbu) {
+        this.noIbu = noIbu;
     }
 
     public void setWifeName(String wifeName) {
@@ -134,24 +157,34 @@ public class KartuIbuClient implements SmartRegisterClient {
         this.riwayatKomplikasi = riwayatKomplikasi;
     }
 
+    public void setTglPeriksa(String tglPeriksa) {
+        this.tglPeriksa = tglPeriksa;
+    }
+
+    public void setEdd(String edd) { this.edd = edd; }
+
+    public void setVillage(String village) {
+        this.village = village;
+    }
+
     @Override
     public String entityId() {
-        return null;
+        return entityId;
     }
 
     @Override
     public String name() {
-        return null;
+        return getWifeName();
     }
 
     @Override
     public String displayName() {
-        return null;
+        return getWifeName();
     }
 
     @Override
     public String village() {
-        return null;
+        return getVillage();
     }
 
     @Override
@@ -161,22 +194,22 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     @Override
     public String husbandName() {
-        return null;
+        return Strings.isNullOrEmpty(this.husbandName) ? "" : humanize(this.husbandName);
     }
 
     @Override
     public int age() {
-        return 0;
+        return Integer.parseInt(wifeAge);
     }
 
     @Override
     public int ageInDays() {
-        return Strings.isNullOrEmpty(this.wifeAge) ? 0 : Integer.parseInt(this.wifeAge);
+        return StringUtils.isBlank(dateOfBirth) ? 0 : Days.daysBetween(LocalDate.parse(dateOfBirth), DateUtil.today()).getDays();
     }
 
     @Override
     public String ageInString() {
-        return null;
+        return "(" + age() + ")";
     }
 
     @Override
@@ -216,11 +249,27 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     @Override
     public boolean satisfiesFilter(String filterCriterion) {
-        return false;
+        return wifeName.toLowerCase(Locale.getDefault()).startsWith(filterCriterion.toLowerCase())
+                || String.valueOf(noIbu).startsWith(filterCriterion)
+                || String.valueOf(puskesmas).startsWith(filterCriterion);
     }
 
     @Override
     public int compareName(SmartRegisterClient client) {
         return this.wifeName().compareToIgnoreCase(client.wifeName());
+    }
+
+    public Map<String, String> status() {
+        return status;
+    }
+
+    public KartuIbuClient withDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+        return this;
+    }
+
+    public KartuIbuClient withStatus(Map<String, String> status) {
+        this.status = status;
+        return this;
     }
 }
