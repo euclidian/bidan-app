@@ -5,6 +5,7 @@ import android.util.Log;
 import com.google.common.base.Strings;
 
 import org.apache.commons.lang3.StringUtils;
+import org.ei.drishti.bidan.domain.KartuIbu;
 import org.ei.drishti.util.DateUtil;
 import org.ei.drishti.util.IntegerUtil;
 import org.ei.drishti.view.contract.SmartRegisterClient;
@@ -21,7 +22,7 @@ import static org.ei.drishti.util.StringUtil.humanize;
 /**
  * Created by Dimas Ciputra on 2/17/15.
  */
-public class KartuIbuClient implements SmartRegisterClient {
+public class KartuIbuClient implements KISmartRegisterClient {
 
     private String entityId;
     private String puskesmas;
@@ -39,6 +40,10 @@ public class KartuIbuClient implements SmartRegisterClient {
     private String edd;
     private String village;
     private String dateOfBirth;
+    private String numberOfPregnancies;
+    private String parity;
+    private String numberLivingChildren;
+    private String numberOfAbortions;
     private Map<String, String> status = new HashMap<String, String>();
 
     public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi, String husbandName, String tglPeriksa, String edd, String village) {
@@ -110,6 +115,26 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     public String getVillage() {
         return village;
+    }
+
+    @Override
+    public String numberOfPregnancies() {
+        return Strings.isNullOrEmpty(numberOfPregnancies) ? "-" : numberOfPregnancies;
+    }
+
+    @Override
+    public String parity() {
+        return Strings.isNullOrEmpty(parity) ? "-" : parity;
+    }
+
+    @Override
+    public String numberOfLivingChildren() {
+        return Strings.isNullOrEmpty(numberLivingChildren) ? "-" : numberLivingChildren;
+    }
+
+    @Override
+    public String numberOfAbortions() {
+        return Strings.isNullOrEmpty(numberOfAbortions) ? "-" : numberOfAbortions;
     }
 
     // Setter
@@ -270,6 +295,26 @@ public class KartuIbuClient implements SmartRegisterClient {
 
     public KartuIbuClient withStatus(Map<String, String> status) {
         this.status = status;
+        return this;
+    }
+
+    public KartuIbuClient withNumberOfPregnancies(String numberOfPregnancies) {
+        this.numberOfPregnancies = numberOfPregnancies;
+        return this;
+    }
+
+    public KartuIbuClient withParity(String parity) {
+        this.parity = parity;
+        return this;
+    }
+
+    public KartuIbuClient withNumberOfLivingChildren(String numberLivingChildren) {
+        this.numberLivingChildren = numberLivingChildren;
+        return this;
+    }
+
+    public KartuIbuClient withNumberOfAbortions(String numberOfAbortions) {
+        this.numberOfAbortions = numberOfAbortions;
         return this;
     }
 }

@@ -65,6 +65,15 @@
         <item name="android:ellipsize">none</item>
     </style>
 
+    <style name="CustomFontTextViewStyle.ListView.Normal.Obsetri">
+        <item name="fontVariant">medium</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">3dp</item>
+        <item name="android:ellipsize">none</item>
+    </style>
+
     <style name="CustomFontTextViewStyle.ListView.Medium" parent="CustomFontTextViewStyle">
         <item name="fontVariant">bold</item>
         <item name="android:textSize">17sp</item>

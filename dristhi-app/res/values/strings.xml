@@ -54,6 +54,7 @@
     <string name="header_edd">EDD</string>
     <string name="header_no_ibu">No Ibu</string>
     <string name="header_status_b">Status</string>
+    <string name="header_obsetri">Obsetri</string>
     
     <string name="kartu_ibu_selection">Kartu Ibu</string>
     <string name="str_ki_search_hint">Search KI Register</string>
@@ -84,6 +85,11 @@
     <string name="str_number_of_living_children">L</string>
     <string name="str_number_of_still_births">S</string>
     <string name="str_number_of_abortions">A</string>
+
+    <string name="str_gravida_full">Gravida</string>
+    <string name="str_parity_full">Parity</string>
+    <string name="str_abortus_full">Abortus</string>
+    <string name="str_alive_full">Alive</string>
 
     <string name="str_out_of_area">(O/A)</string>
 

@@ -49,7 +49,7 @@ public class AllKartuIbuServiceMode extends ServiceModeOption {
             @Override
             public int[] headerTextResourceIds() {
                 return new int[]{
-                        R.string.header_nama, R.string.header_no_ibu, R.string.header_tgl_periksa,
+                        R.string.header_nama, R.string.header_no_ibu, R.string.header_obsetri,
                         R.string.header_edd, R.string.header_puskesmas, R.string.header_status_b,
                         R.string.header_edit};
             }
