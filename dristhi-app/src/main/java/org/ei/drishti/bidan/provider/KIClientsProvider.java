@@ -72,7 +72,7 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
         setupClientPuskesmasView(kartuIbuClient, viewHolder);
         setupEditView(kartuIbuClient, viewHolder);
         setupClientNoIbuView(kartuIbuClient, viewHolder);
-        setupClientTglPeriksaView(kartuIbuClient, viewHolder);
+        setupObsetriView(kartuIbuClient, viewHolder);
         setupClientEDDView(kartuIbuClient, viewHolder);
         setupStatusView(kartuIbuClient, viewHolder);
 
@@ -94,8 +94,8 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
         viewHolder.txtNoIbu().setText(String.valueOf(client.getNoIbu()));
     }
 
-    private void setupClientTglPeriksaView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {
-        viewHolder.txtTglPeriksa().setText(String.valueOf(client.getTglPeriksa()));
+    private void setupObsetriView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {
+        viewHolder.bidanObsetriView().bind(client);
     }
 
     private void setupClientEDDView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {

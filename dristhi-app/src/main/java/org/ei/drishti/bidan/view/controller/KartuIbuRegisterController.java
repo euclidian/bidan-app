@@ -62,7 +62,11 @@ public class KartuIbuRegisterController {
                             kartuIbu.getDetails().get("GolonganDarah"), kartuIbu.getDetails().get("RiwayatKomplikasiKebidanan"),
                             kartuIbu.getDetails().get("Namasuami"), kartuIbu.getDetails().get("TanggalPeriksa"),
                             kartuIbu.getDetails().get("EDD"), kartuIbu.getDetails().get("Desa"))
-                            .withDateOfBirth(kartuIbu.getDetails().get("Tanggallahir"));
+                            .withDateOfBirth(kartuIbu.getDetails().get("Tanggallahir"))
+                            .withNumberOfLivingChildren(kartuIbu.getDetails().get("Hidup"))
+                            .withNumberOfPregnancies(kartuIbu.getDetails().get("Gravida"))
+                            .withNumberOfAbortions(kartuIbu.getDetails().get("Abortus"))
+                            .withParity(kartuIbu.getDetails().get("Partus"));
                     updateStatusInformation(kartuIbu, kartuIbuClient);
                     kartuIbuClients.add(kartuIbuClient);
                 }
@@ -86,9 +90,10 @@ public class KartuIbuRegisterController {
         Ibu ibu = allIbu.findIbuByKartuIbuId(kartuIbu.getCaseId());
 
         if (ibu != null && ibu.isANC()) {
-            kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, ANC_STATUS)
-                    .put(STATUS_DATE_FIELD, ibu.getReferenceDate())
-                    .put(STATUS_EDD_FIELD, kartuIbu.getDetails().get("EDD")).map());
+            kartuIbuClient
+                    .withStatus(EasyMap.create(STATUS_TYPE_FIELD, ANC_STATUS)
+                            .put(STATUS_DATE_FIELD, ibu.getReferenceDate())
+                            .put(STATUS_EDD_FIELD, kartuIbu.getDetails().get("EDD")).map());
             return;
         }
     }
