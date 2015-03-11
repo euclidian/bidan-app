@@ -21,36 +21,41 @@
 
     </FrameLayout>
 
-    <org.ei.drishti.view.customControls.CustomFontTextView
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/img_profile_layout"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="-5dp">
+
+        <org.ei.drishti.view.customControls.CustomFontTextView
             android:id="@+id/wife_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@id/img_profile_layout"
+
             android:layout_toLeftOf="@+id/txt_age"
             android:singleLine="true"
-            style="@style/CustomFontTextViewStyle.ListView.Bold"/>
+            style="@style/CustomFontTextViewStyle.ListView.Normal.Bold"/>
 
-    <org.ei.drishti.view.customControls.CustomFontTextView
-        android:id="@+id/txt_husband_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/wife_name"
-        android:layout_toRightOf="@id/img_profile_layout"
-        style="@style/CustomFontTextViewStyle.ListView.Normal"/>
+        <org.ei.drishti.view.customControls.CustomFontTextView
+            android:id="@+id/txt_husband_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/wife_name"
+            style="@style/CustomFontTextViewStyle.ListView.Small"/>
 
-    <org.ei.drishti.view.customControls.CustomFontTextView
-        android:id="@+id/txt_village_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txt_husband_name"
-        android:layout_toRightOf="@id/img_profile_layout"
-        android:layout_toLeftOf="@+id/txt_out_of_area"
-        android:layout_marginTop="@dimen/client_profile_village_margin"
-        android:layout_marginBottom="@dimen/client_profile_village_margin"
-        style="@style/CustomFontTextViewStyle.ListView.Normal"/>
+        <org.ei.drishti.view.customControls.CustomFontTextView
+            android:id="@+id/txt_village_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_husband_name"
+            android:layout_toLeftOf="@+id/txt_out_of_area"
+            android:layout_marginTop="@dimen/client_profile_village_margin"
+            android:layout_marginBottom="@dimen/client_profile_village_margin"
+            style="@style/CustomFontTextViewStyle.ListView.Small"/>
 
-    <org.ei.drishti.view.customControls.CustomFontTextView
+        <org.ei.drishti.view.customControls.CustomFontTextView
             android:id="@+id/wife_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,15 +64,18 @@
             android:paddingTop="@dimen/client_age_padding"
             android:paddingRight="5dp"
             android:paddingLeft="5dp"
-            style="@style/CustomFontTextViewStyle.ListView.Normal"/>
+            style="@style/CustomFontTextViewStyle.ListView.Small.NoHeight"/>
 
-    <org.ei.drishti.view.customControls.CustomFontTextView
+        <org.ei.drishti.view.customControls.CustomFontTextView
             android:id="@+id/is_out_of_area"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:padding="5dp"
-            style="@style/CustomFontTextViewStyle.ListView.Normal"/>
+            style="@style/CustomFontTextViewStyle.ListView.Small"/>
+
+    </RelativeLayout>
+
 
 </org.ei.drishti.bidan.view.customControls.BidanClientProfileView>
