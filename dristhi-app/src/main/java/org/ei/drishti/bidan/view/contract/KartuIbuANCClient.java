@@ -7,8 +7,8 @@ import org.ei.drishti.view.contract.ServiceProvidedDTO;
 import org.ei.drishti.view.contract.SmartRegisterClient;
 import org.ei.drishti.view.contract.Visits;
 import org.joda.time.LocalDateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.ISODateTimeFormat;
+import static org.ei.drishti.util.StringUtil.humanize;
+import static org.ei.drishti.util.StringUtil.humanizeAndDoUPPERCASE;
 
 import java.util.HashMap;
 import java.util.List;
@@ -43,6 +43,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     private String locationStatus;
     private String edd;
     private String village;
+    private String ancStatus;
 
     private List<AlertDTO> alerts;
     private List<ServiceProvidedDTO> services_provided;
@@ -165,12 +166,12 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public int age() {
-        return IntegerUtil.tryParse(age, 0);
+        return Integer.parseInt(age);
     }
 
     @Override
     public int ageInDays() {
-        return IntegerUtil.tryParse(age, 0) * 365;
+        return Integer.parseInt(age) * 365;
     }
 
     @Override
@@ -227,6 +228,12 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
         return puskesmas;
     }
 
+    public String kiNumber() {
+        return kiNumber;
+    }
+
+    public String ancStatus() { return humanize(ancStatus); }
+
     public KartuIbuANCClient withHusband(String husbandName) {
         this.husbandName = husbandName;
         return this;
@@ -239,6 +246,11 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     public KartuIbuANCClient withEDD(String edd) {
         this.edd = edd;
+        return this;
+    }
+
+    public KartuIbuANCClient withANCStatus(String ancStatus) {
+        this.ancStatus = ancStatus;
         return this;
     }
 

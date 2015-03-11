@@ -10,6 +10,7 @@ import org.ei.drishti.R;
 import org.ei.drishti.bidan.view.contract.KartuIbuANCClient;
 import org.ei.drishti.bidan.view.controller.KartuIbuANCRegisterController;
 import org.ei.drishti.bidan.view.viewHolder.NativeKIANCRegisterViewHolder;
+import org.ei.drishti.bidan.view.viewHolder.NativeKIRegisterViewHolder;
 import org.ei.drishti.provider.SmartRegisterClientsProvider;
 import org.ei.drishti.view.activity.SecuredActivity;
 import org.ei.drishti.view.contract.SmartRegisterClient;
@@ -66,6 +67,8 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
 
         KartuIbuANCClient kartuIbuClient = (KartuIbuANCClient) client;
         setupClientProfileView(kartuIbuClient, viewHolder);
+        setupIdDetailsView(kartuIbuClient, viewHolder);
+        setupANCStatusView(kartuIbuClient, viewHolder);
 
         itemView.setLayoutParams(clientViewLayoutParams);
         return itemView;
@@ -75,6 +78,14 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
         viewHolder.profileInfoLayout().bindData(client, photoLoader);
         viewHolder.profileInfoLayout().setOnClickListener(onClickListener);
         viewHolder.profileInfoLayout().setTag(client);
+    }
+
+    private void setupIdDetailsView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
+        viewHolder.ancId().setText(client.kiNumber()==null?"-":client.kiNumber());
+    }
+
+    private void setupANCStatusView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
+        viewHolder.ancStatus().setText(client.ancStatus()==null?"-":client.ancStatus());
     }
 
     @Override

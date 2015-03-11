@@ -48,7 +48,7 @@ public class KartuIbuANCOverviewServiceMode extends BidanServiceModeOption {
 
             @Override
             public int[] weights() {
-                return new int[]{21, 9, 12, 12, 12, 12, 22};
+                return new int[]{24, 9, 12, 12, 12, 12, 19};
             }
 
             @Override

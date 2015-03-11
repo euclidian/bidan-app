@@ -50,7 +50,8 @@ public class KartuIbuANCRegisterController {
                     )
                             .withHusband(ki.getDetails().get("Namasuami"))
                             .withKINumber(ki.getDetails().get("NoIbu"))
-                            .withEDD(ki.getDetails().get("EDD"));
+                            .withEDD(ki.getDetails().get("EDD"))
+                            .withANCStatus(anc.getDetails().get("StatusGiziibu"));
 
                     ancClients.add(kartuIbuClient);
                 }
