@@ -2,14 +2,14 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              android:background="#ff313131">
+              android:background="#234a74">
 
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:background="@drawable/bg_texture">
+            android:background="@drawable/bg_texture_blue">
 
         <ImageView
                 android:layout_width="fill_parent"
@@ -107,8 +107,8 @@
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_reporting"
                 android:drawablePadding="5dp"
-                android:paddingLeft="185dp"
-                android:paddingRight="185dp"
+                android:paddingLeft="160dp"
+                android:paddingRight="160dp"
                 android:text="@string/str_reporting"
                 style="@style/CustomFontTextViewStyle.Home.Buttons"/>
 
@@ -119,8 +119,8 @@
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_tv"
                 android:drawablePadding="5dp"
-                android:paddingLeft="200dp"
-                android:paddingRight="200dp"
+                android:paddingLeft="170dp"
+                android:paddingRight="170dp"
                 android:text="@string/str_videos"
                 style="@style/CustomFontTextViewStyle.Home.Buttons"/>
 
