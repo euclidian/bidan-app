@@ -2,15 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.ei.drishti</groupId>
-    <artifactId>dristhi-app-parent</artifactId>
+    <groupId>org.ei.bidan</groupId>
+    <artifactId>bidan-app-parent</artifactId>
     <version>3.0.1</version>
     <packaging>pom</packaging>
-    <name>dristhi-app - Parent</name>
+    <name>bidan-app - Parent</name>
 
     <modules>
-        <module>dristhi-app</module>
-        <module>dristhi-app-it</module>
+        <module>bidan-app</module>
+        <module>bidan-app-it</module>
     </modules>
 
     <properties>
@@ -20,15 +20,15 @@
 
     <distributionManagement>
         <repository>
-            <id>dristhi.nexus</id>
-            <name>Dristhi Releases Repository</name>
+            <id>bidan.nexus</id>
+            <name>Bidan Releases Repository</name>
             <url>http://ci.smartregistries.org:8081/nexus/content/repositories/releases</url>
             <uniqueVersion>false</uniqueVersion>
         </repository>
         <snapshotRepository>
-            <id>dristhi.nexus</id>
-            <name>Dristhi Snapshots Repository</name>
-            <url>http://ci.smartregistries.org:8081/nexus/content/repositories/dristhi</url>
+            <id>bidan.nexus</id>
+            <name>Bidan Snapshots Repository</name>
+            <url>http://ci.smartregistries.org:8081/nexus/content/repositories/bidan</url>
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
@@ -36,14 +36,14 @@
 
     <repositories>
         <repository>
-            <id>drishti.local</id>
-            <name>drishti</name>
+            <id>bidan.local</id>
+            <name>bidan</name>
             <url>file:${main.basedir}/libs/</url>
         </repository>
         <repository>
-            <id>motech.drishti</id>
+            <id>motech.bidan</id>
             <name>Motech Snapshots Repository</name>
-            <url>http://nexus.motechproject.org/content/repositories/drishti</url>
+            <url>http://nexus.motechproject.org/content/repositories/bidan</url>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
@@ -99,7 +99,7 @@
                 <plugin>
                     <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                     <artifactId>android-maven-plugin</artifactId>
-                    <version>3.8.0</version>
+                    <version>3.6.0</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
