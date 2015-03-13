@@ -22,7 +22,9 @@ import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
 
+import static org.ei.bidan.AllConstants.FormNames.EC_EDIT;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
+import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_EDIT;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_REGISTRATION;
 
 /**
@@ -43,7 +45,8 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
     private DialogOption[] getEditOptions() {
         return new DialogOption[]{
-                new OpenFormOption(getString(R.string.str_register_anc_form), KARTU_IBU_ANC_REGISTRATION, formController)
+                new OpenFormOption(getString(R.string.str_register_anc_form), KARTU_IBU_ANC_REGISTRATION, formController),
+                new OpenFormOption(getString(R.string.str_edit_ki_form), KARTU_IBU_EDIT, formController),
         };
     }
 
