@@ -1,0 +1,33 @@
+<model>
+    <instance>
+        <Kartu_ibu_PNC id="kartu_ibu_PNC" version="201503130619">
+          <formhub>
+            <uuid/>
+          </formhub>
+          <B01259/>
+          <B01260/>
+          <B01261/>
+          <B01262/>
+          <B01263/>
+          <B01264/>
+          <B01265/>
+          <B01266/>
+          <B01270/>
+          <B01271/>
+          <B01272/>
+          <B01273/>
+          <B01273L/>
+          <B01274/>
+          <B01274L/>
+          <B01275/>
+          <B01276/>
+          <B01277/>
+          <B01278/>
+          <B01279/>
+          <B01280/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </Kartu_ibu_PNC>
+      </instance>
+  </model>

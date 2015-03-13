@@ -17,6 +17,8 @@ import org.ei.bidan.sync.SyncProgressIndicator;
 import org.ei.bidan.sync.UpdateActionsTask;
 import org.ei.bidan.view.activity.SecuredActivity;
 
+import javax.xml.soap.Text;
+
 import static java.lang.String.valueOf;
 import static org.ei.bidan.event.Event.ACTION_HANDLED;
 import static org.ei.bidan.event.Event.FORM_SUBMITTED;
@@ -68,6 +70,7 @@ public class BidanHomeActivity extends SecuredActivity {
 
     private TextView kartuIbuRegisterClientCountView;
     private TextView kartuIbuANCRegisterClientCountView;
+    private TextView kartuIbuPNCRegisterClientCountView;
 
     @Override
     protected void onCreation() {
@@ -79,12 +82,14 @@ public class BidanHomeActivity extends SecuredActivity {
     private void setupViews() {
         findViewById(R.id.btn_kartu_ibu_register).setOnClickListener(onRegisterStartListener);
         findViewById(R.id.btn_kartu_ibu_anc_register).setOnClickListener(onRegisterStartListener);
+        findViewById(R.id.btn_kartu_ibu_pnc_register).setOnClickListener(onRegisterStartListener);
 
         findViewById(R.id.btn_reporting).setOnClickListener(onButtonsClickListener);
         findViewById(R.id.btn_videos).setOnClickListener(onButtonsClickListener);
 
         kartuIbuRegisterClientCountView = (TextView) findViewById(R.id.txt_kartu_ibu_register_client_count);
         kartuIbuANCRegisterClientCountView = (TextView) findViewById(R.id.txt_kartu_ibu_anc_register_client_count);
+        kartuIbuPNCRegisterClientCountView = (TextView) findViewById(R.id.txt_kartu_ibu_pnc_register_client_count);
     }
 
     private void initialize() {
@@ -115,6 +120,7 @@ public class BidanHomeActivity extends SecuredActivity {
     private void updateRegisterCounts(BidanHomeContext homeContext) {
         kartuIbuRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuCount()));
         kartuIbuANCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuANCCount()));
+        kartuIbuPNCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuPNCCount()));
     }
 
     @Override
@@ -188,6 +194,9 @@ public class BidanHomeActivity extends SecuredActivity {
                     break;
                 case R.id.btn_kartu_ibu_anc_register:
                     navigationController.startKartuIbuANCRegistry();
+                    break;
+                case R.id.btn_kartu_ibu_pnc_register:
+                    navigationController.startKartuIbuPNCRegistry();
                     break;
             }
         }

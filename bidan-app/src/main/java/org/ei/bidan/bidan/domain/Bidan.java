@@ -11,11 +11,13 @@ public class Bidan {
     private final String name;
     private final long kartuIbuAncCount;
     private final long kartuIbuCount;
+    private final long kartuIbuPNCCount;
 
-    public Bidan(String name, long kartuIbuCount, long kartuIbuAncCount) {
+    public Bidan(String name, long kartuIbuCount, long kartuIbuAncCount, long kartuIbuPNCCount) {
         this.name = name;
         this.kartuIbuAncCount = kartuIbuAncCount;
         this.kartuIbuCount = kartuIbuCount;
+        this.kartuIbuPNCCount = kartuIbuPNCCount;
     }
 
     public String name() {
@@ -25,6 +27,8 @@ public class Bidan {
     public long getKartuIbuAncCount() { return kartuIbuAncCount; }
 
     public long getKartuIbuCount() { return kartuIbuCount; }
+
+    public long getKartuIbuPNCCount() { return kartuIbuPNCCount; }
 
     @Override
     public boolean equals(Object o) {

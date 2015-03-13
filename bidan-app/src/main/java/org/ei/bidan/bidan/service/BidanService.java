@@ -20,6 +20,6 @@ public class BidanService {
     }
 
     public Bidan fetchDetails() {
-        return new Bidan(allSharedPreferences.fetchRegisteredBidan(), allKartuIbus.count(), allIbu.ancCount());
+        return new Bidan(allSharedPreferences.fetchRegisteredBidan(), allKartuIbus.count(), allIbu.ancCount(), allIbu.pncCount());
     }
 }
