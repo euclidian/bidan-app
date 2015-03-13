@@ -2,6 +2,7 @@ package org.ei.bidan.bidan.provider;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,8 @@ import org.ei.bidan.view.dialog.SortOption;
 import org.ei.bidan.view.viewHolder.ECProfilePhotoLoader;
 import org.ei.bidan.view.viewHolder.OnClickFormLauncher;
 import org.ei.bidan.view.viewHolder.ProfilePhotoLoader;
+
+import android.graphics.Color;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
@@ -75,9 +78,18 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
         setupObsetriView(kartuIbuClient, viewHolder);
         setupClientEDDView(kartuIbuClient, viewHolder);
         setupStatusView(kartuIbuClient, viewHolder);
+        setupHighlightColor(itemView, Integer.parseInt(""+viewGroup.getTag())+1);
 
         itemView.setLayoutParams(clientViewLayoutParams);
         return itemView;
+    }
+
+    private void setupHighlightColor(ViewGroup itemView, int index) {
+        if(index%2==0) {
+            itemView.setBackgroundColor(Color.parseColor("#E0F5FF"));
+        } else {
+            itemView.setBackgroundColor(Color.WHITE);
+        }
     }
 
     private void setupClientProfileView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {

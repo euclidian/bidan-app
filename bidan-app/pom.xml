@@ -6,11 +6,11 @@
     <parent>
         <groupId>org.ei.bidan</groupId>
         <artifactId>bidan-app-parent</artifactId>
-        <version>3.0.1</version>
+        <version>0.0.1</version>
     </parent>
 
     <artifactId>bidan-app</artifactId>
-    <version>3.0.1</version>
+    <version>0.0.1</version>
     <packaging>apk</packaging>
     <name>bidan-app - Application</name>
 
