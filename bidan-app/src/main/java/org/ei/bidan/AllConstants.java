@@ -91,6 +91,7 @@ public class AllConstants {
         public static final String FP_REFERRAL_FOLLOWUP = "fp_referral_followup";
         public static final String FP_FOLLOWUP = "fp_followup";
         public static final String KARTU_IBU_REGISTRATION = "kartu_ibu";
+        public static final String KARTU_IBU_EDIT = "kartu_ibu_edit";
         public static final String KARTU_IBU_CLOSE = "";
         public static final String KARTU_IBU_ANC_REGISTRATION = "kartu_ibu_anc";
     }

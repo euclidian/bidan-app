@@ -120,6 +120,7 @@
     <string name="str_close_ec_form">Close EC</string>
     <string name="report_month_sample_text">26/03 - 25/04</string>
     <string name="str_switch_language">Switch Language</string>
+    <string name="str_edit_ki_form">Edit Kartu Ibu</string>
 
     <string name="str_register_anc_visit_form">ANC Visit</string>
     <string name="str_register_hb_test_form">Hb Test</string>
