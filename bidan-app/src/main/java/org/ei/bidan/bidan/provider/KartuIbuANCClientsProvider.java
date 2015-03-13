@@ -1,6 +1,7 @@
 package org.ei.bidan.bidan.provider;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,9 +70,18 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
         setupClientProfileView(kartuIbuClient, viewHolder);
         setupIdDetailsView(kartuIbuClient, viewHolder);
         setupANCStatusView(kartuIbuClient, viewHolder);
+        setupHighlightColor(itemView, Integer.parseInt(""+viewGroup.getTag())+1);
 
         itemView.setLayoutParams(clientViewLayoutParams);
         return itemView;
+    }
+
+    private void setupHighlightColor(ViewGroup itemView, int index) {
+        if(index%2==0) {
+            itemView.setBackgroundColor(Color.parseColor("#E0F5FF"));
+        } else {
+            itemView.setBackgroundColor(Color.WHITE);
+        }
     }
 
     private void setupClientProfileView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
