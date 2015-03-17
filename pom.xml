@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.ei.bidan</groupId>
     <artifactId>bidan-app-parent</artifactId>
-    <version>3.0.1</version>
+    <version>0.0.1</version>
     <packaging>pom</packaging>
     <name>bidan-app - Parent</name>
 
@@ -41,9 +41,9 @@
             <url>file:${main.basedir}/libs/</url>
         </repository>
         <repository>
-            <id>motech.bidan</id>
+            <id>motech.drishti</id>
             <name>Motech Snapshots Repository</name>
-            <url>http://nexus.motechproject.org/content/repositories/bidan</url>
+            <url>http://nexus.motechproject.org/content/repositories/drishti</url>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
