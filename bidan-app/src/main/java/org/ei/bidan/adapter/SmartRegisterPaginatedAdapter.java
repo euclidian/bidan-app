@@ -61,7 +61,7 @@ public class SmartRegisterPaginatedAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View parentView, ViewGroup viewGroup) {
-        viewGroup.setTag(i);
+        if(viewGroup != null) viewGroup.setTag(i);
         return listItemProvider.getView((SmartRegisterClient) getItem(actualPosition(i)), parentView, viewGroup);
     }
 

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 
 import org.ei.bidan.bidan.view.activity.NativeKIANCSmartRegisterActivity;
+import org.ei.bidan.bidan.view.activity.NativeKIPNCSmartRegisterActivity;
 import org.ei.bidan.view.activity.NativeANCSmartRegisterActivity;
 import org.ei.bidan.view.activity.NativeChildSmartRegisterActivity;
 import org.ei.bidan.view.activity.NativeECSmartRegisterActivity;
@@ -57,6 +58,10 @@ public class NavigationController {
 
     public void startKartuIbuANCRegistry() {
         activity.startActivity(new Intent(activity, NativeKIANCSmartRegisterActivity.class));
+    }
+
+    public void startKartuIbuPNCRegistry() {
+        activity.startActivity(new Intent(activity, NativeKIPNCSmartRegisterActivity.class));
     }
 
     public String get() {

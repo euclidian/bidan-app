@@ -1,0 +1,137 @@
+{
+    "form_data_definition_version": "1",
+    "form": {
+        "bind_type": "kartu_ibu",
+        "default_bind_path": "/model/instance/Kartu_ibu_PNC/",
+        "fields": [
+            {
+                "name": "id",
+                "shouldLoadValue": true
+            },
+            {
+                "name": "motherId",
+                "source": "kartu_ibu.ibu.id"
+            },
+			{
+                "name": "HariKeKF",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01259",
+                "source": "kartu_ibu.ibu.HariKeKF"
+            },
+            {
+                "name": "TandaVitalTDSistolik",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01260",
+                "source": "kartu_ibu.ibu.TandaVitalTDSistolik"
+            },
+            {
+                "name": "TandaVitalTDDiastolik",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01261",
+                "source": "kartu_ibu.ibu.TandaVitalTDDiastolik"
+            },
+            {
+                "name": "TandaVitalSuhu",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01045",
+                "source": "kartu_ibu.ibu.UsiaKlinis"
+            },
+            {
+                "name": "TrimesterKe",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01262",
+                "source": "kartu_ibu.ibu.TandaVitalSuhu"
+            },
+            {
+                "name": "PelayananCatatdiBukuKia",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01263",
+                "source": "kartu_ibu.ibu.PelayananCatatdiBukuKia"
+            },
+            {
+                "name": "PelayananFe",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01264",
+                "source": "kartu_ibu.ibu.PelayananFe"
+            },
+            {
+                "name": "PelayananVitA",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01265",
+                "source": "kartu_ibu.ibu.PelayananVitA"
+            },
+            {
+                "name": "IntergrasiProgramCD4",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01266",
+                "source": "kartu_ibu.ibu.IntergrasiProgramCD4"
+            },
+            {
+                "name": "IntergrasiProgramAntimalaria",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01270",
+                "source": "kartu_ibu.ibu.IntergrasiProgramAntimalaria"
+            },
+            {
+                "name": "IntergrasiProgramAntiTB",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01271",
+                "source": "kartu_ibu.ibu.IntergrasiProgramAntiTB"
+            },
+            {
+                "name": "IntergrasiProgramFotothorax",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01272",
+                "source": "kartu_ibu.ibu.IntergrasiProgramFotothorax"
+            },
+            {
+                "name": "Komplikasi",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01273",
+                "source": "kartu_ibu.ibu.Komplikasi"
+            },
+            {
+                "name": "Lainnya1",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01273L",
+                "source": "kartu_ibu.ibu.Lainnya1"
+            },
+            {
+                "name": "DirujukKe",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01274",
+                "source": "kartu_ibu.ibu.DirujukKe"
+            },
+            {
+                "name": "Lainnya2",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01274L",
+                "source": "kartu_ibu.ibu.Lainnya2"
+            },
+            {
+                "name": "KeadaanTiba",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01275",
+                "source": "kartu_ibu.ibu.KeadaanTiba"
+            },
+            {
+                "name": "KeadaanPulang",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01276",
+                "source": "kartu_ibu.ibu.KeadaanPulang"
+            },
+            {
+                "name": "Metodekontrasepsi",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01277",
+                "source": "kartu_ibu.ibu.Metodekontrasepsi"
+            },
+            {
+                "name": "Rencana",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01278",
+                "source": "kartu_ibu.ibu.Rencana"
+            },
+            {
+                "name": "PelaksanaanK42hari",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01279",
+                "source": "kartu_ibu.ibu.PelaksanaanK42hari"
+            },
+            {
+                "name": "PelaksanaanL42hari",
+                "bind": "/model/instance/Kartu_ibu_PNC/B01280",
+                "source": "kartu_ibu.ibu.PelaksanaanL42hari"
+            },
+            {
+                "name": "type",
+                "value": "PNC",
+                "source": "kartu_ibu.ibu.type"
+            },
+            {
+                "name": "isClosed",
+                "value": "false",
+                "source": "kartu_ibu.ibu.isClosed"
+            }
+        ]
+    }
+}

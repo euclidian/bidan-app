@@ -94,6 +94,7 @@ public class AllConstants {
         public static final String KARTU_IBU_EDIT = "kartu_ibu_edit";
         public static final String KARTU_IBU_CLOSE = "";
         public static final String KARTU_IBU_ANC_REGISTRATION = "kartu_ibu_anc";
+        public static final String KARTU_IBU_PNC_REGISTRATION = "kartu_ibu_pnc";
     }
 
     public class ECRegistrationFields {

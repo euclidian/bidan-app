@@ -42,7 +42,7 @@ public class IbuRepository extends DrishtiRepository {
 
     public static final String TYPE_ANC = "ANC";
     private static final String NOT_CLOSED = "false";
-
+    public static final String TYPE_PNC = "PNC";
 
     @Override
     protected void onCreate(SQLiteDatabase database) {
@@ -56,9 +56,26 @@ public class IbuRepository extends DrishtiRepository {
         database.insert(IBU_TABLE_NAME, null, createValuesFor(ibu, "ANC"));
     }
 
+    public void switchToPNC(String caseId) {
+        SQLiteDatabase database = masterRepository.getWritableDatabase();
+
+        ContentValues ibuValuesToBeUpdated = new ContentValues();
+        ibuValuesToBeUpdated.put(TYPE_COLUMN, TYPE_PNC);
+
+        database.update(IBU_TABLE_NAME, ibuValuesToBeUpdated, ID_COLUMN + " = ?", new String[]{caseId});
+    }
+
     public List<Ibu> allANCs() {
+        return allWithType(TYPE_ANC);
+    }
+
+    public List<Ibu> allPNCs() {
+        return allWithType(TYPE_PNC);
+    }
+
+    public List<Ibu> allWithType(String  type) {
         SQLiteDatabase database = masterRepository.getReadableDatabase();
-        Cursor cursor = database.query(IBU_TABLE_NAME, IBU_TABLE_COLUMNS, TYPE_COLUMN + " = ? AND " + IS_CLOSED_COLUMN + " = ?", new String[]{TYPE_ANC, NOT_CLOSED}, null, null, null, null);
+        Cursor cursor = database.query(IBU_TABLE_NAME, IBU_TABLE_COLUMNS, TYPE_COLUMN + " = ? AND " + IS_CLOSED_COLUMN + " = ?", new String[]{type, NOT_CLOSED}, null, null, null, null);
         return readAll(cursor);
     }
 
@@ -87,7 +104,7 @@ public class IbuRepository extends DrishtiRepository {
 
     private List<Pair<Ibu, KartuIbu>> readAllIbuWithKartuIbu(Cursor cursor) {
         cursor.moveToFirst();
-        List<Pair<Ibu, KartuIbu>> ancsWithKartuIbu = new ArrayList<Pair<Ibu, KartuIbu>>();
+        List<Pair<Ibu, KartuIbu>> ancOrPncsWithKartuIbu = new ArrayList<Pair<Ibu, KartuIbu>>();
         while (!cursor.isAfterLast()) {
             Ibu ibu = new Ibu(cursor.getString(0), cursor.getString(1), cursor.getString(2))
                     .setIsClosed(Boolean.valueOf(cursor.getString(5)))
@@ -99,11 +116,11 @@ public class IbuRepository extends DrishtiRepository {
                     new Gson().<Map<String, String>>fromJson(cursor.getString(7), new TypeToken<Map<String, String>>() {
                     }.getType()));
 
-            ancsWithKartuIbu.add(Pair.of(ibu, kartuIbu));
+            ancOrPncsWithKartuIbu.add(Pair.of(ibu, kartuIbu));
             cursor.moveToNext();
         }
         cursor.close();
-        return ancsWithKartuIbu;
+        return ancOrPncsWithKartuIbu;
     }
 
     public List<Ibu> findAllCasesForKartuIbu(String kartuIbuid) {
@@ -144,6 +161,12 @@ public class IbuRepository extends DrishtiRepository {
         return DatabaseUtils.longForQuery(masterRepository.getReadableDatabase(),
                 "SELECT COUNT(1) FROM " + IBU_TABLE_NAME + " WHERE  " + TYPE_COLUMN + " = ? AND " + IS_CLOSED_COLUMN + " = ? ",
                 new String[]{TYPE_ANC, NOT_CLOSED});
+    }
+
+    public long pncCount() {
+        return DatabaseUtils.longForQuery(masterRepository.getReadableDatabase(),
+                "SELECT COUNT(1) FROM " + IBU_TABLE_NAME + " WHERE " + TYPE_COLUMN + " = ? AND " + IS_CLOSED_COLUMN
+        + " = ?", new String[]{TYPE_PNC, NOT_CLOSED});
     }
 
     /*

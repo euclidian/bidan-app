@@ -9,6 +9,7 @@ import org.ei.bidan.repository.TimelineEventRepository;
 import java.util.List;
 
 import static org.ei.bidan.bidan.repository.IbuRepository.TYPE_ANC;
+import static org.ei.bidan.bidan.repository.IbuRepository.TYPE_PNC;
 
 /**
  * Created by Dimas Ciputra on 3/5/15.
@@ -35,8 +36,14 @@ public class AllIbu {
         return ibuRepository.ancCount();
     }
 
+    public long pncCount() { return ibuRepository.pncCount(); }
+
     public List<Pair<Ibu, KartuIbu>> allANCsWithKartuIbu() {
         return ibuRepository.allIbuOfATypeWithKartuIbu(TYPE_ANC);
+    }
+
+    public List<Pair<Ibu, KartuIbu>> allPNCsWithKartuIbu() {
+        return ibuRepository.allIbuOfATypeWithKartuIbu(TYPE_PNC);
     }
 
     public Ibu findIbuByKartuIbuId(String kartuIbuId) {
@@ -63,5 +70,9 @@ public class AllIbu {
         for (Ibu ibu : mothers) {
             closeIbu(ibu.getId());
         }
+    }
+
+    public void switchIbuToPNC(String entityId) {
+        ibuRepository.switchToPNC(entityId);
     }
 }

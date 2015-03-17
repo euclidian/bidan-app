@@ -4,6 +4,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 
 import org.ei.bidan.bidan.repository.AllIbu;
+import org.ei.bidan.bidan.view.contract.KartuIbuPNCClients;
 import org.ei.bidan.repository.AlertRepository;
 import org.ei.bidan.repository.AllAlerts;
 import org.ei.bidan.repository.AllBeneficiaries;
@@ -110,6 +111,7 @@ public class Context {
     private Cache<KartuIbuClients> kartuIbuClientsCache;
     private Cache<BidanHomeContext> bidanHomeContextCache;
     private Cache<KartuIbuANCClients> kartuIbuANCClientsCache;
+    private Cache<KartuIbuPNCClients> kartuIbuPNCClientsCache;
 
     private HTTPAgent httpAgent;
     private ZiggyFileLoader ziggyFileLoader;
@@ -823,6 +825,13 @@ public class Context {
             kartuIbuANCClientsCache = new Cache<KartuIbuANCClients>();
         }
         return kartuIbuANCClientsCache;
+    }
+
+    public Cache<KartuIbuPNCClients> kartuIbuPNCClientsCache() {
+        if(kartuIbuPNCClientsCache == null){
+            kartuIbuPNCClientsCache = new Cache<KartuIbuPNCClients>();
+        }
+        return kartuIbuPNCClientsCache;
     }
 
     public Cache<BidanHomeContext> bidanHomeContextCache() {

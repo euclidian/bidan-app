@@ -111,6 +111,7 @@
     <string name="ki_register_title_in_short">KI:</string>
 
     <string name="str_register_anc_form">Register ANC</string>
+    <string name="str_register_pnc_form">Register PNC</string>
     <string name="str_register_fp_form">Register FP</string>
     <string name="str_register_child_form">Register Child</string>
     <string name="str_fp_change_form">FP Change</string>
@@ -275,6 +276,7 @@
     <string name="anc_service_mode_ifa_tablets">" Tablets</string>
     <string name="header_id">ID</string>
     <string name="header_anc_status">ANC STATUS</string>
+    <string name="header_pnc_plan">PLAN</string>
     <string name="header_risk_factors">RISK FACTORS</string>
     <string name="header_anc_1">ANC1</string>
     <string name="header_anc_2">ANC2</string>

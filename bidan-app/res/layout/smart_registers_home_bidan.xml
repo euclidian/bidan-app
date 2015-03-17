@@ -87,6 +87,38 @@
 
             </FrameLayout>
 
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/btn_kartu_ibu_pnc_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/register_pnc"
+                    style="@style/ImageButton.Home.Register"/>
+
+                <org.ei.bidan.view.customControls.CustomFontTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PNC"
+                    style="@style/CustomFontTextViewStyle.Home.RegisterName"/>
+
+                <org.ei.bidan.view.customControls.CustomFontTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="REGISTER"
+                    style="@style/CustomFontTextViewStyle.Home.RegisterLabel"/>
+
+                <org.ei.bidan.view.customControls.CustomFontTextView
+                    android:id="@+id/txt_kartu_ibu_pnc_register_client_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/CustomFontTextViewStyle.Badge2"/>
+
+            </FrameLayout>
+
         </LinearLayout>
 
     </LinearLayout>
