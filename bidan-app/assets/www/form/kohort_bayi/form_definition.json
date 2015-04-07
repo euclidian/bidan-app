@@ -1,0 +1,233 @@
+{
+    "form_data_definition_version": "1",
+    "form": {
+        "bind_type": "kartu_ibu",
+        "default_bind_path": "/model/instance/kohort_bayi/",
+        "fields": [
+            {
+                "name": "id",
+                "shouldLoadValue": true
+            },
+            {
+                "name": "motherId",
+                "source": "kartu_ibu.ibu.id"
+            },
+            {
+                "name": "Dusun",
+                "bind": "/model/instance/kohort_bayi/B04001",
+				"source": "kartu_ibu.ibu.Dusun"
+            },
+            {
+                "name": "DesaKelurahan",
+                "bind": "/model/instance/kohort_bayi/B04002",
+				"source": "kartu_ibu.ibu.DesaKelurahan"
+            },
+            {
+                "name": "Kecamatan",
+                "bind": "/model/instance/kohort_bayi/B04003",
+				"source": "kartu_ibu.ibu.Kecamatan"
+            },
+            {
+                "name": "NoIndex",
+                "bind": "/model/instance/kohort_bayi/B04004",
+				"source": "kartu_ibu.ibu.NoIndex"
+            },
+            {
+                "name": "NamaBayi",
+                "bind": "/model/instance/kohort_bayi/B04005",
+				"source": "kartu_ibu.ibu.NamaBayi"
+            },
+            {
+                "name": "TanggalLahir",
+                "bind": "/model/instance/kohort_bayi/B04006",
+				"source": "kartu_ibu.ibu.TanggalLahir"
+            },
+            {
+                "name": "JenisKelamin",
+                "bind": "/model/instance/kohort_bayi/B04007",
+				"source": "kartu_ibu.ibu.JenisKelamin"
+            },
+            {
+                "name": "Namaorangtua",
+                "bind": "/model/instance/kohort_bayi/B04008",
+				"source": "kartu_ibu.ibu.Namaorangtua"
+            },
+            {
+                "name": "Alamat",
+                "bind": "/model/instance/kohort_bayi/B04009",
+				"source": "kartu_ibu.ibu.Alamat"
+            },
+            {
+                "name": "KepemilikanbukuKIA",
+                "bind": "/model/instance/kohort_bayi/B04010",
+				"source": "kartu_ibu.ibu.KepemilikanbukuKIA"
+            },
+            {
+                "name": "BeratLahir",
+                "bind": "/model/instance/kohort_bayi/B04011",
+				"source": "kartu_ibu.ibu.BeratLahir"
+            },
+            {
+                "name": "Saatlahirsd5jamKondisibayi",
+                "bind": "/model/instance/kohort_bayi/B04012",
+				"source": "kartu_ibu.ibu.Saatlahirsd5jamKondisibayi"
+            },
+            {
+                "name": "Saatlahirsd5jamJenispelayanan",
+                "bind": "/model/instance/kohort_bayi/B04013",
+				"source": "kartu_ibu.ibu.Saatlahirsd5jamJenispelayanan"
+            },
+            {
+                "name": "Saatlahirsd5jamMeninggalatautidak",
+                "bind": "/model/instance/kohort_bayi/B04014",
+				"source": "kartu_ibu.ibu.Saatlahirsd5jamMeninggalatautidak"
+            },
+            {
+                "name": "Saatlahirsd5jamPemberianImunisasiHB",
+                "bind": "/model/instance/kohort_bayi/B04015",
+				"source": "kartu_ibu.ibu.Saatlahirsd5jamPemberianImunisasiHB"
+            },
+            {
+                "name": "KunjunganNeonatalpertama6sd48jamTanggal",
+                "bind": "/model/instance/kohort_bayi/B04016",
+				"source": "kartu_ibu.ibu.KunjunganNeonatalpertama6sd48jamTanggal"
+            },
+            {
+                "name": "KunjunganNeonatalpertama6sd48jamKeadaanNeonatal",
+                "bind": "/model/instance/kohort_bayi/B04017",
+				"source": "kartu_ibu.ibu.KunjunganNeonatalpertama6sd48jamKeadaanNeonatal"
+            },
+            {
+                "name": "KunjunganNeonatalpertama6sd48jamKondisiBayi",
+                "bind": "/model/instance/kohort_bayi/B04018",
+				"source": "kartu_ibu.ibu.KunjunganNeonatalpertama6sd48jamKondisiBayi"
+            },
+            {
+                "name": "KunjunganNeonatalpertama6sd48jamPemberianimunisasiHB0",
+                "bind": "/model/instance/kohort_bayi/B04019",
+				"source": "kartu_ibu.ibu.KunjunganNeonatalpertama6sd48jamPemberianimunisasiHB0"
+            },
+            {
+                "name": "KunjunganNeonatalKeduaharike3sd7TanggalKunjungan",
+                "bind": "/model/instance/kohort_bayi/B04020",
+				"source": "kartu_ibu.ibu.KunjunganNeonatalKeduaharike3sd7TanggalKunjungan"
+            },
+            {
+                "name": "KunjunganNeonatalKeduaharike3sd7Keadaanneonatal",
+                "bind": "/model/instance/kohort_bayi/B04021",
+				"source": "kartu_ibu.ibu.KunjunganNeonatalKeduaharike3sd7Keadaanneonatal"
+            },
+            {
+                "name": "KunjunganNeonatalkeduaharike3sd7Kondisibayimatiatautidak",
+                "bind": "/model/instance/kohort_bayi/B04022",
+				"source": "kartu_ibu.ibu.KunjunganNeonatalkeduaharike3sd7Kondisibayimatiatautidak"
+            },
+            {
+                "name": "KunjunganNeonatalkeduaharike3sd7bayidiberikanimunisasi",
+                "bind": "/model/instance/kohort_bayi/B04023",
+				"source": "kartu_ibu.ibu.KunjunganNeonatalkeduaharike3sd7bayidiberikanimunisasi"
+            },
+            {
+                "name": "KunjunganNeonatalKetigaharike8sd28TanggalKunjungan",
+                "bind": "/model/instance/kohort_bayi/B04024",
+				"source": "kartu_ibu.ibu.KunjunganNeonatalKetigaharike8sd28TanggalKunjungan"
+            },
+            {
+                "name": "KunjunganNeonatalKetigaharike8sd28Keadaanneonatal",
+                "bind": "/model/instance/kohort_bayi/B04025",
+				"source": "kartu_ibu.ibu.KunjunganNeonatalKetigaharike8sd28Keadaanneonatal"
+            },
+            {
+                "name": "KunjunganNeonatalKetigaharike8sd28Kondisibayi",
+                "bind": "/model/instance/kohort_bayi/B04026",
+				"source": "kartu_ibu.ibu.KunjunganNeonatalKetigaharike8sd28Kondisibayi"
+            },
+            {
+                "name": "KunjunganNeonatalKetigaharike8sd28bayidiberikanimunisasi",
+                "bind": "/model/instance/kohort_bayi/B04027",
+				"source": "kartu_ibu.ibu.KunjunganNeonatalKetigaharike8sd28bayidiberikanimunisasi"
+            },
+            {
+                "name": "Tanggalkunjunganbayiperbulan",
+                "bind": "/model/instance/kohort_bayi/B04028",
+				"source": "kartu_ibu.ibu.Tanggalkunjunganbayiperbulan"
+            },
+            {
+                "name": "Beratbadanbayisetiapkunjunganbayiperbulan",
+                "bind": "/model/instance/kohort_bayi/B04029",
+				"source": "kartu_ibu.ibu.Beratbadanbayisetiapkunjunganbayiperbulan"
+            },
+            {
+                "name": "PemberianAsiEksklusif",
+                "bind": "/model/instance/kohort_bayi/B04030",
+				"source": "kartu_ibu.ibu.PemberianAsiEksklusif"
+            },
+            {
+                "name": "HasildilakukannyaKPSP",
+                "bind": "/model/instance/kohort_bayi/B04031",
+				"source": "kartu_ibu.ibu.HasildilakukannyaKPSP"
+            },
+            {
+                "name": "TanggalpemberianVitA6bulan",
+                "bind": "/model/instance/kohort_bayi/B04032",
+				"source": "kartu_ibu.ibu.TanggalpemberianVitA6bulan"
+            },
+            {
+                "name": "TanggalpemberianimunisasiHb07hari",
+                "bind": "/model/instance/kohort_bayi/B04033",
+				"source": "kartu_ibu.ibu.TanggalpemberianimunisasiHb07hari"
+            },
+            {
+                "name": "TanggalpemberianimunisasiBCGdanpolio1",
+                "bind": "/model/instance/kohort_bayi/B04034",
+				"source": "kartu_ibu.ibu.TanggalpemberianimunisasiBCGdanpolio1"
+            },
+            {
+                "name": "TanggalpemberianimunisasiDPTHB1Polio2",
+                "bind": "/model/instance/kohort_bayi/B04035",
+				"source": "kartu_ibu.ibu.TanggalpemberianimunisasiDPTHB1Polio2"
+            },
+            {
+                "name": "TanggalpemberianimunisasiDPTHB2polio3",
+                "bind": "/model/instance/kohort_bayi/B04036",
+				"source": "kartu_ibu.ibu.TanggalpemberianimunisasiDPTHB2polio3"
+            },
+            {
+                "name": "TanggalpemberianimunisasiDPTHB3polio4",
+                "bind": "/model/instance/kohort_bayi/B04037",
+				"source": "kartu_ibu.ibu.TanggalpemberianimunisasiDPTHB3polio4"
+            },
+            {
+                "name": "Tanggalpemberianimunisasicampak",
+                "bind": "/model/instance/kohort_bayi/B04038",
+				"source": "kartu_ibu.ibu.Tanggalpemberianimunisasicampak"
+            },
+            {
+                "name": "Kematianpostneonatal",
+                "bind": "/model/instance/kohort_bayi/B04039",
+				"source": "kartu_ibu.ibu.Kematianpostneonatal"
+            },
+            {
+                "name": "Keterangan",
+                "bind": "/model/instance/kohort_bayi/B04040",
+				"source": "kartu_ibu.ibu.Keterangan"
+            },
+            {
+                "name": "isOutOfArea",
+                "value": "false"
+            },
+            {
+                "name": "isClosed",
+                "value": "false"
+            },
+            {
+                "name": "submissionDate",
+                "bind": "/model/instance/kohort_bayi/today"
+            },
+            {
+                "name": "registrationDate",
+                "bind": "/model/instance/kohort_bayi/today"
+            }
+        ]
+    }
+}
