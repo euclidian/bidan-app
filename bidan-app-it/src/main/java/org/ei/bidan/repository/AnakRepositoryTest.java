@@ -4,7 +4,7 @@ import android.test.AndroidTestCase;
 import android.test.RenamingDelegatingContext;
 
 import org.ei.bidan.bidan.domain.Anak;
-import org.ei.bidan.bidan.domain.AnakRepository;
+import org.ei.bidan.bidan.repository.AnakRepository;
 import org.ei.bidan.bidan.domain.Ibu;
 import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.bidan.repository.IbuRepository;

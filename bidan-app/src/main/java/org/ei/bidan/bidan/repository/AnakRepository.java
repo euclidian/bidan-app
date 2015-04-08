@@ -1,4 +1,4 @@
-package org.ei.bidan.bidan.domain;
+package org.ei.bidan.bidan.repository;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -9,8 +9,9 @@ import com.google.gson.reflect.TypeToken;
 import net.sqlcipher.database.SQLiteDatabase;
 
 import org.apache.commons.lang3.StringUtils;
-import org.ei.bidan.bidan.repository.IbuRepository;
-import org.ei.bidan.bidan.repository.KartuIbuRepository;
+import org.ei.bidan.bidan.domain.Anak;
+import org.ei.bidan.bidan.domain.Ibu;
+import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.repository.DrishtiRepository;
 
 import java.util.ArrayList;
