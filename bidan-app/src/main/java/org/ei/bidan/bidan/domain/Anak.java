@@ -57,6 +57,10 @@ public class Anak {
         return details;
     }
 
+    public String getDetail(String object) {
+        return details.get(object);
+    }
+
     public boolean isClosed() {
         return isClosed;
     }
