@@ -116,19 +116,6 @@ public class AnakRepository extends DrishtiRepository {
         return readAllAnakWithIbuAndKI(cursor);
     }
 
-    private List<Anak> readAllAnakWithIbuAndKI(Cursor cursor) {
-        cursor.moveToFirst();
-        List<Anak> children = new ArrayList<Anak>();
-        while (!cursor.isAfterLast()) {
-            children.add(anakFromCursor(cursor)
-                    .withIbu(ibuFromCursor(cursor))
-                    .withKI(kiFromCursor(cursor)));
-            cursor.moveToNext();
-        }
-        cursor.close();
-        return children;
-    }
-
     private Anak anakFromCursor(Cursor cursor) {
         return new Anak(
                 getColumnValueByAlias(cursor, ANAK_TABLE_NAME, ID_COLUMN),
@@ -192,6 +179,19 @@ public class AnakRepository extends DrishtiRepository {
         return values;
     }
 
+    private List<Anak> readAllAnakWithIbuAndKI(Cursor cursor) {
+        cursor.moveToFirst();
+        List<Anak> children = new ArrayList<Anak>();
+        while (!cursor.isAfterLast()) {
+            children.add(anakFromCursor(cursor)
+                    .withIbu(ibuFromCursor(cursor))
+                    .withKI(kiFromCursor(cursor)));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return children;
+    }
+
     private List<Anak> readAll(Cursor cursor) {
         cursor.moveToFirst();
         List<Anak> children = new ArrayList<Anak>();
@@ -213,8 +213,32 @@ public class AnakRepository extends DrishtiRepository {
         return children;
     }
 
+    private List<Anak> readAllAnak(Cursor cursor) {
+        cursor.moveToFirst();
+        List<Anak> children = new ArrayList<Anak>();
+        while (!cursor.isAfterLast()) {
+            children.add(anakFromCursor(cursor));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return children;
+    }
+
     private String insertPlaceholdersForInClause(int length) {
         return repeat("?", ",", length);
+    }
+
+    public List<Anak> findAllByKIId(String kiId) {
+        SQLiteDatabase database = masterRepository.getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT " +
+                tableColumnsForQuery(ANAK_TABLE_NAME, ANAK_TABLE_COLUMNS) +
+                " FROM " + ANAK_TABLE_NAME + ", " + IBU_TABLE_NAME + ", " + KI_TABLE_NAME +
+                " WHERE " + ANAK_TABLE_NAME + "." + IS_CLOSED_COLUMN + "= '" + NOT_CLOSED + "' AND " +
+                ANAK_TABLE_NAME + "." + IBU_ID_COLUMN + " = " + IBU_TABLE_NAME + "." + IbuRepository.ID_COLUMN
+                + " AND " + IBU_TABLE_NAME + "." + IbuRepository.KI_ID_COLUMN + " = " + KI_TABLE_NAME + "." +
+                KartuIbuRepository.ID_COLUMN + " AND " + KI_TABLE_NAME + "." + KartuIbuRepository.ID_COLUMN +
+                "= ? ", new String[]{kiId});
+        return readAllAnak(cursor);
     }
 
 }

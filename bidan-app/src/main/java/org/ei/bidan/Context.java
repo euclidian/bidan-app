@@ -3,7 +3,9 @@ package org.ei.bidan;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 
+import org.ei.bidan.bidan.domain.Anak;
 import org.ei.bidan.bidan.repository.AllKohort;
+import org.ei.bidan.bidan.repository.AnakRepository;
 import org.ei.bidan.bidan.view.contract.KartuIbuPNCClients;
 import org.ei.bidan.repository.AlertRepository;
 import org.ei.bidan.repository.AllAlerts;
@@ -68,6 +70,7 @@ public class Context {
     private ServiceProvidedRepository serviceProvidedRepository;
     private KartuIbuRepository kartuIbuRepository;
     private IbuRepository ibuRepository;
+    private AnakRepository anakRepository;
 
     private AllSettings allSettings;
     private AllSharedPreferences allSharedPreferences;
@@ -806,6 +809,13 @@ public class Context {
         return ibuRepository;
     }
 
+    private AnakRepository anakRepository() {
+        if(anakRepository == null) {
+            anakRepository = new AnakRepository();
+        }
+        return anakRepository;
+    }
+
     private IbuService ibuService() {
         if(ibuService == null) {
             ibuService = new IbuService(allKartuIbus(), allTimelineEvents(), serviceProvidedService());
@@ -815,7 +825,7 @@ public class Context {
 
     public AllKohort allKohort() {
         if(allKohort == null) {
-            allKohort = new AllKohort(ibuRepository(), alertRepository(), timelineEventRepository());
+            allKohort = new AllKohort(ibuRepository(), anakRepository(), alertRepository(), timelineEventRepository());
         }
         return allKohort;
     }
