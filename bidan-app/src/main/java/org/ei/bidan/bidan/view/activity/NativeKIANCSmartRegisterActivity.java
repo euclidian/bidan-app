@@ -94,7 +94,7 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
 
     @Override
     protected void onInitialization() {
-        controller = new KartuIbuANCRegisterController(context.allIbu(),
+        controller = new KartuIbuANCRegisterController(context.allKohort(),
                 context.listCache(),context.kartuIbuANCClientsCache());
     }
 

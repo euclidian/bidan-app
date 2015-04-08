@@ -3,7 +3,7 @@ package org.ei.bidan;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 
-import org.ei.bidan.bidan.repository.AllIbu;
+import org.ei.bidan.bidan.repository.AllKohort;
 import org.ei.bidan.bidan.view.contract.KartuIbuPNCClients;
 import org.ei.bidan.repository.AlertRepository;
 import org.ei.bidan.repository.AllAlerts;
@@ -78,7 +78,7 @@ public class Context {
     private AllReports allReports;
     private AllServicesProvided allServicesProvided;
     private AllKartuIbus allKartuIbus;
-    private AllIbu allIbu;
+    private AllKohort allKohort;
 
     private DrishtiService drishtiService;
     private ActionService actionService;
@@ -813,11 +813,11 @@ public class Context {
         return ibuService;
     }
 
-    public AllIbu allIbu() {
-        if(allIbu == null) {
-            allIbu = new AllIbu(ibuRepository(), alertRepository(), timelineEventRepository());
+    public AllKohort allKohort() {
+        if(allKohort == null) {
+            allKohort = new AllKohort(ibuRepository(), alertRepository(), timelineEventRepository());
         }
-        return allIbu;
+        return allKohort;
     }
 
     public Cache<KartuIbuANCClients> kartuIbuANCClientsCache() {
@@ -850,7 +850,7 @@ public class Context {
 
     public BidanService bidanService() {
         if(bidanService == null) {
-            bidanService = new BidanService(allSharedPreferences(), allKartuIbus(), allIbu());
+            bidanService = new BidanService(allSharedPreferences(), allKartuIbus(), allKohort());
         }
         return bidanService;
     }

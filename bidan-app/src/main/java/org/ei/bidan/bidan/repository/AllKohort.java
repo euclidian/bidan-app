@@ -14,12 +14,12 @@ import static org.ei.bidan.bidan.repository.IbuRepository.TYPE_PNC;
 /**
  * Created by Dimas Ciputra on 3/5/15.
  */
-public class AllIbu {
+public class AllKohort {
     private IbuRepository ibuRepository;
     private final AlertRepository alertRepository;
     private final TimelineEventRepository timelineEventRepository;
 
-    public AllIbu(IbuRepository ibuRepository, AlertRepository alertRepository, TimelineEventRepository timelineEventRepository) {
+    public AllKohort(IbuRepository ibuRepository, AlertRepository alertRepository, TimelineEventRepository timelineEventRepository) {
         this.alertRepository = alertRepository;
         this.timelineEventRepository = timelineEventRepository;
         this.ibuRepository = ibuRepository;
