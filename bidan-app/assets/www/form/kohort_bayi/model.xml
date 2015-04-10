@@ -1,52 +1,38 @@
 <model>
     <instance>
-        <xlsform_kohort_bayi id="kohort_bayi" version="201412170736">
+        <kohort_bayi id="kohort_bayi" version="201504080847">
           <formhub>
             <uuid/>
           </formhub>
-          <B04001/>
-          <B04002/>
-          <B04003/>
-          <B04004/>
-          <B04005/>
-          <B04006/>
-          <B04007/>
-          <B04008/>
-          <B04009/>
-          <B04010/>
-          <B04011/>
-          <B04012/>
-          <B04013/>
-          <B04014/>
-          <B04015/>
-          <B04016/>
-          <B04017/>
-          <B04018/>
-          <B04019/>
-          <B04020/>
-          <B04021/>
-          <B04022/>
-          <B04023/>
-          <B04024/>
-          <B04025/>
-          <B04026/>
-          <B04027/>
-          <B04028/>
-          <B04029/>
-          <B04030/>
-          <B04031/>
-          <B04032/>
-          <B04033/>
-          <B04034/>
-          <B04035/>
-          <B04036/>
-          <B04037/>
-          <B04038/>
-          <B04039/>
-          <B04040/>
+          <today/>
+          <case_kartu_ibu_number/>
+          <case_puskesmas/>
+          <case_address/>
+          <case_province/>
+          <case_kabupaten/>
+          <case_kecamatan/>
+          <case_desa/>
+          <case_rtrw/>
+          <case_no_telpon/>
+          <case_woman_name/>
+          <case_husband_name/>
+          <child_reg_date/>
+          <child_birth_date/>
+          <child_age/>
+          <child_age_note/>
+          <child_sex/>
+          <child_name/>
+          <kia_book/>
+          <birth_weight/>
+          <birth_condition/>
+          <service_at_birth/>
+          <dead_or_alive/>
+          <child_immunization_hb/>
+          <mother_name/>
+          <father_name/>
           <meta>
             <instanceID/>
           </meta>
-        </xlsform_kohort_bayi>
+        </kohort_bayi>
       </instance>
-  </model>
+</model>
