@@ -1,6 +1,7 @@
 package org.ei.bidan.service.formSubmissionHandler;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.ei.bidan.bidan.service.formSubmissionHandler.AnakBayiRegistrationHandler;
 import org.ei.bidan.domain.form.FormSubmission;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KartuIbuANCRegistrationHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KartuIbuRegistrationHandler;
@@ -44,7 +45,8 @@ public class FormSubmissionRouter {
                                 VitaminAHandler vitaminAHandler, DeliveryPlanHandler deliveryPlanHandler,
                                 ECEditHandler ecEditHandler, ANCInvestigationsHandler ancInvestigationsHandler,
                                 KartuIbuRegistrationHandler kartuIbuRegistrationHandler,
-                                KartuIbuANCRegistrationHandler kartuIbuANCRegistrationHandler) {
+                                KartuIbuANCRegistrationHandler kartuIbuANCRegistrationHandler,
+                                AnakBayiRegistrationHandler anakBayiRegistrationHandler) {
         this.formDataRepository = formDataRepository;
         handlerMap = new HashMap<String, FormSubmissionHandler>();
         handlerMap.put(EC_REGISTRATION, ecRegistrationHandler);
@@ -77,6 +79,7 @@ public class FormSubmissionRouter {
         handlerMap.put(ANC_INVESTIGATIONS, ancInvestigationsHandler);
         handlerMap.put(KARTU_IBU_REGISTRATION, kartuIbuRegistrationHandler);
         handlerMap.put(KARTU_IBU_ANC_REGISTRATION, kartuIbuANCRegistrationHandler);
+        handlerMap.put(ANAK_BAYI_REGISTRATION, anakBayiRegistrationHandler);
     }
 
     public void route(String instanceId) throws Exception {

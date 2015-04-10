@@ -6,6 +6,8 @@ import android.graphics.drawable.Drawable;
 import org.ei.bidan.bidan.domain.Anak;
 import org.ei.bidan.bidan.repository.AllKohort;
 import org.ei.bidan.bidan.repository.AnakRepository;
+import org.ei.bidan.bidan.service.AnakService;
+import org.ei.bidan.bidan.service.formSubmissionHandler.AnakBayiRegistrationHandler;
 import org.ei.bidan.bidan.view.contract.KartuIbuPNCClients;
 import org.ei.bidan.repository.AlertRepository;
 import org.ei.bidan.repository.AllAlerts;
@@ -100,6 +102,7 @@ public class Context {
     private KartuIbuService kartuIbuService;
     private BidanService bidanService;
     private IbuService ibuService;
+    private AnakService anakService;
 
     private Session session;
     private Cache<String> listCache;
@@ -149,6 +152,7 @@ public class Context {
     private KartuIbuRegistrationHandler kartuIbuRegistrationHandler;
     private KartuIbuCloseHandler kartuIbuCloseHandler;
     private KartuIbuANCRegistrationHandler kartuIbuANCRegistrationHandler;
+    private AnakBayiRegistrationHandler anakBayiRegistrationHandler;
 
     private ANMController anmController;
     private ANMLocationController anmLocationController;
@@ -218,7 +222,7 @@ public class Context {
                     pncCloseHandler(), pncVisitHandler(), childImmunizationsHandler(), childRegistrationECHandler(),
                     childRegistrationOAHandler(), childCloseHandler(), childIllnessHandler(), vitaminAHandler(),
                     deliveryPlanHandler(), ecEditHandler(), ancInvestigationsHandler(),
-                    kartuIbuRegistrationHandler(), kartuIbuANCRegistrationHandler());
+                    kartuIbuRegistrationHandler(), kartuIbuANCRegistrationHandler(), anakBayiRegistrationHandler());
         }
         return formSubmissionRouter;
     }
@@ -441,7 +445,8 @@ public class Context {
     private Repository initBidanRepository() {
         return new Repository(this.applicationContext, session(), settingsRepository(),
                 alertRepository(), timelineEventRepository(), reportRepository(),
-                formDataRepository(), serviceProvidedRepository(), kartuIbuRepository(), ibuRepository());
+                formDataRepository(), serviceProvidedRepository(), kartuIbuRepository(), ibuRepository(),
+                anakRepository());
     }
 
     private Repository initDefaultRepository() {
@@ -823,6 +828,14 @@ public class Context {
         return ibuService;
     }
 
+    private AnakService anakService() {
+        if(anakService == null) {
+            anakService = new AnakService(allKohort(), ibuRepository(), anakRepository(),
+                    allTimelineEvents(), serviceProvidedService(), allAlerts());
+        }
+        return anakService;
+    }
+
     public AllKohort allKohort() {
         if(allKohort == null) {
             allKohort = new AllKohort(ibuRepository(), anakRepository(), alertRepository(), timelineEventRepository());
@@ -870,5 +883,12 @@ public class Context {
             kartuIbuANCRegistrationHandler = new KartuIbuANCRegistrationHandler(ibuService());
         }
         return kartuIbuANCRegistrationHandler;
+    }
+
+    public AnakBayiRegistrationHandler anakBayiRegistrationHandler() {
+        if(anakBayiRegistrationHandler == null) {
+            anakBayiRegistrationHandler = new AnakBayiRegistrationHandler(anakService());
+        }
+        return anakBayiRegistrationHandler;
     }
 }
