@@ -51,6 +51,94 @@
         android:layout_height="fill_parent"
         android:src="@color/smart_register_client_divider_color"/>
 
+
+    <TextView
+        android:id="@+id/risk_factors"
+        android:layout_width="@dimen/list_ec_no_view_width"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="125"
+        android:scrollHorizontally="false"
+        android:ellipsize="none"
+        android:singleLine="false"
+        android:maxLines="3"
+        android:paddingLeft="10dp"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+
+    <TextView
+        android:id="@+id/kunjungan"
+        android:layout_width="@dimen/list_ec_no_view_width"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="110"
+        android:scrollHorizontally="false"
+        android:ellipsize="none"
+        android:singleLine="false"
+        android:maxLines="3"
+        android:paddingLeft="10dp"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+
+    <TextView
+        android:id="@+id/tt_imunisasi"
+        android:layout_width="@dimen/list_ec_no_view_width"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="@integer/ec_list_gplsa_view_weight"
+        android:scrollHorizontally="false"
+        android:ellipsize="none"
+        android:singleLine="false"
+        android:maxLines="3"
+        android:paddingLeft="10dp"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+    <TextView
+        android:id="@+id/usia_klinis"
+        android:layout_width="@dimen/list_ec_no_view_width"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="100"
+        android:scrollHorizontally="false"
+        android:ellipsize="none"
+        android:singleLine="false"
+        android:maxLines="3"
+        android:paddingLeft="10dp"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+    <ImageButton
+        android:id="@+id/btn_edit"
+        android:layout_width="@dimen/list_edit_icon_view_width"
+        android:layout_height="fill_parent"
+        android:layout_weight="85"
+        android:scaleType="center"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/edit_button_background"/>
+
     <!--
 
     <include

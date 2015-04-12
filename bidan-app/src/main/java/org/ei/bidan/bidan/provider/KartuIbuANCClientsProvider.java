@@ -2,6 +2,7 @@ package org.ei.bidan.bidan.provider;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,6 @@ import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.contract.KartuIbuANCClient;
 import org.ei.bidan.bidan.view.controller.KartuIbuANCRegisterController;
 import org.ei.bidan.bidan.view.viewHolder.NativeKIANCRegisterViewHolder;
-import org.ei.bidan.bidan.view.viewHolder.NativeKIRegisterViewHolder;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
 import org.ei.bidan.view.activity.SecuredActivity;
 import org.ei.bidan.view.contract.SmartRegisterClient;
@@ -34,12 +34,17 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
     private final SecuredActivity activity;
     private final View.OnClickListener onClickListener;
     private final ProfilePhotoLoader photoLoader;
+    private final Context context;
 
     private final AbsListView.LayoutParams clientViewLayoutParams;
 
     protected KartuIbuANCRegisterController controller;
 
-    public KartuIbuANCClientsProvider(SecuredActivity activity, View.OnClickListener onClickListener, KartuIbuANCRegisterController controller) {
+    private Drawable iconPencilDrawable;
+
+    public KartuIbuANCClientsProvider(
+            SecuredActivity activity, View.OnClickListener onClickListener, KartuIbuANCRegisterController controller) {
+        this.context = activity.getApplicationContext();
         this.activity = activity;
         this.onClickListener = onClickListener;
         this.controller = controller;
@@ -70,10 +75,19 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
         setupClientProfileView(kartuIbuClient, viewHolder);
         setupIdDetailsView(kartuIbuClient, viewHolder);
         setupANCStatusView(kartuIbuClient, viewHolder);
+        setupResikoView(kartuIbuClient, viewHolder);
+        setupKunjunganView(kartuIbuClient, viewHolder);
+        setupTTImunisasiView(kartuIbuClient, viewHolder);
         setupHighlightColor(itemView, Integer.parseInt(""+viewGroup.getTag())+1);
+        setupEditView(kartuIbuClient, viewHolder);
+        setupUsiaKlinisView(kartuIbuClient, viewHolder);
 
         itemView.setLayoutParams(clientViewLayoutParams);
         return itemView;
+    }
+
+    private void setupUsiaKlinisView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
+        viewHolder.usiaKlinis().setText(client.usiaKlinis());
     }
 
     private void setupHighlightColor(ViewGroup itemView, int index) {
@@ -97,6 +111,29 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
     private void setupANCStatusView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
         viewHolder.ancStatus().setText(client.ancStatus()==null?"-":client.ancStatus());
     }
+
+    private void setupResikoView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
+        viewHolder.riskFactors().setText(client.riskFactors());
+    }
+
+    private void setupKunjunganView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
+        viewHolder.kunjungan().setText(client.kunjungan());
+    }
+
+    private void setupTTImunisasiView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
+        viewHolder.ttImunisasi().setText(client.ttImunisasi());
+    }
+
+
+    private void setupEditView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
+        if (iconPencilDrawable == null) {
+            iconPencilDrawable = context.getResources().getDrawable(R.drawable.ic_pencil);
+        }
+        viewHolder.editButton().setImageDrawable(iconPencilDrawable);
+        viewHolder.editButton().setOnClickListener(onClickListener);
+        viewHolder.editButton().setTag(client);
+    }
+
 
     @Override
     public SmartRegisterClients getClients() {

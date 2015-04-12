@@ -50,7 +50,11 @@ public class KartuIbuANCRegisterController {
                             .withHusband(ki.getDetails().get("Namasuami"))
                             .withKINumber(ki.getDetails().get("NoIbu"))
                             .withEDD(ki.getDetails().get("EDD"))
-                            .withANCStatus(anc.getDetails().get("StatusGiziibu"));
+                            .withANCStatus(anc.getDetails().get("StatusGiziibu"))
+                            .withRiskFactors(anc.getDetail("KomplikasidalamKehamilan"))
+                            .withKunjunganData(anc.getDetail("TrimesterKe"))
+                            .withTTImunisasiData(anc.getDetail("StatusImunisasiTT"))
+                            .withUsiaKlinisData(anc.getDetail("UsiaKlinis"));
 
                     ancClients.add(kartuIbuClient);
                 }
