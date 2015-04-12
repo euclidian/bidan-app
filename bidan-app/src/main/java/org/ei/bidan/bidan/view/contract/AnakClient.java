@@ -39,6 +39,8 @@ public class AnakClient implements SmartRegisterClient{
     private boolean isHighRisk;
     private String photo_path;
     private String kiNumber;
+    private String birthCondition;
+    private String serviceAtBirth;
 
     public AnakClient(String entityId, String gender, String weight) {
         this.entityId = entityId;
@@ -60,13 +62,17 @@ public class AnakClient implements SmartRegisterClient{
         return weight;
     }
 
-    public String motherEcNumber() {
+    public String motherKiNumber() {
         return kiNumber;
     }
 
     public String dateOfBirth() {
         return isBlank(dob) ? "" : formatDate(dob);
     }
+
+    public String getBirthCondition() { return StringUtil.humanize(birthCondition); }
+
+    public String getServiceAtBirth() { return StringUtil.humanize(serviceAtBirth); }
 
     @Override
     public String entityId() {
@@ -160,12 +166,12 @@ public class AnakClient implements SmartRegisterClient{
 
     @Override
     public String wifeName() {
-        return null;
+        return name();
     }
 
     @Override
     public String husbandName() {
-        return null;
+        return motherName() + "," + fatherName();
     }
 
     public String format(int days_since) {
@@ -238,6 +244,15 @@ public class AnakClient implements SmartRegisterClient{
         return this;
     }
 
+    public AnakClient withBirthCondition(String birthCondition) {
+        this.birthCondition = birthCondition;
+        return this;
+    }
+
+    public AnakClient withServiceAtBirth(String serviceAtBirth) {
+        this.serviceAtBirth = serviceAtBirth;
+        return this;
+    }
 
     @Override
     public boolean equals(Object o) {

@@ -1,0 +1,42 @@
+<org.ei.bidan.bidan.view.customControls.ClientAnakBirthStatusView
+    android:id="@+id/client_anak_birth_status_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="@integer/child_list_id_no_view_weight">
+
+    <org.ei.bidan.view.customControls.CustomFontTextView
+        android:id="@+id/lbl_birth_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Berat lahir (kg):"
+        style="@style/CustomFontTextViewStyle.ListView.Normal"/>
+
+    <org.ei.bidan.view.customControls.CustomFontTextView
+        android:id="@+id/lbl_birth_condition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/lbl_birth_weight"
+        android:text="Kondisi lahir:"
+        style="@style/CustomFontTextViewStyle.ListView.Normal"/>
+
+    <org.ei.bidan.view.customControls.CustomFontTextView
+        android:id="@+id/txt_birth_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/lbl_birth_weight"
+        android:layout_alignParentTop="true"
+        style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"/>
+
+    <org.ei.bidan.view.customControls.CustomFontTextView
+        android:id="@+id/txt_birth_condition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/lbl_birth_condition"
+        android:layout_below="@id/txt_birth_weight"
+        style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"/>
+
+</org.ei.bidan.bidan.view.customControls.ClientAnakBirthStatusView>

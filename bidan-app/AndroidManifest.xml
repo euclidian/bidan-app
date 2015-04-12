@@ -185,6 +185,11 @@
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
         </activity>
 
+        <activity android:name="org.ei.bidan.bidan.view.activity.NativeKIAnakSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+        </activity>
+
         <receiver android:name=".view.receiver.SyncBroadcastReceiver"/>
         <receiver android:name="org.ei.bidan.view.receiver.ConnectivityChangeReceiver">
             <intent-filter>

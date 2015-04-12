@@ -122,6 +122,7 @@
     <string name="report_month_sample_text">26/03 - 25/04</string>
     <string name="str_switch_language">Switch Language</string>
     <string name="str_edit_ki_form">Edit Kartu Ibu</string>
+    <string name="str_register_anak_form">Register Anak</string>
 
     <string name="str_register_anc_visit_form">ANC Visit</string>
     <string name="str_register_hb_test_form">Hb Test</string>
@@ -200,6 +201,7 @@
     <string name="service_type_dpt_booster_1_short">DPT B1</string>
     <string name="service_type_dpt_booster_2_short">DPT B2</string>
     <string name="pentavalent_short">Pentav</string>
+    <string name="header_birth_status">BIRTH STATUS</string>
 
     <string name="fp_register_title_in_short">FP:</string>
     <string name="pnc_register_title_in_short">PNC:</string>

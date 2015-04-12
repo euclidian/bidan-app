@@ -67,13 +67,15 @@ public class AnakRegisterController {
                     // List<ServiceProvidedDTO> services = getServicesProvided(a.getCaseId());
 
                     AnakClient anakClient = new AnakClient(a.getCaseId(), a.getGender(),
-                            a.getDetail(AllConstants.ChildRegistrationFields.WEIGHT))
+                            a.getDetail("birthWeight"))
                             .withMotherName(a.getKartuIbu().getDetails().get("Namalengkap"))
                             .withMotherAge(a.getKartuIbu().getDetails().get("Umur"))
                             .withFatherName(a.getKartuIbu().getDetails().get("Namasuami"))
                             .withDOB(a.getDateOfBirth())
-                            .withName(a.getDetail("NamaBayi"))
+                            .withName(a.getDetail("name"))
                             .withKINumber(a.getKartuIbu().getDetails().get("NoIbu"))
+                            .withBirthCondition(a.getDetail("birthCondition"))
+                            .withServiceAtBirth(a.getDetail("serviceAtBirth"))
                             .withPhotoPath(photoPath);
 
                     anakSmartClient.add(anakClient);
