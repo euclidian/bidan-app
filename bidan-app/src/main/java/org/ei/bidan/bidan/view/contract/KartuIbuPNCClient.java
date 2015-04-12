@@ -41,6 +41,11 @@ public class KartuIbuPNCClient implements KartuIbuANCSmartRegisterClient {
     private String edd;
     private String village;
     private String plan;
+    private String komplikasi;
+    private String metodeKontrasepsi;
+    private String tdSistolik;
+    private String tdDiastolik;
+    private String tdSuhu;
 
     private List<AlertDTO> alerts;
     private List<ServiceProvidedDTO> services_provided;
@@ -250,5 +255,43 @@ public class KartuIbuPNCClient implements KartuIbuANCSmartRegisterClient {
         this.plan = plan;
         return this;
     }
+
+    public KartuIbuPNCClient withKomplikasi(String komplikasi) {
+        this.komplikasi = komplikasi;
+        return this;
+    }
+
+    public KartuIbuPNCClient withMetodeKontrasepsi(String metodeKontrasepsi) {
+        this.metodeKontrasepsi = metodeKontrasepsi;
+        return this;
+    }
+
+    public KartuIbuPNCClient withTandaVital(String tdDiastolik, String tdSistolik, String tdSuhu) {
+        this.tdDiastolik = tdDiastolik;
+        this.tdSistolik = tdSistolik;
+        this.tdSuhu = tdSuhu;
+        return this;
+    }
+
+    public String tdDiastolik() {
+        return tdDiastolik == null ? "-" : tdDiastolik;
+    }
+
+    public String tdSistolik() {
+        return tdSistolik == null ? "-" : tdSistolik;
+    }
+
+    public String komplikasi() {
+        return humanize(komplikasi);
+    }
+
+    public String tdSuhu() {
+        return tdSuhu == null ? "-" : tdSuhu;
+    }
+
+    public String metodeKontrasepsi() {
+        return humanize(metodeKontrasepsi);
+    }
+
 
 }

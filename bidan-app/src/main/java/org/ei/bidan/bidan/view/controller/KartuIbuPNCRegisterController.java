@@ -40,17 +40,22 @@ public class KartuIbuPNCRegisterController {
                 List<Pair<Ibu, KartuIbu>> pncsWithKis = allKohort.allPNCsWithKartuIbu();
 
                 for (Pair<Ibu, KartuIbu> pncsWithKi : pncsWithKis) {
-                    Ibu anc = pncsWithKi.getLeft();
+                    Ibu pnc = pncsWithKi.getLeft();
                     KartuIbu ki = pncsWithKi.getRight();
 
-                    KartuIbuPNCClient kartuIbuClient = new KartuIbuPNCClient(anc.getId(),
+                    KartuIbuPNCClient kartuIbuClient = new KartuIbuPNCClient(pnc.getId(),
                             ki.getDetails().get("Desa"), ki.getDetails().get("puskesmas"),
                             ki.getDetails().get("Namalengkap"), ki.getDetails().get("Umur")
                     )
                             .withHusband(ki.getDetails().get("Namasuami"))
                             .withKINumber(ki.getDetails().get("NoIbu"))
                             .withEDD(ki.getDetails().get("EDD"))
-                            .withPlan(anc.getDetails().get("Rencana"));
+                            .withPlan(pnc.getDetail("Rencana"))
+                            .withKomplikasi(pnc.getDetail("Komplikasi"))
+                            .withMetodeKontrasepsi(pnc.getDetail("Metodekontrasepsi"))
+                            .withTandaVital(pnc.getDetail("TandaVitalTDDiastolik"),
+                                    pnc.getDetail("TandaVitalTDSistolik"),
+                                    pnc.getDetail("TandaVitalSuhu"));
 
                     pncClients.add(kartuIbuClient);
                 }

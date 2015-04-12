@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Berat lahir (kg):"
+        android:text="Berat lahir (kg) : "
         style="@style/CustomFontTextViewStyle.ListView.Normal"/>
 
     <org.ei.bidan.view.customControls.CustomFontTextView
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/lbl_birth_weight"
-        android:text="Kondisi lahir:"
+        android:text="Kondisi lahir : "
         style="@style/CustomFontTextViewStyle.ListView.Normal"/>
 
     <org.ei.bidan.view.customControls.CustomFontTextView
