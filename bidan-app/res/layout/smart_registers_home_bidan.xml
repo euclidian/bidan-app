@@ -38,7 +38,7 @@
                 <org.ei.bidan.view.customControls.CustomFontTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="KARTU IBU"
+                        android:text="KOHORT IBU"
                         style="@style/CustomFontTextViewStyle.Home.RegisterName"/>
 
                 <org.ei.bidan.view.customControls.CustomFontTextView
@@ -134,7 +134,7 @@
                 <org.ei.bidan.view.customControls.CustomFontTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="BAYI"
+                    android:text="KOHORT BAYI"
                     style="@style/CustomFontTextViewStyle.Home.RegisterName"/>
 
                 <org.ei.bidan.view.customControls.CustomFontTextView

@@ -6,7 +6,6 @@ import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.view.dialog.AllKartuIbuServiceMode;
 import org.ei.bidan.bidan.view.controller.KartuIbuRegisterController;
-import org.ei.bidan.bidan.view.dialog.BidanServiceModeOption;
 import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
 import org.ei.bidan.bidan.provider.KIClientsProvider;
 import org.ei.bidan.domain.form.FieldOverrides;
@@ -23,6 +22,7 @@ import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
 
+import static org.ei.bidan.AllConstants.FormNames.ANAK_BAYI_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_EDIT;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_REGISTRATION;
@@ -48,6 +48,7 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
         return new DialogOption[]{
                 new OpenFormOption(getString(R.string.str_register_anc_form), KARTU_IBU_ANC_REGISTRATION, formController),
                 new OpenFormOption(getString(R.string.str_register_pnc_form), KARTU_IBU_PNC_REGISTRATION, formController),
+                new OpenFormOption("Register Anak", ANAK_BAYI_REGISTRATION, formController),
                 new OpenFormOption(getString(R.string.str_edit_ki_form), KARTU_IBU_EDIT, formController),
         };
     }
