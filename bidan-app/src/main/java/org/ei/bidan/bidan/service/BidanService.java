@@ -1,6 +1,6 @@
 package org.ei.bidan.bidan.service;
 
-import org.ei.bidan.bidan.repository.AllIbu;
+import org.ei.bidan.bidan.repository.AllKohort;
 import org.ei.bidan.bidan.repository.AllKartuIbus;
 import org.ei.bidan.bidan.domain.Bidan;
 import org.ei.bidan.repository.AllSharedPreferences;
@@ -11,15 +11,15 @@ import org.ei.bidan.repository.AllSharedPreferences;
 public class BidanService {
     private AllSharedPreferences allSharedPreferences;
     private AllKartuIbus allKartuIbus;
-    private AllIbu allIbu;
+    private AllKohort allKohort;
 
-    public BidanService(AllSharedPreferences allSharedPreferences, AllKartuIbus allKartuIbus, AllIbu allIbu) {
+    public BidanService(AllSharedPreferences allSharedPreferences, AllKartuIbus allKartuIbus, AllKohort allKohort) {
         this.allSharedPreferences = allSharedPreferences;
         this.allKartuIbus = allKartuIbus;
-        this.allIbu = allIbu;
+        this.allKohort = allKohort;
     }
 
     public Bidan fetchDetails() {
-        return new Bidan(allSharedPreferences.fetchRegisteredBidan(), allKartuIbus.count(), allIbu.ancCount(), allIbu.pncCount());
+        return new Bidan(allSharedPreferences.fetchRegisteredBidan(), allKartuIbus.count(), allKohort.ancCount(), allKohort.pncCount(), allKohort.anakCount());
     }
 }

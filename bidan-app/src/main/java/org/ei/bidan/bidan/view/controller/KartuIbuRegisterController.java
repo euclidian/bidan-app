@@ -1,14 +1,11 @@
 package org.ei.bidan.bidan.view.controller;
 
-import org.ei.bidan.AllConstants;
 import org.ei.bidan.bidan.domain.Ibu;
 import org.ei.bidan.bidan.domain.KartuIbu;
-import org.ei.bidan.bidan.repository.AllIbu;
+import org.ei.bidan.bidan.repository.AllKohort;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClients;
 import org.ei.bidan.bidan.repository.AllKartuIbus;
-import org.ei.bidan.domain.EligibleCouple;
-import org.ei.bidan.domain.Mother;
 import org.ei.bidan.util.Cache;
 import org.ei.bidan.util.CacheableData;
 import org.ei.bidan.util.EasyMap;
@@ -17,9 +14,6 @@ import org.ei.bidan.view.contract.SmartRegisterClient;
 import java.util.Comparator;
 import java.util.List;
 import static java.util.Collections.sort;
-import static org.ei.bidan.AllConstants.ANCRegistrationFields.EDD;
-import static org.ei.bidan.AllConstants.ECRegistrationFields.FAMILY_PLANNING_METHOD_CHANGE_DATE;
-import static org.ei.bidan.AllConstants.ECRegistrationFields.REGISTRATION_DATE;
 
 /**
  * Created by Dimas Ciputra on 2/18/15.
@@ -34,13 +28,13 @@ public class KartuIbuRegisterController {
     private final AllKartuIbus allKartuIbus;
     private final Cache<String> cache;
     private final Cache<KartuIbuClients> kartuIbuClientsCache;
-    private final AllIbu allIbu;
+    private final AllKohort allKohort;
 
-    public KartuIbuRegisterController(AllKartuIbus allKartuIbus, Cache<String> cache, Cache<KartuIbuClients> kartuIbuClientsCache, AllIbu allIbu) {
+    public KartuIbuRegisterController(AllKartuIbus allKartuIbus, Cache<String> cache, Cache<KartuIbuClients> kartuIbuClientsCache, AllKohort allKohort) {
         this.allKartuIbus = allKartuIbus;
         this.cache = cache;
         this.kartuIbuClientsCache = kartuIbuClientsCache;
-        this.allIbu = allIbu;
+        this.allKohort = allKohort;
     }
 
     public KartuIbuClients getKartuIbuClients() {
@@ -84,7 +78,7 @@ public class KartuIbuRegisterController {
 
     //#TODO: Needs refactoring
     private void updateStatusInformation(KartuIbu kartuIbu, KartuIbuClient kartuIbuClient) {
-        Ibu ibu = allIbu.findIbuByKartuIbuId(kartuIbu.getCaseId());
+        Ibu ibu = allKohort.findIbuByKartuIbuId(kartuIbu.getCaseId());
 
         if (ibu != null && ibu.isANC()) {
             kartuIbuClient

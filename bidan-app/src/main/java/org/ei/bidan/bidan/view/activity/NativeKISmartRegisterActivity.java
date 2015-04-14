@@ -6,6 +6,7 @@ import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.view.dialog.AllKartuIbuServiceMode;
 import org.ei.bidan.bidan.view.controller.KartuIbuRegisterController;
+import org.ei.bidan.bidan.view.dialog.BidanServiceModeOption;
 import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
 import org.ei.bidan.bidan.provider.KIClientsProvider;
 import org.ei.bidan.domain.form.FieldOverrides;
@@ -22,7 +23,6 @@ import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
 
-import static org.ei.bidan.AllConstants.FormNames.EC_EDIT;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_EDIT;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_REGISTRATION;
@@ -121,7 +121,7 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
     @Override
     protected void onInitialization() {
         controller = new KartuIbuRegisterController(context.allKartuIbus(),
-                context.listCache(),context.kiClientsCache(),context.allIbu());
+                context.listCache(),context.kiClientsCache(),context.allKohort());
         dialogOptionMapper = new DialogOptionMapper();
     }
 

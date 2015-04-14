@@ -3,9 +3,7 @@ package org.ei.bidan.bidan.view.controller;
 import org.apache.commons.lang3.tuple.Pair;
 import org.ei.bidan.bidan.domain.Ibu;
 import org.ei.bidan.bidan.domain.KartuIbu;
-import org.ei.bidan.bidan.repository.AllIbu;
-import org.ei.bidan.bidan.view.contract.KartuIbuANCClient;
-import org.ei.bidan.bidan.view.contract.KartuIbuANCClients;
+import org.ei.bidan.bidan.repository.AllKohort;
 import org.ei.bidan.bidan.view.contract.KartuIbuPNCClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuPNCClients;
 import org.ei.bidan.util.Cache;
@@ -24,12 +22,12 @@ public class KartuIbuPNCRegisterController {
 
     private static final String KI_PNC_CLIENTS_LIST = "KIPNClientsList";
 
-    private final AllIbu allIbu;
+    private final AllKohort allKohort;
     private final Cache<String> cache;
     private final Cache<KartuIbuPNCClients> kartuIbuPNCClientsCache;
 
-    public KartuIbuPNCRegisterController(AllIbu allIbu, Cache<String> cache, Cache<KartuIbuPNCClients> kartuIbuPNCClientsCache) {
-        this.allIbu = allIbu;
+    public KartuIbuPNCRegisterController(AllKohort allKohort, Cache<String> cache, Cache<KartuIbuPNCClients> kartuIbuPNCClientsCache) {
+        this.allKohort = allKohort;
         this.cache = cache;
         this.kartuIbuPNCClientsCache = kartuIbuPNCClientsCache;
     }
@@ -39,7 +37,7 @@ public class KartuIbuPNCRegisterController {
             @Override
             public KartuIbuPNCClients fetch() {
                 KartuIbuPNCClients pncClients = new KartuIbuPNCClients();
-                List<Pair<Ibu, KartuIbu>> pncsWithKis = allIbu.allPNCsWithKartuIbu();
+                List<Pair<Ibu, KartuIbu>> pncsWithKis = allKohort.allPNCsWithKartuIbu();
 
                 for (Pair<Ibu, KartuIbu> pncsWithKi : pncsWithKis) {
                     Ibu anc = pncsWithKi.getLeft();

@@ -71,6 +71,7 @@ public class BidanHomeActivity extends SecuredActivity {
     private TextView kartuIbuRegisterClientCountView;
     private TextView kartuIbuANCRegisterClientCountView;
     private TextView kartuIbuPNCRegisterClientCountView;
+    private TextView anakRegisterClientCountView;
 
     @Override
     protected void onCreation() {
@@ -83,6 +84,7 @@ public class BidanHomeActivity extends SecuredActivity {
         findViewById(R.id.btn_kartu_ibu_register).setOnClickListener(onRegisterStartListener);
         findViewById(R.id.btn_kartu_ibu_anc_register).setOnClickListener(onRegisterStartListener);
         findViewById(R.id.btn_kartu_ibu_pnc_register).setOnClickListener(onRegisterStartListener);
+        findViewById(R.id.btn_anak_register).setOnClickListener(onRegisterStartListener);
 
         findViewById(R.id.btn_reporting).setOnClickListener(onButtonsClickListener);
         findViewById(R.id.btn_videos).setOnClickListener(onButtonsClickListener);
@@ -90,6 +92,7 @@ public class BidanHomeActivity extends SecuredActivity {
         kartuIbuRegisterClientCountView = (TextView) findViewById(R.id.txt_kartu_ibu_register_client_count);
         kartuIbuANCRegisterClientCountView = (TextView) findViewById(R.id.txt_kartu_ibu_anc_register_client_count);
         kartuIbuPNCRegisterClientCountView = (TextView) findViewById(R.id.txt_kartu_ibu_pnc_register_client_count);
+        anakRegisterClientCountView = (TextView) findViewById(R.id.txt_anak_client_count);
     }
 
     private void initialize() {
@@ -121,6 +124,7 @@ public class BidanHomeActivity extends SecuredActivity {
         kartuIbuRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuCount()));
         kartuIbuANCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuANCCount()));
         kartuIbuPNCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuPNCCount()));
+        anakRegisterClientCountView.setText(valueOf(homeContext.getAnakCount()));
     }
 
     @Override
@@ -197,6 +201,9 @@ public class BidanHomeActivity extends SecuredActivity {
                     break;
                 case R.id.btn_kartu_ibu_pnc_register:
                     navigationController.startKartuIbuPNCRegistry();
+                    break;
+                case R.id.btn_anak_register:
+                    navigationController.startAnakBayiRegistry();
                     break;
             }
         }

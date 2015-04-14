@@ -4,8 +4,10 @@ import android.view.View;
 
 import org.ei.bidan.Context;
 import org.ei.bidan.R;
+import org.ei.bidan.bidan.view.contract.AnakClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuANCClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
+import org.ei.bidan.bidan.view.viewHolder.NativeAnakRegisterViewHolder;
 import org.ei.bidan.bidan.view.viewHolder.NativeKIANCRegisterViewHolder;
 import org.ei.bidan.bidan.view.viewHolder.NativeKIRegisterViewHolder;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
@@ -88,6 +90,11 @@ public class KartuIbuPNCOverviewServiceMode extends BidanServiceModeOption {
 
     @Override
     public void setupListView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder, View.OnClickListener clientSectionClickListener) {
+
+    }
+
+    @Override
+    public void setupListView(AnakClient client, NativeAnakRegisterViewHolder viewHolder, View.OnClickListener clientSectionClickListener) {
 
     }
 }

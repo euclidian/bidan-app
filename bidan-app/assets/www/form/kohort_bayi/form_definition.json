@@ -1,0 +1,148 @@
+{
+	"form_data_definition_version": "1",
+	"form": {
+	"bind_type": "kartu_ibu",
+	"default_bind_path": "/model/instance/kohort_bayi/",
+	"fields": [
+		{
+			"name": "id",
+			"shouldLoadValue": true
+		},
+		{
+			"name": "motherId",
+			"source": "kartu_ibu.ibu.id"
+		},
+		{
+			"name" : "childId",
+			"source": "kartu_ibu.ibu.anak.id"
+		},
+		{
+			"name" : "motherName",
+			"bind" : "/model/instance/kohort_bayi/mother_name"
+		},
+		{
+			"name" : "fatherName",
+			"bind" : "/model/instance/kohort_bayi/father_name"
+		},
+		{
+			"name" : "NoIbu",
+			"bind" : "/model/instance/kohort_bayi/case_kartu_ibu_number",
+			"shouldLoadValue" : true
+		},
+		{
+			"name": "puskesmas",
+			"bind": "/model/instance/kohort_bayi/case_puskesmas",
+			"shouldLoadValue" : true
+		},
+		{
+			"name": "Alamatdomisili",
+			"bind": "/model/instance/kohort_bayi/case_address",
+			"shouldLoadValue" : true
+		},
+		{
+			"name": "Propinsi",
+			"bind": "/model/instance/kohort_bayi/case_province",
+			"shouldLoadValue" : true
+		},
+		{
+			"name": "Kabupaten",
+			"bind": "/model/instance/kohort_bayi/case_kabupaten",
+			"shouldLoadValue" : true
+		},
+		{
+			"name": "Kecamatan",
+			"bind": "/model/instance/kohort_bayi/case_kecamatan",
+			"shouldLoadValue" : true
+		},
+		{
+			"name": "Desa",
+			"bind": "/model/instance/kohort_bayi/case_desa",
+			"shouldLoadValue" : true
+		},
+		{
+			"name": "RTRW",
+			"bind": "/model/instance/kohort_bayi/case_rtrw",
+			"shouldLoadValue" : true
+		},
+		{
+			"name": "NomorTelponHp",
+			"bind": "/model/instance/kohort_bayi/case_no_telpon",
+			"shouldLoadValue" : true
+		},
+	 	{
+            "name": "Namalengkap",
+            "bind": "/model/instance/kohort_bayi/case_woman_name",
+            "shouldLoadValue" : true
+        },
+        {
+            "name": "Namasuami",
+            "bind": "/model/instance/kohort_bayi/case_husband_name",
+            "shouldLoadValue" : true
+        },	
+		{
+			"name" : "registrationDate",
+			"bind" : "/model/instance/kohort_bayi/child_reg_date",
+			"source" : "kartu_ibu.ibu.anak.registrationDate"
+		},
+		{
+			"name": "dateOfBirth",
+			"bind": "/model/instance/kohort_bayi/child_birth_date",
+			"source": "kartu_ibu.ibu.anak.dateOfBirth"
+		},
+		{
+			"name" : "age",
+			"bind" : "/model/instance/kohort_bayi/child_age",
+			"source" : "kartu_ibu.ibu.anak.age"
+		},
+		{
+			"name": "gender",
+			"bind": "/model/instance/kohort_bayi/child_sex",
+			"source" : "kartu_ibu.ibu.anak.gender"
+		},
+		{
+			"name": "name",
+			"bind": "/model/instance/kohort_bayi/child_name",
+			"source": "kartu_ibu.ibu.anak.name"
+		},
+		{
+			"name": "KIABook",
+			"bind": "/model/instance/kohort_bayi/kia_book",
+			"source" : "kartu_ibu.ibu.anak.KIABook"
+		},
+		{
+			"name": "birthWeight",
+			"bind": "/model/instance/kohort_bayi/birth_weight",
+			"source" : "kartu_ibu.ibu.anak.birthWeight"
+		},
+		{
+			"name": "birthCondition",
+			"bind": "/model/instance/kohort_bayi/birth_condition",
+			"source" : "kartu_ibu.ibu.anak.birthCondition"
+		},
+		{
+			"name": "serviceAtBirth",
+			"bind": "/model/instance/kohort_bayi/service_at_birth",
+			"source" : "kartu_ibu.ibu.anak.serviceAtBirth"
+		},
+		{
+			"name": "deadOrAlive",
+			"bind": "/model/instance/kohort_bayi/dead_or_alive",
+			"source" : "kartu_ibu.ibu.anak.deadOrAlive"
+		},
+		{
+			"name": "immunizationsHBGiven",
+			"bind": "/model/instance/kohort_bayi/child_immunization_hb",
+			"source" : "kartu_ibu.ibu.anak.immunizationsHBGiven"
+		},
+		{
+		    "name": "isClosed",
+		    "value": "false",
+		    "source": "kartu_ibu.ibu.anak.isClosed"
+		},
+		{
+		    "name": "submissionDate",
+		    "bind": "/model/instance/kohort_bayi/today"
+		}
+		]
+	}	
+}

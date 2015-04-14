@@ -47,18 +47,18 @@ public class ECClientTest {
     public void shouldReturn34YearsWhenDOBIs4_4_1980() {
         DateUtil.fakeIt(LocalDate.parse("2014-04-18"));
 
-        final int age = getClient().withDateOfBirth(new LocalDate(1980, 4, 4).toString()).age();
+        final int age = getClient().withDateOfBirth(new LocalDate(1980, 4, 18).toString()).age();
 
         assertEquals(34, age);
     }
 
     @Test
     public void shouldReturn0YearsWhenDOBIs4_4_2014() {
-        DateUtil.fakeIt(LocalDate.parse("2014-04-18"));
+        DateUtil.fakeIt(LocalDate.parse("2014-04-04"));
 
         int age = getClient().withDateOfBirth(new LocalDate(2014, 4, 4).toString()).age();
 
-        assertEquals(0, age);
+        assertEquals(1, age);
     }
 
     @Test

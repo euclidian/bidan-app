@@ -1,5 +1,6 @@
 package org.ei.bidan.service.formSubmissionHandler;
 
+import org.ei.bidan.bidan.service.formSubmissionHandler.AnakBayiRegistrationHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KartuIbuANCRegistrationHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KartuIbuCloseHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KartuIbuRegistrationHandler;
@@ -78,6 +79,8 @@ public class FormSubmissionRouterTest {
     private KartuIbuRegistrationHandler kartuIbuRegistrationHandler;
     @Mock
     private KartuIbuANCRegistrationHandler kartuIbuANCRegistrationHandler;
+    @Mock
+    private AnakBayiRegistrationHandler anakBayiRegistrationHandler;
 
     private FormSubmissionRouter router;
 
@@ -103,7 +106,7 @@ public class FormSubmissionRouterTest {
                 pncVisitHandler,
                 childImmunizationsHandler, childRegistrationECHandler, childRegistrationOAHandler, childCloseHandler,
                 childIllnessHandler, vitaminAHandler, deliveryPlanHandler, ecEditHandler, ancInvestigationsHandler,
-                kartuIbuRegistrationHandler, kartuIbuANCRegistrationHandler);
+                kartuIbuRegistrationHandler, kartuIbuANCRegistrationHandler, anakBayiRegistrationHandler);
     }
 
     @Test

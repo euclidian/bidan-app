@@ -53,6 +53,7 @@ public class AllConstants {
     public static final String FILE_PATH_STARTING_STRING = "file:///";
     public static final String SLASH_STRING = "/";
     public static final String FP_DIALOG_TAB_SELECTION = "FP_DIALOG_TAB_SELECTION";
+    public static final String FEMALE_GENDER_INA = "perempuan";
 
     public static final String OUT_OF_AREA = "out_of_area";
     public static final String IN_AREA = "in_area";
@@ -95,6 +96,7 @@ public class AllConstants {
         public static final String KARTU_IBU_CLOSE = "";
         public static final String KARTU_IBU_ANC_REGISTRATION = "kartu_ibu_anc";
         public static final String KARTU_IBU_PNC_REGISTRATION = "kartu_ibu_pnc";
+        public static final String ANAK_BAYI_REGISTRATION = "kohort_bayi";
     }
 
     public class ECRegistrationFields {

@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import net.sqlcipher.database.SQLiteDatabase;
 
+import org.ei.bidan.bidan.repository.AnakRepository;
 import org.ei.bidan.bidan.repository.IbuRepository;
 import org.ei.bidan.bidan.repository.KartuIbuRepository;
 import org.ei.bidan.domain.SyncStatus;
@@ -50,6 +51,7 @@ public class FormDataRepository extends DrishtiRepository {
         TABLE_COLUMN_MAP.put(ChildRepository.CHILD_TABLE_NAME, ChildRepository.CHILD_TABLE_COLUMNS);
         TABLE_COLUMN_MAP.put(KartuIbuRepository.KI_TABLE_NAME, KartuIbuRepository.KI_TABLE_COLUMNS);
         TABLE_COLUMN_MAP.put(IbuRepository.IBU_TABLE_NAME, IbuRepository.IBU_TABLE_COLUMNS);
+        TABLE_COLUMN_MAP.put(AnakRepository.ANAK_TABLE_NAME, AnakRepository.ANAK_TABLE_COLUMNS);
     }
 
     @Override

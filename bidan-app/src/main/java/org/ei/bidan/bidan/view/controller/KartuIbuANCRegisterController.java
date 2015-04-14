@@ -3,10 +3,9 @@ package org.ei.bidan.bidan.view.controller;
 import org.apache.commons.lang3.tuple.Pair;
 import org.ei.bidan.bidan.domain.Ibu;
 import org.ei.bidan.bidan.domain.KartuIbu;
-import org.ei.bidan.bidan.repository.AllIbu;
+import org.ei.bidan.bidan.repository.AllKohort;
 import org.ei.bidan.bidan.view.contract.KartuIbuANCClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuANCClients;
-import org.ei.bidan.bidan.view.contract.KartuIbuClients;
 import org.ei.bidan.util.Cache;
 import org.ei.bidan.util.CacheableData;
 import org.ei.bidan.view.contract.SmartRegisterClient;
@@ -23,12 +22,12 @@ public class KartuIbuANCRegisterController {
 
     private static final String KI_ANC_CLIENTS_LIST = "KIANCClientsList";
 
-    private final AllIbu allIbu;
+    private final AllKohort allKohort;
     private final Cache<String> cache;
     private final Cache<KartuIbuANCClients> kartuIbuANCClientsCache;
 
-    public KartuIbuANCRegisterController(AllIbu allIbu, Cache<String> cache, Cache<KartuIbuANCClients> kartuIbuANCClientsCache) {
-        this.allIbu = allIbu;
+    public KartuIbuANCRegisterController(AllKohort allKohort, Cache<String> cache, Cache<KartuIbuANCClients> kartuIbuANCClientsCache) {
+        this.allKohort = allKohort;
         this.cache = cache;
         this.kartuIbuANCClientsCache = kartuIbuANCClientsCache;
     }
@@ -38,7 +37,7 @@ public class KartuIbuANCRegisterController {
             @Override
             public KartuIbuANCClients fetch() {
                 KartuIbuANCClients ancClients = new KartuIbuANCClients();
-                List<Pair<Ibu, KartuIbu>> ancsWithKis = allIbu.allANCsWithKartuIbu();
+                List<Pair<Ibu, KartuIbu>> ancsWithKis = allKohort.allANCsWithKartuIbu();
 
                 for (Pair<Ibu, KartuIbu> ancsWithKi : ancsWithKis) {
                     Ibu anc = ancsWithKi.getLeft();
