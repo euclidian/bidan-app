@@ -8,10 +8,14 @@ import org.ei.bidan.bidan.provider.AnakRegisterClientsProvider;
 import org.ei.bidan.bidan.view.controller.AnakRegisterController;
 import org.ei.bidan.bidan.view.dialog.AnakOverviewServiceMode;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
+import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.dialog.AllClientsFilter;
 import org.ei.bidan.view.dialog.DialogOption;
+import org.ei.bidan.view.dialog.DialogOptionModel;
+import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.FilterOption;
 import org.ei.bidan.view.dialog.NameSort;
+import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
 
@@ -113,11 +117,27 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
                     // showProfileView((ECClient) view.getTag());
                     break;
                 case R.id.btn_edit:
-                    // TODO : show edit dialog
-                    // showFragmentDialog(new EditDialogOptionModel(), view.getTag());
+                    showFragmentDialog(new EditDialogOptionModel(), view.getTag());
                     break;
             }
         }
+    }
 
+    private class EditDialogOptionModel implements DialogOptionModel {
+        @Override
+        public DialogOption[] getDialogOptions() {
+            return getEditOptions();
+        }
+
+        @Override
+        public void onDialogOptionSelection(DialogOption option, Object tag) {
+            onEditSelection((EditOption) option, (SmartRegisterClient) tag);
+        }
+    }
+
+    private DialogOption[] getEditOptions() {
+        return new DialogOption[]{
+                new OpenFormOption("Kunjungan", "kohort_bayi_kunjungan", formController),
+        };
     }
 }

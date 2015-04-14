@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model>
+   <instance>
+      <kohort_bayi_kunjungan_perbulan id="kohort_bayi_kunjungan_perbulan" version="201504080855">
+         <formhub>
+            <uuid />
+         </formhub>
+         <today />
+         <tanggal_kunjungan_note />
+         <berat_badan_bayi />
+         <pemberian_asi_eksklusif />
+         <hasil_dilakukan_kpsp />
+         <meta>
+            <instanceID />
+         </meta>
+      </kohort_bayi_kunjungan_perbulan>
+   </instance>
+</model>
