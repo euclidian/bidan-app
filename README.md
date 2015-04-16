@@ -1,4 +1,4 @@
-![Dristhi](dristhi-app/res/drawable-xhdpi/icon.png)
+![alt tag](https://github.com/sidthrive/dristhi-app/blob/Bidan/bidan-app/res/drawable-mdpi/bidan_logo.png)
 
 To run this project, you need to do this:
 ========================================
