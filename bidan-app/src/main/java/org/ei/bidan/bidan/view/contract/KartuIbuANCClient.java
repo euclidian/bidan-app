@@ -43,6 +43,9 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     private String edd;
     private String village;
     private String ancStatus;
+    private String kunjungan;
+    private String ttImunisasi;
+    private String usiaKlinis;
 
     private List<AlertDTO> alerts;
     private List<ServiceProvidedDTO> services_provided;
@@ -110,7 +113,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public String riskFactors() {
-        return null;
+        return riskFactors == null ? "-" : humanize(riskFactors);
     }
 
     @Override
@@ -233,6 +236,12 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     public String ancStatus() { return humanize(ancStatus); }
 
+    public String ttImunisasi() { return ttImunisasi == null ? "-" : humanize(ttImunisasi); }
+
+    public String kunjungan() { return kunjungan == null ? "-" : humanize(kunjungan); }
+
+    public String usiaKlinis() { return usiaKlinis == null ? "-" : humanize(usiaKlinis); }
+
     public KartuIbuANCClient withHusband(String husbandName) {
         this.husbandName = husbandName;
         return this;
@@ -250,6 +259,26 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     public KartuIbuANCClient withANCStatus(String ancStatus) {
         this.ancStatus = ancStatus;
+        return this;
+    }
+
+    public KartuIbuANCClient withRiskFactors(String riskFactors) {
+        this.riskFactors = riskFactors;
+        return this;
+    }
+
+    public KartuIbuANCClient withKunjunganData(String kunjungan) {
+        this.kunjungan = kunjungan;
+        return this;
+    }
+
+    public KartuIbuANCClient withTTImunisasiData(String ttImunisasi) {
+        this.ttImunisasi = ttImunisasi;
+        return this;
+    }
+
+    public KartuIbuANCClient withUsiaKlinisData(String usiaKlinis) {
+        this.usiaKlinis = usiaKlinis;
         return this;
     }
 

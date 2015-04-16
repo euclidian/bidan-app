@@ -37,7 +37,7 @@
         android:layout_width="@dimen/list_ec_no_view_width"
         android:layout_height="fill_parent"
         android:layout_marginTop="10dp"
-        android:layout_weight="@integer/ec_list_gplsa_view_weight"
+        android:layout_weight="125"
         android:scrollHorizontally="false"
         android:ellipsize="none"
         android:singleLine="false"
@@ -50,6 +50,128 @@
         android:layout_width="@dimen/smart_register_client_divider_height"
         android:layout_height="fill_parent"
         android:src="@color/smart_register_client_divider_color"/>
+
+
+    <TextView
+        android:id="@+id/txt_komplikasi"
+        android:layout_width="@dimen/list_ec_no_view_width"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="150"
+        android:scrollHorizontally="false"
+        android:ellipsize="none"
+        android:singleLine="false"
+        android:maxLines="3"
+        android:paddingLeft="10dp"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+
+    <TextView
+        android:id="@+id/txt_metode_kontrasepsi"
+        android:layout_width="@dimen/list_ec_no_view_width"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="120"
+        android:scrollHorizontally="false"
+        android:ellipsize="none"
+        android:singleLine="false"
+        android:maxLines="3"
+        android:paddingLeft="10dp"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+
+    <RelativeLayout
+        android:id="@+id/tanda_vital_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="175"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <org.ei.bidan.view.customControls.CustomFontTextView
+            android:id="@+id/lbl_td_sistolik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="TD (Sistolik) : "
+            style="@style/CustomFontTextViewStyle.ListView.Normal"/>
+
+        <org.ei.bidan.view.customControls.CustomFontTextView
+            android:id="@+id/lbl_td_diastolik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/lbl_td_sistolik"
+            android:text="TD (Diastolik) : "
+            style="@style/CustomFontTextViewStyle.ListView.Normal"/>
+
+
+        <org.ei.bidan.view.customControls.CustomFontTextView
+            android:id="@+id/lbl_td_suhu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/lbl_td_diastolik"
+            android:text="Suhu : "
+            style="@style/CustomFontTextViewStyle.ListView.Normal"/>
+
+        <org.ei.bidan.view.customControls.CustomFontTextView
+            android:id="@+id/txt_td_sistolik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/lbl_td_sistolik"
+            android:layout_alignParentTop="true"
+            style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"/>
+
+        <org.ei.bidan.view.customControls.CustomFontTextView
+            android:id="@+id/txt_td_diastolik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/lbl_td_diastolik"
+            android:layout_below="@id/txt_td_sistolik"
+            style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"/>
+
+
+        <org.ei.bidan.view.customControls.CustomFontTextView
+            android:id="@+id/txt_td_suhu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/lbl_td_suhu"
+            android:layout_below="@id/txt_td_diastolik"
+            style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+    <ImageButton
+        android:id="@+id/btn_edit"
+        android:layout_width="@dimen/list_edit_icon_view_width"
+        android:layout_height="fill_parent"
+        android:layout_weight="105"
+        android:scaleType="center"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/edit_button_background"/>
+
 
     <!--
 

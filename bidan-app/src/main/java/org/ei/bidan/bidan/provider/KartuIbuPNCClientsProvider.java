@@ -2,14 +2,17 @@ package org.ei.bidan.bidan.provider;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 
 import org.ei.bidan.R;
+import org.ei.bidan.bidan.view.contract.KartuIbuANCClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuPNCClient;
 import org.ei.bidan.bidan.view.controller.KartuIbuPNCRegisterController;
+import org.ei.bidan.bidan.view.viewHolder.NativeKIANCRegisterViewHolder;
 import org.ei.bidan.bidan.view.viewHolder.NativeKIPNCRegisterViewHolder;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
 import org.ei.bidan.view.activity.SecuredActivity;
@@ -37,6 +40,8 @@ public class KartuIbuPNCClientsProvider implements SmartRegisterClientsProvider 
     private final AbsListView.LayoutParams clientViewLayoutParams;
 
     protected KartuIbuPNCRegisterController controller;
+
+    private Drawable iconPencilDrawable;
 
     public KartuIbuPNCClientsProvider(SecuredActivity activity, View.OnClickListener onClickListener, KartuIbuPNCRegisterController controller) {
         this.activity = activity;
@@ -70,10 +75,39 @@ public class KartuIbuPNCClientsProvider implements SmartRegisterClientsProvider 
         setupIdDetailsView(kartuIbuClient, viewHolder);
         setupPNCPlan(kartuIbuClient, viewHolder);
         setupHighlightColor(itemView, Integer.parseInt(""+viewGroup.getTag())+1);
+        setupKomplikasiView(kartuIbuClient, viewHolder);
+        setupMetodeKontrasepsiView(kartuIbuClient, viewHolder);
+        setupTandaVitalView(kartuIbuClient, viewHolder);
+        setupEditView(kartuIbuClient, viewHolder);
 
         itemView.setLayoutParams(clientViewLayoutParams);
         return itemView;
     }
+
+    private void setupTandaVitalView(KartuIbuPNCClient client, NativeKIPNCRegisterViewHolder viewHolder) {
+        viewHolder.getTdDiastolik().setText(client.tdDiastolik());
+        viewHolder.getTdSistolik().setText(client.tdSistolik());
+        viewHolder.getTdSuhu().setText(client.tdSuhu());
+    }
+
+    private void setupMetodeKontrasepsiView(KartuIbuPNCClient client, NativeKIPNCRegisterViewHolder viewHolder) {
+        viewHolder.getMetodeKontrasepsi().setText(client.metodeKontrasepsi());
+    }
+
+    private void setupKomplikasiView(KartuIbuPNCClient client, NativeKIPNCRegisterViewHolder viewHolder) {
+        viewHolder.getKomplikasi().setText(client.komplikasi());
+    }
+
+
+    private void setupEditView(KartuIbuPNCClient client, NativeKIPNCRegisterViewHolder viewHolder) {
+        if (iconPencilDrawable == null) {
+            iconPencilDrawable = activity.getApplicationContext().getResources().getDrawable(R.drawable.ic_pencil);
+        }
+        viewHolder.editButton().setImageDrawable(iconPencilDrawable);
+        viewHolder.editButton().setOnClickListener(onClickListener);
+        viewHolder.editButton().setTag(client);
+    }
+
 
     private void setupHighlightColor(ViewGroup itemView, int index) {
         if(index%2==0) {

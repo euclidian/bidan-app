@@ -12,6 +12,7 @@ import org.joda.time.LocalDate;
 import org.joda.time.Years;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.ei.bidan.AllConstants.ECRegistrationFields.BPL_VALUE;
@@ -26,6 +27,7 @@ import static org.ei.bidan.util.DateUtil.formatDate;
 public class AnakClient implements SmartRegisterClient{
 
     private final String entityId;
+    private Map<String, String> details;
     private String gender;
     private String weight;
     private String name;
@@ -41,11 +43,13 @@ public class AnakClient implements SmartRegisterClient{
     private String kiNumber;
     private String birthCondition;
     private String serviceAtBirth;
+    private String kpspResult;
 
-    public AnakClient(String entityId, String gender, String weight) {
+    public AnakClient(String entityId, String gender, String weight, Map<String, String> details) {
         this.entityId = entityId;
         this.gender = gender;
         this.weight = weight;
+        this.details = details;
     }
 
     public String motherName() {
@@ -173,6 +177,8 @@ public class AnakClient implements SmartRegisterClient{
     public String husbandName() {
         return motherName() + "," + fatherName();
     }
+
+    public String kpspResult() { return details.get("hasil_dilakukan_kpsp") == null ? "-" : details.get("hasil_dilakukan_kpsp"); }
 
     public String format(int days_since) {
         int DAYS_THRESHOLD = 28;

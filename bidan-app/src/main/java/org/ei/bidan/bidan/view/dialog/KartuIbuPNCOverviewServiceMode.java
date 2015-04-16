@@ -45,19 +45,22 @@ public class KartuIbuPNCOverviewServiceMode extends BidanServiceModeOption {
 
             @Override
             public int weightSum() {
-                return 100;
+                return 1000;
             }
 
             @Override
             public int[] weights() {
-                return new int[]{24, 9, 12, 12, 12, 12, 19};
+                return new int[]{244, 75, 125, 140, 120, 175, 122};
             }
 
             @Override
             public int[] headerTextResourceIds() {
                 return new int[]{
-                        R.string.header_name, R.string.header_id, R.string.header_pnc_plan,
-                        R.string.header_risk_factors, R.string.header_visits, R.string.header_tt,
+                        R.string.header_name, R.string.header_id,
+                        R.string.header_rencana,
+                        R.string.header_komplikasi,
+                        R.string.header_kontrasepsi,
+                        R.string.header_tanda_vital,
                         R.string.header_edit};
             }
         };

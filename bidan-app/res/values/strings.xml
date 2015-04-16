@@ -320,4 +320,14 @@
     <string name="str_child_illness_sam">sam</string>
     <string name="str_pnc_visit_button_label">PNC Visit</string>
 
+    <!-- BIDAN -->
+    <string name="header_resiko">RESIKO</string>
+    <string name="header_trimester">TRIMESTER</string>
+    <string name="header_tt_imunisasi">IMUNISASI</string>
+    <string name="header_tt_usia_klinis">USIA KLINIS</string>
+    <string name="header_komplikasi">KOMPLIKASI</string>
+    <string name="header_kontrasepsi">KONTRASEPSI</string>
+    <string name="header_rencana">RENCANA</string>
+    <string name="header_tanda_vital">TANDA VITAL</string>
+
 </resources>

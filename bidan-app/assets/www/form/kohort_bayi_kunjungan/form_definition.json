@@ -1,0 +1,38 @@
+{
+  "form_data_definition_version": "1",
+  "form": {
+    "bind_type": "anak",
+    "default_bind_path": "/model/instance/kohort_bayi_kunjungan_perbulan/",
+    "fields": [
+      {
+        "name": "id",
+        "shouldLoadValue": true
+      },
+      {
+        "name": "tanggal_kunjungan_bayi",
+        "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/today"
+      },
+      {
+        "name": "berat_badan_bayi",
+        "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/berat_badan_bayi"
+      },
+      {
+        "name": "pemberian_asi_eksklusif",
+        "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif"
+      },
+      {
+        "name": "hasil_dilakukan_kpsp",
+        "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/hasil_dilakukan_kpsp"
+      },
+      {
+        "name": "isClosed",
+        "value": "false",
+        "source": "kartu_ibu.ibu.anak.isClosed"
+      },
+      {
+        "name": "submissionDate",
+        "bind": "/model/instance/kohort_bayi/today"
+      }
+    ]
+  }
+}
