@@ -127,6 +127,7 @@
     <string name="str_edit_ki_form">Edit Kartu Ibu</string>
     <string name="str_register_anak_form">Register Anak</string>
     <string name="anc_edit">Edit ANC</string>
+    <string name="pnc_edit">Edit PNC</string>
 
     <string name="str_register_anc_visit_form">ANC Visit</string>
     <string name="str_register_hb_test_form">Hb Test</string>

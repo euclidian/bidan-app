@@ -12,14 +12,19 @@ import org.ei.bidan.bidan.view.dialog.KartuIbuANCOverviewServiceMode;
 import org.ei.bidan.bidan.view.dialog.KartuIbuPNCOverviewServiceMode;
 import org.ei.bidan.domain.form.FieldOverrides;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
+import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.dialog.AllClientsFilter;
 import org.ei.bidan.view.dialog.DialogOption;
+import org.ei.bidan.view.dialog.DialogOptionModel;
+import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.FilterOption;
 import org.ei.bidan.view.dialog.NameSort;
+import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
 
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
+import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_EDIT;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_REGISTRATION;
 
 /**
@@ -116,11 +121,28 @@ public class NativeKIPNCSmartRegisterActivity extends BidanSecuredNativeSmartReg
                     // showProfileView((ECClient) view.getTag());
                     break;
                 case R.id.btn_edit:
-                    // TODO : show edit dialog for add ANC and PNC
-                    // showFragmentDialog(new EditDialogOptionModel(), view.getTag());
+                    showFragmentDialog(new EditDialogOptionModel(), view.getTag());
                     break;
             }
         }
+    }
 
+    private class EditDialogOptionModel implements DialogOptionModel {
+        @Override
+        public DialogOption[] getDialogOptions() {
+            return getEditOptions();
+        }
+
+        @Override
+        public void onDialogOptionSelection(DialogOption option, Object tag) {
+            onEditSelection((EditOption) option, (SmartRegisterClient) tag);
+        }
+    }
+
+    private DialogOption[] getEditOptions() {
+        return new DialogOption[]{
+                new OpenFormOption(getString(R.string.pnc_edit),
+                        KARTU_IBU_PNC_EDIT, formController),
+        };
     }
 }
