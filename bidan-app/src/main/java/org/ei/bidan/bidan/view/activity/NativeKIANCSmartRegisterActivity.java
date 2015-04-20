@@ -10,14 +10,21 @@ import org.ei.bidan.bidan.view.dialog.KartuIbuANCOverviewServiceMode;
 import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
 import org.ei.bidan.domain.form.FieldOverrides;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
+import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.dialog.AllClientsFilter;
 import org.ei.bidan.view.dialog.DialogOption;
+import org.ei.bidan.view.dialog.DialogOptionModel;
+import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.FilterOption;
 import org.ei.bidan.view.dialog.NameSort;
+import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
 
+import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_DOKUMENTASI_PERSALINAN;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
+import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_RENCANA_PERSALINAN;
+import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_REGISTRATION;
 
 /**
  * Created by Dimas Ciputra on 3/5/15.
@@ -57,6 +64,30 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
             }
         };
     }
+
+    private class EditDialogOptionModel implements DialogOptionModel {
+        @Override
+        public DialogOption[] getDialogOptions() {
+            return getEditOptions();
+        }
+
+        @Override
+        public void onDialogOptionSelection(DialogOption option, Object tag) {
+            onEditSelection((EditOption) option, (SmartRegisterClient) tag);
+        }
+    }
+
+    private DialogOption[] getEditOptions() {
+        return new DialogOption[]{
+                new OpenFormOption(getString(R.string.str_dokumentasi_persalinan_anc_form),
+                        KARTU_IBU_ANC_DOKUMENTASI_PERSALINAN, formController),
+                new OpenFormOption(getString(R.string.str_rencana_persalinan_anc_form),
+                        KARTU_IBU_ANC_RENCANA_PERSALINAN, formController),
+                new OpenFormOption(getString(R.string.str_register_pnc_form),
+                        KARTU_IBU_PNC_REGISTRATION, formController),
+        };
+    }
+
 
     @Override
     protected NavBarOptionsProvider getNavBarOptionsProvider() {
@@ -100,8 +131,6 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
 
     @Override
     protected void startRegistration() {
-        FieldOverrides fieldOverrides = new FieldOverrides(context.anmLocationController().getLocationJSON());
-        startFormActivity(KARTU_IBU_ANC_REGISTRATION, null, fieldOverrides.getJSONString());
     }
 
     private class ClientActionHandler implements View.OnClickListener {
@@ -113,8 +142,7 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
                     // showProfileView((ECClient) view.getTag());
                     break;
                 case R.id.btn_edit:
-                    // TODO : show edit dialog for add ANC and PNC
-                    // showFragmentDialog(new EditDialogOptionModel(), view.getTag());
+                    showFragmentDialog(new EditDialogOptionModel(), view.getTag());
                     break;
             }
         }

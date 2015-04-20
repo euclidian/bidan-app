@@ -16,4 +16,12 @@
             android:layout_height="match_parent"
             android:layout="@layout/smart_register_client_status_anc_ki"/>
 
+
+    <ViewStub
+        android:id="@+id/pnc_status_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/smart_register_client_status_pnc_ki"/>
+
+
 </org.ei.bidan.bidan.view.customControls.BidanClientStatusView>

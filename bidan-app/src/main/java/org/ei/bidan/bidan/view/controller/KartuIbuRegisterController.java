@@ -22,6 +22,7 @@ public class KartuIbuRegisterController {
     private static final String KI_CLIENTS_LIST = "KIClientsList";
     public static final String STATUS_DATE_FIELD = "date";
     public static final String ANC_STATUS = "anc";
+    public static final String PNC_STATUS = "pnc";
     public static final String STATUS_TYPE_FIELD = "type";
     public static final String STATUS_EDD_FIELD = "edd";
 
@@ -86,6 +87,12 @@ public class KartuIbuRegisterController {
                             .put(STATUS_DATE_FIELD, ibu.getReferenceDate())
                             .put(STATUS_EDD_FIELD, kartuIbu.getDetails().get("EDD")).map());
             return;
+        }
+
+        if (ibu != null && ibu.isPNC()) {
+            kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, PNC_STATUS)
+                    .put(STATUS_DATE_FIELD, ibu.getReferenceDate())
+                    .put(STATUS_EDD_FIELD, kartuIbu.getDetails().get("EDD")).map());
         }
     }
 }

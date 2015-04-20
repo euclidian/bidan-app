@@ -96,6 +96,8 @@ public class AllConstants {
         public static final String KARTU_IBU_CLOSE = "";
         public static final String KARTU_IBU_ANC_REGISTRATION = "kartu_ibu_anc";
         public static final String KARTU_IBU_PNC_REGISTRATION = "kartu_ibu_pnc";
+        public static final String KARTU_IBU_ANC_DOKUMENTASI_PERSALINAN = "anc_dokumentasi_persalinan";
+        public static final String KARTU_IBU_ANC_RENCANA_PERSALINAN = "anc_rencana_persalinan";
         public static final String ANAK_BAYI_REGISTRATION = "kohort_bayi";
     }
 

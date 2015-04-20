@@ -1,0 +1,129 @@
+{
+    "form_data_definition_version": "1",
+    "form": {
+        "bind_type": "ibu",
+        "default_bind_path": "/model/instance/dokumentasi_persalinan/",
+        "fields": [
+            {
+                "name": "id",
+                "shouldLoadValue": true
+            },
+            {
+                "name": "UsiaKehamilansaatpersalinan",
+                "bind": "/model/instance/dokumentasi_persalinan/B01092"
+			},
+            {
+                "name": "UsiakehamilanberdasarkanHPHT",
+                "bind": "/model/instance/dokumentasi_persalinan/B01093"
+			},
+            {
+                "name": "KeadaanIbu",
+                "bind": "/model/instance/dokumentasi_persalinan/B01094"
+			},
+            {
+                "name": "KeadaanBayi",
+                "bind": "/model/instance/dokumentasi_persalinan/B01095"
+			},
+            {
+                "name": "BeratBayi",
+                "bind": "/model/instance/dokumentasi_persalinan/B01096"
+			},
+            {
+                "name": "TanggalKalaIAktif",
+                "bind": "/model/instance/dokumentasi_persalinan/B01097"
+			},
+            {
+                "name": "JamKalaIAktif",
+                "bind": "/model/instance/dokumentasi_persalinan/B01098"
+			},
+            {
+                "name": "TanggalKalaII",
+                "bind": "/model/instance/dokumentasi_persalinan/B01099"
+			},
+            {
+                "name": "JamKalaII",
+                "bind": "/model/instance/dokumentasi_persalinan/B01100"
+			},
+            {
+                "name": "TanggalPlasentaLahir",
+                "bind": "/model/instance/dokumentasi_persalinan/B01101"
+			},
+            {
+                "name": "JamPlasentaLahir",
+                "bind": "/model/instance/dokumentasi_persalinan/B01102"
+			},
+            {
+                "name": "PerdarahanKalaIV2jamPostpartum",
+                "bind": "/model/instance/dokumentasi_persalinan/B01103"
+			},
+            {
+                "name": "Persentasi",
+                "bind": "/model/instance/dokumentasi_persalinan/B01104"
+			},
+            {
+                "name": "Tempat",
+                "bind": "/model/instance/dokumentasi_persalinan/B01105"
+			},
+            {
+                "name": "Penolong",
+                "bind": "/model/instance/dokumentasi_persalinan/B01106"
+			},
+            {
+                "name": "PenolonglainlainLN",
+                "bind": "/model/instance/dokumentasi_persalinan/B01107"
+			},
+            {
+                "name": "CaraPersalinanIbu",
+                "bind": "/model/instance/dokumentasi_persalinan/B01108"
+			},
+            {
+                "name": "ManajemenAktifKalaIII",
+                "bind": "/model/instance/dokumentasi_persalinan/B01109"
+			},
+            {
+                "name": "Pelayanan",
+                "bind": "/model/instance/dokumentasi_persalinan/B01110"
+			},
+            {
+                "name": "IntegrasiProgram",
+                "bind": "/model/instance/dokumentasi_persalinan/B01111"
+			},
+            {
+                "name": "Komplikasi",
+                "bind": "/model/instance/dokumentasi_persalinan/B01112"
+			},
+            {
+                "name": "KomplikasilainlainLN",
+                "bind": "/model/instance/dokumentasi_persalinan/B01113"
+			},
+            {
+                "name": "DirujukKe",
+                "bind": "/model/instance/dokumentasi_persalinan/B01114"
+			},
+            {
+                "name": "DirujukKelainlain",
+                "bind": "/model/instance/dokumentasi_persalinan/B01115"
+			},
+            {
+                "name": "AlamatBersalin",
+                "bind": "/model/instance/dokumentasi_persalinan/B01116"
+			},
+            {
+                "name": "isOutOfArea",
+                "value": "false"
+            },
+            {
+                "name": "isClosed",
+                "value": "false"
+            },
+            {
+                "name": "submissionDate",
+                "bind": "/model/instance/dokumentasi_persalinan/today"
+            },
+            {
+                "name": "registrationDate",
+                "bind": "/model/instance/dokumentasi_persalinan/today"
+            }
+        ]
+    }
+}

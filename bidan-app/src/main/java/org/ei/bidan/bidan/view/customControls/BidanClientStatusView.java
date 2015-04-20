@@ -17,6 +17,7 @@ import java.util.Map;
 
 import static org.ei.bidan.util.DateUtil.formatDate;
 import static org.ei.bidan.view.controller.ECSmartRegisterController.ANC_STATUS;
+import static org.ei.bidan.view.controller.ECSmartRegisterController.PNC_STATUS;
 import static org.ei.bidan.view.controller.ECSmartRegisterController.STATUS_DATE_FIELD;
 import static org.ei.bidan.view.controller.ECSmartRegisterController.STATUS_EDD_FIELD;
 import static org.ei.bidan.view.controller.ECSmartRegisterController.STATUS_TYPE_FIELD;
@@ -47,6 +48,9 @@ public class BidanClientStatusView extends FrameLayout {
 
         this.statusLayouts
                 .put(ANC_STATUS, new ViewStubInflater((ViewStub) findViewById(R.id.anc_status_layout)));
+
+        this.statusLayouts
+                .put(PNC_STATUS, new ViewStubInflater((ViewStub) findViewById(R.id.pnc_status_layout)));
     }
 
     public void bindData(KartuIbuClient client) {
