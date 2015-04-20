@@ -41,6 +41,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
     private String parity;
     private String numberLivingChildren;
     private String numberOfAbortions;
+    private String rtRw;
     private Map<String, String> status = new HashMap<String, String>();
 
     public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi, String husbandName, String tglPeriksa, String edd, String village) {
@@ -67,7 +68,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
     }
 
     public String getPuskesmas() {
-        return puskesmas;
+        return humanize(puskesmas);
     }
 
     public String getProvince() {
@@ -189,6 +190,8 @@ public class KartuIbuClient implements KISmartRegisterClient {
         this.village = village;
     }
 
+    public void setRtRw(String rtRw) { this.rtRw = rtRw; }
+
     @Override
     public String entityId() {
         return entityId;
@@ -268,6 +271,12 @@ public class KartuIbuClient implements KISmartRegisterClient {
     public String locationStatus() {
         return null;
     }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public String getRtRw() { return rtRw; }
 
     @Override
     public boolean satisfiesFilter(String filterCriterion) {

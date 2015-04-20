@@ -4,6 +4,7 @@ import android.view.View;
 
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
+import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.bidan.view.dialog.AllKartuIbuServiceMode;
 import org.ei.bidan.bidan.view.controller.KartuIbuRegisterController;
 import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
@@ -135,14 +136,17 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.profile_info_layout:
-                    // TODO : show info of timeline event
-                    // showProfileView((ECClient) view.getTag());
+                case R.id.profile_info_layout_ki:
+                    showProfileView((KartuIbuClient) view.getTag());
                     break;
                 case R.id.btn_edit:
                     showFragmentDialog(new EditDialogOptionModel(), view.getTag());
                     break;
             }
+        }
+
+        private void showProfileView(KartuIbuClient kartuIbuClient) {
+            navigationController.startKI(kartuIbuClient.entityId());
         }
     }
 
