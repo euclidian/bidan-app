@@ -1,5 +1,5 @@
 <form autocomplete="off" novalidate="novalidate" class="or clearfix" id="Kartu_ibu_ANC">
-<!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.--><section class="form-logo"> </section><h3 id="form-title">kartu ibu ANC</h3>
+<!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.--><section class="form-logo"> </section><h3 id="form-title">Kartu Ibu ANC</h3>
   
   
     <label class="question non-select "><span lang="" class="question-label active">Tanggal kunjungan ANC</span><span class="required">*</span><input type="date" name="/Kartu_ibu_ANC/ANC_DATE" required="required" data-type-xml="date"/></label>

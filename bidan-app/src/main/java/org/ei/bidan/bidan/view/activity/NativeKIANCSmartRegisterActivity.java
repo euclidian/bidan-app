@@ -24,6 +24,7 @@ import org.ei.bidan.view.dialog.SortOption;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_DOKUMENTASI_PERSALINAN;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_RENCANA_PERSALINAN;
+import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_REGISTRATION;
 
 /**
  * Created by Dimas Ciputra on 3/5/15.
@@ -82,6 +83,8 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
                         KARTU_IBU_ANC_DOKUMENTASI_PERSALINAN, formController),
                 new OpenFormOption(getString(R.string.str_rencana_persalinan_anc_form),
                         KARTU_IBU_ANC_RENCANA_PERSALINAN, formController),
+                new OpenFormOption(getString(R.string.str_register_pnc_form),
+                        KARTU_IBU_PNC_REGISTRATION, formController),
         };
     }
 
