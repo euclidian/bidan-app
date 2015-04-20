@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <include layout="@layout/detail_ki_nav_bar"/>
+
+    <include layout="@layout/detail_title_bar"/>
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/detail_ki_navbar">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/detail_1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/lbl_puskesmas_ki_detail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Puskesmas"
+                    android:textColor="@color/dark_blue"
+                    android:textStyle="normal"
+                    android:textSize="20sp"/>
+
+                <org.ei.bidan.view.customControls.CustomFontTextView
+                    android:id="@+id/txt_puskesmas_ki_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lbl_puskesmas_ki_detail"
+                    android:text="Puskesmas"
+                    android:textSize="25sp"
+                    style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"
+                    />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:src="@color/smart_register_client_divider_color"/>
+
+
+            <RelativeLayout
+                android:id="@+id/detail_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:padding="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/lbl_no_ibu_ki_detail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No Ibu"
+                    android:textColor="@color/dark_blue"
+                    android:textStyle="normal"
+                    android:textSize="20sp"/>
+
+                <org.ei.bidan.view.customControls.CustomFontTextView
+                    android:id="@+id/txt_no_ibu_ki_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lbl_no_ibu_ki_detail"
+                    android:text="No Ibu"
+                    android:textSize="25sp"
+                    style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"
+                    />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:src="@color/smart_register_client_divider_color"/>
+
+            <RelativeLayout
+                android:id="@+id/detail_3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:padding="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/lbl_nama_lengkap_ki_detail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Lengkap"
+                    android:textColor="@color/dark_blue"
+                    android:textStyle="normal"
+                    android:textSize="20sp"/>
+
+                <org.ei.bidan.view.customControls.CustomFontTextView
+                    android:id="@+id/txt_nama_lengkap_ki_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Test ajah"
+                    android:layout_below="@id/lbl_nama_lengkap_ki_detail"
+                    android:textSize="25sp"
+                    style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"
+                    />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:src="@color/smart_register_client_divider_color"/>
+
+
+            <RelativeLayout
+                android:id="@+id/detail_4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:padding="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/lbl_nama_suami_ki_detail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Suami"
+                    android:textColor="@color/dark_blue"
+                    android:textStyle="normal"
+                    android:textSize="20sp"/>
+
+                <org.ei.bidan.view.customControls.CustomFontTextView
+                    android:id="@+id/txt_nama_suami_ki_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lbl_nama_suami_ki_detail"
+                    android:text="Nama Suami"
+                    android:textSize="25sp"
+                    style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"
+                    />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:src="@color/smart_register_client_divider_color"/>
+
+            <LinearLayout
+                android:id="@+id/detail_5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/lbl_tgl_lahir_ki_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal Lahir"
+                        android:textColor="@color/dark_blue"
+                        android:textStyle="normal"
+                        android:textSize="20sp"
+                        />
+
+                    <org.ei.bidan.view.customControls.CustomFontTextView
+                        android:id="@+id/txt_tgl_lahir_ki_detail"
+                        android:layout_height="wrap_content"
+                        android:text="15/09/1952"
+                        android:textSize="25sp"
+                        style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"
+                        android:layout_width="wrap_content" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.1"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:layout_width="1dp"
+                        android:layout_gravity="center"
+                        android:layout_height="fill_parent"
+                        android:src="@color/smart_register_client_divider_color"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/lbl_umur_ki_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Umur"
+                        android:textColor="@color/dark_blue"
+                        android:textStyle="normal"
+                        android:textSize="20sp"
+                        />
+
+                    <org.ei.bidan.view.customControls.CustomFontTextView
+                        android:id="@+id/txt_umur_ki_detail"
+                        android:layout_height="wrap_content"
+                        android:text="25"
+                        android:textSize="25sp"
+                        style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"
+                        android:layout_width="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:src="@color/smart_register_client_divider_color"/>
+
+
+            <LinearLayout
+                android:id="@+id/detail_6"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/lbl_alamat_domisili_ki_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alamat Domisili"
+                        android:textColor="@color/dark_blue"
+                        android:textStyle="normal"
+                        android:textSize="20sp"
+                        />
+
+                    <org.ei.bidan.view.customControls.CustomFontTextView
+                        android:id="@+id/txt_alamat_domisili_ki_detail"
+                        android:layout_height="wrap_content"
+                        android:text="15/09/1952"
+                        android:textSize="25sp"
+                        style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"
+                        android:layout_width="wrap_content" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.1"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:layout_width="1dp"
+                        android:layout_gravity="center"
+                        android:layout_height="fill_parent"
+                        android:src="@color/smart_register_client_divider_color"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/lbl_rt_rw_ki_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RT/RW"
+                        android:textColor="@color/dark_blue"
+                        android:textStyle="normal"
+                        android:textSize="20sp"
+                        />
+
+                    <org.ei.bidan.view.customControls.CustomFontTextView
+                        android:id="@+id/txt_rt_rw_ki_detail"
+                        android:layout_height="wrap_content"
+                        android:text="25"
+                        android:textSize="25sp"
+                        style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"
+                        android:layout_width="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

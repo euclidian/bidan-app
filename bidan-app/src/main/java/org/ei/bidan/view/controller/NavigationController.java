@@ -3,6 +3,7 @@ package org.ei.bidan.view.controller;
 import android.app.Activity;
 import android.content.Intent;
 
+import org.ei.bidan.bidan.view.activity.KIDetailActivity;
 import org.ei.bidan.bidan.view.activity.NativeKIANCSmartRegisterActivity;
 import org.ei.bidan.bidan.view.activity.NativeKIAnakSmartRegisterActivity;
 import org.ei.bidan.bidan.view.activity.NativeKIPNCSmartRegisterActivity;
@@ -79,6 +80,10 @@ public class NavigationController {
 
     public void startEC(String entityId) {
         navigateToECProfile(activity, entityId);
+    }
+
+    public void startKI(String entityId) {
+        navigateToKIProfile(activity, entityId);
     }
 
     public void startANC(String entityId) {

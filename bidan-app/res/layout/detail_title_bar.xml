@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="50dp"
+              android:background="@color/status_bar_background_dark_grey"
+              android:orientation="horizontal"
+              android:paddingLeft="10dp">
+
+    <org.ei.bidan.view.customControls.CustomFontTextView
+            android:id="@+id/label_sorted_by"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="KARTU IBU"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
+            style="@style/CustomFontTextViewStyle.StatusBar.Bold"/>
+
+
+</LinearLayout>
