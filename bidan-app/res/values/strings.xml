@@ -111,6 +111,9 @@
     <string name="ki_register_title_in_short">KI:</string>
 
     <string name="str_register_anc_form">Register ANC</string>
+    <string name="str_dokumentasi_persalinan_anc_form">Dokumentasi Persalinan</string>
+    <string name="str_rencana_persalinan_anc_form">Rencana Persalinan</string>
+
     <string name="str_register_pnc_form">Register PNC</string>
     <string name="str_register_fp_form">Register FP</string>
     <string name="str_register_child_form">Register Child</string>
