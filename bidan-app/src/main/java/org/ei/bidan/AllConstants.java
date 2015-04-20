@@ -99,6 +99,7 @@ public class AllConstants {
         public static final String KARTU_IBU_ANC_DOKUMENTASI_PERSALINAN = "anc_dokumentasi_persalinan";
         public static final String KARTU_IBU_ANC_RENCANA_PERSALINAN = "anc_rencana_persalinan";
         public static final String ANAK_BAYI_REGISTRATION = "kohort_bayi";
+        public static final String KARTU_IBU_ANC_EDIT="kartu_ibu_anc_edit";
     }
 
     public class ECRegistrationFields {

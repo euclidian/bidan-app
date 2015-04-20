@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form autocomplete="off" novalidate="novalidate" class="or clearfix" id="Kartu_ibu_ANC">
+   <!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.-->
+   <section class="form-logo" />
+   <h3 id="form-title">Kartu Ibu ANC</h3>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">Tanggal kunjungan ANC</span>
+      <span class="required">*</span>
+      <input type="date" name="/Kartu_ibu_ANC/ANC_DATE" required="required" data-type-xml="date" />
+   </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Jamkesmas</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01043" data-name="/Kartu_ibu_ANC/B01043" value="jika_ya" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka ya (√)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01043" data-name="/Kartu_ibu_ANC/B01043" value="jika_tidak" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Cara Masuk Tempat Pelayanan</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01044" data-name="/Kartu_ibu_ANC/B01044" value="atas_permintaan_sendiri" data-type-xml="select1" />
+               <span lang="" class="option-label active">Atas Permintaan Sendiri (APS)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01044" data-name="/Kartu_ibu_ANC/B01044" value="rujukan_dokter" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Dokter (Dr)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01044" data-name="/Kartu_ibu_ANC/B01044" value="rujukan_bidan" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Bidan (Bd)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01044" data-name="/Kartu_ibu_ANC/B01044" value="rujukan_dukun" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Dukun (RD)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01044" data-name="/Kartu_ibu_ANC/B01044" value="rujukan_polindes" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Polindes (Pol)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01044" data-name="/Kartu_ibu_ANC/B01044" value="rujukan_puskesmas_pembantu" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Puskesmas Pembantu ( PST)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01044" data-name="/Kartu_ibu_ANC/B01044" value="rujukan_rumah_bersalin" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Rumah Bersalin (RB)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01044" data-name="/Kartu_ibu_ANC/B01044" value="RSIA" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Rumah Sakit Ibu dan Anak (RSIA)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">Usia Klinis</span>
+      <input type="number" name="/Kartu_ibu_ANC/B01045" data-constraint=".&lt;100" data-type-xml="int" />
+   </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Trimester Ke</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01046" data-name="/Kartu_ibu_ANC/B01046" value="trimester_ke_1" data-type-xml="select1" />
+               <span lang="" class="option-label active">Trimester Ke 1 (1)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01046" data-name="/Kartu_ibu_ANC/B01046" value="trimester_ke_2" data-type-xml="select1" />
+               <span lang="" class="option-label active">Trimester Ke 2 (2)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01046" data-name="/Kartu_ibu_ANC/B01046" value="trimester_ke_3" data-type-xml="select1" />
+               <span lang="" class="option-label active">Trimester Ke 3 (3)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">Anamnesis Ibu</span>
+      <input type="text" name="/Kartu_ibu_ANC/B01047" data-type-xml="string" />
+   </label>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">BB</span>
+      <input type="number" name="/Kartu_ibu_ANC/B01048" data-constraint=".&lt;10000" data-type-xml="decimal" step="any" />
+   </label>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">TD (Sistolik)</span>
+      <input type="number" name="/Kartu_ibu_ANC/B01049" data-constraint=".&lt;1000" data-type-xml="int" />
+   </label>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">TD (Diastolik)</span>
+      <input type="number" name="/Kartu_ibu_ANC/B01050" data-constraint=".&lt;1000" data-type-xml="int" />
+   </label>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">LILA</span>
+      <input type="number" name="/Kartu_ibu_ANC/B01051" data-constraint=".&lt;1000" data-type-xml="decimal" step="any" />
+   </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Status Gizi ibu</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01052" data-name="/Kartu_ibu_ANC/B01052" value="kekurangan_energi_kronis" data-type-xml="select1" />
+               <span lang="" class="option-label active">Kekurangan Energi Kronis (KEK)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01052" data-name="/Kartu_ibu_ANC/B01052" value="normal" data-type-xml="select1" />
+               <span lang="" class="option-label active">Normal (N)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">TFU</span>
+      <input type="number" name="/Kartu_ibu_ANC/B01053" data-constraint=".&lt;1000" data-type-xml="decimal" step="any" />
+   </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Refleks Patela Ibu</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01054" data-name="/Kartu_ibu_ANC/B01054" value="ada" data-type-xml="select1" />
+               <span lang="" class="option-label active">Ada (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01054" data-name="/Kartu_ibu_ANC/B01054" value="tidak" data-type-xml="select1" />
+               <span lang="" class="option-label active">Tidak (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">DJJ</span>
+      <input type="number" name="/Kartu_ibu_ANC/B01055" data-constraint=".&lt;1000" data-type-xml="int" />
+   </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Kepala Janin Terhadap PAP</span>
+            <span class="required">*</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01056" data-name="/Kartu_ibu_ANC/B01056" value="masuk" required="required" data-type-xml="select1" />
+               <span lang="" class="option-label active">Masuk (M)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01056" data-name="/Kartu_ibu_ANC/B01056" value="belum_masuk" required="required" data-type-xml="select1" />
+               <span lang="" class="option-label active">Belum Masuk (BM)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="note non-select ">
+      <span lang="" class="question-label active">
+         Taksiran Berat Janin:
+         <span class="or-output" data-value=" /Kartu_ibu_ANC/B01057 " />
+      </span>
+      <input type="text" name="/Kartu_ibu_ANC/aaaaaa" data-type-xml="string" readonly="readonly" />
+   </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Persentasi Janin</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01058" data-name="/Kartu_ibu_ANC/B01058" value="kepala" data-type-xml="select1" />
+               <span lang="" class="option-label active">Kepala (KP)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01058" data-name="/Kartu_ibu_ANC/B01058" value="bokong___sungsang" data-type-xml="select1" />
+               <span lang="" class="option-label active">Bokong / Sungsang (BS)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01058" data-name="/Kartu_ibu_ANC/B01058" value="letak_lintang___obligue" data-type-xml="select1" />
+               <span lang="" class="option-label active">Letak Lintang / Obligue (LLO)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Jumlah Janin</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01059" data-name="/Kartu_ibu_ANC/B01059" value="tunggal" data-type-xml="select1" />
+               <span lang="" class="option-label active">Tunggal (T)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01059" data-name="/Kartu_ibu_ANC/B01059" value="ganda" data-type-xml="select1" />
+               <span lang="" class="option-label active">Ganda (G)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Status Imunisasi TT</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01060" data-name="/Kartu_ibu_ANC/B01060" value="tt_ke_0" data-type-xml="select1" />
+               <span lang="" class="option-label active">TT Ke 0 (T0)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01060" data-name="/Kartu_ibu_ANC/B01060" value="tt_ke_1" data-type-xml="select1" />
+               <span lang="" class="option-label active">TT ke 1 (T1)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01060" data-name="/Kartu_ibu_ANC/B01060" value="tt_ke_2" data-type-xml="select1" />
+               <span lang="" class="option-label active">TT Ke 2 (T2)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01060" data-name="/Kartu_ibu_ANC/B01060" value="tt_ke_3__tt_ke_4" data-type-xml="select1" />
+               <span lang="" class="option-label active">TT ke 3 (T3) TT ke 4 (TT4)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01060" data-name="/Kartu_ibu_ANC/B01060" value="tt_ke_ke_5" data-type-xml="select1" />
+               <span lang="" class="option-label active">TT ke Ke 5 (TT5)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Pelayanan / Injeksi TT</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01061" data-name="/Kartu_ibu_ANC/B01061" value="jika_dilakukan" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (√)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01061" data-name="/Kartu_ibu_ANC/B01061" value="jika_tidak_dilakukan" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Pelayanan / Catat di Buku Kia</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01062" data-name="/Kartu_ibu_ANC/B01062" value="jika_dilakukan" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (√)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01062" data-name="/Kartu_ibu_ANC/B01062" value="jika_tidak_dilakukan" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">Pelayanan / Fe</span>
+      <input type="number" name="/Kartu_ibu_ANC/B01063" data-constraint=".&lt;100" data-type-xml="int" />
+   </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Laboratorium / Periksa Hb / Dilakukan</span>
+            <span class="required">*</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01064" data-name="/Kartu_ibu_ANC/B01064" value="Ya" required="required" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (√)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01064" data-name="/Kartu_ibu_ANC/B01064" value="Tidak" required="required" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question or-branch pre-init non-select ">
+      <span lang="" class="question-label active">Laboratorium / Periksa Hb / Hasil</span>
+      <input type="number" name="/Kartu_ibu_ANC/B01065" data-constraint=".&lt;1000" data-relevant=" /Kartu_ibu_ANC/B01064  = 'Ya'" data-type-xml="int" />
+   </label>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Laboratorium / Periksa Hb / Anemia</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01066" data-name="/Kartu_ibu_ANC/B01066" value="positif" data-relevant=" /Kartu_ibu_ANC/B01064  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01066" data-name="/Kartu_ibu_ANC/B01066" value="negatif" data-relevant=" /Kartu_ibu_ANC/B01064  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Laboratorium / Protein Uria</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01067" data-name="/Kartu_ibu_ANC/B01067" value="positif" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01067" data-name="/Kartu_ibu_ANC/B01067" value="negatif" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Laboratorium / Gula Darah</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01068" data-name="/Kartu_ibu_ANC/B01068" value="&gt;_140_mg_dl" data-type-xml="select1" />
+               <span lang="" class="option-label active">&gt; 140 mg/dl (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01068" data-name="/Kartu_ibu_ANC/B01068" value="&lt;_140_mg_dl" data-type-xml="select1" />
+               <span lang="" class="option-label active">&lt; 140 mg/dl (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Laboratorium / Thalasemia</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01069" data-name="/Kartu_ibu_ANC/B01069" value="positif" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01069" data-name="/Kartu_ibu_ANC/B01069" value="negatif" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Laboratorium / Sifilis</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01070" data-name="/Kartu_ibu_ANC/B01070" value="positif" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01070" data-name="/Kartu_ibu_ANC/B01070" value="negatif" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Laboratorium / HbsAg</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01071" data-name="/Kartu_ibu_ANC/B01071" value="positif" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01071" data-name="/Kartu_ibu_ANC/B01071" value="negatif" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / PMTCT / VCT</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01072" data-name="/Kartu_ibu_ANC/B01072" value="jika_dilakukan" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (√)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01072" data-name="/Kartu_ibu_ANC/B01072" value="jika_tidak_dilakukan" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / PMTCT / Periksa Darah</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01073" data-name="/Kartu_ibu_ANC/B01073" value="jika_dilakukan" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (√)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01073" data-name="/Kartu_ibu_ANC/B01073" value="jika_tidak_dilakukan" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / PMTCT / Serologi</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01074" data-name="/Kartu_ibu_ANC/B01074" value="positif" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01074" data-name="/Kartu_ibu_ANC/B01074" value="negatif" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">Integrasi Program / PMTCT / ARV Profilaksis</span>
+      <input type="text" name="/Kartu_ibu_ANC/B01075" data-type-xml="string" />
+   </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / Malaria / Periksa Darah</span>
+            <span class="required">*</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01076" data-name="/Kartu_ibu_ANC/B01076" value="Ya" required="required" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (√)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01076" data-name="/Kartu_ibu_ANC/B01076" value="Tidak" required="required" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / Malaria / Malaria</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01077" data-name="/Kartu_ibu_ANC/B01077" value="positif" data-relevant=" /Kartu_ibu_ANC/B01076  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01077" data-name="/Kartu_ibu_ANC/B01077" value="negatif" data-relevant=" /Kartu_ibu_ANC/B01076  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / Malaria / Obat</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01078" data-name="/Kartu_ibu_ANC/B01078" value="ZDV" data-relevant=" /Kartu_ibu_ANC/B01076  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">(ZDV)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01078" data-name="/Kartu_ibu_ANC/B01078" value="NVP" data-relevant=" /Kartu_ibu_ANC/B01076  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">(NVP)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01078" data-name="/Kartu_ibu_ANC/B01078" value="TC" data-relevant=" /Kartu_ibu_ANC/B01076  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">(TC)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / Malaria / Kelambu Berinsektisida</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01079" data-name="/Kartu_ibu_ANC/B01079" value="jika_dilakukan" data-relevant=" /Kartu_ibu_ANC/B01076  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (√)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01079" data-name="/Kartu_ibu_ANC/B01079" value="jika_tidak_dilakukan" data-relevant=" /Kartu_ibu_ANC/B01076  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / TB / Dahak</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01080" data-name="/Kartu_ibu_ANC/B01080" value="Ya" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (√)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01080" data-name="/Kartu_ibu_ANC/B01080" value="Tidak" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / TB / TBC</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01081" data-name="/Kartu_ibu_ANC/B01081" value="positif" data-relevant=" /Kartu_ibu_ANC/B01080  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01081" data-name="/Kartu_ibu_ANC/B01081" value="negatif" data-relevant=" /Kartu_ibu_ANC/B01080  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / TB / Obat</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01082" data-name="/Kartu_ibu_ANC/B01082" value="rifampisin" data-relevant=" /Kartu_ibu_ANC/B01080  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rifampisin (R)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01082" data-name="/Kartu_ibu_ANC/B01082" value="inh" data-relevant=" /Kartu_ibu_ANC/B01080  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">INH (H)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01082" data-name="/Kartu_ibu_ANC/B01082" value="pyrazinamid" data-relevant=" /Kartu_ibu_ANC/B01080  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Pyrazinamid (Z)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01082" data-name="/Kartu_ibu_ANC/B01082" value="etahmbutol" data-relevant=" /Kartu_ibu_ANC/B01080  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Etahmbutol</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Resiko Terdeteksi Pertama Kali Oleh</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01083" data-name="/Kartu_ibu_ANC/B01083" value="pasien" data-type-xml="select1" />
+               <span lang="" class="option-label active">Pasien (P)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01083" data-name="/Kartu_ibu_ANC/B01083" value="keluarga" data-type-xml="select1" />
+               <span lang="" class="option-label active">Keluarga (K)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01083" data-name="/Kartu_ibu_ANC/B01083" value="masyarakat" data-type-xml="select1" />
+               <span lang="" class="option-label active">Masyarakat (M)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01083" data-name="/Kartu_ibu_ANC/B01083" value="dukun" data-type-xml="select1" />
+               <span lang="" class="option-label active">Dukun (D)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01083" data-name="/Kartu_ibu_ANC/B01083" value="kader" data-type-xml="select1" />
+               <span lang="" class="option-label active">Kader (K)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01083" data-name="/Kartu_ibu_ANC/B01083" value="bidan" data-type-xml="select1" />
+               <span lang="" class="option-label active">Bidan (B)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01083" data-name="/Kartu_ibu_ANC/B01083" value="dokter" data-type-xml="select1" />
+               <span lang="" class="option-label active">Dokter (D)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01083" data-name="/Kartu_ibu_ANC/B01083" value="DSOG" data-type-xml="select1" />
+               <span lang="" class="option-label active">Dokter Spesialis Obsestri dan Gemotologi (DSOG)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Komplikasi dalam Kehamilan</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="checkbox" name="/Kartu_ibu_ANC/B01084" value="hipertensi_dalam_kehamilan" data-type-xml="select" />
+               <span lang="" class="option-label active">Hipertensi dalam Kehamilan (HDK)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Kartu_ibu_ANC/B01084" value="abortus" data-type-xml="select" />
+               <span lang="" class="option-label active">Abortus (AS)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Kartu_ibu_ANC/B01084" value="mola" data-type-xml="select" />
+               <span lang="" class="option-label active">Mola (ML)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Kartu_ibu_ANC/B01084" value="kehamilan_ektopit_terganggu" data-type-xml="select" />
+               <span lang="" class="option-label active">Kehamilan Ektopit Terganggu (KET)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Kartu_ibu_ANC/B01084" value="hemoragi_post_partum" data-type-xml="select" />
+               <span lang="" class="option-label active">Hemoragi Post Partum (HPP)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Kartu_ibu_ANC/B01084" value="ante_partum_beleding" data-type-xml="select" />
+               <span lang="" class="option-label active">Ante Partum Beleding (APB)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Kartu_ibu_ANC/B01084" value="injeksi_jalan_lahir" data-type-xml="select" />
+               <span lang="" class="option-label active">Injeksi Jalan Lahir (IJL)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Kartu_ibu_ANC/B01084" value="partum_kasep" data-type-xml="select" />
+               <span lang="" class="option-label active">Partum Kasep (PK)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Kartu_ibu_ANC/B01084" value="partus_lama" data-type-xml="select" />
+               <span lang="" class="option-label active">Partus Lama (PL)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Dirujuk Ke</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01085" data-name="/Kartu_ibu_ANC/B01085" value="pusat_kesehatan_masyarakat" data-type-xml="select1" />
+               <span lang="" class="option-label active">Pusat Kesehatan Masyarakat (Puskesmas )</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01085" data-name="/Kartu_ibu_ANC/B01085" value="rumah_bersalin" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rumah Bersalin (RB)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01085" data-name="/Kartu_ibu_ANC/B01085" value="rumah_sakit_ibu_dan_anak" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rumah Sakit Ibu dan Anak (RSIA)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01085" data-name="/Kartu_ibu_ANC/B01085" value="rumah_sakit" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rumah Sakit (RS)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01085" data-name="/Kartu_ibu_ANC/B01085" value="lainLain" data-type-xml="select1" />
+               <span lang="" class="option-label active">Lain-lain (LN)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question or-branch pre-init non-select ">
+      <span lang="" class="question-label active">lain-lain</span>
+      <input type="text" name="/Kartu_ibu_ANC/B01085L" data-relevant=" /Kartu_ibu_ANC/B01085  = 'lainLain'" data-type-xml="string" />
+   </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Keadaan Ibu saat Tiba</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01086" data-name="/Kartu_ibu_ANC/B01086" value="hidup" data-type-xml="select1" />
+               <span lang="" class="option-label active">Hidup (H)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01086" data-name="/Kartu_ibu_ANC/B01086" value="mati" data-type-xml="select1" />
+               <span lang="" class="option-label active">Mati (M)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Keadaan Ibu saat Pulang</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01087" data-name="/Kartu_ibu_ANC/B01087" value="hidup" data-type-xml="select1" />
+               <span lang="" class="option-label active">Hidup (H)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Kartu_ibu_ANC/B01087" data-name="/Kartu_ibu_ANC/B01087" value="mati" data-type-xml="select1" />
+               <span lang="" class="option-label active">Mati (M)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">Keterangan</span>
+      <input type="text" name="/Kartu_ibu_ANC/B01088" data-type-xml="string" />
+   </label>
+   <fieldset id="or-calculated-items" style="display:none;">
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Kartu_ibu_ANC/B01057" data-calculate="if(selected( /Kartu_ibu_ANC/B01056 ,'masuk'), (( /Kartu_ibu_ANC/B01053 -11)*155), (if(selected( /Kartu_ibu_ANC/B01056 ,'belum_masuk'), (( /Kartu_ibu_ANC/B01053 -12)*155), 0)))" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Kartu_ibu_ANC/meta/instanceID" data-calculate="concat('uuid:', uuid())" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Kartu_ibu_ANC/formhub/uuid" data-calculate="'bdfc5b1816ee459f81fc4d2f4db0f368'" data-type-xml="string" />
+      </label>
+   </fieldset>
+</form>
