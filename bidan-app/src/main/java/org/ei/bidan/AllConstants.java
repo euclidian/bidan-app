@@ -103,6 +103,8 @@ public class AllConstants {
         public static final String KARTU_IBU_ANC_CLOSE="kartu_ibu_anc_close";
         public static final String KARTU_IBU_PNC_EDIT="kartu_ibu_pnc_edit";
         public static final String KARTU_IBU_PNC_CLOSE="kartu_ibu_pnc_close";
+        public static final String KARTU_IBU_ANAK_VISIT="kohort_bayi_kunjungan";
+        public static final String KARTU_IBU_ANAK_CLOSE="anak_close";
     }
 
     public class ECRegistrationFields {

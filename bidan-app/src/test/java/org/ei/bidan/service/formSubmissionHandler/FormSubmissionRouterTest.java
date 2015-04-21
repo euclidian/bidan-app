@@ -1,6 +1,7 @@
 package org.ei.bidan.service.formSubmissionHandler;
 
 import org.ei.bidan.bidan.service.formSubmissionHandler.AnakBayiRegistrationHandler;
+import org.ei.bidan.bidan.service.formSubmissionHandler.AnakCloseHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KIANCCloseHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KIPNCCloseHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KartuIbuANCRegistrationHandler;
@@ -89,6 +90,8 @@ public class FormSubmissionRouterTest {
     private KIANCCloseHandler kiancCloseHandler;
     @Mock
     private KIPNCCloseHandler kipncCloseHandler;
+    @Mock
+    private AnakCloseHandler anakCloseHandler;
 
     private FormSubmissionRouter router;
 
@@ -116,7 +119,7 @@ public class FormSubmissionRouterTest {
                 childIllnessHandler, vitaminAHandler, deliveryPlanHandler, ecEditHandler, ancInvestigationsHandler,
                 kartuIbuRegistrationHandler, kartuIbuCloseHandler,
                 kartuIbuANCRegistrationHandler, anakBayiRegistrationHandler, kiancCloseHandler,
-                kipncCloseHandler);
+                kipncCloseHandler, anakCloseHandler);
     }
 
     @Test

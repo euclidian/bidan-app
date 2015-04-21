@@ -19,6 +19,8 @@ import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
 
+import static org.ei.bidan.AllConstants.FormNames.*;
+
 /**
  * Created by Dimas Ciputra on 4/7/15.
  */
@@ -137,7 +139,10 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
 
     private DialogOption[] getEditOptions() {
         return new DialogOption[]{
-                new OpenFormOption("Kunjungan", "kohort_bayi_kunjungan", formController),
+                new OpenFormOption(getString(R.string.str_kunjungan_anak),
+                        KARTU_IBU_ANAK_VISIT, formController),
+                new OpenFormOption(getString(R.string.str_tutup_anak),
+                        KARTU_IBU_ANAK_CLOSE, formController),
         };
     }
 }

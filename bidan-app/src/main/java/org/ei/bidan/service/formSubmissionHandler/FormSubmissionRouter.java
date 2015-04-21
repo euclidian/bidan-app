@@ -2,6 +2,7 @@ package org.ei.bidan.service.formSubmissionHandler;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.ei.bidan.bidan.service.formSubmissionHandler.AnakBayiRegistrationHandler;
+import org.ei.bidan.bidan.service.formSubmissionHandler.AnakCloseHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KIANCCloseHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KIPNCCloseHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KartuIbuCloseHandler;
@@ -52,7 +53,8 @@ public class FormSubmissionRouter {
                                 KartuIbuANCRegistrationHandler kartuIbuANCRegistrationHandler,
                                 AnakBayiRegistrationHandler anakBayiRegistrationHandler,
                                 KIANCCloseHandler kiancCloseHandler,
-                                KIPNCCloseHandler kipncCloseHandler) {
+                                KIPNCCloseHandler kipncCloseHandler,
+                                AnakCloseHandler anakCloseHandler) {
         this.formDataRepository = formDataRepository;
         handlerMap = new HashMap<String, FormSubmissionHandler>();
         handlerMap.put(EC_REGISTRATION, ecRegistrationHandler);
@@ -89,6 +91,7 @@ public class FormSubmissionRouter {
         handlerMap.put(ANAK_BAYI_REGISTRATION, anakBayiRegistrationHandler);
         handlerMap.put(KARTU_IBU_ANC_CLOSE, kiancCloseHandler);
         handlerMap.put(KARTU_IBU_PNC_CLOSE, kipncCloseHandler);
+        handlerMap.put(KARTU_IBU_ANAK_CLOSE, anakCloseHandler);
     }
 
     public void route(String instanceId) throws Exception {

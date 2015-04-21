@@ -8,6 +8,7 @@ import org.ei.bidan.bidan.repository.AllKohort;
 import org.ei.bidan.bidan.repository.AnakRepository;
 import org.ei.bidan.bidan.service.AnakService;
 import org.ei.bidan.bidan.service.formSubmissionHandler.AnakBayiRegistrationHandler;
+import org.ei.bidan.bidan.service.formSubmissionHandler.AnakCloseHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KIANCCloseHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KIPNCCloseHandler;
 import org.ei.bidan.bidan.view.contract.KartuIbuPNCClients;
@@ -157,6 +158,7 @@ public class Context {
     private AnakBayiRegistrationHandler anakBayiRegistrationHandler;
     private KIANCCloseHandler kiancCloseHandler;
     private KIPNCCloseHandler kipncCloseHandler;
+    private AnakCloseHandler anakCloseHandler;
 
     private ANMController anmController;
     private ANMLocationController anmLocationController;
@@ -228,7 +230,7 @@ public class Context {
                     deliveryPlanHandler(), ecEditHandler(), ancInvestigationsHandler(),
                     kartuIbuRegistrationHandler(), kartuIbuCloseHandler(),
                     kartuIbuANCRegistrationHandler(), anakBayiRegistrationHandler(),kiancCloseHandler(),
-                    kipncCloseHandler());
+                    kipncCloseHandler(), anakCloseHandler());
         }
         return formSubmissionRouter;
     }
@@ -911,4 +913,12 @@ public class Context {
         }
         return kipncCloseHandler;
     }
+
+    public AnakCloseHandler anakCloseHandler() {
+        if(anakCloseHandler == null) {
+            anakCloseHandler = new AnakCloseHandler(anakService());
+        }
+        return anakCloseHandler;
+    }
+
 }
