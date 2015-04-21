@@ -8,6 +8,7 @@ import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.customControls.BidanClientProfileView;
 import org.ei.bidan.bidan.view.customControls.BidanClientStatusView;
 import org.ei.bidan.bidan.view.customControls.BidanObsetriView;
+import org.ei.bidan.view.customControls.ClientChildrenView;
 
 /**
  * Created by Dimas Ciputra on 2/18/15.
@@ -15,7 +16,7 @@ import org.ei.bidan.bidan.view.customControls.BidanObsetriView;
 public class NativeKIRegisterViewHolder {
     private final BidanClientProfileView profileInfoLayout;
     private final BidanObsetriView bidanObsetriView;
-    private final TextView txtPuskesmas;
+    private final ClientChildrenView childrenView;
     private TextView txtEdd;
     private TextView txtNoIbu;
     private final BidanClientStatusView statusView;
@@ -31,7 +32,9 @@ public class NativeKIRegisterViewHolder {
         statusView = (BidanClientStatusView) itemView.findViewById(R.id.status_layout);
         statusView.initialize();
 
-        this.txtPuskesmas = (TextView) itemView.findViewById(R.id.puskesmas);
+        childrenView = (ClientChildrenView) itemView.findViewById(R.id.children_layout);
+        childrenView.initialize();
+
         this.txtEdd = (TextView) itemView.findViewById(R.id.edd);
         this.txtNoIbu = (TextView) itemView.findViewById(R.id.no_ibu);
 
@@ -43,8 +46,8 @@ public class NativeKIRegisterViewHolder {
     }
     public BidanClientStatusView statusView() { return statusView; }
     public BidanObsetriView bidanObsetriView() { return bidanObsetriView; }
-    public TextView txtPuskesmas() {
-        return txtPuskesmas;
+    public ClientChildrenView childrenView() {
+        return childrenView;
     }
     public TextView txtNoIbu() { return txtNoIbu; }
     public TextView txtEdd() { return txtEdd; }

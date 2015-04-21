@@ -48,7 +48,7 @@
     <string name="header_status">STATUS</string>
     <string name="header_edit"></string>
 
-    <string name="header_puskesmas">Puskesmas</string>
+    <string name="header_anak">Anak</string>
     <string name="header_nama">Nama</string>
     <string name="header_tgl_periksa">Tgl Periksa</string>
     <string name="header_edd">EDD</string>
@@ -71,6 +71,9 @@
     <string name="ec_register_male_child">Male\n{0}</string>
     <string name="ec_register_female_child">Female\n{0}</string>
     <string name="ec_register_no_fp">No FP</string>
+
+    <string name="ki_register_male_child">Laki\n{0}</string>
+    <string name="ki_register_female_child">Perempuan\n{0}</string>
 
     <string name="status_delivery">Delivery:</string>
     <string name="str_lmp">LMP:</string>

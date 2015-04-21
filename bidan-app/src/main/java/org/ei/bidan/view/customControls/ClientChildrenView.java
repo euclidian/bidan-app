@@ -5,6 +5,8 @@ import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.ei.bidan.R;
+import org.ei.bidan.bidan.view.contract.KIChildClient;
+import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.view.contract.ECChildClient;
 import org.ei.bidan.view.contract.ECSmartRegisterClient;
 
@@ -53,7 +55,32 @@ public class ClientChildrenView extends LinearLayout {
         }
     }
 
+    public void bindKIData(KartuIbuClient client, String maleChildAgeFormatString, String femaleChildAgeFormatString) {
+        List<KIChildClient> children = client.children();
+        if (children.size() == 0) {
+            ageView1.setVisibility(GONE);
+            ageView2.setVisibility(GONE);
+        } else if (children.size() == 1) {
+            setupKIChildView(children.get(0), ageView1, maleChildAgeFormatString, femaleChildAgeFormatString);
+            ((LinearLayout.LayoutParams) ageView1.getLayoutParams()).weight = 100;
+            ageView2.setVisibility(GONE);
+        } else {
+            setupKIChildView(children.get(0), ageView1, maleChildAgeFormatString, femaleChildAgeFormatString);
+            setupKIChildView(children.get(1), ageView2, maleChildAgeFormatString, femaleChildAgeFormatString);
+            ((LinearLayout.LayoutParams) ageView1.getLayoutParams()).weight = 50;
+            ((LinearLayout.LayoutParams) ageView2.getLayoutParams()).weight = 50;
+        }
+    }
+
     private void setupChildView(ECChildClient child, TextView ageView,
+                                String maleChildAgeFormatString, String femaleChildAgeFormatString) {
+        ageView.setVisibility(VISIBLE);
+        ageView.setText(
+                format(child.isMale() ? maleChildAgeFormatString : femaleChildAgeFormatString,
+                        child.getAgeInString()));
+    }
+
+    private void setupKIChildView(KIChildClient child, TextView ageView,
                                 String maleChildAgeFormatString, String femaleChildAgeFormatString) {
         ageView.setVisibility(VISIBLE);
         ageView.setText(

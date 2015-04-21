@@ -10,7 +10,9 @@ import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -43,6 +45,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
     private String numberOfAbortions;
     private String rtRw;
     private Map<String, String> status = new HashMap<String, String>();
+    private List<KIChildClient> children;
 
     public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi, String husbandName, String tglPeriksa, String edd, String village) {
         this.entityId = entityId;
@@ -60,6 +63,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
         this.tglPeriksa = tglPeriksa;
         this.edd = edd;
         this.village = village;
+        this.children = new ArrayList<KIChildClient>();
     }
 
     // Getter
@@ -322,5 +326,14 @@ public class KartuIbuClient implements KISmartRegisterClient {
     public KartuIbuClient withNumberOfAbortions(String numberOfAbortions) {
         this.numberOfAbortions = numberOfAbortions;
         return this;
+    }
+
+    public KartuIbuClient addChild(KIChildClient childClient) {
+        children.add(childClient);
+        return this;
+    }
+
+    public List<KIChildClient> children() {
+        return children;
     }
 }

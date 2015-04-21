@@ -1,8 +1,12 @@
 package org.ei.bidan.bidan.view.controller;
 
+import com.google.common.collect.Iterables;
+
+import org.ei.bidan.bidan.domain.Anak;
 import org.ei.bidan.bidan.domain.Ibu;
 import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.bidan.repository.AllKohort;
+import org.ei.bidan.bidan.view.contract.KIChildClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClients;
 import org.ei.bidan.bidan.repository.AllKartuIbus;
@@ -10,6 +14,7 @@ import org.ei.bidan.util.Cache;
 import org.ei.bidan.util.CacheableData;
 import org.ei.bidan.util.EasyMap;
 import org.ei.bidan.view.contract.SmartRegisterClient;
+import org.joda.time.LocalDate;
 
 import java.util.Comparator;
 import java.util.List;
@@ -60,6 +65,7 @@ public class KartuIbuRegisterController {
                             .withNumberOfAbortions(kartuIbu.getDetails().get("Abortus"))
                             .withParity(kartuIbu.getDetails().get("Partus"));
                     updateStatusInformation(kartuIbu, kartuIbuClient);
+                    updateChildrenInformation(kartuIbuClient);
                     kartuIbuClients.add(kartuIbuClient);
                 }
                 sortByName(kartuIbuClients);
@@ -73,6 +79,24 @@ public class KartuIbuRegisterController {
             @Override
             public int compare(SmartRegisterClient o1, SmartRegisterClient o2) {
                 return o1.wifeName().compareToIgnoreCase(o2.wifeName());
+            }
+        });
+    }
+
+    private void updateChildrenInformation(KartuIbuClient kartuIbuClient) {
+        List<Anak> children = allKohort.findAllAnakByKIId(kartuIbuClient.entityId());
+        sortByDateOfBirth(children);
+        Iterable<Anak> youngestTwoChildren = Iterables.skip(children, children.size() < 2 ? 0 : children.size() - 2);
+        for (Anak child : youngestTwoChildren) {
+            kartuIbuClient.addChild(new KIChildClient(child.getCaseId(), child.getGender(), child.getDateOfBirth()));
+        }
+    }
+
+    private void sortByDateOfBirth(List<Anak> children) {
+        sort(children, new Comparator<Anak>() {
+            @Override
+            public int compare(Anak child, Anak anotherChild) {
+                return LocalDate.parse(child.getDateOfBirth()).compareTo(LocalDate.parse(anotherChild.getDateOfBirth()));
             }
         });
     }

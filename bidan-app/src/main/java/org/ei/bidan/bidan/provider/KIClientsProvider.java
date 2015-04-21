@@ -39,6 +39,9 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
 
     private final AbsListView.LayoutParams clientViewLayoutParams;
 
+    private final String maleChildAgeFormatString;
+    private final String femaleChildAgeFormatString;
+
     private Drawable iconPencilDrawable;
 
     protected KartuIbuRegisterController controller;
@@ -54,6 +57,10 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
 
         clientViewLayoutParams = new AbsListView.LayoutParams(MATCH_PARENT,
                 (int) context.getResources().getDimension(R.dimen.list_item_height));
+
+
+        maleChildAgeFormatString = context.getResources().getString(R.string.ki_register_male_child);
+        femaleChildAgeFormatString = context.getResources().getString(R.string.ki_register_female_child);
 
     }
 
@@ -72,7 +79,7 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
 
         KartuIbuClient kartuIbuClient = (KartuIbuClient) client;
         setupClientProfileView(kartuIbuClient, viewHolder);
-        setupClientPuskesmasView(kartuIbuClient, viewHolder);
+        setupChildrenView(kartuIbuClient, viewHolder);
         setupEditView(kartuIbuClient, viewHolder);
         setupClientNoIbuView(kartuIbuClient, viewHolder);
         setupObsetriView(kartuIbuClient, viewHolder);
@@ -98,8 +105,8 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
         viewHolder.profileInfoLayout().setTag(client);
     }
 
-    private void setupClientPuskesmasView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {
-        viewHolder.txtPuskesmas().setText(String.valueOf(client.getPuskesmas()));
+    private void setupChildrenView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {
+        viewHolder.childrenView().bindKIData(client, maleChildAgeFormatString, femaleChildAgeFormatString);
     }
 
     private void setupClientNoIbuView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {
