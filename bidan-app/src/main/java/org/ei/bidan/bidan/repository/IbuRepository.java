@@ -79,6 +79,24 @@ public class IbuRepository extends DrishtiRepository {
         return readAll(cursor);
     }
 
+    public Ibu findOpenCaseByCaseID(String caseId) {
+        SQLiteDatabase database = masterRepository.getReadableDatabase();
+        Cursor cursor = database.query(IBU_TABLE_NAME, IBU_TABLE_COLUMNS, ID_COLUMN + " = ? AND " + IS_CLOSED_COLUMN + " = ?", new String[]{caseId, NOT_CLOSED}, null, null, null, null);
+        List<Ibu> mothers = readAll(cursor);
+
+        if (mothers.isEmpty()) {
+            return null;
+        }
+        return mothers.get(0);
+    }
+
+    public Ibu findIbuWithOpenStatusByKIId(String caseId) {
+        SQLiteDatabase database = masterRepository.getReadableDatabase();
+        Cursor cursor = database.query(IBU_TABLE_NAME, IBU_TABLE_COLUMNS, KI_ID_COLUMN + " = ? AND " + IS_CLOSED_COLUMN + " = ?", new String[]{caseId, NOT_CLOSED}, null, null, null, null);
+        List<Ibu> mothers = readAll(cursor);
+        return mothers.isEmpty() ? null : mothers.get(0);
+    }
+
     public Ibu findById(String id) {
         SQLiteDatabase database = masterRepository.getReadableDatabase();
         Cursor cursor = database.query(IBU_TABLE_NAME, IBU_TABLE_COLUMNS, ID_COLUMN + " = ?", new String[]{id},

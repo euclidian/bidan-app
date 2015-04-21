@@ -8,6 +8,7 @@ import org.ei.bidan.bidan.repository.AllKohort;
 import org.ei.bidan.bidan.repository.AnakRepository;
 import org.ei.bidan.bidan.service.AnakService;
 import org.ei.bidan.bidan.service.formSubmissionHandler.AnakBayiRegistrationHandler;
+import org.ei.bidan.bidan.service.formSubmissionHandler.KIANCCloseHandler;
 import org.ei.bidan.bidan.view.contract.KartuIbuPNCClients;
 import org.ei.bidan.repository.AlertRepository;
 import org.ei.bidan.repository.AllAlerts;
@@ -153,6 +154,7 @@ public class Context {
     private KartuIbuCloseHandler kartuIbuCloseHandler;
     private KartuIbuANCRegistrationHandler kartuIbuANCRegistrationHandler;
     private AnakBayiRegistrationHandler anakBayiRegistrationHandler;
+    private KIANCCloseHandler kiancCloseHandler;
 
     private ANMController anmController;
     private ANMLocationController anmLocationController;
@@ -223,7 +225,7 @@ public class Context {
                     childRegistrationOAHandler(), childCloseHandler(), childIllnessHandler(), vitaminAHandler(),
                     deliveryPlanHandler(), ecEditHandler(), ancInvestigationsHandler(),
                     kartuIbuRegistrationHandler(), kartuIbuCloseHandler(),
-                    kartuIbuANCRegistrationHandler(), anakBayiRegistrationHandler());
+                    kartuIbuANCRegistrationHandler(), anakBayiRegistrationHandler(),kiancCloseHandler());
         }
         return formSubmissionRouter;
     }
@@ -824,7 +826,7 @@ public class Context {
 
     private IbuService ibuService() {
         if(ibuService == null) {
-            ibuService = new IbuService(allKartuIbus(), allTimelineEvents(), serviceProvidedService());
+            ibuService = new IbuService(allKartuIbus(), allTimelineEvents(), serviceProvidedService(), allKohort());
         }
         return ibuService;
     }
@@ -891,5 +893,12 @@ public class Context {
             anakBayiRegistrationHandler = new AnakBayiRegistrationHandler(anakService());
         }
         return anakBayiRegistrationHandler;
+    }
+
+    public KIANCCloseHandler kiancCloseHandler() {
+        if(kiancCloseHandler == null) {
+            kiancCloseHandler = new KIANCCloseHandler(ibuService());
+        }
+        return kiancCloseHandler;
     }
 }

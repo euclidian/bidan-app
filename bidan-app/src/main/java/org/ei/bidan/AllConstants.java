@@ -100,6 +100,7 @@ public class AllConstants {
         public static final String KARTU_IBU_ANC_RENCANA_PERSALINAN = "anc_rencana_persalinan";
         public static final String ANAK_BAYI_REGISTRATION = "kohort_bayi";
         public static final String KARTU_IBU_ANC_EDIT="kartu_ibu_anc_edit";
+        public static final String KARTU_IBU_ANC_CLOSE="kartu_ibu_anc_close";
         public static final String KARTU_IBU_PNC_EDIT="kartu_ibu_pnc_edit";
     }
 

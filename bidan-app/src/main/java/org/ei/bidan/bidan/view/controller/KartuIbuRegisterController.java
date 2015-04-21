@@ -103,7 +103,7 @@ public class KartuIbuRegisterController {
 
     //#TODO: Needs refactoring
     private void updateStatusInformation(KartuIbu kartuIbu, KartuIbuClient kartuIbuClient) {
-        Ibu ibu = allKohort.findIbuByKartuIbuId(kartuIbu.getCaseId());
+        Ibu ibu = allKohort.findIbuWithOpenStatusByKIId(kartuIbu.getCaseId());
 
         if (ibu != null && ibu.isANC()) {
             kartuIbuClient
