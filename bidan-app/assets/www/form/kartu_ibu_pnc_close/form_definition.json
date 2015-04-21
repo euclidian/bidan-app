@@ -1,0 +1,45 @@
+{
+    "form_data_definition_version": "1",
+    "form": {
+        "bind_type": "ibu",
+        "default_bind_path": "/model/instance/PNC_Close/",
+        "fields": [
+            {
+                "name": "id",
+                "shouldLoadValue": true
+            },
+            {
+                "name": "closeReason",
+                "bind": "/model/instance/PNC_Close/pnc_close_reason"
+            },
+            {
+                "name": "didWomanSurvive",
+                "bind": "/model/instance/PNC_Close/woman_survived"
+            },
+            {
+                "name": "deathDate",
+                "bind": "/model/instance/PNC_Close/death_date"
+            },
+            {
+                "name": "isMaternalDeath",
+                "bind": "/model/instance/PNC_Close/maternal_death"
+            },
+            {
+                "name": "maternalDeathCause",
+                "bind": "/model/instance/PNC_Close/maternal_death_cause"
+            },
+            {
+                "name": "otherMaternalDeathCause",
+                "bind": "/model/instance/PNC_Close/other_maternal_death_cause"
+            },
+            {
+                "name": "isPNCCloseConfirmed",
+                "bind": "/model/instance/PNC_Close/confirm_pnc_close"
+            },
+            {
+                "name": "submissionDate",
+                "bind": "/model/instance/PNC_Close/today"
+            }
+        ]
+    }
+}

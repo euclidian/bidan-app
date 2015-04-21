@@ -106,6 +106,10 @@ public class AllKohort {
         ibuRepository.switchToPNC(entityId);
     }
 
+    public void switchIbuToANC(String entityId) {
+        ibuRepository.switchToANC(entityId);
+    }
+
     public Ibu findIbuWithOpenStatus(String caseId) {
         return ibuRepository.findOpenCaseByCaseID(caseId);
     }

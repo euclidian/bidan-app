@@ -65,6 +65,15 @@ public class IbuRepository extends DrishtiRepository {
         database.update(IBU_TABLE_NAME, ibuValuesToBeUpdated, ID_COLUMN + " = ?", new String[]{caseId});
     }
 
+    public void switchToANC(String caseId) {
+        SQLiteDatabase database = masterRepository.getWritableDatabase();
+
+        ContentValues ibuValuesToBeUpdated = new ContentValues();
+        ibuValuesToBeUpdated.put(TYPE_COLUMN, TYPE_ANC);
+
+        database.update(IBU_TABLE_NAME, ibuValuesToBeUpdated, ID_COLUMN + " = ?", new String[]{caseId});
+    }
+
     public List<Ibu> allANCs() {
         return allWithType(TYPE_ANC);
     }

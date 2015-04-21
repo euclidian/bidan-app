@@ -9,6 +9,7 @@ import org.ei.bidan.bidan.repository.AnakRepository;
 import org.ei.bidan.bidan.service.AnakService;
 import org.ei.bidan.bidan.service.formSubmissionHandler.AnakBayiRegistrationHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KIANCCloseHandler;
+import org.ei.bidan.bidan.service.formSubmissionHandler.KIPNCCloseHandler;
 import org.ei.bidan.bidan.view.contract.KartuIbuPNCClients;
 import org.ei.bidan.repository.AlertRepository;
 import org.ei.bidan.repository.AllAlerts;
@@ -155,6 +156,7 @@ public class Context {
     private KartuIbuANCRegistrationHandler kartuIbuANCRegistrationHandler;
     private AnakBayiRegistrationHandler anakBayiRegistrationHandler;
     private KIANCCloseHandler kiancCloseHandler;
+    private KIPNCCloseHandler kipncCloseHandler;
 
     private ANMController anmController;
     private ANMLocationController anmLocationController;
@@ -225,7 +227,8 @@ public class Context {
                     childRegistrationOAHandler(), childCloseHandler(), childIllnessHandler(), vitaminAHandler(),
                     deliveryPlanHandler(), ecEditHandler(), ancInvestigationsHandler(),
                     kartuIbuRegistrationHandler(), kartuIbuCloseHandler(),
-                    kartuIbuANCRegistrationHandler(), anakBayiRegistrationHandler(),kiancCloseHandler());
+                    kartuIbuANCRegistrationHandler(), anakBayiRegistrationHandler(),kiancCloseHandler(),
+                    kipncCloseHandler());
         }
         return formSubmissionRouter;
     }
@@ -900,5 +903,12 @@ public class Context {
             kiancCloseHandler = new KIANCCloseHandler(ibuService());
         }
         return kiancCloseHandler;
+    }
+
+    public KIPNCCloseHandler kipncCloseHandler() {
+        if(kipncCloseHandler == null) {
+            kipncCloseHandler = new KIPNCCloseHandler(ibuService());
+        }
+        return kipncCloseHandler;
     }
 }

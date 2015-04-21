@@ -102,6 +102,7 @@ public class AllConstants {
         public static final String KARTU_IBU_ANC_EDIT="kartu_ibu_anc_edit";
         public static final String KARTU_IBU_ANC_CLOSE="kartu_ibu_anc_close";
         public static final String KARTU_IBU_PNC_EDIT="kartu_ibu_pnc_edit";
+        public static final String KARTU_IBU_PNC_CLOSE="kartu_ibu_pnc_close";
     }
 
     public class ECRegistrationFields {
@@ -137,6 +138,7 @@ public class AllConstants {
     public class PNCCloseFields {
         public static final String DEATH_OF_MOTHER_FIELD_VALUE = "death_of_mother";
         public static final String PERMANENT_RELOCATION_FIELD_VALUE = "permanent_relocation";
+        public static final String WRONG_ENTRY = "wrong_entry";
     }
 
     public class IFAFields {

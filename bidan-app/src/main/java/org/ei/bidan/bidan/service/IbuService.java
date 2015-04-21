@@ -11,6 +11,7 @@ import org.ei.bidan.service.ServiceProvidedService;
 import static org.ei.bidan.AllConstants.ANCCloseFields.CLOSE_REASON_FIELD_NAME;
 import static org.ei.bidan.AllConstants.ANCCloseFields.DEATH_OF_WOMAN_FIELD_VALUE;
 import static org.ei.bidan.AllConstants.PNCCloseFields.DEATH_OF_MOTHER_FIELD_VALUE;
+import static org.ei.bidan.AllConstants.PNCCloseFields.WRONG_ENTRY;
 import static org.ei.bidan.util.Log.logWarn;
 
 /**
@@ -46,6 +47,11 @@ public class IbuService {
         Ibu mother = allKohort.findIbuWithOpenStatus(entityId);
         if (mother == null) {
             logWarn("Tried to close non-existent mother. Entity ID: " + entityId);
+            return;
+        }
+
+        if(WRONG_ENTRY.equalsIgnoreCase(reason) && mother.isPNC()) {
+            allKohort.switchIbuToANC(entityId);
             return;
         }
 
