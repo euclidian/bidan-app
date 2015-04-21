@@ -1,5 +1,6 @@
 package org.ei.bidan.view.contract;
 
+import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.util.IntegerUtil;
 
 import java.util.Comparator;
@@ -83,6 +84,16 @@ public interface SmartRegisterClient {
             } else {
                 return anotherClient.isHighRisk() ? 1 : -1;
             }
+        }
+    };
+
+    Comparator<SmartRegisterClient> NO_IBU_COMPARATOR = new Comparator<SmartRegisterClient>() {
+        @Override
+        public int compare(SmartRegisterClient client, SmartRegisterClient anotherClient) {
+            KartuIbuClient kartuIbuClient = (KartuIbuClient) client;
+            KartuIbuClient kartuIbuClient1 = (KartuIbuClient) anotherClient;
+            return IntegerUtil.compare(Integer.parseInt(kartuIbuClient.getNoIbu()),
+                    Integer.parseInt(kartuIbuClient1.getNoIbu()));
         }
     };
 

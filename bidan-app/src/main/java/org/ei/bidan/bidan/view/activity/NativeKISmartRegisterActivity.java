@@ -7,6 +7,7 @@ import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.bidan.view.dialog.AllKartuIbuServiceMode;
 import org.ei.bidan.bidan.view.controller.KartuIbuRegisterController;
+import org.ei.bidan.bidan.view.dialog.NoIbuSort;
 import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
 import org.ei.bidan.bidan.provider.KIClientsProvider;
 import org.ei.bidan.domain.form.FieldOverrides;
@@ -88,6 +89,7 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
     @Override
     protected NavBarOptionsProvider getNavBarOptionsProvider() {
+
         return new NavBarOptionsProvider() {
 
             @Override
@@ -102,7 +104,7 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort(), new WifeAgeSort()};
+                return new DialogOption[]{new NameSort(), new WifeAgeSort(), new NoIbuSort()};
             }
 
             @Override
