@@ -93,7 +93,7 @@ public class AllConstants {
         public static final String FP_FOLLOWUP = "fp_followup";
         public static final String KARTU_IBU_REGISTRATION = "kartu_ibu";
         public static final String KARTU_IBU_EDIT = "kartu_ibu_edit";
-        public static final String KARTU_IBU_CLOSE = "";
+        public static final String KARTU_IBU_CLOSE = "kartu_ibu_close";
         public static final String KARTU_IBU_ANC_REGISTRATION = "kartu_ibu_anc";
         public static final String KARTU_IBU_PNC_REGISTRATION = "kartu_ibu_pnc";
         public static final String KARTU_IBU_ANC_DOKUMENTASI_PERSALINAN = "anc_dokumentasi_persalinan";

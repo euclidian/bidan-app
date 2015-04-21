@@ -125,6 +125,7 @@
     <string name="report_month_sample_text">26/03 - 25/04</string>
     <string name="str_switch_language">Switch Language</string>
     <string name="str_edit_ki_form">Edit Kartu Ibu</string>
+    <string name="str_close_ki_form">Close Kartu Ibu</string>
     <string name="str_register_anak_form">Register Anak</string>
     <string name="anc_edit">Edit ANC</string>
     <string name="pnc_edit">Edit PNC</string>

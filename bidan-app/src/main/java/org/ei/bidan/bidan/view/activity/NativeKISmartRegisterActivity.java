@@ -25,6 +25,7 @@ import org.ei.bidan.view.dialog.SortOption;
 
 import static org.ei.bidan.AllConstants.FormNames.ANAK_BAYI_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
+import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_CLOSE;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_EDIT;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_REGISTRATION;
@@ -50,6 +51,7 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
                 new OpenFormOption(getString(R.string.str_register_anc_form), KARTU_IBU_ANC_REGISTRATION, formController),
                 new OpenFormOption(getString(R.string.str_register_anak_form), ANAK_BAYI_REGISTRATION, formController),
                 new OpenFormOption(getString(R.string.str_edit_ki_form), KARTU_IBU_EDIT, formController),
+                new OpenFormOption(getString(R.string.str_close_ki_form),KARTU_IBU_CLOSE, formController),
         };
     }
 

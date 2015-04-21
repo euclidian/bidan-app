@@ -78,6 +78,8 @@ public class FormSubmissionRouterTest {
     @Mock
     private KartuIbuRegistrationHandler kartuIbuRegistrationHandler;
     @Mock
+    private KartuIbuCloseHandler kartuIbuCloseHandler;
+    @Mock
     private KartuIbuANCRegistrationHandler kartuIbuANCRegistrationHandler;
     @Mock
     private AnakBayiRegistrationHandler anakBayiRegistrationHandler;
@@ -106,7 +108,8 @@ public class FormSubmissionRouterTest {
                 pncVisitHandler,
                 childImmunizationsHandler, childRegistrationECHandler, childRegistrationOAHandler, childCloseHandler,
                 childIllnessHandler, vitaminAHandler, deliveryPlanHandler, ecEditHandler, ancInvestigationsHandler,
-                kartuIbuRegistrationHandler, kartuIbuANCRegistrationHandler, anakBayiRegistrationHandler);
+                kartuIbuRegistrationHandler, kartuIbuCloseHandler,
+                kartuIbuANCRegistrationHandler, anakBayiRegistrationHandler);
     }
 
     @Test

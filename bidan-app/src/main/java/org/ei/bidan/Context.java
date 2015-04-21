@@ -222,7 +222,8 @@ public class Context {
                     pncCloseHandler(), pncVisitHandler(), childImmunizationsHandler(), childRegistrationECHandler(),
                     childRegistrationOAHandler(), childCloseHandler(), childIllnessHandler(), vitaminAHandler(),
                     deliveryPlanHandler(), ecEditHandler(), ancInvestigationsHandler(),
-                    kartuIbuRegistrationHandler(), kartuIbuANCRegistrationHandler(), anakBayiRegistrationHandler());
+                    kartuIbuRegistrationHandler(), kartuIbuCloseHandler(),
+                    kartuIbuANCRegistrationHandler(), anakBayiRegistrationHandler());
         }
         return formSubmissionRouter;
     }
@@ -779,7 +780,7 @@ public class Context {
 
     private KartuIbuService kartuIbuService() {
         if(kartuIbuService == null) {
-            kartuIbuService = new KartuIbuService(allKartuIbus(), allTimelineEvents());
+            kartuIbuService = new KartuIbuService(allKartuIbus(), allTimelineEvents(), allKohort());
         }
         return kartuIbuService;
     }

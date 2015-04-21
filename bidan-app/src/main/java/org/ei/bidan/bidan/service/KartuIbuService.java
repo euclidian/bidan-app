@@ -2,6 +2,7 @@ package org.ei.bidan.bidan.service;
 
 import org.ei.bidan.AllConstants;
 import org.ei.bidan.bidan.repository.AllKartuIbus;
+import org.ei.bidan.bidan.repository.AllKohort;
 import org.ei.bidan.domain.form.FormSubmission;
 import org.ei.bidan.repository.AllTimelineEvents;
 
@@ -13,10 +14,12 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 public class KartuIbuService {
     private final AllKartuIbus allKartuIbus;
     private final AllTimelineEvents allTimelineEvents;
+    private final AllKohort allKohort;
 
-    public KartuIbuService(AllKartuIbus allKartuIbus, AllTimelineEvents allTimelineEvents) {
+    public KartuIbuService(AllKartuIbus allKartuIbus, AllTimelineEvents allTimelineEvents, AllKohort allKohort) {
         this.allKartuIbus = allKartuIbus;
         this.allTimelineEvents = allTimelineEvents;
+        this.allKohort = allKohort;
     }
 
     public void register(FormSubmission submission) {
@@ -28,5 +31,6 @@ public class KartuIbuService {
 
     public void closeKartuIbu(FormSubmission formSubmission) {
         allKartuIbus.close(formSubmission.entityId());
+        allKohort.closeAllIbuForKartuIbu(formSubmission.entityId());
     }
 }
