@@ -2,10 +2,12 @@ package org.ei.bidan.bidan.view.activity;
 
 import android.view.View;
 
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.provider.KartuIbuANCClientsProvider;
 import org.ei.bidan.bidan.view.controller.KartuIbuANCRegisterController;
+import org.ei.bidan.bidan.view.dialog.EstimatedDateOfDeliverySortKIANC;
 import org.ei.bidan.bidan.view.dialog.KartuIbuANCOverviewServiceMode;
 import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
 import org.ei.bidan.domain.form.FieldOverrides;
@@ -15,6 +17,7 @@ import org.ei.bidan.view.dialog.AllClientsFilter;
 import org.ei.bidan.view.dialog.DialogOption;
 import org.ei.bidan.view.dialog.DialogOptionModel;
 import org.ei.bidan.view.dialog.EditOption;
+import org.ei.bidan.view.dialog.EstimatedDateOfDeliverySort;
 import org.ei.bidan.view.dialog.FilterOption;
 import org.ei.bidan.view.dialog.NameSort;
 import org.ei.bidan.view.dialog.OpenFormOption;
@@ -110,7 +113,7 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort()};
+                return new DialogOption[]{new NameSort(), new EstimatedDateOfDeliverySortKIANC()};
             }
 
             @Override
@@ -136,6 +139,8 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
 
     @Override
     protected void startRegistration() {
+        FieldOverrides fieldOverrides = new FieldOverrides(context.anmLocationController().getLocationJSON());
+        startFormActivity(AllConstants.FormNames.KARTU_IBU_ANC_OA, null, fieldOverrides.getJSONString());
     }
 
     private class ClientActionHandler implements View.OnClickListener {

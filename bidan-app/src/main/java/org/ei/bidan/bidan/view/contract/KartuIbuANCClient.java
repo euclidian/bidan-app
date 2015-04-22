@@ -1,5 +1,7 @@
 package org.ei.bidan.bidan.view.contract;
 
+import com.google.common.base.Strings;
+
 import org.ei.bidan.domain.ANCServiceType;
 import org.ei.bidan.util.IntegerUtil;
 import org.ei.bidan.view.contract.AlertDTO;
@@ -7,6 +9,9 @@ import org.ei.bidan.view.contract.ServiceProvidedDTO;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.contract.Visits;
 import org.joda.time.LocalDateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
 import static org.ei.bidan.util.StringUtil.humanize;
 
 import java.util.HashMap;
@@ -64,7 +69,13 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public String eddForDisplay() {
-        return null;
+        if(Strings.isNullOrEmpty(edd)) return "-";
+
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("YYYY-MM-dd");
+        DateTimeFormatter formatter2 = DateTimeFormat.forPattern("dd MMM YYYY");
+        LocalDateTime date = parse(edd, formatter);
+
+        return "" + date.toString(formatter2);
     }
 
     @Override

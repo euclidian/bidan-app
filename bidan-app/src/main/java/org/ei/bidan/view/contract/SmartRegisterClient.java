@@ -1,5 +1,6 @@
 package org.ei.bidan.view.contract;
 
+import org.ei.bidan.bidan.view.contract.KartuIbuANCClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.util.IntegerUtil;
 
@@ -102,6 +103,14 @@ public interface SmartRegisterClient {
         public int compare(SmartRegisterClient client, SmartRegisterClient anotherClient) {
             return ((KartuIbuClient) client).edd()
                     .compareTo(((KartuIbuClient) anotherClient).edd());
+        }
+    };
+
+    Comparator<SmartRegisterClient> EDD_COMPARATOR_KI_ANC = new Comparator<SmartRegisterClient>() {
+        @Override
+        public int compare(SmartRegisterClient client, SmartRegisterClient anotherClient) {
+            return ((KartuIbuANCClient) client).edd()
+                    .compareTo(((KartuIbuANCClient) anotherClient).edd());
         }
     };
 

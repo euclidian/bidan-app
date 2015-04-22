@@ -58,7 +58,7 @@ public class KartuIbuANCOverviewServiceMode extends BidanServiceModeOption {
                 return new int[]{
                         R.string.header_name, R.string.header_id, R.string.header_anc_status,
                         R.string.header_resiko, R.string.header_trimester, R.string.header_tt_imunisasi,
-                        R.string.header_tt_usia_klinis, R.string.header_edit};
+                        R.string.header_edd, R.string.header_edit};
             }
         };
     }

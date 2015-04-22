@@ -109,18 +109,31 @@
         android:layout_height="fill_parent"
         android:src="@color/smart_register_client_divider_color"/>
 
-    <TextView
-        android:id="@+id/usia_klinis"
-        android:layout_width="@dimen/list_ec_no_view_width"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="fill_parent"
-        android:layout_marginTop="10dp"
-        android:layout_weight="100"
-        android:scrollHorizontally="false"
-        android:ellipsize="none"
-        android:singleLine="false"
-        android:maxLines="3"
-        android:paddingLeft="10dp"
-        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+        android:layout_weight="105"
+        android:padding="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/status_bar_text_almost_white"
+            android:orientation="vertical">
+
+            <org.ei.bidan.view.customControls.CustomFontTextView
+                android:id="@+id/txt_edd"
+                style="@style/CustomFontTextViewStyle.ListView.Medium.TwoLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="14 Jan 2015"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
     <ImageView
         android:layout_width="@dimen/smart_register_client_divider_height"

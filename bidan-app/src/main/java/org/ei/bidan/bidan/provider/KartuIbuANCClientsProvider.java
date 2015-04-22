@@ -80,14 +80,14 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
         setupTTImunisasiView(kartuIbuClient, viewHolder);
         setupHighlightColor(itemView, Integer.parseInt(""+viewGroup.getTag())+1);
         setupEditView(kartuIbuClient, viewHolder);
-        setupUsiaKlinisView(kartuIbuClient, viewHolder);
+        setupEDDView(kartuIbuClient, viewHolder);
 
         itemView.setLayoutParams(clientViewLayoutParams);
         return itemView;
     }
 
-    private void setupUsiaKlinisView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
-        viewHolder.usiaKlinis().setText(client.usiaKlinis());
+    private void setupEDDView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
+        viewHolder.edd().setText(client.eddForDisplay());
     }
 
     private void setupHighlightColor(ViewGroup itemView, int index) {

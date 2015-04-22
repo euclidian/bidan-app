@@ -21,7 +21,7 @@ public class NativeKIANCRegisterViewHolder {
     private final TextView kunjungan;
     private final TextView ttImunisasi;
     private final ImageButton editButton;
-    private final TextView usiaKlinis;
+    private final TextView edd;
 
     public NativeKIANCRegisterViewHolder(ViewGroup itemView) {
         this.profileInfoLayout = (BidanClientProfileView) itemView.findViewById(R.id.profile_info_layout_ki);
@@ -33,7 +33,7 @@ public class NativeKIANCRegisterViewHolder {
         this.kunjungan = (TextView) itemView.findViewById(R.id.kunjungan);
         this.ttImunisasi = (TextView) itemView.findViewById(R.id.tt_imunisasi);
         this.editButton = (ImageButton) itemView.findViewById(R.id.btn_edit);
-        this.usiaKlinis = (TextView) itemView.findViewById(R.id.usia_klinis);
+        this.edd = (TextView) itemView.findViewById(R.id.txt_edd);
     }
 
     public ImageButton editButton() { return editButton; }
@@ -42,7 +42,7 @@ public class NativeKIANCRegisterViewHolder {
     public TextView riskFactors() { return riskFactors; }
     public TextView kunjungan() { return kunjungan; }
     public TextView ttImunisasi() { return ttImunisasi; }
-    public TextView usiaKlinis() { return usiaKlinis; }
+    public TextView edd() { return edd; }
     public BidanClientProfileView profileInfoLayout() {
         return profileInfoLayout;
     }
