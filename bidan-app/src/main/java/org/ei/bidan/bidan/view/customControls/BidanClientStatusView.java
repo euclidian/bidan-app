@@ -51,6 +51,12 @@ public class BidanClientStatusView extends FrameLayout {
 
         this.statusLayouts
                 .put(PNC_STATUS, new ViewStubInflater((ViewStub) findViewById(R.id.pnc_status_layout)));
+
+        this.statusLayouts
+                .put("Kartu Ibu", new ViewStubInflater((ViewStub) findViewById(R.id.ki_status_layout)));
+
+        this.statusLayouts
+                .put("KB", new ViewStubInflater((ViewStub) findViewById(R.id.kb_status_layout)));
     }
 
     public void bindData(KartuIbuClient client) {
@@ -63,8 +69,6 @@ public class BidanClientStatusView extends FrameLayout {
             ViewGroup statusViewGroup = statusLayout(statusType);
             statusViewGroup.setVisibility(View.VISIBLE);
             dateView(statusViewGroup).setText(statusDate);
-
-            eddDateView(statusViewGroup).setText(formatDate(client.status().get(STATUS_EDD_FIELD)));
         }
     }
 
@@ -79,14 +83,10 @@ public class BidanClientStatusView extends FrameLayout {
     }
 
     public TextView dateView(ViewGroup statusViewGroup) {
-        return ((TextView) statusViewGroup.findViewById(R.id.txt_anc_status_date));
+        return ((TextView) statusViewGroup.findViewById(R.id.txt_status_date));
     }
 
     public TextView typeView(ViewGroup statusViewGroup) {
         return ((TextView) statusViewGroup.findViewById(R.id.txt_status_type));
-    }
-
-    public TextView eddDateView(ViewGroup statusViewGroup) {
-        return ((TextView) statusViewGroup.findViewById(R.id.txt_anc_status_edd_date));
     }
 }

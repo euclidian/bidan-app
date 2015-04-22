@@ -6,16 +6,28 @@
         android:id="@+id/status_layout"
         android:layout_width="@dimen/list_status_view_width"
         android:layout_height="fill_parent"
-        android:layout_weight="@integer/ec_list_status_view_weight"
+        android:layout_weight="195"
         android:layout_margin="5dp"
         android:background="@color/status_bar_text_almost_white">
 
     <ViewStub
-            android:id="@+id/anc_status_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout="@layout/smart_register_client_status_anc_ki"/>
+        android:id="@+id/ki_status_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/smart_register_client_status_ki"/>
 
+    <ViewStub
+        android:id="@+id/kb_status_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/smart_register_client_status_kb"/>
+
+
+    <ViewStub
+        android:id="@+id/anc_status_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/smart_register_client_status_anc_ki"/>
 
     <ViewStub
         android:id="@+id/pnc_status_layout"

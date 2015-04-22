@@ -6,6 +6,9 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.Map;
 
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
+import static org.ei.bidan.AllConstants.ECRegistrationFields.CURRENT_FP_METHOD;
+
 /**
  * Created by Dimas Ciputra on 2/16/15.
  */
@@ -44,6 +47,15 @@ public class KartuIbu {
 
     public void setClosed(boolean isClosed) {
         this.isClosed = isClosed;
+    }
+
+    public boolean hasKBMethod() {
+        String kbMethod = getDetail("JenisKontrasepsi");
+        return isNotBlank(kbMethod);
+    }
+
+    public String getDetail(String name) {
+        return details.get(name);
     }
 
     // Tools

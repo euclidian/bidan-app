@@ -43,14 +43,14 @@ public class AllKartuIbuServiceMode extends ServiceModeOption {
 
             @Override
             public int[] weights() {
-                return new int[]{244, 75, 110, 110, 160, 218, 80};
+                return new int[]{244, 75, 110, 120, 160, 218, 80};
             }
 
             @Override
             public int[] headerTextResourceIds() {
                 return new int[]{
                         R.string.header_nama, R.string.header_no_ibu, R.string.header_obsetri,
-                        R.string.header_edd, R.string.header_anak, R.string.header_status_b,
+                        R.string.header_kb_method, R.string.header_anak, R.string.header_status_b,
                         R.string.header_edit};
             }
         };

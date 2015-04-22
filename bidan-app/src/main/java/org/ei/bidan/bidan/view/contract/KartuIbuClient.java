@@ -46,6 +46,8 @@ public class KartuIbuClient implements KISmartRegisterClient {
     private String rtRw;
     private Map<String, String> status = new HashMap<String, String>();
     private List<KIChildClient> children;
+    private String kbMethod;
+    private String kbStart;
 
     public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi, String husbandName, String tglPeriksa, String edd, String village) {
         this.entityId = entityId;
@@ -113,7 +115,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
 
     public String getTglPeriksa() { return tglPeriksa; }
 
-    public String getEdd() { return edd; }
+    public String getEdd() { return Strings.isNullOrEmpty(edd) ? "-" : edd; }
 
     public String getVillage() {
         return village;
@@ -328,6 +330,12 @@ public class KartuIbuClient implements KISmartRegisterClient {
         return this;
     }
 
+    public KartuIbuClient withKBInformation(String kbMethod, String kbStart) {
+        this.kbMethod = kbMethod;
+        this.kbStart = kbStart;
+        return this;
+    }
+
     public KartuIbuClient addChild(KIChildClient childClient) {
         children.add(childClient);
         return this;
@@ -335,5 +343,13 @@ public class KartuIbuClient implements KISmartRegisterClient {
 
     public List<KIChildClient> children() {
         return children;
+    }
+
+    public String getKbMethod() {
+        return Strings.isNullOrEmpty(kbMethod) ? "-" : humanize(kbMethod);
+    }
+
+    public String getKbStart() {
+        return Strings.isNullOrEmpty(kbStart) ? "-" : kbStart;
     }
 }

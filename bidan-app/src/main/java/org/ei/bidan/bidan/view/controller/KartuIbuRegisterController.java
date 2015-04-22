@@ -63,7 +63,9 @@ public class KartuIbuRegisterController {
                             .withNumberOfLivingChildren(kartuIbu.getDetails().get("Hidup"))
                             .withNumberOfPregnancies(kartuIbu.getDetails().get("Gravida"))
                             .withNumberOfAbortions(kartuIbu.getDetails().get("Abortus"))
-                            .withParity(kartuIbu.getDetails().get("Partus"));
+                            .withParity(kartuIbu.getDetails().get("Partus"))
+                            .withKBInformation(kartuIbu.getDetails().get("JenisKontrasepsi")
+                            , kartuIbu.getDetails().get("TanggalKunjungan"));
                     updateStatusInformation(kartuIbu, kartuIbuClient);
                     updateChildrenInformation(kartuIbuClient);
                     kartuIbuClients.add(kartuIbuClient);
@@ -105,18 +107,21 @@ public class KartuIbuRegisterController {
     private void updateStatusInformation(KartuIbu kartuIbu, KartuIbuClient kartuIbuClient) {
         Ibu ibu = allKohort.findIbuWithOpenStatusByKIId(kartuIbu.getCaseId());
 
+        if( ibu == null && kartuIbu.hasKBMethod()) {
+            kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, "KB")
+                            .put(STATUS_DATE_FIELD, kartuIbu.getDetail("TanggalKunjungan")).map());
+        }
+
         if (ibu != null && ibu.isANC()) {
             kartuIbuClient
                     .withStatus(EasyMap.create(STATUS_TYPE_FIELD, ANC_STATUS)
-                            .put(STATUS_DATE_FIELD, ibu.getReferenceDate())
-                            .put(STATUS_EDD_FIELD, kartuIbu.getDetails().get("EDD")).map());
+                            .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
             return;
         }
 
         if (ibu != null && ibu.isPNC()) {
             kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, PNC_STATUS)
-                    .put(STATUS_DATE_FIELD, ibu.getReferenceDate())
-                    .put(STATUS_EDD_FIELD, kartuIbu.getDetails().get("EDD")).map());
+                    .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
         }
     }
 }

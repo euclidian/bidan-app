@@ -40,6 +40,8 @@ public class ECSmartRegisterController {
     public static final String STATUS_EDD_FIELD = "edd";
     public static final String FP_METHOD_DATE_FIELD = "fpMethodDate";
     private static final String EC_CLIENTS_LIST = "ECClientsList";
+    public static final String KI_STATUS ="Kartu Ibu";
+    public static final String KB_STATUS ="KB";
 
     private final AllEligibleCouples allEligibleCouples;
     private final AllBeneficiaries allBeneficiaries;
