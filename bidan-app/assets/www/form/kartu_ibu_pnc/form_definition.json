@@ -2,7 +2,7 @@
     "form_data_definition_version": "1",
     "form": {
         "bind_type": "ibu",
-        "default_bind_path": "/model/instance/Kartu_ibu_PNC/",
+        "default_bind_path": "/model/instance/dokumentasi_persalinan/",
         "fields": [
             {
                 "name": "id",
@@ -13,102 +13,161 @@
                 "shouldLoadValue": true,
                 "source": "ibu.kartu_ibu.id"
             },
-			{
-                "name": "HariKeKF",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01259"
-            },
             {
-                "name": "TandaVitalTDSistolik",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01260"
-            },
-			{
-                "name": "referenceDate",
-                "bind": "/model/instance/Kartu_ibu_PNC/PNC_DATE"
-            },
+                "name": "UsiaKehamilansaatpersalinan",
+                "bind": "/model/instance/dokumentasi_persalinan/B01092"
+			},
             {
-                "name": "TandaVitalTDDiastolik",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01261"
-            },
+                "name": "UsiakehamilanberdasarkanHPHT",
+                "bind": "/model/instance/dokumentasi_persalinan/B01093"
+			},
             {
-                "name": "TandaVitalSuhu",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01045"
-            },
+                "name": "KeadaanIbu",
+                "bind": "/model/instance/dokumentasi_persalinan/B01094"
+			},
             {
-                "name": "TrimesterKe",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01262"
-            },
+                "name": "KeadaanBayi",
+                "bind": "/model/instance/dokumentasi_persalinan/B01095"
+			},
             {
-                "name": "PelayananCatatdiBukuKia",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01263"
-            },
+                "name": "BeratBayi",
+                "bind": "/model/instance/dokumentasi_persalinan/B01096"
+			},
             {
-                "name": "PelayananFe",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01264"
-            },
+                "name": "TanggalKalaIAktif",
+                "bind": "/model/instance/dokumentasi_persalinan/B01097"
+			},
             {
-                "name": "PelayananVitA",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01265"
-            },
+                "name": "JamKalaIAktif",
+                "bind": "/model/instance/dokumentasi_persalinan/B01098"
+			},
             {
-                "name": "IntergrasiProgramCD4",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01266"
-            },
+                "name": "TanggalKalaII",
+                "bind": "/model/instance/dokumentasi_persalinan/B01099"
+			},
             {
-                "name": "IntergrasiProgramAntimalaria",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01270"
-            },
+                "name": "JamKalaII",
+                "bind": "/model/instance/dokumentasi_persalinan/B01100"
+			},
             {
-                "name": "IntergrasiProgramAntiTB",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01271"
-            },
+                "name": "TanggalPlasentaLahir",
+                "bind": "/model/instance/dokumentasi_persalinan/B01101"
+			},
             {
-                "name": "IntergrasiProgramFotothorax",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01272"
-            },
+                "name": "JamPlasentaLahir",
+                "bind": "/model/instance/dokumentasi_persalinan/B01102"
+			},
+            {
+                "name": "PerdarahanKalaIV2jamPostpartum",
+                "bind": "/model/instance/dokumentasi_persalinan/B01103"
+			},
+            {
+                "name": "Persentasi",
+                "bind": "/model/instance/dokumentasi_persalinan/B01104"
+			},
+            {
+                "name": "Tempat",
+                "bind": "/model/instance/dokumentasi_persalinan/B01105"
+			},
+            {
+                "name": "Penolong",
+                "bind": "/model/instance/dokumentasi_persalinan/B01106"
+			},
+            {
+                "name": "PenolonglainlainLN",
+                "bind": "/model/instance/dokumentasi_persalinan/B01107"
+			},
+            {
+                "name": "CaraPersalinanIbu",
+                "bind": "/model/instance/dokumentasi_persalinan/B01108"
+			},
+            {
+                "name": "ManajemenAktifKalaIII",
+                "bind": "/model/instance/dokumentasi_persalinan/B01109"
+			},
+            {
+                "name": "Pelayanan",
+                "bind": "/model/instance/dokumentasi_persalinan/B01110"
+			},
+            {
+                "name": "IntegrasiProgram",
+                "bind": "/model/instance/dokumentasi_persalinan/B01111"
+			},
             {
                 "name": "Komplikasi",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01273"
-            },
+                "bind": "/model/instance/dokumentasi_persalinan/B01112"
+			},
             {
-                "name": "Lainnya1",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01273L"
-            },
+                "name": "KomplikasilainlainLN",
+                "bind": "/model/instance/dokumentasi_persalinan/B01113"
+			},
             {
                 "name": "DirujukKe",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01274"
+                "bind": "/model/instance/dokumentasi_persalinan/B01114"
+			},
+            {
+                "name": "DirujukKelainlain",
+                "bind": "/model/instance/dokumentasi_persalinan/B01115"
+			},
+            {
+                "name": "AlamatBersalin",
+                "bind": "/model/instance/dokumentasi_persalinan/B01116"
+			},
+            {
+                "name": "name",
+                "bind": "/model/instance/dokumentasi_persalinan/B04005",
+                "source": "ibu.anak.name"
+			},
+            {
+                "name": "dateOfBirth",
+                "bind": "/model/instance/dokumentasi_persalinan/B04006",
+                "source": "ibu.anak.dateOfBirth"
+			},
+            {
+                "name" : "age",
+                "bind" : "/model/instance/dokumentasi_persalinan/child_age",
+                "source" : "ibu.anak.age"
             },
             {
-                "name": "Lainnya2",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01274L"
+                "name": "gender",
+                "bind": "/model/instance/dokumentasi_persalinan/B04007",
+                "source" : "ibu.anak.gender"
+			},
+            {
+                "name": "KIABook",
+                "bind": "/model/instance/dokumentasi_persalinan/B04010",
+                "source" : "ibu.anak.KIABook"
+			},
+            {
+                "name": "birthWeight",
+                "bind": "/model/instance/dokumentasi_persalinan/B04011",
+                "source": "ibu.anak.birthWeight"
+			},
+            {
+                "name": "isOutOfArea",
+                "value": "false"
             },
             {
-                "name": "KeadaanTiba",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01275"
+                "name": "isClosed",
+                "value": "false"
             },
             {
-                "name": "KeadaanPulang",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01276"
-            },
-            {
-                "name": "Metodekontrasepsi",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01277"
-            },
-            {
-                "name": "Rencana",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01278"
-            },
-            {
-                "name": "PelaksanaanK42hari",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01279"
-            },
-            {
-                "name": "PelaksanaanL42hari",
-                "bind": "/model/instance/Kartu_ibu_PNC/B01280"
+                "name": "isClosed",
+                "value": "false",
+                "source": "ibu.anak.isClosed"
             },
             {
                 "name": "type",
                 "value": "PNC",
                 "source": "ibu.type"
+            },
+            {
+                "name": "submissionDate",
+                "bind": "/model/instance/dokumentasi_persalinan/today"
+            },
+            {
+                "name": "registrationDate",
+                "bind": "/model/instance/dokumentasi_persalinan/today"
             }
         ]
     }
