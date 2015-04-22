@@ -111,6 +111,7 @@ public class AllConstants {
         public static final String KARTU_IBU_PNC_OA="kartu_ibu_pnc_oa";
         public static final String KARTU_IBU_ANC_PARTOGRAF="kartu_ibu_anc_partograf";
         public static final String KARTU_IBU_PNC_VISIT="kartu_ibu_pnc_visit";
+        public static final String BALITA_KUNJUNGAN="balita_kunjungan";
     }
 
     public class KIRegistrationFields {

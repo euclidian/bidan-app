@@ -20,7 +20,7 @@ public class KIChildClient {
     }
 
     public boolean isMale() {
-        return gender != null && gender.equalsIgnoreCase("Male");
+        return gender != null && gender.equalsIgnoreCase("Laki");
     }
 
     public boolean isFemale() {

@@ -26,8 +26,7 @@
       },
       {
         "name": "isClosed",
-        "value": "false",
-        "source": "kartu_ibu.ibu.anak.isClosed"
+        "value": "false"
       },
       {
         "name": "submissionDate",
