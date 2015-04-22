@@ -37,5 +37,3 @@
             android:layout_toRightOf="@id/str_edd_type"
             style="@style/CustomFontTextViewStyle.ListView.Normal"/>
 </RelativeLayout>
-
-        

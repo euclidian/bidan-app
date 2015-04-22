@@ -97,6 +97,14 @@ public interface SmartRegisterClient {
         }
     };
 
+    Comparator<SmartRegisterClient> EDD_COMPARATOR_KI = new Comparator<SmartRegisterClient>() {
+        @Override
+        public int compare(SmartRegisterClient client, SmartRegisterClient anotherClient) {
+            return ((KartuIbuClient) client).edd()
+                    .compareTo(((KartuIbuClient) anotherClient).edd());
+        }
+    };
+
     public String entityId();
 
     public String name();

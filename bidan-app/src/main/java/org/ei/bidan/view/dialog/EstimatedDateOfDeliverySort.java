@@ -6,7 +6,7 @@ import org.ei.bidan.view.contract.SmartRegisterClients;
 
 import java.util.Collections;
 
-import static org.ei.bidan.view.contract.ANCSmartRegisterClient.EDD_COMPARATOR;
+import static org.ei.bidan.view.contract.SmartRegisterClient.EDD_COMPARATOR_KI;
 
 public class EstimatedDateOfDeliverySort implements SortOption {
     @Override
@@ -16,7 +16,8 @@ public class EstimatedDateOfDeliverySort implements SortOption {
 
     @Override
     public SmartRegisterClients sort(SmartRegisterClients allClients) {
-        Collections.sort(allClients, EDD_COMPARATOR);
+        //Collections.sort(allClients, EDD_COMPARATOR);
+        Collections.sort(allClients, EDD_COMPARATOR_KI);
         return allClients;
     }
 }

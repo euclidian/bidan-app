@@ -99,6 +99,11 @@
                 "bind": "/model/instance/kartu_ibu_anc_close/maternal_death_group/other_maternal_death_cause"
             },
             {
+                "name": "EDD",
+                "source": "ibu.kartu_ibu.EDD",
+                "value": ""
+            },
+            {
                 "name": "rhInjectionGiven",
                 "bind": "/model/instance/kartu_ibu_anc_close/rh_injection_given"
             },

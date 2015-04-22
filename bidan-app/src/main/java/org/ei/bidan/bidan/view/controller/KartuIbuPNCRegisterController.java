@@ -49,7 +49,7 @@ public class KartuIbuPNCRegisterController {
                     )
                             .withHusband(ki.getDetails().get("Namasuami"))
                             .withKINumber(ki.getDetails().get("NoIbu"))
-                            .withEDD(ki.getDetails().get("EDD"))
+                            .withEDD(pnc.getDetail("EDD"))
                             .withPlan(pnc.getDetail("Rencana"))
                             .withKomplikasi(pnc.getDetail("Komplikasi"))
                             .withMetodeKontrasepsi(pnc.getDetail("Metodekontrasepsi"))

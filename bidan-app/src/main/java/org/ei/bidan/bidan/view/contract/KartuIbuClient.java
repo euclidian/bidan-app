@@ -9,14 +9,20 @@ import org.ei.bidan.util.IntegerUtil;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
 import static org.ei.bidan.util.StringUtil.humanize;
+import static org.joda.time.LocalDateTime.parse;
 
 /**
  * Created by Dimas Ciputra on 2/17/15.
@@ -115,7 +121,19 @@ public class KartuIbuClient implements KISmartRegisterClient {
 
     public String getTglPeriksa() { return tglPeriksa; }
 
-    public String getEdd() { return Strings.isNullOrEmpty(edd) ? "-" : edd; }
+    public String getEdd() {
+        if(Strings.isNullOrEmpty(edd)) return "-";
+
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("YYYY-MM-dd");
+        DateTimeFormatter formatter2 = DateTimeFormat.forPattern("dd MMM YYYY");
+        LocalDateTime date = parse(edd, formatter);
+
+        return "" + date.toString(formatter2);
+    }
+
+    public LocalDateTime edd() {
+        return parse(Strings.isNullOrEmpty(edd) ? "0" : edd);
+    }
 
     public String getVillage() {
         return village;

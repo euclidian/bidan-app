@@ -51,6 +51,7 @@ public class KartuIbuRegisterController {
                 KartuIbuClients kartuIbuClients = new KartuIbuClients();
 
                 for (KartuIbu kartuIbu : kartuIbus) {
+
                     KartuIbuClient kartuIbuClient = new KartuIbuClient(kartuIbu.getCaseId(),
                             kartuIbu.getDetails().get("puskesmas"), kartuIbu.getDetails().get("Propinsi"),
                             kartuIbu.getDetails().get("Kabupaten"), kartuIbu.getDetails().get("Posyandu"),
@@ -58,7 +59,7 @@ public class KartuIbuRegisterController {
                             kartuIbu.getDetails().get("Namalengkap"), kartuIbu.getDetails().get("Umur"),
                             kartuIbu.getDetails().get("GolonganDarah"), kartuIbu.getDetails().get("RiwayatKomplikasiKebidanan"),
                             kartuIbu.getDetails().get("Namasuami"), kartuIbu.getDetails().get("TanggalPeriksa"),
-                            kartuIbu.getDetails().get("EDD"), kartuIbu.getDetails().get("Desa"))
+                            kartuIbu.getDetail("EDD"), kartuIbu.getDetails().get("Desa"))
                             .withDateOfBirth(kartuIbu.getDetails().get("Tanggallahir"))
                             .withNumberOfLivingChildren(kartuIbu.getDetails().get("Hidup"))
                             .withNumberOfPregnancies(kartuIbu.getDetails().get("Gravida"))

@@ -48,20 +48,12 @@
             android:orientation="vertical">
 
             <org.ei.bidan.view.customControls.CustomFontTextView
-                android:id="@+id/kb_method"
-                style="@style/CustomFontTextViewStyle.ListView.Medium"
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_height="wrap_content"
-                android:text="Method"/>
-
-
-            <org.ei.bidan.view.customControls.CustomFontTextView
-                android:id="@+id/kb_mulai"
-                style="@style/CustomFontTextViewStyle.ListView.Small"
+                android:id="@+id/txt_edd"
+                style="@style/CustomFontTextViewStyle.ListView.Medium.TwoLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2015-04-01"/>
+                android:layout_marginTop="15dp"
+                android:text="14 Jan 2015"/>
 
         </LinearLayout>
 
