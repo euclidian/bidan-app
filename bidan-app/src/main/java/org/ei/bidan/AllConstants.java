@@ -108,6 +108,7 @@ public class AllConstants {
         public static final String KOHORT_KB_PELAYANAN="kohort_kb_pelayanan";
         public static final String KOHORT_KB_UPDATE="kohort_kb_update";
         public static final String KARTU_IBU_ANC_OA="kartu_ibu_anc_oa";
+        public static final String KARTU_IBU_PNC_OA="kartu_ibu_pnc_oa";
         public static final String KARTU_IBU_ANC_PARTOGRAF="kartu_ibu_anc_partograf";
     }
 

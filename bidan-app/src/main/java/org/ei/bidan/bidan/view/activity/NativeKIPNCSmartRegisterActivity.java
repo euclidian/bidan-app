@@ -2,6 +2,7 @@ package org.ei.bidan.bidan.view.activity;
 
 import android.view.View;
 
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.provider.KartuIbuANCClientsProvider;
@@ -110,7 +111,7 @@ public class NativeKIPNCSmartRegisterActivity extends BidanSecuredNativeSmartReg
     @Override
     protected void startRegistration() {
         //FieldOverrides fieldOverrides = new FieldOverrides(context.anmLocationController().getLocationJSON());
-        //startFormActivity(KARTU_IBU_PNC_REGISTRATION, null, fieldOverrides.getJSONString());
+        //startFormActivity(AllConstants.FormNames.KARTU_IBU_PNC_OA, null, fieldOverrides.getJSONString());
     }
 
     private class ClientActionHandler implements View.OnClickListener {

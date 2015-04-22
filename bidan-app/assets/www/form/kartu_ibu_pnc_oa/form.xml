@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form autocomplete="off" novalidate="novalidate" class="or clearfix" id="register_pnc">
+    <!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.-->
+    <section class="form-logo" />
+    <h3 id="form-title">Register PNC</h3>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Puskesmas</span>
+        <span class="required">*</span>
+        <input type="text" name="/register_pnc/B01001" required="required" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">No. Ibu</span>
+        <span class="required">*</span>
+        <input type="number" name="/register_pnc/B01002" required="required" data-constraint=".&lt;10000000" data-type-xml="int" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Nama lengkap</span>
+        <span class="required">*</span>
+        <input type="text" name="/register_pnc/B01003" required="required" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Nama suami</span>
+        <span class="required">*</span>
+        <input type="text" name="/register_pnc/B01004" required="required" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Tanggal lahir</span>
+        <span class="required">*</span>
+        <input type="date" name="/register_pnc/B01005" required="required" data-type-xml="date" />
+    </label>
+    <label class="note non-select ">
+        <span lang="" class="question-label active">
+            Umur:
+            <span class="or-output" data-value=" /register_pnc/B01006 " />
+        </span>
+        <input type="text" name="/register_pnc/generated_note_name_9" data-type-xml="string" readonly="readonly" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Alamat domisili</span>
+        <input type="text" name="/register_pnc/B01007" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Propinsi</span>
+        <input type="text" name="/register_pnc/B01008" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Kabupaten</span>
+        <input type="text" name="/register_pnc/B01009" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Kecamatan</span>
+        <input type="text" name="/register_pnc/B01010" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Kelurahan</span>
+        <input type="text" name="/register_pnc/B04002" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Desa</span>
+        <input type="text" name="/register_pnc/B01011" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Dusun</span>
+        <input type="text" name="/register_pnc/B04001" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">RT/RW</span>
+        <input type="text" name="/register_pnc/B01012" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">No seri</span>
+        <input type="number" name="/register_pnc/B04008" data-type-xml="int" />
+    </label>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Pendidikan</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01013" data-name="/register_pnc/B01013" value="sekolah_dasar" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Sekolah Dasar (SD)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01013" data-name="/register_pnc/B01013" value="sekolah_menengah_pertama" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Sekolah Menengah Pertama (SMP)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01013" data-name="/register_pnc/B01013" value="sekolah_menengah_atas" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Sekolah Menengah Atas (SMA)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01013" data-name="/register_pnc/B01013" value="perguruan_tinggi" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Perguruan Tinggi</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Agama</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01014" data-name="/register_pnc/B01014" value="islam" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Islam</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01014" data-name="/register_pnc/B01014" value="hindu" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Hindu</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01014" data-name="/register_pnc/B01014" value="kristen" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Kristen</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01014" data-name="/register_pnc/B01014" value="katolik" data-type-xml="select1" />
+                    <span lang="" class="option-label active">katolik</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01014" data-name="/register_pnc/B01014" value="budha" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Budha</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Pekerjaan</span>
+        <input type="text" name="/register_pnc/B01015" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Paritas</span>
+        <input type="text" name="/register_pnc/B04009" data-type-xml="string" />
+    </label>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Gakin/ Tidak</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B04012" data-name="/register_pnc/B04012" value="ya" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Ya (Y)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B04012" data-name="/register_pnc/B04012" value="tidak" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Tidak (T)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Posyandu</span>
+        <input type="text" name="/register_pnc/B01016" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Nama Kader</span>
+        <input type="text" name="/register_pnc/B01017" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Nama Dukun</span>
+        <input type="text" name="/register_pnc/B01018" data-type-xml="string" />
+    </label>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Asuransi Jiwa</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01019" data-name="/register_pnc/B01019" value="jaminan_kesehatan_masyarakat" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Jaminan Kesehatan Masyarakat (Jamkesmas)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01019" data-name="/register_pnc/B01019" value="Jamsostek" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Jaminan Sosial dan Ketenagakerjaan (Jamsostek)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01019" data-name="/register_pnc/B01019" value="jaminan_kesehatan_daerah" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Jaminan Kesehatan Daerah (Jamkesda)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01019" data-name="/register_pnc/B01019" value="asuransi_kesehatan" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Asuransi Kesehatan (Askes)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Golongan Darah</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01020" data-name="/register_pnc/B01020" value="a" data-type-xml="select1" />
+                    <span lang="" class="option-label active">A (A)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01020" data-name="/register_pnc/B01020" value="b" data-type-xml="select1" />
+                    <span lang="" class="option-label active">B (B)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01020" data-name="/register_pnc/B01020" value="ab" data-type-xml="select1" />
+                    <span lang="" class="option-label active">AB (AB)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01020" data-name="/register_pnc/B01020" value="o" data-type-xml="select1" />
+                    <span lang="" class="option-label active">O (O)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Nomor Telpon/Hp</span>
+        <input type="text" name="/register_pnc/B01021" data-constraint=".&lt;100000000000" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Gravida</span>
+        <input type="number" name="/register_pnc/B01022" data-constraint=".&lt;100" data-type-xml="int" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Partus</span>
+        <input type="number" name="/register_pnc/B01023" data-constraint=".&lt;100" data-type-xml="int" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Abortus</span>
+        <input type="number" name="/register_pnc/B01024" data-constraint=".&lt;100" data-type-xml="int" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Hidup</span>
+        <input type="number" name="/register_pnc/B01025" data-constraint=".&lt;100" data-type-xml="int" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Hamil ke-</span>
+        <input type="number" name="/register_pnc/B02008" data-type-xml="int" />
+    </label>
+    <label class="question non-select ">
+      <span lang="" class="question-label active">Tanggal Periksa</span>
+      <input type="date" name="/register_pnc/B01026" data-type-xml="date" />
+   </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Usia Kehamilan saat persalinan</span>
+        <input type="number" name="/register_pnc/B01092" data-type-xml="int" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Usia kehamilan berdasarkan HPHT</span>
+        <input type="number" name="/register_pnc/B01093" data-type-xml="int" />
+    </label>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Keadaan Ibu</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01094" data-name="/register_pnc/B01094" value="hidup" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Hidup (H)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01094" data-name="/register_pnc/B01094" value="mati" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Mati (M)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Keadaan Bayi</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01095" data-name="/register_pnc/B01095" value="hidup" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Hidup (H)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01095" data-name="/register_pnc/B01095" value="mati" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Mati (M)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Berat Bayi</span>
+        <input type="number" name="/register_pnc/B01096" data-type-xml="int" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Tanggal / Kala I Aktif</span>
+        <input type="date" name="/register_pnc/B01097" data-type-xml="date" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Jam / Kala I Aktif</span>
+        <input type="time" name="/register_pnc/B01098" data-type-xml="time" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Tanggal / Kala II</span>
+        <input type="date" name="/register_pnc/B01099" data-type-xml="date" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Jam / Kala II</span>
+        <input type="time" name="/register_pnc/B01100" data-type-xml="time" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Tanggal / Plasenta Lahir</span>
+        <input type="date" name="/register_pnc/B01101" data-type-xml="date" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Jam / Plasenta Lahir</span>
+        <input type="time" name="/register_pnc/B01102" data-type-xml="time" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Perdarahan Kala IV 2 jam Postpartum</span>
+        <input type="number" name="/register_pnc/B01103" data-type-xml="int" />
+    </label>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Persentasi</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01104" data-name="/register_pnc/B01104" value="puncak_kepala" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Puncak Kepala (PK)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01104" data-name="/register_pnc/B01104" value="belakang_kepala" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Belakang Kepala (BK)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01104" data-name="/register_pnc/B01104" value="lintang_oblique" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Lintang/Oblique (LG/OB)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01104" data-name="/register_pnc/B01104" value="menumbung" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Menumbung (MG)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01104" data-name="/register_pnc/B01104" value="bokong" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Bokong (BK)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01104" data-name="/register_pnc/B01104" value="dahi" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Dahi (Dahi)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01104" data-name="/register_pnc/B01104" value="muka" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Muka (MK)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01104" data-name="/register_pnc/B01104" value="kaki" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Kaki (KK)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01104" data-name="/register_pnc/B01104" value="rangkap" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Rangkap (RK)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Tempat</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01105" data-name="/register_pnc/B01105" value="rumah" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Rumah (RMH)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01105" data-name="/register_pnc/B01105" value="podok_bersalin_desa" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Podok Bersalin desa ( Polindes)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01105" data-name="/register_pnc/B01105" value="pusat_kesehatan_masyarakat_pembantu" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Pusat Kesehatan Masyarakat Pembantu (Pustu)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01105" data-name="/register_pnc/B01105" value="pusat_kesehatan_masyarakat" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Pusat Kesehatan Masyarakat (Puseksmas )</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01105" data-name="/register_pnc/B01105" value="rumah_bersalin" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Rumah Bersalin (RB)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01105" data-name="/register_pnc/B01105" value="rumah_sakit_ibu_dan_anak" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Rumah Sakit Ibu dan Anak (RSIA)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01105" data-name="/register_pnc/B01105" value="rumah_sakit" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Rumah Sakit (RS)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01105" data-name="/register_pnc/B01105" value="rumah_sakit_orang_dengan_hiv_aids" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Rumah Sakit Orang dengan HIV / AIDS (RS Odha)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Penolong</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01106" data-name="/register_pnc/B01106" value="keluarga" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Keluarga (K)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01106" data-name="/register_pnc/B01106" value="dukun" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Dukun (D)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01106" data-name="/register_pnc/B01106" value="bidan" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Bidan (B)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01106" data-name="/register_pnc/B01106" value="dr.umum_dr.spesialis" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Dr.Umum (DU) Dr.Spesialis (DS)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01106" data-name="/register_pnc/B01106" value="lain-lain" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Lain-Lain (LN)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01106" data-name="/register_pnc/B01106" value="tidak_ada" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Tidak Ada (TA)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Penolong/lain-lain (LN)</span>
+        <input type="text" name="/register_pnc/B01107" data-type-xml="string" />
+    </label>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Cara Persalinan Ibu</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01108" data-name="/register_pnc/B01108" value="normal" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Normal (N)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01108" data-name="/register_pnc/B01108" value="vacum" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Vacum (VC)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01108" data-name="/register_pnc/B01108" value="forceps" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Forceps (FS)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01108" data-name="/register_pnc/B01108" value="sectio_caesaria" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Sectio Caesaria (SC)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Manajemen Aktif Kala III</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="checkbox" name="/register_pnc/B01109" value="injeksi_oksittosin" data-type-xml="select" />
+                    <span lang="" class="option-label active">Injeksi Oksittosin (IO)</span>
+                </label>
+                <label class="">
+                    <input type="checkbox" name="/register_pnc/B01109" value="peregangan_tali_pusat" data-type-xml="select" />
+                    <span lang="" class="option-label active">Peregangan Tali Pusat (PP)</span>
+                </label>
+                <label class="">
+                    <input type="checkbox" name="/register_pnc/B01109" value="masase_fundus_uteri" data-type-xml="select" />
+                    <span lang="" class="option-label active">Masase Fundus Uteri (MU)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Pelayanan</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="checkbox" name="/register_pnc/B01110" value="imd_k_1_jam_l_1_jam" data-type-xml="select" />
+                    <span lang="" class="option-label active">IMD &lt; 1 Jam / &gt; 1 Jam (IMD)</span>
+                </label>
+                <label class="">
+                    <input type="checkbox" name="/register_pnc/B01110" value="menggunakan_partograf" data-type-xml="select" />
+                    <span lang="" class="option-label active">Menggunakan Partograf (MP)</span>
+                </label>
+                <label class="">
+                    <input type="checkbox" name="/register_pnc/B01110" value="catat_di_buku_kia" data-type-xml="select" />
+                    <span lang="" class="option-label active">Catat di Buku KIA (CK)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Integrasi Program</span>
+        <input type="text" name="/register_pnc/B01111" data-type-xml="string" />
+    </label>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Komplikasi</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01112" data-name="/register_pnc/B01112" value="distosia" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Distosia (DS)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01112" data-name="/register_pnc/B01112" value="hipertensi_dalam_kehamilan" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Hipertensi dalam Kehamilan (HDK)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01112" data-name="/register_pnc/B01112" value="perdarahan_post-partum" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Perdarahan Post-Partum (PPP)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01112" data-name="/register_pnc/B01112" value="lain_lain" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Lain - Lain (LN)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Komplikasi/lain-lain (LN)</span>
+        <input type="text" name="/register_pnc/B01113" data-type-xml="string" />
+    </label>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Dirujuk Ke</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01114" data-name="/register_pnc/B01114" value="pusat_kesehatan_masyarakat" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Pusat Kesehatan Masyarakat (Puskesmas )</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01114" data-name="/register_pnc/B01114" value="rumah_bersalin" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Rumah Bersalin (RB)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01114" data-name="/register_pnc/B01114" value="rumah_sakit_ibu_dan_anak" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Rumah Sakit Ibu dan Anak (RSIA)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01114" data-name="/register_pnc/B01114" value="rumah_sakit" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Rumah Sakit (RS)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01114" data-name="/register_pnc/B01114" value="lain-lain" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Lain-lain (LN)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B01114" data-name="/register_pnc/B01114" value="tidak_diujuk" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Tidak Diujuk (TD)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Dirujuk Ke/lain-lain</span>
+        <input type="text" name="/register_pnc/B01115" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Alamat Bersalin</span>
+        <input type="text" name="/register_pnc/B01116" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Nama Bayi</span>
+        <input type="text" name="/register_pnc/B04005" data-type-xml="string" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Tanggal Lahir</span>
+        <input type="date" name="/register_pnc/B04006" data-type-xml="date" />
+    </label>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Jenis Kelamin</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B04007" data-name="/register_pnc/B04007" value="laki" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Laki (L)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B04007" data-name="/register_pnc/B04007" value="perempuan" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Perempuan ( P)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Kepemilikan buku KIA</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/B04010" data-name="/register_pnc/B04010" value="ya" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Ya (+)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/B04010" data-name="/register_pnc/B04010" value="tidak" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Tidak (-)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Berat Lahir</span>
+        <input type="number" name="/register_pnc/B04011" data-type-xml="int" />
+    </label>
+    <fieldset class="question or-branch pre-init ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">
+                    Ibu
+                    <span class="or-output" data-value=" /register_pnc/B01003 " />
+                    masuk kategori HR (High Risk), karena ibu
+                    <span class="or-output" data-value=" /register_pnc/B01003 " />
+                    :
+                    <span class="or-output" data-value=" /register_pnc/abortus_berulang_risk " />
+                </span>
+            </legend>
+            <div class="option-wrapper">
+                <label>
+                    <input value="OK" type="radio" name="/register_pnc/high_risk_note" data-relevant=" /register_pnc/abortus_berulang_risk  = 'abortus_berulang'" data-type-xml="string" />
+                    <span class="option-label active" lang="">OK</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Apakah anda ingin menandai sebagai HRP (High Risk Pregnancy)?</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/register_pnc/is_high_risk" data-name="/register_pnc/is_high_risk" value="Ya" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Ya</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/register_pnc/is_high_risk" data-name="/register_pnc/is_high_risk" value="Tidak" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Tidak</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset id="or-preload-items" style="display:none;">
+        <label class="calculation non-select ">
+            <input type="hidden" name="/register_pnc/today" data-preload="date" data-preload-params="today" data-type-xml="date" />
+        </label>
+    </fieldset>
+    <fieldset id="or-calculated-items" style="display:none;">
+        <label class="calculation non-select ">
+            <input type="hidden" name="/register_pnc/B01006" data-constraint=".&lt;100" data-calculate="int(( /register_pnc/today  -  /register_pnc/B01005 ) div 365)" data-type-xml="string" />
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/register_pnc/abortus_berulang_risk" data-calculate="if( /register_pnc/B01024  &gt;= 3, 'abortus_berulang', '')" data-type-xml="string" />
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/register_pnc/meta/instanceID" data-calculate="concat('uuid:', uuid())" data-type-xml="string" />
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/register_pnc/formhub/uuid" data-calculate="'c5fafa37f20f44d7a6f732cc28c71f8c'" data-type-xml="string" />
+        </label>
+    </fieldset>
+</form>
