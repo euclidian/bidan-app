@@ -147,6 +147,7 @@
     <string name="str_register_delivery_plan_form">Delivery Plan</string>
     <string name="str_register_pnc_registration_form">PNC Registration</string>
     <string name="str_register_anc_investigations_form">ANC Investigations</string>
+    <string name="str_register_anc_partograf_form">Kartu Partograf</string>
     <string name="str_register_anc_close_form">ANC Close</string>
 
     <string name="str_reporting">Reporting</string>
