@@ -2,309 +2,108 @@
     "form_data_definition_version": "1",
     "form": {
         "bind_type": "ibu",
-        "default_bind_path": "/model/instance/Kartu_ibu_ANC/",
+        "default_bind_path": "/model/instance/Register_ANC_only/",
         "fields": [
             {
                 "name": "id",
                 "shouldLoadValue": true
             },
-			{
+            {
                 "name": "referenceDate",
-                "bind": "/model/instance/Kartu_ibu_ANC/ANC_DATE",
+                "bind": "/model/instance/Register_ANC_only/B01026",
                 "source": "ibu.referenceDate",
-                "shouldLoadValue": true
+				"shouldLoadValue": true
             },
             {
-                "name": "Jamkesmas",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01043",
-                "source": "ibu.Jamkesmas",
-                "shouldLoadValue": true
+                "name": "TanggalHPHT",
+                "bind": "/model/instance/Register_ANC_only/B01027",
+                "source": "ibu.TanggalHPHT",
+				"shouldLoadValue": true
             },
             {
-                "name": "CaraMasukTempatPelayanan",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01044",
-                "source": "ibu.CaraMasukTempatPelayanan",
-                "shouldLoadValue": true
+                "name": "EDD",
+                "bind": "/model/instance/Register_ANC_only/B01028",
+				"shouldLoadValue": true
             },
             {
-                "name": "UsiaKlinis",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01045",
-                "source": "ibu.UsiaKlinis",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "TrimesterKe",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01046",
-                "source": "ibu.TrimesterKe",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "AnamnesisIbu",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01047",
-                "source": "ibu.AnamnesisIbu",
-                "shouldLoadValue": true
+                "name": "PersalinanSebelumnya",
+                "bind": "/model/instance/Register_ANC_only/B01029",
+                "source": "ibu.PersalinanSebelumnya",
+				"shouldLoadValue": true
             },
             {
                 "name": "BB",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01048",
+                "bind": "/model/instance/Register_ANC_only/B01030",
                 "source": "ibu.BB",
-                "shouldLoadValue": true
+				"shouldLoadValue": true
             },
             {
-                "name": "TDSistolik",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01049",
-                "source": "ibu.TDSistolik",
-                "shouldLoadValue": true
+                "name": "TB",
+                "bind": "/model/instance/Register_ANC_only/B01031",
+                "source": "ibu.TB",
+				"shouldLoadValue": true
             },
             {
-                "name": "TDDiastolik",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01050",
-                "source": "ibu.TDDiastolik",
-                "shouldLoadValue": true
+                "name": "BukuKIA",
+                "bind": "/model/instance/Register_ANC_only/B01032",
+                "source": "ibu.BukuKIA",
+				"shouldLoadValue": true
             },
             {
-                "name": "LILA",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01051",
-                "source": "ibu.LILA",
-                "shouldLoadValue": true
+                "name": "RiwayatKomplikasiKebidanan",
+                "bind": "/model/instance/Register_ANC_only/B01033",
+                "source": "ibu.RiwayatKomplikasiKebidanan",
+				"shouldLoadValue": true
             },
             {
-                "name": "StatusGiziibu",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01052",
-                "source": "ibu.StatusGiziibu",
-                "shouldLoadValue": true
+                "name": "PenyakitKronis",
+                "bind": "/model/instance/Register_ANC_only/B01034",
+                "source": "ibu.PenyakitKronis",
+				"shouldLoadValue": true
             },
             {
-                "name": "TFU",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01053",
-                "source": "ibu.TFU",
-                "shouldLoadValue": true
+                "name": "Alergi",
+                "bind": "/model/instance/Register_ANC_only/B01035",
+                "source": "ibu.Alergi",
+				"shouldLoadValue": true
             },
             {
-                "name": "RefleksPatelaIbu",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01054",
-                "source": "ibu.RefleksPatelaIbu",
-                "shouldLoadValue": true
+                "name": "TBrisk",
+                "bind": "/model/instance/Register_ANC_only/TB_risk",
+                "source": "ibu.TBrisk",
+				"shouldLoadValue": true
             },
             {
-                "name": "DJJ",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01055",
-                "source": "ibu.DJJ",
-                "shouldLoadValue": true
+                "name": "ishighrisk",
+                "bind": "/model/instance/Register_ANC_only/is_high_risk",
+                "source": "ibu.ishighrisk",
+				"shouldLoadValue": true
             },
             {
-                "name": "KepalaJaninTerhadapPAP",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01056",
-                "source": "ibu.KepalaJaninTerhadapPAP",
-                "shouldLoadValue": true
+                 "name": "type",
+                 "value": "ANC",
+                 "source": "ibu.type"
             },
             {
-                "name": "TaksiranBeratJanin",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01057",
-                "source": "ibu.TaksiranBeratJanin",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "PersentasiJanin",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01058",
-                "source": "ibu.PersentasiJanin",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "JumlahJanin",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01059",
-                "source": "ibu.JumlahJanin",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "StatusImunisasiTT",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01060",
-                "source": "ibu.StatusImunisasiTT",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "PelayananInjeksiTT",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01061",
-                "source": "ibu.PelayananInjeksiTT",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "PelayananCatatdiBukuKia",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01062",
-                "source": "ibu.PelayananCatatdiBukuKia",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "PelayananFe",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01063",
-                "source": "ibu.PelayananFe",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "LaboratoriumPeriksaHbDilakukan",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01064",
-                "source": "ibu.LaboratoriumPeriksaHbDilakukan",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "LaboratoriumPeriksaHbHasil",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01065",
-                "source": "ibu.LaboratoriumPeriksaHbHasil",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "LaboratoriumPeriksaHbAnemia",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01066",
-                "source": "ibu.LaboratoriumPeriksaHbAnemia",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "LaboratoriumProteinUria",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01067",
-                "source": "ibu.LaboratoriumProteinUria",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "LaboratoriumGulaDarah",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01068",
-                "source": "ibu.LaboratoriumGulaDarah",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "LaboratoriumThalasemia",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01069",
-                "source": "ibu.LaboratoriumThalasemia",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "LaboratoriumSifilis",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01070",
-                "source": "ibu.LaboratoriumSifilis",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "LaboratoriumHbsAg",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01071",
-                "source": "ibu.LaboratoriumHbsAg",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "IntegrasiProgramPMTCTVCT",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01072",
-                "source": "ibu.IntegrasiProgramPMTCTVCT",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "IntegrasiProgramPMTCTPeriksaDarah",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01073",
-                "source": "ibu.IntegrasiProgramPMTCTPeriksaDarah",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "IntegrasiProgramPMTCTSerologi",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01074",
-                "source": "ibu.IntegrasiProgramPMTCTSerologi",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "IntegrasiProgramPMTCTARVProfilaksis",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01075",
-                "source": "ibu.IntegrasiProgramPMTCTARVProfilaksis",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "IntegrasiProgramMalariaPeriksaDarah",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01076",
-                "source": "ibu.IntegrasiProgramMalariaPeriksaDarah",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "IntegrasiProgramMalariaMalaria",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01077",
-                "source": "ibu.IntegrasiProgramMalariaMalaria",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "IntegrasiProgramMalariaObat",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01078",
-                "source": "ibu.IntegrasiProgramMalariaObat",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "IntegrasiProgramMalariaKelambuBerinsektisida",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01079",
-                "source": "ibu.IntegrasiProgramMalariaKelambuBerinsektisida",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "IntegrasiProgramTBDahak",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01080",
-                "source": "ibu.IntegrasiProgramTBDahak",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "IntegrasiProgramTBTBC",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01081",
-                "source": "ibu.IntegrasiProgramTBTBC",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "IntegrasiProgramTBObat",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01082",
-                "source": "ibu.IntegrasiProgramTBObat",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "ResikoTerdeteksiPertamaKaliOleh",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01083",
-                "source": "ibu.ResikoTerdeteksiPertamaKaliOleh",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "KomplikasidalamKehamilan",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01084",
-                "source": "ibu.KomplikasidalamKehamilan",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "DirujukKe",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01085",
-                "source": "ibu.DirujukKe",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "lainLain",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01085L",
-                "source": "ibu.lainLain",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "KeadaanIbusaatTiba",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01086",
-                "source": "ibu.KeadaanIbusaatTiba",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "KeadaanIbusaatPulang",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01087",
-                "source": "ibu.KeadaanIbusaatPulang",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "Keterangan",
-                "bind": "/model/instance/Kartu_ibu_ANC/B01088",
-                "source": "ibu.Keterangan",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "type",
-                "value": "ANC",
-                "source": "ibu.type"
+                "name": "isOutOfArea",
+                "value": "false"
             },
             {
                 "name": "isClosed",
                 "value": "false",
                 "source": "ibu.isClosed"
+            },
+            {
+                "name": "submissionDate",
+                "bind": "/model/instance/identitas_ibu/today"
+            },
+            {
+                "name": "registrationDate",
+                "bind": "/model/instance/identitas_ibu/today"
+            },
+            {
+                "name": "jenisKontrasepsi",
+                "value": ""
             }
         ]
     }
