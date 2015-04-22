@@ -1,103 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <form autocomplete="off" novalidate="novalidate" class="or clearfix" id="rencana_persalinan">
-<!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.--><section class="form-logo"> </section><h3 id="form-title">Rencana Persalinan</h3>
-  
-  
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Rencana Penolong Persalinan</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01036" data-name="/rencana_persalinan/B01036" value="keluarga" data-type-xml="select1"/><span lang="" class="option-label active">Keluarga (K)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01036" data-name="/rencana_persalinan/B01036" value="dukun" data-type-xml="select1"/><span lang="" class="option-label active">Dukun (D)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01036" data-name="/rencana_persalinan/B01036" value="bidan" data-type-xml="select1"/><span lang="" class="option-label active">Bidan (B)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01036" data-name="/rencana_persalinan/B01036" value="dr_umum_dr_spesialis" data-type-xml="select1"/><span lang="" class="option-label active">Dr.Umum (DU) Dr.Spesialis (DS)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01036" data-name="/rencana_persalinan/B01036" value="lain-lain" data-type-xml="select1"/><span lang="" class="option-label active">Lain-Lain (LN)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01036" data-name="/rencana_persalinan/B01036" value="tidak_ada" data-type-xml="select1"/><span lang="" class="option-label active">Tidak Ada (TA)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Tempat Rencana Persalinan</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="rumah" data-type-xml="select1"/><span lang="" class="option-label active">Rumah (RMH)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="podok_bersalin_desa" data-type-xml="select1"/><span lang="" class="option-label active">Podok Bersalin desa ( Polindes)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="puskesmas_pembantu" data-type-xml="select1"/><span lang="" class="option-label active">Puskesmas Pembantu (Pustu)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="pusat_kesehatan_masyarakat" data-type-xml="select1"/><span lang="" class="option-label active">Pusat Kesehatan Masyarakat (Puseksmas )</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="rumah_bersalin" data-type-xml="select1"/><span lang="" class="option-label active">Rumah Bersalin (RB)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="rumah_sakit_ibu_dan_anak" data-type-xml="select1"/><span lang="" class="option-label active">Rumah Sakit Ibu dan Anak (RSIA)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="rumah_sakit" data-type-xml="select1"/><span lang="" class="option-label active">Rumah Sakit (RS)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="rumah_sakit_orang_dengan_hiv_aids" data-type-xml="select1"/><span lang="" class="option-label active">Rumah Sakit Orang dengan HIV / AIDS (RS Odha)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Rencana Pendamping Persalinan</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01038" data-name="/rencana_persalinan/B01038" value="suami" data-type-xml="select1"/><span lang="" class="option-label active">Suami (S)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01038" data-name="/rencana_persalinan/B01038" value="keluaga" data-type-xml="select1"/><span lang="" class="option-label active">Keluaga (K)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01038" data-name="/rencana_persalinan/B01038" value="teman" data-type-xml="select1"/><span lang="" class="option-label active">Teman (TM)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01038" data-name="/rencana_persalinan/B01038" value="tetangga" data-type-xml="select1"/><span lang="" class="option-label active">Tetangga (TG)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01038" data-name="/rencana_persalinan/B01038" value="lain-lain" data-type-xml="select1"/><span lang="" class="option-label active">Lain-lain (LL)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01038" data-name="/rencana_persalinan/B01038" value="tidak_ada" data-type-xml="select1"/><span lang="" class="option-label active">Tidak Ada (TA)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Transportasi</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01039" data-name="/rencana_persalinan/B01039" value="sepeda_motor" data-type-xml="select1"/><span lang="" class="option-label active">Sepeda Motor (SM)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01039" data-name="/rencana_persalinan/B01039" value="mobil" data-type-xml="select1"/><span lang="" class="option-label active">Mobil (MB)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01039" data-name="/rencana_persalinan/B01039" value="lain-lain" data-type-xml="select1"/><span lang="" class="option-label active">Lain-Lain (LN)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Pendonor</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="checkbox" name="/rencana_persalinan/B01040" value="suami" data-type-xml="select"/><span lang="" class="option-label active">Suami (S)</span></label><label class=""><input type="checkbox" name="/rencana_persalinan/B01040" value="keluaga" data-type-xml="select"/><span lang="" class="option-label active">Keluaga (K)</span></label><label class=""><input type="checkbox" name="/rencana_persalinan/B01040" value="teman" data-type-xml="select"/><span lang="" class="option-label active">Teman (TM)</span></label><label class=""><input type="checkbox" name="/rencana_persalinan/B01040" value="lain-lain" data-type-xml="select"/><span lang="" class="option-label active">Lain-lain (LL)</span></label><label class=""><input type="checkbox" name="/rencana_persalinan/B01040" value="tidak_ada" data-type-xml="select"/><span lang="" class="option-label active">Tidak Ada (TA)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Kondisi Rumah</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01041" data-name="/rencana_persalinan/B01041" value="permanen" data-type-xml="select1"/><span lang="" class="option-label active">Permanen (PM)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01041" data-name="/rencana_persalinan/B01041" value="tidak_permanen" data-type-xml="select1"/><span lang="" class="option-label active">Tidak Permanen (TM)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Persediaan Perlengkapan Persalinan</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="checkbox" name="/rencana_persalinan/B01042" value="kain" data-type-xml="select"/><span lang="" class="option-label active">Kain (KN)</span></label><label class=""><input type="checkbox" name="/rencana_persalinan/B01042" value="handuk" data-type-xml="select"/><span lang="" class="option-label active">Handuk (HD)</span></label><label class=""><input type="checkbox" name="/rencana_persalinan/B01042" value="pakaian_bersih_dan_kering" data-type-xml="select"/><span lang="" class="option-label active">Pakaian Bersih dan Kering (PBK)</span></label></div></fieldset></fieldset>
-    <label class="question non-select "><span lang="" class="question-label active">Tanggal kujungan</span><input type="date" name="/rencana_persalinan/B01043" data-type-xml="date"/></label>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Jamkesmas</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01044" data-name="/rencana_persalinan/B01044" value="jika_ya" data-type-xml="select1"/><span lang="" class="option-label active">JIka ya (&#x221A;)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01044" data-name="/rencana_persalinan/B01044" value="jika_tidak" data-type-xml="select1"/><span lang="" class="option-label active">Jika Tidak (x)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Cara Masuk Tempat Pelayanan</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01045" data-name="/rencana_persalinan/B01045" value="atas_permintaan_sendiri" data-type-xml="select1"/><span lang="" class="option-label active">Atas Permintaan Sendiri (APS)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01045" data-name="/rencana_persalinan/B01045" value="rujukan_dokter" data-type-xml="select1"/><span lang="" class="option-label active">Rujukan Dokter (Dr)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01045" data-name="/rencana_persalinan/B01045" value="rujukan_bidan" data-type-xml="select1"/><span lang="" class="option-label active">Rujukan Bidan (Bd)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01045" data-name="/rencana_persalinan/B01045" value="rujukan_dukun" data-type-xml="select1"/><span lang="" class="option-label active">Rujukan Dukun (RD)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01045" data-name="/rencana_persalinan/B01045" value="rujukan_polindes" data-type-xml="select1"/><span lang="" class="option-label active">Rujukan Polindes (Pol)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01045" data-name="/rencana_persalinan/B01045" value="rujukan_puskesmas_pembantu" data-type-xml="select1"/><span lang="" class="option-label active">Rujukan Puskesmas Pembantu ( PST)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01045" data-name="/rencana_persalinan/B01045" value="rujukan_rumah_bersalin" data-type-xml="select1"/><span lang="" class="option-label active">Rujukan Rumah Bersalin (RB)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01045" data-name="/rencana_persalinan/B01045" value="rujukan_rumah_sakit_ibu_dan_anak" data-type-xml="select1"/><span lang="" class="option-label active">Rujukan Rumah Sakit Ibu dan Anak (RSIA)</span></label></div></fieldset></fieldset>
-    <label class="question non-select "><span lang="" class="question-label active">Usia Klinis</span><input type="number" name="/rencana_persalinan/B01046" data-type-xml="int"/></label>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Trimester Ke</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01047" data-name="/rencana_persalinan/B01047" value="trimester_ke_1" data-type-xml="select1"/><span lang="" class="option-label active">Trimester Ke 1 (1)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01047" data-name="/rencana_persalinan/B01047" value="trimester_ke_2" data-type-xml="select1"/><span lang="" class="option-label active">Trimester Ke 2 (2)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01047" data-name="/rencana_persalinan/B01047" value="trimester_ke_3" data-type-xml="select1"/><span lang="" class="option-label active">Trimester Ke 3 (3)</span></label></div></fieldset></fieldset>
-    <label class="question non-select "><span lang="" class="question-label active">Anamnesis Ibu</span><input type="text" name="/rencana_persalinan/B01048" data-type-xml="string"/></label>
-    <label class="question non-select "><span lang="" class="question-label active">BB (Kg)</span><input type="number" name="/rencana_persalinan/B01049" data-type-xml="decimal" step="any"/></label>
-    <label class="question non-select "><span lang="" class="question-label active">TD (Sistolik)</span><input type="number" name="/rencana_persalinan/B01050" data-type-xml="int"/></label>
-    <label class="question non-select "><span lang="" class="question-label active">TD (Diastolik)</span><input type="number" name="/rencana_persalinan/B01051" data-type-xml="int"/></label>
-    <label class="question non-select "><span lang="" class="question-label active">LILA</span><input type="number" name="/rencana_persalinan/B01052" data-type-xml="decimal" step="any"/></label>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Status Gizi ibu</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01053" data-name="/rencana_persalinan/B01053" value="kekurangan_energi_kronis" data-type-xml="select1"/><span lang="" class="option-label active">Kekurangan Energi Kronis (KEK)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01053" data-name="/rencana_persalinan/B01053" value="normal" data-type-xml="select1"/><span lang="" class="option-label active">Normal (N)</span></label></div></fieldset></fieldset>
-    <label class="question non-select "><span lang="" class="question-label active">TFU</span><input type="text" name="/rencana_persalinan/B01054" data-type-xml="string"/></label>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Refleks Patela Ibu</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01055" data-name="/rencana_persalinan/B01055" value="ada" data-type-xml="select1"/><span lang="" class="option-label active">Ada (+)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01055" data-name="/rencana_persalinan/B01055" value="tidak" data-type-xml="select1"/><span lang="" class="option-label active">Tidak (-)</span></label></div></fieldset></fieldset>
-    <label class="question non-select "><span lang="" class="question-label active">DJJ</span><input type="number" name="/rencana_persalinan/B01056" data-type-xml="int"/></label>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Kepala Janin Terhadap PAP</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01057" data-name="/rencana_persalinan/B01057" value="masuk" data-type-xml="select1"/><span lang="" class="option-label active">Masuk (M)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01057" data-name="/rencana_persalinan/B01057" value="belum_masuk" data-type-xml="select1"/><span lang="" class="option-label active">Belum Masuk (BM)</span></label></div></fieldset></fieldset>
-    <label class="note non-select "><span lang="" class="question-label active">Taksiran Berat Janin: <span class="or-output" data-value=" /rencana_persalinan/B01058 ">
-            </span></span><input type="text" name="/rencana_persalinan/beratjaninnote" data-type-xml="string" readonly="readonly"/></label>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Persentasi Janin</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01059" data-name="/rencana_persalinan/B01059" value="kepala" data-type-xml="select1"/><span lang="" class="option-label active">Kepala (KP)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01059" data-name="/rencana_persalinan/B01059" value="bokong_sungsang" data-type-xml="select1"/><span lang="" class="option-label active">Bokong / Sungsang (BS)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01059" data-name="/rencana_persalinan/B01059" value="letak_lintang_obligue" data-type-xml="select1"/><span lang="" class="option-label active">Letak Lintang / Obligue (LLO)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Jumlah Janin</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01060" data-name="/rencana_persalinan/B01060" value="tunggal" data-type-xml="select1"/><span lang="" class="option-label active">Tunggal (T)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01060" data-name="/rencana_persalinan/B01060" value="ganda" data-type-xml="select1"/><span lang="" class="option-label active">Ganda (G)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Status Imunisasi TT</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01061" data-name="/rencana_persalinan/B01061" value="tt_ke_0" data-type-xml="select1"/><span lang="" class="option-label active">TT Ke 0 (T0)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01061" data-name="/rencana_persalinan/B01061" value="tt_ke_1" data-type-xml="select1"/><span lang="" class="option-label active">TT ke 1 (T1)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01061" data-name="/rencana_persalinan/B01061" value="tt_ke_2" data-type-xml="select1"/><span lang="" class="option-label active">TT Ke 2 (T2)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01061" data-name="/rencana_persalinan/B01061" value="tt_ke_3_tt_ke_4" data-type-xml="select1"/><span lang="" class="option-label active">TT ke 3 (T3) TT ke 4 (TT4)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01061" data-name="/rencana_persalinan/B01061" value="tt_ke_ke_5" data-type-xml="select1"/><span lang="" class="option-label active">TT ke Ke 5 (TT5)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Pelayanan / Injeksi TT</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01062" data-name="/rencana_persalinan/B01062" value="jika_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">JIka dilakukan (&#x221A;)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01062" data-name="/rencana_persalinan/B01062" value="jika_tidak_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">Jika Tidak dilakukan (x)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Pelayanan / Catat di Buku Kia</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01063" data-name="/rencana_persalinan/B01063" value="jika_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">JIka dilakukan (&#x221A;)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01063" data-name="/rencana_persalinan/B01063" value="jika_tidak_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">Jika Tidak dilakukan (x)</span></label></div></fieldset></fieldset>
-    <label class="question non-select "><span lang="" class="question-label active">Pelayanan / Fe</span><input type="number" name="/rencana_persalinan/B01064" data-type-xml="int"/></label>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Laboratorium / Periksa Hb / Dilakukan</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01065" data-name="/rencana_persalinan/B01065" value="jika_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">JIka dilakukan (&#x221A;)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01065" data-name="/rencana_persalinan/B01065" value="jika_tidak_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">Jika Tidak dilakukan (x)</span></label></div></fieldset></fieldset>
-    <label class="question non-select "><span lang="" class="question-label active">Laboratorium / Periksa Hb / Hasil</span><input type="number" name="/rencana_persalinan/B01066" data-type-xml="int"/></label>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Laboratorium / Periksa Hb / Anemia</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01067" data-name="/rencana_persalinan/B01067" value="positif" data-type-xml="select1"/><span lang="" class="option-label active">Positif (+)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01067" data-name="/rencana_persalinan/B01067" value="negatif" data-type-xml="select1"/><span lang="" class="option-label active">Negatif (-)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Laboratorium / Protein Uria</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01068" data-name="/rencana_persalinan/B01068" value="positif" data-type-xml="select1"/><span lang="" class="option-label active">Positif (+)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01068" data-name="/rencana_persalinan/B01068" value="negatif" data-type-xml="select1"/><span lang="" class="option-label active">Negatif (-)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Laboratorium / Gula Darah</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01069" data-name="/rencana_persalinan/B01069" value="l_140_mg_dl" data-type-xml="select1"/><span lang="" class="option-label active">&gt; 140 mg/dl (+)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01069" data-name="/rencana_persalinan/B01069" value="k_140_mg_dl" data-type-xml="select1"/><span lang="" class="option-label active">&lt; 140 mg/dl (-)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Laboratorium / Thalasemia</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01070" data-name="/rencana_persalinan/B01070" value="positif" data-type-xml="select1"/><span lang="" class="option-label active">Positif (+)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01070" data-name="/rencana_persalinan/B01070" value="negatif" data-type-xml="select1"/><span lang="" class="option-label active">Negatif (-)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Laboratorium / Sifilis</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01071" data-name="/rencana_persalinan/B01071" value="positif" data-type-xml="select1"/><span lang="" class="option-label active">Positif (+)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01071" data-name="/rencana_persalinan/B01071" value="negatif" data-type-xml="select1"/><span lang="" class="option-label active">Negatif (-)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Laboratorium / HBsAg</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01072" data-name="/rencana_persalinan/B01072" value="positif" data-type-xml="select1"/><span lang="" class="option-label active">Positif (+)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01072" data-name="/rencana_persalinan/B01072" value="negatif" data-type-xml="select1"/><span lang="" class="option-label active">Negatif (-)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Integrasi Program / PMTCT / VCT</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01073" data-name="/rencana_persalinan/B01073" value="jika_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">JIka dilakukan (&#x221A;)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01073" data-name="/rencana_persalinan/B01073" value="jika_tidak_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">Jika Tidak dilakukan (x)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Integrasi Program / PMTCT / Periksa Darah</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01074" data-name="/rencana_persalinan/B01074" value="jika_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">JIka dilakukan (&#x221A;)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01074" data-name="/rencana_persalinan/B01074" value="jika_tidak_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">Jika Tidak dilakukan (x)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Integrasi Program / PMTCT / Serologi</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01075" data-name="/rencana_persalinan/B01075" value="positif" data-type-xml="select1"/><span lang="" class="option-label active">Positif (+)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01075" data-name="/rencana_persalinan/B01075" value="negatif" data-type-xml="select1"/><span lang="" class="option-label active">Negatif (-)</span></label></div></fieldset></fieldset>
-    <label class="question non-select "><span lang="" class="question-label active">Integrasi Program / PMTCT / ARV Profilaksis</span><input type="text" name="/rencana_persalinan/B01076" data-type-xml="string"/></label>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Integrasi Program / Malaria / Periksa Darah</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01077" data-name="/rencana_persalinan/B01077" value="jika_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">JIka dilakukan (&#x221A;)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01077" data-name="/rencana_persalinan/B01077" value="jika_tidak_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">Jika Tidak dilakukan (x)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Integrasi Program / Malaria / Malaria</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01078" data-name="/rencana_persalinan/B01078" value="positif" data-type-xml="select1"/><span lang="" class="option-label active">Positif (+)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01078" data-name="/rencana_persalinan/B01078" value="negatif" data-type-xml="select1"/><span lang="" class="option-label active">Negatif (-)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Integrasi Program / Malaria / Obat</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01079" data-name="/rencana_persalinan/B01079" value="ZDV" data-type-xml="select1"/><span lang="" class="option-label active">(ZDV)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01079" data-name="/rencana_persalinan/B01079" value="NVP" data-type-xml="select1"/><span lang="" class="option-label active">(NVP)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01079" data-name="/rencana_persalinan/B01079" value="TC" data-type-xml="select1"/><span lang="" class="option-label active">(TC)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Integrasi Program / Malaria / Kelambu Berinsektisida</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01080" data-name="/rencana_persalinan/B01080" value="jika_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">JIka dilakukan (&#x221A;)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01080" data-name="/rencana_persalinan/B01080" value="jika_tidak_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">Jika Tidak dilakukan (x)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Integrasi Program / TB / Dahak</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01081" data-name="/rencana_persalinan/B01081" value="jika_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">JIka dilakukan (&#x221A;)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01081" data-name="/rencana_persalinan/B01081" value="jika_tidak_dilakukan" data-type-xml="select1"/><span lang="" class="option-label active">Jika Tidak dilakukan (x)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Integrasi Program / TB / TBC</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01082" data-name="/rencana_persalinan/B01082" value="positif" data-type-xml="select1"/><span lang="" class="option-label active">Positif (+)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01082" data-name="/rencana_persalinan/B01082" value="negatif" data-type-xml="select1"/><span lang="" class="option-label active">Negatif (-)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Integrasi Program / TB / Obat</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01083" data-name="/rencana_persalinan/B01083" value="rifampisin" data-type-xml="select1"/><span lang="" class="option-label active">Rifampisin (R)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01083" data-name="/rencana_persalinan/B01083" value="inh" data-type-xml="select1"/><span lang="" class="option-label active">INH (H)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01083" data-name="/rencana_persalinan/B01083" value="pyrazinamid" data-type-xml="select1"/><span lang="" class="option-label active">Pyrazinamid (Z)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01083" data-name="/rencana_persalinan/B01083" value="etahmbutol" data-type-xml="select1"/><span lang="" class="option-label active">Etahmbutol</span></label></div></fieldset></fieldset>
-    <label class="question non-select "><span lang="" class="question-label active">Tanggal</span><input type="date" name="/rencana_persalinan/B01084" data-type-xml="date"/></label>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Resiko Terdeteksi Pertama Kali Oleh</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01085" data-name="/rencana_persalinan/B01085" value="pasien" data-type-xml="select1"/><span lang="" class="option-label active">Pasien (P)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01085" data-name="/rencana_persalinan/B01085" value="keluarga" data-type-xml="select1"/><span lang="" class="option-label active">Keluarga (K)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01085" data-name="/rencana_persalinan/B01085" value="masyarakat" data-type-xml="select1"/><span lang="" class="option-label active">Masyarakat (M)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01085" data-name="/rencana_persalinan/B01085" value="dukun" data-type-xml="select1"/><span lang="" class="option-label active">Dukun (D)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01085" data-name="/rencana_persalinan/B01085" value="kader" data-type-xml="select1"/><span lang="" class="option-label active">Kader (K)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01085" data-name="/rencana_persalinan/B01085" value="bidan" data-type-xml="select1"/><span lang="" class="option-label active">Bidan (B)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01085" data-name="/rencana_persalinan/B01085" value="dokter" data-type-xml="select1"/><span lang="" class="option-label active">Dokter (D)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01085" data-name="/rencana_persalinan/B01085" value="dokter_spesialis_obsestri_dan_gemotologi" data-type-xml="select1"/><span lang="" class="option-label active">Dokter Spesialis Obsestri dan Gemotologi (DSOG)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Komplikasi dalam Kehamilan</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="checkbox" name="/rencana_persalinan/B01086" value="hipertensi_dalam_kehamilan" data-type-xml="select"/><span lang="" class="option-label active">Hipertensi dalam Kehamilan (HDK)</span></label><label class=""><input type="checkbox" name="/rencana_persalinan/B01086" value="abortus" data-type-xml="select"/><span lang="" class="option-label active">Abortus (AS)</span></label><label class=""><input type="checkbox" name="/rencana_persalinan/B01086" value="mola" data-type-xml="select"/><span lang="" class="option-label active">Mola (ML)</span></label><label class=""><input type="checkbox" name="/rencana_persalinan/B01086" value="kehamilan_ektopit_terganggu" data-type-xml="select"/><span lang="" class="option-label active">Kehamilan Ektopit Terganggu (KET)</span></label><label class=""><input type="checkbox" name="/rencana_persalinan/B01086" value="hemoragi_post_partum" data-type-xml="select"/><span lang="" class="option-label active">Hemoragi Post Partum (HPP)</span></label><label class=""><input type="checkbox" name="/rencana_persalinan/B01086" value="ante_partum_beleding" data-type-xml="select"/><span lang="" class="option-label active">Ante Partum Beleding (APB)</span></label><label class=""><input type="checkbox" name="/rencana_persalinan/B01086" value="injeksi_jalan_lahir" data-type-xml="select"/><span lang="" class="option-label active">Injeksi Jalan Lahir (IJL)</span></label><label class=""><input type="checkbox" name="/rencana_persalinan/B01086" value="partum_kasep" data-type-xml="select"/><span lang="" class="option-label active">Partum Kasep (PK)</span></label><label class=""><input type="checkbox" name="/rencana_persalinan/B01086" value="partus_lama" data-type-xml="select"/><span lang="" class="option-label active">Partus Lama (PL)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Dirujuk Ke</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01087" data-name="/rencana_persalinan/B01087" value="pusat_kesehatan_masyarakat" data-type-xml="select1"/><span lang="" class="option-label active">Pusat Kesehatan Masyarakat (Puskesmas )</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01087" data-name="/rencana_persalinan/B01087" value="rumah_bersalin" data-type-xml="select1"/><span lang="" class="option-label active">Rumah Bersalin (RB)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01087" data-name="/rencana_persalinan/B01087" value="rumah_sakit_ibu_dan_anak" data-type-xml="select1"/><span lang="" class="option-label active">Rumah Sakit Ibu dan Anak (RSIA)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01087" data-name="/rencana_persalinan/B01087" value="rumah_sakit" data-type-xml="select1"/><span lang="" class="option-label active">Rumah Sakit (RS)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01087" data-name="/rencana_persalinan/B01087" value="lain-lain" data-type-xml="select1"/><span lang="" class="option-label active">Lain-lain (LN)</span></label></div></fieldset></fieldset>
-    <label class="question non-select "><span lang="" class="question-label active">Dirujuk Ke/lain-lain</span><input type="text" name="/rencana_persalinan/B01088" data-type-xml="string"/></label>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Keadaan Ibu saat Tiba</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01089" data-name="/rencana_persalinan/B01089" value="hidup" data-type-xml="select1"/><span lang="" class="option-label active">Hidup (H)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01089" data-name="/rencana_persalinan/B01089" value="mati" data-type-xml="select1"/><span lang="" class="option-label active">Mati (M)</span></label></div></fieldset></fieldset>
-    <fieldset class="question "><fieldset><legend><span lang="" class="question-label active">Keadaan Ibu saat Pulang</span>
-                    </legend><div class="option-wrapper"><label class=""><input type="radio" name="/rencana_persalinan/B01090" data-name="/rencana_persalinan/B01090" value="hidup" data-type-xml="select1"/><span lang="" class="option-label active">Hidup (H)</span></label><label class=""><input type="radio" name="/rencana_persalinan/B01090" data-name="/rencana_persalinan/B01090" value="mati" data-type-xml="select1"/><span lang="" class="option-label active">Mati (M)</span></label></div></fieldset></fieldset>
-    <label class="question non-select "><span lang="" class="question-label active">Keterangan</span><input type="text" name="/rencana_persalinan/B01091" data-type-xml="string"/></label>
-  
-<fieldset id="or-calculated-items" style="display:none;"><label class="calculation non-select "><input type="hidden" name="/rencana_persalinan/B01058" data-calculate="if(selected( /rencana_persalinan/B01057 ,'masuk'), (( /rencana_persalinan/B01054 -11)*155), (( /rencana_persalinan/B01054 -12)*155))" data-type-xml="string"/></label><label class="calculation non-select "><input type="hidden" name="/rencana_persalinan/meta/instanceID" data-calculate="concat('uuid:', uuid())" data-type-xml="string"/></label><label class="calculation non-select "><input type="hidden" name="/rencana_persalinan/formhub/uuid" data-calculate="'ac4ac09c78474bb98c4e883793dfd7b4'" data-type-xml="string"/></label></fieldset></form>
+    <!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.-->
+    <section class="form-logo" />
+    <h3 id="form-title">Rencana Persalinan</h3>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Tanggal</span>
+        <input type="date" name="/rencana_persalinan/date" data-type-xml="date" />
+    </label>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Rencana Penolong Persalinan</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01036" data-name="/rencana_persalinan/B01036" value="keluarga" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Keluarga (K)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01036" data-name="/rencana_persalinan/B01036" value="dukun" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Dukun (D)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01036" data-name="/rencana_persalinan/B01036" value="bidan" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Bidan (B)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01036" data-name="/rencana_persalinan/B01036" value="dr_umum_dr_spesialis" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Dr.Umum (DU) Dr.Spesialis (DS)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01036" data-name="/rencana_persalinan/B01036" value="lain-lain" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Lain-Lain (LN)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01036" data-name="/rencana_persalinan/B01036" value="tidak_ada" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Tidak Ada (TA)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Tempat Rencana Persalinan</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="rumah" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Rumah (RMH)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="podok_bersalin_desa" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Podok Bersalin desa ( Polindes)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="puskesmas_pembantu" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Puskesmas Pembantu (Pustu)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="pusat_kesehatan_masyarakat" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Pusat Kesehatan Masyarakat (Puseksmas )</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="rumah_bersalin" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Rumah Bersalin (RB)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="rumah_sakit_ibu_dan_anak" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Rumah Sakit Ibu dan Anak (RSIA)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="rumah_sakit" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Rumah Sakit (RS)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01037" data-name="/rencana_persalinan/B01037" value="rumah_sakit_orang_dengan_hiv_aids" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Rumah Sakit Orang dengan HIV / AIDS (RS Odha)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Rencana Pendamping Persalinan</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01038" data-name="/rencana_persalinan/B01038" value="suami" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Suami (S)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01038" data-name="/rencana_persalinan/B01038" value="keluaga" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Keluaga (K)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01038" data-name="/rencana_persalinan/B01038" value="teman" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Teman (TM)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01038" data-name="/rencana_persalinan/B01038" value="tetangga" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Tetangga (TG)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01038" data-name="/rencana_persalinan/B01038" value="lain-lain" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Lain-lain (LL)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01038" data-name="/rencana_persalinan/B01038" value="tidak_ada" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Tidak Ada (TA)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Transportasi</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01039" data-name="/rencana_persalinan/B01039" value="sepeda_motor" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Sepeda Motor (SM)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01039" data-name="/rencana_persalinan/B01039" value="mobil" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Mobil (MB)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01039" data-name="/rencana_persalinan/B01039" value="lain-lain" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Lain-Lain (LN)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Pendonor</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="checkbox" name="/rencana_persalinan/B01040" value="suami" data-type-xml="select" />
+                    <span lang="" class="option-label active">Suami (S)</span>
+                </label>
+                <label class="">
+                    <input type="checkbox" name="/rencana_persalinan/B01040" value="keluaga" data-type-xml="select" />
+                    <span lang="" class="option-label active">Keluaga (K)</span>
+                </label>
+                <label class="">
+                    <input type="checkbox" name="/rencana_persalinan/B01040" value="teman" data-type-xml="select" />
+                    <span lang="" class="option-label active">Teman (TM)</span>
+                </label>
+                <label class="">
+                    <input type="checkbox" name="/rencana_persalinan/B01040" value="lain-lain" data-type-xml="select" />
+                    <span lang="" class="option-label active">Lain-lain (LL)</span>
+                </label>
+                <label class="">
+                    <input type="checkbox" name="/rencana_persalinan/B01040" value="tidak_ada" data-type-xml="select" />
+                    <span lang="" class="option-label active">Tidak Ada (TA)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Kondisi Rumah</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01041" data-name="/rencana_persalinan/B01041" value="permanen" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Permanen (PM)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/rencana_persalinan/B01041" data-name="/rencana_persalinan/B01041" value="tidak_permanen" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Tidak Permanen (TM)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Persediaan Perlengkapan Persalinan</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="checkbox" name="/rencana_persalinan/B01042" value="kain" data-type-xml="select" />
+                    <span lang="" class="option-label active">Kain (KN)</span>
+                </label>
+                <label class="">
+                    <input type="checkbox" name="/rencana_persalinan/B01042" value="handuk" data-type-xml="select" />
+                    <span lang="" class="option-label active">Handuk (HD)</span>
+                </label>
+                <label class="">
+                    <input type="checkbox" name="/rencana_persalinan/B01042" value="pakaian_bersih_dan_kering" data-type-xml="select" />
+                    <span lang="" class="option-label active">Pakaian Bersih dan Kering (PBK)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <fieldset id="or-calculated-items" style="display:none;">
+        <label class="calculation non-select ">
+            <input type="hidden" name="/rencana_persalinan/meta/instanceID" data-calculate="concat('uuid:', uuid())" data-type-xml="string" />
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/rencana_persalinan/formhub/uuid" data-calculate="'d97c1f4622314b15b8e56d0a8b339ed2'" data-type-xml="string" />
+        </label>
+    </fieldset>
+</form>
