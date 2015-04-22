@@ -72,6 +72,7 @@ public class BidanHomeActivity extends SecuredActivity {
     private TextView kartuIbuANCRegisterClientCountView;
     private TextView kartuIbuPNCRegisterClientCountView;
     private TextView anakRegisterClientCountView;
+    private TextView kohortKbCountView;
 
     @Override
     protected void onCreation() {
@@ -85,6 +86,7 @@ public class BidanHomeActivity extends SecuredActivity {
         findViewById(R.id.btn_kartu_ibu_anc_register).setOnClickListener(onRegisterStartListener);
         findViewById(R.id.btn_kartu_ibu_pnc_register).setOnClickListener(onRegisterStartListener);
         findViewById(R.id.btn_anak_register).setOnClickListener(onRegisterStartListener);
+        findViewById(R.id.btn_kohort_kb_register).setOnClickListener(onRegisterStartListener);
 
         findViewById(R.id.btn_reporting).setOnClickListener(onButtonsClickListener);
         findViewById(R.id.btn_videos).setOnClickListener(onButtonsClickListener);
@@ -93,6 +95,7 @@ public class BidanHomeActivity extends SecuredActivity {
         kartuIbuANCRegisterClientCountView = (TextView) findViewById(R.id.txt_kartu_ibu_anc_register_client_count);
         kartuIbuPNCRegisterClientCountView = (TextView) findViewById(R.id.txt_kartu_ibu_pnc_register_client_count);
         anakRegisterClientCountView = (TextView) findViewById(R.id.txt_anak_client_count);
+        kohortKbCountView = (TextView) findViewById(R.id.txt_kohort_kb_register_count);
     }
 
     private void initialize() {
@@ -125,6 +128,7 @@ public class BidanHomeActivity extends SecuredActivity {
         kartuIbuANCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuANCCount()));
         kartuIbuPNCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuPNCCount()));
         anakRegisterClientCountView.setText(valueOf(homeContext.getAnakCount()));
+        kohortKbCountView.setText(valueOf(homeContext.getKBCount()));
     }
 
     @Override
@@ -204,6 +208,9 @@ public class BidanHomeActivity extends SecuredActivity {
                     break;
                 case R.id.btn_anak_register:
                     navigationController.startAnakBayiRegistry();
+                    break;
+                case R.id.btn_kohort_kb_register:
+                    navigationController.startKBRegistry();
                     break;
             }
         }

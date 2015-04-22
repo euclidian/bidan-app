@@ -8,6 +8,7 @@ import com.google.gson.reflect.TypeToken;
 
 import net.sqlcipher.database.SQLiteDatabase;
 
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.repository.DrishtiRepository;
 
@@ -17,7 +18,9 @@ import java.util.List;
 import java.util.Map;
 
 import static java.lang.Boolean.TRUE;
+import static java.text.MessageFormat.format;
 import static net.sqlcipher.DatabaseUtils.longForQuery;
+import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.apache.commons.lang3.StringUtils.repeat;
 
 /**
@@ -108,6 +111,24 @@ public class KartuIbuRepository extends DrishtiRepository{
                 + " WHERE " + IS_CLOSED_COLUMN + " = '" + NOT_CLOSED + "'", new String[0]);
     }
 
+    public long kbCount() {
+        SQLiteDatabase database = masterRepository.getReadableDatabase();
+        Cursor cursor = database.rawQuery(format("SELECT details FROM {0} WHERE {1} = ''{2}''",
+                KI_TABLE_NAME, IS_CLOSED_COLUMN, NOT_CLOSED), new String[0]);
+        List<Map<String, String>> detailsList = readDetailsList(cursor);
+        return getKIsUsingKBMethod(detailsList);
+    }
+
+    private long getKIsUsingKBMethod(List<Map<String, String>> detailsList) {
+        long kbCount = 0;
+        for (Map<String, String> details : detailsList) {
+            if (!(isBlank(details.get(AllConstants.KIRegistrationFields.CURRENT_KONTRASEPSI)))) {
+                kbCount++;
+            }
+        }
+        return kbCount;
+    }
+
     public void close(String caseId) {
         ContentValues values = new ContentValues();
         values.put(IS_CLOSED_COLUMN, TRUE.toString());
@@ -135,5 +156,18 @@ public class KartuIbuRepository extends DrishtiRepository{
         }
         cursor.close();
         return kartuIbus;
+    }
+
+    private List<Map<String, String>> readDetailsList(Cursor cursor) {
+        cursor.moveToFirst();
+        List<Map<String, String>> detailsList = new ArrayList<Map<String, String>>();
+        while (!cursor.isAfterLast()) {
+            String detailsJSON = cursor.getString(0);
+            detailsList.add(new Gson().<Map<String, String>>fromJson(detailsJSON, new TypeToken<HashMap<String, String>>() {
+            }.getType()));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return detailsList;
     }
 }

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 
 import org.ei.bidan.bidan.view.activity.KIDetailActivity;
+import org.ei.bidan.bidan.view.activity.NativeKBSmartRegisterActivity;
 import org.ei.bidan.bidan.view.activity.NativeKIANCSmartRegisterActivity;
 import org.ei.bidan.bidan.view.activity.NativeKIAnakSmartRegisterActivity;
 import org.ei.bidan.bidan.view.activity.NativeKIPNCSmartRegisterActivity;
@@ -70,6 +71,10 @@ public class NavigationController {
         activity.startActivity(new Intent(activity, NativeKIAnakSmartRegisterActivity.class));
     }
 
+    public void startKBRegistry() {
+        activity.startActivity(new Intent(activity, NativeKBSmartRegisterActivity.class));
+    }
+
     public String get() {
         return anmController.get();
     }
@@ -97,4 +102,5 @@ public class NavigationController {
     public void startChild(String entityId) {
         navigateToChildProfile(activity, entityId);
     }
+
 }

@@ -57,7 +57,8 @@
     <string name="header_obsetri">Obsetri</string>
     
     <string name="kartu_ibu_selection">Kartu Ibu</string>
-    <string name="str_ki_search_hint">Search KI Register</string>
+    <string name="kb_selection">KB</string>
+    <string name="str_ki_search_hint">Cari Data</string>
 
     <string name="couple_selection">All Eligible Couples</string>
     <string name="str_ec_search_hint">Search EC Register</string>
@@ -113,8 +114,10 @@
     <string name="filter_by_leave_the_place_label">L/P</string>
     <string name="ec_register_title_in_short">EC:</string>
     <string name="ki_register_title_in_short">KI:</string>
+    <string name="kb_register_title_in_short">KB:</string>
 
-    <string name="str_register_anc_form">Register ANC</string>
+    <string name="str_register_anc_form">Daftar ANC</string>
+    <string name="str_register_kb_form">Daftar KB</string>
     <string name="str_dokumentasi_persalinan_anc_form">Dokumentasi Persalinan</string>
     <string name="str_rencana_persalinan_anc_form">Rencana Persalinan</string>
 
@@ -129,8 +132,8 @@
     <string name="report_month_sample_text">26/03 - 25/04</string>
     <string name="str_switch_language">Switch Language</string>
     <string name="str_edit_ki_form">Edit Kartu Ibu</string>
-    <string name="str_close_ki_form">Close Kartu Ibu</string>
-    <string name="str_register_anak_form">Register Anak</string>
+    <string name="str_close_ki_form">Tutup Kartu Ibu</string>
+    <string name="str_register_anak_form">Daftar Anak</string>
     <string name="str_tutup_anak">Tutup Anak</string>
     <string name="str_kunjungan_anak">Kunjungan</string>
     <string name="anc_edit">Edit ANC</string>
@@ -292,6 +295,8 @@
     <string name="header_anc_status">ANC STATUS</string>
     <string name="header_pnc_plan">PLAN</string>
     <string name="header_risk_factors">RISK FACTORS</string>
+    <string name="header_kb_method">KB METHOD</string>
+    <string name="header_update_refill">UPDATE REFILL</string>
     <string name="header_anc_1">ANC1</string>
     <string name="header_anc_2">ANC2</string>
     <string name="header_anc_3">ANC3</string>

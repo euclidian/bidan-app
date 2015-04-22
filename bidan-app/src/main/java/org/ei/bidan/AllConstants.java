@@ -105,6 +105,11 @@ public class AllConstants {
         public static final String KARTU_IBU_PNC_CLOSE="kartu_ibu_pnc_close";
         public static final String KARTU_IBU_ANAK_VISIT="kohort_bayi_kunjungan";
         public static final String KARTU_IBU_ANAK_CLOSE="anak_close";
+        public static final String KOHORT_KB_PELAYANAN="kohort_kb_pelayanan";
+    }
+
+    public class KIRegistrationFields {
+        public static final String CURRENT_KONTRASEPSI = "JenisKontrasepsi";
     }
 
     public class ECRegistrationFields {

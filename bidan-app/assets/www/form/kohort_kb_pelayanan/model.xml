@@ -1,0 +1,21 @@
+<model>
+    <instance>
+        <kohort_kb_pelayanan id="kohort_kb_pelayanan" version="201412290800">
+          <formhub>
+            <uuid/>
+          </formhub>
+          <B03011/>
+          <B03012/>
+          <B03013/>
+          <B03014/>
+          <B03015/>
+          <B03016/>
+          <B03017/>
+          <B03018/>
+          <B03019/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </kohort_kb_pelayanan>
+      </instance>
+ </model>

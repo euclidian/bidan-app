@@ -6,6 +6,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.ei.bidan.R;
+import org.ei.bidan.bidan.view.contract.KBClient;
 import org.ei.bidan.bidan.view.contract.KISmartRegisterClient;
 
 /**
@@ -45,4 +46,12 @@ public class BidanObsetriView extends RelativeLayout {
         txtNumberOfAlive.setText(client.numberOfLivingChildren());
         txtNumberOfAbortus.setText(client.numberOfAbortions());
     }
+
+    public void bindKB(KBClient client) {
+        txtGravida.setText(client.getGravida());
+        txtParity.setText(client.getParity());
+        txtNumberOfAlive.setText(client.getLiveChild());
+        txtNumberOfAbortus.setText(client.getAbortus());
+    }
+
 }

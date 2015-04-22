@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 import static java.lang.Boolean.TRUE;
+import static net.sqlcipher.DatabaseUtils.longForQuery;
 import static org.apache.commons.lang3.StringUtils.join;
 import static org.ei.bidan.bidan.repository.KartuIbuRepository.*;
 
@@ -227,4 +228,15 @@ public class IbuRepository extends DrishtiRepository {
         cursor.close();
         return ibus;
     }
+
+    public boolean isPregnant(String kiId) {
+        return longForQuery(masterRepository.getReadableDatabase(),
+                "SELECT COUNT(1) FROM " + IBU_TABLE_NAME
+                        + " WHERE " +
+                        KI_ID_COLUMN + " = ? AND " +
+                        IS_CLOSED_COLUMN + " = ? AND " +
+                        TYPE_COLUMN + " = ?",
+                new String[]{kiId, NOT_CLOSED, TYPE_ANC}) > 0;
+    }
+
 }

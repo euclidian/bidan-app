@@ -190,6 +190,11 @@
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
         </activity>
 
+        <activity android:name="org.ei.bidan.bidan.view.activity.NativeKBSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+        </activity>
+
         <activity android:name="org.ei.bidan.bidan.view.activity.KIDetailActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
         </activity>

@@ -11,6 +11,7 @@ import org.ei.bidan.bidan.service.formSubmissionHandler.AnakBayiRegistrationHand
 import org.ei.bidan.bidan.service.formSubmissionHandler.AnakCloseHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KIANCCloseHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KIPNCCloseHandler;
+import org.ei.bidan.bidan.view.contract.KBClients;
 import org.ei.bidan.bidan.view.contract.KartuIbuPNCClients;
 import org.ei.bidan.repository.AlertRepository;
 import org.ei.bidan.repository.AllAlerts;
@@ -121,6 +122,7 @@ public class Context {
     private Cache<BidanHomeContext> bidanHomeContextCache;
     private Cache<KartuIbuANCClients> kartuIbuANCClientsCache;
     private Cache<KartuIbuPNCClients> kartuIbuPNCClientsCache;
+    private Cache<KBClients> kbClientsCache;
 
     private HTTPAgent httpAgent;
     private ZiggyFileLoader ziggyFileLoader;
@@ -813,6 +815,13 @@ public class Context {
         }
         return kartuIbuClientsCache;
 
+    }
+
+    public Cache<KBClients> kbClientsCache() {
+        if (kbClientsCache == null) {
+            kbClientsCache = new Cache<KBClients>();
+        }
+        return kbClientsCache;
     }
 
     private IbuRepository ibuRepository() {

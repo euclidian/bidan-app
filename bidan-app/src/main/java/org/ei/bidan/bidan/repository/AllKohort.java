@@ -118,4 +118,7 @@ public class AllKohort {
         return ibuRepository.findIbuWithOpenStatusByKIId(ecId);
     }
 
+    public boolean isPregnant(String kiId) {
+        return ibuRepository.isPregnant(kiId);
+    }
 }

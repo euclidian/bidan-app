@@ -4,13 +4,12 @@ import android.view.View;
 
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
+import org.ei.bidan.bidan.provider.KBClientsProvider;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
-import org.ei.bidan.bidan.view.dialog.AllKartuIbuServiceMode;
-import org.ei.bidan.bidan.view.controller.KartuIbuRegisterController;
+import org.ei.bidan.bidan.view.controller.KohortKBRegisterController;
+import org.ei.bidan.bidan.view.dialog.AllKBServiceMode;
 import org.ei.bidan.bidan.view.dialog.NoIbuSort;
 import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
-import org.ei.bidan.bidan.provider.KIClientsProvider;
-import org.ei.bidan.domain.form.FieldOverrides;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.dialog.AllClientsFilter;
@@ -20,25 +19,16 @@ import org.ei.bidan.view.dialog.DialogOptionModel;
 import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.FilterOption;
 import org.ei.bidan.view.dialog.NameSort;
-import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
-
-import static org.ei.bidan.AllConstants.FormNames.ANAK_BAYI_REGISTRATION;
-import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
-import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_CLOSE;
-import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_EDIT;
-import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_REGISTRATION;
-import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_REGISTRATION;
-import static org.ei.bidan.AllConstants.FormNames.KOHORT_KB_PELAYANAN;
 
 /**
  * Created by Dimas Ciputra on 2/18/15.
  */
-public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegisterActivity {
+public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegisterActivity {
 
     private SmartRegisterClientsProvider clientProvider = null;
-    private KartuIbuRegisterController controller;
+    private KohortKBRegisterController controller;
     private DialogOptionMapper dialogOptionMapper;
 
     private final ClientActionHandler clientActionHandler = new ClientActionHandler();
@@ -50,12 +40,6 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
     private DialogOption[] getEditOptions() {
         return new DialogOption[]{
-                new OpenFormOption(getString(R.string.str_register_kb_form), KOHORT_KB_PELAYANAN,
-                        formController),
-                new OpenFormOption(getString(R.string.str_register_anc_form), KARTU_IBU_ANC_REGISTRATION, formController),
-                new OpenFormOption(getString(R.string.str_register_anak_form), ANAK_BAYI_REGISTRATION, formController),
-                new OpenFormOption(getString(R.string.str_edit_ki_form), KARTU_IBU_EDIT, formController),
-                new OpenFormOption(getString(R.string.str_close_ki_form),KARTU_IBU_CLOSE, formController),
         };
     }
 
@@ -65,7 +49,7 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
             @Override
             public ServiceModeOption serviceMode() {
-                return new AllKartuIbuServiceMode(clientsProvider());
+                return new AllKBServiceMode(clientsProvider());
             }
 
             @Override
@@ -80,7 +64,7 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
             @Override
             public String nameInShortFormForTitle() {
-                return getResources().getString(R.string.ki_register_title_in_short);
+                return getResources().getString(R.string.kb_register_title_in_short);
             }
         };
     }
@@ -107,7 +91,7 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort(), new WifeAgeSort(), new NoIbuSort()};
+                return new DialogOption[]{new NameSort(), new WifeAgeSort()};
             }
 
             @Override
@@ -120,7 +104,7 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
     @Override
     protected SmartRegisterClientsProvider clientsProvider() {
         if (clientProvider == null) {
-            clientProvider = new KIClientsProvider(
+            clientProvider = new KBClientsProvider(
                     this, clientActionHandler, controller);
         }
         return clientProvider;
@@ -128,15 +112,15 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
     @Override
     protected void onInitialization() {
-        controller = new KartuIbuRegisterController(context.allKartuIbus(),
-                context.listCache(),context.kiClientsCache(),context.allKohort());
+        controller = new KohortKBRegisterController(context.allKartuIbus(),
+                context.listCache(),context.kbClientsCache(),context.allKohort());
         dialogOptionMapper = new DialogOptionMapper();
     }
 
     @Override
     protected void startRegistration() {
-        FieldOverrides fieldOverrides = new FieldOverrides(context.anmLocationController().getLocationJSON());
-        startFormActivity(KARTU_IBU_REGISTRATION, null, fieldOverrides.getJSONString());
+        //FieldOverrides fieldOverrides = new FieldOverrides(context.anmLocationController().getLocationJSON());
+        //startFormActivity(KARTU_IBU_REGISTRATION, null, fieldOverrides.getJSONString());
     }
 
     private class ClientActionHandler implements View.OnClickListener {

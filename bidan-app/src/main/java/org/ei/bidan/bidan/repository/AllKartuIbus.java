@@ -35,6 +35,8 @@ public class AllKartuIbus {
         return kartuIbuRepository.count();
     }
 
+    public long kbCount() { return kartuIbuRepository.kbCount(); }
+
     public List<KartuIbu> findByCaseIDs(List<String> caseIds) {
         return kartuIbuRepository.findByCaseIDs(caseIds.toArray(new String[caseIds.size()]));
     }

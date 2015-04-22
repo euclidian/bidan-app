@@ -1,0 +1,49 @@
+{
+	"form_data_definition_version": "1",
+	"form": {
+		"bind_type": "kartu_ibu",
+		"default_bind_path": "/model/instance/kohort_kb_pelayanan/",
+		"fields": [
+			{
+				"name": "id",
+				"shouldLoadValue": true
+			},
+			{
+				"name": "ALKI/HB",
+				"bind": "/model/instance/kohort_kb_pelayanan/B03011"
+			},
+			{
+				"name": "ALKI/LILA",
+				"bind": "/model/instance/kohort_kb_pelayanan/B03012"
+			},
+			{
+				"name": "ALKI/PenyakitKronis",
+				"bind": "/model/instance/kohort_kb_pelayanan/B03013"
+			},
+			{
+				"name": "ALKI/IMS",
+				"bind": "/model/instance/kohort_kb_pelayanan/B03014"
+			},
+			{
+				"name": "TanggalKunjungan",
+				"bind": "/model/instance/kohort_kb_pelayanan/B03015"
+			},	    
+			{
+				"name": "KeteranganTentangPesertaKB1",
+				"bind": "/model/instance/kohort_kb_pelayanan/B03016"
+			},
+			{
+				"name": "JenisKontrasepsi",
+				"bind": "/model/instance/kohort_kb_pelayanan/B03017"
+			},
+			{
+				"name": "KeteranganTentangPesertaKB2",
+				"bind": "/model/instance/kohort_kb_pelayanan/B03018"
+			},
+			{
+				"name": "Keterangan",
+				"bind": "/model/instance/kohort_kb_pelayanan/B03019"
+			}
+		]
+	}
+}

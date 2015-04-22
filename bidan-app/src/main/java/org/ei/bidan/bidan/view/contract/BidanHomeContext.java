@@ -12,12 +12,14 @@ public class BidanHomeContext {
     private long kartuIbuANCCount;
     private long kartuIbuPNCCount;
     private long anakCount;
+    private long kbCount;
 
     public BidanHomeContext(Bidan bidan) {
         this.kartuIbuCount = bidan.getKartuIbuCount();
         this.kartuIbuANCCount = bidan.getKartuIbuAncCount();
         this.kartuIbuPNCCount = bidan.getKartuIbuPNCCount();
         this.anakCount = bidan.getAnakCount();
+        this.kbCount = bidan.getKbCount();
     }
 
     public long getKartuIbuCount() { return kartuIbuCount; }
@@ -27,4 +29,6 @@ public class BidanHomeContext {
     public long getKartuIbuPNCCount() { return kartuIbuPNCCount; }
 
     public long getAnakCount() { return anakCount; }
+
+    public long getKBCount() { return kbCount; }
 }

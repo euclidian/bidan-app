@@ -1,0 +1,314 @@
+package org.ei.bidan.bidan.view.contract;
+
+import com.google.common.base.Strings;
+
+import org.ei.bidan.view.contract.AlertDTO;
+import org.ei.bidan.view.contract.RefillFollowUps;
+import org.ei.bidan.view.contract.SmartRegisterClient;
+
+import java.util.List;
+import java.util.Locale;
+
+import static org.ei.bidan.util.StringUtil.humanize;
+
+/**
+ * Created by Dimas Ciputra on 4/22/15.
+ */
+public class KBClient implements KISmartRegisterClient {
+
+    private String entityId;
+    private String name;
+    private String husbandName;
+    private String age;
+    private String noIbu;
+    private String village;
+    private String jenisKontrasepsi;
+    private String numPregnancies;
+    private String parity;
+    private String gravida;
+    private String abortus;
+    private String liveChild;
+    private boolean isHighPriority;
+    private String kbMethodChangeDate;
+    private String photoPath;
+    private List<AlertDTO> alerts;
+    private String IMS;
+    private String penyakitKronis;
+    private String LILA;
+    private String HB;
+    private String keterangan1;
+    private String keterangan2;
+    private String tglKunjungan;
+
+    public KBClient(String entityId, String name, String husbandName, String village, String noIbu) {
+        this.entityId = entityId;
+        this.name = name;
+        this.husbandName = husbandName;
+        this.village = village;
+        this.noIbu = noIbu;
+    }
+
+    public KBClient withAge(String age) {
+        this.age = age;
+        return this;
+    }
+
+    public KBClient withKBMethod(String jenisKontrasepsi) {
+        this.jenisKontrasepsi = jenisKontrasepsi;
+        return this;
+    }
+
+    public KBClient withParity(String parity) {
+        this.parity = parity;
+        return this;
+    }
+
+    public KBClient withGravida(String gravida) {
+        this.gravida = gravida;
+        return this;
+    }
+
+    public KBClient withAbortus(String abortus) {
+        this.abortus = abortus;
+        return this;
+    }
+
+    public KBClient withIMS(String IMS) {
+        this.IMS = IMS;
+        return this;
+    }
+
+    public KBClient withLila(String LILA) {
+        this.LILA = LILA;
+        return this;
+    }
+
+    public KBClient withPenyakitKronis(String penyakitKronis) {
+        this.penyakitKronis = penyakitKronis;
+        return this;
+    }
+
+    public KBClient withHB(String HB) {
+        this.HB = HB;
+        return this;
+    }
+
+    public KBClient withKeterangan1(String keterangan1) {
+        this.keterangan1 = keterangan1;
+        return this;
+    }
+
+    public KBClient withKeterangan2(String keterangan2) {
+        this.keterangan2 = keterangan2;
+        return this;
+    }
+
+    public KBClient withLiveChild(String liveChild) {
+        this.liveChild = liveChild;
+        return this;
+    }
+
+    public KBClient withTanggalKunjungan(String tglKunjungan) {
+        this.tglKunjungan = tglKunjungan;
+        return this;
+    }
+
+    public String getTglKunjungan() {
+        return tglKunjungan;
+    }
+
+    public String getEntityId() {
+        return entityId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getHusbandName() {
+        return husbandName;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public String getNoIbu() {
+        return noIbu;
+    }
+
+    public String getVillage() {
+        return village;
+    }
+
+    public String getJenisKontrasepsi() {
+        return Strings.isNullOrEmpty(jenisKontrasepsi) ? "-" :  humanize(jenisKontrasepsi);
+    }
+
+    public String getNumPregnancies() {
+        return numPregnancies;
+    }
+
+    public String getParity() {
+        return parity;
+    }
+
+    public String getGravida() {
+        return gravida;
+    }
+
+    public String getAbortus() {
+        return abortus;
+    }
+
+    public String getLiveChild() {
+        return liveChild;
+    }
+
+    public String getKbMethodChangeDate() {
+        return kbMethodChangeDate;
+    }
+
+    public String getPhotoPath() {
+        return photoPath;
+    }
+
+    public List<AlertDTO> getAlerts() {
+        return alerts;
+    }
+
+    public String getIMS() {
+        return Strings.isNullOrEmpty(IMS) ? "-" : IMS;
+    }
+
+    public String getPenyakitKronis() {
+        return Strings.isNullOrEmpty(penyakitKronis) ? "-" : penyakitKronis;
+    }
+
+    public String getLILA() {
+        return Strings.isNullOrEmpty(LILA) ? "-" : LILA;
+    }
+
+    public String getHB() {
+        return Strings.isNullOrEmpty(HB) ? "-" : HB;
+    }
+
+    public String getKeterangan1() {
+        return keterangan1;
+    }
+
+    public String getKeterangan2() {
+        return keterangan2;
+    }
+
+    @Override
+    public String numberOfPregnancies() {
+        return null;
+    }
+
+    @Override
+    public String parity() {
+        return null;
+    }
+
+    @Override
+    public String numberOfLivingChildren() {
+        return null;
+    }
+
+    @Override
+    public String numberOfAbortions() {
+        return null;
+    }
+
+    @Override
+    public String entityId() {
+        return null;
+    }
+
+    @Override
+    public String name() {
+        return null;
+    }
+
+    @Override
+    public String displayName() {
+        return null;
+    }
+
+    @Override
+    public String village() {
+        return village;
+    }
+
+    @Override
+    public String wifeName() {
+        return humanize(name);
+    }
+
+    @Override
+    public String husbandName() {
+        return humanize(husbandName);
+    }
+
+    @Override
+    public int age() {
+        return Integer.parseInt(age);
+    }
+
+    @Override
+    public int ageInDays() {
+        return age() / 365;
+    }
+
+    @Override
+    public String ageInString() {
+        return "(" + age() + ")";
+    }
+
+    @Override
+    public boolean isSC() {
+        return false;
+    }
+
+    @Override
+    public boolean isST() {
+        return false;
+    }
+
+    @Override
+    public boolean isHighRisk() {
+        return false;
+    }
+
+    @Override
+    public boolean isHighPriority() {
+        return false;
+    }
+
+    @Override
+    public boolean isBPL() {
+        return false;
+    }
+
+    @Override
+    public String profilePhotoPath() {
+        return null;
+    }
+
+    @Override
+    public String locationStatus() {
+        return null;
+    }
+
+    @Override
+    public boolean satisfiesFilter(String filterCriterion) {
+        return name.toLowerCase(Locale.getDefault()).startsWith(filterCriterion.toLowerCase())
+                || String.valueOf(noIbu).startsWith(filterCriterion);
+    }
+
+    @Override
+    public int compareName(SmartRegisterClient client) {
+        return this.wifeName().compareToIgnoreCase(client.wifeName());
+    }
+}
