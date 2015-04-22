@@ -28,6 +28,7 @@ import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_CLOSE;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_EDIT;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_REGISTRATION;
+import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_VISIT;
 
 /**
  * Created by Dimas Ciputra on 3/5/15.
@@ -143,6 +144,8 @@ public class NativeKIPNCSmartRegisterActivity extends BidanSecuredNativeSmartReg
 
     private DialogOption[] getEditOptions() {
         return new DialogOption[]{
+                new OpenFormOption(getString(R.string.pnc_visit),
+                        KARTU_IBU_PNC_VISIT, formController),
                 new OpenFormOption(getString(R.string.pnc_edit),
                         KARTU_IBU_PNC_EDIT, formController),
                 new OpenFormOption(getString(R.string.str_pnc_close_form),
