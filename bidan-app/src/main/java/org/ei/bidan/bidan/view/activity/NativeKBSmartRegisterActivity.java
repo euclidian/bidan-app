@@ -2,9 +2,11 @@ package org.ei.bidan.bidan.view.activity;
 
 import android.view.View;
 
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.provider.KBClientsProvider;
+import org.ei.bidan.bidan.view.contract.KBClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.bidan.view.controller.KohortKBRegisterController;
 import org.ei.bidan.bidan.view.dialog.AllKBServiceMode;
@@ -19,6 +21,7 @@ import org.ei.bidan.view.dialog.DialogOptionModel;
 import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.FilterOption;
 import org.ei.bidan.view.dialog.NameSort;
+import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
 
@@ -40,6 +43,8 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
     private DialogOption[] getEditOptions() {
         return new DialogOption[]{
+            new OpenFormOption(getString(R.string.str_kb_update),
+                    AllConstants.FormNames.KOHORT_KB_UPDATE, formController),
         };
     }
 
@@ -128,7 +133,7 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.profile_info_layout_ki:
-                    showProfileView((KartuIbuClient) view.getTag());
+                    showProfileView((KBClient) view.getTag());
                     break;
                 case R.id.btn_edit:
                     showFragmentDialog(new EditDialogOptionModel(), view.getTag());
@@ -136,7 +141,7 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
             }
         }
 
-        private void showProfileView(KartuIbuClient kartuIbuClient) {
+        private void showProfileView(KBClient kartuIbuClient) {
             navigationController.startKI(kartuIbuClient.entityId());
         }
     }

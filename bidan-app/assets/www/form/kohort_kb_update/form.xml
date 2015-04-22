@@ -19,13 +19,13 @@
 		<span lang="" class="question-label active">ALKI/ IMS</span>
 		<input type="text" name="/kohort_kb_pelayanan/B03014" data-type-xml="string" />
 	</label>
-    <label class="question non-select ">
-        <legend>
-            <span lang="" class="question-label active">Tanggal kunjungan</span>
-            <span class="required">*</span>
-        </legend>
-        <input type="date" required="required" name="/kohort_kb_pelayanan/B03015" data-type-xml="date" />
-    </label>
+	<label class="question non-select ">
+		<legend>
+			<span lang="" class="question-label active">Tanggal kunjungan</span>
+			<span class="required">*</span>
+		</legend>	
+		<input type="date" required="required" name="/kohort_kb_pelayanan/B03015" data-type-xml="date" />
+	</label>
 	<fieldset class="question ">
 		<fieldset>
 			<legend>

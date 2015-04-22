@@ -106,6 +106,7 @@ public class AllConstants {
         public static final String KARTU_IBU_ANAK_VISIT="kohort_bayi_kunjungan";
         public static final String KARTU_IBU_ANAK_CLOSE="anak_close";
         public static final String KOHORT_KB_PELAYANAN="kohort_kb_pelayanan";
+        public static final String KOHORT_KB_UPDATE="kohort_kb_update";
     }
 
     public class KIRegistrationFields {

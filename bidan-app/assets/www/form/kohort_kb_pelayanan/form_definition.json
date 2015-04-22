@@ -9,19 +9,19 @@
 				"shouldLoadValue": true
 			},
 			{
-				"name": "ALKI/HB",
+				"name": "HB",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03011"
 			},
 			{
-				"name": "ALKI/LILA",
+				"name": "LILA",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03012"
 			},
 			{
-				"name": "ALKI/PenyakitKronis",
+				"name": "PenyakitKronis",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03013"
 			},
 			{
-				"name": "ALKI/IMS",
+				"name": "IMS",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03014"
 			},
 			{

@@ -223,7 +223,7 @@ public class KBClient implements KISmartRegisterClient {
 
     @Override
     public String entityId() {
-        return null;
+        return entityId;
     }
 
     @Override
