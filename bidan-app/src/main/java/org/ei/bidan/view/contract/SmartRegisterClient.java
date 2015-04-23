@@ -103,7 +103,19 @@ public interface SmartRegisterClient {
         @Override
         public int compare(SmartRegisterClient client, SmartRegisterClient anotherClient) {
             KartuIbuClient kartuIbuClient = (KartuIbuClient) client;
-            KartuIbuClient otherKartuIbuClient = (KartuIbuClient) anotherClient;
+            KartuIbuClient anotherKartuIbuClient = (KartuIbuClient) anotherClient;
+            if (kartuIbuClient.edd() == null && anotherKartuIbuClient.edd() == null) {
+                return 0;
+            }
+
+            if (kartuIbuClient.edd() == null) {
+                return 1;
+            }
+
+            if (anotherKartuIbuClient.edd() == null) {
+                return -1;
+            }
+
             return ((KartuIbuClient) client).edd()
                     .compareTo(((KartuIbuClient) anotherClient).edd());
         }

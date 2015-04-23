@@ -133,7 +133,8 @@ public class KartuIbuClient implements KISmartRegisterClient {
     }
 
     public LocalDateTime edd() {
-        return parse(Strings.isNullOrEmpty(edd) ? "0" : edd);
+        if(Strings.isNullOrEmpty(edd)) return null;
+        return parse(edd);
     }
 
     public String getVillage() {
