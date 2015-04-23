@@ -54,6 +54,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
     private List<KIChildClient> children;
     private String kbMethod;
     private String kbStart;
+    private String IsHighRisk;
 
     public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi, String husbandName, String tglPeriksa, String edd, String village) {
         this.entityId = entityId;
@@ -273,7 +274,8 @@ public class KartuIbuClient implements KISmartRegisterClient {
 
     @Override
     public boolean isHighRisk() {
-        return false;
+        if(Strings.isNullOrEmpty(IsHighRisk)) return false;
+        return IsHighRisk.equalsIgnoreCase("ya") ? true : false;
     }
 
     @Override
@@ -369,5 +371,9 @@ public class KartuIbuClient implements KISmartRegisterClient {
 
     public String getKbStart() {
         return Strings.isNullOrEmpty(kbStart) ? "-" : kbStart;
+    }
+
+    public void setIsHighRisk(String isHighRisk) {
+        this.IsHighRisk = isHighRisk;
     }
 }

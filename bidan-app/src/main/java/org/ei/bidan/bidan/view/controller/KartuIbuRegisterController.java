@@ -67,6 +67,7 @@ public class KartuIbuRegisterController {
                             .withParity(kartuIbu.getDetails().get("Partus"))
                             .withKBInformation(kartuIbu.getDetails().get("JenisKontrasepsi")
                             , kartuIbu.getDetails().get("TanggalKunjungan"));
+                    kartuIbuClient.setIsHighRisk(kartuIbu.getDetail("IsHighRisk"));
                     updateStatusInformation(kartuIbu, kartuIbuClient);
                     updateChildrenInformation(kartuIbuClient);
                     kartuIbuClients.add(kartuIbuClient);

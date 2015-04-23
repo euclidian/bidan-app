@@ -2,6 +2,7 @@ package org.ei.bidan.bidan.view.customControls;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class BidanClientProfileView extends RelativeLayout {
     private TextView txtAgeView;
     private TextView txtVillageNameView;
     private TextView txtHusbandName;
+    private ImageView badgeHRView;
 
     @SuppressWarnings("UnusedDeclaration")
     public BidanClientProfileView(Context context) {
@@ -44,6 +46,7 @@ public class BidanClientProfileView extends RelativeLayout {
         this.txtAgeView = (TextView) findViewById(R.id.wife_age);
         this.txtHusbandName = (TextView) findViewById(R.id.txt_husband_name);
         this.txtVillageNameView = (TextView) findViewById(R.id.txt_village_name);
+        this.badgeHRView = (ImageView) findViewById(R.id.img_hr_badge);
     }
 
     public void bindData(SmartRegisterClient client, ProfilePhotoLoader photoLoader) {
@@ -52,6 +55,7 @@ public class BidanClientProfileView extends RelativeLayout {
         this.txtVillageNameView.setText(client.village() != null ? client.village() : "");
         this.txtAgeView.setText(client.ageInString() != null ? client.ageInString() : "");
         this.txtHusbandName.setText(client.husbandName() != null ? client.husbandName() : "-");
+        this.badgeHRView.setVisibility(client.isHighRisk() ? View.VISIBLE : View.GONE);
     }
 
     private boolean isAnANCClient(SmartRegisterClient client) {
