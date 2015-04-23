@@ -43,6 +43,8 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
     private DialogOption[] getEditOptions() {
         return new DialogOption[]{
+            new OpenFormOption(getString(R.string.str_kb_edit),
+                    AllConstants.FormNames.KOHORT_KB_EDIT, formController),
             new OpenFormOption(getString(R.string.str_kb_update),
                     AllConstants.FormNames.KOHORT_KB_UPDATE, formController),
         };

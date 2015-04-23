@@ -11,45 +11,55 @@
 			{
 				"name": "HB",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03011",
-                "source": "kartu_ibu.HB"
+                "source": "kartu_ibu.HB",
+                "shouldLoadValue": true
 			},
 			{
 				"name": "LILA",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03012",
-                "source": "kartu_ibu.LILA"
+                "source": "kartu_ibu.LILA",
+                "shouldLoadValue": true
 			},
 			{
 				"name": "PenyakitKronis",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03013",
-				"source":"kartu_ibu.PenyakitKronis"
+				"source":"kartu_ibu.PenyakitKronis",
+				"shouldLoadValue":true
 			},
 			{
 				"name": "IMS",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03014",
-				"source":"kartu_ibu.IMS"
+				"source":"kartu_ibu.IMS",
+				"shouldLoadValue":true
 			},
 			{
 				"name": "TanggalKunjungan",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03015"
+				"bind": "/model/instance/kohort_kb_pelayanan/B03015",
+				"shouldLoadValue":true
 			},	    
 			{
 				"name": "KeteranganTentangPesertaKB1",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03016",
-				"source": "kartu_ibu.KeteranganTentangPesertaKB1"
+				"source": "kartu_ibu.KeteranganTentangPesertaKB1",
+                "shouldLoadValue": true
 			},
 			{
 				"name": "JenisKontrasepsi",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03017",
-				"source": "kartu_ibu.JenisKontrasepsi"
+				"source": "kartu_ibu.JenisKontrasepsi",
+                "shouldLoadValue": true
 			},
 			{
 				"name": "KeteranganTentangPesertaKB2",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03018",
-				"source": "kartu_ibu.KeteranganTentangPesertaKB2"
+				"source": "kartu_ibu.KeteranganTentangPesertaKB2",
+                "shouldLoadValue": true
 			},
 			{
 				"name": "Keterangan",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03019"
+				"bind": "/model/instance/kohort_kb_pelayanan/B03019",
+				"source": "kartu_ibu.Keterangan",
+				"shouldLoadValue": true
 			}
 		]
 	}
