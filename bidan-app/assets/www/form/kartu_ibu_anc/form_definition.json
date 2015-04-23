@@ -42,6 +42,16 @@
                 "source": "kartu_ibu.ibu.TB"
             },
             {
+                "name": "berat_badan",
+                "bind": "/model/instance/Register_ANC_only/B02013",
+                "source": "kartu_ibu.ibu.berat_badan"
+            },
+            {
+                "name": "lila",
+                "bind": "/model/instance/Register_ANC_only/B02012",
+                "source": "kartu_ibu.ibu.lila"
+            },
+            {
                 "name": "BukuKIA",
                 "bind": "/model/instance/Register_ANC_only/B01032",
                 "source": "kartu_ibu.ibu.BukuKIA"

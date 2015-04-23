@@ -52,6 +52,12 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     private String kunjungan;
     private String ttImunisasi;
     private String usiaKlinis;
+    private String BB;
+    private String TB;
+    private String beratBadan;
+    private String LILA;
+    private String penyakitKronis;
+    private String alergi;
 
     private List<AlertDTO> alerts;
     private List<ServiceProvidedDTO> services_provided;
@@ -296,4 +302,51 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
         return this;
     }
 
+    public String getTB() {
+        return TB;
+    }
+
+    public void setTB(String TB) {
+        this.TB = TB;
+    }
+
+    public String getBB() {
+        return BB;
+    }
+
+    public void setBB(String BB) {
+        this.BB = BB;
+    }
+
+    public String getBeratBadan() {
+        return beratBadan;
+    }
+
+    public void setBeratBadan(String beratBadan) {
+        this.beratBadan = beratBadan;
+    }
+
+    public String getLILA() {
+        return LILA;
+    }
+
+    public void setLILA(String LILA) {
+        this.LILA = LILA;
+    }
+
+    public String getPenyakitKronis() {
+        return penyakitKronis;
+    }
+
+    public void setPenyakitKronis(String penyakitKronis) {
+        this.penyakitKronis = penyakitKronis;
+    }
+
+    public String getAlergi() {
+        return alergi;
+    }
+
+    public void setAlergi(String alergi) {
+        this.alergi = alergi;
+    }
 }

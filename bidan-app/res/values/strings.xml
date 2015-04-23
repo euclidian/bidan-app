@@ -350,5 +350,6 @@
     <string name="header_kontrasepsi">KONTRASEPSI</string>
     <string name="header_rencana">RENCANA</string>
     <string name="header_tanda_vital">TANDA VITAL</string>
+    <string name="header_pemeriksaan">PEMERIKSAAN</string>
 
 </resources>

@@ -40,24 +40,24 @@ public class KartuIbuANCOverviewServiceMode extends BidanServiceModeOption {
         return new SecuredNativeSmartRegisterActivity.ClientsHeaderProvider() {
             @Override
             public int count() {
-                return 8;
+                return 7;
             }
 
             @Override
             public int weightSum() {
-                return 100;
+                return 1000;
             }
 
             @Override
             public int[] weights() {
-                return new int[]{24, 9, 12, 12, 12, 10, 12, 9};
+                return new int[]{244, 100, 110, 120, 190, 135, 95};
             }
 
             @Override
             public int[] headerTextResourceIds() {
                 return new int[]{
-                        R.string.header_name, R.string.header_id, R.string.header_anc_status,
-                        R.string.header_resiko, R.string.header_trimester, R.string.header_tt_imunisasi,
+                        R.string.header_name, R.string.header_id, R.string.header_status,
+                        R.string.header_pemeriksaan, R.string.header_resiko,
                         R.string.header_edd, R.string.header_edit};
             }
         };

@@ -56,6 +56,13 @@ public class KartuIbuANCRegisterController {
                             .withTTImunisasiData(anc.getDetail("StatusImunisasiTT"))
                             .withUsiaKlinisData(anc.getDetail("UsiaKlinis"));
 
+                    kartuIbuClient.setBB(anc.getDetail("BB"));
+                    kartuIbuClient.setTB(anc.getDetail("TB"));
+                    kartuIbuClient.setLILA(anc.getDetail("berat_badan"));
+                    kartuIbuClient.setBeratBadan(anc.getDetail("lila"));
+                    kartuIbuClient.setPenyakitKronis(anc.getDetail("PenyakitKronis"));
+                    kartuIbuClient.setAlergi(anc.getDetail("Alergi"));
+
                     ancClients.add(kartuIbuClient);
                 }
                 sortByName(ancClients);
