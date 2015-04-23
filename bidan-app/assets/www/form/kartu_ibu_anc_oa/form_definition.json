@@ -133,6 +133,11 @@
                 "bind": "/model/instance/Register_ANC/B02008"
             },
             {
+                "name": "ibuId",
+                "shouldLoadValue": true,
+                "source": "kartu_ibu.ibu.id"
+            },
+            {
                 "name": "referenceDate",
                 "bind": "/model/instance/Register_ANC/B01026",
                 "source" : "kartu_ibu.ibu.referenceDate"

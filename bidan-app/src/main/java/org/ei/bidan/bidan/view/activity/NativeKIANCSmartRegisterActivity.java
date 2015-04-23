@@ -26,6 +26,7 @@ import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_CLOSE;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_EDIT;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_PARTOGRAF;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_RENCANA_PERSALINAN;
+import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_VISIT;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_REGISTRATION;
 
 /**
@@ -85,6 +86,8 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
                         KARTU_IBU_ANC_RENCANA_PERSALINAN, formController),
                 new OpenFormOption(getString(R.string.str_register_anc_partograf_form),
                         KARTU_IBU_ANC_PARTOGRAF, formController),
+                new OpenFormOption("ANC Visit",
+                        KARTU_IBU_ANC_VISIT, formController),
                 new OpenFormOption(getString(R.string.str_register_pnc_form),
                         KARTU_IBU_PNC_REGISTRATION, formController),
                 new OpenFormOption(getString(R.string.anc_edit),

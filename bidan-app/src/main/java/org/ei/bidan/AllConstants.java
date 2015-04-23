@@ -117,6 +117,7 @@ public class AllConstants {
         public static final String BAYI_NEONATAL_PERIOD="bayi_neonatal_period";
         public static final String KOHORT_BAYI_EDIT="kohort_bayi_edit";
         public static final String KOHORT_BAYI_MONITORING="bayi_growth_and_nutrition_monitoring";
+        public static final String KARTU_IBU_ANC_VISIT="kartu_ibu_anc_visit";
     }
 
     public class KIRegistrationFields {

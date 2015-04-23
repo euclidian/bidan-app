@@ -9,6 +9,11 @@
                 "shouldLoadValue": true
             },
             {
+                "name": "kiId",
+                "shouldLoadValue": true,
+                "source": "ibu.kartu_ibu.id"
+            },
+            {
                 "name": "referenceDate",
                 "bind": "/model/instance/Register_ANC_only/B01026",
                 "source": "ibu.referenceDate",
@@ -23,6 +28,7 @@
             {
                 "name": "EDD",
                 "bind": "/model/instance/Register_ANC_only/B01028",
+                "source" : "ibu.kartu_ibu.EDD",
 				"shouldLoadValue": true
             },
             {

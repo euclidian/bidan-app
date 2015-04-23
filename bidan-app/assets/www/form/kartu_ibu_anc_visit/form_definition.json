@@ -1,7 +1,7 @@
 {
     "form_data_definition_version": "1",
     "form": {
-        "bind_type": "kartu_ibu",
+        "bind_type": "ibu",
         "default_bind_path": "/model/instance/Register_ANC_only/",
         "fields": [
             {
@@ -9,72 +9,86 @@
                 "shouldLoadValue": true
             },
             {
-                "name": "motherId",
-                "source": "kartu_ibu.ibu.id"
+                "name": "kiId",
+                "shouldLoadValue": true,
+                "source": "ibu.kartu_ibu.id"
             },
             {
                 "name": "referenceDate",
                 "bind": "/model/instance/Register_ANC_only/B01026",
-                "source": "kartu_ibu.ibu.referenceDate"
+                "source": "ibu.referenceDate"
+            
             },
             {
                 "name": "TanggalHPHT",
                 "bind": "/model/instance/Register_ANC_only/B01027",
-                "source": "kartu_ibu.ibu.TanggalHPHT"
+                "source": "ibu.TanggalHPHT"
+            
             },
             {
                 "name": "EDD",
-                "bind": "/model/instance/Register_ANC_only/B01028"
+                "bind": "/model/instance/Register_ANC_only/B01028",
+                "source" : "ibu.kartu_ibu.EDD"
+            
             },
             {
                 "name": "PersalinanSebelumnya",
                 "bind": "/model/instance/Register_ANC_only/B01029",
-                "source": "kartu_ibu.ibu.PersalinanSebelumnya"
+                "source": "ibu.PersalinanSebelumnya"
+            
             },
             {
                 "name": "BB",
                 "bind": "/model/instance/Register_ANC_only/B01030",
-                "source": "kartu_ibu.ibu.BB"
+                "source": "ibu.BB"
+            
             },
             {
                 "name": "TB",
                 "bind": "/model/instance/Register_ANC_only/B01031",
-                "source": "kartu_ibu.ibu.TB"
+                "source": "ibu.TB"
+            
             },
             {
                 "name": "BukuKIA",
                 "bind": "/model/instance/Register_ANC_only/B01032",
-                "source": "kartu_ibu.ibu.BukuKIA"
+                "source": "ibu.BukuKIA"
+            
             },
             {
                 "name": "RiwayatKomplikasiKebidanan",
                 "bind": "/model/instance/Register_ANC_only/B01033",
-                "source": "kartu_ibu.ibu.RiwayatKomplikasiKebidanan"
+                "source": "ibu.RiwayatKomplikasiKebidanan"
+            
             },
             {
                 "name": "PenyakitKronis",
                 "bind": "/model/instance/Register_ANC_only/B01034",
-                "source": "kartu_ibu.ibu.PenyakitKronis"
+                "source": "ibu.PenyakitKronis"
+            
             },
             {
                 "name": "Alergi",
                 "bind": "/model/instance/Register_ANC_only/B01035",
-                "source": "kartu_ibu.ibu.Alergi"
+                "source": "ibu.Alergi"
+            
             },
             {
                 "name": "TBrisk",
                 "bind": "/model/instance/Register_ANC_only/TB_risk",
-                "source": "kartu_ibu.ibu.TBrisk"
+                "source": "ibu.TBrisk"
+            
             },
             {
                 "name": "ishighrisk",
                 "bind": "/model/instance/Register_ANC_only/is_high_risk",
-                "source": "kartu_ibu.ibu.ishighrisk"
+                "source": "ibu.ishighrisk"
+            
             },
             {
                  "name": "type",
                  "value": "ANC",
-                 "source": "kartu_ibu.ibu.type"
+                 "source": "ibu.type"
             },
             {
                 "name": "isOutOfArea",
@@ -83,7 +97,7 @@
             {
                 "name": "isClosed",
                 "value": "false",
-                "source": "kartu_ibu.ibu.isClosed"
+                "source": "ibu.isClosed"
             },
             {
                 "name": "submissionDate",
