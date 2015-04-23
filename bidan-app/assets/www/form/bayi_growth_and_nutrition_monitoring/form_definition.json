@@ -1,0 +1,36 @@
+{
+    "form_data_definition_version": "1",
+    "form": {
+        "bind_type": "anak",
+        "default_bind_path": "/model/instance/baby_Growth_and_nutrition_monitoring/",
+        "fields": [
+            {
+                "name": "id",
+                "shouldLoadValue": true
+            },
+            {
+                "name": "TanggalKunjunganBayiperbulan",
+                "bind": "/model/instance/baby_Growth_and_nutrition_monitoring/today"
+		
+            },
+            {
+                "name": "BeratBadanBayiPerBulan",
+                "bind": "/model/instance/baby_Growth_and_nutrition_monitoring/B04029"
+		
+            },
+            {
+                "name": "PemberianAsiEksklusif",
+                "bind": "/model/instance/baby_Growth_and_nutrition_monitoring/B04030"
+		
+            },
+            {
+                "name": "HasilDilakukannyaKPSP",
+                "bind": "/model/instance/baby_Growth_and_nutrition_monitoring/B04031"
+            },
+            {
+                "name": "TanggalPemberianVitA6bulan",
+                "bind": "/model/instance/baby_Growth_and_nutrition_monitoring/B04032"
+            }
+        ]
+    }
+}

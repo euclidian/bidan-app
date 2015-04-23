@@ -139,8 +139,16 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
 
     private DialogOption[] getEditOptions() {
         return new DialogOption[]{
+                new OpenFormOption("Edit Data",
+                        KOHORT_BAYI_EDIT, formController),
+                new OpenFormOption("Monitoring Pertumbuhan dan Nutrisi",
+                        KOHORT_BAYI_MONITORING, formController),
                 new OpenFormOption("Balita Data",
                         BALITA_KUNJUNGAN, formController),
+                new OpenFormOption("Imunisasi Bayi",
+                        BAYI_IMUNISASI, formController),
+                new OpenFormOption("Bayi Neonatal Period",
+                        BAYI_NEONATAL_PERIOD, formController),
                 new OpenFormOption(getString(R.string.str_kunjungan_anak),
                         KARTU_IBU_ANAK_VISIT, formController),
                 new OpenFormOption(getString(R.string.str_tutup_anak),

@@ -113,6 +113,10 @@ public class AllConstants {
         public static final String KARTU_IBU_PNC_VISIT="kartu_ibu_pnc_visit";
         public static final String BALITA_KUNJUNGAN="balita_kunjungan";
         public static final String KOHORT_KB_EDIT="kohort_kb_edit";
+        public static final String BAYI_IMUNISASI="bayi_immunization";
+        public static final String BAYI_NEONATAL_PERIOD="bayi_neonatal_period";
+        public static final String KOHORT_BAYI_EDIT="kohort_bayi_edit";
+        public static final String KOHORT_BAYI_MONITORING="bayi_growth_and_nutrition_monitoring";
     }
 
     public class KIRegistrationFields {
