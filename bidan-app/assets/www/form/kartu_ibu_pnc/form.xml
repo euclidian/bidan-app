@@ -186,7 +186,7 @@
                     <span lang="" class="option-label active">Dr.Umum (DU) Dr.Spesialis (DS)</span>
                 </label>
                 <label class="">
-                    <input type="radio" name="/dokumentasi_persalinan/B01106" data-name="/dokumentasi_persalinan/B01106" value="lain-lain" data-type-xml="select1" />
+                    <input type="radio" name="/dokumentasi_persalinan/B01106" data-name="/dokumentasi_persalinan/B01106" value="lain_lain" data-type-xml="select1" />
                     <span lang="" class="option-label active">Lain-Lain (LN)</span>
                 </label>
                 <label class="">
@@ -196,10 +196,18 @@
             </div>
         </fieldset>
     </fieldset>
-    <label class="question non-select ">
-        <span lang="" class="question-label active">Penolong/lain-lain (LN)</span>
-        <input type="text" name="/dokumentasi_persalinan/B01107" data-type-xml="string" />
-    </label>
+
+    <fieldset class="question or-branch pre-init ">
+        <fieldset>
+            <label class="question non-select ">
+                <span lang="" class="question-label active">Penolong/lain-lain (LN)</span>
+                <input type="text"
+                    data-relevant="( /dokumentasi_persalinan/B01106  = 'lain_lain')"
+                    name="/dokumentasi_persalinan/B01107" data-type-xml="string" />
+            </label>
+        </fieldset>
+    </fieldset>
+
     <fieldset class="question ">
         <fieldset>
             <legend>
@@ -296,10 +304,17 @@
             </div>
         </fieldset>
     </fieldset>
-    <label class="question non-select ">
-        <span lang="" class="question-label active">Komplikasi/lain-lain (LN)</span>
-        <input type="text" name="/dokumentasi_persalinan/B01113" data-type-xml="string" />
-    </label>
+    <fieldset class="question or-branch pre-init ">
+        <fieldset>
+            <label class="question non-select ">
+                <span lang="" class="question-label active">Komplikasi/lain-lain (LN)</span>
+                <input type="text"
+                    data-relevant="( /dokumentasi_persalinan/B01112  = 'lain_lain')"
+                    name="/dokumentasi_persalinan/B01113" data-type-xml="string" />
+            </label>
+        </fieldset>
+    </fieldset>
+
     <fieldset class="question ">
         <fieldset>
             <legend>
@@ -323,7 +338,7 @@
                     <span lang="" class="option-label active">Rumah Sakit (RS)</span>
                 </label>
                 <label class="">
-                    <input type="radio" name="/dokumentasi_persalinan/B01114" data-name="/dokumentasi_persalinan/B01114" value="lain-lain" data-type-xml="select1" />
+                    <input type="radio" name="/dokumentasi_persalinan/B01114" data-name="/dokumentasi_persalinan/B01114" value="lain_lain" data-type-xml="select1" />
                     <span lang="" class="option-label active">Lain-lain (LN)</span>
                 </label>
                 <label class="">
@@ -333,10 +348,18 @@
             </div>
         </fieldset>
     </fieldset>
-    <label class="question non-select ">
-        <span lang="" class="question-label active">Dirujuk Ke/lain-lain</span>
-        <input type="text" name="/dokumentasi_persalinan/B01115" data-type-xml="string" />
-    </label>
+
+    <fieldset class="question or-branch pre-init ">
+        <fieldset>
+            <label class="question non-select ">
+                <span lang="" class="question-label active">Dirujuk Ke/lain-lain)</span>
+                <input type="text"
+                    data-relevant="( /dokumentasi_persalinan/B01114  = 'lain_lain')"
+                    name="/dokumentasi_persalinan/B01115" data-type-xml="string" />
+            </label>
+        </fieldset>
+    </fieldset>
+
     <label class="question non-select ">
         <span lang="" class="question-label active">Alamat Bersalin</span>
         <input type="text" name="/dokumentasi_persalinan/B01116" data-type-xml="string" />
