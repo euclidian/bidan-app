@@ -66,11 +66,11 @@
     </label>
     <label class="question non-select ">
         <span lang="" class="question-label active">Hasil Pemeriksaan / LILA</span>
-        <input type="number" name="/Register_ANC_only/B02012" data-type-xml="int" />
+        <input type="number" name="/Register_ANC_only/B02012" data-constraint=".&lt;500" data-type-xml="decimal" />
     </label>
     <label class="question non-select ">
         <span lang="" class="question-label active">Hasil Pemeriksaan / Berat Badan</span>
-        <input type="number" name="/Register_ANC_only/B02013" data-type-xml="int" />
+        <input type="number" name="/Register_ANC_only/B02013" data-type-xml="decimal" />
     </label>
     <label class="question non-select ">
         <span lang="" class="question-label active">Riwayat Komplikasi Kebidanan</span>

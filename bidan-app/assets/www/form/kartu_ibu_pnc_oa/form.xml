@@ -284,7 +284,7 @@
     </fieldset>
     <label class="question non-select ">
         <span lang="" class="question-label active">Berat Bayi</span>
-        <input type="number" name="/register_pnc/B01096" data-type-xml="int" />
+        <input type="number" name="/register_pnc/B01096" data-type-xml="decimal" />
     </label>
     <label class="question non-select ">
         <span lang="" class="question-label active">Tanggal / Kala I Aktif</span>
@@ -622,7 +622,7 @@
     </fieldset>
     <label class="question non-select ">
         <span lang="" class="question-label active">Berat Lahir</span>
-        <input type="number" name="/register_pnc/B04011" data-type-xml="int" />
+        <input type="number" name="/register_pnc/B04011" data-type-xml="decimal" />
     </label>
     <fieldset class="question or-branch pre-init ">
         <fieldset>

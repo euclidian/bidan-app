@@ -303,7 +303,7 @@
     </fieldset>
     <label class="question or-branch pre-init non-select ">
         <span lang="" class="question-label active">Laboratorium / Periksa Hb / Hasil</span>
-        <input type="number" name="/anc_visit/B01065" data-constraint=".&lt;1000" data-relevant=" /anc_visit/B01064  = 'Ya'" data-type-xml="int" />
+        <input type="number" name="/anc_visit/B01065" data-constraint=".&lt;1000" data-relevant=" /anc_visit/B01064  = 'Ya'" data-type-xml="decimal" />
     </label>
     <fieldset class="question or-branch pre-init ">
         <fieldset>
