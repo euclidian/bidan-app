@@ -95,6 +95,7 @@
     <string name="str_out_of_area">(O/A)</string>
 
     <string name="sort_by_name_label">Name (A to Z)</string>
+    <string name="sort_by_name_label_reverse">Name (Z to A)</string>
     <string name="sort_by_wife_age_label">Age</string>
     <string name="sort_by_no_ibu_label">Mother Number</string>
     <string name="sort_by_ec_number_label">EC Number</string>

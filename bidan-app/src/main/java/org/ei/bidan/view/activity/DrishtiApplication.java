@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import org.acra.ACRA;
 import org.acra.ReportingInteractionMode;
 import org.acra.annotation.ReportsCrashes;
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.Context;
 import org.ei.bidan.sync.DrishtiSyncScheduler;
 
@@ -50,7 +51,9 @@ public class DrishtiApplication extends Application {
     private void applyUserLanguagePreference() {
         Configuration config = getBaseContext().getResources().getConfiguration();
 
-        String lang = context.allSharedPreferences().fetchLanguagePreference();
+        //String lang = context.allSharedPreferences().fetchLanguagePreference();
+        String lang = AllConstants.INDONESIA_LOCALE;
+        context.allSharedPreferences().saveLanguagePreference(lang);
         if (!"".equals(lang) && !config.locale.getLanguage().equals(lang)) {
             locale = new Locale(lang);
             updateConfiguration(config);

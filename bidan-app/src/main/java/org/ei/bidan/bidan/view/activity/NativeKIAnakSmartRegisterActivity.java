@@ -18,6 +18,7 @@ import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.FilterOption;
 import org.ei.bidan.view.dialog.NameSort;
 import org.ei.bidan.view.dialog.OpenFormOption;
+import org.ei.bidan.view.dialog.ReverseNameSort;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
 
@@ -88,7 +89,7 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort()};
+                return new DialogOption[]{new NameSort(), new ReverseNameSort()};
             }
 
             @Override
