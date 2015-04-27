@@ -155,6 +155,7 @@
 
     <string name="child_register_title_in_short">Child:</string>
     <string name="child_service_mode_overview">Overview</string>
+    <string name="child_service_mode_immunization">Immunization</string>
     <string name="child_service_mode_immunization_0_to_9">Immunization 0-9</string>
     <string name="child_service_mode_immunization_9_plus">Immunization 9+</string>
     <string name="header_id_no">ID NO</string>
@@ -349,5 +350,15 @@
     <string name="header_rencana">Plan</string>
     <string name="header_tanda_vital">Vital Sign</string>
     <string name="header_pemeriksaan">Examination</string>
+
+    <string name="header_imunisasi_hb07">Hb</string>
+    <string name="header_imunisasi_bcg_polio1">BCG/Pol1</string>
+    <string name="header_imunisasi_dpt_hb1_polio2">DPT/HB1/Pol2</string>
+    <string name="header_imunisasi_dpt_hb2_polio3">DPT/HB2/Pol3</string>
+    <string name="header_imunisasi_dpt_hb3_polio4">DPT/HB3/Pol4</string>
+    <string name="header_imunisasi_campak">Campak</string>
+
+    <string name="str_imunisasi_bayi">"Baby Immunization"</string>
+
 
 </resources>
