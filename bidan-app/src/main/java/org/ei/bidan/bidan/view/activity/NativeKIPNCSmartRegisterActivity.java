@@ -11,12 +11,14 @@ import org.ei.bidan.bidan.view.controller.KartuIbuANCRegisterController;
 import org.ei.bidan.bidan.view.controller.KartuIbuPNCRegisterController;
 import org.ei.bidan.bidan.view.dialog.KartuIbuANCOverviewServiceMode;
 import org.ei.bidan.bidan.view.dialog.KartuIbuPNCOverviewServiceMode;
+import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
 import org.ei.bidan.domain.form.FieldOverrides;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.dialog.AllClientsFilter;
 import org.ei.bidan.view.dialog.DialogOption;
 import org.ei.bidan.view.dialog.DialogOptionModel;
+import org.ei.bidan.view.dialog.DusunSort;
 import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.FilterOption;
 import org.ei.bidan.view.dialog.NameSort;
@@ -85,7 +87,7 @@ public class NativeKIPNCSmartRegisterActivity extends BidanSecuredNativeSmartReg
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort()};
+                return new DialogOption[]{new NameSort(), new WifeAgeSort(), new DusunSort()};
             }
 
             @Override

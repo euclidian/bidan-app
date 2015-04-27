@@ -1,6 +1,5 @@
 package org.ei.bidan.view.contract;
 
-import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.bidan.view.contract.KartuIbuANCClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.util.IntegerUtil;
@@ -13,6 +12,22 @@ public interface SmartRegisterClient {
         @Override
         public int compare(SmartRegisterClient client, SmartRegisterClient anotherClient) {
             return client.compareName(anotherClient);
+        }
+    };
+
+    Comparator<SmartRegisterClient> VILLAGE_COMPARATOR = new Comparator<SmartRegisterClient>() {
+        @Override
+        public int compare(SmartRegisterClient client, SmartRegisterClient otherClient) {
+            if (client.village() == null && otherClient.village() == null) {
+                return 0;
+            }
+            if (client.village() == null) {
+                return 1;
+            }
+            if (otherClient.village() == null) {
+                return -1;
+            }
+            return client.village().compareToIgnoreCase(otherClient.village());
         }
     };
 

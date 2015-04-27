@@ -105,6 +105,7 @@
     <string name="sort_by_high_risk_pregnancy_label">HRP</string>
     <string name="sort_by_high_risk_label">High Risk (HR)</string>
     <string name="sort_by_bpl_label">BPL</string>
+    <string name="sort_by_dusun">Dusun</string>
 
     <string name="filter_by_all_label">All</string>
     <string name="filter_by_out_of_area_label">O/A</string>

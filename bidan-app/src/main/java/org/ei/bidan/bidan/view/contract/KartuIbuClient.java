@@ -137,10 +137,6 @@ public class KartuIbuClient implements KISmartRegisterClient {
         return parse(edd);
     }
 
-    public String getVillage() {
-        return village;
-    }
-
     @Override
     public String numberOfPregnancies() {
         return Strings.isNullOrEmpty(numberOfPregnancies) ? "-" : numberOfPregnancies;
@@ -235,7 +231,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
 
     @Override
     public String village() {
-        return getVillage();
+        return village;
     }
 
     @Override

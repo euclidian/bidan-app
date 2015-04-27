@@ -59,7 +59,7 @@ public class KartuIbuRegisterController {
                             kartuIbu.getDetails().get("Namalengkap"), kartuIbu.getDetails().get("Umur"),
                             kartuIbu.getDetails().get("GolonganDarah"), kartuIbu.getDetails().get("RiwayatKomplikasiKebidanan"),
                             kartuIbu.getDetails().get("Namasuami"), kartuIbu.getDetails().get("TanggalPeriksa"),
-                            kartuIbu.getDetail("EDD"), kartuIbu.getDetails().get("Desa"))
+                            kartuIbu.getDetail("EDD"), kartuIbu.getDetails().get("Dusun"))
                             .withDateOfBirth(kartuIbu.getDetails().get("Tanggallahir"))
                             .withNumberOfLivingChildren(kartuIbu.getDetails().get("Hidup"))
                             .withNumberOfPregnancies(kartuIbu.getDetails().get("Gravida"))
