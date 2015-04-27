@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="userNameEditText">Masukan user name</string>
+    <string name="passwordEditText">Masukan kata kunci</string>
+    <string name="login_text">Log Masuk</string>
+    <string name="image_description">logo</string>
+    <string name="spacer">spacer</string>
+    <string name="loggin_in_dialog_title">Memuat…</string>
+    <string name="loggin_in_dialog_message">Tolong tunggu</string>
+    <string name="login_failed_dialog_title">Log masuk gagal</string>
+    <string name="login_failed_dialog_message">Tolong cek masukan, apa sudah benar</string>
+    <string name="form_back_confirm_dialog_message">
+        Apa kamu yakin untuk kembali? Semua data yang telah dimasukan di form ini akan di hapus.
+    </string>
+    <string name="form_back_confirm_dialog_title">Konfirmasi penutupan form</string>
+    <string name="yes_button_label">Iya</string>
+    <string name="no_button_label">Tidak</string>
+
+
+    <string name="sort_by_name_label">Nama (A ke Z)</string>
+    <string name="sort_by_high_risk_label">Resiko Tinggi (RT)</string>
+    <string name="sort_by_no_ibu_label">No Ibu</string>
+    <string name="sort_by_edd_label">Hari Tafsiran Persalinan (HTP)</string>
+</resources>

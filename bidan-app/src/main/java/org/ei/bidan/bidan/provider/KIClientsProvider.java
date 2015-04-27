@@ -59,8 +59,8 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
                 (int) context.getResources().getDimension(R.dimen.list_item_height));
 
 
-        maleChildAgeFormatString = context.getResources().getString(R.string.ki_register_male_child);
-        femaleChildAgeFormatString = context.getResources().getString(R.string.ki_register_female_child);
+        maleChildAgeFormatString = context.getResources().getString(R.string.ec_register_male_child);
+        femaleChildAgeFormatString = context.getResources().getString(R.string.ec_register_female_child);
 
     }
 

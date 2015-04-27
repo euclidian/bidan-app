@@ -12,8 +12,10 @@ public class AllConstants {
     public static final String LANGUAGE_PREFERENCE_KEY = "locale";
     public static final String ENGLISH_LOCALE = "en";
     public static final String KANNADA_LOCALE = "kn";
+    public static final String INDONESIA_LOCALE = "in";
     public static final String DEFAULT_LOCALE = ENGLISH_LOCALE;
     public static final String ENGLISH_LANGUAGE = "English";
+    public static final String INDONESIA_LANGUAGE = "Indonesia";
     public static final String KANNADA_LANGUAGE = "Kannada";
     public static final String IS_SYNC_IN_PROGRESS_PREFERENCE_KEY = "isSyncInProgress";
     public static final String TYPE = "type";

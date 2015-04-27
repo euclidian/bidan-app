@@ -54,7 +54,7 @@
             android:icon="@drawable/ic_bidan_logo"
             android:clearTaskOnLaunch="true"
             android:name=".view.activity.DrishtiApplication"
-            android:largeHeap="true">
+            android:largeHeap="true" >
         <activity
                 android:name=".view.activity.LoginActivity"
                 android:theme="@android:style/Theme.Holo.NoActionBar"
