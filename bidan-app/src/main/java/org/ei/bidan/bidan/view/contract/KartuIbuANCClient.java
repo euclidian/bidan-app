@@ -237,6 +237,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     @Override
     public boolean satisfiesFilter(String filterCriterion) {
         return name.toLowerCase(Locale.getDefault()).startsWith(filterCriterion.toLowerCase())
+                || husbandName.toLowerCase(Locale.getDefault()).startsWith(filterCriterion.toLowerCase())
                 || String.valueOf(kiNumber).startsWith(filterCriterion)
                 || String.valueOf(puskesmas).startsWith(filterCriterion);
     }

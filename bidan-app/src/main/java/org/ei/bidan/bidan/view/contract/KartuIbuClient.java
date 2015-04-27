@@ -308,6 +308,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
     @Override
     public boolean satisfiesFilter(String filterCriterion) {
         return wifeName.toLowerCase(Locale.getDefault()).startsWith(filterCriterion.toLowerCase())
+                || husbandName.toLowerCase(Locale.getDefault()).startsWith(filterCriterion.toLowerCase())
                 || String.valueOf(noIbu).startsWith(filterCriterion)
                 || String.valueOf(puskesmas).startsWith(filterCriterion);
     }

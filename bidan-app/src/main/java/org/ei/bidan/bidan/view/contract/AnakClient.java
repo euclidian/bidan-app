@@ -156,6 +156,7 @@ public class AnakClient implements SmartRegisterClient{
     public boolean satisfiesFilter(String filterCriterion) {
         return (!isBlank(name) && name.toLowerCase().startsWith(filterCriterion.toLowerCase()))
                 || (!isBlank(motherName) && motherName.toLowerCase().startsWith(filterCriterion.toLowerCase()))
+                || (!isBlank(fatherName) && fatherName.toLowerCase().startsWith(filterCriterion.toLowerCase()))
                 || String.valueOf(kiNumber).startsWith(filterCriterion);
     }
 

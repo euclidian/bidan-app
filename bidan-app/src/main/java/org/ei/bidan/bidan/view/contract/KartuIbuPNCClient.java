@@ -9,6 +9,7 @@ import org.joda.time.LocalDateTime;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import static org.ei.bidan.util.StringUtil.humanize;
@@ -218,7 +219,10 @@ public class KartuIbuPNCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public boolean satisfiesFilter(String filterCriterion) {
-        return false;
+        return name.toLowerCase(Locale.getDefault()).startsWith(filterCriterion.toLowerCase())
+                || husbandName.toLowerCase(Locale.getDefault()).startsWith(filterCriterion.toLowerCase())
+                || String.valueOf(kiNumber).startsWith(filterCriterion)
+                || String.valueOf(puskesmas).startsWith(filterCriterion);
     }
 
     @Override
