@@ -62,6 +62,7 @@ public class KartuIbuANCRegisterController {
                     kartuIbuClient.setBeratBadan(anc.getDetail("lila"));
                     kartuIbuClient.setPenyakitKronis(anc.getDetail("PenyakitKronis"));
                     kartuIbuClient.setAlergi(anc.getDetail("Alergi"));
+                    kartuIbuClient.setIsHighRisk(ki.getDetail("IsHighRisk"));
 
                     ancClients.add(kartuIbuClient);
                 }

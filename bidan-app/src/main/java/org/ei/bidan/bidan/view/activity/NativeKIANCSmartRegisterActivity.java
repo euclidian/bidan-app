@@ -17,6 +17,7 @@ import org.ei.bidan.view.dialog.DialogOption;
 import org.ei.bidan.view.dialog.DialogOptionModel;
 import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.FilterOption;
+import org.ei.bidan.view.dialog.HighRiskSort;
 import org.ei.bidan.view.dialog.NameSort;
 import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
@@ -113,7 +114,7 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort(), new EstimatedDateOfDeliverySortKIANC()};
+                return new DialogOption[]{new NameSort(), new EstimatedDateOfDeliverySortKIANC(), new HighRiskSort()};
             }
 
             @Override

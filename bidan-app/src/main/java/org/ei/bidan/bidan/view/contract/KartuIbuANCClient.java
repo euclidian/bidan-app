@@ -211,7 +211,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public boolean isHighRisk() {
-        return false;
+        return isHighRisk;
     }
 
     @Override
@@ -350,4 +350,13 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     public void setAlergi(String alergi) {
         this.alergi = alergi;
     }
+
+    public void setIsHighRisk(String isHighRisk) {
+        if(Strings.isNullOrEmpty(isHighRisk)) {
+            this.isHighRisk = false;
+            return;
+        }
+        this.isHighRisk = isHighRisk.equalsIgnoreCase("ya") ? true : false;
+    }
+
 }
