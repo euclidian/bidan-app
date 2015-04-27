@@ -74,7 +74,6 @@ public class KartuIbuPNCClientsProvider implements SmartRegisterClientsProvider 
         setupClientProfileView(kartuIbuClient, viewHolder);
         setupIdDetailsView(kartuIbuClient, viewHolder);
         setupPNCPlan(kartuIbuClient, viewHolder);
-        setupHighlightColor(itemView, Integer.parseInt(""+viewGroup.getTag())+1);
         setupKomplikasiView(kartuIbuClient, viewHolder);
         setupMetodeKontrasepsiView(kartuIbuClient, viewHolder);
         setupTandaVitalView(kartuIbuClient, viewHolder);

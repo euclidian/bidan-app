@@ -26,7 +26,7 @@ public class NativeKIANCRegisterViewHolder {
     private final TextView lblPenyakitKronis;
     private final TextView alergi;
     private final TextView lblAlergi;
-    private final LinearLayout layoutResikoANC;
+    private final ViewGroup layoutResikoANC;
     private final ImageButton editButton;
     private final TextView edd;
 
@@ -43,7 +43,7 @@ public class NativeKIANCRegisterViewHolder {
         this.lblPenyakitKronis = (TextView) itemView.findViewById(R.id.lbl_ki_anc_penyakit_kronis);
         this.alergi = (TextView) itemView.findViewById(R.id.txt_ki_anc_alergi);
         this.lblAlergi = (TextView) itemView.findViewById(R.id.lbl_ki_anc_alergi);
-        this.layoutResikoANC = (LinearLayout) itemView.findViewById(R.id.layout_resiko_anc);
+        this.layoutResikoANC = (ViewGroup) itemView.findViewById(R.id.layout_resiko_anc);
         this.editButton = (ImageButton) itemView.findViewById(R.id.btn_edit);
         this.edd = (TextView) itemView.findViewById(R.id.txt_edd);
     }
@@ -63,7 +63,7 @@ public class NativeKIANCRegisterViewHolder {
         return pemeriksaanBB;
     }
 
-    public LinearLayout getLayoutResikoANC() {
+    public ViewGroup getLayoutResikoANC() {
         return layoutResikoANC;
     }
 

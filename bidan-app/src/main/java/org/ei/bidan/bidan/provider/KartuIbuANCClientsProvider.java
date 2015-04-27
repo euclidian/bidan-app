@@ -80,7 +80,6 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
         setupANCStatusView(kartuIbuClient, viewHolder);
         setupPemeriksaanView(kartuIbuClient, viewHolder);
         setupResikoView(kartuIbuClient, viewHolder);
-        setupHighlightColor(itemView, Integer.parseInt(""+viewGroup.getTag())+1);
         setupEditView(kartuIbuClient, viewHolder);
         setupEDDView(kartuIbuClient, viewHolder);
 
@@ -92,8 +91,8 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
         viewHolder.edd().setText(client.eddForDisplay());
     }
 
-    private void setupHighlightColor(ViewGroup itemView, int index) {
-        if(index%2==0) {
+    private void setupHighlightColor(KartuIbuANCClient client,ViewGroup itemView, int index) {
+        if(index%2==0 && client !=null) {
             itemView.setBackgroundColor(Color.parseColor("#E0F5FF"));
         } else {
             itemView.setBackgroundColor(Color.WHITE);
@@ -123,34 +122,16 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
     private void setupResikoView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
         String penyakit = client.getPenyakitKronis();
         String alergi = client.getAlergi();
-        viewHolder.getPenyakitKronis().setVisibility(View.GONE);
-        viewHolder.getLblPenyakitKronis().setVisibility(View.GONE);
-        viewHolder.getLblAlergi().setVisibility(View.GONE);
-        viewHolder.getAlergi().setVisibility(View.GONE);
 
-        viewHolder.getLayoutResikoANC().setBackgroundColor(Color.parseColor("#FFCCCC"));
+        viewHolder.getPenyakitKronis().setText(Strings.isNullOrEmpty(penyakit) ? "-" : penyakit);
+        viewHolder.getAlergi().setText(Strings.isNullOrEmpty(alergi) ? "-" : alergi);
 
-        if(!Strings.isNullOrEmpty(penyakit)) {
-            viewHolder.getPenyakitKronis().setVisibility(View.VISIBLE);
-            viewHolder.getLblPenyakitKronis().setVisibility(View.VISIBLE);
-            viewHolder.getPenyakitKronis().setText(penyakit);
+        if(!Strings.isNullOrEmpty(penyakit) || !Strings.isNullOrEmpty(alergi)) {
+            viewHolder.getLayoutResikoANC().setBackgroundColor(Color.parseColor("#FAD5D5"));
+        } else {
+            viewHolder.getLayoutResikoANC().setBackgroundColor(Color.parseColor("#CCFFCC"));
         }
-
-        if(!Strings.isNullOrEmpty(alergi)) {
-            viewHolder.getAlergi().setVisibility(View.VISIBLE);
-            viewHolder.getLblAlergi().setVisibility(View.VISIBLE);
-            viewHolder.getAlergi().setText(alergi);
-            return;
-        }
-
-        viewHolder.getPenyakitKronis().setVisibility(View.VISIBLE);
-        viewHolder.getPenyakitKronis().setText("Tidak Ada");
-        viewHolder.getPenyakitKronis().setGravity(Gravity.CENTER_VERTICAL);
-        viewHolder.getPenyakitKronis().setGravity(Gravity.CENTER_HORIZONTAL);
-
-        viewHolder.getLayoutResikoANC().setBackgroundColor(Color.parseColor("#CCFFCC"));
     }
-
 
     private void setupEditView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
         if (iconPencilDrawable == null) {

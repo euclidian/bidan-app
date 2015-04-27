@@ -336,7 +336,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     }
 
     public String getPenyakitKronis() {
-        return penyakitKronis;
+        return humanize(penyakitKronis);
     }
 
     public void setPenyakitKronis(String penyakitKronis) {

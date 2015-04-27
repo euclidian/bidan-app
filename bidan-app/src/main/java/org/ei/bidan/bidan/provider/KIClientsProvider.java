@@ -85,7 +85,6 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
         setupObsetriView(kartuIbuClient, viewHolder);
         setupClientEDDView(kartuIbuClient, viewHolder);
         setupStatusView(kartuIbuClient, viewHolder);
-        setupHighlightColor(itemView, Integer.parseInt(""+viewGroup.getTag())+1);
 
         itemView.setLayoutParams(clientViewLayoutParams);
         return itemView;

@@ -75,7 +75,6 @@ public class KBClientsProvider implements SmartRegisterClientsProvider {
         setupObsetriView(kartuIbuClient, viewHolder);
         setupJenisKontrasepsiView(kartuIbuClient, viewHolder);
         setupRiskView(kartuIbuClient, viewHolder);
-        setupHighlightColor(itemView, Integer.parseInt(""+viewGroup.getTag())+1);
 
         itemView.setLayoutParams(clientViewLayoutParams);
         return itemView;
