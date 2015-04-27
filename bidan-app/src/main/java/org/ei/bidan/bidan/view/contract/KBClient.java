@@ -9,6 +9,8 @@ import org.ei.bidan.view.contract.SmartRegisterClient;
 import java.util.List;
 import java.util.Locale;
 
+import static org.apache.commons.lang3.StringUtils.isBlank;
+import static org.ei.bidan.util.DateUtil.formatDate;
 import static org.ei.bidan.util.StringUtil.humanize;
 
 /**
@@ -114,7 +116,7 @@ public class KBClient implements KISmartRegisterClient {
     }
 
     public String getTglKunjungan() {
-        return tglKunjungan;
+        return isBlank(tglKunjungan) ? "" : formatDate(tglKunjungan);
     }
 
     public String getEntityId() {
