@@ -246,7 +246,7 @@
    </label>
    <label class="note non-select ">
       <span lang="" class="question-label active">
-         EDD:
+          Hari Tafsiran Persalinan (HTP):
          <span class="or-output" data-value=" /Register_ANC/B01028 " />
       </span>
       <input type="text" name="/Register_ANC/edd_note" data-type-xml="string" readonly="readonly" />
