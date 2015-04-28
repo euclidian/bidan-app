@@ -16,9 +16,126 @@
     <string name="yes_button_label">Iya</string>
     <string name="no_button_label">Tidak</string>
 
-
+    <string name="sort_by_name_label_reverse">Nama (Z ke A)</string>
+    <string name="sort_by_wife_age_label">Umur</string>
+    <string name="sort_by_ec_number_label">EC Number</string>
+    <string name="sort_by_date_of_delivery_label">Tanggal Persalinan</string>
+    <string name="sort_by_sc_label">SC</string>
+    <string name="sort_by_st_label">ST</string>
+    <string name="sort_by_high_priority_label">Prioritas Tinggi (PT)</string>
+    <string name="sort_by_high_risk_pregnancy_label">HRP</string>
+    <string name="sort_by_bpl_label">BPL</string>
+    <string name="sort_by_dusun">Dusun</string>
     <string name="sort_by_name_label">Nama (A ke Z)</string>
     <string name="sort_by_high_risk_label">Resiko Tinggi (RT)</string>
     <string name="sort_by_no_ibu_label">No Ibu</string>
     <string name="sort_by_edd_label">Hari Tafsiran Persalinan (HTP)</string>
+
+    <string name="header_name">Nama</string>
+    <string name="header_ec_no">No Ec.</string>
+    <string name="header_gplsa">GPLSA</string>
+    <string name="header_fp">Metode FP</string>
+    <string name="header_children">Anak</string>
+    <string name="header_status">Status</string>
+    <string name="header_edit"></string>
+
+    <string name="header_anak">Anak</string>
+    <string name="header_nama">Nama</string>
+    <string name="header_tgl_periksa">Tgl Periksa</string>
+    <string name="header_edd">HTP</string>
+    <string name="header_no_ibu">No Ibu</string>
+    <string name="header_status_b">Status</string>
+    <string name="header_obsetri">Obsetri</string>
+
+    <string name="kartu_ibu_selection">Kartu Ibu</string>
+    <string name="kb_selection">KB</string>
+    <string name="str_ki_search_hint">Cari</string>
+
+    <string name="couple_selection">Semua Eligible Couples</string>
+    <string name="str_ec_search_hint">Cari EC Register</string>
+    <string name="str_fp_search_hint">Cari FP Register</string>
+    <string name="str_pnc_search_hint">Cari PNC Register</string>
+    <string name="str_child_search_hint">Cari Child Register</string>
+    <string name="label_sorted_by">Diurutkan Berdasar:</string>
+    <string name="label_village">, Dusun:</string>
+    <string name="ec_register_wife_age">({0})</string>
+
+    <string name="ec_register_male_child">Laki\n{0}</string>
+    <string name="ec_register_female_child">Perempuan\n{0}</string>
+    <string name="ec_register_no_fp">Tidak ada FP</string>
+
+    <string name="status_delivery">Kelahiran:</string>
+    <string name="str_lmp">LMP:</string>
+    <string name="str_edd">EDD:</string>
+    <string name="str_anc">ANC</string>
+    <string name="str_pnc">PNC</string>
+    <string name="str_fp">FP</string>
+    <string name="str_number_of_strips">No. strips:</string>
+    <string name="str_number_given">No. Given:</string>
+    <string name="str_gravida">G</string>
+    <string name="str_parity">P</string>
+    <string name="str_number_of_living_children">L</string>
+    <string name="str_number_of_still_births">S</string>
+    <string name="str_number_of_abortions">A</string>
+
+    <string name="filter_by_all_label">Semua</string>
+    <string name="filter_by_out_of_area_label">O/A</string>
+    <string name="filter_by_leave_the_place_label">L/P</string>
+    <string name="ec_register_title_in_short">EC:</string>
+    <string name="ki_register_title_in_short">KI:</string>
+    <string name="kb_register_title_in_short">KB:</string>
+
+    <string name="str_register_anc_form">Daftar ANC</string>
+    <string name="str_register_kb_form">Daftar KB</string>
+    <string name="str_dokumentasi_persalinan_anc_form">Dokumentasi Persalinan</string>
+    <string name="str_rencana_persalinan_anc_form">Rencana Persalinan</string>
+
+    <string name="str_register_pnc_form">Daftar PNC</string>
+    <string name="str_register_fp_form">Register FP</string>
+    <string name="str_register_child_form">Register Child</string>
+    <string name="str_fp_change_form">FP Change</string>
+    <string name="str_fp_change_fp_form">Change FP</string>
+    <string name="str_record_ecp_form">Record ECP</string>
+    <string name="str_edit_ec_form">Edit EC</string>
+    <string name="str_close_ec_form">Close EC</string>
+    <string name="report_month_sample_text">26/03 - 25/04</string>
+    <string name="str_switch_language">Ubah Bahasa</string>
+    <string name="str_edit_ki_form">Edit Kartu Ibu</string>
+    <string name="str_close_ki_form">Tutup Kartu Ibu</string>
+    <string name="str_kb_update">Update KB</string>
+    <string name="str_kb_edit">Edit KB</string>
+    <string name="str_register_anak_form">Register Anak</string>
+    <string name="str_tutup_anak">Tutup Anak</string>
+    <string name="str_kunjungan_anak">Kunjungan</string>
+    <string name="anc_edit">Edit ANC</string>
+    <string name="pnc_edit">Edit PNC</string>
+    <string name="pnc_visit">PNC VISIT</string>
+
+      <!-- BIDAN -->
+    <string name="header_resiko">Resiko</string>
+    <string name="header_trimester">Trimester</string>
+    <string name="header_tt_imunisasi">Imunisasi</string>
+    <string name="header_tt_usia_klinis">Usia Klinis</string>
+    <string name="header_komplikasi">Komplikasi</string>
+    <string name="header_kontrasepsi">Kontrasepsi</string>
+    <string name="header_rencana">Rencana</string>
+    <string name="header_tanda_vital">Tanda Vital</string>
+    <string name="header_pemeriksaan">Pemeriksaan</string>
+
+    <string name="str_imunisasi_bayi">"Imunisasi Bayi"</string>
+    <string name="str_delivery_at">Persalinan Di</string>
+    <string name="videos_cannot_play_video_dialog_title">Tidak bisa memutar video.</string>
+    <string name="videos_unknown_error_dialog_message">Tidak bisa memutar video dikarenakan kesalahan teknis.</string>
+    <string name="videos_IEC_not_installed_dialog_message">Mohon pasang aplikasi IEC untuk memutar video.</string>
+    <string name="str_side_effects">Efek Samping</string>
+    <string name="str_pnc_close_form">Tutup PNC</string>
+    <string name="edd_label">"HTP : "</string>
+    <string name="fp_register_service_mode_all_methods"></string>
+    <string name="header_kb_method">Kontrasepsi</string>
+    <string name="header_last_service">Pelayanan</string>
+    <string name="header_method">Metode</string>
+    <string name="header_risk_factors">Faktor Risk</string>
+    <string name="str_pnc_dob_label"></string>
+    <string name="header_dob">Tgl Lahir</string>
+
 </resources>
