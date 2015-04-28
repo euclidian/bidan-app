@@ -74,7 +74,7 @@
     </fieldset>
 
     <label class="question non-select ">
-        <span lang="" class="question-label active">Berat lahir?</span>
+        <span lang="" class="question-label active">Berat lahir (gram) ?</span>
         <span class="required">*</span>
         <input type="number" name="/kohort_bayi/birth_weight" required="required" data-type-xml="decimal" />
     </label>
