@@ -2,9 +2,13 @@ package org.ei.bidan.bidan.view.contract;
 
 import com.google.common.base.Strings;
 
+import org.apache.commons.lang3.StringUtils;
+import org.ei.bidan.util.DateUtil;
 import org.ei.bidan.view.contract.AlertDTO;
 import org.ei.bidan.view.contract.RefillFollowUps;
 import org.ei.bidan.view.contract.SmartRegisterClient;
+import org.joda.time.Days;
+import org.joda.time.LocalDate;
 
 import java.util.List;
 import java.util.Locale;
@@ -260,7 +264,7 @@ public class KBClient implements KISmartRegisterClient {
 
     @Override
     public int ageInDays() {
-        return age() / 365;
+        return age() * 365;
     }
 
     @Override
@@ -314,5 +318,15 @@ public class KBClient implements KISmartRegisterClient {
     @Override
     public int compareName(SmartRegisterClient client) {
         return this.wifeName().compareToIgnoreCase(client.wifeName());
+    }
+
+    @Override
+    public String kbMethod() {
+        return Strings.isNullOrEmpty(jenisKontrasepsi) ? "-" :  humanize(jenisKontrasepsi);
+    }
+
+    @Override
+    public String kbDate() {
+        return kbMethodChangeDate;
     }
 }

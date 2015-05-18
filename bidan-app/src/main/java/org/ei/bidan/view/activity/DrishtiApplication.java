@@ -51,9 +51,7 @@ public class DrishtiApplication extends Application {
     private void applyUserLanguagePreference() {
         Configuration config = getBaseContext().getResources().getConfiguration();
 
-        //String lang = context.allSharedPreferences().fetchLanguagePreference();
-        String lang = AllConstants.INDONESIA_LOCALE;
-        context.allSharedPreferences().saveLanguagePreference(lang);
+        String lang = context.allSharedPreferences().fetchLanguagePreference();
         if (!"".equals(lang) && !config.locale.getLanguage().equals(lang)) {
             locale = new Locale(lang);
             updateConfiguration(config);

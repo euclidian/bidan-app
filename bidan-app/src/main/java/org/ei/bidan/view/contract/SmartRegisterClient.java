@@ -1,5 +1,7 @@
 package org.ei.bidan.view.contract;
 
+import org.ei.bidan.bidan.view.contract.KBClient;
+import org.ei.bidan.bidan.view.contract.KBSmartRegisterClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuANCClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.util.IntegerUtil;
@@ -28,6 +30,25 @@ public interface SmartRegisterClient {
                 return -1;
             }
             return client.village().compareToIgnoreCase(otherClient.village());
+        }
+    };
+
+    Comparator<SmartRegisterClient> KB_METHOD_COMPARATOR = new Comparator<SmartRegisterClient>() {
+        @Override
+        public int compare(SmartRegisterClient client, SmartRegisterClient otherClient) {
+            KBSmartRegisterClient client1 = (KBSmartRegisterClient) client;
+            KBSmartRegisterClient client2 = (KBSmartRegisterClient) otherClient;
+
+            if (client1.kbMethod().equalsIgnoreCase("-") && client2.kbMethod().equalsIgnoreCase("-")) {
+                return 0;
+            }
+            if (client1.kbMethod().equalsIgnoreCase("-")) {
+                return 1;
+            }
+            if (client2.kbMethod().equalsIgnoreCase("-")) {
+                return -1;
+            }
+            return client1.kbMethod().compareToIgnoreCase(client2.kbMethod());
         }
     };
 

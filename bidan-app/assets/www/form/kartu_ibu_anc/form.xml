@@ -119,10 +119,16 @@
     </fieldset>
     <fieldset id="or-preload-items" style="display:none;">
         <label class="calculation non-select ">
-            <input type="hidden" name="/Register_ANC_only/today" data-preload="date" data-preload-params="today" data-type-xml="date" />
+            <input type="hidden" name="/Register_ANC_only/today"
+                data-preload="date" data-preload-params="today" data-type-xml="date" />
         </label>
     </fieldset>
     <fieldset id="or-calculated-items" style="display:none;">
+        <label class="calculation non-select ">
+            <input autocomplete="off" type="hidden" name="/Register_ANC_only/reg_date"
+                data-calculate=" /Register_ANC_only/today " data-type-xml="date"/>
+        </label>
+
         <label class="calculation non-select ">
             <input type="hidden" name="/Register_ANC_only/edd" data-calculate="date( /Register_ANC_only/B01027 +280)" data-type-xml="string" />
         </label>

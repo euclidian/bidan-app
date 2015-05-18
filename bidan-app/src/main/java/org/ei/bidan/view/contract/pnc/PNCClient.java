@@ -1,5 +1,6 @@
 package org.ei.bidan.view.contract.pnc;
 
+import com.google.common.base.Strings;
 import com.google.gson.annotations.SerializedName;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -86,7 +87,7 @@ public class PNCClient implements PNCSmartRegisterClient {
 
     @Override
     public String name() {
-        return humanize(name);
+        return Strings.isNullOrEmpty(name) ? "-" : humanize(name);
     }
 
     @Override

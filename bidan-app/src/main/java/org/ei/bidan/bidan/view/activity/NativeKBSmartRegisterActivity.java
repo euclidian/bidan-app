@@ -19,6 +19,7 @@ import org.ei.bidan.view.dialog.DialogOptionModel;
 import org.ei.bidan.view.dialog.DusunSort;
 import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.FilterOption;
+import org.ei.bidan.view.dialog.KBMethodSort;
 import org.ei.bidan.view.dialog.NameSort;
 import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
@@ -97,7 +98,8 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort(), new WifeAgeSort(), new DusunSort()};
+                return new DialogOption[]{new NameSort(), new WifeAgeSort(), new DusunSort(),
+                        new KBMethodSort()};
             }
 
             @Override

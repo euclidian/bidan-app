@@ -76,6 +76,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     @Override
     public String eddForDisplay() {
         if(Strings.isNullOrEmpty(edd)) return "-";
+        if(edd.equalsIgnoreCase("invalid date")) return "-";
 
         DateTimeFormatter formatter = DateTimeFormat.forPattern("YYYY-MM-dd");
         DateTimeFormatter formatter2 = DateTimeFormat.forPattern("dd MMM YYYY");

@@ -101,7 +101,7 @@
             },
             {
                 "name": "registrationDate",
-                "bind": "/model/instance/Register_ANC_only/today"
+                "bind": "/model/instance/Register_ANC_only/reg_date"
             },
             {
                 "name": "jenisKontrasepsi",

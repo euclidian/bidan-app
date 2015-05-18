@@ -23,6 +23,7 @@ import org.ei.bidan.view.dialog.EstimatedDateOfDeliverySort;
 import org.ei.bidan.view.dialog.FilterOption;
 import org.ei.bidan.view.dialog.HighPrioritySort;
 import org.ei.bidan.view.dialog.HighRiskSort;
+import org.ei.bidan.view.dialog.KBMethodSort;
 import org.ei.bidan.view.dialog.NameSort;
 import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ReverseNameSort;
@@ -114,7 +115,8 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
             public DialogOption[] sortingOptions() {
                 return new DialogOption[]{new NameSort(),
                         new ReverseNameSort(), new WifeAgeSort(), new NoIbuSort(),
-                        new EstimatedDateOfDeliverySort(), new HighRiskSort(), new DusunSort()};
+                        new EstimatedDateOfDeliverySort(), new HighRiskSort(), new DusunSort(),
+                new KBMethodSort()};
             }
 
             @Override

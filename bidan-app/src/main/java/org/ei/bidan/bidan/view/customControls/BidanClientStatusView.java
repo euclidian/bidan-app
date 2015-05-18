@@ -8,6 +8,8 @@ import android.view.ViewStub;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.google.common.base.Strings;
+
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.view.viewHolder.ViewStubInflater;
@@ -69,6 +71,11 @@ public class BidanClientStatusView extends FrameLayout {
             ViewGroup statusViewGroup = statusLayout(statusType);
             statusViewGroup.setVisibility(View.VISIBLE);
             dateView(statusViewGroup).setText(statusDate);
+
+            if(statusType.equalsIgnoreCase("kb")) {
+                typeView(statusViewGroup).setText("KB" +
+                        (Strings.isNullOrEmpty(client.kbMethod()) ? "" : " - " + client.kbMethod()));
+            }
         }
     }
 

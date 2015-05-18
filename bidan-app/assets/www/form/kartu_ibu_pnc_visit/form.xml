@@ -225,11 +225,30 @@
     </label>
     <label class="question non-select ">
         <span lang="" class="question-label active">Pelaksanaan &lt;42 hari</span>
-        <input type="time" name="/PNC_visit/B01279" data-type-xml="time" />
+        <div class="option-wrapper">
+            <label class="">
+                <input type="radio" name="/PNC_visit/B01279" data-name="/PNC_visit/B01279" value="ya" data-type-xml="select1" />
+                <span lang="" class="option-label active">Ya</span>
+            </label>
+            <label class="">
+                <input type="radio" name="/PNC_visit/B01279" data-name="/PNC_visit/B01279" value="tidak" data-type-xml="select1" />
+                <span lang="" class="option-label active">Tidak</span>
+            </label>
+        </div>
     </label>
     <label class="question non-select ">
         <span lang="" class="question-label active">Pelaksanaan &gt;42 hari</span>
-        <input type="time" name="/PNC_visit/B01280" data-type-xml="time" />
+
+        <div class="option-wrapper">
+            <label class="">
+                <input type="radio" name="/PNC_visit/B01280" data-name="/PNC_visit/B01280" value="iya" data-type-xml="select1" />
+                <span lang="" class="option-label active">Iya</span>
+            </label>
+            <label class="">
+                <input type="radio" name="/PNC_visit/B01280" data-name="/PNC_visit/B01280" value="tidak" data-type-xml="select1" />
+                <span lang="" class="option-label active">Tidak</span>
+            </label>
+        </div>
     </label>
     <fieldset id="or-calculated-items" style="display:none;">
         <label class="calculation non-select ">

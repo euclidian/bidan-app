@@ -273,12 +273,20 @@
             </div>
         </fieldset>
     </fieldset>
+
     <fieldset id="or-preload-items" style="display:none;">
         <label class="calculation non-select ">
-            <input type="hidden" name="/identitas_ibu/today" data-preload="date" data-preload-params="today" data-type-xml="date" />
+            <input autocomplete="off" type="hidden" name="/identitas_ibu/today" data-preload="date"
+                   data-preload-params="today" data-type-xml="date"/>
         </label>
     </fieldset>
+
     <fieldset id="or-calculated-items" style="display:none;">
+        <label class="calculation non-select ">
+            <input autocomplete="off" type="hidden" name="/identitas_ibu/reg_date"
+                data-calculate=" /identitas_ibu/today " data-type-xml="date"/>
+        </label>
+
         <label class="calculation non-select ">
             <input type="hidden" name="/identitas_ibu/B01006" data-constraint=".&lt;100" data-calculate="int(( /identitas_ibu/today  -  /identitas_ibu/B01005 ) div 365)" data-type-xml="string" />
         </label>

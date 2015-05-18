@@ -30,14 +30,12 @@ public class KIDetailController {
                 kartuIbu.getDetails().get("Alamatdomisili"), kartuIbu.getDetails().get("NoIbu"),
                 kartuIbu.getDetails().get("Namalengkap"), kartuIbu.getDetails().get("Umur"),
                 kartuIbu.getDetails().get("GolonganDarah"), kartuIbu.getDetails().get("RiwayatKomplikasiKebidanan"),
-                kartuIbu.getDetails().get("Namasuami"), kartuIbu.getDetails().get("TanggalPeriksa"),
-                kartuIbu.getDetails().get("EDD"), kartuIbu.getDetails().get("Desa"))
+                kartuIbu.getDetails().get("Namasuami"), kartuIbu.getDetails().get("TanggalPeriksa"), kartuIbu.getDetails().get("Desa"))
                 .withDateOfBirth(kartuIbu.getDetails().get("Tanggallahir"))
                 .withNumberOfLivingChildren(kartuIbu.getDetails().get("Hidup"))
                 .withNumberOfPregnancies(kartuIbu.getDetails().get("Gravida"))
                 .withNumberOfAbortions(kartuIbu.getDetails().get("Abortus"))
                 .withParity(kartuIbu.getDetails().get("Partus"));
-
         kartuIbuClient.setRtRw(kartuIbu.getDetails().get("RTRW"));
 
         return kartuIbuClient;

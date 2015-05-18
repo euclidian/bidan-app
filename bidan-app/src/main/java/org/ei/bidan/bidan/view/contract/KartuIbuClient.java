@@ -56,7 +56,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
     private String kbStart;
     private String IsHighRisk;
 
-    public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi, String husbandName, String tglPeriksa, String edd, String village) {
+    public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi, String husbandName, String tglPeriksa, String village) {
         this.entityId = entityId;
         this.puskesmas = puskesmas;
         this.province = province;
@@ -70,7 +70,6 @@ public class KartuIbuClient implements KISmartRegisterClient {
         this.riwayatKomplikasi = riwayatKomplikasi;
         this.husbandName = husbandName;
         this.tglPeriksa = tglPeriksa;
-        this.edd = edd;
         this.village = village;
         this.children = new ArrayList<KIChildClient>();
     }
@@ -124,6 +123,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
 
     public String getEdd() {
         if(Strings.isNullOrEmpty(edd)) return "-";
+        if(edd.equalsIgnoreCase("invalid date")) return "-";
 
         DateTimeFormatter formatter = DateTimeFormat.forPattern("YYYY-MM-dd");
         DateTimeFormatter formatter2 = DateTimeFormat.forPattern("dd MMM YYYY");
@@ -133,6 +133,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
     }
 
     public LocalDateTime edd() {
+
         if(Strings.isNullOrEmpty(edd)) return null;
         return parse(edd);
     }
@@ -206,7 +207,15 @@ public class KartuIbuClient implements KISmartRegisterClient {
         this.tglPeriksa = tglPeriksa;
     }
 
-    public void setEdd(String edd) { this.edd = edd; }
+    public void setEdd(String edd) {
+        if(status.size() != 0) {
+            if(status.get("type").equalsIgnoreCase("pnc")) {
+                this.edd = null;
+                return;
+            }
+        }
+        this.edd = edd;
+    }
 
     public void setVillage(String village) {
         this.village = village;
@@ -348,6 +357,14 @@ public class KartuIbuClient implements KISmartRegisterClient {
         return this;
     }
 
+    public void setKbMethod(String kbMethod) {
+        this.kbMethod = kbMethod;
+    }
+
+    public void setKbStart(String kbStart) {
+        this.kbStart = kbStart;
+    }
+
     public KartuIbuClient withKBInformation(String kbMethod, String kbStart) {
         this.kbMethod = kbMethod;
         this.kbStart = kbStart;
@@ -363,15 +380,17 @@ public class KartuIbuClient implements KISmartRegisterClient {
         return children;
     }
 
-    public String getKbMethod() {
+    public void setIsHighRisk(String isHighRisk) {
+        this.IsHighRisk = isHighRisk;
+    }
+
+    @Override
+    public String kbMethod() {
         return Strings.isNullOrEmpty(kbMethod) ? "-" : humanize(kbMethod);
     }
 
-    public String getKbStart() {
+    @Override
+    public String kbDate() {
         return Strings.isNullOrEmpty(kbStart) ? "-" : kbStart;
-    }
-
-    public void setIsHighRisk(String isHighRisk) {
-        this.IsHighRisk = isHighRisk;
     }
 }
