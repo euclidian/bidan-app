@@ -150,7 +150,7 @@
             },
             {
                 "name": "registrationDate",
-                "bind": "/model/instance/identitas_ibu/today"
+                "bind": "/model/instance/identitas_ibu/reg_date"
             }
         ]
     }

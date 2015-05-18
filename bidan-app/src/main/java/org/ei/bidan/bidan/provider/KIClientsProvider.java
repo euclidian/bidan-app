@@ -59,8 +59,8 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
                 (int) context.getResources().getDimension(R.dimen.list_item_height));
 
 
-        maleChildAgeFormatString = context.getResources().getString(R.string.ki_register_male_child);
-        femaleChildAgeFormatString = context.getResources().getString(R.string.ki_register_female_child);
+        maleChildAgeFormatString = context.getResources().getString(R.string.ec_register_male_child);
+        femaleChildAgeFormatString = context.getResources().getString(R.string.ec_register_female_child);
 
     }
 
@@ -85,7 +85,6 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
         setupObsetriView(kartuIbuClient, viewHolder);
         setupClientEDDView(kartuIbuClient, viewHolder);
         setupStatusView(kartuIbuClient, viewHolder);
-        setupHighlightColor(itemView, Integer.parseInt(""+viewGroup.getTag())+1);
 
         itemView.setLayoutParams(clientViewLayoutParams);
         return itemView;

@@ -4,7 +4,8 @@
               android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="@dimen/list_item_height"
-              android:weightSum="@integer/ec_list_item_weight_count">
+              android:weightSum="@integer/ec_list_item_weight_count"
+              android:background="#ffffff">
 
     <include
             android:id="@+id/profile_info_layout_ki"
@@ -23,104 +24,198 @@
         android:layout_width="@dimen/list_ec_no_view_width"
         android:layout_height="fill_parent"
         android:layout_marginTop="10dp"
-        android:layout_weight="@integer/ec_list_ec_no_view_weight"
-        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
-
-    <ImageView
-        android:layout_width="@dimen/smart_register_client_divider_height"
-        android:layout_height="fill_parent"
-        android:src="@color/smart_register_client_divider_color"/>
-
-
-    <TextView
-        android:id="@+id/anc_status"
-        android:layout_width="@dimen/list_ec_no_view_width"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="10dp"
-        android:layout_weight="@integer/ec_list_gplsa_view_weight"
-        android:scrollHorizontally="false"
-        android:ellipsize="none"
-        android:singleLine="false"
-        android:maxLines="3"
-        android:paddingLeft="10dp"
-        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
-
-
-    <ImageView
-        android:layout_width="@dimen/smart_register_client_divider_height"
-        android:layout_height="fill_parent"
-        android:src="@color/smart_register_client_divider_color"/>
-
-
-    <TextView
-        android:id="@+id/risk_factors"
-        android:layout_width="@dimen/list_ec_no_view_width"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="10dp"
-        android:layout_weight="125"
-        android:scrollHorizontally="false"
-        android:ellipsize="none"
-        android:singleLine="false"
-        android:maxLines="3"
-        android:paddingLeft="10dp"
-        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
-
-
-    <ImageView
-        android:layout_width="@dimen/smart_register_client_divider_height"
-        android:layout_height="fill_parent"
-        android:src="@color/smart_register_client_divider_color"/>
-
-
-    <TextView
-        android:id="@+id/kunjungan"
-        android:layout_width="@dimen/list_ec_no_view_width"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="10dp"
-        android:layout_weight="110"
-        android:scrollHorizontally="false"
-        android:ellipsize="none"
-        android:singleLine="false"
-        android:maxLines="3"
-        android:paddingLeft="10dp"
-        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
-
-    <ImageView
-        android:layout_width="@dimen/smart_register_client_divider_height"
-        android:layout_height="fill_parent"
-        android:src="@color/smart_register_client_divider_color"/>
-
-
-    <TextView
-        android:id="@+id/tt_imunisasi"
-        android:layout_width="@dimen/list_ec_no_view_width"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="10dp"
-        android:layout_weight="@integer/ec_list_gplsa_view_weight"
-        android:scrollHorizontally="false"
-        android:ellipsize="none"
-        android:singleLine="false"
-        android:maxLines="3"
-        android:paddingLeft="10dp"
-        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
-
-    <ImageView
-        android:layout_width="@dimen/smart_register_client_divider_height"
-        android:layout_height="fill_parent"
-        android:src="@color/smart_register_client_divider_color"/>
-
-    <TextView
-        android:id="@+id/usia_klinis"
-        android:layout_width="@dimen/list_ec_no_view_width"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="10dp"
         android:layout_weight="100"
-        android:scrollHorizontally="false"
-        android:ellipsize="none"
-        android:singleLine="false"
-        android:maxLines="3"
-        android:paddingLeft="10dp"
         style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="110"
+        android:padding="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/status_bar_text_almost_white"
+            android:orientation="vertical">
+
+            <org.ei.bidan.view.customControls.CustomFontTextView
+                android:id="@+id/lbl_ki_anc_bb"
+                style="@style/CustomFontTextViewStyle.ListView.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BB :"/>
+
+
+            <org.ei.bidan.view.customControls.CustomFontTextView
+                android:id="@+id/txt_ki_anc_bb"
+                style="@style/CustomFontTextViewStyle.ListView.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="11"/>
+
+            <org.ei.bidan.view.customControls.CustomFontTextView
+                android:id="@+id/lbl_ki_anc_tb"
+                style="@style/CustomFontTextViewStyle.ListView.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TB :"/>
+
+
+            <org.ei.bidan.view.customControls.CustomFontTextView
+                android:id="@+id/txt_ki_anc_tb"
+                style="@style/CustomFontTextViewStyle.ListView.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="11"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="120"
+        android:padding="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/status_bar_text_almost_white"
+            android:orientation="vertical">
+
+            <org.ei.bidan.view.customControls.CustomFontTextView
+                android:id="@+id/lbl_ki_lila_bb"
+                style="@style/CustomFontTextViewStyle.ListView.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LILA :"/>
+
+
+            <org.ei.bidan.view.customControls.CustomFontTextView
+                android:id="@+id/txt_ki_lila_bb"
+                style="@style/CustomFontTextViewStyle.ListView.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="11"/>
+
+            <org.ei.bidan.view.customControls.CustomFontTextView
+                android:id="@+id/lbl_ki_beratbadan_tb"
+                style="@style/CustomFontTextViewStyle.ListView.VerySmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Berat Badan :"/>
+
+
+            <org.ei.bidan.view.customControls.CustomFontTextView
+                android:id="@+id/txt_ki_beratbadan_tb"
+                style="@style/CustomFontTextViewStyle.ListView.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="11"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="190"
+        android:padding="5dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/layout_resiko_anc"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/status_bar_text_almost_white"
+            android:orientation="vertical">
+
+            <org.ei.bidan.view.customControls.CustomFontTextView
+                android:id="@+id/lbl_ki_anc_penyakit_kronis"
+                style="@style/CustomFontTextViewStyle.ListView.VerySmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Penyakit Kronis :"/>
+
+
+            <org.ei.bidan.view.customControls.CustomFontTextView
+                android:id="@+id/txt_ki_anc_penyakit_kronis"
+                android:layout_marginTop="-2dp"
+                style="@style/CustomFontTextViewStyle.ListView.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Something something asdasd"/>
+
+            <org.ei.bidan.view.customControls.CustomFontTextView
+                android:id="@+id/lbl_ki_anc_alergi"
+                style="@style/CustomFontTextViewStyle.ListView.VerySmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alergi :"/>
+
+
+            <org.ei.bidan.view.customControls.CustomFontTextView
+                android:id="@+id/txt_ki_anc_alergi"
+                android:layout_marginTop="-2dp"
+                style="@style/CustomFontTextViewStyle.ListView.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="alergi apa aja"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="135"
+        android:padding="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/status_bar_text_almost_white"
+            android:orientation="vertical">
+
+            <org.ei.bidan.view.customControls.CustomFontTextView
+                android:id="@+id/txt_edd"
+                style="@style/CustomFontTextViewStyle.ListView.Medium.TwoLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="14 Jan 2015"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
     <ImageView
         android:layout_width="@dimen/smart_register_client_divider_height"
@@ -131,7 +226,7 @@
         android:id="@+id/btn_edit"
         android:layout_width="@dimen/list_edit_icon_view_width"
         android:layout_height="fill_parent"
-        android:layout_weight="85"
+        android:layout_weight="95"
         android:scaleType="center"
         android:gravity="center"
         android:layout_margin="5dp"

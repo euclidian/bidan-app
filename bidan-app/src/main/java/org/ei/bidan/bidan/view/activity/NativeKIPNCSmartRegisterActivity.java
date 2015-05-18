@@ -2,6 +2,7 @@ package org.ei.bidan.bidan.view.activity;
 
 import android.view.View;
 
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.provider.KartuIbuANCClientsProvider;
@@ -10,12 +11,14 @@ import org.ei.bidan.bidan.view.controller.KartuIbuANCRegisterController;
 import org.ei.bidan.bidan.view.controller.KartuIbuPNCRegisterController;
 import org.ei.bidan.bidan.view.dialog.KartuIbuANCOverviewServiceMode;
 import org.ei.bidan.bidan.view.dialog.KartuIbuPNCOverviewServiceMode;
+import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
 import org.ei.bidan.domain.form.FieldOverrides;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.dialog.AllClientsFilter;
 import org.ei.bidan.view.dialog.DialogOption;
 import org.ei.bidan.view.dialog.DialogOptionModel;
+import org.ei.bidan.view.dialog.DusunSort;
 import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.FilterOption;
 import org.ei.bidan.view.dialog.NameSort;
@@ -27,6 +30,7 @@ import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_CLOSE;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_EDIT;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_REGISTRATION;
+import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_VISIT;
 
 /**
  * Created by Dimas Ciputra on 3/5/15.
@@ -83,7 +87,7 @@ public class NativeKIPNCSmartRegisterActivity extends BidanSecuredNativeSmartReg
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort()};
+                return new DialogOption[]{new NameSort(), new WifeAgeSort(), new DusunSort()};
             }
 
             @Override
@@ -110,7 +114,7 @@ public class NativeKIPNCSmartRegisterActivity extends BidanSecuredNativeSmartReg
     @Override
     protected void startRegistration() {
         //FieldOverrides fieldOverrides = new FieldOverrides(context.anmLocationController().getLocationJSON());
-        //startFormActivity(KARTU_IBU_PNC_REGISTRATION, null, fieldOverrides.getJSONString());
+        //startFormActivity(AllConstants.FormNames.KARTU_IBU_PNC_OA, null, fieldOverrides.getJSONString());
     }
 
     private class ClientActionHandler implements View.OnClickListener {
@@ -142,6 +146,8 @@ public class NativeKIPNCSmartRegisterActivity extends BidanSecuredNativeSmartReg
 
     private DialogOption[] getEditOptions() {
         return new DialogOption[]{
+                new OpenFormOption(getString(R.string.pnc_visit),
+                        KARTU_IBU_PNC_VISIT, formController),
                 new OpenFormOption(getString(R.string.pnc_edit),
                         KARTU_IBU_PNC_EDIT, formController),
                 new OpenFormOption(getString(R.string.str_pnc_close_form),

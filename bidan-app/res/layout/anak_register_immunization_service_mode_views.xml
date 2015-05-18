@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:weightSum="73"
+    android:orientation="horizontal"
+    android:background="@color/status_bar_text_almost_white">
+
+    <org.ei.bidan.view.customControls.CustomFontTextView
+        android:id="@+id/hb_0_7"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="@integer/child_list_dob_view_weight"
+        android:layout_marginTop="20dp"
+        android:text="13/04/2015"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+    <org.ei.bidan.view.customControls.CustomFontTextView
+        android:id="@+id/bcg_polio1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:layout_weight="@integer/child_list_dob_view_weight"
+        android:text="13/04/2015"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+    <org.ei.bidan.view.customControls.CustomFontTextView
+        android:id="@+id/dpt_hb1_polio2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="@integer/child_list_dob_view_weight"
+        android:layout_marginTop="20dp"
+        android:text="13/04/2015"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+    <org.ei.bidan.view.customControls.CustomFontTextView
+        android:id="@+id/dpt_hb2_polio3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="@integer/child_list_dob_view_weight"
+        android:layout_marginTop="20dp"
+        android:text="13/04/2015"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+    <org.ei.bidan.view.customControls.CustomFontTextView
+        android:id="@+id/dpt_hb3_polio4"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="@integer/child_list_dob_view_weight"
+        android:layout_marginTop="20dp"
+        android:text="13/04/2015"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
+
+    <org.ei.bidan.view.customControls.CustomFontTextView
+        android:id="@+id/campak"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="@integer/child_list_dob_view_weight"
+        android:layout_marginTop="20dp"
+        android:text="13/04/2015"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+</LinearLayout>

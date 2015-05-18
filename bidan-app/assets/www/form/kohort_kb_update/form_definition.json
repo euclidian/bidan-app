@@ -11,26 +11,22 @@
 			{
 				"name": "HB",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03011",
-                "source": "kartu_ibu.HB",
-                "shouldLoadValue": true
+                "source": "kartu_ibu.HB"
 			},
 			{
 				"name": "LILA",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03012",
-                "source": "kartu_ibu.LILA",
-                "shouldLoadValue": true
+                "source": "kartu_ibu.LILA"
 			},
 			{
 				"name": "PenyakitKronis",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03013",
-				"source":"kartu_ibu.PenyakitKronis",
-				"shouldLoadValue":true
+				"source":"kartu_ibu.PenyakitKronis"
 			},
 			{
 				"name": "IMS",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03014",
-				"source":"kartu_ibu.IMS",
-				"shouldLoadValue":true
+				"source":"kartu_ibu.IMS"
 			},
 			{
 				"name": "TanggalKunjungan",
@@ -39,20 +35,17 @@
 			{
 				"name": "KeteranganTentangPesertaKB1",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03016",
-				"source": "kartu_ibu.KeteranganTentangPesertaKB1",
-                "shouldLoadValue": true
+				"source": "kartu_ibu.KeteranganTentangPesertaKB1"
 			},
 			{
 				"name": "JenisKontrasepsi",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03017",
-				"source": "kartu_ibu.JenisKontrasepsi",
-                "shouldLoadValue": true
+				"source": "kartu_ibu.JenisKontrasepsi"
 			},
 			{
 				"name": "KeteranganTentangPesertaKB2",
 				"bind": "/model/instance/kohort_kb_pelayanan/B03018",
-				"source": "kartu_ibu.KeteranganTentangPesertaKB2",
-                "shouldLoadValue": true
+				"source": "kartu_ibu.KeteranganTentangPesertaKB2"
 			},
 			{
 				"name": "Keterangan",

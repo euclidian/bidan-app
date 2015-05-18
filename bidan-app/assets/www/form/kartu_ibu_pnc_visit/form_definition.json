@@ -1,0 +1,115 @@
+{
+    "form_data_definition_version": "1",
+    "form": {
+        "bind_type": "ibu",
+        "default_bind_path": "/model/instance/PNC_visit/",
+        "fields": [
+            {
+                "name": "id",
+                "shouldLoadValue": true
+            },
+            {
+                "name": "kiId",
+                "shouldLoadValue": true,
+                "source": "ibu.kartu_ibu.id"
+            },
+			{
+                "name": "HariKeKF",
+                "bind": "/model/instance/PNC_visit/B01259"
+            },
+            {
+                "name": "TandaVitalTDSistolik",
+                "bind": "/model/instance/PNC_visit/B01260"
+            },
+            {
+                "name": "TandaVitalTDDiastolik",
+                "bind": "/model/instance/PNC_visit/B01261"
+            },
+            {
+                "name": "TandaVitalSuhu",
+                "bind": "/model/instance/PNC_visit/B01045"
+            },
+            {
+                "name": "TrimesterKe",
+                "bind": "/model/instance/PNC_visit/B01262"
+            },
+            {
+                "name": "PelayananCatatdiBukuKia",
+                "bind": "/model/instance/PNC_visit/B01263"
+            },
+            {
+                "name": "PelayananFe",
+                "bind": "/model/instance/PNC_visit/B01264"
+            },
+            {
+                "name": "PelayananVitA",
+                "bind": "/model/instance/PNC_visit/B01265"
+            },
+            {
+                "name": "IntergrasiProgramCD4",
+                "bind": "/model/instance/PNC_visit/B01266"
+            },
+            {
+                "name": "IntergrasiProgramAntimalaria",
+                "bind": "/model/instance/PNC_visit/B01270"
+            },
+            {
+                "name": "IntergrasiProgramAntiTB",
+                "bind": "/model/instance/PNC_visit/B01271"
+            },
+            {
+                "name": "IntergrasiProgramFotothorax",
+                "bind": "/model/instance/PNC_visit/B01272"
+            },
+            {
+                "name": "Komplikasi",
+                "bind": "/model/instance/PNC_visit/B01273"
+            },
+            {
+                "name": "Lainnya1",
+                "bind": "/model/instance/PNC_visit/B01273L"
+            },
+            {
+                "name": "DirujukKe",
+                "bind": "/model/instance/PNC_visit/B01274"
+            },
+            {
+                "name": "Lainnya2",
+                "bind": "/model/instance/PNC_visit/B01274L"
+            },
+            {
+                "name": "KeadaanTiba",
+                "bind": "/model/instance/PNC_visit/B01275"
+            },
+            {
+                "name": "KeadaanPulang",
+                "bind": "/model/instance/PNC_visit/B01276"
+            },
+            {
+                "name": "Metodekontrasepsi",
+                "bind": "/model/instance/PNC_visit/B01277"
+            },
+            {
+                "name": "Rencana",
+                "bind": "/model/instance/PNC_visit/B01278"
+            },
+            {
+                "name": "PelaksanaanK42hari",
+                "bind": "/model/instance/PNC_visit/B01279"
+            },
+            {
+                "name": "PelaksanaanL42hari",
+                "bind": "/model/instance/PNC_visit/B01280"
+            },
+            {
+                "name": "isClosed",
+                "value": "false"
+            },
+            {
+                "name": "type",
+                "value": "PNC",
+                "source": "ibu.type"
+            }
+        ]
+    }
+}

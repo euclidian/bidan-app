@@ -54,13 +54,14 @@
             android:icon="@drawable/ic_bidan_logo"
             android:clearTaskOnLaunch="true"
             android:name=".view.activity.DrishtiApplication"
-            android:largeHeap="true">
+            android:largeHeap="true" >
         <activity
                 android:name=".view.activity.LoginActivity"
                 android:theme="@android:style/Theme.Holo.NoActionBar"
                 android:clearTaskOnLaunch="true"
                 android:windowSoftInputMode="adjustResize|stateHidden"
-                android:screenOrientation="landscape">
+                android:screenOrientation="landscape"
+                android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

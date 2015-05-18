@@ -86,8 +86,8 @@ public class UserService {
     public String switchLanguagePreference() {
         String preferredLocale = allSharedPreferences.fetchLanguagePreference();
         if (ENGLISH_LOCALE.equals(preferredLocale)) {
-            allSharedPreferences.saveLanguagePreference(KANNADA_LOCALE);
-            return KANNADA_LANGUAGE;
+            allSharedPreferences.saveLanguagePreference(INDONESIA_LOCALE);
+            return INDONESIA_LANGUAGE;
         } else {
             allSharedPreferences.saveLanguagePreference(ENGLISH_LOCALE);
             return ENGLISH_LANGUAGE;

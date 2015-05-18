@@ -77,7 +77,12 @@ public class AnakRegisterController {
                             .withBirthCondition(a.getDetail("birthCondition"))
                             .withServiceAtBirth(a.getDetail("serviceAtBirth"))
                             .withPhotoPath(photoPath);
-
+                    anakClient.setHb07(a.getDetail("TanggalPemberianImunisasiHb0_7Hari"));
+                    anakClient.setBcgPol1(a.getDetail("TanggalpemberianimunisasiBCGdanpolio1"));
+                    anakClient.setDptHb1Pol2(a.getDetail("TanggalPemberianImunisasiDPT_HB1_Polio2"));
+                    anakClient.setDptHb2Pol3(a.getDetail("TanggalPemberianImunisasiDPT_HB2_Polio3"));
+                    anakClient.setDptHb3Pol4(a.getDetail("TanggalPemberianImunisasiDPT_HB3_Polio4"));
+                    anakClient.setCampak(a.getDetail("TanggalPemberianImunisasiCampak"));
                     anakSmartClient.add(anakClient);
                 }
                 sortByName(anakSmartClient);

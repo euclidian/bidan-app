@@ -3,10 +3,13 @@ package org.ei.bidan.bidan.provider;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+
+import com.google.common.base.Strings;
 
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.contract.KartuIbuANCClient;
@@ -75,23 +78,21 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
         setupClientProfileView(kartuIbuClient, viewHolder);
         setupIdDetailsView(kartuIbuClient, viewHolder);
         setupANCStatusView(kartuIbuClient, viewHolder);
+        setupPemeriksaanView(kartuIbuClient, viewHolder);
         setupResikoView(kartuIbuClient, viewHolder);
-        setupKunjunganView(kartuIbuClient, viewHolder);
-        setupTTImunisasiView(kartuIbuClient, viewHolder);
-        setupHighlightColor(itemView, Integer.parseInt(""+viewGroup.getTag())+1);
         setupEditView(kartuIbuClient, viewHolder);
-        setupUsiaKlinisView(kartuIbuClient, viewHolder);
+        setupEDDView(kartuIbuClient, viewHolder);
 
         itemView.setLayoutParams(clientViewLayoutParams);
         return itemView;
     }
 
-    private void setupUsiaKlinisView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
-        viewHolder.usiaKlinis().setText(client.usiaKlinis());
+    private void setupEDDView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
+        viewHolder.edd().setText(client.eddForDisplay());
     }
 
-    private void setupHighlightColor(ViewGroup itemView, int index) {
-        if(index%2==0) {
+    private void setupHighlightColor(KartuIbuANCClient client,ViewGroup itemView, int index) {
+        if(index%2==0 && client !=null) {
             itemView.setBackgroundColor(Color.parseColor("#E0F5FF"));
         } else {
             itemView.setBackgroundColor(Color.WHITE);
@@ -109,21 +110,28 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
     }
 
     private void setupANCStatusView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
-        viewHolder.ancStatus().setText(client.ancStatus()==null?"-":client.ancStatus());
+        viewHolder.ancStatusBB().setText(client.getBB()==null?"-":client.getBB() + " kg");
+        viewHolder.ancStatusTB().setText(client.getTB()==null?"-":client.getTB() + " cm");
+    }
+
+    private void setupPemeriksaanView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
+        viewHolder.getPemeriksaanBB().setText(client.getLILA());
+        viewHolder.getPemeriksaanLILA().setText(client.getBeratBadan());
     }
 
     private void setupResikoView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
-        viewHolder.riskFactors().setText(client.riskFactors());
-    }
+        String penyakit = client.getPenyakitKronis();
+        String alergi = client.getAlergi();
 
-    private void setupKunjunganView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
-        viewHolder.kunjungan().setText(client.kunjungan());
-    }
+        viewHolder.getPenyakitKronis().setText(Strings.isNullOrEmpty(penyakit) ? "-" : penyakit);
+        viewHolder.getAlergi().setText(Strings.isNullOrEmpty(alergi) ? "-" : alergi);
 
-    private void setupTTImunisasiView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
-        viewHolder.ttImunisasi().setText(client.ttImunisasi());
+        if(!Strings.isNullOrEmpty(penyakit) || !Strings.isNullOrEmpty(alergi)) {
+            viewHolder.getLayoutResikoANC().setBackgroundColor(Color.parseColor("#FAD5D5"));
+        } else {
+            viewHolder.getLayoutResikoANC().setBackgroundColor(Color.parseColor("#CCFFCC"));
+        }
     }
-
 
     private void setupEditView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
         if (iconPencilDrawable == null) {

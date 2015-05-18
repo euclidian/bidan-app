@@ -13,7 +13,7 @@
     </label>
     <label class="note non-select ">
         <span lang="" class="question-label active">
-            EDD:
+            Hari Tafsiran Persalinan (HTP):
             <span class="or-output" data-value=" /Register_ANC_only/B01028 " />
         </span>
         <input type="text" name="/Register_ANC_only/edd_note" data-type-xml="string" readonly="readonly" />
@@ -66,11 +66,11 @@
     </label>
     <label class="question non-select ">
         <span lang="" class="question-label active">Hasil Pemeriksaan / LILA</span>
-        <input type="number" name="/Register_ANC_only/B02012" data-type-xml="int" />
+        <input type="number" name="/Register_ANC_only/B02012" data-constraint=".&lt;500" data-type-xml="decimal" />
     </label>
     <label class="question non-select ">
         <span lang="" class="question-label active">Hasil Pemeriksaan / Berat Badan</span>
-        <input type="number" name="/Register_ANC_only/B02013" data-type-xml="int" />
+        <input type="number" name="/Register_ANC_only/B02013" data-type-xml="decimal" />
     </label>
     <label class="question non-select ">
         <span lang="" class="question-label active">Riwayat Komplikasi Kebidanan</span>
@@ -119,10 +119,16 @@
     </fieldset>
     <fieldset id="or-preload-items" style="display:none;">
         <label class="calculation non-select ">
-            <input type="hidden" name="/Register_ANC_only/today" data-preload="date" data-preload-params="today" data-type-xml="date" />
+            <input type="hidden" name="/Register_ANC_only/today"
+                data-preload="date" data-preload-params="today" data-type-xml="date" />
         </label>
     </fieldset>
     <fieldset id="or-calculated-items" style="display:none;">
+        <label class="calculation non-select ">
+            <input autocomplete="off" type="hidden" name="/Register_ANC_only/reg_date"
+                data-calculate=" /Register_ANC_only/today " data-type-xml="date"/>
+        </label>
+
         <label class="calculation non-select ">
             <input type="hidden" name="/Register_ANC_only/edd" data-calculate="date( /Register_ANC_only/B01027 +280)" data-type-xml="string" />
         </label>

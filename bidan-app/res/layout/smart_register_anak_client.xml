@@ -18,25 +18,11 @@
         android:layout_height="fill_parent"
         android:src="@color/smart_register_client_divider_color"/>
 
-    <org.ei.bidan.view.customControls.CustomFontTextView
-        android:id="@+id/txt_ibu_ki_no"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="13"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"/>
-
-    <ImageView
-        android:layout_width="@dimen/smart_register_client_divider_height"
-        android:layout_height="fill_parent"
-        android:src="@color/smart_register_client_divider_color"/>
-
     <LinearLayout
         android:id="@+id/anak_register_service_mode_options_view"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="@integer/child_list_service_mode_views_section_weight"
+        android:layout_weight="73"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -46,13 +32,11 @@
             android:layout_height="fill_parent"
             layout="@layout/anak_register_overview_service_mode_views"/>
 
-        <!--
         <include
-                android:id="@+id/immunization0to9_service_mode_views"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                layout="@layout/anak_register_immunization_service_mode_views"/>
-        -->
+            android:id="@+id/immunization_service_mode_views"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            layout="@layout/anak_register_immunization_service_mode_views"/>
 
     </LinearLayout>
 

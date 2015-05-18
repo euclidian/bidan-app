@@ -5,7 +5,9 @@ import android.view.View;
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.provider.AnakRegisterClientsProvider;
+import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.bidan.view.controller.AnakRegisterController;
+import org.ei.bidan.bidan.view.dialog.AnakImmunizationServiceMode;
 import org.ei.bidan.bidan.view.dialog.AnakOverviewServiceMode;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
 import org.ei.bidan.view.contract.SmartRegisterClient;
@@ -16,6 +18,7 @@ import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.FilterOption;
 import org.ei.bidan.view.dialog.NameSort;
 import org.ei.bidan.view.dialog.OpenFormOption;
+import org.ei.bidan.view.dialog.ReverseNameSort;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
 
@@ -80,12 +83,13 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
 
             @Override
             public DialogOption[] serviceModeOptions() {
-                return new DialogOption[]{};
+                return new DialogOption[]{new AnakOverviewServiceMode(clientsProvider()),
+                new AnakImmunizationServiceMode(clientsProvider())};
             }
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort()};
+                return new DialogOption[]{new NameSort(), new ReverseNameSort()};
             }
 
             @Override
@@ -121,6 +125,9 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
                 case R.id.btn_edit:
                     showFragmentDialog(new EditDialogOptionModel(), view.getTag());
                     break;
+                case R.id.immunization_service_mode_views:
+                    formController.startFormActivity(BAYI_IMUNISASI, "" + view.getTag(), null);
+                    break;
             }
         }
     }
@@ -139,6 +146,16 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
 
     private DialogOption[] getEditOptions() {
         return new DialogOption[]{
+                new OpenFormOption("Edit Data",
+                        KOHORT_BAYI_EDIT, formController),
+                new OpenFormOption("Monitoring Pertumbuhan dan Nutrisi",
+                        KOHORT_BAYI_MONITORING, formController),
+                new OpenFormOption("Balita Data",
+                        BALITA_KUNJUNGAN, formController),
+                new OpenFormOption(getString(R.string.str_imunisasi_bayi),
+                        BAYI_IMUNISASI, formController),
+                new OpenFormOption("Bayi Neonatal Period",
+                        BAYI_NEONATAL_PERIOD, formController),
                 new OpenFormOption(getString(R.string.str_kunjungan_anak),
                         KARTU_IBU_ANAK_VISIT, formController),
                 new OpenFormOption(getString(R.string.str_tutup_anak),

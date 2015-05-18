@@ -42,6 +42,16 @@
                 "source": "kartu_ibu.ibu.TB"
             },
             {
+                "name": "berat_badan",
+                "bind": "/model/instance/Register_ANC_only/B02013",
+                "source": "kartu_ibu.ibu.berat_badan"
+            },
+            {
+                "name": "lila",
+                "bind": "/model/instance/Register_ANC_only/B02012",
+                "source": "kartu_ibu.ibu.lila"
+            },
+            {
                 "name": "BukuKIA",
                 "bind": "/model/instance/Register_ANC_only/B01032",
                 "source": "kartu_ibu.ibu.BukuKIA"
@@ -87,11 +97,11 @@
             },
             {
                 "name": "submissionDate",
-                "bind": "/model/instance/identitas_ibu/today"
+                "bind": "/model/instance/Register_ANC_only/today"
             },
             {
                 "name": "registrationDate",
-                "bind": "/model/instance/identitas_ibu/today"
+                "bind": "/model/instance/Register_ANC_only/reg_date"
             },
             {
                 "name": "jenisKontrasepsi",

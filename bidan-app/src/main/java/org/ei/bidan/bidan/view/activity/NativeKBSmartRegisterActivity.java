@@ -7,10 +7,8 @@ import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.provider.KBClientsProvider;
 import org.ei.bidan.bidan.view.contract.KBClient;
-import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.bidan.view.controller.KohortKBRegisterController;
 import org.ei.bidan.bidan.view.dialog.AllKBServiceMode;
-import org.ei.bidan.bidan.view.dialog.NoIbuSort;
 import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
 import org.ei.bidan.view.contract.SmartRegisterClient;
@@ -18,8 +16,10 @@ import org.ei.bidan.view.dialog.AllClientsFilter;
 import org.ei.bidan.view.dialog.DialogOption;
 import org.ei.bidan.view.dialog.DialogOptionMapper;
 import org.ei.bidan.view.dialog.DialogOptionModel;
+import org.ei.bidan.view.dialog.DusunSort;
 import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.FilterOption;
+import org.ei.bidan.view.dialog.KBMethodSort;
 import org.ei.bidan.view.dialog.NameSort;
 import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
@@ -43,6 +43,8 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
     private DialogOption[] getEditOptions() {
         return new DialogOption[]{
+            new OpenFormOption(getString(R.string.str_kb_edit),
+                    AllConstants.FormNames.KOHORT_KB_EDIT, formController),
             new OpenFormOption(getString(R.string.str_kb_update),
                     AllConstants.FormNames.KOHORT_KB_UPDATE, formController),
         };
@@ -96,7 +98,8 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort(), new WifeAgeSort()};
+                return new DialogOption[]{new NameSort(), new WifeAgeSort(), new DusunSort(),
+                        new KBMethodSort()};
             }
 
             @Override

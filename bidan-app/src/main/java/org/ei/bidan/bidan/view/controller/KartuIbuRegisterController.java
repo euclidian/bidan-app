@@ -58,16 +58,15 @@ public class KartuIbuRegisterController {
                             kartuIbu.getDetails().get("Alamatdomisili"), kartuIbu.getDetails().get("NoIbu"),
                             kartuIbu.getDetails().get("Namalengkap"), kartuIbu.getDetails().get("Umur"),
                             kartuIbu.getDetails().get("GolonganDarah"), kartuIbu.getDetails().get("RiwayatKomplikasiKebidanan"),
-                            kartuIbu.getDetails().get("Namasuami"), kartuIbu.getDetails().get("TanggalPeriksa"),
-                            kartuIbu.getDetail("EDD"), kartuIbu.getDetails().get("Desa"))
+                            kartuIbu.getDetails().get("Namasuami"), kartuIbu.getDetails().get("TanggalPeriksa"), kartuIbu.getDetails().get("Dusun"))
                             .withDateOfBirth(kartuIbu.getDetails().get("Tanggallahir"))
                             .withNumberOfLivingChildren(kartuIbu.getDetails().get("Hidup"))
                             .withNumberOfPregnancies(kartuIbu.getDetails().get("Gravida"))
                             .withNumberOfAbortions(kartuIbu.getDetails().get("Abortus"))
-                            .withParity(kartuIbu.getDetails().get("Partus"))
-                            .withKBInformation(kartuIbu.getDetails().get("JenisKontrasepsi")
-                            , kartuIbu.getDetails().get("TanggalKunjungan"));
+                            .withParity(kartuIbu.getDetails().get("Partus"));
+                    kartuIbuClient.setIsHighRisk(kartuIbu.getDetail("IsHighRisk"));
                     updateStatusInformation(kartuIbu, kartuIbuClient);
+                    kartuIbuClient.setEdd(kartuIbu.getDetail("EDD"));
                     updateChildrenInformation(kartuIbuClient);
                     kartuIbuClients.add(kartuIbuClient);
                 }
@@ -111,18 +110,23 @@ public class KartuIbuRegisterController {
         if( ibu == null && kartuIbu.hasKBMethod()) {
             kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, "KB")
                             .put(STATUS_DATE_FIELD, kartuIbu.getDetail("TanggalKunjungan")).map());
+
+            kartuIbuClient.setKbMethod(kartuIbu.getDetail("JenisKontrasepsi"));
+            kartuIbuClient.setKbStart(kartuIbu.getDetail("TanggalKunjungan"));
         }
 
         if (ibu != null && ibu.isANC()) {
             kartuIbuClient
                     .withStatus(EasyMap.create(STATUS_TYPE_FIELD, ANC_STATUS)
                             .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
+            kartuIbuClient.setKbMethod("-");
             return;
         }
 
         if (ibu != null && ibu.isPNC()) {
             kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, PNC_STATUS)
                     .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
+            kartuIbuClient.setKbMethod("-");
         }
     }
 }

@@ -2,13 +2,19 @@ package org.ei.bidan.bidan.view.contract;
 
 import com.google.common.base.Strings;
 
+import org.apache.commons.lang3.StringUtils;
+import org.ei.bidan.util.DateUtil;
 import org.ei.bidan.view.contract.AlertDTO;
 import org.ei.bidan.view.contract.RefillFollowUps;
 import org.ei.bidan.view.contract.SmartRegisterClient;
+import org.joda.time.Days;
+import org.joda.time.LocalDate;
 
 import java.util.List;
 import java.util.Locale;
 
+import static org.apache.commons.lang3.StringUtils.isBlank;
+import static org.ei.bidan.util.DateUtil.formatDate;
 import static org.ei.bidan.util.StringUtil.humanize;
 
 /**
@@ -114,7 +120,7 @@ public class KBClient implements KISmartRegisterClient {
     }
 
     public String getTglKunjungan() {
-        return tglKunjungan;
+        return isBlank(tglKunjungan) ? "" : formatDate(tglKunjungan);
     }
 
     public String getEntityId() {
@@ -258,7 +264,7 @@ public class KBClient implements KISmartRegisterClient {
 
     @Override
     public int ageInDays() {
-        return age() / 365;
+        return age() * 365;
     }
 
     @Override
@@ -304,11 +310,23 @@ public class KBClient implements KISmartRegisterClient {
     @Override
     public boolean satisfiesFilter(String filterCriterion) {
         return name.toLowerCase(Locale.getDefault()).startsWith(filterCriterion.toLowerCase())
+                || husbandName.toLowerCase(Locale.getDefault()).startsWith(filterCriterion.toLowerCase())
+                || jenisKontrasepsi.toLowerCase(Locale.getDefault()).startsWith(filterCriterion.toLowerCase())
                 || String.valueOf(noIbu).startsWith(filterCriterion);
     }
 
     @Override
     public int compareName(SmartRegisterClient client) {
         return this.wifeName().compareToIgnoreCase(client.wifeName());
+    }
+
+    @Override
+    public String kbMethod() {
+        return Strings.isNullOrEmpty(jenisKontrasepsi) ? "-" :  humanize(jenisKontrasepsi);
+    }
+
+    @Override
+    public String kbDate() {
+        return kbMethodChangeDate;
     }
 }

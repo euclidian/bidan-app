@@ -12,8 +12,10 @@ public class AllConstants {
     public static final String LANGUAGE_PREFERENCE_KEY = "locale";
     public static final String ENGLISH_LOCALE = "en";
     public static final String KANNADA_LOCALE = "kn";
+    public static final String INDONESIA_LOCALE = "in";
     public static final String DEFAULT_LOCALE = ENGLISH_LOCALE;
     public static final String ENGLISH_LANGUAGE = "English";
+    public static final String INDONESIA_LANGUAGE = "Indonesia";
     public static final String KANNADA_LANGUAGE = "Kannada";
     public static final String IS_SYNC_IN_PROGRESS_PREFERENCE_KEY = "isSyncInProgress";
     public static final String TYPE = "type";
@@ -107,6 +109,17 @@ public class AllConstants {
         public static final String KARTU_IBU_ANAK_CLOSE="anak_close";
         public static final String KOHORT_KB_PELAYANAN="kohort_kb_pelayanan";
         public static final String KOHORT_KB_UPDATE="kohort_kb_update";
+        public static final String KARTU_IBU_ANC_OA="kartu_ibu_anc_oa";
+        public static final String KARTU_IBU_PNC_OA="kartu_ibu_pnc_oa";
+        public static final String KARTU_IBU_ANC_PARTOGRAF="kartu_ibu_anc_partograf";
+        public static final String KARTU_IBU_PNC_VISIT="kartu_ibu_pnc_visit";
+        public static final String BALITA_KUNJUNGAN="balita_kunjungan";
+        public static final String KOHORT_KB_EDIT="kohort_kb_edit";
+        public static final String BAYI_IMUNISASI="bayi_immunization";
+        public static final String BAYI_NEONATAL_PERIOD="bayi_neonatal_period";
+        public static final String KOHORT_BAYI_EDIT="kohort_bayi_edit";
+        public static final String KOHORT_BAYI_MONITORING="bayi_growth_and_nutrition_monitoring";
+        public static final String KARTU_IBU_ANC_VISIT="kartu_ibu_anc_visit";
     }
 
     public class KIRegistrationFields {

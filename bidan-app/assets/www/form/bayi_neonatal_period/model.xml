@@ -1,0 +1,29 @@
+<model>
+    <instance>
+        <Bayi_Neonatal_Period id="Bayi_Neonatal_Period" version="201504220354">
+          <formhub>
+            <uuid/>
+          </formhub>
+          <neonatal/>
+          <B04012/>
+          <B04013/>
+          <B04014/>
+          <B04015/>
+          <B04016/>
+          <B04017/>
+          <B04018/>
+          <B04019/>
+          <B04020/>
+          <B04021/>
+          <B04022/>
+          <B04023/>
+          <B04024/>
+          <B04025/>
+          <B04026/>
+          <B04027/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </Bayi_Neonatal_Period>
+      </instance>
+  </model>

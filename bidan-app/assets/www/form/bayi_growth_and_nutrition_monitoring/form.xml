@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form autocomplete="off" novalidate="novalidate" class="or clearfix" id="baby_Growth_and_nutrition_monitoring">
+    <!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.-->
+    <section class="form-logo" />
+    <h3 id="form-title">Bayi Growth and Nutrition Monitoring</h3>
+    <label class="note non-select ">
+        <span lang="" class="question-label active">
+            Tanggal kunjungan bayi per bulan:
+            <span class="or-output" data-value=" /baby_Growth_and_nutrition_monitoring/today " />
+        </span>
+        <input type="text" name="/baby_Growth_and_nutrition_monitoring/generated_note_name_3" data-type-xml="string" readonly="readonly" />
+    </label>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Berat badan bayi setiap kunjungan bayi per bulan</span>
+        <input type="number" name="/baby_Growth_and_nutrition_monitoring/B04029" data-type-xml="decimal" step="any" />
+    </label>
+    <label class="question or-appearance-minimal ">
+        <span lang="" class="question-label active">Pemberian Asi Eksklusif</span>
+        <select name="/baby_Growth_and_nutrition_monitoring/B04030" data-name="/baby_Growth_and_nutrition_monitoring/B04030" data-type-xml="select1">
+            <option value="">...</option>
+            <option value="ekslusif_1">Ekslusif 1 (E1)</option>
+            <option value="ekslusif_2">Ekslusif 2 (E2)</option>
+            <option value="ekslusif_3">Ekslusif 3 (E3)</option>
+            <option value="ekslusif_4">Ekslusif 4 (E4)</option>
+            <option value="ekslusif_5">Ekslusif 5 (E5)</option>
+            <option value="ekslusif_6">Ekslusif 6 (E6)</option>
+        </select>
+        <span class="or-option-translations" style="display:none;" />
+    </label>
+    <fieldset class="question ">
+        <fieldset>
+            <legend>
+                <span lang="" class="question-label active">Hasil dilakukannya KPSP</span>
+            </legend>
+            <div class="option-wrapper">
+                <label class="">
+                    <input type="radio" name="/baby_Growth_and_nutrition_monitoring/B04031" data-name="/baby_Growth_and_nutrition_monitoring/B04031" value="DS" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Jika dilakukan KPSP dan hasilnya sesuai (DS)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/baby_Growth_and_nutrition_monitoring/B04031" data-name="/baby_Growth_and_nutrition_monitoring/B04031" value="Dm" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Jika dilakukan KPSP dan hasilnya meragukan (Dm)</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="/baby_Growth_and_nutrition_monitoring/B04031" data-name="/baby_Growth_and_nutrition_monitoring/B04031" value="Dp" data-type-xml="select1" />
+                    <span lang="" class="option-label active">Jika dilakukan KPSP dan hasilnya penyimpangan (Dp)</span>
+                </label>
+            </div>
+        </fieldset>
+    </fieldset>
+    <label class="question non-select ">
+        <span lang="" class="question-label active">Tanggal pemberian Vit.A 6 bulan</span>
+        <input type="date" name="/baby_Growth_and_nutrition_monitoring/B04032" data-type-xml="date" />
+    </label>
+    <fieldset id="or-preload-items" style="display:none;">
+        <label class="calculation non-select ">
+            <input type="hidden" name="/baby_Growth_and_nutrition_monitoring/today" data-preload="date" data-preload-params="today" data-type-xml="date" />
+        </label>
+    </fieldset>
+    <fieldset id="or-calculated-items" style="display:none;">
+        <label class="calculation non-select ">
+            <input type="hidden" name="/baby_Growth_and_nutrition_monitoring/meta/instanceID" data-calculate="concat('uuid:', uuid())" data-type-xml="string" />
+        </label>
+        <label class="calculation non-select ">
+            <input type="hidden" name="/baby_Growth_and_nutrition_monitoring/formhub/uuid" data-calculate="'be112d1bff5044e08f48f01fa27d510b'" data-type-xml="string" />
+        </label>
+    </fieldset>
+</form>

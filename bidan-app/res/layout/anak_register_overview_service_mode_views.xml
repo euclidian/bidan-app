@@ -2,8 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:weightSum="@integer/child_list_service_mode_views_section_weight"
+              android:weightSum="73"
               android:orientation="horizontal">
+
+    <org.ei.bidan.view.customControls.CustomFontTextView
+        android:id="@+id/txt_ibu_ki_no"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="13"
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
+
+    <ImageView
+        android:layout_width="@dimen/smart_register_client_divider_height"
+        android:layout_height="fill_parent"
+        android:src="@color/smart_register_client_divider_color"/>
 
     <org.ei.bidan.view.customControls.CustomFontTextView
             android:id="@+id/anak_register_dob"

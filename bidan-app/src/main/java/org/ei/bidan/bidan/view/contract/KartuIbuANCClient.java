@@ -1,5 +1,7 @@
 package org.ei.bidan.bidan.view.contract;
 
+import com.google.common.base.Strings;
+
 import org.ei.bidan.domain.ANCServiceType;
 import org.ei.bidan.util.IntegerUtil;
 import org.ei.bidan.view.contract.AlertDTO;
@@ -7,6 +9,9 @@ import org.ei.bidan.view.contract.ServiceProvidedDTO;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.contract.Visits;
 import org.joda.time.LocalDateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
 import static org.ei.bidan.util.StringUtil.humanize;
 
 import java.util.HashMap;
@@ -47,6 +52,12 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     private String kunjungan;
     private String ttImunisasi;
     private String usiaKlinis;
+    private String BB;
+    private String TB;
+    private String beratBadan;
+    private String LILA;
+    private String penyakitKronis;
+    private String alergi;
 
     private List<AlertDTO> alerts;
     private List<ServiceProvidedDTO> services_provided;
@@ -64,7 +75,14 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public String eddForDisplay() {
-        return null;
+        if(Strings.isNullOrEmpty(edd)) return "-";
+        if(edd.equalsIgnoreCase("invalid date")) return "-";
+
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("YYYY-MM-dd");
+        DateTimeFormatter formatter2 = DateTimeFormat.forPattern("dd MMM YYYY");
+        LocalDateTime date = parse(edd, formatter);
+
+        return "" + date.toString(formatter2);
     }
 
     @Override
@@ -194,7 +212,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public boolean isHighRisk() {
-        return false;
+        return isHighRisk;
     }
 
     @Override
@@ -220,6 +238,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     @Override
     public boolean satisfiesFilter(String filterCriterion) {
         return name.toLowerCase(Locale.getDefault()).startsWith(filterCriterion.toLowerCase())
+                || husbandName.toLowerCase(Locale.getDefault()).startsWith(filterCriterion.toLowerCase())
                 || String.valueOf(kiNumber).startsWith(filterCriterion)
                 || String.valueOf(puskesmas).startsWith(filterCriterion);
     }
@@ -283,6 +302,62 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     public KartuIbuANCClient withUsiaKlinisData(String usiaKlinis) {
         this.usiaKlinis = usiaKlinis;
         return this;
+    }
+
+    public String getTB() {
+        return TB;
+    }
+
+    public void setTB(String TB) {
+        this.TB = TB;
+    }
+
+    public String getBB() {
+        return BB;
+    }
+
+    public void setBB(String BB) {
+        this.BB = BB;
+    }
+
+    public String getBeratBadan() {
+        return beratBadan;
+    }
+
+    public void setBeratBadan(String beratBadan) {
+        this.beratBadan = beratBadan;
+    }
+
+    public String getLILA() {
+        return LILA;
+    }
+
+    public void setLILA(String LILA) {
+        this.LILA = LILA;
+    }
+
+    public String getPenyakitKronis() {
+        return humanize(penyakitKronis);
+    }
+
+    public void setPenyakitKronis(String penyakitKronis) {
+        this.penyakitKronis = penyakitKronis;
+    }
+
+    public String getAlergi() {
+        return alergi;
+    }
+
+    public void setAlergi(String alergi) {
+        this.alergi = alergi;
+    }
+
+    public void setIsHighRisk(String isHighRisk) {
+        if(Strings.isNullOrEmpty(isHighRisk)) {
+            this.isHighRisk = false;
+            return;
+        }
+        this.isHighRisk = isHighRisk.equalsIgnoreCase("ya") ? true : false;
     }
 
 }

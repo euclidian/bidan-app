@@ -44,6 +44,12 @@ public class AnakClient implements SmartRegisterClient{
     private String birthCondition;
     private String serviceAtBirth;
     private String kpspResult;
+    private String hb07;
+    private String bcgPol1;
+    private String dptHb1Pol2;
+    private String dptHb2Pol3;
+    private String dptHb3Pol4;
+    private String campak;
 
     public AnakClient(String entityId, String gender, String weight, Map<String, String> details) {
         this.entityId = entityId;
@@ -156,16 +162,14 @@ public class AnakClient implements SmartRegisterClient{
     public boolean satisfiesFilter(String filterCriterion) {
         return (!isBlank(name) && name.toLowerCase().startsWith(filterCriterion.toLowerCase()))
                 || (!isBlank(motherName) && motherName.toLowerCase().startsWith(filterCriterion.toLowerCase()))
+                || (!isBlank(fatherName) && fatherName.toLowerCase().startsWith(filterCriterion.toLowerCase()))
                 || String.valueOf(kiNumber).startsWith(filterCriterion);
     }
 
     @Override
     public int compareName(SmartRegisterClient anotherClient) {
-        /*
-        ChildSmartRegisterClient anotherChildClient = (ChildSmartRegisterClient) anotherClient;
-        return this.motherName().compareTo(anotherChildClient.motherName());
-        */
-        return 0;
+        AnakClient anotherChildClient = (AnakClient) anotherClient;
+        return this.name().compareTo(anotherChildClient.name());
     }
 
     @Override
@@ -258,6 +262,54 @@ public class AnakClient implements SmartRegisterClient{
     public AnakClient withServiceAtBirth(String serviceAtBirth) {
         this.serviceAtBirth = serviceAtBirth;
         return this;
+    }
+
+    public String getHb07() {
+        return isBlank(hb07) ? "-" : formatDate(hb07);
+    }
+
+    public void setHb07(String hb07) {
+        this.hb07 = hb07;
+    }
+
+    public String getBcgPol1() {
+        return isBlank(bcgPol1) ? "-" : formatDate(bcgPol1);
+    }
+
+    public void setBcgPol1(String bcgPol1) {
+        this.bcgPol1 = bcgPol1;
+    }
+
+    public String getDptHb1Pol2() {
+        return isBlank(dptHb1Pol2) ? "-" : formatDate(dptHb1Pol2);
+    }
+
+    public void setDptHb1Pol2(String dptHb1Pol2) {
+        this.dptHb1Pol2 = dptHb1Pol2;
+    }
+
+    public String getDptHb2Pol3() {
+        return isBlank(dptHb2Pol3) ? "-" : formatDate(dptHb2Pol3);
+    }
+
+    public void setDptHb2Pol3(String dptHb2Pol3) {
+        this.dptHb2Pol3 = dptHb2Pol3;
+    }
+
+    public String getDptHb3Pol4() {
+        return isBlank(dptHb3Pol4) ? "-" : formatDate(dptHb3Pol4);
+    }
+
+    public void setDptHb3Pol4(String dptHb3Pol4) {
+        this.dptHb3Pol4 = dptHb3Pol4;
+    }
+
+    public String getCampak() {
+        return isBlank(campak) ? "-" : formatDate(campak);
+    }
+
+    public void setCampak(String campak) {
+        this.campak = campak;
     }
 
     @Override

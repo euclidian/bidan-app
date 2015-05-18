@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import org.acra.ACRA;
 import org.acra.ReportingInteractionMode;
 import org.acra.annotation.ReportsCrashes;
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.Context;
 import org.ei.bidan.sync.DrishtiSyncScheduler;
 

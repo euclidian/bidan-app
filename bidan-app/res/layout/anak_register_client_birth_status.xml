@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Berat lahir (kg) : "
+        android:text="Berat lahir (g) : "
         style="@style/CustomFontTextViewStyle.ListView.Normal"/>
 
     <org.ei.bidan.view.customControls.CustomFontTextView

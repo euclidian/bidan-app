@@ -1,5 +1,8 @@
 package org.ei.bidan.view.contract;
 
+import org.ei.bidan.bidan.view.contract.KBClient;
+import org.ei.bidan.bidan.view.contract.KBSmartRegisterClient;
+import org.ei.bidan.bidan.view.contract.KartuIbuANCClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.util.IntegerUtil;
 
@@ -11,6 +14,41 @@ public interface SmartRegisterClient {
         @Override
         public int compare(SmartRegisterClient client, SmartRegisterClient anotherClient) {
             return client.compareName(anotherClient);
+        }
+    };
+
+    Comparator<SmartRegisterClient> VILLAGE_COMPARATOR = new Comparator<SmartRegisterClient>() {
+        @Override
+        public int compare(SmartRegisterClient client, SmartRegisterClient otherClient) {
+            if (client.village() == null && otherClient.village() == null) {
+                return 0;
+            }
+            if (client.village() == null) {
+                return 1;
+            }
+            if (otherClient.village() == null) {
+                return -1;
+            }
+            return client.village().compareToIgnoreCase(otherClient.village());
+        }
+    };
+
+    Comparator<SmartRegisterClient> KB_METHOD_COMPARATOR = new Comparator<SmartRegisterClient>() {
+        @Override
+        public int compare(SmartRegisterClient client, SmartRegisterClient otherClient) {
+            KBSmartRegisterClient client1 = (KBSmartRegisterClient) client;
+            KBSmartRegisterClient client2 = (KBSmartRegisterClient) otherClient;
+
+            if (client1.kbMethod().equalsIgnoreCase("-") && client2.kbMethod().equalsIgnoreCase("-")) {
+                return 0;
+            }
+            if (client1.kbMethod().equalsIgnoreCase("-")) {
+                return 1;
+            }
+            if (client2.kbMethod().equalsIgnoreCase("-")) {
+                return -1;
+            }
+            return client1.kbMethod().compareToIgnoreCase(client2.kbMethod());
         }
     };
 
@@ -100,8 +138,30 @@ public interface SmartRegisterClient {
     Comparator<SmartRegisterClient> EDD_COMPARATOR_KI = new Comparator<SmartRegisterClient>() {
         @Override
         public int compare(SmartRegisterClient client, SmartRegisterClient anotherClient) {
+            KartuIbuClient kartuIbuClient = (KartuIbuClient) client;
+            KartuIbuClient anotherKartuIbuClient = (KartuIbuClient) anotherClient;
+            if (kartuIbuClient.edd() == null && anotherKartuIbuClient.edd() == null) {
+                return 0;
+            }
+
+            if (kartuIbuClient.edd() == null) {
+                return 1;
+            }
+
+            if (anotherKartuIbuClient.edd() == null) {
+                return -1;
+            }
+
             return ((KartuIbuClient) client).edd()
                     .compareTo(((KartuIbuClient) anotherClient).edd());
+        }
+    };
+
+    Comparator<SmartRegisterClient> EDD_COMPARATOR_KI_ANC = new Comparator<SmartRegisterClient>() {
+        @Override
+        public int compare(SmartRegisterClient client, SmartRegisterClient anotherClient) {
+            return ((KartuIbuANCClient) client).edd()
+                    .compareTo(((KartuIbuANCClient) anotherClient).edd());
         }
     };
 
