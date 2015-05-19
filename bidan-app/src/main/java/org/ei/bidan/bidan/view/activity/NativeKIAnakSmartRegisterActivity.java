@@ -1,5 +1,7 @@
 package org.ei.bidan.bidan.view.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.View;
 
 import org.ei.bidan.R;
@@ -10,6 +12,7 @@ import org.ei.bidan.bidan.view.controller.AnakRegisterController;
 import org.ei.bidan.bidan.view.dialog.AnakImmunizationServiceMode;
 import org.ei.bidan.bidan.view.dialog.AnakOverviewServiceMode;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
+import org.ei.bidan.util.StringUtil;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.dialog.AllClientsFilter;
 import org.ei.bidan.view.dialog.DialogOption;
@@ -22,6 +25,9 @@ import org.ei.bidan.view.dialog.ReverseNameSort;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
 
+import java.util.Collections;
+import java.util.List;
+
 import static org.ei.bidan.AllConstants.FormNames.*;
 
 /**
@@ -32,6 +38,7 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
     private SmartRegisterClientsProvider clientProvider = null;
     private AnakRegisterController controller;
     private final ClientActionHandler clientActionHandler = new ClientActionHandler();
+    private final int numPickList = 3;
 
     @Override
     protected SmartRegisterPaginatedAdapter adapter() {
@@ -138,9 +145,38 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
             return getEditOptions();
         }
 
+        String name;
+        CharSequence listNames[];
+
         @Override
         public void onDialogOptionSelection(DialogOption option, Object tag) {
-            onEditSelection((EditOption) option, (SmartRegisterClient) tag);
+            List<String> randomName = context.allKohort().randomAnak(numPickList);
+
+            final DialogOption _option = option;
+            final Object _tag = tag;
+
+            name = StringUtil.humanize(((SmartRegisterClient) tag).name());
+
+            if (!randomName.contains(name)) {
+                if(randomName.size() >= numPickList) randomName = randomName.subList(0, randomName.size() - 1);
+                randomName.add(name);
+                Collections.shuffle(randomName);
+            }
+
+            listNames = randomName.toArray(new CharSequence[randomName.size()]);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(NativeKIAnakSmartRegisterActivity.this);
+            builder.setTitle(R.string.title_double_selection);
+
+            builder.setItems(listNames, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if (listNames[which].equals(name)) {
+                        onEditSelection((EditOption) _option, (SmartRegisterClient) _tag);
+                    }
+                }
+            });
+            builder.show();
         }
     }
 

@@ -42,6 +42,7 @@ public class AnakRepository extends DrishtiRepository {
     public static final String PHOTO_PATH_COLUMN = "photoPath";
     public static final String[] ANAK_TABLE_COLUMNS = {ID_COLUMN, IBU_ID_COLUMN, DATE_OF_BIRTH_COLUMN, GENDER_COLUMN, DETAILS_COLUMN, IS_CLOSED_COLUMN, PHOTO_PATH_COLUMN};
     public static final String NOT_CLOSED = "false";
+    public static final String ANAK_NAME = "name";
 
     @Override
     protected void onCreate(SQLiteDatabase database) {
@@ -112,6 +113,21 @@ public class AnakRepository extends DrishtiRepository {
                         " WHERE " + ANAK_TABLE_NAME + "." + IS_CLOSED_COLUMN + "= '" + NOT_CLOSED + "' AND " +
                         ANAK_TABLE_NAME + "." + IBU_ID_COLUMN + " = " + IBU_TABLE_NAME + "." + IbuRepository.ID_COLUMN
                         + " AND " + IBU_TABLE_NAME + "." + IbuRepository.KI_ID_COLUMN + " = " + KI_TABLE_NAME + "." + KartuIbuRepository.ID_COLUMN,
+                null);
+        return readAllAnakWithIbuAndKI(cursor);
+    }
+
+    public List<Anak> getRandomAnak(int length) {
+        SQLiteDatabase database = masterRepository.getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT " +
+                        tableColumnsForQuery(ANAK_TABLE_NAME, ANAK_TABLE_COLUMNS) + ", " +
+                        tableColumnsForQuery(IBU_TABLE_NAME, IBU_TABLE_COLUMNS) + ", " +
+                        tableColumnsForQuery(KI_TABLE_NAME, KI_TABLE_COLUMNS) +
+                        " FROM " + ANAK_TABLE_NAME + ", " + IBU_TABLE_NAME + ", " + KI_TABLE_NAME +
+                        " WHERE " + ANAK_TABLE_NAME + "." + IS_CLOSED_COLUMN + "= '" + NOT_CLOSED + "' AND " +
+                        ANAK_TABLE_NAME + "." + IBU_ID_COLUMN + " = " + IBU_TABLE_NAME + "." + IbuRepository.ID_COLUMN
+                        + " AND " + IBU_TABLE_NAME + "." + IbuRepository.KI_ID_COLUMN + " = " + KI_TABLE_NAME + "." + KartuIbuRepository.ID_COLUMN +
+                        " ORDER BY RANDOM() LIMIT " + length,
                 null);
         return readAllAnakWithIbuAndKI(cursor);
     }
