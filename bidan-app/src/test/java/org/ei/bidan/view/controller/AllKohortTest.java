@@ -1,5 +1,6 @@
 package org.ei.bidan.view.controller;
 
+import org.ei.bidan.DristhiConfiguration;
 import org.ei.bidan.bidan.domain.Anak;
 import org.ei.bidan.bidan.domain.Ibu;
 import org.ei.bidan.bidan.repository.AllKohort;
@@ -38,6 +39,8 @@ public class AllKohortTest {
     @Mock
     private TimelineEventRepository timelineEventRepository;
     @Mock
+    private DristhiConfiguration dristhiConfiguration;
+    @Mock
     private Anak anak;
     @Mock
     private Ibu ibu;
@@ -48,7 +51,7 @@ public class AllKohortTest {
     public void setUp() {
         initMocks(this);
         allKohort = new AllKohort(ibuRepository, anakRepository,
-                alertRepository, timelineEventRepository);
+                alertRepository, timelineEventRepository, dristhiConfiguration);
     }
 
     @Test

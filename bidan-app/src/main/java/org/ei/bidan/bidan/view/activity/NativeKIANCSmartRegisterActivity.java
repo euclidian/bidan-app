@@ -1,5 +1,7 @@
 package org.ei.bidan.bidan.view.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.View;
 
 import org.ei.bidan.AllConstants;
@@ -11,6 +13,7 @@ import org.ei.bidan.bidan.view.dialog.EstimatedDateOfDeliverySortKIANC;
 import org.ei.bidan.bidan.view.dialog.KartuIbuANCOverviewServiceMode;
 import org.ei.bidan.domain.form.FieldOverrides;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
+import org.ei.bidan.util.StringUtil;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.dialog.AllClientsFilter;
 import org.ei.bidan.view.dialog.DialogOption;
@@ -23,6 +26,9 @@ import org.ei.bidan.view.dialog.NameSort;
 import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
+
+import java.util.Collections;
+import java.util.List;
 
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_CLOSE;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_EDIT;
@@ -39,6 +45,7 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
     private SmartRegisterClientsProvider clientProvider = null;
     private KartuIbuANCRegisterController controller;
     private final ClientActionHandler clientActionHandler = new ClientActionHandler();
+    private final int numPickList = 3;
 
     @Override
     protected SmartRegisterPaginatedAdapter adapter() {
@@ -76,9 +83,38 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
             return getEditOptions();
         }
 
+        String name;
+        CharSequence listNames[];
+
         @Override
         public void onDialogOptionSelection(DialogOption option, Object tag) {
-            onEditSelection((EditOption) option, (SmartRegisterClient) tag);
+            List<String> randomName = context.allKohort().randomANCName(numPickList);
+
+            final DialogOption _option = option;
+            final Object _tag = tag;
+
+            name = StringUtil.humanize(((SmartRegisterClient) tag).name());
+
+            if (!randomName.contains(name)) {
+                randomName = randomName.subList(0, numPickList - 1);
+                randomName.add(name);
+                Collections.shuffle(randomName);
+            }
+
+            listNames = randomName.toArray(new CharSequence[randomName.size()]);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(NativeKIANCSmartRegisterActivity.this);
+            builder.setTitle(R.string.title_double_selection);
+
+            builder.setItems(listNames, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if (listNames[which].equals(name)) {
+                        onEditSelection((EditOption) _option, (SmartRegisterClient) _tag);
+                    }
+                }
+            });
+            builder.show();
         }
     }
 

@@ -1,12 +1,16 @@
 package org.ei.bidan.bidan.repository;
 
 import org.apache.commons.lang3.tuple.Pair;
+import org.ei.bidan.DristhiConfiguration;
 import org.ei.bidan.bidan.domain.Anak;
 import org.ei.bidan.bidan.domain.Ibu;
 import org.ei.bidan.bidan.domain.KartuIbu;
+import org.ei.bidan.bidan.service.DummyNameService;
 import org.ei.bidan.repository.AlertRepository;
 import org.ei.bidan.repository.TimelineEventRepository;
+import org.ei.bidan.util.StringUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.ei.bidan.bidan.repository.IbuRepository.TYPE_ANC;
@@ -20,13 +24,16 @@ public class AllKohort {
     private IbuRepository ibuRepository;
     private final AlertRepository alertRepository;
     private final TimelineEventRepository timelineEventRepository;
+    private final DristhiConfiguration configuration;
 
     public AllKohort(IbuRepository ibuRepository, AnakRepository anakRepository,
-                     AlertRepository alertRepository, TimelineEventRepository timelineEventRepository) {
+                     AlertRepository alertRepository, TimelineEventRepository timelineEventRepository,
+                     DristhiConfiguration configuration) {
         this.alertRepository = alertRepository;
         this.timelineEventRepository = timelineEventRepository;
         this.ibuRepository = ibuRepository;
         this.anakRepository = anakRepository;
+        this.configuration = configuration;
     }
 
     public Ibu findIbu(String caseId) {
@@ -121,4 +128,57 @@ public class AllKohort {
     public boolean isPregnant(String kiId) {
         return ibuRepository.isPregnant(kiId);
     }
+
+    public List<String> randomANCName(int length)  {
+        List<String> motherNameList = new ArrayList<String>();
+        List<Pair<Ibu,KartuIbu>> allIbu = ibuRepository.allRandomIbuOfAType(length, "ANC");
+
+        if(length > allIbu.size()) {
+            motherNameList = DummyNameService.getMotherDummyName(configuration, length - allIbu.size(), true);
+        }
+
+        int index = 0;
+        while(motherNameList.size() < length) {
+            motherNameList.add(StringUtil.humanize(allIbu.get(index).getRight().getDetail(KartuIbuRepository.WIFE_NAME_COLUMN)));
+            index++;
+        }
+
+        return motherNameList;
+    }
+
+    public List<String> randomPNCName(int length)  {
+        List<String> motherNameList = new ArrayList<String>();
+        List<Pair<Ibu,KartuIbu>> allIbu = ibuRepository.allRandomIbuOfAType(length, "PNC");
+
+        if(length > allIbu.size()) {
+            motherNameList = DummyNameService.getMotherDummyName(configuration, length - allIbu.size(), true);
+        }
+
+        int index = 0;
+        while(motherNameList.size() < length) {
+            motherNameList.add(StringUtil.humanize(allIbu.get(index).getRight().getDetail(KartuIbuRepository.WIFE_NAME_COLUMN)));
+            index++;
+        }
+
+        return motherNameList;
+    }
+
+    public List<String> randomAnak(int length)  {
+        List<String> anakNameList = new ArrayList<String>();
+        List<Anak> allAnak = anakRepository.getRandomAnak(length);
+
+        if(length > allAnak.size()) {
+            anakNameList = DummyNameService.getChildDummyName(configuration, length - allAnak.size(), true);
+        }
+
+        int index = 0;
+        while(anakNameList.size() < length) {
+            anakNameList.add(StringUtil.humanize(allAnak.get(index).getDetail(AnakRepository.ANAK_NAME)));
+            index++;
+        }
+
+        return anakNameList;
+    }
+
+
 }

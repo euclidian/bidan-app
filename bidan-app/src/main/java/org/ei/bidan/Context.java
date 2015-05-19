@@ -856,7 +856,7 @@ public class Context {
 
     public AllKohort allKohort() {
         if(allKohort == null) {
-            allKohort = new AllKohort(ibuRepository(), anakRepository(), alertRepository(), timelineEventRepository());
+            allKohort = new AllKohort(ibuRepository(), anakRepository(), alertRepository(), timelineEventRepository(), configuration());
         }
         return allKohort;
     }
