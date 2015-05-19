@@ -4,6 +4,7 @@ import android.util.Log;
 
 import org.ei.bidan.DristhiConfiguration;
 import org.ei.bidan.bidan.domain.KartuIbu;
+import org.ei.bidan.bidan.service.DummyNameService;
 import org.ei.bidan.repository.AlertRepository;
 import org.ei.bidan.repository.TimelineEventRepository;
 import org.ei.bidan.util.StringUtil;
@@ -39,6 +40,8 @@ public class AllKartuIbus {
         return kartuIbuRepository.allKartuIbus();
     }
 
+    public List<KartuIbu> allKartuIbuWithKB() { return kartuIbuRepository.allKartuIbuWithKB(); }
+
     public KartuIbu findByCaseID(String caseId) {
         return kartuIbuRepository.findByCaseID(caseId);
     }
@@ -55,7 +58,7 @@ public class AllKartuIbus {
         List<KartuIbu> allKartuIbu = kartuIbuRepository.getRandomKartuIbu(length);
 
         if(length > allKartuIbu.size()) {
-            motherNameList = getDummyData(length - allKartuIbu.size());
+            motherNameList = DummyNameService.getMotherDummyName(configuration,length - allKartuIbu.size(),true);
         }
 
         int index = 0;
@@ -65,26 +68,6 @@ public class AllKartuIbus {
         }
 
         return motherNameList;
-    }
-
-    private List<String> getDummyData(int size) {
-        List<String> motherNameList = new ArrayList<String>();
-        try {
-            JSONObject dummyData = new JSONObject(configuration.getDummyData());
-            JSONArray motherJSONArray = dummyData.getJSONArray("motherName");
-
-            if (motherJSONArray != null) {
-                int len = motherJSONArray.length();
-                for (int i=0;i<len;i++){
-                    motherNameList.add(motherJSONArray.get(i).toString());
-                }
-            }
-        } catch (Exception e) {
-            Log.d("Random Name",  e.getMessage());
-            return null;
-        }
-        Collections.shuffle(motherNameList);
-        return motherNameList.subList(0, size);
     }
 
     public List<KartuIbu> findByCaseIDs(List<String> caseIds) {
