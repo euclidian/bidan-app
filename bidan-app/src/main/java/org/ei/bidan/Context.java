@@ -797,7 +797,8 @@ public class Context {
     public AllKartuIbus allKartuIbus() {
         initRepository();
         if (allKartuIbus == null) {
-            allKartuIbus = new AllKartuIbus(kartuIbuRepository(), alertRepository(), timelineEventRepository());
+            allKartuIbus = new AllKartuIbus(kartuIbuRepository(), alertRepository(),
+                    timelineEventRepository(), configuration());
         }
         return allKartuIbus;
     }

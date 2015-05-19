@@ -1,9 +1,13 @@
 package org.ei.bidan.bidan.view.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.View;
+import android.widget.Toast;
 
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
+import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.bidan.view.dialog.AllKartuIbuServiceMode;
 import org.ei.bidan.bidan.view.controller.KartuIbuRegisterController;
@@ -12,6 +16,7 @@ import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
 import org.ei.bidan.bidan.provider.KIClientsProvider;
 import org.ei.bidan.domain.form.FieldOverrides;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
+import org.ei.bidan.util.StringUtil;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.dialog.AllClientsFilter;
 import org.ei.bidan.view.dialog.DialogOption;
@@ -30,6 +35,12 @@ import org.ei.bidan.view.dialog.ReverseNameSort;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.Random;
+
 import static org.ei.bidan.AllConstants.FormNames.ANAK_BAYI_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_CLOSE;
@@ -46,6 +57,7 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
     private SmartRegisterClientsProvider clientProvider = null;
     private KartuIbuRegisterController controller;
     private DialogOptionMapper dialogOptionMapper;
+    private final int numPickList = 3;
 
     private final ClientActionHandler clientActionHandler = new ClientActionHandler();
 
@@ -172,9 +184,39 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
             return getEditOptions();
         }
 
+        String name;
+        CharSequence listNames[];
+
         @Override
         public void onDialogOptionSelection(DialogOption option, Object tag) {
-            onEditSelection((EditOption) option, (SmartRegisterClient) tag);
+            List<String> randomName = context.allKartuIbus().randomName(numPickList);
+
+            final DialogOption _option = option;
+            final Object _tag = tag;
+
+            name = StringUtil.humanize(((SmartRegisterClient) tag).name());
+
+            if(!randomName.contains(name)) {
+                randomName = randomName.subList(0,numPickList-1);
+                randomName.add(name);
+                Collections.shuffle(randomName);
+            }
+
+            listNames = randomName.toArray(new CharSequence[randomName.size()]);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(NativeKISmartRegisterActivity.this);
+            builder.setTitle(R.string.title_double_selection);
+
+            builder.setItems(listNames, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if(listNames[which].equals(name)) {
+                        onEditSelection((EditOption) _option, (SmartRegisterClient) _tag);
+                    }
+                }
+            });
+            builder.show();
         }
     }
+
 }

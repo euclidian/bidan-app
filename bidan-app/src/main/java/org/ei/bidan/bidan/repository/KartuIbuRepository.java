@@ -32,6 +32,7 @@ public class KartuIbuRepository extends DrishtiRepository{
     public static final String ID_COLUMN = "id";
     public static final String DETAILS_COLUMN = "details";
     private static final String IS_CLOSED_COLUMN = "isClosed";
+    public static final String WIFE_NAME_COLUMN = "Namalengkap";
 
     public static final String KI_TABLE_NAME = "kartu_ibu";
     public static final String[] KI_TABLE_COLUMNS = new String[]{ID_COLUMN, DETAILS_COLUMN,
@@ -88,6 +89,12 @@ public class KartuIbuRepository extends DrishtiRepository{
         SQLiteDatabase database = masterRepository.getReadableDatabase();
         Cursor cursor = database.rawQuery(String.format("SELECT * FROM %s WHERE %s IN (%s)", KI_TABLE_NAME, ID_COLUMN,
                 insertPlaceholdersForInClause(caseIds.length)), caseIds);
+        return readAllKartuIbus(cursor);
+    }
+
+    public List<KartuIbu> getRandomKartuIbu(int length) {
+        SQLiteDatabase database = masterRepository.getReadableDatabase();
+        Cursor cursor = database.rawQuery(String.format("SELECT * FROM %s WHERE isClosed='false' ORDER BY RANDOM() LIMIT %s", KI_TABLE_NAME, length), null);
         return readAllKartuIbus(cursor);
     }
 
