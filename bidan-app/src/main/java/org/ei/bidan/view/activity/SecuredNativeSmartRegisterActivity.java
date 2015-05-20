@@ -134,6 +134,7 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
                 paginationViewHandler.refresh();
                 clientsProgressView.setVisibility(View.GONE);
                 clientsView.setVisibility(VISIBLE);
+                searchView.setText("");
 
             }
         }.executeOnExecutor(THREAD_POOL_EXECUTOR);
