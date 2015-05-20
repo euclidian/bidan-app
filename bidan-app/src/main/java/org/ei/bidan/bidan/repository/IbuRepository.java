@@ -130,17 +130,6 @@ public class IbuRepository extends DrishtiRepository {
         return readAllIbuWithKartuIbu(cursor);
     }
 
-
-    public List<Pair<Ibu, KartuIbu>> allRandomIbuOfAType(int length, String type) {
-        SQLiteDatabase database = masterRepository.getReadableDatabase();
-        Cursor cursor = database.rawQuery("SELECT " + tableColumnsForQuery(IBU_TABLE_NAME, IBU_TABLE_COLUMNS) + ", " + tableColumnsForQuery(KI_TABLE_NAME, KI_TABLE_COLUMNS) +
-                " FROM " + IBU_TABLE_NAME + ", " + KI_TABLE_NAME +
-                " WHERE " + TYPE_COLUMN + "='" + type +
-                "' AND " + IBU_TABLE_NAME + "." + IS_CLOSED_COLUMN + "= '" + NOT_CLOSED + "' AND " +
-                IBU_TABLE_NAME + "." + KI_ID_COLUMN + " = " + KI_TABLE_NAME + "." + KartuIbuRepository.ID_COLUMN + " ORDER BY RANDOM() LIMIT " + length, null);
-        return readAllIbuWithKartuIbu(cursor);
-    }
-
     private List<Pair<Ibu, KartuIbu>> readAllIbuWithKartuIbu(Cursor cursor) {
         cursor.moveToFirst();
         List<Pair<Ibu, KartuIbu>> ancOrPncsWithKartuIbu = new ArrayList<Pair<Ibu, KartuIbu>>();

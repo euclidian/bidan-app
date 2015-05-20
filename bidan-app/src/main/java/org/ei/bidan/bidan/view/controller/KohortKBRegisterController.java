@@ -3,6 +3,7 @@ package org.ei.bidan.bidan.view.controller;
 import com.google.common.base.Strings;
 import com.google.common.collect.Iterables;
 
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.bidan.domain.Anak;
 import org.ei.bidan.bidan.domain.Ibu;
 import org.ei.bidan.bidan.domain.KartuIbu;
@@ -27,7 +28,7 @@ import static java.util.Collections.sort;
 /**
  * Created by Dimas Ciputra on 2/18/15.
  */
-public class KohortKBRegisterController {
+public class KohortKBRegisterController extends CommonController{
     private static final String KB_CLIENTS_LIST = "KBClientsList";
     public static final String STATUS_DATE_FIELD = "date";
     public static final String ANC_STATUS = "anc";
@@ -102,5 +103,14 @@ public class KohortKBRegisterController {
             }
         });
     }
+
+    public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {
+        return onRandomNameChars(
+                client,
+                getKBClients(),
+                allKartuIbus.randomDummyName(),
+                AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
+    }
+
 
 }

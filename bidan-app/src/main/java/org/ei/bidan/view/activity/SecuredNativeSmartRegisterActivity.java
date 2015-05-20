@@ -1,7 +1,9 @@
 package org.ei.bidan.view.activity;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.database.DataSetObserver;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.*;
 
+import org.ei.bidan.util.StringUtil;
 import org.ei.bidan.view.dialog.DialogOption;
 import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
@@ -303,6 +306,21 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
         clientsAdapter
                 .refreshList(currentVillageFilter, currentServiceModeOption,
                         currentSearchFilter, currentSortOption);
+    }
+
+    protected void onShowDialogOptionSelection(final EditOption editOption, final SmartRegisterClient client, final CharSequence[] charSequences) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.title_double_selection);
+
+        builder.setItems(charSequences, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if((charSequences[which]).toString().toLowerCase().equals(client.name().toLowerCase())) {
+                    onEditSelection(editOption, client);
+                }
+            }
+        });
+        builder.show();
     }
 
     protected void onEditSelection(EditOption editOption, SmartRegisterClient client) {

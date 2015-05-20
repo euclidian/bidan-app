@@ -45,7 +45,6 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
     private SmartRegisterClientsProvider clientProvider = null;
     private KartuIbuANCRegisterController controller;
     private final ClientActionHandler clientActionHandler = new ClientActionHandler();
-    private final int numPickList = 3;
 
     @Override
     protected SmartRegisterPaginatedAdapter adapter() {
@@ -83,38 +82,10 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
             return getEditOptions();
         }
 
-        String name;
-        CharSequence listNames[];
-
         @Override
         public void onDialogOptionSelection(DialogOption option, Object tag) {
-            List<String> randomName = context.allKohort().randomANCName(numPickList);
-
-            final DialogOption _option = option;
-            final Object _tag = tag;
-
-            name = StringUtil.humanize(((SmartRegisterClient) tag).name());
-
-            if (!randomName.contains(name)) {
-                randomName = randomName.subList(0, numPickList - 1);
-                randomName.add(name);
-                Collections.shuffle(randomName);
-            }
-
-            listNames = randomName.toArray(new CharSequence[randomName.size()]);
-
-            AlertDialog.Builder builder = new AlertDialog.Builder(NativeKIANCSmartRegisterActivity.this);
-            builder.setTitle(R.string.title_double_selection);
-
-            builder.setItems(listNames, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    if (listNames[which].equals(name)) {
-                        onEditSelection((EditOption) _option, (SmartRegisterClient) _tag);
-                    }
-                }
-            });
-            builder.show();
+            SmartRegisterClient client = (SmartRegisterClient) tag;
+            onShowDialogOptionSelection((EditOption)option, client, controller.getRandomNameChars(client));
         }
     }
 

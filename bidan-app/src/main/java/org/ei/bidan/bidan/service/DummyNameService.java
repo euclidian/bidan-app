@@ -15,16 +15,16 @@ import java.util.List;
  */
 public class DummyNameService {
 
-    public static List<String> getMotherDummyName(DristhiConfiguration configuration, int size, boolean isRandom) {
+    public static List<String> getMotherDummyName(DristhiConfiguration configuration, boolean isRandom) {
         List<String> motherNameList = getDummyData(configuration, "motherName");
         if(isRandom) Collections.shuffle(motherNameList);
-        return motherNameList.subList(0, size);
+        return motherNameList;
     }
 
-    public static List<String> getChildDummyName(DristhiConfiguration configuration, int size, boolean isRandom) {
+    public static List<String> getChildDummyName(DristhiConfiguration configuration, boolean isRandom) {
         List<String> childNameList = getDummyData(configuration, "childName");
         if(isRandom) Collections.shuffle(childNameList);
-        return childNameList.subList(0, size);
+        return childNameList;
     }
 
     private static List<String> getDummyData(DristhiConfiguration configuration, String name) {

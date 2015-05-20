@@ -92,12 +92,6 @@ public class KartuIbuRepository extends DrishtiRepository{
         return readAllKartuIbus(cursor);
     }
 
-    public List<KartuIbu> getRandomKartuIbu(int length) {
-        SQLiteDatabase database = masterRepository.getReadableDatabase();
-        Cursor cursor = database.rawQuery(String.format("SELECT * FROM %s WHERE isClosed='false' ORDER BY RANDOM() LIMIT %s", KI_TABLE_NAME, length), null);
-        return readAllKartuIbus(cursor);
-    }
-
     private String insertPlaceholdersForInClause(int length) {
         return repeat("?", ",", length);
     }

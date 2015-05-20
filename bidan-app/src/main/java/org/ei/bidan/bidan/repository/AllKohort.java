@@ -129,55 +129,17 @@ public class AllKohort {
         return ibuRepository.isPregnant(kiId);
     }
 
-    public List<String> randomANCName(int length)  {
-        List<String> motherNameList = new ArrayList<String>();
-        List<Pair<Ibu,KartuIbu>> allIbu = ibuRepository.allRandomIbuOfAType(length, "ANC");
-
-        if(length > allIbu.size()) {
-            motherNameList = DummyNameService.getMotherDummyName(configuration, length - allIbu.size(), true);
-        }
-
-        int index = 0;
-        while(motherNameList.size() < length) {
-            motherNameList.add(StringUtil.humanize(allIbu.get(index).getRight().getDetail(KartuIbuRepository.WIFE_NAME_COLUMN)));
-            index++;
-        }
-
-        return motherNameList;
+    public List<String> randomDummyANCName()  {
+        return DummyNameService.getMotherDummyName(configuration, true);
     }
 
-    public List<String> randomPNCName(int length)  {
-        List<String> motherNameList = new ArrayList<String>();
-        List<Pair<Ibu,KartuIbu>> allIbu = ibuRepository.allRandomIbuOfAType(length, "PNC");
+    public List<String> randomDummyPNCName()  {
+        return DummyNameService.getMotherDummyName(configuration, true);
 
-        if(length > allIbu.size()) {
-            motherNameList = DummyNameService.getMotherDummyName(configuration, length - allIbu.size(), true);
-        }
-
-        int index = 0;
-        while(motherNameList.size() < length) {
-            motherNameList.add(StringUtil.humanize(allIbu.get(index).getRight().getDetail(KartuIbuRepository.WIFE_NAME_COLUMN)));
-            index++;
-        }
-
-        return motherNameList;
     }
 
-    public List<String> randomAnak(int length)  {
-        List<String> anakNameList = new ArrayList<String>();
-        List<Anak> allAnak = anakRepository.getRandomAnak(length);
-
-        if(length > allAnak.size()) {
-            anakNameList = DummyNameService.getChildDummyName(configuration, length - allAnak.size(), true);
-        }
-
-        int index = 0;
-        while(anakNameList.size() < length) {
-            anakNameList.add(StringUtil.humanize(allAnak.get(index).getDetail(AnakRepository.ANAK_NAME)));
-            index++;
-        }
-
-        return anakNameList;
+    public List<String> randomDummyAnakName()  {
+        return DummyNameService.getChildDummyName(configuration, true);
     }
 
 
