@@ -21,7 +21,6 @@ import org.ei.bidan.view.dialog.DusunSort;
 import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.EstimatedDateOfDeliverySort;
 import org.ei.bidan.view.dialog.FilterOption;
-import org.ei.bidan.view.dialog.HighPrioritySort;
 import org.ei.bidan.view.dialog.HighRiskSort;
 import org.ei.bidan.view.dialog.KBMethodSort;
 import org.ei.bidan.view.dialog.NameSort;
@@ -34,7 +33,6 @@ import static org.ei.bidan.AllConstants.FormNames.ANAK_BAYI_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_CLOSE;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_EDIT;
-import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KOHORT_KB_PELAYANAN;
 
@@ -167,6 +165,7 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
     }
 
     private class EditDialogOptionModel implements DialogOptionModel {
+
         @Override
         public DialogOption[] getDialogOptions() {
             return getEditOptions();
@@ -174,7 +173,9 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
         @Override
         public void onDialogOptionSelection(DialogOption option, Object tag) {
-            onEditSelection((EditOption) option, (SmartRegisterClient) tag);
+            SmartRegisterClient client = (SmartRegisterClient) tag;
+            onShowDialogOptionSelection((EditOption)option, client, controller.getRandomNameChars(client));
         }
     }
+
 }

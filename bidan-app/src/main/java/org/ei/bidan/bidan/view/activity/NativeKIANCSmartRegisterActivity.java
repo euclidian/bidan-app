@@ -1,5 +1,7 @@
 package org.ei.bidan.bidan.view.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.View;
 
 import org.ei.bidan.AllConstants;
@@ -11,6 +13,7 @@ import org.ei.bidan.bidan.view.dialog.EstimatedDateOfDeliverySortKIANC;
 import org.ei.bidan.bidan.view.dialog.KartuIbuANCOverviewServiceMode;
 import org.ei.bidan.domain.form.FieldOverrides;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
+import org.ei.bidan.util.StringUtil;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.dialog.AllClientsFilter;
 import org.ei.bidan.view.dialog.DialogOption;
@@ -23,6 +26,9 @@ import org.ei.bidan.view.dialog.NameSort;
 import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
+
+import java.util.Collections;
+import java.util.List;
 
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_CLOSE;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_EDIT;
@@ -78,7 +84,8 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
 
         @Override
         public void onDialogOptionSelection(DialogOption option, Object tag) {
-            onEditSelection((EditOption) option, (SmartRegisterClient) tag);
+            SmartRegisterClient client = (SmartRegisterClient) tag;
+            onShowDialogOptionSelection((EditOption)option, client, controller.getRandomNameChars(client));
         }
     }
 

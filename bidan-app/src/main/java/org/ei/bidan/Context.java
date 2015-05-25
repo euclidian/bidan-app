@@ -797,7 +797,8 @@ public class Context {
     public AllKartuIbus allKartuIbus() {
         initRepository();
         if (allKartuIbus == null) {
-            allKartuIbus = new AllKartuIbus(kartuIbuRepository(), alertRepository(), timelineEventRepository());
+            allKartuIbus = new AllKartuIbus(kartuIbuRepository(), alertRepository(),
+                    timelineEventRepository(), configuration());
         }
         return allKartuIbus;
     }
@@ -855,7 +856,7 @@ public class Context {
 
     public AllKohort allKohort() {
         if(allKohort == null) {
-            allKohort = new AllKohort(ibuRepository(), anakRepository(), alertRepository(), timelineEventRepository());
+            allKohort = new AllKohort(ibuRepository(), anakRepository(), alertRepository(), timelineEventRepository(), configuration());
         }
         return allKohort;
     }

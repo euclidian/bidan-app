@@ -157,7 +157,8 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
         @Override
         public void onDialogOptionSelection(DialogOption option, Object tag) {
-            onEditSelection((EditOption) option, (SmartRegisterClient) tag);
+            SmartRegisterClient client = (SmartRegisterClient) tag;
+            onShowDialogOptionSelection((EditOption)option, client, controller.getRandomNameChars(client));
         }
     }
 }

@@ -362,5 +362,7 @@
 
     <string name="str_imunisasi_bayi">"Baby Immunization"</string>
 
+    <string name="title_double_selection">"Pick the name again"</string>
+
 
 </resources>

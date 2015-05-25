@@ -1,12 +1,16 @@
 package org.ei.bidan.bidan.repository;
 
 import org.apache.commons.lang3.tuple.Pair;
+import org.ei.bidan.DristhiConfiguration;
 import org.ei.bidan.bidan.domain.Anak;
 import org.ei.bidan.bidan.domain.Ibu;
 import org.ei.bidan.bidan.domain.KartuIbu;
+import org.ei.bidan.bidan.service.DummyNameService;
 import org.ei.bidan.repository.AlertRepository;
 import org.ei.bidan.repository.TimelineEventRepository;
+import org.ei.bidan.util.StringUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.ei.bidan.bidan.repository.IbuRepository.TYPE_ANC;
@@ -20,13 +24,16 @@ public class AllKohort {
     private IbuRepository ibuRepository;
     private final AlertRepository alertRepository;
     private final TimelineEventRepository timelineEventRepository;
+    private final DristhiConfiguration configuration;
 
     public AllKohort(IbuRepository ibuRepository, AnakRepository anakRepository,
-                     AlertRepository alertRepository, TimelineEventRepository timelineEventRepository) {
+                     AlertRepository alertRepository, TimelineEventRepository timelineEventRepository,
+                     DristhiConfiguration configuration) {
         this.alertRepository = alertRepository;
         this.timelineEventRepository = timelineEventRepository;
         this.ibuRepository = ibuRepository;
         this.anakRepository = anakRepository;
+        this.configuration = configuration;
     }
 
     public Ibu findIbu(String caseId) {
@@ -121,4 +128,19 @@ public class AllKohort {
     public boolean isPregnant(String kiId) {
         return ibuRepository.isPregnant(kiId);
     }
+
+    public List<String> randomDummyANCName()  {
+        return DummyNameService.getMotherDummyName(configuration, true);
+    }
+
+    public List<String> randomDummyPNCName()  {
+        return DummyNameService.getMotherDummyName(configuration, true);
+
+    }
+
+    public List<String> randomDummyAnakName()  {
+        return DummyNameService.getChildDummyName(configuration, true);
+    }
+
+
 }

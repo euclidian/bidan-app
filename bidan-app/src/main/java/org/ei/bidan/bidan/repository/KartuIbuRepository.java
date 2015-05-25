@@ -32,6 +32,7 @@ public class KartuIbuRepository extends DrishtiRepository{
     public static final String ID_COLUMN = "id";
     public static final String DETAILS_COLUMN = "details";
     private static final String IS_CLOSED_COLUMN = "isClosed";
+    public static final String WIFE_NAME_COLUMN = "Namalengkap";
 
     public static final String KI_TABLE_NAME = "kartu_ibu";
     public static final String[] KI_TABLE_COLUMNS = new String[]{ID_COLUMN, DETAILS_COLUMN,

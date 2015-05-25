@@ -32,7 +32,7 @@ import static org.ei.bidan.domain.ServiceProvided.VITAMIN_A_SERVICE_PROVIDED_NAM
 /**
  * Created by Dimas Ciputra on 4/8/15.
  */
-public class AnakRegisterController {
+public class AnakRegisterController extends CommonController {
     private static final String ANAK_CLIENTS_LIST = "anakClientsList";
 
     private final AllKohort allKohort;
@@ -127,5 +127,13 @@ public class AnakRegisterController {
                 return oneChild.motherName().compareToIgnoreCase(anotherChild.motherName());
             }
         });
+    }
+
+    public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {
+        return onRandomNameChars(
+                client,
+                getClient(),
+                allKohort.randomDummyAnakName(),
+                AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
     }
 }

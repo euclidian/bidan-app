@@ -234,7 +234,7 @@ public class KBClient implements KISmartRegisterClient {
 
     @Override
     public String name() {
-        return null;
+        return wifeName();
     }
 
     @Override

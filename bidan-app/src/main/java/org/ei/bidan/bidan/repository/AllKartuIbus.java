@@ -1,10 +1,10 @@
 package org.ei.bidan.bidan.repository;
 
+import org.ei.bidan.DristhiConfiguration;
 import org.ei.bidan.bidan.domain.KartuIbu;
-import org.ei.bidan.bidan.repository.KartuIbuRepository;
+import org.ei.bidan.bidan.service.DummyNameService;
 import org.ei.bidan.repository.AlertRepository;
 import org.ei.bidan.repository.TimelineEventRepository;
-
 import java.util.List;
 import java.util.Map;
 
@@ -16,11 +16,14 @@ public class AllKartuIbus {
     private KartuIbuRepository kartuIbuRepository;
     private final TimelineEventRepository timelineEventRepository;
     private final AlertRepository alertRepository;
+    private final DristhiConfiguration configuration;
 
-    public AllKartuIbus(KartuIbuRepository kartuIbuRepository, AlertRepository alertRepository, TimelineEventRepository timelineEventRepository) {
+    public AllKartuIbus(KartuIbuRepository kartuIbuRepository, AlertRepository alertRepository,
+                        TimelineEventRepository timelineEventRepository, DristhiConfiguration configuration) {
         this.kartuIbuRepository = kartuIbuRepository;
         this.timelineEventRepository = timelineEventRepository;
         this.alertRepository = alertRepository;
+        this.configuration = configuration;
     }
 
     public List<KartuIbu> all() {
@@ -36,6 +39,10 @@ public class AllKartuIbus {
     }
 
     public long kbCount() { return kartuIbuRepository.kbCount(); }
+
+    public List<String> randomDummyName()  {
+        return DummyNameService.getMotherDummyName(configuration,true);
+    }
 
     public List<KartuIbu> findByCaseIDs(List<String> caseIds) {
         return kartuIbuRepository.findByCaseIDs(caseIds.toArray(new String[caseIds.size()]));

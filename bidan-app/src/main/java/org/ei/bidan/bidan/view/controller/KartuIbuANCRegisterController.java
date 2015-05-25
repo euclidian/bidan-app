@@ -1,6 +1,7 @@
 package org.ei.bidan.bidan.view.controller;
 
 import org.apache.commons.lang3.tuple.Pair;
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.bidan.domain.Ibu;
 import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.bidan.repository.AllKohort;
@@ -18,7 +19,7 @@ import static java.util.Collections.sort;
 /**
  * Created by Dimas Ciputra on 3/4/15.
  */
-public class KartuIbuANCRegisterController {
+public class KartuIbuANCRegisterController extends CommonController{
 
     private static final String KI_ANC_CLIENTS_LIST = "KIANCClientsList";
 
@@ -80,4 +81,13 @@ public class KartuIbuANCRegisterController {
             }
         });
     }
+
+    public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {
+        return onRandomNameChars(
+                client,
+                getKartuIbuANCClients(),
+                allKohort.randomDummyANCName(),
+                AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
+    }
+
 }

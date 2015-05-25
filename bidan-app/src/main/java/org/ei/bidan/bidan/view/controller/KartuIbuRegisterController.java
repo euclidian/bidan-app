@@ -2,10 +2,12 @@ package org.ei.bidan.bidan.view.controller;
 
 import com.google.common.collect.Iterables;
 
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.bidan.domain.Anak;
 import org.ei.bidan.bidan.domain.Ibu;
 import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.bidan.repository.AllKohort;
+import org.ei.bidan.bidan.service.DummyNameService;
 import org.ei.bidan.bidan.view.contract.KIChildClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClients;
@@ -13,9 +15,13 @@ import org.ei.bidan.bidan.repository.AllKartuIbus;
 import org.ei.bidan.util.Cache;
 import org.ei.bidan.util.CacheableData;
 import org.ei.bidan.util.EasyMap;
+import org.ei.bidan.util.StringUtil;
 import org.ei.bidan.view.contract.SmartRegisterClient;
+import org.ei.bidan.view.contract.SmartRegisterClients;
 import org.joda.time.LocalDate;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import static java.util.Collections.sort;
@@ -23,7 +29,7 @@ import static java.util.Collections.sort;
 /**
  * Created by Dimas Ciputra on 2/18/15.
  */
-public class KartuIbuRegisterController {
+public class KartuIbuRegisterController  extends CommonController{
     private static final String KI_CLIENTS_LIST = "KIClientsList";
     public static final String STATUS_DATE_FIELD = "date";
     public static final String ANC_STATUS = "anc";
@@ -36,7 +42,9 @@ public class KartuIbuRegisterController {
     private final Cache<KartuIbuClients> kartuIbuClientsCache;
     private final AllKohort allKohort;
 
-    public KartuIbuRegisterController(AllKartuIbus allKartuIbus, Cache<String> cache, Cache<KartuIbuClients> kartuIbuClientsCache, AllKohort allKohort) {
+    public KartuIbuRegisterController(AllKartuIbus allKartuIbus, Cache<String> cache,
+                                      Cache<KartuIbuClients> kartuIbuClientsCache,
+                                      AllKohort allKohort) {
         this.allKartuIbus = allKartuIbus;
         this.cache = cache;
         this.kartuIbuClientsCache = kartuIbuClientsCache;
@@ -129,4 +137,13 @@ public class KartuIbuRegisterController {
             kartuIbuClient.setKbMethod("-");
         }
     }
+
+    public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {
+        return onRandomNameChars(
+                client,
+                getKartuIbuClients(),
+                allKartuIbus.randomDummyName(),
+                AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
+    }
+
 }

@@ -42,6 +42,7 @@ public class AnakRepository extends DrishtiRepository {
     public static final String PHOTO_PATH_COLUMN = "photoPath";
     public static final String[] ANAK_TABLE_COLUMNS = {ID_COLUMN, IBU_ID_COLUMN, DATE_OF_BIRTH_COLUMN, GENDER_COLUMN, DETAILS_COLUMN, IS_CLOSED_COLUMN, PHOTO_PATH_COLUMN};
     public static final String NOT_CLOSED = "false";
+    public static final String ANAK_NAME = "name";
 
     @Override
     protected void onCreate(SQLiteDatabase database) {
