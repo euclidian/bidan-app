@@ -7,7 +7,7 @@
               android:orientation="horizontal"
         >
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
                   android:id="@+id/layout_anc_visit_1"
                   android:layout_width="0dp"
                   android:layout_height="match_parent"
@@ -100,7 +100,7 @@
             android:layout_height="fill_parent"
             android:src="@color/smart_register_client_divider_color"/>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
                   android:id="@+id/layout_anc_visit_2"
                   android:layout_width="0dp"
                   android:layout_height="match_parent"
@@ -192,7 +192,7 @@
             android:layout_height="fill_parent"
             android:src="@color/smart_register_client_divider_color"/>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
                   android:id="@+id/layout_anc_visit_3"
                   android:layout_width="0dp"
                   android:layout_height="match_parent"
@@ -284,7 +284,7 @@
             android:layout_height="fill_parent"
             android:src="@color/smart_register_client_divider_color"/>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
                   android:id="@+id/layout_anc_visit_4"
                   android:layout_width="0dp"
                   android:layout_height="match_parent"

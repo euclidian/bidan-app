@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="horizontal"
-              android:layout_width="wrap_content"
+              android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:weightSum="@integer/pnc_list_service_mode_views_section_weight">
 
@@ -84,7 +84,7 @@
             android:layout_height="fill_parent"
             android:src="@color/smart_register_client_divider_color"/>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
                   android:id="@+id/layout_pnc_visit"
                   android:layout_width="0dp"
                   android:layout_height="match_parent"

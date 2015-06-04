@@ -2,7 +2,9 @@ package org.ei.bidan.view.controller;
 
 import android.content.Context;
 import android.content.Intent;
+
 import com.google.gson.Gson;
+import com.ocpsoft.pretty.time.PrettyTime;
 
 import org.ei.bidan.view.contract.ChildDetail;
 import org.ei.bidan.AllConstants;
@@ -19,14 +21,11 @@ import org.ei.bidan.view.contract.*;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
-import org.ocpsoft.pretty.time.Duration;
-import org.ocpsoft.pretty.time.PrettyTime;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static java.lang.Math.min;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.ei.bidan.AllConstants.CHILD_TYPE;
 import static org.ei.bidan.AllConstants.ENTITY_ID;
@@ -91,7 +90,6 @@ public class ChildDetailController {
 
     private String calculateAge(LocalDate deliveryDate) {
         PrettyTime time = new PrettyTime(DateUtil.today().toDate());
-        List<Duration> durationComponents = time.calculatePreciseDuration(deliveryDate.toDate());
-        return time.format(durationComponents.subList(0, min(durationComponents.size(), 1))).replaceAll(" ago", "");
+        return time.format(deliveryDate.toDate()).replaceAll(" ago", "");
     }
 }

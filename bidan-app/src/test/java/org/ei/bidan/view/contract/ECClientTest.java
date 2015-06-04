@@ -1,10 +1,13 @@
 package org.ei.bidan.view.contract;
 
 import org.ei.bidan.util.DateUtil;
+import org.joda.time.DateTimeUtils;
 import org.joda.time.LocalDate;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
+
+import java.util.Calendar;
 
 import static org.junit.Assert.*;
 
@@ -45,27 +48,33 @@ public class ECClientTest {
 
     @Test
     public void shouldReturn34YearsWhenDOBIs4_4_1980() {
-        DateUtil.fakeIt(LocalDate.parse("2014-04-18"));
+        Calendar cal = Calendar.getInstance();
+        cal.set(2014, 4, 4);
+        DateTimeUtils.setCurrentMillisFixed(cal.getTimeInMillis());
 
-        final int age = getClient().withDateOfBirth(new LocalDate(1980, 4, 18).toString()).age();
+        final int age = getClient().withDateOfBirth(new LocalDate(1980, 4, 4).toString()).age();
 
         assertEquals(34, age);
     }
 
     @Test
     public void shouldReturn0YearsWhenDOBIs4_4_2014() {
-        DateUtil.fakeIt(LocalDate.parse("2014-04-04"));
+        Calendar cal = Calendar.getInstance();
+        cal.set(2014, 4, 4);
+        DateTimeUtils.setCurrentMillisFixed(cal.getTimeInMillis());
 
         int age = getClient().withDateOfBirth(new LocalDate(2014, 4, 4).toString()).age();
 
-        assertEquals(1, age);
+        assertEquals(0, age);
     }
 
     @Test
     public void ShouldReturn1YearsWhenDOBIs18_4_2013() {
-        DateUtil.fakeIt(LocalDate.parse("2014-04-18"));
+        Calendar cal = Calendar.getInstance();
+        cal.set(2014, 4, 18);
+        DateTimeUtils.setCurrentMillisFixed(cal.getTimeInMillis());
 
-        final int age = getClient().withDateOfBirth(new LocalDate(2013, 4, 18).toString()).age();
+        final int age = getClient().withDateOfBirth(new LocalDate(2013, 4, 4).toString()).age();
 
         assertEquals(1, age);
     }
