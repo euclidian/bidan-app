@@ -17,8 +17,6 @@ import org.ei.bidan.sync.SyncProgressIndicator;
 import org.ei.bidan.sync.UpdateActionsTask;
 import org.ei.bidan.view.activity.SecuredActivity;
 
-import javax.xml.soap.Text;
-
 import static java.lang.String.valueOf;
 import static org.ei.bidan.event.Event.ACTION_HANDLED;
 import static org.ei.bidan.event.Event.FORM_SUBMITTED;

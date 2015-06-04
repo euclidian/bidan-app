@@ -12,6 +12,8 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 
 import static org.ei.bidan.AllConstants.ENGLISH_LOCALE;
+import static org.ei.bidan.AllConstants.INDONESIA_LANGUAGE;
+import static org.ei.bidan.AllConstants.INDONESIA_LOCALE;
 import static org.ei.bidan.AllConstants.KANNADA_LOCALE;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -123,7 +125,7 @@ public class UserServiceTest {
 
         userService.switchLanguagePreference();
 
-        verify(allSharedPreferences).saveLanguagePreference(KANNADA_LOCALE);
+        verify(allSharedPreferences).saveLanguagePreference(INDONESIA_LOCALE);
     }
 
     @Test

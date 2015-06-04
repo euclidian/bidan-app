@@ -331,11 +331,11 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
         finish();
     }
 
-    void showFragmentDialog(DialogOptionModel dialogOptionModel) {
+    protected void showFragmentDialog(DialogOptionModel dialogOptionModel) {
         showFragmentDialog(dialogOptionModel, null);
     }
 
-    void showFragmentDialog(DialogOptionModel dialogOptionModel, Object tag) {
+    protected void showFragmentDialog(DialogOptionModel dialogOptionModel, Object tag) {
         if (dialogOptionModel.getDialogOptions().length <= 0) {
             return;
         }

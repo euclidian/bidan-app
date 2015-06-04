@@ -14,11 +14,13 @@ import org.ei.bidan.view.contract.BirthDetails;
 import org.ei.bidan.view.contract.ChildDetail;
 import org.ei.bidan.view.contract.CoupleDetails;
 import org.ei.bidan.view.contract.LocationDetails;
+import org.joda.time.DateTimeUtils;
 import org.joda.time.LocalDate;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 
+import java.util.Calendar;
 import java.util.HashMap;
 
 import static java.util.Arrays.asList;
@@ -42,7 +44,10 @@ public class ChildDetailControllerTest {
     @Before
     public void setUp() throws Exception {
         initMocks(this);
-        DateUtil.fakeIt(new LocalDate(2012, 8, 1));
+        Calendar cal = Calendar.getInstance();
+        cal.set(2012, 7, 1);
+        DateTimeUtils.setCurrentMillisFixed(cal.getTimeInMillis());
+
         controller = new ChildDetailController(context, caseId, allEligibleCouples, allBeneficiaries, allTimelineEvents);
     }
 

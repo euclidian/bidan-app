@@ -7,8 +7,6 @@ import android.widget.TextView;
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.customControls.BidanClientProfileView;
 
-import javax.xml.soap.Text;
-
 /**
  * Created by Dimas Ciputra on 3/4/15.
  */

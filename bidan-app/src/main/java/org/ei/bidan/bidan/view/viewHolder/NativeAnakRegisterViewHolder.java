@@ -57,7 +57,7 @@ public class NativeAnakRegisterViewHolder {
         txtIbuKiNo = (TextView) serviceModeOverviewView.findViewById(R.id.txt_ibu_ki_no);
 
         txtBirthWeight = (TextView) clientAnakBirthStatusView.findViewById(R.id.txt_birth_weight);
-        txtBirthCondition = (TextView) clientAnakBirthStatusView.findViewById(R.id.txt_birth_weight);
+        txtBirthCondition = txtBirthWeight;
 
         hb07 = (TextView) serviceModeImmunizationView.findViewById(R.id.hb_0_7);
         bcgPolio1 = (TextView) serviceModeImmunizationView.findViewById(R.id.bcg_polio1);
