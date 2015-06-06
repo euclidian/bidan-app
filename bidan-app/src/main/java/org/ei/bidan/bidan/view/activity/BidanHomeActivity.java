@@ -112,7 +112,7 @@ public class BidanHomeActivity extends SecuredActivity {
     }
 
     private void updateRegisterCounts() {
-        NativeUpdateBidanDetailsTask task = new NativeUpdateBidanDetailsTask(Context.getInstance().bidanController());
+        NativeUpdateBidanDetailsTask task = new NativeUpdateBidanDetailsTask(this, Context.getInstance().bidanController());
         task.fetch(new NativeAfterBidanDetailsFetchListener() {
             @Override
             public void afterFetch(BidanHomeContext bidanDetails) {
@@ -121,12 +121,14 @@ public class BidanHomeActivity extends SecuredActivity {
         });
     }
 
-    private void updateRegisterCounts(BidanHomeContext homeContext) {
-        kartuIbuRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuCount()));
-        kartuIbuANCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuANCCount()));
-        kartuIbuPNCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuPNCCount()));
-        anakRegisterClientCountView.setText(valueOf(homeContext.getAnakCount()));
-        kohortKbCountView.setText(valueOf(homeContext.getKBCount()));
+    public void updateRegisterCounts(BidanHomeContext homeContext) {
+        if(homeContext != null) {
+            kartuIbuRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuCount()));
+            kartuIbuANCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuANCCount()));
+            kartuIbuPNCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuPNCCount()));
+            anakRegisterClientCountView.setText(valueOf(homeContext.getAnakCount()));
+            kohortKbCountView.setText(valueOf(homeContext.getKBCount()));
+        }
     }
 
     @Override
