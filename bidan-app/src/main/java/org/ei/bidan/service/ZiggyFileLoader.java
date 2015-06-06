@@ -1,6 +1,8 @@
 package org.ei.bidan.service;
 
 import android.content.res.AssetManager;
+import android.webkit.JavascriptInterface;
+
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
@@ -20,6 +22,7 @@ public class ZiggyFileLoader {
         this.assetManager = assetManager;
     }
 
+    @JavascriptInterface
     public String getJSFiles() throws IOException, URISyntaxException {
         StringBuilder builder = new StringBuilder();
         String[] fileNames = assetManager.list(ziggyDirectoryPath);
@@ -31,6 +34,7 @@ public class ZiggyFileLoader {
         return builder.toString();
     }
 
+    @JavascriptInterface
     public String loadAppData(String fileName) {
         try {
             return IOUtils.toString(assetManager.open(formDirectoryPath + "/" + fileName), "UTF-8");

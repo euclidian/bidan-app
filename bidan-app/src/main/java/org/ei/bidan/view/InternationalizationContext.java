@@ -1,6 +1,8 @@
 package org.ei.bidan.view;
 
 import android.content.res.Resources;
+import android.webkit.JavascriptInterface;
+
 import com.google.gson.Gson;
 import org.ei.bidan.R;
 
@@ -15,6 +17,7 @@ public class InternationalizationContext {
         this.resources = resources;
     }
 
+    @JavascriptInterface
     public String getInternationalizedLabels() {
         Map<String, String> map = new HashMap<String, String>();
         map.put("home_ec_label", resources.getString(R.string.home_ec_label));

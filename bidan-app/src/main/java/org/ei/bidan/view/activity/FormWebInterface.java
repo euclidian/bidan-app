@@ -1,6 +1,8 @@
 package org.ei.bidan.view.activity;
 
 import android.app.Activity;
+import android.webkit.JavascriptInterface;
+
 import org.ei.bidan.util.Log;
 
 import static org.ei.bidan.AllConstants.FORM_SUCCESSFULLY_SUBMITTED_RESULT_CODE;
@@ -16,23 +18,28 @@ public class FormWebInterface {
         this.activity = activity;
     }
 
+    @JavascriptInterface
     public String getModel() {
         return model;
     }
 
+    @JavascriptInterface
     public String getForm() {
         return form;
     }
 
+    @JavascriptInterface
     public void goBack() {
         activity.setResult(FORM_SUCCESSFULLY_SUBMITTED_RESULT_CODE);
         activity.finish();
     }
 
+    @JavascriptInterface
     public void log(String message) {
         Log.logInfo(message);
     }
 
+    @JavascriptInterface
     public void onLoadFinished(){
         ((SecuredWebActivity)activity).closeDialog();
     }
