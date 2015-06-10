@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.view.View;
 
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.provider.AnakRegisterClientsProvider;
@@ -118,6 +119,7 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
     }
     @Override
     protected void startRegistration() {
+        startFormActivity(AllConstants.FormNames.ANAK_NEW_REGISTRATION, null, null);
     }
 
     private class ClientActionHandler implements View.OnClickListener {
@@ -156,18 +158,16 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
 
     private DialogOption[] getEditOptions() {
         return new DialogOption[]{
-                new OpenFormOption("Edit Data",
+                new OpenFormOption(getString(R.string.str_anak_edit),
                         KOHORT_BAYI_EDIT, formController),
-                new OpenFormOption("Monitoring Pertumbuhan dan Nutrisi",
-                        KOHORT_BAYI_MONITORING, formController),
-                new OpenFormOption("Balita Data",
+                new OpenFormOption(getString(R.string.str_anak_bayi_visit),
+                        KOHORT_BAYI_KUNJUNGAN, formController),
+                new OpenFormOption(getString(R.string.str_anak_balita_visit),
                         BALITA_KUNJUNGAN, formController),
                 new OpenFormOption(getString(R.string.str_imunisasi_bayi),
                         BAYI_IMUNISASI, formController),
-                new OpenFormOption("Bayi Neonatal Period",
+                new OpenFormOption(getString(R.string.str_anak_neonatal),
                         BAYI_NEONATAL_PERIOD, formController),
-                new OpenFormOption(getString(R.string.str_kunjungan_anak),
-                        KARTU_IBU_ANAK_VISIT, formController),
                 new OpenFormOption(getString(R.string.str_tutup_anak),
                         KARTU_IBU_ANAK_CLOSE, formController),
         };

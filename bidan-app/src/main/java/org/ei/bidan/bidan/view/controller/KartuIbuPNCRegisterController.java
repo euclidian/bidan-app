@@ -15,6 +15,9 @@ import java.util.Comparator;
 import java.util.List;
 
 import static java.util.Collections.sort;
+import static org.ei.bidan.AllConstants.KartuPNCFields.*;
+import static org.ei.bidan.AllConstants.KartuIbuFields.*;
+import static org.ei.bidan.AllConstants.KeluargaBerencanaFields.*;
 
 /**
  * Created by Dimas Ciputra on 3/4/15.
@@ -44,19 +47,21 @@ public class KartuIbuPNCRegisterController extends CommonController {
                     Ibu pnc = pncsWithKi.getLeft();
                     KartuIbu ki = pncsWithKi.getRight();
 
-                    KartuIbuPNCClient kartuIbuClient = new KartuIbuPNCClient(pnc.getId(),
-                            ki.getDetails().get("Desa"), ki.getDetails().get("puskesmas"),
-                            ki.getDetails().get("Namalengkap"), ki.getDetails().get("Umur")
-                    )
-                            .withHusband(ki.getDetails().get("Namasuami"))
-                            .withKINumber(ki.getDetails().get("NoIbu"))
-                            .withEDD(pnc.getDetail("EDD"))
-                            .withPlan(pnc.getDetail("Rencana"))
-                            .withKomplikasi(pnc.getDetail("Komplikasi"))
-                            .withMetodeKontrasepsi(pnc.getDetail("Metodekontrasepsi"))
-                            .withTandaVital(pnc.getDetail("TandaVitalTDDiastolik"),
-                                    pnc.getDetail("TandaVitalTDSistolik"),
-                                    pnc.getDetail("TandaVitalSuhu"));
+                    KartuIbuPNCClient kartuIbuClient = new KartuIbuPNCClient(
+                            pnc.getId(),
+                            ki.getDetail(VILLAGE),
+                            ki.getDetail(PUSKESMAS_NAME),
+                            ki.getDetail(MOTHER_NAME),
+                            ki.getDetail(MOTHER_DOB))
+                            .withHusband(ki.getDetail(HUSBAND_NAME))
+                            .withKINumber(ki.getDetail(MOTHER_NUMBER))
+                            .withEDD(pnc.getDetail(EDD))
+                            .withPlan(pnc.getDetail(PLANNING))
+                            .withKomplikasi(pnc.getDetail(COMPLICATION))
+                            .withMetodeKontrasepsi(pnc.getDetail(CONTRACEPTION_METHOD))
+                            .withTandaVital(pnc.getDetail(VITAL_SIGNS_TD_DIASTOLIC),
+                                    pnc.getDetail(VITAL_SIGNS_TD_SISTOLIC),
+                                    pnc.getDetail(VITAL_SIGNS_TEMP));
 
                     pncClients.add(kartuIbuClient);
                 }

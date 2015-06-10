@@ -1,128 +1,171 @@
 {
-    "form_data_definition_version": "1",
-    "form": {
-        "bind_type": "ibu",
-        "default_bind_path": "/model/instance/Register_ANC_only/",
-        "fields": [
-            {
-                "name": "id",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "kiId",
-                "shouldLoadValue": true,
-                "source": "ibu.kartu_ibu.id"
-            },
-            {
-                "name": "referenceDate",
-                "bind": "/model/instance/Register_ANC_only/B01026",
-                "source": "ibu.referenceDate",
-				"shouldLoadValue": true
-            },
-            {
-                "name": "TanggalHPHT",
-                "bind": "/model/instance/Register_ANC_only/B01027",
-                "source": "ibu.TanggalHPHT",
-				"shouldLoadValue": true
-            },
-            {
-                "name": "EDD",
-                "bind": "/model/instance/Register_ANC_only/B01028",
-                "source" : "ibu.kartu_ibu.EDD",
-				"shouldLoadValue": true
-            },
-            {
-                "name": "PersalinanSebelumnya",
-                "bind": "/model/instance/Register_ANC_only/B01029",
-                "source": "ibu.PersalinanSebelumnya",
-				"shouldLoadValue": true
-            },
-            {
-                "name": "BB",
-                "bind": "/model/instance/Register_ANC_only/B01030",
-                "source": "ibu.BB",
-				"shouldLoadValue": true
-            },
-            {
-                "name": "TB",
-                "bind": "/model/instance/Register_ANC_only/B01031",
-                "source": "ibu.TB",
-				"shouldLoadValue": true
-            },
-            {
-                "name": "berat_badan",
-                "bind": "/model/instance/Register_ANC_only/B02013",
-                "source": "ibu.berat_badan",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "lila",
-                "bind": "/model/instance/Register_ANC_only/B02012",
-                "source": "ibu.lila",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "BukuKIA",
-                "bind": "/model/instance/Register_ANC_only/B01032",
-                "source": "ibu.BukuKIA",
-				"shouldLoadValue": true
-            },
-            {
-                "name": "RiwayatKomplikasiKebidanan",
-                "bind": "/model/instance/Register_ANC_only/B01033",
-                "source": "ibu.RiwayatKomplikasiKebidanan",
-				"shouldLoadValue": true
-            },
-            {
-                "name": "PenyakitKronis",
-                "bind": "/model/instance/Register_ANC_only/B01034",
-                "source": "ibu.PenyakitKronis",
-				"shouldLoadValue": true
-            },
-            {
-                "name": "Alergi",
-                "bind": "/model/instance/Register_ANC_only/B01035",
-                "source": "ibu.Alergi",
-				"shouldLoadValue": true
-            },
-            {
-                "name": "TBrisk",
-                "bind": "/model/instance/Register_ANC_only/TB_risk",
-                "source": "ibu.TBrisk",
-				"shouldLoadValue": true
-            },
-            {
-                "name": "ishighrisk",
-                "bind": "/model/instance/Register_ANC_only/is_high_risk",
-                "source": "ibu.ishighrisk",
-				"shouldLoadValue": true
-            },
-            {
-                 "name": "type",
-                 "value": "ANC",
-                 "source": "ibu.type"
-            },
-            {
-                "name": "isOutOfArea",
-                "value": "false"
-            },
-            {
-                "name": "isClosed",
-                "value": "false",
-                "source": "ibu.isClosed"
-            },
-            {
-                "name": "submissionDate",
-                "bind": "/model/instance/identitas_ibu/today"
-            },
-            {
-                "name": "registrationDate",
-                "bind": "/model/instance/identitas_ibu/today"
-            },
-            {
-                "name": "jenisKontrasepsi",
-                "value": ""
-            }
-        ]
-    }
+  "form_data_definition_version":"1",
+  "form":{
+    "bind_type":"ibu",
+    "default_bind_path":"/model/instance/Register_ANC_only/",
+    "fields":[
+      {
+        "name":"id",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"kiId",
+        "source":"ibu.kartu_ibu.id",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"gravida",
+        "bind":"/model/instance/Register_ANC_only/gravida",
+        "source":"ibu.kartu_ibu.gravida",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"partus",
+        "bind":"/model/instance/Register_ANC_only/partus",
+        "source":"ibu.kartu_ibu.partus",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"abortus",
+        "bind":"/model/instance/Register_ANC_only/abortus",
+        "source":"ibu.kartu_ibu.abortus",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"hidup",
+        "bind":"/model/instance/Register_ANC_only/hidup",
+        "source":"ibu.kartu_ibu.hidup",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"hamilke",
+        "bind":"/model/instance/Register_ANC_only/hamil_ke",
+        "source":"ibu.kartu_ibu.hamilke",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"referenceDate",
+        "bind":"/model/instance/Register_ANC_only/tanggal_periksa",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"tanggalHPHT",
+        "bind":"/model/instance/Register_ANC_only/tanggal_hpht",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"htp",
+        "bind":"/model/instance/Register_ANC_only/htp",
+        "source":"ibu.kartu_ibu.htp",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"persalinanSebelumnya",
+        "bind":"/model/instance/Register_ANC_only/persalinan_sebelumnya",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"bbSebelumHamil",
+        "bind":"/model/instance/Register_ANC_only/bbsebelumhamil",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"bbKg",
+        "bind":"/model/instance/Register_ANC_only/bb_kg",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"tbCM",
+        "bind":"/model/instance/Register_ANC_only/tb_cm",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"bukuKIA",
+        "bind":"/model/instance/Register_ANC_only/buku_kia",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"tanggalMemperolehBukuKia",
+        "bind":"/model/instance/Register_ANC_only/tanggal_memperoleh_buku_kia",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"hasilPemeriksaanLILA",
+        "bind":"/model/instance/Register_ANC_only/hasil_pemeriksaan_lila",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"hasilPemeriksaanBeratBadan ",
+        "bind":"/model/instance/Register_ANC_only/hasil_pemeriksaan_berat_badan",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"rkk",
+        "bind":"/model/instance/Register_ANC_only/rkk",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"riwayatKomplikasiKebidanan",
+        "bind":"/model/instance/Register_ANC_only/riwayat_komplikasi_kebidanan",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"rkklainnya",
+        "bind":"/model/instance/Register_ANC_only/rkklainnya",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"kronis",
+        "bind":"/model/instance/Register_ANC_only/kronis",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"penyakitKronis",
+        "bind":"/model/instance/Register_ANC_only/penyakit_kronis",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"rpkLainnya",
+        "bind":"/model/instance/Register_ANC_only/rpklainnya",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"Alergi",
+        "bind":"/model/instance/Register_ANC_only/alergi",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"isHighRiskANC",
+        "bind":"/model/instance/Register_ANC_only/is_high_risk_anc",
+        "source":"ibu.kartu_ibu.isHighRiskANC",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"isHighRiskPregnancy",
+        "bind":"/model/instance/Register_ANC_only/is_high_risk_pregnancy",
+        "source":"ibu.kartu_ibu.isHighRiskPregnancy",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"isHighRiskLabour",
+        "bind":"/model/instance/Register_ANC_only/is_high_risk_labour",
+        "source":"ibu.kartu_ibu.isHighRiskLabour",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"isOtherRisk",
+        "bind":"/model/instance/Register_ANC_only/is_other_risk",
+        "source":"ibu.kartu_ibu.isOtherRisk",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"submissionDate",
+        "bind":"/model/instance/Register_ANC_only/today"
+      },
+      {
+        "name":"registrationDate",
+        "bind":"/model/instance/Register_ANC_only/reg_date"
+      }
+    ]
+  }
 }

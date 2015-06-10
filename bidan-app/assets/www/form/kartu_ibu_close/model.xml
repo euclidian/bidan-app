@@ -1,6 +1,6 @@
 <model>
     <instance>
-        <kartu_ibu_close id="kartu_ibu_close" version="201504200836">
+        <Penutupan_kartu_ibu id="Penutupan_kartu_ibu" version="201504200836">
           <formhub>
             <uuid/>
           </formhub>
@@ -17,6 +17,6 @@
           <meta>
             <instanceID/>
           </meta>
-        </kartu_ibu_close>
+        </Penutupan_kartu_ibu>
       </instance>
   </model>

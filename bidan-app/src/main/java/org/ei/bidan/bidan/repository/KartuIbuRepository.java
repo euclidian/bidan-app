@@ -123,7 +123,7 @@ public class KartuIbuRepository extends DrishtiRepository{
     private long getKIsUsingKBMethod(List<Map<String, String>> detailsList) {
         long kbCount = 0;
         for (Map<String, String> details : detailsList) {
-            if (!(isBlank(details.get(AllConstants.KIRegistrationFields.CURRENT_KONTRASEPSI)))) {
+            if (!(isBlank(details.get(AllConstants.KeluargaBerencanaFields.CONTRACEPTION_METHOD)))) {
                 kbCount++;
             }
         }

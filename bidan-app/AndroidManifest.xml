@@ -132,7 +132,8 @@
                 android:screenOrientation="landscape"/>
         <activity
                 android:name="org.ei.bidan.view.activity.FormActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+                android:windowSoftInputMode="adjustResize|stateHidden"
+                android:theme="@android:style/Theme.Holo"
                 android:screenOrientation="portrait"/>
         <activity
                 android:name=".view.activity.MicroFormActivity"

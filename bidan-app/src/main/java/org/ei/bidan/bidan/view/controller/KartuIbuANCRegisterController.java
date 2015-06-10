@@ -15,6 +15,8 @@ import java.util.Comparator;
 import java.util.List;
 
 import static java.util.Collections.sort;
+import static org.ei.bidan.AllConstants.KartuIbuFields.*;
+import static org.ei.bidan.AllConstants.KartuANCFields.*;
 
 /**
  * Created by Dimas Ciputra on 3/4/15.
@@ -45,25 +47,26 @@ public class KartuIbuANCRegisterController extends CommonController{
                     KartuIbu ki = ancsWithKi.getRight();
 
                     KartuIbuANCClient kartuIbuClient = new KartuIbuANCClient(anc.getId(),
-                            ki.getDetails().get("Desa"), ki.getDetails().get("puskesmas"),
-                            ki.getDetails().get("Namalengkap"), ki.getDetails().get("Umur")
-                    )
-                            .withHusband(ki.getDetails().get("Namasuami"))
-                            .withKINumber(ki.getDetails().get("NoIbu"))
-                            .withEDD(ki.getDetail("EDD"))
-                            .withANCStatus(anc.getDetails().get("StatusGiziibu"))
-                            .withRiskFactors(anc.getDetail("KomplikasidalamKehamilan"))
-                            .withKunjunganData(anc.getDetail("TrimesterKe"))
-                            .withTTImunisasiData(anc.getDetail("StatusImunisasiTT"))
-                            .withUsiaKlinisData(anc.getDetail("UsiaKlinis"));
+                            ki.getDetail(VILLAGE),
+                            ki.getDetail(PUSKESMAS_NAME),
+                            ki.getDetail(MOTHER_NAME),
+                            ki.getDetail(MOTHER_DOB))
+                            .withHusband(ki.getDetail(HUSBAND_NAME))
+                            .withKINumber(ki.getDetail(MOTHER_NUMBER))
+                            .withEDD(ki.getDetail(EDD))
+                            .withANCStatus(anc.getDetail(MOTHER_NUTRITION_STATUS))
+                            .withRiskFactors(anc.getDetail(COMPLICATION_HISTORY))
+                            .withKunjunganData(anc.getDetail(TRIMESTER))
+                            .withTTImunisasiData(anc.getDetail(IMMUNIZATION_TT_STATUS))
+                            .withUsiaKlinisData(anc.getDetail(CLINICAL_AGE));
 
-                    kartuIbuClient.setBB(anc.getDetail("BB"));
-                    kartuIbuClient.setTB(anc.getDetail("TB"));
-                    kartuIbuClient.setLILA(anc.getDetail("berat_badan"));
-                    kartuIbuClient.setBeratBadan(anc.getDetail("lila"));
-                    kartuIbuClient.setPenyakitKronis(anc.getDetail("PenyakitKronis"));
-                    kartuIbuClient.setAlergi(anc.getDetail("Alergi"));
-                    kartuIbuClient.setIsHighRisk(ki.getDetail("IsHighRisk"));
+                    kartuIbuClient.setBB(anc.getDetail(WEIGHT_BEFORE));
+                    kartuIbuClient.setTB(anc.getDetail(HEIGHT));
+                    kartuIbuClient.setLILA(anc.getDetail(LILA_CHECK_RESULT));
+                    kartuIbuClient.setBeratBadan(anc.getDetail(WEIGHT_CHECK_RESULT));
+                    kartuIbuClient.setPenyakitKronis(anc.getDetail(CHRONIC_DISEASE));
+                    kartuIbuClient.setAlergi(anc.getDetail(ALLERGY));
+                    kartuIbuClient.setIsHighRisk(ki.getDetail(IS_HIGH_RISK));
 
                     ancClients.add(kartuIbuClient);
                 }

@@ -2,13 +2,18 @@ package org.ei.bidan.bidan.view.contract;
 
 import com.google.common.base.Strings;
 
+import org.apache.commons.lang3.StringUtils;
 import org.ei.bidan.domain.ANCServiceType;
+import org.ei.bidan.util.DateUtil;
 import org.ei.bidan.util.IntegerUtil;
 import org.ei.bidan.view.contract.AlertDTO;
 import org.ei.bidan.view.contract.ServiceProvidedDTO;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.contract.Visits;
+import org.joda.time.Days;
+import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
+import org.joda.time.Years;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
@@ -39,7 +44,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     private String puskesmas;
     private String name;
     private String ancNumber;
-    private String age;
+    private String dateOfBirth;
     private String husbandName;
     private String photo_path;
     private boolean isHighPriority;
@@ -64,11 +69,11 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     private String entityIdToSavePhoto;
     private Map<String, Visits> serviceToVisitsMap;
 
-    public KartuIbuANCClient(String entityId, String village, String puskesmas, String name, String age) {
+    public KartuIbuANCClient(String entityId, String village, String puskesmas, String name, String dateOfBirth) {
         this.entityId = entityId;
         this.puskesmas = puskesmas;
         this.name = name;
-        this.age = age;
+        this.dateOfBirth = dateOfBirth;
         this.village = village;
         this.serviceToVisitsMap = new HashMap<String, Visits>();
     }
@@ -162,12 +167,12 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public String name() {
-        return name;
+        return Strings.isNullOrEmpty(name) ? "-" : humanize(name);
     }
 
     @Override
     public String displayName() {
-        return name;
+        return name();
     }
 
     @Override
@@ -177,27 +182,27 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public String wifeName() {
-        return name;
+        return name();
     }
 
     @Override
     public String husbandName() {
-        return husbandName;
+        return Strings.isNullOrEmpty(husbandName) ? "-" : husbandName;
     }
 
     @Override
     public int age() {
-        return Integer.parseInt(age);
+        return StringUtils.isBlank(dateOfBirth) ? 0 : Years.yearsBetween(LocalDate.parse(dateOfBirth), LocalDate.now()).getYears();
     }
 
     @Override
     public int ageInDays() {
-        return Integer.parseInt(age) * 365;
+        return StringUtils.isBlank(dateOfBirth) ? 0 : Days.daysBetween(LocalDate.parse(dateOfBirth), DateUtil.today()).getDays();
     }
 
     @Override
     public String ageInString() {
-        return "(" + age + ")";
+        return "(" + age() + ")";
     }
 
     @Override

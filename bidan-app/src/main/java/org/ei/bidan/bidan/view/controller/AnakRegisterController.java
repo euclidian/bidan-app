@@ -29,6 +29,9 @@ import static org.ei.bidan.domain.ServiceProvided.CHILD_ILLNESS_SERVICE_PROVIDED
 import static org.ei.bidan.domain.ServiceProvided.PNC_SERVICE_PROVIDED_NAME;
 import static org.ei.bidan.domain.ServiceProvided.VITAMIN_A_SERVICE_PROVIDED_NAME;
 
+import static org.ei.bidan.AllConstants.KartuAnakFields.*;
+import static org.ei.bidan.AllConstants.KartuIbuFields.*;
+
 /**
  * Created by Dimas Ciputra on 4/8/15.
  */
@@ -67,22 +70,24 @@ public class AnakRegisterController extends CommonController {
                     // List<ServiceProvidedDTO> services = getServicesProvided(a.getCaseId());
 
                     AnakClient anakClient = new AnakClient(a.getCaseId(), a.getGender(),
-                            a.getDetail("birthWeight"), a.getDetails())
-                            .withMotherName(a.getKartuIbu().getDetails().get("Namalengkap"))
-                            .withMotherAge(a.getKartuIbu().getDetails().get("Umur"))
-                            .withFatherName(a.getKartuIbu().getDetails().get("Namasuami"))
+                            a.getDetail(BIRTH_WEIGHT),
+                            a.getDetails())
+                            .withMotherName(a.getKartuIbu().getDetail(MOTHER_NAME))
+                            .withMotherAge(a.getKartuIbu().getDetail(MOTHER_AGE))
+                            .withFatherName(a.getKartuIbu().getDetail(HUSBAND_NAME))
                             .withDOB(a.getDateOfBirth())
-                            .withName(a.getDetail("name"))
-                            .withKINumber(a.getKartuIbu().getDetails().get("NoIbu"))
-                            .withBirthCondition(a.getDetail("birthCondition"))
-                            .withServiceAtBirth(a.getDetail("serviceAtBirth"))
-                            .withPhotoPath(photoPath);
-                    anakClient.setHb07(a.getDetail("TanggalPemberianImunisasiHb0_7Hari"));
-                    anakClient.setBcgPol1(a.getDetail("TanggalpemberianimunisasiBCGdanpolio1"));
-                    anakClient.setDptHb1Pol2(a.getDetail("TanggalPemberianImunisasiDPT_HB1_Polio2"));
-                    anakClient.setDptHb2Pol3(a.getDetail("TanggalPemberianImunisasiDPT_HB2_Polio3"));
-                    anakClient.setDptHb3Pol4(a.getDetail("TanggalPemberianImunisasiDPT_HB3_Polio4"));
-                    anakClient.setCampak(a.getDetail("TanggalPemberianImunisasiCampak"));
+                            .withName(a.getDetail(CHILD_NAME))
+                            .withKINumber(a.getKartuIbu().getDetail(MOTHER_NUMBER))
+                            .withBirthCondition(a.getDetail(BIRTH_CONDITION))
+                            .withServiceAtBirth(a.getDetail(SERVICE_AT_BIRTH))
+                            .withPhotoPath(photoPath)
+                            .withIsHighRisk(a.getDetail(IS_HIGH_RISK_CHILD));
+                    anakClient.setHb07(a.getDetail(IMMUNIZATION_HB_0_7_DATES));
+                    anakClient.setBcgPol1(a.getDetail(IMMUNIZATION_BCG_AND_POLIO1));
+                    anakClient.setDptHb1Pol2(a.getDetail(IMMUNIZATION_DPT_HB1_POLIO2));
+                    anakClient.setDptHb2Pol3(a.getDetail(IMMUNIZATION_DPT_HB2_POLIO3));
+                    anakClient.setDptHb3Pol4(a.getDetail(IMMUNIZATION_DPT_HB3_POLIO4));
+                    anakClient.setCampak(a.getDetail(IMMUNIZATION_MEASLES));
                     anakSmartClient.add(anakClient);
                 }
                 sortByName(anakSmartClient);

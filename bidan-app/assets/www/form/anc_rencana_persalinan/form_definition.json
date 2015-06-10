@@ -9,41 +9,37 @@
                 "shouldLoadValue": true
             },
             {
-                "name": "RencanaPenolongPersalinan",
-                "bind": "/model/instance/rencana_persalinan/B01036"
+                "name": "tanggalRencanaPersalinan",
+                "bind": "/model/instance/rencana_persalinan/tanggal"
 			},
             {
-                "name": "TempatRencanaPersalinan",
-                "bind": "/model/instance/rencana_persalinan/B01037"
+                "name": "rencanaPenolongPersalinan",
+                "bind": "/model/instance/rencana_persalinan/rencana_penolong_persalinan"
 			},
             {
-                "name": "RencanaPendampingPersalinan",
-                "bind": "/model/instance/rencana_persalinan/B01038"
+                "name": "tempatRencanaPersalinan",
+                "bind": "/model/instance/rencana_persalinan/tempat_rencana_persalinan"
 			},
             {
-                "name": "Transportasi",
-                "bind": "/model/instance/rencana_persalinan/B01039"
+                "name": "rencanaPendampingPersalinan",
+                "bind": "/model/instance/rencana_persalinan/rencana_pendamping_persalinan"
 			},
             {
-                "name": "Pendonor",
-                "bind": "/model/instance/rencana_persalinan/B01040"
+                "name": "transportasi",
+                "bind": "/model/instance/rencana_persalinan/transportasi"
 			},
             {
-                "name": "KondisiRumah",
-                "bind": "/model/instance/rencana_persalinan/B01041"
+                "name": "pendonor",
+                "bind": "/model/instance/rencana_persalinan/pendonor"
 			},
             {
-                "name": "PersediaanPerlengkapanPersalinan",
-                "bind": "/model/instance/rencana_persalinan/B01042"
+                "name": "kondisiRumah",
+                "bind": "/model/instance/rencana_persalinan/kondisi_rumah"
 			},
             {
-                "name": "isOutOfArea",
-                "value": "false"
-            },
-            {
-                "name": "isClosed",
-                "value": "false"
-            },
+                "name": "persediaanPerlengkapanPersalinan",
+                "bind": "/model/instance/rencana_persalinan/persediaan_perlengkapan_persalinan"
+			},
             {
                 "name": "submissionDate",
                 "bind": "/model/instance/rencana_persalinan/today"

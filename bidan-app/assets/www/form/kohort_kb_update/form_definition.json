@@ -1,56 +1,73 @@
 {
-	"form_data_definition_version": "1",
-	"form": {
-		"bind_type": "kartu_ibu",
-		"default_bind_path": "/model/instance/kohort_kb_pelayanan/",
-		"fields": [
-			{
-				"name": "id",
-				"shouldLoadValue": true
-			},
-			{
-				"name": "HB",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03011",
-                "source": "kartu_ibu.HB"
-			},
-			{
-				"name": "LILA",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03012",
-                "source": "kartu_ibu.LILA"
-			},
-			{
-				"name": "PenyakitKronis",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03013",
-				"source":"kartu_ibu.PenyakitKronis"
-			},
-			{
-				"name": "IMS",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03014",
-				"source":"kartu_ibu.IMS"
-			},
-			{
-				"name": "TanggalKunjungan",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03015"
-			},	    
-			{
-				"name": "KeteranganTentangPesertaKB1",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03016",
-				"source": "kartu_ibu.KeteranganTentangPesertaKB1"
-			},
-			{
-				"name": "JenisKontrasepsi",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03017",
-				"source": "kartu_ibu.JenisKontrasepsi"
-			},
-			{
-				"name": "KeteranganTentangPesertaKB2",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03018",
-				"source": "kartu_ibu.KeteranganTentangPesertaKB2"
-			},
-			{
-				"name": "Keterangan",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03019"
-			}
-		]
-	}
+  "form_data_definition_version": "1",
+  "form": {
+    "bind_type": "kartu_ibu",
+    "default_bind_path": "/model/instance/Update_KB/",
+    "fields": [
+      {
+        "name": "id",
+        "shouldLoadValue": true
+      },
+      {
+        "name": "alki",
+        "bind": "/model/instance/Update_KB/alki"
+      },
+      {
+        "name": "alkihb",
+        "bind": "/model/instance/Update_KB/alki_hb"
+      },
+      {
+        "name": "alkilila",
+        "bind": "/model/instance/Update_KB/alki_lila"
+      },
+      {
+        "name": "alkiPenyakitKronis",
+        "bind": "/model/instance/Update_KB/alki_penyakit_kronis"
+      },
+      {
+        "name": "alkiPenyakitIms",
+        "bind": "/model/instance/Update_KB/alki_penyakit_ims"
+      },
+      {
+        "name": "tanggalkunjungan",
+        "bind": "/model/instance/Update_KB/tanggal_kunjungan"
+      },
+      {
+        "name": "keteranganTentangPesertaKB",
+        "bind": "/model/instance/Update_KB/keterangan_tentang_peserta_kb"
+      },
+      {
+        "name": "jenisKontrasepsi",
+        "bind": "/model/instance/Update_KB/jenis_kontrasepsi_yang_digunakan"
+      },
+      {
+        "name": "keterangantentangPesertaKB2",
+        "bind": "/model/instance/Update_KB/keterangan_tentang_peserta_kb_2"
+      },
+      {
+        "name": "keterangando",
+        "bind": "/model/instance/Update_KB/keterangan_do"
+      },
+      {
+        "name": "keteranganGantiCara",
+        "bind": "/model/instance/Update_KB/keterangan_ganti_cara"
+      },
+      {
+        "name": "keteranganEfekSamping",
+        "bind": "/model/instance/Update_KB/keterangan_efek_samping"
+      },
+      {
+        "name": "keteranganKomplikasi",
+        "bind": "/model/instance/Update_KB/keterangan_komplikasi"
+      },
+      {
+        "name": "submissionDate",
+        "bind": "/model/instance/Update_KB/today"
+      },
+      {
+        "name": "registrationDate",
+        "bind": "/model/instance/Update_KB/reg_date"
+      }
+    ]
+  }
 }

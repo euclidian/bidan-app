@@ -47,6 +47,8 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
                     AllConstants.FormNames.KOHORT_KB_EDIT, formController),
             new OpenFormOption(getString(R.string.str_kb_update),
                     AllConstants.FormNames.KOHORT_KB_UPDATE, formController),
+            new OpenFormOption(getString(R.string.str_kb_close),
+                        AllConstants.FormNames.KOHORT_KB_CLOSE, formController),
         };
     }
 
@@ -127,8 +129,7 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
     @Override
     protected void startRegistration() {
-        //FieldOverrides fieldOverrides = new FieldOverrides(context.anmLocationController().getLocationJSON());
-        //startFormActivity(KARTU_IBU_REGISTRATION, null, fieldOverrides.getJSONString());
+        startFormActivity(AllConstants.FormNames.KOHORT_KB_REGISTER, null, null);
     }
 
     private class ClientActionHandler implements View.OnClickListener {

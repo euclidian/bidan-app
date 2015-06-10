@@ -1,237 +1,282 @@
 {
-    "form_data_definition_version": "1",
-    "form": {
-        "bind_type": "kartu_ibu",
-        "default_bind_path": "/model/instance/Register_ANC/",
-        "fields": [
-            {
-                "name": "id",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "puskesmas",
-                "bind": "/model/instance/Register_ANC/B01001"
-            },
-            {
-                "name": "NoIbu",
-                "bind": "/model/instance/Register_ANC/B01002"
-            },
-            {
-                "name": "Namalengkap",
-                "bind": "/model/instance/Register_ANC/B01003"
-            },
-            {
-                "name": "Namasuami",
-                "bind": "/model/instance/Register_ANC/B01004"
-            },
-            {
-                "name": "Tanggallahir",
-                "bind": "/model/instance/Register_ANC/B01005"
-            },
-            {
-                "name": "Umur",
-                "bind": "/model/instance/Register_ANC/B01006"
-            },
-            {
-                "name": "Alamatdomisili",
-                "bind": "/model/instance/Register_ANC/B01007"
-            },
-            {
-                "name": "Propinsi",
-                "bind": "/model/instance/Register_ANC/B01008"
-            },
-            {
-                "name": "Kabupaten",
-                "bind": "/model/instance/Register_ANC/B01009"
-            },
-            {
-                "name": "Kecamatan",
-                "bind": "/model/instance/Register_ANC/B01010"
-            },
-            {
-                "name": "Kelurahan",
-                "bind": "/model/instance/Register_ANC/B04002"
-            },
-            {
-                "name": "Desa",
-                "bind": "/model/instance/Register_ANC/B01011"
-            },
-            {
-                "name": "Dusun",
-                "bind": "/model/instance/Register_ANC/B04001"
-            },
-            {
-                "name": "RTRW",
-                "bind": "/model/instance/Register_ANC/B01012"
-            },
-            {
-                "name": "Noseri",
-                "bind": "/model/instance/Register_ANC/B04005"
-            },
-            {
-                "name": "Pendidikan",
-                "bind": "/model/instance/Register_ANC/B01013"
-            },
-            {
-                "name": "Agama",
-                "bind": "/model/instance/Register_ANC/B01014"
-            },
-            {
-                "name": "Pekerjaan",
-                "bind": "/model/instance/Register_ANC/B01015"
-            },
-            {
-                "name": "Paritas",
-                "bind": "/model/instance/Register_ANC/B04009"
-            },
-            {
-                "name": "GakinTidak",
-                "bind": "/model/instance/Register_ANC/B04010"
-            },
-            {
-                "name": "Posyandu",
-                "bind": "/model/instance/Register_ANC/B01016"
-            },
-            {
-                "name": "NamaKader",
-				"bind": "/model/instance/Register_ANC/B01017"
-            },
-            {
-                "name": "NamaDukun",
-                "bind": "/model/instance/Register_ANC/B01018"
-            },
-            {
-                "name": "AsuransiJiwa",
-                "bind": "/model/instance/Register_ANC/B01019"
-            },
-            {
-                "name": "GolonganDarah",
-                "bind": "/model/instance/Register_ANC/B01020"
-            },
-			{
-                "name": "NomorTelponHp",
-                "bind": "/model/instance/Register_ANC/B01021"
-            },
-			{
-                "name": "Gravida",
-                "bind": "/model/instance/Register_ANC/B01022"
-            },
-            {
-                "name": "Partus",
-                "bind": "/model/instance/Register_ANC/B01023"
-            },
-            {
-                "name": "Abortus",
-                "bind": "/model/instance/Register_ANC/B01024"
-            },
-            {
-                "name": "Hidup",
-                "bind": "/model/instance/Register_ANC/B01025"
-            },
-            {
-                "name": "Hamilke",
-                "bind": "/model/instance/Register_ANC/B02008"
-            },
-            {
-                "name": "ibuId",
-                "shouldLoadValue": true,
-                "source": "kartu_ibu.ibu.id"
-            },
-            {
-                "name": "referenceDate",
-                "bind": "/model/instance/Register_ANC/B01026",
-                "source" : "kartu_ibu.ibu.referenceDate"
-            },
-            {
-                "name": "TanggalHPHT",
-                "bind": "/model/instance/Register_ANC/B01027",
-                "source" : "kartu_ibu.ibu.TanggalHPHT"
-            },
-            {
-                "name": "EDD",
-                "bind": "/model/instance/Register_ANC/B01028"
-            },
-            {
-                "name": "PersalinanSebelumnya",
-                "bind": "/model/instance/Register_ANC/B01029",
-                "source" : "kartu_ibu.ibu.PersalinanSebelumnya"
-            },
-            {
-                "name": "BB",
-                "bind": "/model/instance/Register_ANC/B01030",
-                "source" : "kartu_ibu.ibu.BB"
-            },
-            {
-                "name": "TB",
-                "bind": "/model/instance/Register_ANC/B01031",
-                "source" : "kartu_ibu.ibu.TB"
-            },
-            {
-                "name": "berat_badan",
-                "bind": "/model/instance/Register_ANC/B02013",
-                "source": "kartu_ibu.ibu.berat_badan"
-            },
-            {
-                "name": "lila",
-                "bind": "/model/instance/Register_ANC/B02012",
-                "source": "kartu_ibu.ibu.lila"
-            },
-            {
-                "name": "BukuKIA",
-                "bind": "/model/instance/Register_ANC/B01032",
-                "source":"kartu_ibu.ibu.BukuKIA"
-            },
-            {
-                "name": "type",
-                "value": "ANC",
-                "source":"kartu_ibu.ibu.type"
-            },
-            {
-                "name": "RiwayatKomplikasiKebidanan",
-                "bind": "/model/instance/Register_ANC/B01033",
-                "source" : "kartu_ibu.ibu.RiwayatKomplikasiKebidanan"
-            },
-            {
-                "name": "PenyakitKronis",
-                "bind": "/model/instance/Register_ANC/B01034",
-                "source" : "kartu_ibu.ibu.PenyakitKronis"
-            },
-            {
-                "name": "Alergi",
-                "bind": "/model/instance/Register_ANC/B01035",
-                "source" : "kartu_ibu.ibu.Alergi"
-            },
-            {
-                "name": "TBrisk",
-                "bind": "/model/instance/Register_ANC/TB_risk",
-                "source" : "kartu_ibu.ibu.TBrisk"
-            },
-            {
-                "name": "ishighrisk",
-                "bind": "/model/instance/Register_ANC/is_high_risk",
-                "source" : "kartu_ibu.ibu.ishighrisk"
-            },
-            {
-                "name": "isOutOfArea",
-                "value": "false"
-            },
-            {
-                "name": "isClosed",
-                "value": "false"
-            },
-            {
-                "name": "isClosed",
-                "value": "false",
-                "source": "kartu_ibu.ibu.isClosed"
-            },
-            {
-                "name": "submissionDate",
-                "bind": "/model/instance/Register_ANC/today"
-            },
-            {
-                "name": "registrationDate",
-                "bind": "/model/instance/Register_ANC/today"
-            }
-        ]
-    }
+  "form_data_definition_version":"1",
+  "form":{
+    "bind_type":"kartu_ibu",
+    "default_bind_path":"/model/instance/Register_ANC/",
+    "fields":[
+      {
+        "name":"id",
+        "shouldLoadValue":true
+      },
+      {
+        "name":"puskesmas",
+        "bind":"/model/instance/Register_ANC/puskesmas"
+      },
+      {
+        "name":"noIbu",
+        "bind":"/model/instance/Register_ANC/no_ibu"
+      },
+      {
+        "name":"namalengkap",
+        "bind":"/model/instance/Register_ANC/nama_lengkap"
+      },
+      {
+        "name":"namaSuami",
+        "bind":"/model/instance/Register_ANC/nama_suami"
+      },
+      {
+        "name":"tanggalLahir",
+        "bind":"/model/instance/Register_ANC/tanggal_lahir"
+      },
+      {
+        "name":"umur",
+        "bind":"/model/instance/Register_ANC/umur"
+      },
+      {
+        "name":"alamatDomisili",
+        "bind":"/model/instance/Register_ANC/alamat_domisili"
+      },
+      {
+        "name":"propinsi",
+        "bind":"/model/instance/Register_ANC/propinsi"
+      },
+      {
+        "name":"kabupaten",
+        "bind":"/model/instance/Register_ANC/kabupaten"
+      },
+      {
+        "name":"kecamatan",
+        "bind":"/model/instance/Register_ANC/kecamatan"
+      },
+      {
+        "name":"kecamatanl",
+        "bind":"/model/instance/Register_ANC/kecamatanl"
+      },
+      {
+        "name":"desa",
+        "bind":"/model/instance/Register_ANC/desa"
+      },
+      {
+        "name":"desal",
+        "bind":"/model/instance/Register_ANC/desal"
+      },
+      {
+        "name":"desaq",
+        "bind":"/model/instance/Register_ANC/desaq"
+      },
+      {
+        "name":"dusun",
+        "bind":"/model/instance/Register_ANC/dusun"
+      },
+      {
+        "name":"dusunl",
+        "bind":"/model/instance/Register_ANC/dusunl"
+      },
+      {
+        "name":"dusunq",
+        "bind":"/model/instance/Register_ANC/dusunq"
+      },
+      {
+        "name":"pendidikan",
+        "bind":"/model/instance/Register_ANC/pendidikan"
+      },
+      {
+        "name":"agama",
+        "bind":"/model/instance/Register_ANC/agama"
+      },
+      {
+        "name":"pekerjaan",
+        "bind":"/model/instance/Register_ANC/pekerjaan"
+      },
+      {
+        "name":"gakinTidak",
+        "bind":"/model/instance/Register_ANC/gakin_tidak"
+      },
+      {
+        "name":"posyandu",
+        "bind":"/model/instance/Register_ANC/posyandu"
+      },
+      {
+        "name":"namaKader",
+        "bind":"/model/instance/Register_ANC/nama_kader"
+      },
+      {
+        "name":"namaDukun",
+        "bind":"/model/instance/Register_ANC/nama_dukun"
+      },
+      {
+        "name":"asuransiJiwa",
+        "bind":"/model/instance/Register_ANC/asuransi_jiwa"
+      },
+      {
+        "name":"golonganDarah",
+        "bind":"/model/instance/Register_ANC/golongan_darah"
+      },
+      {
+        "name":"telponMemilikiTidak",
+        "bind":"/model/instance/Register_ANC/nomortelpon"
+      },
+      {
+        "name":"NomorTelponHp",
+        "bind":"/model/instance/Register_ANC/nomor_telpon_hp"
+      },
+      {
+        "name":"htp",
+        "bind":"/model/instance/Register_ANC/htp"
+      },
+      {
+        "name":"gravida",
+        "bind":"/model/instance/Register_ANC/gravida"
+      },
+      {
+        "name":"partus",
+        "bind":"/model/instance/Register_ANC/partus"
+      },
+      {
+        "name":"abortus",
+        "bind":"/model/instance/Register_ANC/abortus"
+      },
+      {
+        "name":"hidup",
+        "bind":"/model/instance/Register_ANC/hidup"
+      },
+      {
+        "name":"hamilke",
+        "bind":"/model/instance/Register_ANC/hamil_ke"
+      },
+      {
+        "name":"referenceDate",
+        "bind":"/model/instance/Register_ANC/tanggal_periksa",
+        "source": "kartu_ibu.ibu.tanggalPeriksa"
+      },
+      {
+        "name":"tanggalHPHT",
+        "bind":"/model/instance/Register_ANC/tanggal_hpht",
+        "source": "kartu_ibu.ibu.tanggalHPHT"
+      },
+      {
+        "name":"persalinanSebelumnya",
+        "bind":"/model/instance/Register_ANC/persalinan_sebelumnya",
+        "source": "kartu_ibu.ibu.persalinanSebelumnya"
+      },
+      {
+        "name":"bbSebelumHamil",
+        "bind":"/model/instance/Register_ANC/bbsebelumhamil",
+        "source": "kartu_ibu.ibu.bbSebelumHamil"
+      },
+      {
+        "name":"bbKg",
+        "bind":"/model/instance/Register_ANC/bb_kg",
+        "source": "kartu_ibu.ibu.bbKg"
+      },
+      {
+        "name":"tbCM",
+        "bind":"/model/instance/Register_ANC/tb_cm",
+        "source": "kartu_ibu.ibu.tbCM"
+      },
+      {
+        "name":"bukuKIA",
+        "bind":"/model/instance/Register_ANC/buku_kia",
+        "source": "kartu_ibu.ibu.bukuKIA"
+      },
+      {
+        "name":"tanggalMemperolehBukuKia",
+        "bind":"/model/instance/Register_ANC/tanggal_memperoleh_buku_kia",
+        "source": "kartu_ibu.ibu.tanggalMemperolehBukuKia"
+      },
+      {
+        "name":"hasilPemeriksaanLILA",
+        "bind":"/model/instance/Register_ANC/hasil_pemeriksaan_lila",
+        "source": "kartu_ibu.ibu.hasilPemeriksaanLILA"
+      },
+      {
+        "name":"hasilPemeriksaanBeratBadan ",
+        "bind":"/model/instance/Register_ANC/hasil_pemeriksaan_berat_badan",
+        "source": "kartu_ibu.ibu.hasilPemeriksaanBeratBadan"
+      },
+      {
+        "name":"rkk",
+        "bind":"/model/instance/Register_ANC/rkk",
+        "source": "kartu_ibu.ibu.rkk"
+      },
+      {
+        "name":"riwayatKomplikasiKebidanan",
+        "bind":"/model/instance/Register_ANC/riwayat_komplikasi_kebidanan",
+        "source": "kartu_ibu.ibu.riwayatKomplikasiKebidanan"
+      },
+      {
+        "name":"rkklainnya",
+        "bind":"/model/instance/Register_ANC/rkklainnya",
+        "source": "kartu_ibu.ibu.rkklainnya"
+      },
+      {
+        "name":"kronis",
+        "bind":"/model/instance/Register_ANC/kronis",
+        "source": "kartu_ibu.ibu.kronis"
+      },
+      {
+        "name":"penyakitKronis",
+        "bind":"/model/instance/Register_ANC/penyakit_kronis",
+        "source": "kartu_ibu.ibu.penyakitKronis"
+      },
+      {
+        "name":"rpkLainnya",
+        "bind":"/model/instance/Register_ANC/rpklainnya",
+        "source": "kartu_ibu.ibu.rpkLainnya"
+      },
+      {
+        "name":"Alergi",
+        "bind":"/model/instance/Register_ANC/alergi",
+        "source": "kartu_ibu.ibu.Alergi"
+      },
+      {
+        "name":"isHighRisk",
+        "bind":"/model/instance/Register_ANC/is_high_risk"
+      },
+      {
+        "name":"isHighRiskANC",
+        "bind":"/model/instance/Register_ANC/is_high_risk_anc"
+      },
+      {
+        "name":"isHighRiskPregnancy",
+        "bind":"/model/instance/Register_ANC/is_high_risk_pregnancy"
+      },
+      {
+        "name":"isHighRiskLabour",
+        "bind":"/model/instance/Register_ANC/is_high_risk_labour"
+      },
+      {
+        "name":"isOtherRisk",
+        "bind":"/model/instance/Register_ANC/is_other_risk"
+      },
+      {
+        "name":"isOutOfArea",
+        "value":"false"
+      },
+      {
+        "name":"isClosed",
+        "value":"false"
+      },
+      {
+        "name":"isClosed",
+        "value":"false",
+        "source":"kartu_ibu.ibu.isClosed"
+      },
+      {
+        "name": "type",
+        "value": "anc",
+        "source":"kartu_ibu.ibu.type"
+      },
+      {
+        "name":"submissionDate",
+        "bind":"/model/instance/Register_ANC/today",
+        "source": "kartu_ibu.ibu.submissionDate"
+      },
+      {
+        "name":"registrationDate",
+        "bind":"/model/instance/Register_ANC/reg_date",
+        "source": "kartu_ibu.ibu.registrationDate"
+      }
+    ]
+  }
 }

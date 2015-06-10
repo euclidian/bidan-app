@@ -1,90 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form autocomplete="off" novalidate="novalidate" class="or clearfix" id="kohort_bayi_kunjungan_perbulan">
-    <!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.-->
-    <section class="form-logo" />
-    <h3 id="form-title">Kohort Bayi Kunjungan Perbulan</h3>
-    <label class="note non-select ">
-        <span lang="" class="question-label active">
-            Tanggal kunjungan bayi per bulan:
-            <span class="or-output" data-value=" /kohort_bayi_kunjungan_perbulan/today " />
-        </span>
-        <input type="text" name="/kohort_bayi_kunjungan_perbulan/tanggal_kunjungan_note" data-type-xml="string" readonly="readonly" />
-    </label>
-
-    <label class="question non-select ">
-        <span lang="" class="question-label active">Berat badan bayi (kg) ?</span>
-        <span class="required">*</span>
-        <input type="number" required="required" name="/kohort_bayi_kunjungan_perbulan/berat_badan_bayi" data-type-xml="decimal" step="any" />
-    </label>
-
-    <fieldset class="question ">
-        <fieldset>
-            <legend>
-                <span lang="" class="question-label active">Pemberian Asi Eksklusif : </span>
-                <span class="required">*</span>
-            </legend>
-            <div class="option-wrapper">
-                <label class="">
-                    <input type="radio" required="required" name="/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif" data-name="/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif" value="Eksklusif 1 (E1)" data-type-xml="select1" />
-                    <span lang="" class="option-label active">Eksklusif 1 (E1)</span>
-                </label>
-                <label class="">
-                    <input type="radio" required="required" name="/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif" data-name="/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif" value="Eksklusif 2 (E2)" data-type-xml="select1" />
-                    <span lang="" class="option-label active">Eksklusif 2 (E2)</span>
-                </label>
-                <label class="">
-                    <input type="radio" required="required" name="/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif" data-name="/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif" value="Eksklusif 3 (E3)" data-type-xml="select1" />
-                    <span lang="" class="option-label active">Eksklusif 3 (E3)</span>
-                </label>
-                <label class="">
-                    <input type="radio" required="required" name="/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif" data-name="/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif" value="Eksklusif 4 (E4)" data-type-xml="select1" />
-                    <span lang="" class="option-label active">Eksklusif 4 (E4)</span>
-                </label>
-                <label class="">
-                    <input type="radio" required="required" name="/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif" data-name="/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif" value="Eksklusif 5 (E5)" data-type-xml="select1" />
-                    <span lang="" class="option-label active">Eksklusif 5 (E5)</span>
-                </label>
-                <label class="">
-                    <input type="radio" required="required" name="/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif" data-name="/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif" value="Eksklusif 6 (E6)" data-type-xml="select1" />
-                    <span lang="" class="option-label active">Eksklusif 6 (E6)</span>
-                </label>
-            </div>
-        </fieldset>
-    </fieldset>
-
-    <fieldset class="question ">
-        <fieldset>
-            <legend>
-                <span lang="" class="question-label active">Hasil dilakukannya KPSP : </span>
-            </legend>
-            <div class="option-wrapper">
-                <label class="">
-                    <input type="radio" name="/kohort_bayi_kunjungan_perbulan/hasil_dilakukan_kpsp" data-name="/kohort_bayi_kunjungan_perbulan/hasil_dilakukan_kpsp" value="Sesuai (DS)" data-type-xml="select1" />
-                    <span lang="" class="option-label active">Jika dilakukan KPSP dan hasilnya sesuai (DS)</span>
-                </label>
-                <label class="">
-                    <input type="radio" name="/kohort_bayi_kunjungan_perbulan/hasil_dilakukan_kpsp" data-name="/kohort_bayi_kunjungan_perbulan/hasil_dilakukan_kpsp" value="Meragukan (Dm)" data-type-xml="select1" />
-                    <span lang="" class="option-label active">Jika dilakukan KPSP dan hasilnya meragukan (Dm)</span>
-                </label>
-                <label class="">
-                    <input type="radio" name="/kohort_bayi_kunjungan_perbulan/hasil_dilakukan_kpsp" data-name="/kohort_bayi_kunjungan_perbulan/hasil_dilakukan_kpsp" value="Penyimpangan (Dp)" data-type-xml="select1" />
-                    <span lang="" class="option-label active">Jika dilakukan KPSP dan hasilnya penyimpangan (Dp)</span>
-                </label>
-            </div>
-        </fieldset>
-    </fieldset>
-
-    <fieldset id="or-preload-items" style="display:none;">
-        <label class="calculation non-select ">
-            <input type="hidden" name="/kohort_bayi_kunjungan_perbulan/today" data-preload="date" data-preload-params="today" data-type-xml="date" />
-        </label>
-    </fieldset>
-    <fieldset id="or-calculated-items" style="display:none;">
-        <label class="calculation non-select ">
-            <input type="hidden" name="/kohort_bayi_kunjungan_perbulan/meta/instanceID" data-calculate="concat('uuid:', uuid())" data-type-xml="string" />
-        </label>
-        <label class="calculation non-select ">
-            <input type="hidden" name="/kohort_bayi_kunjungan_perbulan/formhub/uuid" data-calculate="'926fc873521a4ffb9d107b46e25a408f'" data-type-xml="string" />
-        </label>
-    </fieldset>
+	 <!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.-->
+	 <section class="form-logo" />
+	 <h3 id="form-title">Kohort Bayi Kunjungan Perbulan</h3>
+	 <label class="question non-select ">
+		  <span lang="" class="question-label active">Tanggal kunjungan bayi per bulan:</span>
+		  <span lang="" class="or-hint active">Diisi tanggal periksa</span>
+		  <input type="date" name="/kohort_bayi_kunjungan_perbulan/tanggal_kunjungan_bayi_perbulan" data-calculate=" /kohort_bayi_kunjungan_perbulan/today " data-type-xml="date" />
+	 </label>
+	 <label class="question non-select ">
+		  <span lang="" class="or-constraint-msg active">nilai tidak boleh minus</span>
+		  <span lang="" class="question-label active">Berat badan bayi setiap kunjungan bayi per bulan</span>
+		  <span lang="" class="or-hint active">Berat badan bayi saat pemeriksaan setiap kunjungan per bulan</span>
+		  <input type="number" name="/kohort_bayi_kunjungan_perbulan/berat_badan_bayi_setiap_kunjungan_bayi_perbulan" data-constraint=".&gt;0" data-type-xml="decimal" step="any" />
+	 </label>
+	 <fieldset class="question ">
+		  <fieldset>
+				<legend>
+					 <span lang="" class="question-label active">Berat badan naik, turun, tidak ditimbang atau baru ditimbang</span>
+					 <span lang="" class="or-hint active">Diisi N (jika berat badan naik sesuai garis pertumbuhan), T ( tidak naik berat badannya), O (tidak ditimbang pada bulan lalu), B (jika baru pertama kali ditimbang)</span>
+				</legend>
+				<div class="option-wrapper">
+					 <label class="">
+						  <input type="radio" name="/kohort_bayi_kunjungan_perbulan/indikator_berat_bedan_bayi" data-name="/kohort_bayi_kunjungan_perbulan/indikator_berat_bedan_bayi" value="N" data-type-xml="select1" />
+						  <span lang="" class="option-label active">N (jika berat bedan naik sesuai garis pertumbuhan)</span>
+					 </label>
+					 <label class="">
+						  <input type="radio" name="/kohort_bayi_kunjungan_perbulan/indikator_berat_bedan_bayi" data-name="/kohort_bayi_kunjungan_perbulan/indikator_berat_bedan_bayi" value="T" data-type-xml="select1" />
+						  <span lang="" class="option-label active">T (tidak naik berat badannya, berat badan tetap)</span>
+					 </label>
+					 <label class="">
+						  <input type="radio" name="/kohort_bayi_kunjungan_perbulan/indikator_berat_bedan_bayi" data-name="/kohort_bayi_kunjungan_perbulan/indikator_berat_bedan_bayi" value="O" data-type-xml="select1" />
+						  <span lang="" class="option-label active">O (tidak ditimbang pada bulan lalu)</span>
+					 </label>
+					 <label class="">
+						  <input type="radio" name="/kohort_bayi_kunjungan_perbulan/indikator_berat_bedan_bayi" data-name="/kohort_bayi_kunjungan_perbulan/indikator_berat_bedan_bayi" value="B" data-type-xml="select1" />
+						  <span lang="" class="option-label active">B (baru pertama kali ditimbang)</span>
+					 </label>
+				</div>
+		  </fieldset>
+	 </fieldset>
+	 <label class="question or-appearance-minimal ">
+		  <span lang="" class="question-label active">Pemberian Asi Eksklusif</span>
+		  <span lang="" class="or-hint active">Diisi E1/E2/E3/E4/E5/E6 jika bayi diberi ASI eksklusif</span>
+		  <select name="/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif" data-name="/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif" data-type-xml="select1">
+				<option value="">...</option>
+				<option value="ekslusif_1">Ekslusif 1 (E1)</option>
+				<option value="ekslusif_2">Ekslusif 2 (E2)</option>
+				<option value="ekslusif_3">Ekslusif 3 (E3)</option>
+				<option value="ekslusif_4">Ekslusif 4 (E4)</option>
+				<option value="ekslusif_5">Ekslusif 5 (E5)</option>
+				<option value="ekslusif_6">Ekslusif 6 (E6)</option>
+		  </select>
+		  <span class="or-option-translations" style="display:none;" />
+	 </label>
+	 <fieldset class="question ">
+		  <fieldset>
+				<legend>
+					 <span lang="" class="question-label active">Hasil dilakukannya KPSP</span>
+					 <span lang="" class="or-hint active">Hasil yang didapatkan setelah dilakukan Kuesioner Pra Skrining Perkembangan (KPSP) per Bulan</span>
+				</legend>
+				<div class="option-wrapper">
+					 <label class="">
+						  <input type="radio" name="/kohort_bayi_kunjungan_perbulan/hasil_dilakukannya_kpsp" data-name="/kohort_bayi_kunjungan_perbulan/hasil_dilakukannya_kpsp" value="DS" data-type-xml="select1" />
+						  <span lang="" class="option-label active">KPSP dilakukan dan hasilnya sesuai (DS)</span>
+					 </label>
+					 <label class="">
+						  <input type="radio" name="/kohort_bayi_kunjungan_perbulan/hasil_dilakukannya_kpsp" data-name="/kohort_bayi_kunjungan_perbulan/hasil_dilakukannya_kpsp" value="Dm" data-type-xml="select1" />
+						  <span lang="" class="option-label active">KPSP dilakukan dan hasilnya meragukan (Dm)</span>
+					 </label>
+					 <label class="">
+						  <input type="radio" name="/kohort_bayi_kunjungan_perbulan/hasil_dilakukannya_kpsp" data-name="/kohort_bayi_kunjungan_perbulan/hasil_dilakukannya_kpsp" value="Dp" data-type-xml="select1" />
+						  <span lang="" class="option-label active">KPSP dilakukan dan hasilnya penyimpangan (Dp)</span>
+					 </label>
+					 <label class="">
+						  <input type="radio" name="/kohort_bayi_kunjungan_perbulan/hasil_dilakukannya_kpsp" data-name="/kohort_bayi_kunjungan_perbulan/hasil_dilakukannya_kpsp" value="NA" data-type-xml="select1" />
+						  <span lang="" class="option-label active">KPSP tidak dilakukan</span>
+					 </label>
+				</div>
+		  </fieldset>
+	 </fieldset>
+	 <fieldset class="question or-branch pre-init ">
+		  <fieldset>
+				<legend>
+					 <span lang="" class="question-label active">Penyimpangan</span>
+					 <span lang="" class="or-hint active">Diisi M bila balita sakit di MTBS, R bila dirujuk, S bila balita sakit tidak di MTBS</span>
+				</legend>
+				<div class="option-wrapper">
+					 <label class="">
+						  <input type="radio" name="/kohort_bayi_kunjungan_perbulan/kpsp_penyimpangan" data-name="/kohort_bayi_kunjungan_perbulan/kpsp_penyimpangan" value="M" data-relevant=" /kohort_bayi_kunjungan_perbulan/hasil_dilakukannya_kpsp  = 'NA'" data-type-xml="select1" />
+						  <span lang="" class="option-label active">M (balita sakit di MTBS)</span>
+					 </label>
+					 <label class="">
+						  <input type="radio" name="/kohort_bayi_kunjungan_perbulan/kpsp_penyimpangan" data-name="/kohort_bayi_kunjungan_perbulan/kpsp_penyimpangan" value="R" data-relevant=" /kohort_bayi_kunjungan_perbulan/hasil_dilakukannya_kpsp  = 'NA'" data-type-xml="select1" />
+						  <span lang="" class="option-label active">R (dirujuk)</span>
+					 </label>
+					 <label class="">
+						  <input type="radio" name="/kohort_bayi_kunjungan_perbulan/kpsp_penyimpangan" data-name="/kohort_bayi_kunjungan_perbulan/kpsp_penyimpangan" value="S" data-relevant=" /kohort_bayi_kunjungan_perbulan/hasil_dilakukannya_kpsp  = 'NA'" data-type-xml="select1" />
+						  <span lang="" class="option-label active">S (tidak di MTBS)</span>
+					 </label>
+				</div>
+		  </fieldset>
+	 </fieldset>
+	 <fieldset id="or-preload-items" style="display:none;">
+		  <label class="calculation non-select ">
+				<input type="hidden" name="/kohort_bayi_kunjungan_perbulan/start" data-preload="timestamp" data-preload-params="start" data-type-xml="dateTime" />
+		  </label>
+		  <label class="calculation non-select ">
+				<input type="hidden" name="/kohort_bayi_kunjungan_perbulan/today" data-preload="date" data-preload-params="today" data-type-xml="date" />
+		  </label>
+		  <label class="calculation non-select ">
+				<input type="hidden" name="/kohort_bayi_kunjungan_perbulan/deviceid" data-preload="property" data-preload-params="deviceid" data-type-xml="string" />
+		  </label>
+		  <label class="calculation non-select ">
+				<input type="hidden" name="/kohort_bayi_kunjungan_perbulan/simserial" data-preload="property" data-preload-params="simserial" data-type-xml="string" />
+		  </label>
+		  <label class="calculation non-select ">
+				<input type="hidden" name="/kohort_bayi_kunjungan_perbulan/phonenumber" data-preload="property" data-preload-params="phonenumber" data-type-xml="string" />
+		  </label>
+		  <label class="calculation non-select ">
+				<input type="hidden" name="/kohort_bayi_kunjungan_perbulan/end" data-preload="timestamp" data-preload-params="end" data-type-xml="dateTime" />
+		  </label>
+	 </fieldset>
+	 <fieldset id="or-calculated-items" style="display:none;">
+		  <label class="calculation non-select ">
+				<input autocomplete="off" type="hidden" name="/kohort_bayi_kunjungan_perbulan/reg_date" data-calculate=" /kohort_bayi_kunjungan_perbulan/today " data-type-xml="date" />
+		  </label>
+		  <label class="calculation non-select ">
+				<input type="hidden" name="/kohort_bayi_kunjungan_perbulan/meta/instanceID" data-calculate="concat('uuid:', uuid())" data-type-xml="string" />
+		  </label>
+		  <label class="calculation non-select ">
+				<input type="hidden" name="/kohort_bayi_kunjungan_perbulan/formhub/uuid" data-calculate="'dd7f4f2cd6064fa89cf0591fd6516849'" data-type-xml="string" />
+		  </label>
+	 </fieldset>
 </form>

@@ -1,8 +1,8 @@
 {
-    "form_data_definition_version": "0.2",
+    "form_data_definition_version": "1",
     "form": {
         "bind_type": "kartu_ibu",
-        "default_bind_path": "/model/identitas_ibu/identitas_ibu/",
+        "default_bind_path": "/model/instance/kartu_ibu/",
         "fields": [
             {
                 "name": "id",
@@ -10,211 +10,181 @@
             },
             {
                 "name": "puskesmas",
-                "bind": "/model/instance/identitas_ibu/B01001",   
-                "source": "kartu_ibu.puskesmas",
-                "shouldLoadValue": true
+                "bind": "/model/instance/kartu_ibu/puskesmas",
+                "shouldLoadValue" : true
             },
             {
-                "name": "NoIbu",
-                "bind": "/model/instance/identitas_ibu/B01002",
-                "source": "kartu_ibu.NoIbu",
-                "shouldLoadValue": true
+                "name": "noIbu",
+                "bind": "/model/instance/kartu_ibu/no_ibu",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Namalengkap",
-                "bind": "/model/instance/identitas_ibu/B01003",
-                "source": "kartu_ibu.Namalengkap",
-                "shouldLoadValue": true
+                "name": "namalengkap",
+                "bind": "/model/instance/kartu_ibu/nama_lengkap",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Namasuami",
-                "bind": "/model/instance/identitas_ibu/B01004",
-                "source": "kartu_ibu.Namasuami",
-                "shouldLoadValue": true
+                "name": "namaSuami",
+                "bind": "/model/instance/kartu_ibu/nama_suami",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Tanggallahir",
-                "bind": "/model/instance/identitas_ibu/B01005",
-                "source": "kartu_ibu.Tanggallahir",
-                "shouldLoadValue": true
+                "name": "tanggalLahir",
+                "bind": "/model/instance/kartu_ibu/tanggal_lahir",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Umur",
-                "bind": "/model/instance/identitas_ibu/B01006",
-                "source": "kartu_ibu.Umur",
-                "shouldLoadValue": true
+                "name": "umur",
+                "bind": "/model/instance/kartu_ibu/umur",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Alamatdomisili",
-                "bind": "/model/instance/identitas_ibu/B01007",
-                "source": "kartu_ibu.Alamatdomisili",
-                "shouldLoadValue": true
+                "name": "alamatDomisili",
+                "bind": "/model/instance/kartu_ibu/alamat_domisili",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Propinsi",
-                "bind": "/model/instance/identitas_ibu/B01008",
-                "source": "kartu_ibu.Propinsi",
-                "shouldLoadValue": true
+                "name": "propinsi",
+                "bind": "/model/instance/kartu_ibu/propinsi",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Kabupaten",
-                "bind": "/model/instance/identitas_ibu/B01009",
-                "source": "kartu_ibu.Kabupaten",
-                "shouldLoadValue": true
+                "name": "kabupaten",
+                "bind": "/model/instance/kartu_ibu/kabupaten",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Kecamatan",
-                "bind": "/model/instance/identitas_ibu/B01010",
-                "source": "kartu_ibu.Kecamatan",
-                "shouldLoadValue": true
+                "name": "kecamatan",
+                "bind": "/model/instance/kartu_ibu/kecamatan",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Kelurahan",
-                "bind": "/model/instance/identitas_ibu/B04002",
-                "source": "kartu_ibu.Kelurahan",
-                "shouldLoadValue": true
+                "name": "kecamatanl",
+                "bind": "/model/instance/kartu_ibu/kecamatanl",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Desa",
-                "bind": "/model/instance/identitas_ibu/B01011",
-                "source": "kartu_ibu.Desa",
-                "shouldLoadValue": true
+                "name": "desa",
+                "bind": "/model/instance/kartu_ibu/desa",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Dusun",
-                "bind": "/model/instance/identitas_ibu/B04001",
-                "source": "kartu_ibu.Dusun",
-                "shouldLoadValue": true
+                "name": "desal",
+                "bind": "/model/instance/kartu_ibu/desal",
+                "shouldLoadValue" : true
             },
             {
-                "name": "RTRW",
-                "bind": "/model/instance/identitas_ibu/B01012",
-                "source": "kartu_ibu.RTRW",
-                "shouldLoadValue": true
+                "name": "desaq",
+                "bind": "/model/instance/kartu_ibu/desaq",
+                "shouldLoadValue" : true
             },
             {
-                "name": "NoSeri",
-                "bind": "/model/instance/identitas_ibu/B04005",
-                "source": "kartu_ibu.NoSeri",
-                "shouldLoadValue": true
+                "name": "dusun",
+                "bind": "/model/instance/kartu_ibu/dusun",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Pendidikan",
-                "bind": "/model/instance/identitas_ibu/B01013",
-                "source": "kartu_ibu.Pendidikan",
-                "shouldLoadValue": true
+                "name": "dusunl",
+                "bind": "/model/instance/kartu_ibu/dusunl",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Agama",
-                "bind": "/model/instance/identitas_ibu/B01014",
-                "source": "kartu_ibu.Agama",
-                "shouldLoadValue": true
+                "name": "dusunq",
+                "bind": "/model/instance/kartu_ibu/dusunq",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Pekerjaan",
-                "bind": "/model/instance/identitas_ibu/B01015",
-                "source": "kartu_ibu.Pekerjaan",
-                "shouldLoadValue": true
+                "name": "pendidikan",
+                "bind": "/model/instance/kartu_ibu/pendidikan",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Paritas",
-                "bind": "/model/instance/identitas_ibu/B04009",
-                "source": "kartu_ibu.Paritas",
-                "shouldLoadValue": true
+                "name": "agama",
+                "bind": "/model/instance/kartu_ibu/agama",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Gakin",
-                "bind": "/model/instance/identitas_ibu/B04010",
-                "source": "kartu_ibu.Gakin",
-                "shouldLoadValue": true
+                "name": "pekerjaan",
+                "bind": "/model/instance/kartu_ibu/pekerjaan",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Posyandu",
-                "bind": "/model/instance/identitas_ibu/B01016",
-                "source": "kartu_ibu.Posyandu",
-                "shouldLoadValue": true
+                "name": "gakinTidak",
+                "bind": "/model/instance/kartu_ibu/gakin_tidak",
+                "shouldLoadValue" : true
             },
             {
-                "name": "NamaKader",
-				"bind": "/model/instance/identitas_ibu/B01017",
-                "source": "kartu_ibu.NamaKader",
-                "shouldLoadValue": true
+                "name": "posyandu",
+                "bind": "/model/instance/kartu_ibu/posyandu",
+                "shouldLoadValue" : true
             },
             {
-                "name": "NamaDukun",
-                "bind": "/model/instance/identitas_ibu/B01018",
-                "source": "kartu_ibu.NamaDukun",
-                "shouldLoadValue": true
+                "name": "namaKader",
+                "bind": "/model/instance/kartu_ibu/nama_kader",
+                "shouldLoadValue" : true
             },
             {
-                "name": "AsuransiJiwa",
-                "bind": "/model/instance/identitas_ibu/B01019",
-                "source": "kartu_ibu.AsuransiJiwa",
-                "shouldLoadValue": true
+                "name": "namaDukun",
+                "bind": "/model/instance/kartu_ibu/nama_dukun",
+                "shouldLoadValue" : true
             },
             {
-                "name": "GolonganDarah",
-                "bind": "/model/instance/identitas_ibu/B01020",
-                "source": "kartu_ibu.GolonganDarah",
-                "shouldLoadValue": true
+                "name": "asuransiJiwa",
+                "bind": "/model/instance/kartu_ibu/asuransi_jiwa",
+                "shouldLoadValue" : true
             },
-			{
+            {
+                "name": "golonganDarah",
+                "bind": "/model/instance/kartu_ibu/golongan_darah",
+                "shouldLoadValue" : true
+            },
+            {
+                "name": "telponMemilikiTidak",
+                "bind": "/model/instance/kartu_ibu/nomortelpon",
+                "shouldLoadValue" : true
+            },
+            {
                 "name": "NomorTelponHp",
-                "bind": "/model/instance/identitas_ibu/B01021",
-                "source": "kartu_ibu.NomorTelponHp",
-                "shouldLoadValue": true
-            },
-			{
-                "name": "Gravida",
-                "bind": "/model/instance/identitas_ibu/B01022",
-                "source": "kartu_ibu.Gravida",
-                "shouldLoadValue": true
+                "bind": "/model/instance/kartu_ibu/nomor_telpon_hp",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Partus",
-                "bind": "/model/instance/identitas_ibu/B01023",
-                "source": "kartu_ibu.Partus",
-                "shouldLoadValue": true
+                "name": "tooYoungRisk",
+                "bind": "/model/instance/kartu_ibu/Too_young_risk",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Abortus",
-                "bind": "/model/instance/identitas_ibu/B01024",
-                "source": "kartu_ibu.Abortus",
-                "shouldLoadValue": true
+                "name": "tooOldMother",
+                "bind": "/model/instance/kartu_ibu/Too_old_mother",
+                "shouldLoadValue" : true
             },
             {
-                "name": "Hidup",
-                "bind": "/model/instance/identitas_ibu/B01025",
-                "source": "kartu_ibu.Hidup",
-                "shouldLoadValue": true
+                "name": "isHighPriority",
+                "bind": "/model/instance/kartu_ibu/is_high_priority",
+                "shouldLoadValue" : true
             },
             {
-                "name": "HamilKe",
-                "bind": "/model/instance/identitas_ibu/B02008",
-                "source": "kartu_ibu.HamilKe",
-                "shouldLoadValue": true
+                "name": "highPriorityReason",
+                "bind": "/model/instance/kartu_ibu/high_priority_reason",
+                "shouldLoadValue" : true
             },
             {
-                "name": "IsHighRisk",
-                "bind": "/model/instance/identitas_ibu/is_high_risk",
-                "source": "kartu_ibu.IsHighRisk",
-                "shouldLoadValue": true
+                "name": "highRiskNote",
+                "bind": "/model/instance/kartu_ibu/high_risk_note",
+                "shouldLoadValue" : true
             },
             {
-                "name": "isOutOfArea",
-                "value": "false"
-            },
-            {
-                "name": "isClosed",
-                "value": "false"
+                "name": "isHighRisk",
+                "bind": "/model/instance/kartu_ibu/is_high_risk",
+                "shouldLoadValue" : true
             },
             {
                 "name": "submissionDate",
-                "bind": "/model/instance/identitas_ibu/today"
+                "bind": "/model/instance/kartu_ibu/today"
             },
             {
                 "name": "registrationDate",
-                "bind": "/model/instance/identitas_ibu/today"
+                "bind": "/model/instance/kartu_ibu/reg_date"
             }
         ]
     }

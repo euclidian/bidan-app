@@ -94,37 +94,48 @@ public class AllConstants {
         public static final String RECORD_ECPS = "record_ecps";
         public static final String FP_REFERRAL_FOLLOWUP = "fp_referral_followup";
         public static final String FP_FOLLOWUP = "fp_followup";
+
+        // KOHORT IBU
         public static final String KARTU_IBU_REGISTRATION = "kartu_ibu";
         public static final String KARTU_IBU_EDIT = "kartu_ibu_edit";
         public static final String KARTU_IBU_CLOSE = "kartu_ibu_close";
+
+        // ANC
         public static final String KARTU_IBU_ANC_REGISTRATION = "kartu_ibu_anc";
-        public static final String KARTU_IBU_PNC_REGISTRATION = "kartu_ibu_pnc";
+        public static final String KARTU_IBU_ANC_OA="kartu_ibu_anc_oa";
         public static final String KARTU_IBU_ANC_DOKUMENTASI_PERSALINAN = "anc_dokumentasi_persalinan";
         public static final String KARTU_IBU_ANC_RENCANA_PERSALINAN = "anc_rencana_persalinan";
-        public static final String ANAK_BAYI_REGISTRATION = "kohort_bayi";
         public static final String KARTU_IBU_ANC_EDIT="kartu_ibu_anc_edit";
         public static final String KARTU_IBU_ANC_CLOSE="kartu_ibu_anc_close";
-        public static final String KARTU_IBU_PNC_EDIT="kartu_ibu_pnc_edit";
-        public static final String KARTU_IBU_PNC_CLOSE="kartu_ibu_pnc_close";
-        public static final String KARTU_IBU_ANAK_VISIT="kohort_bayi_kunjungan";
-        public static final String KARTU_IBU_ANAK_CLOSE="anak_close";
-        public static final String KOHORT_KB_PELAYANAN="kohort_kb_pelayanan";
-        public static final String KOHORT_KB_UPDATE="kohort_kb_update";
-        public static final String KARTU_IBU_ANC_OA="kartu_ibu_anc_oa";
-        public static final String KARTU_IBU_PNC_OA="kartu_ibu_pnc_oa";
         public static final String KARTU_IBU_ANC_PARTOGRAF="kartu_ibu_anc_partograf";
-        public static final String KARTU_IBU_PNC_VISIT="kartu_ibu_pnc_visit";
-        public static final String BALITA_KUNJUNGAN="balita_kunjungan";
-        public static final String KOHORT_KB_EDIT="kohort_kb_edit";
-        public static final String BAYI_IMUNISASI="bayi_immunization";
-        public static final String BAYI_NEONATAL_PERIOD="bayi_neonatal_period";
-        public static final String KOHORT_BAYI_EDIT="kohort_bayi_edit";
-        public static final String KOHORT_BAYI_MONITORING="bayi_growth_and_nutrition_monitoring";
         public static final String KARTU_IBU_ANC_VISIT="kartu_ibu_anc_visit";
-    }
 
-    public class KIRegistrationFields {
-        public static final String CURRENT_KONTRASEPSI = "JenisKontrasepsi";
+        // PNC
+        public static final String KARTU_IBU_PNC_EDIT="kartu_ibu_pnc_edit";
+        public static final String KARTU_IBU_PNC_REGISTRATION = "anc_dokumentasi_persalinan";
+        public static final String KARTU_IBU_PNC_CLOSE="kartu_ibu_pnc_close";
+        public static final String KARTU_IBU_PNC_OA="kartu_ibu_pnc_oa";
+        public static final String KARTU_IBU_PNC_VISIT="kartu_ibu_pnc_visit";
+        public static final String KARTU_IBU_PNC_POSPARTUM_KB="kartu_ibu_pnc_pospartum_kb";
+
+        // ANAK
+        public static final String KOHORT_BAYI_KUNJUNGAN="kohort_bayi_kunjungan";
+        public static final String KARTU_IBU_ANAK_CLOSE="kohort_anak_tutup";
+        public static final String BALITA_KUNJUNGAN="kohort_bayi_balita_kunjungan";
+        public static final String BAYI_IMUNISASI="kohort_bayi_immunization";
+        public static final String BAYI_NEONATAL_PERIOD="kohort_bayi_neonatal_period";
+        public static final String KOHORT_BAYI_EDIT="kohort_bayi_edit";
+        public static final String KOHORT_BALITA_KUNJUNGAN="kohort_balita_kunjungan";
+        public static final String ANAK_BAYI_REGISTRATION = "kohort_bayi";
+        public static final String ANAK_NEW_REGISTRATION="kohort_bayi_registration_oa";
+
+        // KB
+        public static final String KOHORT_KB_REGISTER="kohort_kb_registration";
+        public static final String KOHORT_KB_PELAYANAN="kohort_kb_pelayanan";
+        public static final String KOHORT_KB_CLOSE="kohort_kb_close";
+        public static final String KOHORT_KB_UPDATE="kohort_kb_update";
+        public static final String KOHORT_KB_EDIT="kohort_kb_edit";
+
     }
 
     public class ECRegistrationFields {
@@ -347,5 +358,77 @@ public class AllConstants {
         public static final String DELIVERY_FACILITY_HOME_VALUE = "home";
         public static final String DELIVERY_FACILITY_SDH_VALUE = "sdh";
         public static final String DELIVERY_FACILITY_DH_VALUE = "dh";
+    }
+
+    public class KartuIbuFields {
+        public static final String PUSKESMAS_NAME = "puskesmas";
+        public static final String POSYANDU_NAME = "posyandu";
+        public static final String PROPINSI = "propinsi";
+        public static final String KABUPATEN = "kabupaten";
+        public static final String MOTHER_ADDRESS = "alamatDomisili";
+        public static final String MOTHER_NUMBER = "noIbu";
+        public static final String MOTHER_NAME = "namalengkap";
+        public static final String MOTHER_AGE = "umur";
+        public static final String MOTHER_BLOOD_TYPE = "golonganDarah";
+        public static final String MOTHER_DOB = "tanggalLahir";
+        public static final String HUSBAND_NAME = "namaSuami";
+        public static final String VILLAGE = "dusun";
+        public static final String NUMBER_PARTUS = "partus";
+        public static final String NUMBER_ABORTIONS = "abortus";
+        public static final String NUMBER_OF_PREGNANCIES = "gravida";
+        public static final String NUMBER_OF_LIVING_CHILDREN = "hidup";
+        public static final String IS_HIGH_PRIORITY = "isHighPriority";
+        public static final String IS_HIGH_RISK = "isHighRisk";
+        public static final String EDD = "htp";
+        public static final String VISITS_DATE = "tanggalkunjungan";
+        public static final String CHRONIC_DISEASE = "penyakitKronis";
+    }
+
+    public class KartuANCFields {
+        public static final String MOTHER_NUTRITION_STATUS = "StatusGiziibu";
+        public static final String COMPLICATION_HISTORY = "RiwayatKomplikasiKebidanan";
+        public static final String TRIMESTER = "TrimesterKe";
+        public static final String IMMUNIZATION_TT_STATUS = "StatusImunisasiTT";
+        public static final String CLINICAL_AGE = "UsiaKlinis";
+        public static final String WEIGHT_BEFORE = "bb";
+        public static final String WEIGHT_CHECK_RESULT = "hasilPemeriksaanBeratBadan";
+        public static final String LILA_CHECK_RESULT = "hasilPemeriksaanLILA";
+        public static final String HEIGHT = "tb";
+        public static final String ALLERGY = "Alergi";
+    }
+
+    public class KartuPNCFields {
+        public static final String PLANNING = "Rencana";
+        public static final String COMPLICATION = "Komplikasi";
+        public static final String VITAL_SIGNS_TD_DIASTOLIC = "tandaVitalTDSistolik";
+        public static final String VITAL_SIGNS_TD_SISTOLIC = "tandaVitalTDDiastolik";
+        public static final String VITAL_SIGNS_TEMP = "tandaVitalSuhu";
+    }
+
+    public class KartuAnakFields {
+        public static final String BIRTH_WEIGHT = "beratLahir";
+        public static final String CHILD_NAME = "namaBayi";
+        public static final String BIRTH_CONDITION = "keadaanBayi";
+        public static final String SERVICE_AT_BIRTH = "pelayanan";
+        public static final String DATE_OF_BIRTH = "tanggalLahirAnak";
+        public static final String GENDER = "jenisKelamin";
+        public static final String IS_HIGH_RISK_CHILD = "isHighRiskChild";
+        public static final String IMMUNIZATION_HB_0_7_DATES = "tanggalpemberianimunisasiHb07";
+        public static final String IMMUNIZATION_BCG_AND_POLIO1 = "tanggalpemberianimunisasiBCGdanPolio1";
+        public static final String IMMUNIZATION_DPT_HB1_POLIO2 = "tanggalpemberianimunisasiDPTHB1Polio2";
+        public static final String IMMUNIZATION_DPT_HB2_POLIO3 = "tanggalpemberianimunisasiDPTHB2Polio3";
+        public static final String IMMUNIZATION_DPT_HB3_POLIO4 = "tanggalpemberianimunisasiDPTHB3Polio4";
+        public static final String IMMUNIZATION_MEASLES = "tanggalpemberianimunisasiCampak";
+    }
+
+    public class KeluargaBerencanaFields {
+        public static final String CONTRACEPTION_METHOD = "jenisKontrasepsi";
+        public static final String KELUARGA_BERENCANA = "KB";
+        public static final String KB_INFORMATION_1 = "keteranganTentangPesertaKB";
+        public static final String KB_INFORMATION_2 = "keteranganTentangPesertaKB2";
+        public static final String IMS = "alkiPenyakitIms";
+        public static final String HB = "alkihb";
+        public static final String LILA = "alkilila";
+        public static final String ALKI_CHRONIC_DISEASE = "alkiPenyakitKronis";
     }
 }

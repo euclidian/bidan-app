@@ -9,6 +9,7 @@ import org.ei.bidan.view.contract.RefillFollowUps;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
+import org.joda.time.Years;
 
 import java.util.List;
 import java.util.Locale;
@@ -25,7 +26,7 @@ public class KBClient implements KISmartRegisterClient {
     private String entityId;
     private String name;
     private String husbandName;
-    private String age;
+    private String dateOfBirth;
     private String noIbu;
     private String village;
     private String jenisKontrasepsi;
@@ -54,8 +55,8 @@ public class KBClient implements KISmartRegisterClient {
         this.noIbu = noIbu;
     }
 
-    public KBClient withAge(String age) {
-        this.age = age;
+    public KBClient withDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
         return this;
     }
 
@@ -133,10 +134,6 @@ public class KBClient implements KISmartRegisterClient {
 
     public String getHusbandName() {
         return husbandName;
-    }
-
-    public String getAge() {
-        return age;
     }
 
     public String getNoIbu() {
@@ -259,12 +256,12 @@ public class KBClient implements KISmartRegisterClient {
 
     @Override
     public int age() {
-        return Integer.parseInt(age);
+        return StringUtils.isBlank(dateOfBirth) ? 0 : Years.yearsBetween(LocalDate.parse(dateOfBirth), LocalDate.now()).getYears();
     }
 
     @Override
     public int ageInDays() {
-        return age() * 365;
+        return StringUtils.isBlank(dateOfBirth) ? 0 : Days.daysBetween(LocalDate.parse(dateOfBirth), DateUtil.today()).getDays();
     }
 
     @Override

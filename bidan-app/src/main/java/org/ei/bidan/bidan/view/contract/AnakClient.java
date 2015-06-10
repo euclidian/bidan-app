@@ -1,5 +1,7 @@
 package org.ei.bidan.bidan.view.contract;
 
+import com.google.common.base.Strings;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -38,7 +40,7 @@ public class AnakClient implements SmartRegisterClient{
     private String village;
     private String locationStatus;
     private String economicStatus;
-    private boolean isHighRisk;
+    private String isHighRisk;
     private String photo_path;
     private String kiNumber;
     private String birthCondition;
@@ -91,7 +93,7 @@ public class AnakClient implements SmartRegisterClient{
 
     @Override
     public String name() {
-        return isBlank(name) ? "" : StringUtil.humanize(name);
+        return isBlank(name) ? "B/o " + motherName() : StringUtil.humanize(name);
     }
 
     @Override
@@ -136,9 +138,9 @@ public class AnakClient implements SmartRegisterClient{
 
     @Override
     public boolean isHighRisk() {
-        return isHighRisk;
+        if(Strings.isNullOrEmpty(isHighRisk)) return false;
+        return isHighRisk.equalsIgnoreCase("yes");
     }
-
 
     @Override
     public boolean isHighPriority() { return false; }
@@ -239,7 +241,7 @@ public class AnakClient implements SmartRegisterClient{
         return this;
     }
 
-    public AnakClient withIsHighRisk(boolean isHighRisk) {
+    public AnakClient withIsHighRisk(String isHighRisk) {
         this.isHighRisk = isHighRisk;
         return this;
     }

@@ -5,18 +5,13 @@ import com.google.common.collect.Iterables;
 
 import org.ei.bidan.AllConstants;
 import org.ei.bidan.bidan.domain.Anak;
-import org.ei.bidan.bidan.domain.Ibu;
 import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.bidan.repository.AllKartuIbus;
 import org.ei.bidan.bidan.repository.AllKohort;
 import org.ei.bidan.bidan.view.contract.KBClient;
 import org.ei.bidan.bidan.view.contract.KBClients;
-import org.ei.bidan.bidan.view.contract.KIChildClient;
-import org.ei.bidan.bidan.view.contract.KartuIbuClient;
-import org.ei.bidan.bidan.view.contract.KartuIbuClients;
 import org.ei.bidan.util.Cache;
 import org.ei.bidan.util.CacheableData;
-import org.ei.bidan.util.EasyMap;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.joda.time.LocalDate;
 
@@ -24,17 +19,14 @@ import java.util.Comparator;
 import java.util.List;
 
 import static java.util.Collections.sort;
+import static org.ei.bidan.AllConstants.KartuIbuFields.*;
+import static org.ei.bidan.AllConstants.KeluargaBerencanaFields.*;
 
 /**
  * Created by Dimas Ciputra on 2/18/15.
  */
 public class KohortKBRegisterController extends CommonController{
     private static final String KB_CLIENTS_LIST = "KBClientsList";
-    public static final String STATUS_DATE_FIELD = "date";
-    public static final String ANC_STATUS = "anc";
-    public static final String PNC_STATUS = "pnc";
-    public static final String STATUS_TYPE_FIELD = "type";
-    public static final String STATUS_EDD_FIELD = "edd";
 
     private final AllKartuIbus allKartuIbus;
     private final Cache<String> cache;
@@ -57,26 +49,29 @@ public class KohortKBRegisterController extends CommonController{
 
                 for (KartuIbu kartuIbu : kartuIbus) {
 
-                    if(Strings.isNullOrEmpty(kartuIbu.getDetails().get("JenisKontrasepsi"))) {
+                    if(Strings.isNullOrEmpty(kartuIbu.getDetail(CONTRACEPTION_METHOD))) {
                         continue;
                     }
 
-                    KBClient kbClient = new KBClient(kartuIbu.getCaseId(), kartuIbu.getDetails().get("Namalengkap"),
-                            kartuIbu.getDetails().get("Namasuami"), kartuIbu.getDetails().get("Desa"),
-                            kartuIbu.getDetails().get("NoIbu"))
-                            .withKBMethod(kartuIbu.getDetails().get("JenisKontrasepsi"))
-                            .withIMS(kartuIbu.getDetails().get("IMS"))
-                            .withHB(kartuIbu.getDetails().get("HB"))
-                            .withLila(kartuIbu.getDetails().get("LILA"))
-                            .withPenyakitKronis(kartuIbu.getDetails().get("PenyakitKronis"))
-                            .withGravida(kartuIbu.getDetails().get("Gravida"))
-                            .withParity(kartuIbu.getDetails().get("Partus"))
-                            .withAbortus(kartuIbu.getDetails().get("Abortus"))
-                            .withLiveChild(kartuIbu.getDetails().get("Hidup"))
-                            .withTanggalKunjungan(kartuIbu.getDetails().get("TanggalKunjungan"))
-                            .withKeterangan1(kartuIbu.getDetails().get("KeteranganTentangPesertaKB1"))
-                            .withKeterangan2(kartuIbu.getDetails().get("KeteranganTentangPesertaKB2"))
-                            .withAge(kartuIbu.getDetails().get("Umur"));
+                    KBClient kbClient = new KBClient(
+                            kartuIbu.getCaseId(),
+                            kartuIbu.getDetail(MOTHER_NAME),
+                            kartuIbu.getDetail(HUSBAND_NAME),
+                            kartuIbu.getDetail(VILLAGE),
+                            kartuIbu.getDetail(MOTHER_NUMBER))
+                            .withKBMethod(kartuIbu.getDetail(CONTRACEPTION_METHOD))
+                            .withIMS(kartuIbu.getDetails().get(IMS))
+                            .withHB(kartuIbu.getDetails().get(HB))
+                            .withLila(kartuIbu.getDetails().get(LILA))
+                            .withPenyakitKronis(kartuIbu.getDetail(ALKI_CHRONIC_DISEASE))
+                            .withGravida(kartuIbu.getDetail(NUMBER_OF_PREGNANCIES))
+                            .withParity(kartuIbu.getDetail(NUMBER_PARTUS))
+                            .withAbortus(kartuIbu.getDetail(NUMBER_ABORTIONS))
+                            .withLiveChild(kartuIbu.getDetail(NUMBER_OF_LIVING_CHILDREN))
+                            .withTanggalKunjungan(kartuIbu.getDetail(VISITS_DATE))
+                            .withKeterangan1(kartuIbu.getDetail(KB_INFORMATION_1))
+                            .withKeterangan2(kartuIbu.getDetail(KB_INFORMATION_2))
+                            .withDateOfBirth(kartuIbu.getDetail(MOTHER_DOB));
 
                     KBs.add(kbClient);
                 }

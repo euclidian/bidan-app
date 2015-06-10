@@ -1,112 +1,174 @@
 {
-    "form_data_definition_version": "1",
-    "form": {
-        "bind_type": "kartu_ibu",
-        "default_bind_path": "/model/instance/Register_ANC_only/",
-        "fields": [
-            {
-                "name": "id",
-                "shouldLoadValue": true
-            },
-            {
-                "name": "motherId",
-                "source": "kartu_ibu.ibu.id"
-            },
-            {
-                "name": "referenceDate",
-                "bind": "/model/instance/Register_ANC_only/B01026",
-                "source": "kartu_ibu.ibu.referenceDate"
-            },
-            {
-                "name": "TanggalHPHT",
-                "bind": "/model/instance/Register_ANC_only/B01027",
-                "source": "kartu_ibu.ibu.TanggalHPHT"
-            },
-            {
-                "name": "EDD",
-                "bind": "/model/instance/Register_ANC_only/B01028"
-            },
-            {
-                "name": "PersalinanSebelumnya",
-                "bind": "/model/instance/Register_ANC_only/B01029",
-                "source": "kartu_ibu.ibu.PersalinanSebelumnya"
-            },
-            {
-                "name": "BB",
-                "bind": "/model/instance/Register_ANC_only/B01030",
-                "source": "kartu_ibu.ibu.BB"
-            },
-            {
-                "name": "TB",
-                "bind": "/model/instance/Register_ANC_only/B01031",
-                "source": "kartu_ibu.ibu.TB"
-            },
-            {
-                "name": "berat_badan",
-                "bind": "/model/instance/Register_ANC_only/B02013",
-                "source": "kartu_ibu.ibu.berat_badan"
-            },
-            {
-                "name": "lila",
-                "bind": "/model/instance/Register_ANC_only/B02012",
-                "source": "kartu_ibu.ibu.lila"
-            },
-            {
-                "name": "BukuKIA",
-                "bind": "/model/instance/Register_ANC_only/B01032",
-                "source": "kartu_ibu.ibu.BukuKIA"
-            },
-            {
-                "name": "RiwayatKomplikasiKebidanan",
-                "bind": "/model/instance/Register_ANC_only/B01033",
-                "source": "kartu_ibu.ibu.RiwayatKomplikasiKebidanan"
-            },
-            {
-                "name": "PenyakitKronis",
-                "bind": "/model/instance/Register_ANC_only/B01034",
-                "source": "kartu_ibu.ibu.PenyakitKronis"
-            },
-            {
-                "name": "Alergi",
-                "bind": "/model/instance/Register_ANC_only/B01035",
-                "source": "kartu_ibu.ibu.Alergi"
-            },
-            {
-                "name": "TBrisk",
-                "bind": "/model/instance/Register_ANC_only/TB_risk",
-                "source": "kartu_ibu.ibu.TBrisk"
-            },
-            {
-                "name": "ishighrisk",
-                "bind": "/model/instance/Register_ANC_only/is_high_risk",
-                "source": "kartu_ibu.ibu.ishighrisk"
-            },
-            {
-                 "name": "type",
-                 "value": "ANC",
-                 "source": "kartu_ibu.ibu.type"
-            },
-            {
-                "name": "isOutOfArea",
-                "value": "false"
-            },
-            {
-                "name": "isClosed",
-                "value": "false",
-                "source": "kartu_ibu.ibu.isClosed"
-            },
-            {
-                "name": "submissionDate",
-                "bind": "/model/instance/Register_ANC_only/today"
-            },
-            {
-                "name": "registrationDate",
-                "bind": "/model/instance/Register_ANC_only/reg_date"
-            },
-            {
-                "name": "jenisKontrasepsi",
-                "value": ""
-            }
-        ]
-    }
+  "form_data_definition_version": "1",
+  "form": {
+    "bind_type": "kartu_ibu",
+    "default_bind_path": "/model/instance/Register_ANC_only/",
+    "fields": [
+      {
+        "name": "id",
+        "shouldLoadValue": true
+      },
+      {
+        "name": "motherId",
+        "source": "kartu_ibu.ibu.id"
+      },
+      {
+        "name": "gravida",
+        "bind": "/model/instance/Register_ANC_only/gravida"
+      },
+      {
+        "name": "partus",
+        "bind": "/model/instance/Register_ANC_only/partus"
+      },
+      {
+        "name": "abortus",
+        "bind": "/model/instance/Register_ANC_only/abortus"
+      },
+      {
+        "name": "hidup",
+        "bind": "/model/instance/Register_ANC_only/hidup"
+      },
+      {
+        "name": "hamilke",
+        "bind": "/model/instance/Register_ANC_only/hamil_ke"
+      },
+      {
+        "name": "referenceDate",
+        "bind": "/model/instance/Register_ANC_only/tanggal_periksa",
+        "source": "kartu_ibu.ibu.referenceDate"
+      },
+      {
+        "name": "tanggalHPHT",
+        "bind": "/model/instance/Register_ANC_only/tanggal_hpht",
+        "source": "kartu_ibu.ibu.tanggalHPHT"
+      },
+      {
+        "name": "htp",
+        "bind": "/model/instance/Register_ANC_only/htp"
+      },
+      {
+        "name": "persalinanSebelumnya",
+        "bind": "/model/instance/Register_ANC_only/persalinan_sebelumnya",
+        "source": "kartu_ibu.ibu.persalinanSebelumnya"
+      },
+      {
+        "name": "bbSebelumHamil",
+        "bind": "/model/instance/Register_ANC_only/bbsebelumhamil",
+        "source": "kartu_ibu.ibu.bbSebelumHamil"
+      },
+      {
+        "name": "bbKg",
+        "bind": "/model/instance/Register_ANC_only/bb_kg",
+        "source": "kartu_ibu.ibu.bbKg"
+      },
+      {
+        "name": "tbCM",
+        "bind": "/model/instance/Register_ANC_only/tb_cm",
+        "source": "kartu_ibu.ibu.tbCM"
+      },
+      {
+        "name": "bukuKIA",
+        "bind": "/model/instance/Register_ANC_only/buku_kia",
+        "source": "kartu_ibu.ibu.bukuKIA"
+      },
+      {
+        "name": "tanggalMemperolehBukuKia",
+        "bind": "/model/instance/Register_ANC_only/tanggal_memperoleh_buku_kia",
+        "source": "kartu_ibu.ibu.tanggalMemperolehBukuKia"
+      },
+      {
+        "name": "hasilPemeriksaanLILA",
+        "bind": "/model/instance/Register_ANC_only/hasil_pemeriksaan_lila",
+        "source": "kartu_ibu.ibu.hasilPemeriksaanLILA"
+      },
+      {
+        "name": "hasilPemeriksaanBeratBadan ",
+        "bind": "/model/instance/Register_ANC_only/hasil_pemeriksaan_berat_badan",
+        "source": "kartu_ibu.ibu.hasilPemeriksaanBeratBadan"
+      },
+      {
+        "name": "rkk",
+        "bind": "/model/instance/Register_ANC_only/rkk",
+        "source": "kartu_ibu.ibu.rkk"
+      },
+      {
+        "name": "riwayatKomplikasiKebidanan",
+        "bind": "/model/instance/Register_ANC_only/riwayat_komplikasi_kebidanan",
+        "source": "kartu_ibu.ibu.riwayatKomplikasiKebidanan"
+      },
+      {
+        "name": "rkklainnya",
+        "bind": "/model/instance/Register_ANC_only/rkklainnya",
+        "source": "kartu_ibu.ibu.rkklainnya"
+      },
+      {
+        "name": "kronis",
+        "bind": "/model/instance/Register_ANC_only/kronis",
+        "source": "kartu_ibu.ibu.kronis"
+      },
+      {
+        "name": "penyakitKronis",
+        "bind": "/model/instance/Register_ANC_only/penyakit_kronis",
+        "source": "kartu_ibu.ibu.penyakitKronis"
+      },
+      {
+        "name": "rpkLainnya",
+        "bind": "/model/instance/Register_ANC_only/rpklainnya",
+        "source": "kartu_ibu.ibu.rpkLainnya"
+      },
+      {
+        "name": "Alergi",
+        "bind": "/model/instance/Register_ANC_only/alergi",
+        "source": "kartu_ibu.ibu.Alergi"
+      },
+      {
+        "name": "isHighRiskANC",
+        "bind": "/model/instance/Register_ANC_only/is_high_risk_anc"
+      },
+      {
+        "name": "isHighRiskPregnancy",
+        "bind": "/model/instance/Register_ANC_only/is_high_risk_pregnancy"
+      },
+      {
+        "name": "isHighRiskLabour",
+        "bind": "/model/instance/Register_ANC_only/is_high_risk_labour"
+      },
+      {
+        "name": "isOtherRisk",
+        "bind": "/model/instance/Register_ANC_only/is_other_risk"
+      },
+      {
+        "name": "isOutOfArea",
+        "value": "false"
+      },
+      {
+        "name": "isClosed",
+        "value": "false"
+      },
+      {
+        "name": "isClosed",
+        "value": "false",
+        "source": "kartu_ibu.ibu.isClosed"
+      },
+      {
+        "name": "submissionDate",
+        "bind": "/model/instance/Register_ANC_only/today",
+        "source": "kartu_ibu.ibu.submissionDate"
+      },
+      {
+        "name": "registrationDate",
+        "bind": "/model/instance/Register_ANC_only/reg_date",
+        "source": "kartu_ibu.ibu.registrationDate"
+      },
+      {
+        "name": "jenisKontrasepsi",
+        "value": ""
+      },
+      {
+        "name": "type",
+        "value": "anc",
+        "source": "kartu_ibu.ibu.type"
+      }
+    ]
+  }
 }

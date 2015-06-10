@@ -135,12 +135,20 @@
     <string name="str_close_ki_form">Close Kartu Ibu</string>
     <string name="str_kb_update">Update KB</string>
     <string name="str_kb_edit">Edit KB</string>
+    <string name="str_kb_close">Close KB</string>
+    <!-- ANAK -->
     <string name="str_register_anak_form">Register Anak</string>
+    <string name="str_anak_edit">Edit Anak</string>
+    <string name="str_anak_bayi_visit">Bayi Visit</string>
+    <string name="str_anak_balita_visit">Balita Visit</string>
+    <string name="str_anak_neonatal">Bayi Neonatal Perioad</string>
     <string name="str_tutup_anak">Close Anak</string>
+
     <string name="str_kunjungan_anak">Visit</string>
     <string name="anc_edit">Edit ANC</string>
     <string name="pnc_edit">Edit PNC</string>
-    <string name="pnc_visit">PNC VISIT</string>
+    <string name="pnc_visit">PNC Visit</string>
+    <string name="pnc_pospartum_kb">Pospartum KB</string>
 
     <string name="str_register_anc_visit_form">ANC Visit</string>
     <string name="str_register_hb_test_form">Hb Test</string>

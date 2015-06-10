@@ -118,6 +118,7 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
 
     private void setupClientEDDView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {
         viewHolder.txtEdd().setText(String.valueOf(client.getEdd()));
+        viewHolder.txtEddDue().setText(String.valueOf(client.getDueEdd()));
     }
 
     private void setupEditView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {

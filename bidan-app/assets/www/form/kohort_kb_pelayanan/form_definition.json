@@ -2,47 +2,71 @@
 	"form_data_definition_version": "1",
 	"form": {
 		"bind_type": "kartu_ibu",
-		"default_bind_path": "/model/instance/kohort_kb_pelayanan/",
+		"default_bind_path": "/model/instance/Register_KB_Only/",
 		"fields": [
 			{
 				"name": "id",
 				"shouldLoadValue": true
 			},
 			{
-				"name": "HB",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03011"
+				"name": "alki",
+				"bind": "/model/instance/Register_KB_Only/alki"
 			},
 			{
-				"name": "LILA",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03012"
+				"name": "alkihb",
+				"bind": "/model/instance/Register_KB_Only/alki_hb"
 			},
 			{
-				"name": "PenyakitKronis",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03013"
+				"name": "alkilila",
+				"bind": "/model/instance/Register_KB_Only/alki_lila"
 			},
 			{
-				"name": "IMS",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03014"
+				"name": "alkiPenyakitKronis",
+				"bind": "/model/instance/Register_KB_Only/alki_penyakit_kronis"
 			},
 			{
-				"name": "TanggalKunjungan",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03015"
-			},	    
-			{
-				"name": "KeteranganTentangPesertaKB1",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03016"
+				"name": "alkiPenyakitIms",
+				"bind": "/model/instance/Register_KB_Only/alki_penyakit_ims"
 			},
 			{
-				"name": "JenisKontrasepsi",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03017"
+				"name": "tanggalkunjungan",
+				"bind": "/model/instance/Register_KB_Only/tanggal_kunjungan"
 			},
 			{
-				"name": "KeteranganTentangPesertaKB2",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03018"
+				"name": "keteranganTentangPesertaKB",
+				"bind": "/model/instance/Register_KB_Only/keterangan_tentang_peserta_kb"
 			},
 			{
-				"name": "Keterangan",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03019"
+				"name": "jenisKontrasepsi",
+				"bind": "/model/instance/Register_KB_Only/jenis_kontrasepsi_yang_digunakan"
+			},
+			{
+				"name": "keterangantentangPesertaKB2",
+				"bind": "/model/instance/Register_KB_Only/keterangan_tentang_peserta_kb_2"
+			},
+			{
+				"name": "keterangando",
+				"bind": "/model/instance/Register_KB_Only/keterangan_do"
+			},
+			{
+				"name": "keteranganGantiCara",
+				"bind": "/model/instance/Register_KB_Only/keterangan_ganti_cara"
+			},
+			{
+				"name": "keteranganEfekSamping",
+				"bind": "/model/instance/Register_KB_Only/keterangan_efek_samping"
+			},
+			{
+				"name": "keteranganKomplikasi",
+				"bind": "/model/instance/Register_KB_Only/keterangan_komplikasi"
+			},
+		    {
+               	"name": "submissionDate",
+             	"bind": "/model/instance/Register_KB_Only/today"
+			},
+			{
+		        "name": "registrationDate",
+		        "bind": "/model/instance/Register_KB_Only/reg_date"
 			}
 		]
 	}

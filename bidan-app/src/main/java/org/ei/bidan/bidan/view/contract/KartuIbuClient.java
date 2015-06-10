@@ -10,6 +10,8 @@ import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
+import org.joda.time.Months;
+import org.joda.time.Years;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
@@ -39,9 +41,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
     private String wifeName;
     private String wifeAge;
     private String golonganDarah;
-    private String riwayatKomplikasi;
     private String husbandName;
-    private String tglPeriksa;
     private String edd;
     private String village;
     private String dateOfBirth;
@@ -55,8 +55,10 @@ public class KartuIbuClient implements KISmartRegisterClient {
     private String kbMethod;
     private String kbStart;
     private String IsHighRisk;
+    private String isHighRiskANC;
+    private String isHighPriority;
 
-    public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi, String husbandName, String tglPeriksa, String village) {
+    public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String husbandName, String village) {
         this.entityId = entityId;
         this.puskesmas = puskesmas;
         this.province = province;
@@ -67,9 +69,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
         this.wifeName = wifeName;
         this.wifeAge = wifeAge;
         this.golonganDarah = golonganDarah;
-        this.riwayatKomplikasi = riwayatKomplikasi;
         this.husbandName = husbandName;
-        this.tglPeriksa = tglPeriksa;
         this.village = village;
         this.children = new ArrayList<KIChildClient>();
     }
@@ -115,12 +115,6 @@ public class KartuIbuClient implements KISmartRegisterClient {
         return golonganDarah;
     }
 
-    public String getRiwayat_komplikasi() {
-        return riwayatKomplikasi;
-    }
-
-    public String getTglPeriksa() { return tglPeriksa; }
-
     public String getEdd() {
         if(Strings.isNullOrEmpty(edd)) return "-";
         if(edd.equalsIgnoreCase("invalid date")) return "-";
@@ -130,6 +124,29 @@ public class KartuIbuClient implements KISmartRegisterClient {
         LocalDateTime date = parse(edd, formatter);
 
         return "" + date.toString(formatter2);
+    }
+
+    public String getDueEdd() {
+        String _edd = getEdd();
+        String _dueEdd = "";
+
+        if(!getEdd().equalsIgnoreCase("-")) {
+            DateTimeFormatter formatter = DateTimeFormat.forPattern("dd MMM YYYY");
+            LocalDate date = parse(_edd, formatter).toLocalDate();
+            LocalDate dateNow = LocalDate.now();
+
+            date = date.withDayOfMonth(1);
+            dateNow = dateNow.withDayOfMonth(1);
+
+            int months = Months.monthsBetween(dateNow, date).getMonths();
+            if(months > 1) {
+                _dueEdd = "" + months + " bulan lagi";
+            } else {
+                _dueEdd = "Bulan ini";
+            }
+        }
+
+        return _dueEdd;
     }
 
     public LocalDateTime edd() {
@@ -199,14 +216,6 @@ public class KartuIbuClient implements KISmartRegisterClient {
        this.golonganDarah = golonganDarah;
     }
 
-    public void setRiwayatKomplikasi(String riwayatKomplikasi) {
-        this.riwayatKomplikasi = riwayatKomplikasi;
-    }
-
-    public void setTglPeriksa(String tglPeriksa) {
-        this.tglPeriksa = tglPeriksa;
-    }
-
     public void setEdd(String edd) {
         if(status.size() != 0) {
             if(status.get("type").equalsIgnoreCase("pnc")) {
@@ -240,7 +249,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
 
     @Override
     public String village() {
-        return village;
+        return puskesmas;
     }
 
     @Override
@@ -255,7 +264,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
 
     @Override
     public int age() {
-        return Integer.parseInt(wifeAge);
+        return StringUtils.isBlank(dateOfBirth) ? 0 : Years.yearsBetween(LocalDate.parse(dateOfBirth), LocalDate.now()).getYears();
     }
 
     @Override
@@ -280,13 +289,21 @@ public class KartuIbuClient implements KISmartRegisterClient {
 
     @Override
     public boolean isHighRisk() {
-        if(Strings.isNullOrEmpty(IsHighRisk)) return false;
-        return IsHighRisk.equalsIgnoreCase("ya") ? true : false;
+        String highRiskKI = Strings.isNullOrEmpty(IsHighRisk) ? "-" : IsHighRisk;
+        String highRiskANC = Strings.isNullOrEmpty(isHighRiskANC) ? "-" : isHighRiskANC;
+        Boolean isTooYoungOrTooOld = false;
+
+        if(age()<20 || age()>35) {
+            isTooYoungOrTooOld = true;
+        }
+
+        return highRiskANC.equalsIgnoreCase("ya") || isTooYoungOrTooOld;
     }
 
     @Override
     public boolean isHighPriority() {
-        return false;
+        if(Strings.isNullOrEmpty(isHighPriority)) return false;
+        return isHighPriority.equalsIgnoreCase("yes");
     }
 
     @Override
@@ -382,6 +399,14 @@ public class KartuIbuClient implements KISmartRegisterClient {
 
     public void setIsHighRisk(String isHighRisk) {
         this.IsHighRisk = isHighRisk;
+    }
+
+    public void setIsHighRiskANC(String isHighRiskANC) {
+        this.isHighRiskANC = isHighRiskANC;
+    }
+
+    public void setIsHighPriority(String isHighPriority) {
+        this.isHighPriority = isHighPriority;
     }
 
     @Override

@@ -1,18 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <model>
-   <instance>
-      <kohort_bayi_kunjungan_perbulan id="kohort_bayi_kunjungan_perbulan" version="201504080855">
-         <formhub>
-            <uuid />
-         </formhub>
-         <today />
-         <tanggal_kunjungan_note />
-         <berat_badan_bayi />
-         <pemberian_asi_eksklusif />
-         <hasil_dilakukan_kpsp />
-         <meta>
-            <instanceID />
-         </meta>
-      </kohort_bayi_kunjungan_perbulan>
-   </instance>
-</model>
+    <instance>
+        <kohort_bayi_kunjungan_perbulan id="kohort_bayi_kunjungan_perbulan" version="201506080730">
+          <formhub>
+            <uuid/>
+          </formhub>
+          <start/>
+          <today/>
+	  <reg_date/>
+          <deviceid/>
+          <simserial/>
+          <phonenumber/>
+          <tanggal_kunjungan_bayi_perbulan/>
+          <berat_badan_bayi_setiap_kunjungan_bayi_perbulan/>
+          <indikator_berat_bedan_bayi/>
+          <pemberian_asi_eksklusif/>
+          <hasil_dilakukannya_kpsp/>
+          <kpsp_penyimpangan/>
+          <end/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </kohort_bayi_kunjungan_perbulan>
+      </instance>
+  </model>

@@ -134,7 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/lbl_td_sistolik"
             android:layout_alignParentTop="true"
-            style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"/>
+            style="@style/CustomFontTextViewStyle.ListView.Normal.NoPadding"/>
 
         <org.ei.bidan.view.customControls.CustomFontTextView
             android:id="@+id/txt_td_diastolik"
@@ -142,7 +142,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/lbl_td_diastolik"
             android:layout_below="@id/txt_td_sistolik"
-            style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"/>
+            style="@style/CustomFontTextViewStyle.ListView.Normal.NoPadding"/>
 
 
         <org.ei.bidan.view.customControls.CustomFontTextView
@@ -151,7 +151,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/lbl_td_suhu"
             android:layout_below="@id/txt_td_diastolik"
-            style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"/>
+            style="@style/CustomFontTextViewStyle.ListView.Normal.NoPadding"/>
 
     </RelativeLayout>
 

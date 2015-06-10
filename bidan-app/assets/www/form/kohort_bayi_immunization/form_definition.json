@@ -1,0 +1,45 @@
+{
+    "form_data_definition_version": "2",
+    "form": {
+        "bind_type": "anak",
+        "default_bind_path": "/model/instance/Baby_Immunization/",
+        "fields": [
+            {
+                "name": "id",
+                "shouldLoadValue": true
+            },
+            {
+                "name": "tanggalpemberianimunisasiHb07",
+                "bind": "/model/instance/Baby_Immunization/tanggal_pemberian_imunisasi_hb_07"
+            },
+            {
+                "name": "tanggalpemberianimunisasiBCGdanPolio1",
+                "bind": "/model/instance/Baby_Immunization/tanggal_pemberian_imunisasi_bcg_dan_Polio1"
+            },
+            {
+                "name": "tanggalpemberianimunisasiDPTHB1Polio2",
+                "bind": "/model/instance/Baby_Immunization/tanggal_pemberian_imunisasi_dpthb1Polio2"
+            },
+            {
+                "name": "tanggalpemberianimunisasiDPTHB2Polio3",
+                "bind": "/model/instance/Baby_Immunization/tanggal_pemberian_imunisasi_dpthb2Polio3"
+            },
+            {
+                "name": "tanggalpemberianimunisasiDPTHB3Polio4",
+                "bind": "/model/instance/Baby_Immunization/tanggal_pemberian_imunisasi_dpthb3Polio4"
+            },
+            {
+                "name": "tanggalpemberianimunisasiCampak",
+                "bind": "/model/instance/Baby_Immunization/tanggal_pemberian_imunisasi_campak"
+            },
+            {
+                "name": "submissionDate",
+                "bind": "/model/instance/Baby_Immunization/today"
+            },
+            {
+                "name": "registrationDate",
+                "bind": "/model/instance/Baby_Immunization/reg_date"
+            }
+        ]
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "form_data_definition_version": "2",
+    "form": {
+        "bind_type": "anak",
+        "default_bind_path": "/model/instance/balita_kunjungan/",
+        "fields": [
+            {
+                "name": "id",
+                "shouldLoadValue": true
+            },
+            {
+                "name": "tanggalPemeriksaanAnakBalita",
+                "bind": "/model/instance/balita_kunjungan/tanggal_pemeriksaan_anak_balita"
+            },
+            {
+                "name": "hasilPenimbanganAnakBalita",
+                "bind": "/model/instance/balita_kunjungan/hasil_penimbangan_anak_balita"
+            },
+            {
+                "name": "IndikatorberatBadanBayi",
+                "bind": "/model/instance/balita_kunjungan/Indikator_berat_badan_bayi"
+            },
+            {
+                "name": "kpspPenyimpangan",
+                "bind": "/model/instance/balita_kunjungan/kpsp_penyimpangan"
+            },
+            {
+                "name": "pemberianVitadanKondisiBalitaSaatSakit",
+                "bind": "/model/instance/balita_kunjungan/pemberian_vit_a_dan_kondisi_balita_saat_sakit"
+            },
+            {
+                "name": "submissionDate",
+                "bind": "/model/instance/balita_kunjungan/today"
+            },
+            {
+                "name": "registrationDate",
+                "bind": "/model/instance/balita_kunjungan/reg_date"
+            }
+        ]
+    }
+}

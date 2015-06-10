@@ -1,45 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <model>
-    <instance>
-        <dokumentasi_persalinan id="dokumentasi_persalinan" version="201504220324">
-            <formhub>
-                <uuid/>
-            </formhub>
-            <today/>
-            <B01092/>
-            <B01093/>
-            <B01094/>
-            <B01095/>
-            <B01096/>
-            <B01097/>
-            <B01098/>
-            <B01099/>
-            <B01100/>
-            <B01101/>
-            <B01102/>
-            <B01103/>
-            <B01104/>
-            <B01105/>
-            <B01106/>
-            <B01107/>
-            <B01108/>
-            <B01109/>
-            <B01110/>
-            <B01111/>
-            <B01112/>
-            <B01113/>
-            <B01114/>
-            <B01115/>
-            <B01116/>
-            <B04005/>
-            <B04006/>
-            <B04007/>
-            <B04010/>
-            <B04011/>
-            <child_age/>
-            <child_age_note/>
-            <meta>
-                <instanceID/>
-            </meta>
-        </dokumentasi_persalinan>
-    </instance>
+   <instance>
+      <register_pnc_only id="register_pnc_only" version="201506060446">
+         <formhub>
+            <uuid />
+         </formhub>
+         <start />
+         <today />
+	 <reg_date />
+         <deviceid />
+         <simserial />
+         <phonenumber />
+         <reference_date />
+         <B01092 />
+         <B01093 />
+         <B01094 />
+         <B01095 />
+         <B01096 />
+         <persalinankala />
+         <B01097 />
+         <B01098 />
+         <B01099 />
+         <B01100 />
+         <B01101 />
+         <B01102 />
+         <B01103 />
+         <B01104 />
+         <B01105 />
+         <B01106 />
+         <B01107 />
+         <B01108 />
+         <B01109 />
+         <B01110 />
+         <B01111 />
+         <B01112 />
+         <B01113 />
+         <B01114 />
+         <B01115 />
+         <B01116 />
+         <B04005 />
+         <B04006 />
+         <B04007 />
+         <B04009 />
+         <Low_Birthweght_risk />
+         <Very_Low_Birthweight_risk />
+         <preterm_risk />
+         <is_high_risk_child />
+         <high_risk_child_reason />
+         <high_risk_note />
+         <end />
+         <meta>
+            <instanceID />
+         </meta>
+      </register_pnc_only>
+   </instance>
 </model>

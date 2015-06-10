@@ -1,37 +1,49 @@
 {
-  "form_data_definition_version": "1",
-  "form": {
-    "bind_type": "anak",
-    "default_bind_path": "/model/instance/kohort_bayi_kunjungan_perbulan/",
-    "fields": [
-      {
-        "name": "id",
-        "shouldLoadValue": true
-      },
-      {
-        "name": "tanggal_kunjungan_bayi",
-        "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/today"
-      },
-      {
-        "name": "berat_badan_bayi",
-        "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/berat_badan_bayi"
-      },
-      {
-        "name": "pemberian_asi_eksklusif",
-        "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif"
-      },
-      {
-        "name": "hasil_dilakukan_kpsp",
-        "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/hasil_dilakukan_kpsp"
-      },
-      {
-        "name": "isClosed",
-        "value": "false"
-      },
-      {
-        "name": "submissionDate",
-        "bind": "/model/instance/kohort_bayi/today"
-      }
-    ]
-  }
+    "form_data_definition_version": "1",
+    "form": {
+        "bind_type": "anak",
+        "default_bind_path": "/model/instance/kohort_bayi_kunjungan_perbulan/",
+        "fields": [
+            {
+                "name": "id",
+                "shouldLoadValue": true
+            },
+            {
+                "name": "tanggalKunjunganBayiPerbulan",
+                "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/tanggal_kunjungan_bayi_perbulan"
+            },
+            {
+                "name": "beratBadanBayiSetiapKunjunganBayiPerbulan",
+                "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/berat_badan_bayi_setiap_kunjungan_bayi_perbulan"
+            },
+            {
+                "name": "indikatorBeratBedanBayi",
+                "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/indikator_berat_bedan_bayi"
+            },
+            {
+                "name": "pemberianAsiEksklusif",
+                "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/pemberian_asi_eksklusif"
+            },
+            {
+                "name": "hasilDilakukannyaKPSP",
+                "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/B04031"
+            },
+            {
+                "name": "hasilDilakukannyaKpsp",
+                "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/hasil_dilakukannya_kpsp"
+            },
+	        {
+                "name": "kpspPenyimpangan",
+                "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/kpsp_penyimpangan"
+            },
+            {
+                "name": "submissionDate",
+                "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/today"
+            },
+            {
+                "name": "registrationDate",
+                "bind": "/model/instance/kohort_bayi_kunjungan_perbulan/reg_date"
+            }
+        ]
+    }
 }

@@ -25,19 +25,14 @@ public class KIDetailController {
     public KartuIbuClient get() {
         KartuIbu kartuIbu = allKartuIbus.findByCaseID(caseId);
         KartuIbuClient kartuIbuClient = new KartuIbuClient(kartuIbu.getCaseId(),
-                kartuIbu.getDetails().get("puskesmas"), kartuIbu.getDetails().get("Propinsi"),
-                kartuIbu.getDetails().get("Kabupaten"), kartuIbu.getDetails().get("Posyandu"),
-                kartuIbu.getDetails().get("Alamatdomisili"), kartuIbu.getDetails().get("NoIbu"),
-                kartuIbu.getDetails().get("Namalengkap"), kartuIbu.getDetails().get("Umur"),
-                kartuIbu.getDetails().get("GolonganDarah"), kartuIbu.getDetails().get("RiwayatKomplikasiKebidanan"),
-                kartuIbu.getDetails().get("Namasuami"), kartuIbu.getDetails().get("TanggalPeriksa"), kartuIbu.getDetails().get("Desa"))
-                .withDateOfBirth(kartuIbu.getDetails().get("Tanggallahir"))
-                .withNumberOfLivingChildren(kartuIbu.getDetails().get("Hidup"))
-                .withNumberOfPregnancies(kartuIbu.getDetails().get("Gravida"))
-                .withNumberOfAbortions(kartuIbu.getDetails().get("Abortus"))
-                .withParity(kartuIbu.getDetails().get("Partus"));
-        kartuIbuClient.setRtRw(kartuIbu.getDetails().get("RTRW"));
-
+                kartuIbu.getDetails().get("puskesmas"), kartuIbu.getDetails().get("propinsi"),
+                kartuIbu.getDetails().get("kabupaten"), kartuIbu.getDetails().get("posyandu"),
+                kartuIbu.getDetails().get("alamatDomisili"), kartuIbu.getDetails().get("noIbu"),
+                kartuIbu.getDetails().get("namalengkap"), kartuIbu.getDetails().get("umur"),
+                kartuIbu.getDetails().get("golonganDarah"),
+                kartuIbu.getDetails().get("namaSuami"),
+                kartuIbu.getDetails().get("dusun"))
+                .withDateOfBirth(kartuIbu.getDetails().get("tanggalLahir"));
         return kartuIbuClient;
     }
 

@@ -6,6 +6,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.ei.bidan.R;
+import org.ei.bidan.bidan.view.customControls.BidanClientProfileView;
 import org.ei.bidan.bidan.view.customControls.ClientAnakBirthStatusView;
 import org.ei.bidan.view.customControls.ClientProfileView;
 
@@ -14,7 +15,7 @@ import org.ei.bidan.view.customControls.ClientProfileView;
  */
 public class NativeAnakRegisterViewHolder {
 
-    private final ClientProfileView profileViewLayout;
+    private final BidanClientProfileView profileViewLayout;
     private final ClientAnakBirthStatusView clientAnakBirthStatusView;
     private final ImageButton editButton;
     private final TextView txtDobView;
@@ -37,9 +38,8 @@ public class NativeAnakRegisterViewHolder {
     private final TextView campak;
 
     public NativeAnakRegisterViewHolder(ViewGroup itemView) {
-        profileViewLayout = (ClientProfileView) itemView.findViewById(R.id.profile_info_layout);
+        profileViewLayout = (BidanClientProfileView) itemView.findViewById(R.id.profile_info_layout);
         profileViewLayout.initialize();
-
 
         txtLastServiceDate = (TextView) itemView.findViewById(R.id.anak_last_service_date);
         txtLastServiceName = (TextView) itemView.findViewById(R.id.anak_last_service_name);
@@ -72,7 +72,7 @@ public class NativeAnakRegisterViewHolder {
         getServiceModeImmunizationView().setVisibility(View.GONE);
     }
 
-    public ClientProfileView getProfileViewLayout() {
+    public BidanClientProfileView getProfileViewLayout() {
         return profileViewLayout;
     }
 

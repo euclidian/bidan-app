@@ -3,6 +3,7 @@ package org.ei.bidan.bidan.domain;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ei.bidan.AllConstants;
 
 import java.util.Map;
 
@@ -50,7 +51,7 @@ public class KartuIbu {
     }
 
     public boolean hasKBMethod() {
-        String kbMethod = getDetail("JenisKontrasepsi");
+        String kbMethod = getDetail(AllConstants.KeluargaBerencanaFields.CONTRACEPTION_METHOD);
         return isNotBlank(kbMethod);
     }
 

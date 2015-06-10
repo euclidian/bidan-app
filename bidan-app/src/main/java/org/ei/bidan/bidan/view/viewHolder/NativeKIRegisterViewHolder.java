@@ -20,6 +20,7 @@ public class NativeKIRegisterViewHolder {
     private TextView txtKBMethod;
     private TextView txtKBStart;
     private TextView txtEdd;
+    private TextView txtEddDue;
     private TextView txtNoIbu;
     private final BidanClientStatusView statusView;
     private final ImageButton editButton;
@@ -39,6 +40,8 @@ public class NativeKIRegisterViewHolder {
 
         this.txtEdd = (TextView) itemView.findViewById(R.id.txt_edd);
 
+        this.txtEddDue = (TextView) itemView.findViewById(R.id.txt_edd_due);
+
         this.txtNoIbu = (TextView) itemView.findViewById(R.id.no_ibu);
 
         this.editButton = (ImageButton) itemView.findViewById(R.id.btn_edit);
@@ -54,5 +57,6 @@ public class NativeKIRegisterViewHolder {
     }
     public TextView txtNoIbu() { return txtNoIbu; }
     public TextView txtEdd() { return txtEdd; }
+    public TextView txtEddDue() { return txtEddDue; }
     public ImageButton editButton() { return editButton; }
 }

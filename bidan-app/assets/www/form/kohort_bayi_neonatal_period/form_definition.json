@@ -1,0 +1,93 @@
+{
+    "form_data_definition_version": "1",
+    "form": {
+        "bind_type": "anak",
+        "default_bind_path": "/model/instance/Bayi_Neonatal_Period/",
+        "fields": [
+            {
+                "name": "id",
+                "shouldLoadValue": true
+            },
+            {
+                "name": "kunjunganNeonatal",
+                "bind": "/model/instance/Bayi_Neonatal_Period/neonatal" 
+		
+            },
+            {
+                "name": "saatLahirsd5JamKondisibayi",
+                "bind": "/model/instance/Bayi_Neonatal_Period/saat_lahir_sd_5_jam_kondisi_bayi" 
+		
+            },
+            {
+                "name": "komplikasi",
+                "bind": "/model/instance/Bayi_Neonatal_Period/komplikasi"
+		
+            },
+        
+            {
+                "name": "saatlahirsd5JamMeninggal",
+                "bind": "/model/instance/Bayi_Neonatal_Period/saat_lahir_sd_5_jam_meninggal"
+            },
+            {
+                "name": "saatlahirsd5JamPemberianImunisasihbJikaDilakukan",
+                "bind": "/model/instance/Bayi_Neonatal_Period/saat_lahir_sd_5_jam_pemberian_imunisasi_hb_jika_dilakukan"
+            },
+            {
+                "name": "kunjunganNeonatalpertama6sd48jamTanggaldanBulanKunjungan",
+                "bind": "/model/instance/Bayi_Neonatal_Period/kunjungan_neonatal_pertama_6_sd_48_jam_tanggal_dan_bulan_kunjungan"
+            },
+              {
+                "name": "kunjunganNeonatalpertama6sd48jamKeadaanNeonatal",
+                "bind": "/model/instance/Bayi_Neonatal_Period/kunjungan_neonatal_pertama_6_sd_48_jam_keadaan_neonatal"
+            },
+             {
+                "name": "kunjunganNeonatalpertama6sd48jamKondisiBayiMati",
+                "bind": "/model/instance/Bayi_Neonatal_Period/kunjungan_neonatal_pertama_6_sd_48_jam_kondisi_bayi_mati"
+            },
+             {
+                "name": "kunjunganNeonatalpertama6sd48jamPemberianimunisasiHB0",
+                "bind": "/model/instance/Bayi_Neonatal_Period/kunjungan_neonatal_pertama_6_sd_48_jam__pemberian_imunisasi_hb0"
+            },
+             {
+                "name": "kunjunganNeonatalKeduaharike3sd7TanggalKunjungan",
+                "bind": "/model/instance/Bayi_Neonatal_Period/kunjungan_neonatal_kedua_hari_ke_3_sd_7__tanggal_kunjungan"
+            },
+             {
+                "name": "kunjunganNeonatalKeduaharike3sd7Keadaanneonatal",
+                "bind": "/model/instance/Bayi_Neonatal_Period/kunjungan_neonatal_kedua_hari_ke_3_sd_7__keadaan_neonatal"
+            },
+             {
+                "name": "kunjunganNeonatalkeduaharike3sd7Kondisibayimati",
+                "bind": "/model/instance/Bayi_Neonatal_Period/kunjungan_neonatal_kedua_hari_ke_3_sd_7__kondisi_bayi_mati"
+            },
+             {
+                "name": "kunjunganNeonatalkeduaharike3sd7bayidiberikanimunisasi",
+                "bind": "/model/instance/Bayi_Neonatal_Period/kunjungan_neonatal_kedua_hari_ke_3_sd_7__bayi_diberikan_imunisasi"
+            },
+             {
+                "name": "kunjunganNeonatalKetigaharike8sd28TanggalKunjungan",
+                "bind": "/model/instance/Bayi_Neonatal_Period/kunjungan_neonatal_ketiga_hari_ke_8_sd_28__tanggal_kunjungan"
+            },
+             {
+                "name": "kunjunganNeonatalKetigaharike8sd28Keadaanneonatal",
+                "bind": "/model/instance/Bayi_Neonatal_Period/kunjungan_neonatal_ketiga_hari_ke_8_sd_28__keadaan_neonatal"
+            },
+             {
+                "name": "kunjunganNeonatalKetigaharike8sd28Kondisibayimeninggal",
+                "bind": "/model/instance/Bayi_Neonatal_Period/kunjungan_neonatal_ketiga_hari_ke_8_sd_28__kondisi_bayi_meninggal"
+            },
+             {
+                "name": "KunjunganNeonatalKetigaharike8sd28bayidiberikanimunisasi",
+                "bind": "/model/instance/Bayi_Neonatal_Period/kunjungan_neonatal_ketiga_hari_ke_8_sd_28__bayi_diberikan_imunisasi"
+            },
+            {
+                "name": "submissionDate",
+                "bind": "/model/instance/Bayi_Neonatal_Period/today"
+            },
+            {
+                "name": "registrationDate",
+                "bind": "/model/instance/Bayi_Neonatal_Period/reg_date"
+            }
+		]
+    }
+}

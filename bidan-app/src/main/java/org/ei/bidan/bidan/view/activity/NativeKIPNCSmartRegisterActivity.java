@@ -35,6 +35,7 @@ import java.util.List;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_CLOSE;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_EDIT;
+import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_POSPARTUM_KB;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_VISIT;
 
@@ -119,8 +120,7 @@ public class NativeKIPNCSmartRegisterActivity extends BidanSecuredNativeSmartReg
 
     @Override
     protected void startRegistration() {
-        //FieldOverrides fieldOverrides = new FieldOverrides(context.anmLocationController().getLocationJSON());
-        //startFormActivity(AllConstants.FormNames.KARTU_IBU_PNC_OA, null, fieldOverrides.getJSONString());
+        startFormActivity(AllConstants.FormNames.KARTU_IBU_PNC_OA, null, null);
     }
 
     private class ClientActionHandler implements View.OnClickListener {
@@ -155,6 +155,8 @@ public class NativeKIPNCSmartRegisterActivity extends BidanSecuredNativeSmartReg
         return new DialogOption[]{
                 new OpenFormOption(getString(R.string.pnc_visit),
                         KARTU_IBU_PNC_VISIT, formController),
+                new OpenFormOption(getString(R.string.pnc_pospartum_kb),
+                        KARTU_IBU_PNC_POSPARTUM_KB, formController),
                 new OpenFormOption(getString(R.string.pnc_edit),
                         KARTU_IBU_PNC_EDIT, formController),
                 new OpenFormOption(getString(R.string.str_pnc_close_form),

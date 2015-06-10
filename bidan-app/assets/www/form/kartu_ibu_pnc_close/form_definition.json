@@ -1,44 +1,57 @@
 {
-    "form_data_definition_version": "1",
-    "form": {
-        "bind_type": "ibu",
-        "default_bind_path": "/model/instance/PNC_Close/",
-        "fields": [
+    "form_data_definition_version":"1",
+    "form":{
+        "bind_type":"ibu",
+        "default_bind_path":"/model/instance/PNC_Close/",
+        "fields":[
             {
-                "name": "id",
-                "shouldLoadValue": true
+                "name":"id",
+                "shouldLoadValue":true
             },
             {
-                "name": "closeReason",
-                "bind": "/model/instance/PNC_Close/pnc_close_reason"
+                "name":"kiId",
+                "source":"ibu.kartu_ibu.id",
+                "shouldLoadValue":true
             },
             {
-                "name": "didWomanSurvive",
-                "bind": "/model/instance/PNC_Close/woman_survived"
+                "name":"pncCloseReason",
+                "bind":"/model/instance/PNC_Close/pnc_close_reason"
             },
             {
-                "name": "deathDate",
-                "bind": "/model/instance/PNC_Close/death_date"
+                "name":"womanSurvived",
+                "bind":"/model/instance/PNC_Close/death_mother_group/woman_survived"
             },
             {
-                "name": "isMaternalDeath",
-                "bind": "/model/instance/PNC_Close/maternal_death"
+                "name":"deathDate",
+                "bind":"/model/instance/PNC_Close/death_mother_group/death_date"
             },
             {
-                "name": "maternalDeathCause",
-                "bind": "/model/instance/PNC_Close/maternal_death_cause"
+                "name":"maternalDeath",
+                "bind":"/model/instance/PNC_Close/death_mother_group/maternal_death"
             },
             {
-                "name": "otherMaternalDeathCause",
-                "bind": "/model/instance/PNC_Close/other_maternal_death_cause"
+                "name":"maternalDeathCause",
+                "bind":"/model/instance/PNC_Close/death_mother_group/maternal_death_cause"
             },
             {
-                "name": "isPNCCloseConfirmed",
-                "bind": "/model/instance/PNC_Close/confirm_pnc_close"
+                "name":"otherMaternalDeathCause",
+                "bind":"/model/instance/PNC_Close/death_mother_group/other_maternal_death_cause"
             },
             {
-                "name": "submissionDate",
-                "bind": "/model/instance/PNC_Close/today"
+                "name":"submissionDate",
+                "bind":"/model/instance/PNC_Close/today"
+            },
+            {
+                "name":"registrationDate",
+                "bind":"/model/instance/PNC_Close/reg_date"
+            },
+            {
+            	"name":"type",
+            	"value":"anc"
+            },
+            {
+                "name":"isClosed",
+                "bind":"/model/instance/PNC_Close/death_mother_group/is_mother_closed"
             }
         ]
     }

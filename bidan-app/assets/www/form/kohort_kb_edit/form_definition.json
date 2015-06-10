@@ -1,66 +1,86 @@
 {
-	"form_data_definition_version": "1",
-	"form": {
-		"bind_type": "kartu_ibu",
-		"default_bind_path": "/model/instance/kohort_kb_pelayanan/",
-		"fields": [
-			{
-				"name": "id",
-				"shouldLoadValue": true
-			},
-			{
-				"name": "HB",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03011",
-                "source": "kartu_ibu.HB",
-                "shouldLoadValue": true
-			},
-			{
-				"name": "LILA",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03012",
-                "source": "kartu_ibu.LILA",
-                "shouldLoadValue": true
-			},
-			{
-				"name": "PenyakitKronis",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03013",
-				"source":"kartu_ibu.PenyakitKronis",
-				"shouldLoadValue":true
-			},
-			{
-				"name": "IMS",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03014",
-				"source":"kartu_ibu.IMS",
-				"shouldLoadValue":true
-			},
-			{
-				"name": "TanggalKunjungan",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03015",
-				"shouldLoadValue":true
-			},	    
-			{
-				"name": "KeteranganTentangPesertaKB1",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03016",
-				"source": "kartu_ibu.KeteranganTentangPesertaKB1",
-                "shouldLoadValue": true
-			},
-			{
-				"name": "JenisKontrasepsi",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03017",
-				"source": "kartu_ibu.JenisKontrasepsi",
-                "shouldLoadValue": true
-			},
-			{
-				"name": "KeteranganTentangPesertaKB2",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03018",
-				"source": "kartu_ibu.KeteranganTentangPesertaKB2",
-                "shouldLoadValue": true
-			},
-			{
-				"name": "Keterangan",
-				"bind": "/model/instance/kohort_kb_pelayanan/B03019",
-				"source": "kartu_ibu.Keterangan",
-				"shouldLoadValue": true
-			}
-		]
-	}
+  "form_data_definition_version": "1",
+  "form": {
+	"bind_type": "kartu_ibu",
+	"default_bind_path": "/model/instance/Register_KB_Only/",
+	"fields": [
+	  {
+		"name": "id",
+		"shouldLoadValue": true
+	  },
+	  {
+		"name": "alki",
+		"bind": "/model/instance/Register_KB_Only/alki",
+		"shouldLoadValue" : true
+	  },
+	  {
+		"name": "alkihb",
+		"bind": "/model/instance/Register_KB_Only/alki_hb",
+		"shouldLoadValue" : true
+	  },
+	  {
+		"name": "alkilila",
+		"bind": "/model/instance/Register_KB_Only/alki_lila",
+		"shouldLoadValue" : true
+	  },
+	  {
+		"name": "alkiPenyakitKronis",
+		"bind": "/model/instance/Register_KB_Only/alki_penyakit_kronis",
+		"shouldLoadValue" : true
+	  },
+	  {
+		"name": "alkiPenyakitIms",
+		"bind": "/model/instance/Register_KB_Only/alki_penyakit_ims",
+		"shouldLoadValue" : true
+	  },
+	  {
+		"name": "tanggalkunjungan",
+		"bind": "/model/instance/Register_KB_Only/tanggal_kunjungan",
+		"shouldLoadValue" : true
+	  },
+	  {
+		"name": "keteranganTentangPesertaKB",
+		"bind": "/model/instance/Register_KB_Only/keterangan_tentang_peserta_kb",
+		"shouldLoadValue" : true
+	  },
+	  {
+		"name": "jenisKontrasepsi",
+		"bind": "/model/instance/Register_KB_Only/jenis_kontrasepsi_yang_digunakan",
+		"shouldLoadValue" : true
+	  },
+	  {
+		"name": "keterangantentangPesertaKB2",
+		"bind": "/model/instance/Register_KB_Only/keterangan_tentang_peserta_kb_2",
+		"shouldLoadValue" : true
+	  },
+	  {
+		"name": "keterangando",
+		"bind": "/model/instance/Register_KB_Only/keterangan_do",
+		"shouldLoadValue" : true
+	  },
+	  {
+		"name": "keteranganGantiCara",
+		"bind": "/model/instance/Register_KB_Only/keterangan_ganti_cara",
+		"shouldLoadValue" : true
+	  },
+	  {
+		"name": "keteranganEfekSamping",
+		"bind": "/model/instance/Register_KB_Only/keterangan_efek_samping",
+		"shouldLoadValue" : true
+	  },
+	  {
+		"name": "keteranganKomplikasi",
+		"bind": "/model/instance/Register_KB_Only/keterangan_komplikasi",
+		"shouldLoadValue" : true
+	  },
+	  {
+		"name": "submissionDate",
+		"bind": "/model/instance/Register_KB_Only/today"
+	  },
+	  {
+		"name": "registrationDate",
+		"bind": "/model/instance/Register_KB_Only/reg_date"
+	  }
+	]
+  }
 }
