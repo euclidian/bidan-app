@@ -13,10 +13,10 @@
 		<input type="text" name="/register_pnc/puskesmas" required="required" data-type-xml="string" />
 	</label>
 	<label class="question non-select ">
-		<span lang="" class="or-constraint-msg active">harus terdiri dari 7 digit</span>
 		<span lang="" class="question-label active">No. Ibu</span>
 		<span class="required">*</span>
-		<input type="number" name="/register_pnc/no_ibu" required="required" data-constraint=".&gt;999999 and .&lt;10000000" data-type-xml="int" />
+		<span lang="" class="or-hint active">Harus Diisi</span>
+		<input type="number" name="/register_pnc/no_ibu" required="required" data-type-xml="int" />
 	</label>
 	<label class="question non-select ">
 		<span lang="" class="question-label active">Nama lengkap</span>
@@ -782,7 +782,7 @@
 		<span lang="" class="or-constraint-msg active">Nilai tidak boleh minus</span>
 		<span lang="" class="question-label active">Perdarahan Kala IV 2 jam Postpartum</span>
 		<span lang="" class="or-hint active">Menunjukkan Volume / Jumlah Darah Setelah 2 Jam Persalinan (cc)</span>
-		<input type="number" name="/register_pnc/perdarahan_kala_iv_2_jam_postpartum" data-constraint=".&gt;-1 and .&lt;100" data-relevant="selected( /register_pnc/persalinan ,'kalaempat')" data-type-xml="int" />
+		<input type="number" name="/register_pnc/perdarahan_kala_iv_2_jam_postpartum" data-constraint=".&gt;-1" data-relevant="selected( /register_pnc/persalinan ,'kalaempat')" data-type-xml="int" />
 	</label>
 	<fieldset class="question or-branch pre-init ">
 		<fieldset>
@@ -1075,8 +1075,9 @@
 	</label>
 	<label class="question non-select ">
 		<span lang="" class="question-label active">Nama Bayi</span>
-		<span lang="" class="or-hint active">Nama bayi, dikosongkan jika belum diberikan nama</span>
-		<input type="text" name="/register_pnc/nama_bayi" data-type-xml="string" />
+                <span class="required">*</span>
+		<span lang="" class="or-hint active">Nama bayi, Jika tidak ada diisi dengan nama ibu contoh : Bayi Baiq</span>
+		<input type="text" name="/register_pnc/nama_bayi" required="required" data-type-xml="string" />
 	</label>
 	<label class="question non-select ">
 		<span lang="" class="question-label active">Tanggal Lahir anak</span>

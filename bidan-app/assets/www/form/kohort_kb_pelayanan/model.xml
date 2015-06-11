@@ -9,19 +9,13 @@
           <deviceid/>
           <simserial/>
           <phonenumber/>
+	  <tanggal_kunjungan/>
           <alki/>
           <alki_hb/>
           <alki_lila/>
           <alki_penyakit_kronis/>
           <alki_penyakit_ims/>
-          <tanggal_kunjungan/>
-          <keterangan_tentang_peserta_kb/>
-          <jenis_kontrasepsi_yang_digunakan/>
-          <keterangan_tentang_peserta_kb_2/>
-          <keterangan_do/>
-          <keterangan_ganti_cara/>
-          <keterangan_efek_samping/>
-          <keterangan_komplikasi/>
+          
           <end/>
           <meta>
             <instanceID/>

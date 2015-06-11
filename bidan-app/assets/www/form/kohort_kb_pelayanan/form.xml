@@ -3,6 +3,11 @@
    <!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.-->
    <section class="form-logo" />
    <h3 id="form-title">Register KB</h3>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">Tanggal kunjungan</span>
+      <span lang="" class="or-hint active">Diisi dengan tanggal kunjungan/ pelayanan</span>
+      <input type="date" name="/Register_KB_Only/tanggal_kunjungan" data-type-xml="date" />
+   </label>
    <fieldset class="question ">
       <fieldset>
          <legend>
@@ -51,11 +56,7 @@
       <span lang="" class="or-hint active">Diisi dengan keterangan tentang Infeksi Menular Seksual yang dimiliki peserta KB</span>
       <input type="text" name="/Register_KB_Only/alki_penyakit_ims" data-relevant="selected( /Register_KB_Only/alki ,'IMS')" data-type-xml="string" />
    </label>
-   <label class="question non-select ">
-      <span lang="" class="question-label active">Tanggal kunjungan</span>
-      <span lang="" class="or-hint active">Diisi dengan tanggal kunjungan/ pelayanan</span>
-      <input type="date" name="/Register_KB_Only/tanggal_kunjungan" data-type-xml="date" />
-   </label>
+   
    <fieldset class="question ">
       <fieldset>
          <legend>
@@ -116,52 +117,6 @@
          </div>
       </fieldset>
    </fieldset>
-   <fieldset class="question ">
-      <fieldset>
-         <legend>
-            <span lang="" class="question-label active">Keterangan tentang Peserta KB2</span>
-            <span lang="" class="or-hint active">Diisi dengan keterangan tentang peserta KB dalam penggunaan kontrasepsi</span>
-         </legend>
-         <div class="option-wrapper">
-            <label class="">
-               <input type="radio" name="/Register_KB_Only/keterangan_tentang_peserta_kb_2" data-name="/Register_KB_Only/keterangan_tentang_peserta_kb_2" value="drop_out" data-type-xml="select1" />
-               <span lang="" class="option-label active">Drop Out (DO)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/Register_KB_Only/keterangan_tentang_peserta_kb_2" data-name="/Register_KB_Only/keterangan_tentang_peserta_kb_2" value="ganti_cara" data-type-xml="select1" />
-               <span lang="" class="option-label active">Ganti Cara (GC)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/Register_KB_Only/keterangan_tentang_peserta_kb_2" data-name="/Register_KB_Only/keterangan_tentang_peserta_kb_2" value="efek_samping" data-type-xml="select1" />
-               <span lang="" class="option-label active">Efek Samping (ES)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/Register_KB_Only/keterangan_tentang_peserta_kb_2" data-name="/Register_KB_Only/keterangan_tentang_peserta_kb_2" value="komplikasi" data-type-xml="select1" />
-               <span lang="" class="option-label active">Komplikasi(K)</span>
-            </label>
-         </div>
-      </fieldset>
-   </fieldset>
-   <label class="question or-branch pre-init non-select ">
-      <span lang="" class="question-label active">Keterangan DO</span>
-      <span lang="" class="or-hint active">Berikan alasan dan penjelasan penyebab peserta KB Drop Out</span>
-      <input type="text" name="/Register_KB_Only/keterangan_do" data-relevant=" /Register_KB_Only/keterangan_tentang_peserta_kb_2  = 'drop_out'" data-type-xml="string" />
-   </label>
-   <label class="question or-branch pre-init non-select ">
-      <span lang="" class="question-label active">Keterangan Ganti Cara</span>
-      <span lang="" class="or-hint active">Berikan alasan dan penjelasan penyebab peserta KB Ganti Cara</span>
-      <input type="text" name="/Register_KB_Only/keterangan_ganti_cara" data-relevant=" /Register_KB_Only/keterangan_tentang_peserta_kb_2  = 'ganti_cara'" data-type-xml="string" />
-   </label>
-   <label class="question or-branch pre-init non-select ">
-      <span lang="" class="question-label active">Keterangan Efek Samping</span>
-      <span lang="" class="or-hint active">Keterangan efek samping penggunaan metode kontrasepsiInformasi tentang kunjungan pelayanan selanjutnya</span>
-      <input type="text" name="/Register_KB_Only/keterangan_efek_samping" data-relevant=" /Register_KB_Only/keterangan_tentang_peserta_kb_2  = 'efek_samping'" data-type-xml="string" />
-   </label>
-   <label class="question or-branch pre-init non-select ">
-      <span lang="" class="question-label active">Keterangan Komplikasi</span>
-      <span lang="" class="or-hint active">Keterangan tentang komplikasi penggunaan metode kontrasepsi</span>
-      <input type="text" name="/Register_KB_Only/keterangan_komplikasi" data-relevant=" /Register_KB_Only/keterangan_tentang_peserta_kb_2  = 'komplikasi'" data-type-xml="string" />
-   </label>
    <fieldset id="or-preload-items" style="display:none;">
       <label class="calculation non-select ">
          <input type="hidden" name="/Register_KB_Only/start" data-preload="timestamp" data-preload-params="start" data-type-xml="dateTime" />

@@ -13,11 +13,11 @@
       <input type="text" name="/Register_ANC/puskesmas" required="required" data-type-xml="string" />
    </label>
    <label class="question non-select ">
-      <span lang="" class="or-constraint-msg active">harus terdiri dari 7 digit</span>
-      <span lang="" class="question-label active">No. Ibu</span>
-      <span class="required">*</span>
-      <input type="number" name="/Register_ANC/no_ibu" required="required" data-constraint=".&gt;999999 and .&lt;10000000" data-type-xml="int" />
-   </label>
+		<span lang="" class="question-label active">No. Ibu</span>
+		<span class="required">*</span>
+		<span lang="" class="or-hint active">harus Diisi</span>
+		<input type="number" name="/Register_ANC/no_ibu" required="required" data-type-xml="int" />
+	</label>
    <label class="question non-select ">
       <span lang="" class="question-label active">Nama lengkap</span>
       <span class="required">*</span>
