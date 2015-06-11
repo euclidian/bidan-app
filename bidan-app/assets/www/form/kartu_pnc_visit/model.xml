@@ -1,12 +1,12 @@
 <model>
     <instance>
-        <PNC_Visit id="PNC_Visit" version="201506080950">
+        <PNC_visit id="PNC_visit" version="201506110632">
           <formhub>
             <uuid/>
           </formhub>
           <start/>
           <today/>
-	  <reg_date/>
+          <reg_date/>
           <deviceid/>
           <simserial/>
           <phonenumber/>
@@ -28,19 +28,12 @@
           <integrasi_program_foto_thorax/>
           <komplikasi/>
           <komplikasi_lainnya/>
-          <display/>
-          <daruratnifas/>
-          <penanganannifas/>
-          <kondisipascatindakan/>
-          <rujukan/>
-          <dirujuk_ke/>
-          <dirujuk_ke_lainnya/>
           <keadaan_tiba/>
           <keadaan_pulang/>
           <end/>
           <meta>
             <instanceID/>
           </meta>
-        </PNC_Visit>
+        </PNC_visit>
       </instance>
   </model>

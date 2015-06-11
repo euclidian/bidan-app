@@ -45,21 +45,49 @@
          </div>
       </fieldset>
    </fieldset>
+
    <label class="question non-select ">
       <span lang="" class="question-label active">Rencana</span>
       <span lang="" class="or-hint active">Rencana pemakaian alat kontrasepsi yang akan digunakan</span>
       <input type="text" name="/postpartum_kb/rencana" data-type-xml="string" />
    </label>
-   <label class="question non-select ">
-      <span lang="" class="question-label active">Pelaksanaan &lt;42 hari</span>
-      <span lang="" class="or-hint active">Tanggal pelaksanaan pemakaian alat kontrasepsi yang digunakan pada saat kurang dari 42 hari setelah persalinan</span>
-      <input type="date" name="/postpartum_kb/pelaksanaan_bawah_42_hari" data-type-xml="date" />
-   </label>
-   <label class="question non-select ">
-      <span lang="" class="question-label active">Pelaksanaan &gt;42 hari</span>
-      <span lang="" class="or-hint active">Tanggal pelaksanaan pemakaian alat kontrasepsi yang digunakan pada saat lebih dari 42 hari setelah persalinan</span>
-      <input type="date" name="/postpartum_kb/pelaksanaan_atas_42_hari" data-type-xml="date" />
-   </label>
+
+  <fieldset class="question ">
+		<fieldset>
+			<legend>
+				<span lang="" class="question-label active">Pelaksanaan &lt;42 hari</span>
+				<span lang="" class="or-hint active">Tanggal pelaksanaan pemakaian alat kontrasepsi yang digunakan pada saat kurang dari 42 hari setelah persalinan</span>
+			</legend>
+			<div class="option-wrapper">
+				<label class="">
+					<input type="radio" name="/postpartum_kb/pelaksanaan_bawah_42_hari" data-name="/postpartum_kb/pelaksanaan_bawah_42_hari" value="ya" data-type-xml="select1" />
+					<span lang="" class="option-label active">ya</span>
+				</label>
+				<label class="">
+					<input type="radio" name="/postpartum_kb/pelaksanaan_bawah_42_hari" data-name="/postpartum_kb/pelaksanaan_bawah_42_hari" value="tidak" data-type-xml="select1" />
+					<span lang="" class="option-label active">tidak</span>
+				</label>
+			</div>
+		</fieldset>
+	</fieldset>
+	<fieldset class="question ">
+		<fieldset>
+			<legend>
+				<span lang="" class="question-label active">Pelaksanaan &gt;42 hari</span>
+				<span lang="" class="or-hint active">Tanggal pelaksanaan pemakaian alat kontrasepsi yang digunakan pada saat lebih dari 42 hari setelah persalinan</span>
+			</legend>
+			<div class="option-wrapper">
+				<label class="">
+					<input type="radio" name="/postpartum_kb/pelaksanaan_atas_42_hari" data-name="/postpartum_kb/pelaksanaan_atas_42_hari" value="ya" data-type-xml="select1" />
+					<span lang="" class="option-label active">ya</span>
+				</label>
+				<label class="">
+					<input type="radio" name="/postpartum_kb/pelaksanaan_atas_42_hari" data-name="/postpartum_kb/pelaksanaan_atas_42_hari" value="tidak" data-type-xml="select1" />
+					<span lang="" class="option-label active">tidak</span>
+				</label>
+			</div>
+		</fieldset>
+	</fieldset>
    <fieldset id="or-preload-items" style="display:none;">
       <label class="calculation non-select ">
          <input type="hidden" name="/postpartum_kb/start" data-preload="timestamp" data-preload-params="start" data-type-xml="dateTime" />

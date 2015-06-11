@@ -13,13 +13,10 @@
         <input name="/register_baby/puskesmas" data-type-xml="string" required="required"
             type="text" />
     </label>
-    <label class="question non-select ">
-        <span class="or-constraint-msg active" lang="">harus terdiri dari 7 digit</span>
-        <span class="question-label active" lang="">No. Ibu</span>
-        <span class="required">*</span>
-        <input name="/register_baby/no_ibu" data-constraint=".&gt;999999 and .&lt;10000000" data-type-xml="int"
-            required="required" type="number" />
-    </label>
+   <label class="question non-select ">
+		<span lang="" class="question-label active">No. Ibu</span>
+		<input type="number" name="/register_baby/no_ibu" data-type-xml="int" />
+	</label>
     <label class="question non-select ">
         <span class="question-label active" lang="">Nama lengkap</span>
         <span class="required">*</span>
@@ -1471,9 +1468,8 @@
     <label class="question non-select ">
         <span class="or-constraint-msg active" lang="">harus terdiri dari 8 digit</span>
         <span class="question-label active" lang="">No. bayi</span>
-        <input name="/register_baby/no_bayi" data-constraint=".&gt;9999999 and .&lt;100000000"
-            data-type-xml="int" type="number" />
     </label>
+	
     <label class="question non-select ">
         <span class="question-label active" lang="">Nama Bayi</span>
         <span class="or-hint active" lang="">Nama bayi, dikosongkan jika belum diberikan nama</span>

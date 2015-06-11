@@ -2,15 +2,15 @@
 <form autocomplete="off" novalidate="novalidate" class="or clearfix" id="kohort_bayi_kunjungan_perbulan">
 	 <!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.-->
 	 <section class="form-logo" />
-	 <h3 id="form-title">Kohort Bayi Kunjungan Perbulan</h3>
+	 <h3 id="form-title">Bayi Visit</h3>
 	 <label class="question non-select ">
-		  <span lang="" class="question-label active">Tanggal kunjungan bayi per bulan:</span>
+		  <span lang="" class="question-label active">Tanggal kunjungan bulan ini</span>
 		  <span lang="" class="or-hint active">Diisi tanggal periksa</span>
 		  <input type="date" name="/kohort_bayi_kunjungan_perbulan/tanggal_kunjungan_bayi_perbulan" data-calculate=" /kohort_bayi_kunjungan_perbulan/today " data-type-xml="date" />
 	 </label>
 	 <label class="question non-select ">
 		  <span lang="" class="or-constraint-msg active">nilai tidak boleh minus</span>
-		  <span lang="" class="question-label active">Berat badan bayi setiap kunjungan bayi per bulan</span>
+		  <span lang="" class="question-label active">Berat badan Bulan ini</span>
 		  <span lang="" class="or-hint active">Berat badan bayi saat pemeriksaan setiap kunjungan per bulan</span>
 		  <input type="number" name="/kohort_bayi_kunjungan_perbulan/berat_badan_bayi_setiap_kunjungan_bayi_perbulan" data-constraint=".&gt;0" data-type-xml="decimal" step="any" />
 	 </label>

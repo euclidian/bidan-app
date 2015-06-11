@@ -29,6 +29,8 @@
          <kunjungan_neonatal_ketiga_hari_ke_8_sd_28__keadaan_neonatal />
          <kunjungan_neonatal_ketiga_hari_ke_8_sd_28__kondisi_bayi_meninggal />
          <kunjungan_neonatal_ketiga_hari_ke_8_sd_28__bayi_diberikan_imunisasi />
+	<reason_of_death/>
+          <confirm_of_death/>
          <end />
          <meta>
             <instanceID />

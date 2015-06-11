@@ -66,30 +66,6 @@
                 "bind":"/model/instance/PNC_Visit/komplikasi_lainnya"
             },
             {
-                "name":"daruratNifas",
-                "bind":"/model/instance/PNC_Visit/daruratnifas"
-            },
-            {
-                "name":"penangananNifas",
-                "bind":"/model/instance/PNC_Visit/penanganannifas"
-            },
-            {
-                "name":"kondisiPascaTindakan",
-                "bind":"/model/instance/PNC_Visit/kondisipascatindakan"
-            },
-            {
-                "name":"rujukan",
-                "bind":"/model/instance/PNC_Visit/rujukan"
-            },
-            {
-                "name":"dirujukKe",
-                "bind":"/model/instance/PNC_Visit/dirujuk_ke"
-            },
-            {
-                "name":"dirujukKeLainnya",
-                "bind":"/model/instance/PNC_Visit/dirujuk_ke_lainnya"
-            },
-            {
                 "name":"keadaanTiba",
                 "bind":"/model/instance/PNC_Visit/keadaan_tiba"
             },
