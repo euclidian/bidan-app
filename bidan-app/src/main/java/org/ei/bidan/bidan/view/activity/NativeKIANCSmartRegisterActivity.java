@@ -32,7 +32,6 @@ import java.util.List;
 
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_CLOSE;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_EDIT;
-import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_PARTOGRAF;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_RENCANA_PERSALINAN;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_VISIT;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_PNC_REGISTRATION;

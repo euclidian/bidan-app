@@ -96,27 +96,25 @@ public class AllConstants {
         public static final String FP_FOLLOWUP = "fp_followup";
 
         // KOHORT IBU
-        public static final String KARTU_IBU_REGISTRATION = "kartu_ibu";
+        public static final String KARTU_IBU_REGISTRATION = "kartu_ibu_registration";
         public static final String KARTU_IBU_EDIT = "kartu_ibu_edit";
         public static final String KARTU_IBU_CLOSE = "kartu_ibu_close";
 
         // ANC
-        public static final String KARTU_IBU_ANC_REGISTRATION = "kartu_ibu_anc";
-        public static final String KARTU_IBU_ANC_OA="kartu_ibu_anc_oa";
-        public static final String KARTU_IBU_ANC_DOKUMENTASI_PERSALINAN = "anc_dokumentasi_persalinan";
-        public static final String KARTU_IBU_ANC_RENCANA_PERSALINAN = "anc_rencana_persalinan";
-        public static final String KARTU_IBU_ANC_EDIT="kartu_ibu_anc_edit";
-        public static final String KARTU_IBU_ANC_CLOSE="kartu_ibu_anc_close";
-        public static final String KARTU_IBU_ANC_PARTOGRAF="kartu_ibu_anc_partograf";
-        public static final String KARTU_IBU_ANC_VISIT="kartu_ibu_anc_visit";
+        public static final String KARTU_IBU_ANC_REGISTRATION = "kartu_anc_registration";
+        public static final String KARTU_IBU_ANC_OA="kartu_anc_registration_oa";
+        public static final String KARTU_IBU_ANC_RENCANA_PERSALINAN = "kartu_anc_rencana_persalinan";
+        public static final String KARTU_IBU_ANC_EDIT="kartu_anc_edit";
+        public static final String KARTU_IBU_ANC_CLOSE="kartu_anc_close";
+        public static final String KARTU_IBU_ANC_VISIT="kartu_anc_visit";
 
         // PNC
-        public static final String KARTU_IBU_PNC_EDIT="kartu_ibu_pnc_edit";
-        public static final String KARTU_IBU_PNC_REGISTRATION = "anc_dokumentasi_persalinan";
-        public static final String KARTU_IBU_PNC_CLOSE="kartu_ibu_pnc_close";
-        public static final String KARTU_IBU_PNC_OA="kartu_ibu_pnc_oa";
-        public static final String KARTU_IBU_PNC_VISIT="kartu_ibu_pnc_visit";
-        public static final String KARTU_IBU_PNC_POSPARTUM_KB="kartu_ibu_pnc_pospartum_kb";
+        public static final String KARTU_IBU_PNC_EDIT="kartu_pnc_edit";
+        public static final String KARTU_IBU_PNC_REGISTRATION = "kartu_pnc_dokumentasi_persalinan";
+        public static final String KARTU_IBU_PNC_CLOSE="kartu_pnc_close";
+        public static final String KARTU_IBU_PNC_OA="kartu_pnc_regitration_oa";
+        public static final String KARTU_IBU_PNC_VISIT="kartu_pnc_visit";
+        public static final String KARTU_IBU_PNC_POSPARTUM_KB="kartu_pnc_pospartum_kb";
 
         // ANAK
         public static final String KOHORT_BAYI_KUNJUNGAN="kohort_bayi_kunjungan";
@@ -125,8 +123,7 @@ public class AllConstants {
         public static final String BAYI_IMUNISASI="kohort_bayi_immunization";
         public static final String BAYI_NEONATAL_PERIOD="kohort_bayi_neonatal_period";
         public static final String KOHORT_BAYI_EDIT="kohort_bayi_edit";
-        public static final String KOHORT_BALITA_KUNJUNGAN="kohort_balita_kunjungan";
-        public static final String ANAK_BAYI_REGISTRATION = "kohort_bayi";
+        public static final String ANAK_BAYI_REGISTRATION = "kohort_bayi_registration";
         public static final String ANAK_NEW_REGISTRATION="kohort_bayi_registration_oa";
 
         // KB
