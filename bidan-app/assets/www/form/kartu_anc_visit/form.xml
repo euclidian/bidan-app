@@ -73,18 +73,19 @@
          </div>
       </fieldset>
    </fieldset>
-   <label class="question non-select ">
-      <span lang="" class="or-constraint-msg active">Nilai tidak boleh minus</span>
-      <span lang="" class="question-label active">Usia Klinis</span>
-      <span lang="" class="or-hint active">Usia kehamilan ibu saat Kunjungan ANC (Minggu)</span>
-      <input type="number" name="/ANC_Visit/usia_klinis" data-constraint=".&gt;-1 and .&lt;100" data-type-xml="int" />
+   <label class="note non-select ">
+      <span lang="" class="question-label active">
+         Usia Klinis :
+         <span class="or-output" data-value=" /ANC_Visit/usia_klinis " />
+      </span>
+      <input type="text" name="/ANC_Visit/generated_note_name_12" data-type-xml="string" readonly="readonly" />
    </label>
    <label class="note non-select ">
       <span lang="" class="question-label active">
          Trimester Ke:
          <span class="or-output" data-value=" /ANC_Visit/trimester_ke " />
       </span>
-      <input type="text" name="/ANC_Visit/generated_note_name_12" data-type-xml="string" readonly="readonly" />
+      <input type="text" name="/ANC_Visit/generated_note_name_14" data-type-xml="string" readonly="readonly" />
    </label>
    <label class="question non-select ">
       <span lang="" class="or-constraint-msg active">Kunjungan ANC harus sesuai dengan trimester dari ibu</span>
@@ -102,24 +103,6 @@
       <span lang="" class="or-hint active">Menunjukkan Berat Badan Ibu pada saat Kunjungan ANC (Kg)</span>
       <input type="number" name="/ANC_Visit/bb_kg" data-constraint=".&gt;0 and .&lt;200" data-type-xml="decimal" step="any" />
    </label>
-   <fieldset class="question ">
-      <fieldset>
-         <legend>
-            <span lang="" class="question-label active">Kelainan Bentuk Panggul</span>
-            <span lang="" class="or-hint active">Menunjukkan apakah panggul Ibu mengalami kelainan atau tidak</span>
-         </legend>
-         <div class="option-wrapper">
-            <label class="">
-               <input type="radio" name="/ANC_Visit/kelainanbentuk" data-name="/ANC_Visit/kelainanbentuk" value="Ya" data-type-xml="select1" />
-               <span lang="" class="option-label active">Ya</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/ANC_Visit/kelainanbentuk" data-name="/ANC_Visit/kelainanbentuk" value="Tidak" data-type-xml="select1" />
-               <span lang="" class="option-label active">Tidak</span>
-            </label>
-         </div>
-      </fieldset>
-   </fieldset>
    <label class="question non-select ">
       <span lang="" class="or-constraint-msg active">Nilai tidak boleh minus</span>
       <span lang="" class="question-label active">TD (Sistolik)</span>
@@ -962,7 +945,10 @@
          <input autocomplete="off" type="hidden" name="/ANC_Visit/reg_date" data-calculate=" /ANC_Visit/today " data-type-xml="date" />
       </label>
       <label class="calculation non-select ">
-         <input type="hidden" name="/ANC_Visit/trimester_ke" data-calculate="if(( /ANC_Visit/usia_klinis &lt;='12'), 1, (if( /ANC_Visit/usia_klinis &gt;'12' and  /ANC_Visit/usia_klinis &lt;='24', 2, 3)))" data-type-xml="string" />
+         <input type="hidden" name="/ANC_Visit/usia_klinis" data-calculate="int((( /ANC_Visit/today  -  /ANC_Visit/hpht ) div 7)+1)" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/ANC_Visit/trimester_ke" data-calculate="if(( /ANC_Visit/usia_klinis &lt;='12'), 1, (if( /ANC_Visit/usia_klinis &gt;'12' and  /ANC_Visit/usia_klinis &lt;='24', 2, (if( /ANC_Visit/usia_klinis &gt;'24', 3, '')))))" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
          <input type="hidden" name="/ANC_Visit/taksiran_berat_janin" data-calculate="if(selected( /ANC_Visit/kepala_terhadap_janin_pap ,'masuk'), (( /ANC_Visit/tfu -11)*155), (if(selected( /ANC_Visit/kepala_terhadap_janin_pap ,'belum_masuk'), (( /ANC_Visit/tfu -12)*155), 0)))" data-type-xml="string" />

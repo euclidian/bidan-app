@@ -1,6 +1,6 @@
 <model>
     <instance>
-        <ANC_Visit id="ANC_Visit" version="201506090630">
+        <ANC_Visit id="ANC_Visit" version="201506110731">
           <formhub>
             <uuid/>
           </formhub>
@@ -10,15 +10,16 @@
           <simserial/>
           <phonenumber/>
           <anc_date/>
+          <hpht/>
           <jamkesmas/>
           <cara_masuk_tempat_pelayanan/>
           <usia_klinis/>
-          <trimester_ke/>
           <generated_note_name_12/>
+          <trimester_ke/>
+          <generated_note_name_14/>
           <anc_ke/>
           <anamnesis_ibu>tidak ada keluhan</anamnesis_ibu>
           <bb_kg/>
-          <kelainanbentuk/>
           <td_sistolik/>
           <td_diastolik/>
           <lila_cm/>

@@ -147,7 +147,7 @@
       {
         "name":"referenceDate",
         "bind":"/model/instance/Register_ANC/tanggal_periksa",
-        "source": "kartu_ibu.ibu.tanggalPeriksa"
+        "source": "kartu_ibu.ibu.referenceDate"
       },
       {
         "name":"tanggalHPHT",

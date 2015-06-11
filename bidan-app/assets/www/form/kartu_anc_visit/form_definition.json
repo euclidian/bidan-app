@@ -13,6 +13,11 @@
                 "shouldLoadValue": true,
                 "source": "ibu.kartu_ibu.id"
             },
+            {
+                "name": "tanggalHPHT",
+                "bind": "/model/instance/ANC_Visit/hpht",
+                "shouldLoadValue": true
+            },
 			{
                 "name": "referenceDate",
                 "bind": "/model/instance/ANC_Visit/anc_date"
@@ -44,10 +49,6 @@
             {
                 "name": "bb",
                 "bind": "/model/instance/ANC_Visit/bb_kg"
-            },
-            {
-                "name": "kelainanBentuk",
-                "bind": "/model/instance/ANC_Visit/kelainanbentuk"
             },
             {
                 "name": "tdSistolik",

@@ -122,6 +122,11 @@
 		"bind":"/model/instance/dokumentasi_persalinan/alamat_bersalin"
 	  },
 	  {
+		"name":"noBayi",
+		"bind":"/model/instance/dokumentasi_persalinan/no_bayi",
+		"source":"ibu.anak.no_bayi"
+	  },
+	  {
 		"name":"namaBayi",
 		"bind":"/model/instance/dokumentasi_persalinan/nama_bayi",
 		"source":"ibu.anak.namaBayi"

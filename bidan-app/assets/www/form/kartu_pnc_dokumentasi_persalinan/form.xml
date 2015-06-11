@@ -409,9 +409,15 @@
       <input type="text" name="/dokumentasi_persalinan/alamat_bersalin" data-type-xml="string" />
    </label>
    <label class="question non-select ">
-      <span lang="" class="question-label active">Nama Bayi</span>
-      <span lang="" class="or-hint active">Nama bayi, dikosongkan jika belum diberikan nama</span>
-      <input type="text" name="/dokumentasi_persalinan/nama_bayi" data-type-xml="string" />
+		<span lang="" class="question-label active">No. bayi</span>
+		<input type="number" name="/dokumentasi_persalinan/no_bayi" data-type-xml="int" />
+	</label>
+
+   <label class="question non-select ">
+     <span lang="" class="question-label active">Nama Bayi</span>
+		<span class="required">*</span>
+		<span lang="" class="or-hint active">Jika bayi belum di beri nama gunakan Bayi 'nama ibu'. misalnya nama ibu: Ratna maka isi dengan Bayi Ratna</span>
+		<input type="text" name="/dokumentasi_persalinan/nama_bayi" required="required" data-type-xml="string" />
    </label>
    <label class="question non-select ">
       <span lang="" class="question-label active">Tanggal Lahir anak</span>
