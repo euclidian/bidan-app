@@ -133,7 +133,8 @@ public class AnakRepository extends DrishtiRepository {
         return new KartuIbu(
                 getColumnValueByAlias(cursor, KI_TABLE_NAME, KartuIbuRepository.ID_COLUMN),
                 new Gson().<Map<String, String>>fromJson(getColumnValueByAlias(cursor, KI_TABLE_NAME, KartuIbuRepository.DETAILS_COLUMN), new TypeToken<Map<String, String>>() {
-                }.getType()));
+                }.getType()),
+                getColumnValueByAlias(cursor, KI_TABLE_NAME, KartuIbuRepository.DUSUN_COLUMN));
     }
 
     private Ibu ibuFromCursor(Cursor cursor) {

@@ -16,12 +16,14 @@ import static org.ei.bidan.AllConstants.ECRegistrationFields.CURRENT_FP_METHOD;
 public class KartuIbu {
     private String caseId;
     private Map<String, String> details;
+    private String dusun;
     private boolean isClosed;
 
-    public KartuIbu(String caseId, Map<String, String> details) {
+    public KartuIbu(String caseId, Map<String, String> details, String dusun) {
         this.caseId = caseId;
         this.details = details;
         this.isClosed = false;
+        this.dusun = dusun;
     }
 
     // Getter
@@ -58,6 +60,8 @@ public class KartuIbu {
     public String getDetail(String name) {
         return details.get(name);
     }
+
+    public String dusun() { return this.dusun; }
 
     // Tools
     @Override

@@ -63,7 +63,7 @@ public class KartuIbuRegisterController  extends CommonController{
                             kartuIbu.getDetail(MOTHER_NAME), kartuIbu.getDetail(MOTHER_AGE),
                             kartuIbu.getDetail(MOTHER_BLOOD_TYPE),
                             kartuIbu.getDetail(HUSBAND_NAME),
-                            kartuIbu.getDetail(VILLAGE))
+                            kartuIbu.dusun())
                             .withDateOfBirth(kartuIbu.getDetail(MOTHER_DOB))
                             .withParity(kartuIbu.getDetail(NUMBER_PARTUS))
                             .withNumberOfAbortions(kartuIbu.getDetail(NUMBER_ABORTIONS))

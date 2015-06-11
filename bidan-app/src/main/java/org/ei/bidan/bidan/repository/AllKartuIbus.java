@@ -41,7 +41,11 @@ public class AllKartuIbus {
     public long kbCount() { return kartuIbuRepository.kbCount(); }
 
     public List<String> randomDummyName()  {
-        return DummyNameService.getMotherDummyName(configuration,true);
+        return DummyNameService.getMotherDummyName(configuration, true);
+    }
+
+    public List<String> villages() {
+        return kartuIbuRepository.villages();
     }
 
     public List<KartuIbu> findByCaseIDs(List<String> caseIds) {

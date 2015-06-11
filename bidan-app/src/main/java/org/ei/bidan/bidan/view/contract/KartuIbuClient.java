@@ -248,7 +248,7 @@ public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartR
 
     @Override
     public String village() {
-        return puskesmas;
+        return humanize(village);
     }
 
     @Override
