@@ -29,7 +29,7 @@ import static org.joda.time.LocalDateTime.parse;
 /**
  * Created by Dimas Ciputra on 2/17/15.
  */
-public class KartuIbuClient implements KISmartRegisterClient {
+public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartRegisterClient {
 
     private String entityId;
     private String puskesmas;
@@ -150,7 +150,6 @@ public class KartuIbuClient implements KISmartRegisterClient {
     }
 
     public LocalDateTime edd() {
-
         if(Strings.isNullOrEmpty(edd)) return null;
         return parse(edd);
     }
@@ -285,19 +284,6 @@ public class KartuIbuClient implements KISmartRegisterClient {
     @Override
     public boolean isST() {
         return false;
-    }
-
-    @Override
-    public boolean isHighRisk() {
-        String highRiskKI = Strings.isNullOrEmpty(IsHighRisk) ? "-" : IsHighRisk;
-        String highRiskANC = Strings.isNullOrEmpty(isHighRiskANC) ? "-" : isHighRiskANC;
-        Boolean isTooYoungOrTooOld = false;
-
-        if(age()<20 || age()>35) {
-            isTooYoungOrTooOld = true;
-        }
-
-        return highRiskANC.equalsIgnoreCase("ya") || isTooYoungOrTooOld;
     }
 
     @Override

@@ -21,7 +21,7 @@ import static org.ei.bidan.util.StringUtil.humanize;
 /**
  * Created by Dimas Ciputra on 4/22/15.
  */
-public class KBClient implements KISmartRegisterClient {
+public class KBClient extends BidanSmartRegisterClient implements KISmartRegisterClient {
 
     private String entityId;
     private String name;

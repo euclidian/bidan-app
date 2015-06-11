@@ -5,7 +5,6 @@ import com.google.common.base.Strings;
 import org.apache.commons.lang3.StringUtils;
 import org.ei.bidan.domain.ANCServiceType;
 import org.ei.bidan.util.DateUtil;
-import org.ei.bidan.util.IntegerUtil;
 import org.ei.bidan.view.contract.AlertDTO;
 import org.ei.bidan.view.contract.ServiceProvidedDTO;
 import org.ei.bidan.view.contract.SmartRegisterClient;
@@ -24,13 +23,12 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import static org.ei.bidan.AllConstants.FORM_DATE_TIME_FORMAT;
 import static org.joda.time.LocalDateTime.parse;
 
 /**
  * Created by Dimas Ciputra on 3/4/15.
  */
-public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
+public class KartuIbuANCClient extends BidanSmartRegisterClient implements KartuIbuANCSmartRegisterClient {
 
     public static final String CATEGORY_ANC = "anc";
     public static final String CATEGORY_TT = "tt";
@@ -49,6 +47,9 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     private String photo_path;
     private boolean isHighPriority;
     private boolean isHighRisk;
+    private boolean isHighRiskPregnancy;
+    private boolean isHighRiskLabour;
+    private String isHighRiskANC;
     private String riskFactors;
     private String locationStatus;
     private String edd;
@@ -63,6 +64,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     private String LILA;
     private String penyakitKronis;
     private String alergi;
+    private String tanggalHPHT;
 
     private List<AlertDTO> alerts;
     private List<ServiceProvidedDTO> services_provided;
@@ -177,7 +179,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public String village() {
-        return village;
+        return getPuskesmas();
     }
 
     @Override
@@ -216,11 +218,6 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     }
 
     @Override
-    public boolean isHighRisk() {
-        return isHighRisk;
-    }
-
-    @Override
     public boolean isHighPriority() {
         return false;
     }
@@ -253,8 +250,17 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
         return 0;
     }
 
+    @Override
+    public boolean isHighRiskPregnancy() {
+        return this.isHighRiskPregnancy;
+    }
+
+    public void setIsHighRiskPregnancy(String highRiskPregnancy) {
+        this.isHighRiskPregnancy = !Strings.isNullOrEmpty(highRiskPregnancy) && highRiskPregnancy.equalsIgnoreCase("yes");
+    }
+
     public String getPuskesmas() {
-        return puskesmas;
+        return Strings.isNullOrEmpty(puskesmas) ? "-" : puskesmas;
     }
 
     public String kiNumber() {
@@ -267,7 +273,14 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     public String kunjungan() { return kunjungan == null ? "-" : humanize(kunjungan); }
 
-    public String usiaKlinis() { return usiaKlinis == null ? "-" : humanize(usiaKlinis); }
+    public String usiaKlinis() {
+        if(Strings.isNullOrEmpty(tanggalHPHT)) return "-";
+
+        LocalDate startDate = DateUtil.getLocalDateFromISOString(tanggalHPHT);
+        LocalDate endDate = DateUtil.today();
+
+        return DateUtil.weekDifference(startDate, endDate) + " minggu";
+    }
 
     public KartuIbuANCClient withHusband(String husbandName) {
         this.husbandName = husbandName;
@@ -304,8 +317,8 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
         return this;
     }
 
-    public KartuIbuANCClient withUsiaKlinisData(String usiaKlinis) {
-        this.usiaKlinis = usiaKlinis;
+    public KartuIbuANCClient withTanggalHPHT(String tanggalHPHT){
+        this.tanggalHPHT = tanggalHPHT;
         return this;
     }
 
@@ -347,6 +360,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     public void setPenyakitKronis(String penyakitKronis) {
         this.penyakitKronis = penyakitKronis;
+        setIsHighRiskFromANC(!Strings.isNullOrEmpty(this.penyakitKronis));
     }
 
     public String getAlergi() {
@@ -362,7 +376,18 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
             this.isHighRisk = false;
             return;
         }
-        this.isHighRisk = isHighRisk.equalsIgnoreCase("ya") ? true : false;
+        this.isHighRisk = isHighRisk.equalsIgnoreCase("yes");
     }
 
+    public void setIsHighRiskANC(String isHighRiskANC) {
+       // setIsHighRiskFromANC(!Strings.isNullOrEmpty(this.penyakitKronis) && isHighRiskANC.equalsIgnoreCase("yes"));
+    }
+
+    public String tanggalHPHT() {
+        return Strings.isNullOrEmpty(tanggalHPHT) ? "-" : DateUtil.formatDate(tanggalHPHT, "dd MMM YYYY");
+    }
+
+    public void setHighRiskLabour(String highRiskLabour) {
+        setIsHighRiskLabour(!Strings.isNullOrEmpty(highRiskLabour) && highRiskLabour.equalsIgnoreCase("yes"));
+    }
 }

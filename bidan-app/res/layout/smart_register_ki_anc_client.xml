@@ -42,38 +42,30 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="@color/status_bar_text_almost_white"
+            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <org.ei.bidan.view.customControls.CustomFontTextView
-                android:id="@+id/lbl_ki_anc_bb"
+                android:id="@+id/txt_usia_klinis"
                 style="@style/CustomFontTextViewStyle.ListView.Small"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="BB :"/>
+                android:text="12 Minggu"/>
 
 
             <org.ei.bidan.view.customControls.CustomFontTextView
-                android:id="@+id/txt_ki_anc_bb"
+                android:id="@+id/lbl_htpt"
                 style="@style/CustomFontTextViewStyle.ListView.Small"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="11"/>
+                android:text="HTPT :"/>
 
             <org.ei.bidan.view.customControls.CustomFontTextView
-                android:id="@+id/lbl_ki_anc_tb"
+                android:id="@+id/txt_htpt"
                 style="@style/CustomFontTextViewStyle.ListView.Small"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TB :"/>
-
-
-            <org.ei.bidan.view.customControls.CustomFontTextView
-                android:id="@+id/txt_ki_anc_tb"
-                style="@style/CustomFontTextViewStyle.ListView.Small"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="11"/>
+                android:text="14/08/2014"/>
         </LinearLayout>
 
     </LinearLayout>

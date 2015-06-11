@@ -45,12 +45,31 @@
                 android:visibility="gone"/>
 
             <ImageView
+                android:id="@+id/img_hrl_badge"
+                android:layout_width="@dimen/client_profile_badge_width"
+                android:layout_height="@dimen/client_profile_badge_height"
+                android:layout_marginBottom="-5dp"
+                android:scaleType="fitStart"
+                android:src="@drawable/flag_hrl"
+                android:visibility="gone"/>
+
+
+            <ImageView
                 android:id="@+id/img_bpl_badge"
                 android:layout_width="@dimen/client_profile_badge_width"
                 android:layout_height="@dimen/client_profile_badge_height"
                 android:layout_marginBottom="-5dp"
                 android:scaleType="fitStart"
                 android:src="@drawable/flag_bpl"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/img_hrp_badge"
+                android:layout_width="@dimen/client_profile_badge_width"
+                android:layout_height="@dimen/client_profile_badge_height"
+                android:layout_marginBottom="-5dp"
+                android:scaleType="fitStart"
+                android:src="@drawable/flag_hrp"
                 android:visibility="gone"/>
 
             <ImageView

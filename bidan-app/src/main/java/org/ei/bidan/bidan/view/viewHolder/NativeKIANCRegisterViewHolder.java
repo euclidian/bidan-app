@@ -16,8 +16,8 @@ public class NativeKIANCRegisterViewHolder {
 
     private final BidanClientProfileView profileInfoLayout;
     private final TextView ancId;
-    private final TextView ancStatusBB;
-    private final TextView ancStatusTB;
+    private final TextView ancStatusUsiaKlinis;
+    private final TextView ancStatusHtpt;
     private final TextView pemeriksaanLILA;
     private final TextView pemeriksaanBB;
     private final TextView penyakitKronis;
@@ -33,8 +33,8 @@ public class NativeKIANCRegisterViewHolder {
         this.profileInfoLayout.initialize();
 
         this.ancId = (TextView) itemView.findViewById(R.id.anc_id);
-        this.ancStatusBB = (TextView) itemView.findViewById(R.id.txt_ki_anc_bb);
-        this.ancStatusTB = (TextView) itemView.findViewById(R.id.txt_ki_anc_tb);
+        this.ancStatusUsiaKlinis = (TextView) itemView.findViewById(R.id.txt_usia_klinis);
+        this.ancStatusHtpt = (TextView) itemView.findViewById(R.id.txt_htpt);
         this.pemeriksaanLILA = (TextView) itemView.findViewById(R.id.txt_ki_lila_bb);
         this.pemeriksaanBB = (TextView) itemView.findViewById(R.id.txt_ki_beratbadan_tb);
         this.penyakitKronis = (TextView) itemView.findViewById(R.id.txt_ki_anc_penyakit_kronis);
@@ -47,8 +47,8 @@ public class NativeKIANCRegisterViewHolder {
     }
 
     public ImageButton editButton() { return editButton; }
-    public TextView ancStatusBB() { return ancStatusBB; }
-    public TextView ancStatusTB() { return ancStatusTB; }
+    public TextView ancStatusUsiaKlinis() { return ancStatusUsiaKlinis; }
+    public TextView ancStatusHtpt() { return ancStatusHtpt; }
     public TextView ancId() { return ancId; }
     public TextView edd() { return edd; }
     public BidanClientProfileView profileInfoLayout() {

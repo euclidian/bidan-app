@@ -25,7 +25,7 @@ import static org.joda.time.LocalDateTime.parse;
 /**
  * Created by Dimas Ciputra on 3/4/15.
  */
-public class KartuIbuPNCClient implements KartuIbuANCSmartRegisterClient {
+public class KartuIbuPNCClient extends BidanSmartRegisterClient implements KartuIbuANCSmartRegisterClient {
 
     public static final String CATEGORY_PNC = "pnc";
     public static final String CATEGORY_TT = "tt";

@@ -259,39 +259,48 @@
             },
             {
                 "name": "tbcRisk",
-                "bind": "/model/instance/ANC_Visit/TBC_risk"
+                "bind": "/model/instance/ANC_Visit/TBC_risk",
+                "source": "ibu.kartu_ibu.tbcRisk"
             },
             {
                 "name": "malariaRisk",
-                "bind": "/model/instance/ANC_Visit/malaria_risk"
+                "bind": "/model/instance/ANC_Visit/malaria_risk",
+                "source": "ibu.kartu_ibu.malariaRisk"
             },
             {
                 "name": "isHighRisk",
-                "bind": "/model/instance/ANC_Visit/is_high_risk"
+                "bind": "/model/instance/ANC_Visit/is_high_risk",
+                "source": "ibu.kartu_ibu.isHighRisk"
             },
             {
                 "name": "isHighRiskReason",
-                "bind": "/model/instance/ANC_Visit/is_high_risk_reason"
+                "bind": "/model/instance/ANC_Visit/is_high_risk_reason",
+                "source": "ibu.kartu_ibu.isHighRiskReason"
             },
             {
                 "name": "isHighRiskPregnancy",
-                "bind": "/model/instance/ANC_Visit/is_high_risk_pregnancy"
+                "bind": "/model/instance/ANC_Visit/is_high_risk_pregnancy",
+                "source": "ibu.kartu_ibu.isHighRiskPregnancy"
             },
             {
                 "name": "highRiskPregnancyReason",
-                "bind": "/model/instance/ANC_Visit/high_risk_pregnancy_reason"
+                "bind": "/model/instance/ANC_Visit/high_risk_pregnancy_reason",
+                "source": "ibu.kartu_ibu.highRiskPregnancyReason"
             },
             {
                 "name": "isHighRiskLabour",
-                "bind": "/model/instance/ANC_Visit/is_high_risk_labour"
+                "bind": "/model/instance/ANC_Visit/is_high_risk_labour",
+                "source": "ibu.kartu_ibu.isHighRiskLabour"
             },
             {
                 "name": "highRiskLabourReason",
-                "bind": "/model/instance/ANC_Visit/high_risk_labour_reason"
+                "bind": "/model/instance/ANC_Visit/high_risk_labour_reason",
+                "source": "ibu.kartu_ibu.highRiskLabourReason"
             },
             {
                 "name": "highRiskNote",
-                "bind": "/model/instance/ANC_Visit/high_risk_note"
+                "bind": "/model/instance/ANC_Visit/high_risk_note",
+                "source": "ibu.kartu_ibu.highRiskNote"
             },
             {
                 "name": "submissionDate",

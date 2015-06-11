@@ -14,19 +14,23 @@
       },
       {
         "name": "gravida",
-        "bind": "/model/instance/Register_ANC_only/gravida"
+        "bind": "/model/instance/Register_ANC_only/gravida",
+        "shouldLoadValue": true
       },
       {
         "name": "partus",
-        "bind": "/model/instance/Register_ANC_only/partus"
+        "bind": "/model/instance/Register_ANC_only/partus",
+        "shouldLoadValue": true
       },
       {
         "name": "abortus",
-        "bind": "/model/instance/Register_ANC_only/abortus"
+        "bind": "/model/instance/Register_ANC_only/abortus",
+        "shouldLoadValue": true
       },
       {
         "name": "hidup",
-        "bind": "/model/instance/Register_ANC_only/hidup"
+        "bind": "/model/instance/Register_ANC_only/hidup",
+        "shouldLoadValue": true
       },
       {
         "name": "hamilke",
@@ -82,7 +86,7 @@
         "source": "kartu_ibu.ibu.hasilPemeriksaanLILA"
       },
       {
-        "name": "hasilPemeriksaanBeratBadan ",
+        "name": "hasilPemeriksaanBeratBadan",
         "bind": "/model/instance/Register_ANC_only/hasil_pemeriksaan_berat_badan",
         "source": "kartu_ibu.ibu.hasilPemeriksaanBeratBadan"
       },

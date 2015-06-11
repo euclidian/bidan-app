@@ -110,13 +110,13 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
     }
 
     private void setupANCStatusView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
-        viewHolder.ancStatusBB().setText(client.getBB()==null?"-":client.getBB() + " kg");
-        viewHolder.ancStatusTB().setText(client.getTB()==null?"-":client.getTB() + " cm");
+        viewHolder.ancStatusHtpt().setText(client.tanggalHPHT()==null?"-":client.tanggalHPHT());
+        viewHolder.ancStatusUsiaKlinis().setText(client.usiaKlinis()==null?"-":client.usiaKlinis());
     }
 
     private void setupPemeriksaanView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
-        viewHolder.getPemeriksaanBB().setText(client.getLILA());
-        viewHolder.getPemeriksaanLILA().setText(client.getBeratBadan());
+        viewHolder.getPemeriksaanBB().setText(client.getBeratBadan());
+        viewHolder.getPemeriksaanLILA().setText(client.getLILA());
     }
 
     private void setupResikoView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {

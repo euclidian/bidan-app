@@ -26,7 +26,7 @@ import static org.ei.bidan.util.DateUtil.formatDate;
 /**
  * Created by Dimas Ciputra on 4/8/15.
  */
-public class AnakClient implements SmartRegisterClient{
+public class AnakClient extends BidanSmartRegisterClient{
 
     private final String entityId;
     private Map<String, String> details;

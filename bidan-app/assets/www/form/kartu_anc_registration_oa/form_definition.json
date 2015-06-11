@@ -190,7 +190,7 @@
         "source": "kartu_ibu.ibu.hasilPemeriksaanLILA"
       },
       {
-        "name":"hasilPemeriksaanBeratBadan ",
+        "name":"hasilPemeriksaanBeratBadan",
         "bind":"/model/instance/Register_ANC/hasil_pemeriksaan_berat_badan",
         "source": "kartu_ibu.ibu.hasilPemeriksaanBeratBadan"
       },

@@ -95,7 +95,7 @@
         "shouldLoadValue":true
       },
       {
-        "name":"hasilPemeriksaanBeratBadan ",
+        "name":"hasilPemeriksaanBeratBadan",
         "bind":"/model/instance/Register_ANC_only/hasil_pemeriksaan_berat_badan",
         "shouldLoadValue":true
       },

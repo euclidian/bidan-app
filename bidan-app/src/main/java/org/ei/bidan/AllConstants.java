@@ -376,6 +376,9 @@ public class AllConstants {
         public static final String NUMBER_OF_LIVING_CHILDREN = "hidup";
         public static final String IS_HIGH_PRIORITY = "isHighPriority";
         public static final String IS_HIGH_RISK = "isHighRisk";
+        public static final String IS_HIGH_RISK_ANC = "isHighRiskANC";
+        public static final String IS_HIGH_RISK_PREGNANCY = "isHighRiskPregnancy";
+        public static final String IS_HIGH_RISK_LABOUR = "isHighRiskLabour";
         public static final String EDD = "htp";
         public static final String VISITS_DATE = "tanggalkunjungan";
         public static final String CHRONIC_DISEASE = "penyakitKronis";
@@ -387,11 +390,12 @@ public class AllConstants {
         public static final String TRIMESTER = "TrimesterKe";
         public static final String IMMUNIZATION_TT_STATUS = "StatusImunisasiTT";
         public static final String CLINICAL_AGE = "UsiaKlinis";
-        public static final String WEIGHT_BEFORE = "bb";
+        public static final String WEIGHT_BEFORE = "bbSebelumHamil";
         public static final String WEIGHT_CHECK_RESULT = "hasilPemeriksaanBeratBadan";
         public static final String LILA_CHECK_RESULT = "hasilPemeriksaanLILA";
         public static final String HEIGHT = "tb";
         public static final String ALLERGY = "Alergi";
+        public static final String HPHT_DATE = "tanggalHPHT";
     }
 
     public class KartuPNCFields {

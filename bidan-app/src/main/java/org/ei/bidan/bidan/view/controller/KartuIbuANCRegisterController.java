@@ -58,7 +58,7 @@ public class KartuIbuANCRegisterController extends CommonController{
                             .withRiskFactors(anc.getDetail(COMPLICATION_HISTORY))
                             .withKunjunganData(anc.getDetail(TRIMESTER))
                             .withTTImunisasiData(anc.getDetail(IMMUNIZATION_TT_STATUS))
-                            .withUsiaKlinisData(anc.getDetail(CLINICAL_AGE));
+                            .withTanggalHPHT(anc.getDetail(HPHT_DATE));
 
                     kartuIbuClient.setBB(anc.getDetail(WEIGHT_BEFORE));
                     kartuIbuClient.setTB(anc.getDetail(HEIGHT));
@@ -67,7 +67,9 @@ public class KartuIbuANCRegisterController extends CommonController{
                     kartuIbuClient.setPenyakitKronis(anc.getDetail(CHRONIC_DISEASE));
                     kartuIbuClient.setAlergi(anc.getDetail(ALLERGY));
                     kartuIbuClient.setIsHighRisk(ki.getDetail(IS_HIGH_RISK));
-
+                    kartuIbuClient.setIsHighRiskANC(ki.getDetail(IS_HIGH_RISK));
+                    kartuIbuClient.setIsHighRiskPregnancy(ki.getDetail(IS_HIGH_RISK_PREGNANCY));
+                    kartuIbuClient.setHighRiskLabour(ki.getDetail(IS_HIGH_RISK_LABOUR));
                     ancClients.add(kartuIbuClient);
                 }
                 sortByName(ancClients);
