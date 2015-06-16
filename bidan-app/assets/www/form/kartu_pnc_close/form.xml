@@ -52,8 +52,7 @@
         <fieldset class="question ">
             <fieldset>
                 <legend>
-                    <span class="question-label active" lang="">Apakah kematiannya merupakan
-                        kematian ibu?
+                    <span class="question-label active" lang="">apakah penyebab kematian ibu?
                     </span>
                     <span class="or-hint active" lang="">Pilihlah salah satu jawaban yang tersedia
                     </span>
@@ -63,13 +62,13 @@
                         <input name="/PNC_Close/death_mother_group/maternal_death" data-name="/PNC_Close/death_mother_group/maternal_death"
                             data-type-xml="select1" type="radio"
                             value="yes" />
-                        <span class="option-label active" lang="">Ya</span>
+                        <span class="option-label active" lang="">Penyebab langsung</span>
                     </label>
                     <label class="">
                         <input name="/PNC_Close/death_mother_group/maternal_death" data-name="/PNC_Close/death_mother_group/maternal_death"
                             data-type-xml="select1" type="radio"
                             value="no" />
-                        <span class="option-label active" lang="">Tidak</span>
+                        <span class="option-label active" lang="">Penyebab tidak langsung</span>
                     </label>
                     <label class="">
                         <input name="/PNC_Close/death_mother_group/maternal_death" data-name="/PNC_Close/death_mother_group/maternal_death"

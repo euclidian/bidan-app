@@ -68,16 +68,26 @@
 		"bind": "/model/instance/register_baby/kecamatan",
 		"source": "anak.ibu.kartu_ibu.kecamatan"
 	  },
-	  {
-		"name": "desa",
-		"bind": "/model/instance/register_baby/desa",
-		"source": "anak.ibu.kartu_ibu.desa"
-	  },
-	  {
-		"name": "dusun",
-		"bind": "/model/instance/register_baby/dusun",
-		"source": "anak.ibu.kartu_ibu.dusun"
-	  },
+            {
+                "name": "kecamatanl",
+                "bind": "/model/instance/register_baby/kecamatanl"
+            },
+            {
+                "name": "desa",
+                "bind": "/model/instance/register_baby/desa"
+            },
+            {
+                "name": "desal",
+                "bind": "/model/instance/register_baby/desal"
+            },
+            {
+                "name": "dusun",
+                "bind": "/model/instance/register_baby/dusun"
+            },
+            {
+                "name": "dusunl",
+                "bind": "/model/instance/register_baby/dusunl"
+            },
 	  {
 		"name": "pendidikan",
 		"bind": "/model/instance/register_baby/pendidikan",

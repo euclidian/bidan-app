@@ -61,20 +61,12 @@
                 "bind": "/model/instance/kartu_ibu/desal"
             },
             {
-                "name": "desaq",
-                "bind": "/model/instance/kartu_ibu/desaq"
-            },
-            {
                 "name": "dusun",
                 "bind": "/model/instance/kartu_ibu/dusun"
             },
             {
                 "name": "dusunl",
                 "bind": "/model/instance/kartu_ibu/dusunl"
-            },
-            {
-                "name": "dusunq",
-                "bind": "/model/instance/kartu_ibu/dusunq"
             },
             {
                 "name": "pendidikan",

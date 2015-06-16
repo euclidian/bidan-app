@@ -18,12 +18,18 @@
 					<input type="radio" name="/Penutupan_kartu_ibu/close_reason" data-name="/Penutupan_kartu_ibu/close_reason" value="permanent_relocation" required="required" data-type-xml="select1" />
 					<span lang="" class="option-label active">Pindah tempat tinggal</span>
 				</label>
-				
+				<label class="">
+					<input type="radio" name="/Penutupan_kartu_ibu/close_reason" data-name="/Penutupan_kartu_ibu/close_reason" value="separation" required="required" data-type-xml="select1" />
+					<span lang="" class="option-label active">Bercerai</span>
+				</label>
 				<label class="">
 					<input type="radio" name="/Penutupan_kartu_ibu/close_reason" data-name="/Penutupan_kartu_ibu/close_reason" value="death_of_wife" required="required" data-type-xml="select1" />
-					<span lang="" class="option-label active">Kematian Ibu</span>
+					<span lang="" class="option-label active">Kematian istri</span>
 				</label>
-				
+				<label class="">
+					<input type="radio" name="/Penutupan_kartu_ibu/close_reason" data-name="/Penutupan_kartu_ibu/close_reason" value="death_of_husband" required="required" data-type-xml="select1" />
+					<span lang="" class="option-label active">Kematian suami</span>
+				</label>
 				<label class="">
 					<input type="radio" name="/Penutupan_kartu_ibu/close_reason" data-name="/Penutupan_kartu_ibu/close_reason" value="others" required="required" data-type-xml="select1" />
 					<span lang="" class="option-label active">Lainnya</span>
@@ -60,16 +66,16 @@
 	<fieldset class="question or-branch pre-init ">
 		<fieldset>
 			<legend>
-				<span lang="" class="question-label active">apakah kematiannya adalah kematian ibu?</span>
+				<span lang="" class="question-label active">apakah penyebab kematian ibu?</span>
 			</legend>
 			<div class="option-wrapper">
 				<label class="">
 					<input type="radio" name="/Penutupan_kartu_ibu/maternal_death" data-name="/Penutupan_kartu_ibu/maternal_death" value="yes" data-relevant="( /Penutupan_kartu_ibu/close_reason  = 'death_of_wife') and ( /Penutupan_kartu_ibu/sterilization_death  = 'no')" data-type-xml="select1" />
-					<span lang="" class="option-label active">Ya</span>
+					<span lang="" class="option-label active">Penyebab langsung</span>
 				</label>
 				<label class="">
 					<input type="radio" name="/Penutupan_kartu_ibu/maternal_death" data-name="/Penutupan_kartu_ibu/maternal_death" value="no" data-relevant="( /Penutupan_kartu_ibu/close_reason  = 'death_of_wife') and ( /Penutupan_kartu_ibu/sterilization_death  = 'no')" data-type-xml="select1" />
-					<span lang="" class="option-label active">Tidak</span>
+					<span lang="" class="option-label active">Penyebab tidak langsung</span>
 				</label>
 				<label class="">
 					<input type="radio" name="/Penutupan_kartu_ibu/maternal_death" data-name="/Penutupan_kartu_ibu/maternal_death" value="dont_know" data-relevant="( /Penutupan_kartu_ibu/close_reason  = 'death_of_wife') and ( /Penutupan_kartu_ibu/sterilization_death  = 'no')" data-type-xml="select1" />

@@ -154,26 +154,7 @@
 				"name": "jenisKontrasepsi",
 				"bind": "/model/instance/register_kb/jenis_kontrasepsi_yang_digunakan"
 			},
-			{
-				"name": "keterangantentangPesertaKB2",
-				"bind": "/model/instance/register_kb/keterangan_tentang_peserta_kb_2"
-			},
-			{
-				"name": "keterangando",
-				"bind": "/model/instance/register_kb/keterangan_do"
-			},
-			{
-				"name": "keteranganGantiCara",
-				"bind": "/model/instance/register_kb/keterangan_ganti_cara"
-			},
-			{
-				"name": "keteranganEfekSamping",
-				"bind": "/model/instance/register_kb/keterangan_efek_samping"
-			},
-			{
-				"name": "keteranganKomplikasi",
-				"bind": "/model/instance/register_kb/keterangan_komplikasi"
-			},
+			
             {
                  "name": "submissionDate",
                  "bind": "/model/instance/register_kb/today"

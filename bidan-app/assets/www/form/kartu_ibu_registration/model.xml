@@ -1,6 +1,6 @@
 <model>
     <instance>
-        <kartu_ibu id="kartu_ibu" version="201506080739">
+        <kartu_ibu id="kartu_ibu" version="201506150230">
           <formhub>
             <uuid/>
           </formhub>
@@ -24,10 +24,8 @@
           <kecamatanl/>
           <desa/>
           <desal/>
-          <desaq/>
           <dusun/>
           <dusunl/>
-          <dusunq/>
           <pendidikan/>
           <agama/>
           <pekerjaan>Ibu rumah tangga</pekerjaan>
@@ -41,10 +39,9 @@
           <nomor_telpon_hp/>
           <Too_young_risk/>
           <Too_old_mother/>
-          <is_high_priority/>
-          <high_priority_reason/>
-          <high_risk_note/>
           <is_high_risk/>
+          <high_risk_reason/>
+          <high_risk_note/>
           <end/>
           <meta>
             <instanceID/>
@@ -330,1729 +327,1885 @@
           <item>
             <itextId>static_instance-dusun-27</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Selebung_Daye</name>
-            <desa>Selebung_Rembiga</desa>
+            <name>Lainnya</name>
+            <desa>Saba</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-28</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Selebung_Lauk</name>
+            <name>Selebung_Daye</name>
             <desa>Selebung_Rembiga</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-29</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Penandak</name>
+            <name>Selebung_Lauk</name>
             <desa>Selebung_Rembiga</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-30</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Menges</name>
+            <name>Penandak</name>
             <desa>Selebung_Rembiga</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-31</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Pucung</name>
+            <name>Menges</name>
             <desa>Selebung_Rembiga</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-32</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Nyngget_Lauk</name>
+            <name>Pucung</name>
             <desa>Selebung_Rembiga</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-33</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Nyangget_Daye</name>
+            <name>Nyngget_Lauk</name>
             <desa>Selebung_Rembiga</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-34</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Jali</name>
+            <name>Nyangget_Daye</name>
             <desa>Selebung_Rembiga</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-35</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Nyiuh</name>
+            <name>Jali</name>
             <desa>Selebung_Rembiga</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-36</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Mekar_Sari</name>
+            <name>Nyiuh</name>
             <desa>Selebung_Rembiga</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-37</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Tibu_Sisuk</name>
-            <desa>Loang_Maka</desa>
+            <name>Mekar_Sari</name>
+            <desa>Selebung_Rembiga</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-38</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Kemiri</name>
-            <desa>Loang_Maka</desa>
+            <name>Lainnya</name>
+            <desa>Selebung_Rembiga</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-39</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Bata_Anten</name>
+            <name>Tibu_Sisuk</name>
             <desa>Loang_Maka</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-40</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Pemantek</name>
+            <name>Kemiri</name>
             <desa>Loang_Maka</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-41</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Jonggek</name>
+            <name>Bata_Anten</name>
             <desa>Loang_Maka</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-42</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Bila_Penanggak</name>
+            <name>Pemantek</name>
             <desa>Loang_Maka</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-43</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Dasan_Tengak</name>
+            <name>Jonggek</name>
             <desa>Loang_Maka</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-44</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Prako</name>
+            <name>Bila_Penanggak</name>
             <desa>Loang_Maka</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-45</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Tarekat</name>
+            <name>Dasan_Tengak</name>
             <desa>Loang_Maka</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-46</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Embung_Belo</name>
+            <name>Prako</name>
             <desa>Loang_Maka</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-47</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Londar</name>
+            <name>Tarekat</name>
             <desa>Loang_Maka</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-48</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Loang_Maka</name>
+            <name>Embung_Belo</name>
             <desa>Loang_Maka</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-49</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Juna</name>
-            <desa>Setuta</desa>
+            <name>Londar</name>
+            <desa>Loang_Maka</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-50</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Londar</name>
-            <desa>Setuta</desa>
+            <name>Loang_Maka</name>
+            <desa>Loang_Maka</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-51</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Setuta_timur</name>
-            <desa>Setuta</desa>
+            <name>Lainnya</name>
+            <desa>Loang_Maka</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-52</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Setuta_Barat</name>
+            <name>Juna</name>
             <desa>Setuta</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-53</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Batu_Belek</name>
+            <name>Londar</name>
             <desa>Setuta</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-54</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Bile_tawah</name>
+            <name>Setuta_timur</name>
             <desa>Setuta</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-55</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Liwung</name>
+            <name>Setuta_Barat</name>
             <desa>Setuta</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-56</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Siwi</name>
+            <name>Batu_Belek</name>
             <desa>Setuta</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-57</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Liwung_Selatan</name>
+            <name>Bile_tawah</name>
             <desa>Setuta</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-58</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Durian</name>
-            <desa>Durian</desa>
+            <name>Liwung</name>
+            <desa>Setuta</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-59</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Bangka</name>
-            <desa>Durian</desa>
+            <name>Siwi</name>
+            <desa>Setuta</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-60</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Berangah</name>
-            <desa>Durian</desa>
+            <name>Liwung_Selatan</name>
+            <desa>Setuta</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-61</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Petoak</name>
-            <desa>Durian</desa>
+            <name>Lainnya</name>
+            <desa>Setuta</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-62</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Berombok</name>
+            <name>Durian</name>
             <desa>Durian</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-63</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Paok_Dandak</name>
+            <name>Bangka</name>
             <desa>Durian</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-64</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Petorok</name>
-            <desa>Pendem</desa>
+            <name>Berangah</name>
+            <desa>Durian</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-65</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Mt._Bila</name>
-            <desa>Pendem</desa>
+            <name>Petoak</name>
+            <desa>Durian</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-66</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Pendem</name>
-            <desa>Pendem</desa>
+            <name>Berombok</name>
+            <desa>Durian</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-67</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Gelung</name>
-            <desa>Pendem</desa>
+            <name>Paok_Dandak</name>
+            <desa>Durian</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-68</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Piling</name>
-            <desa>Pendem</desa>
+            <name>Lainnya</name>
+            <desa>Durian</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-69</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Jangka</name>
+            <name>Petorok</name>
             <desa>Pendem</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-70</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Penuntut</name>
+            <name>Mt._Bila</name>
             <desa>Pendem</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-71</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Maliko</name>
+            <name>Pendem</name>
             <desa>Pendem</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-72</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Kr._Majelo</name>
+            <name>Gelung</name>
             <desa>Pendem</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-73</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Montor</name>
+            <name>Piling</name>
             <desa>Pendem</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-74</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Kuang</name>
+            <name>Jangka</name>
             <desa>Pendem</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-75</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Jelitong</name>
+            <name>Penuntut</name>
             <desa>Pendem</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-76</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Lk._Bangkon</name>
+            <name>Maliko</name>
             <desa>Pendem</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-77</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Langko_gading</name>
-            <desa>Langko</desa>
+            <name>Kr._Majelo</name>
+            <desa>Pendem</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-78</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Langko_Lauk</name>
-            <desa>Langko</desa>
+            <name>Montor</name>
+            <desa>Pendem</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-79</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Langko_Tengak</name>
-            <desa>Langko</desa>
+            <name>Kuang</name>
+            <desa>Pendem</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-80</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Langko_Daye</name>
-            <desa>Langko</desa>
+            <name>Jelitong</name>
+            <desa>Pendem</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-81</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Langko_Gunting</name>
-            <desa>Langko</desa>
+            <name>Lk._Bangkon</name>
+            <desa>Pendem</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-82</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Rempung</name>
-            <desa>Langko</desa>
+            <name>Lainnya</name>
+            <desa>Pendem</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-83</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Pondok</name>
+            <name>Langko_gading</name>
             <desa>Langko</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-84</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Lingkok_Belek</name>
+            <name>Langko_Lauk</name>
             <desa>Langko</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-85</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Lengarak</name>
+            <name>Langko_Tengak</name>
             <desa>Langko</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-86</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Lewok</name>
+            <name>Langko_Daye</name>
             <desa>Langko</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-87</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Bakan_Daye</name>
-            <desa>Bakan</desa>
+            <name>Langko_Gunting</name>
+            <desa>Langko</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-88</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Bakan_Tengak</name>
-            <desa>Bakan</desa>
+            <name>Rempung</name>
+            <desa>Langko</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-89</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Tapon</name>
-            <desa>Bakan</desa>
+            <name>Pondok</name>
+            <desa>Langko</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-90</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Kedatok</name>
-            <desa>Bakan</desa>
+            <name>Lingkok_Belek</name>
+            <desa>Langko</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-91</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Dasan_baru</name>
-            <desa>Bakan</desa>
+            <name>Lengarak</name>
+            <desa>Langko</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-92</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Tanak_kaken</name>
-            <desa>Bakan</desa>
+            <name>Lewok</name>
+            <desa>Langko</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-93</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Sangkor</name>
-            <desa>Bakan</desa>
+            <name>Lainnya</name>
+            <desa>Langko</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-94</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Suge</name>
+            <name>Bakan_Daye</name>
             <desa>Bakan</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-95</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Lebui</name>
+            <name>Bakan_Tengak</name>
             <desa>Bakan</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-96</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Danasari</name>
-            <desa>Kerembong</desa>
+            <name>Tapon</name>
+            <desa>Bakan</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-97</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Loang_Tuna</name>
-            <desa>Kerembong</desa>
+            <name>Kedatok</name>
+            <desa>Bakan</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-98</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Montong_Nagka</name>
-            <desa>Kerembong</desa>
+            <name>Dasan_baru</name>
+            <desa>Bakan</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-99</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Kerembong_Barat</name>
-            <desa>Kerembong</desa>
+            <name>Tanak_kaken</name>
+            <desa>Bakan</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-100</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Kerembong_Timur</name>
-            <desa>Kerembong</desa>
+            <name>Sangkor</name>
+            <desa>Bakan</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-101</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Kuang_Mayung</name>
-            <desa>Kerembong</desa>
+            <name>Suge</name>
+            <desa>Bakan</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-102</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Momong</name>
-            <desa>Kerembong</desa>
+            <name>Lebui</name>
+            <desa>Bakan</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-103</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Tubu</name>
-            <desa>Kerembong</desa>
+            <name>Lainnya</name>
+            <desa>Bakan</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-104</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Presak_Randu</name>
+            <name>Danasari</name>
             <desa>Kerembong</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-105</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Juring_Barat</name>
+            <name>Loang_Tuna</name>
             <desa>Kerembong</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-106</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Juring_Timur</name>
+            <name>Montong_Nagka</name>
             <desa>Kerembong</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-107</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Gemek</name>
+            <name>Kerembong_Barat</name>
             <desa>Kerembong</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-108</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Sisik</name>
+            <name>Kerembong_Timur</name>
             <desa>Kerembong</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-109</itextId>
             <kecamatan>Janapria</kecamatan>
-            <name>Katon</name>
+            <name>Kuang_Mayung</name>
             <desa>Kerembong</desa>
           </item>
           <item>
             <itextId>static_instance-dusun-110</itextId>
             <kecamatan>Janapria</kecamatan>
+            <name>Momong</name>
+            <desa>Kerembong</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-111</itextId>
+            <kecamatan>Janapria</kecamatan>
+            <name>Tubu</name>
+            <desa>Kerembong</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-112</itextId>
+            <kecamatan>Janapria</kecamatan>
+            <name>Presak_Randu</name>
+            <desa>Kerembong</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-113</itextId>
+            <kecamatan>Janapria</kecamatan>
+            <name>Juring_Barat</name>
+            <desa>Kerembong</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-114</itextId>
+            <kecamatan>Janapria</kecamatan>
+            <name>Juring_Timur</name>
+            <desa>Kerembong</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-115</itextId>
+            <kecamatan>Janapria</kecamatan>
+            <name>Gemek</name>
+            <desa>Kerembong</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-116</itextId>
+            <kecamatan>Janapria</kecamatan>
+            <name>Sisik</name>
+            <desa>Kerembong</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-117</itextId>
+            <kecamatan>Janapria</kecamatan>
+            <name>Katon</name>
+            <desa>Kerembong</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-118</itextId>
+            <kecamatan>Janapria</kecamatan>
+            <name>Lainnya</name>
+            <desa>Kerembong</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-119</itextId>
+            <kecamatan>Janapria</kecamatan>
             <name>Jango_Utara</name>
             <desa>Jango</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-111</itextId>
+            <itextId>static_instance-dusun-120</itextId>
             <kecamatan>Janapria</kecamatan>
             <name>Rungkang_Timur</name>
             <desa>Jango</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-112</itextId>
+            <itextId>static_instance-dusun-121</itextId>
             <kecamatan>Janapria</kecamatan>
             <name>Puntik_Baru</name>
             <desa>Jango</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-113</itextId>
+            <itextId>static_instance-dusun-122</itextId>
             <kecamatan>Janapria</kecamatan>
             <name>Gerepek</name>
             <desa>Jango</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-114</itextId>
+            <itextId>static_instance-dusun-123</itextId>
             <kecamatan>Janapria</kecamatan>
             <name>Kenyalu_I</name>
             <desa>Jango</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-115</itextId>
+            <itextId>static_instance-dusun-124</itextId>
             <kecamatan>Janapria</kecamatan>
             <name>Kenyalu_II</name>
             <desa>Jango</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-116</itextId>
+            <itextId>static_instance-dusun-125</itextId>
             <kecamatan>Janapria</kecamatan>
             <name>Jango_Selatan</name>
             <desa>Jango</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-117</itextId>
+            <itextId>static_instance-dusun-126</itextId>
             <kecamatan>Janapria</kecamatan>
             <name>Rungkang_Barat</name>
             <desa>Jango</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-118</itextId>
+            <itextId>static_instance-dusun-127</itextId>
+            <kecamatan>Janapria</kecamatan>
+            <name>Lainnya</name>
+            <desa>Jango</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-128</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Ketangan</name>
             <desa>Teruwai</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-119</itextId>
+            <itextId>static_instance-dusun-129</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sepang</name>
             <desa>Teruwai</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-120</itextId>
+            <itextId>static_instance-dusun-130</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tego</name>
             <desa>Teruwai</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-121</itextId>
+            <itextId>static_instance-dusun-131</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Monyel</name>
             <desa>Teruwai</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-122</itextId>
+            <itextId>static_instance-dusun-132</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Guci</name>
             <desa>Teruwai</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-123</itextId>
+            <itextId>static_instance-dusun-133</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Teruwai</name>
             <desa>Teruwai</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-124</itextId>
+            <itextId>static_instance-dusun-134</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bunkelok</name>
             <desa>Teruwai</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-125</itextId>
+            <itextId>static_instance-dusun-135</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Kampih</name>
             <desa>Teruwai</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-126</itextId>
+            <itextId>static_instance-dusun-136</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sewar</name>
             <desa>Teruwai</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-127</itextId>
+            <itextId>static_instance-dusun-137</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Gerintuk</name>
             <desa>Teruwai</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-128</itextId>
+            <itextId>static_instance-dusun-138</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Surak</name>
             <desa>Teruwai</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-129</itextId>
+            <itextId>static_instance-dusun-139</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Terep</name>
             <desa>Teruwai</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-130</itextId>
+            <itextId>static_instance-dusun-140</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Teruwai</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-141</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Barelantan</name>
             <desa>Gapura</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-131</itextId>
+            <itextId>static_instance-dusun-142</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Dasan_Ambon</name>
             <desa>Gapura</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-132</itextId>
+            <itextId>static_instance-dusun-143</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sehati</name>
             <desa>Gapura</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-133</itextId>
+            <itextId>static_instance-dusun-144</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tolot-Tolot</name>
             <desa>Gapura</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-134</itextId>
+            <itextId>static_instance-dusun-145</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Pejeruk</name>
             <desa>Gapura</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-135</itextId>
+            <itextId>static_instance-dusun-146</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Gapura</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-147</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bale_Montong_I</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-136</itextId>
+            <itextId>static_instance-dusun-148</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bale_Montong_II</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-137</itextId>
+            <itextId>static_instance-dusun-149</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Batu_Bangka</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-138</itextId>
+            <itextId>static_instance-dusun-150</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Pengadang</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-139</itextId>
+            <itextId>static_instance-dusun-151</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Balen_Along</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-140</itextId>
+            <itextId>static_instance-dusun-152</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Dayen_Kubur</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-141</itextId>
+            <itextId>static_instance-dusun-153</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Gubuk_Dirik</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-142</itextId>
+            <itextId>static_instance-dusun-154</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Karang_Daye</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-143</itextId>
+            <itextId>static_instance-dusun-155</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Buntereng</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-144</itextId>
+            <itextId>static_instance-dusun-156</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Gonjong</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-145</itextId>
+            <itextId>static_instance-dusun-157</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Gilik</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-146</itextId>
+            <itextId>static_instance-dusun-158</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Gampung</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-147</itextId>
+            <itextId>static_instance-dusun-159</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Taman_Bumi_Gora</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-148</itextId>
+            <itextId>static_instance-dusun-160</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Karang_Jangkong</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-149</itextId>
+            <itextId>static_instance-dusun-161</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Wareng</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-150</itextId>
+            <itextId>static_instance-dusun-162</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sarang_Angin</name>
             <desa>Kawo</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-151</itextId>
+            <itextId>static_instance-dusun-163</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Kawo</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-164</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Kadikh</name>
             <desa>Segala_Anyar</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-152</itextId>
+            <itextId>static_instance-dusun-165</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Penaok</name>
             <desa>Segala_Anyar</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-153</itextId>
+            <itextId>static_instance-dusun-166</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Lamben</name>
             <desa>Segala_Anyar</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-154</itextId>
+            <itextId>static_instance-dusun-167</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Anak_Anjan</name>
             <desa>Segala_Anyar</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-155</itextId>
+            <itextId>static_instance-dusun-168</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Karang_Baru</name>
             <desa>Segala_Anyar</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-156</itextId>
+            <itextId>static_instance-dusun-169</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tenang</name>
             <desa>Segala_Anyar</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-157</itextId>
+            <itextId>static_instance-dusun-170</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bolok</name>
             <desa>Segala_Anyar</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-158</itextId>
+            <itextId>static_instance-dusun-171</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Segala_Anyar</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-172</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Lambeng</name>
             <desa>Sukadana</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-159</itextId>
+            <itextId>static_instance-dusun-173</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Pengeleng</name>
             <desa>Sukadana</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-160</itextId>
+            <itextId>static_instance-dusun-174</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mongge</name>
             <desa>Sukadana</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-161</itextId>
+            <itextId>static_instance-dusun-175</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mongge_2</name>
             <desa>Sukadana</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-162</itextId>
+            <itextId>static_instance-dusun-176</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Lemah</name>
             <desa>Sukadana</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-163</itextId>
+            <itextId>static_instance-dusun-177</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Jerulang</name>
             <desa>Sukadana</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-164</itextId>
+            <itextId>static_instance-dusun-178</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sape</name>
             <desa>Sukadana</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-165</itextId>
+            <itextId>static_instance-dusun-179</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sanggeng</name>
             <desa>Sukadana</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-166</itextId>
+            <itextId>static_instance-dusun-180</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mt._Tekot</name>
             <desa>Sukadana</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-167</itextId>
+            <itextId>static_instance-dusun-181</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bajak</name>
             <desa>Sukadana</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-168</itextId>
+            <itextId>static_instance-dusun-182</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Pogem</name>
             <desa>Sukadana</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-169</itextId>
+            <itextId>static_instance-dusun-183</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Petewong</name>
             <desa>Sukadana</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-170</itextId>
+            <itextId>static_instance-dusun-184</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Kener</name>
             <desa>Sukadana</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-171</itextId>
+            <itextId>static_instance-dusun-185</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bunpengorong</name>
             <desa>Sukadana</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-172</itextId>
+            <itextId>static_instance-dusun-186</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Sukadana</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-187</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Begung</name>
             <desa>Pengengat</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-173</itextId>
+            <itextId>static_instance-dusun-188</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Beldu</name>
             <desa>Pengengat</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-174</itextId>
+            <itextId>static_instance-dusun-189</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Pemasah</name>
             <desa>Pengengat</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-175</itextId>
+            <itextId>static_instance-dusun-190</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sebuta</name>
             <desa>Pengengat</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-176</itextId>
+            <itextId>static_instance-dusun-191</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bulurua</name>
             <desa>Pengengat</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-177</itextId>
+            <itextId>static_instance-dusun-192</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tempit</name>
             <desa>Pengengat</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-178</itextId>
+            <itextId>static_instance-dusun-193</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bagik_Rempung</name>
             <desa>Pengengat</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-179</itextId>
+            <itextId>static_instance-dusun-194</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Batu_Putik</name>
             <desa>Pengengat</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-180</itextId>
+            <itextId>static_instance-dusun-195</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Gelogor</name>
             <desa>Pengengat</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-181</itextId>
+            <itextId>static_instance-dusun-196</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Ketapak</name>
             <desa>Pengengat</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-182</itextId>
+            <itextId>static_instance-dusun-197</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Penombang</name>
             <desa>Pengengat</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-183</itextId>
+            <itextId>static_instance-dusun-198</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bunut_Baok</name>
             <desa>Pengengat</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-184</itextId>
+            <itextId>static_instance-dusun-199</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Papak</name>
             <desa>Pengengat</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-185</itextId>
+            <itextId>static_instance-dusun-200</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Rembuah</name>
             <desa>Pengengat</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-186</itextId>
+            <itextId>static_instance-dusun-201</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Pengengat</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-202</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Lenser</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-187</itextId>
+            <itextId>static_instance-dusun-203</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mong_II</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-188</itextId>
+            <itextId>static_instance-dusun-204</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mong_I</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-189</itextId>
+            <itextId>static_instance-dusun-205</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Merendeng</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-190</itextId>
+            <itextId>static_instance-dusun-206</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Baturiti</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-191</itextId>
+            <itextId>static_instance-dusun-207</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Kuta_I</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-192</itextId>
+            <itextId>static_instance-dusun-208</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Kuta_II</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-193</itextId>
+            <itextId>static_instance-dusun-209</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mengalung</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-194</itextId>
+            <itextId>static_instance-dusun-210</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Ketapang</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-195</itextId>
+            <itextId>static_instance-dusun-211</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Rangkep_I</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-196</itextId>
+            <itextId>static_instance-dusun-212</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Rangkep_II</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-197</itextId>
+            <itextId>static_instance-dusun-213</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Ujung</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-198</itextId>
+            <itextId>static_instance-dusun-214</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Ngolang</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-199</itextId>
+            <itextId>static_instance-dusun-215</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Ebunut</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-200</itextId>
+            <itextId>static_instance-dusun-216</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Aik_Lengis</name>
             <desa>Kuta</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-201</itextId>
+            <itextId>static_instance-dusun-217</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Kuta</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-218</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Nandus</name>
             <desa>Mertak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-202</itextId>
+            <itextId>static_instance-dusun-219</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sereneng_II</name>
             <desa>Mertak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-203</itextId>
+            <itextId>static_instance-dusun-220</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sereneng_I</name>
             <desa>Mertak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-204</itextId>
+            <itextId>static_instance-dusun-221</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Berami</name>
             <desa>Mertak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-205</itextId>
+            <itextId>static_instance-dusun-222</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Pako</name>
             <desa>Mertak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-206</itextId>
+            <itextId>static_instance-dusun-223</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mertak</name>
             <desa>Mertak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-207</itextId>
+            <itextId>static_instance-dusun-224</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Lengkoq_Patung</name>
             <desa>Mertak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-208</itextId>
+            <itextId>static_instance-dusun-225</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Semunduk</name>
             <desa>Mertak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-209</itextId>
+            <itextId>static_instance-dusun-226</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tambuk</name>
             <desa>Mertak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-210</itextId>
+            <itextId>static_instance-dusun-227</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bumbang</name>
             <desa>Mertak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-211</itextId>
+            <itextId>static_instance-dusun-228</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Takar-Akar</name>
             <desa>Mertak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-212</itextId>
+            <itextId>static_instance-dusun-229</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Awang_Kebun</name>
             <desa>Mertak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-213</itextId>
+            <itextId>static_instance-dusun-230</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Awang_Balak</name>
             <desa>Mertak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-214</itextId>
+            <itextId>static_instance-dusun-231</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Mertak</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-232</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bun_Prie</name>
             <desa>Tumpak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-215</itextId>
+            <itextId>static_instance-dusun-233</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Nusa_Jaya</name>
             <desa>Tumpak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-216</itextId>
+            <itextId>static_instance-dusun-234</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Gunung_Malang</name>
             <desa>Tumpak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-217</itextId>
+            <itextId>static_instance-dusun-235</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mule_Jati</name>
             <desa>Tumpak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-218</itextId>
+            <itextId>static_instance-dusun-236</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mekar_Jati</name>
             <desa>Tumpak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-219</itextId>
+            <itextId>static_instance-dusun-237</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Menanti</name>
             <desa>Tumpak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-220</itextId>
+            <itextId>static_instance-dusun-238</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Pade_Girang</name>
             <desa>Tumpak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-221</itextId>
+            <itextId>static_instance-dusun-239</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Raju_Rame</name>
             <desa>Tumpak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-222</itextId>
+            <itextId>static_instance-dusun-240</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Kembang_Gunung</name>
             <desa>Tumpak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-223</itextId>
+            <itextId>static_instance-dusun-241</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tunas_Paice</name>
             <desa>Tumpak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-224</itextId>
+            <itextId>static_instance-dusun-242</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mandar_Sejati</name>
             <desa>Tumpak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-225</itextId>
+            <itextId>static_instance-dusun-243</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Beriuk_Dateng</name>
             <desa>Tumpak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-226</itextId>
+            <itextId>static_instance-dusun-244</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Tumpak</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-245</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Silaturrahmi</name>
             <desa>Ketara</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-227</itextId>
+            <itextId>static_instance-dusun-246</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Reban</name>
             <desa>Ketara</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-228</itextId>
+            <itextId>static_instance-dusun-247</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Dayen_Rurung</name>
             <desa>Ketara</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-229</itextId>
+            <itextId>static_instance-dusun-248</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mekar_Sari</name>
             <desa>Ketara</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-230</itextId>
+            <itextId>static_instance-dusun-249</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bagik_Payung</name>
             <desa>Ketara</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-231</itextId>
+            <itextId>static_instance-dusun-250</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Ketara</name>
             <desa>Ketara</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-232</itextId>
+            <itextId>static_instance-dusun-251</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sempalan</name>
             <desa>Ketara</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-233</itextId>
+            <itextId>static_instance-dusun-252</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Abe</name>
             <desa>Ketara</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-234</itextId>
+            <itextId>static_instance-dusun-253</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Embung_Rungkas</name>
             <desa>Ketara</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-235</itextId>
+            <itextId>static_instance-dusun-254</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Selak</name>
             <desa>Ketara</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-236</itextId>
+            <itextId>static_instance-dusun-255</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sarah</name>
             <desa>Ketara</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-237</itextId>
+            <itextId>static_instance-dusun-256</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Ketara</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-257</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Rojet</name>
             <desa>Bangket_Parak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-238</itextId>
+            <itextId>static_instance-dusun-258</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Renong</name>
             <desa>Bangket_Parak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-239</itextId>
+            <itextId>static_instance-dusun-259</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sangkong</name>
             <desa>Bangket_Parak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-240</itextId>
+            <itextId>static_instance-dusun-260</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tarung-Arung</name>
             <desa>Bangket_Parak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-241</itextId>
+            <itextId>static_instance-dusun-261</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Pasung</name>
             <desa>Bangket_Parak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-242</itextId>
+            <itextId>static_instance-dusun-262</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Buntembok</name>
             <desa>Bangket_Parak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-243</itextId>
+            <itextId>static_instance-dusun-263</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Gerepek</name>
             <desa>Bangket_Parak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-244</itextId>
+            <itextId>static_instance-dusun-264</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Batu_Bolong</name>
             <desa>Bangket_Parak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-245</itextId>
+            <itextId>static_instance-dusun-265</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Celuakan</name>
             <desa>Bangket_Parak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-246</itextId>
+            <itextId>static_instance-dusun-266</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sangi</name>
             <desa>Bangket_Parak</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-247</itextId>
+            <itextId>static_instance-dusun-267</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Bangket_Parak</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-268</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bunpetung</name>
             <desa>Prabu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-248</itextId>
+            <itextId>static_instance-dusun-269</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Batu_Gulung</name>
             <desa>Prabu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-249</itextId>
+            <itextId>static_instance-dusun-270</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bun_Gumbuk</name>
             <desa>Prabu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-250</itextId>
+            <itextId>static_instance-dusun-271</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mertak_Are</name>
             <desa>Prabu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-251</itextId>
+            <itextId>static_instance-dusun-272</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bungawan_Lauk</name>
             <desa>Prabu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-252</itextId>
+            <itextId>static_instance-dusun-273</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Monte</name>
             <desa>Prabu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-253</itextId>
+            <itextId>static_instance-dusun-274</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Batu_Bare</name>
             <desa>Prabu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-254</itextId>
+            <itextId>static_instance-dusun-275</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Gunung_Tinggang</name>
             <desa>Prabu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-255</itextId>
+            <itextId>static_instance-dusun-276</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bungawan_Daye</name>
             <desa>Prabu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-256</itextId>
+            <itextId>static_instance-dusun-277</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Dusun_Uluan</name>
             <desa>Prabu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-257</itextId>
+            <itextId>static_instance-dusun-278</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Prabu</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-279</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Melati</name>
             <desa>Pengembur</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-258</itextId>
+            <itextId>static_instance-dusun-280</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Pelangi</name>
             <desa>Pengembur</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-259</itextId>
+            <itextId>static_instance-dusun-281</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Rajan</name>
             <desa>Pengembur</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-260</itextId>
+            <itextId>static_instance-dusun-282</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Bunga_Seroja</name>
             <desa>Pengembur</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-261</itextId>
+            <itextId>static_instance-dusun-283</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Penyampi</name>
             <desa>Pengembur</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-262</itextId>
+            <itextId>static_instance-dusun-284</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tawah</name>
             <desa>Pengembur</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-263</itextId>
+            <itextId>static_instance-dusun-285</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sepit</name>
             <desa>Pengembur</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-264</itextId>
+            <itextId>static_instance-dusun-286</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tamping</name>
             <desa>Pengembur</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-265</itextId>
+            <itextId>static_instance-dusun-287</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Siwang</name>
             <desa>Pengembur</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-266</itextId>
+            <itextId>static_instance-dusun-288</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mawar</name>
             <desa>Pengembur</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-267</itextId>
+            <itextId>static_instance-dusun-289</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Keramat</name>
             <desa>Pengembur</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-268</itextId>
+            <itextId>static_instance-dusun-290</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Perigi</name>
             <desa>Pengembur</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-269</itextId>
+            <itextId>static_instance-dusun-291</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Pengembur</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-292</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Teratai_I</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-270</itextId>
+            <itextId>static_instance-dusun-293</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Seroja</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-271</itextId>
+            <itextId>static_instance-dusun-294</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Teratai_II</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-272</itextId>
+            <itextId>static_instance-dusun-295</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Angsoka_II</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-273</itextId>
+            <itextId>static_instance-dusun-296</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Angsoka_I</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-274</itextId>
+            <itextId>static_instance-dusun-297</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mawar_I</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-275</itextId>
+            <itextId>static_instance-dusun-298</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Melati_I</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-276</itextId>
+            <itextId>static_instance-dusun-299</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Mawar_II</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-277</itextId>
+            <itextId>static_instance-dusun-300</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sakura</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-278</itextId>
+            <itextId>static_instance-dusun-301</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Anggrek_I</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-279</itextId>
+            <itextId>static_instance-dusun-302</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Anggrek_III</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-280</itextId>
+            <itextId>static_instance-dusun-303</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Anggrek_III</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-281</itextId>
+            <itextId>static_instance-dusun-304</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Cempaka_I</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-282</itextId>
+            <itextId>static_instance-dusun-305</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Cempaka_II</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-283</itextId>
+            <itextId>static_instance-dusun-306</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Kamboja_I</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-284</itextId>
+            <itextId>static_instance-dusun-307</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Kamboja_II</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-285</itextId>
+            <itextId>static_instance-dusun-308</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Dahlia</name>
             <desa>Rembitan</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-286</itextId>
+            <itextId>static_instance-dusun-309</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Rembitan</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-310</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tanak_Awu_I</name>
             <desa>Tanak_Awu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-287</itextId>
+            <itextId>static_instance-dusun-311</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tanak_Awu_II</name>
             <desa>Tanak_Awu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-288</itextId>
+            <itextId>static_instance-dusun-312</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tanak_Awu_Bat</name>
             <desa>Tanak_Awu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-289</itextId>
+            <itextId>static_instance-dusun-313</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tampuk</name>
             <desa>Tanak_Awu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-290</itextId>
+            <itextId>static_instance-dusun-314</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Singe</name>
             <desa>Tanak_Awu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-291</itextId>
+            <itextId>static_instance-dusun-315</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Perendek</name>
             <desa>Tanak_Awu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-292</itextId>
+            <itextId>static_instance-dusun-316</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Rebile</name>
             <desa>Tanak_Awu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-293</itextId>
+            <itextId>static_instance-dusun-317</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tatak</name>
             <desa>Tanak_Awu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-294</itextId>
+            <itextId>static_instance-dusun-318</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Selawang</name>
             <desa>Tanak_Awu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-295</itextId>
+            <itextId>static_instance-dusun-319</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Gantang_Lauk</name>
             <desa>Tanak_Awu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-296</itextId>
+            <itextId>static_instance-dusun-320</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Gantang_Daye</name>
             <desa>Tanak_Awu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-297</itextId>
+            <itextId>static_instance-dusun-321</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Jambik</name>
             <desa>Tanak_Awu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-298</itextId>
+            <itextId>static_instance-dusun-322</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Reak_I</name>
             <desa>Tanak_Awu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-299</itextId>
+            <itextId>static_instance-dusun-323</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Reak_II</name>
             <desa>Tanak_Awu</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-300</itextId>
+            <itextId>static_instance-dusun-324</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
+            <desa>Tanak_Awu</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-325</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tunas_Harapan</name>
             <desa>Sengkol</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-301</itextId>
+            <itextId>static_instance-dusun-326</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Semundal</name>
             <desa>Sengkol</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-302</itextId>
+            <itextId>static_instance-dusun-327</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sanggar_Guri</name>
             <desa>Sengkol</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-303</itextId>
+            <itextId>static_instance-dusun-328</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Piyang</name>
             <desa>Sengkol</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-304</itextId>
+            <itextId>static_instance-dusun-329</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Manis</name>
             <desa>Sengkol</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-305</itextId>
+            <itextId>static_instance-dusun-330</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sedo</name>
             <desa>Sengkol</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-306</itextId>
+            <itextId>static_instance-dusun-331</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Gerupuk</name>
             <desa>Sengkol</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-307</itextId>
+            <itextId>static_instance-dusun-332</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Puji_Rahayu</name>
             <desa>Sengkol</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-308</itextId>
+            <itextId>static_instance-dusun-333</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Tunjung_Tilah</name>
             <desa>Sengkol</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-309</itextId>
+            <itextId>static_instance-dusun-334</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Melati</name>
             <desa>Sengkol</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-310</itextId>
+            <itextId>static_instance-dusun-335</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Kekale</name>
             <desa>Sengkol</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-311</itextId>
+            <itextId>static_instance-dusun-336</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sabuk_saje_sereneng</name>
             <desa>Sengkol</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-312</itextId>
+            <itextId>static_instance-dusun-337</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Sekong</name>
             <desa>Sengkol</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-313</itextId>
+            <itextId>static_instance-dusun-338</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Gentang</name>
             <desa>Sengkol</desa>
           </item>
           <item>
-            <itextId>static_instance-dusun-314</itextId>
+            <itextId>static_instance-dusun-339</itextId>
             <kecamatan>Pujut</kecamatan>
             <name>Girang_Belong</name>
+            <desa>Sengkol</desa>
+          </item>
+          <item>
+            <itextId>static_instance-dusun-340</itextId>
+            <kecamatan>Pujut</kecamatan>
+            <name>Lainnya</name>
             <desa>Sengkol</desa>
           </item>
         </root>
@@ -2066,6 +2219,10 @@
           <item>
             <itextId>static_instance-kecamatan-1</itextId>
             <name>Janapria</name>
+          </item>
+          <item>
+            <itextId>static_instance-kecamatan-2</itextId>
+            <name>Lainnya</name>
           </item>
         </root>
       </instance>

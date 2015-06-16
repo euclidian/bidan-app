@@ -37,18 +37,18 @@
    <fieldset class="question or-branch pre-init ">
       <fieldset>
          <legend>
-            <span lang="" class="question-label active">Apakah kematian merupakan kematian ibu?</span>
+            <span lang="" class="question-label active">apakah penyebab kematian ibu?</span>
             <span class="required">*</span>
             <span lang="" class="or-hint active">Pilihlah salah satu alasan yang tersedia</span>
          </legend>
          <div class="option-wrapper">
             <label class="">
                <input type="radio" name="/Penutupan_ANC/maternal_death" data-name="/Penutupan_ANC/maternal_death" value="yes" required="required" data-relevant=" /Penutupan_ANC/close_reason  = 'death_of_woman'" data-type-xml="select1" />
-               <span lang="" class="option-label active">Ya</span>
+               <span lang="" class="option-label active">Penyebab langsung</span>
             </label>
             <label class="">
                <input type="radio" name="/Penutupan_ANC/maternal_death" data-name="/Penutupan_ANC/maternal_death" value="no" required="required" data-relevant=" /Penutupan_ANC/close_reason  = 'death_of_woman'" data-type-xml="select1" />
-               <span lang="" class="option-label active">Tidak</span>
+               <span lang="" class="option-label active">Penyebab tidak langsung</span>
             </label>
             <label class="">
                <input type="radio" name="/Penutupan_ANC/maternal_death" data-name="/Penutupan_ANC/maternal_death" value="dont_know" required="required" data-relevant=" /Penutupan_ANC/close_reason  = 'death_of_woman'" data-type-xml="select1" />

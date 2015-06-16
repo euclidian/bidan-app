@@ -13,11 +13,9 @@
       <input type="text" name="/Register_ANC/puskesmas" required="required" data-type-xml="string" />
    </label>
    <label class="question non-select ">
-		<span lang="" class="question-label active">No. Ibu</span>
-		<span class="required">*</span>
-		<span lang="" class="or-hint active">harus Diisi</span>
-		<input type="number" name="/Register_ANC/no_ibu" required="required" data-type-xml="int" />
-	</label>
+      <span lang="" class="question-label active">No. Ibu</span>
+      <input type="number" name="/Register_ANC/no_ibu" data-type-xml="int" />
+   </label>
    <label class="question non-select ">
       <span lang="" class="question-label active">Nama lengkap</span>
       <span class="required">*</span>
@@ -90,12 +88,16 @@
                <input type="radio" name="/Register_ANC/kecamatan" data-name="/Register_ANC/kecamatan" value="Janapria" data-relevant=" /Register_ANC/kabupaten ='Lombok Tengah'" data-type-xml="select1" />
                <span lang="" class="option-label active">Janapria</span>
             </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/kecamatan" data-name="/Register_ANC/kecamatan" value="Lainnya" data-relevant=" /Register_ANC/kabupaten ='Lombok Tengah'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Lainnya</span>
+            </label>
          </div>
       </fieldset>
    </fieldset>
    <label class="question or-branch pre-init non-select ">
       <span lang="" class="question-label active">kecamatan</span>
-      <input type="text" name="/Register_ANC/kecamatanl" data-relevant=" /Register_ANC/kabupaten ='Lombok Barat' or  /Register_ANC/kabupaten ='Lombok Timur'" data-type-xml="string" />
+      <input type="text" name="/Register_ANC/kecamatanl" data-relevant=" /Register_ANC/kabupaten ='Lombok Barat' or  /Register_ANC/kabupaten ='Lombok Timur' or  /Register_ANC/kecamatan ='Lainnya'" data-type-xml="string" />
    </label>
    <label class="question or-appearance-minimal  or-branch pre-init ">
       <span lang="" class="question-label active">desa</span>
@@ -139,11 +141,7 @@
    </label>
    <label class="question or-branch pre-init non-select ">
       <span lang="" class="question-label active">desa</span>
-      <input type="text" name="/Register_ANC/desal" data-relevant=" /Register_ANC/kabupaten ='Lombok Barat' or  /Register_ANC/kabupaten ='Lombok Timur'" data-type-xml="string" />
-   </label>
-   <label class="question or-branch pre-init non-select ">
-      <span lang="" class="question-label active">desa</span>
-      <input type="text" name="/Register_ANC/desaq" data-relevant=" /Register_ANC/desa ='Lainnya'" data-type-xml="string" />
+      <input type="text" name="/Register_ANC/desal" data-relevant=" /Register_ANC/kabupaten ='Lombok Barat' or  /Register_ANC/kabupaten ='Lombok Timur' or  /Register_ANC/kecamatan ='Lainnya' or  /Register_ANC/desa ='Lainnya'" data-type-xml="string" />
    </label>
    <label class="question or-appearance-minimal  or-branch pre-init ">
       <span lang="" class="question-label active">dusun</span>
@@ -180,303 +178,325 @@
          <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-24">Suangka</span>
          <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-25">Terentem</span>
          <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-26">Gundu</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-27">Selebung Daye</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-28">Selebung Lauk</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-29">Penandak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-30">Menges</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-31">Pucung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-32">Nyngget Lauk</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-33">Nyangget Daye</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-34">Jali</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-35">Nyiuh</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-36">Mekar Sari</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-37">Tibu Sisuk</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-38">Kemiri</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-39">Bata Anten</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-40">Pemantek</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-41">Jonggek</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-42">Bila Penanggak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-43">Dasan Tengak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-44">Prako</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-45">Tarekat</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-46">Embung Belo</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-47">Londar</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-48">Loang Maka</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-49">Juna</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-50">Londar</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-51">Setuta timur</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-52">Setuta Barat</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-53">Batu Belek</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-54">Bile tawah</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-55">Liwung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-56">Siwi</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-57">Liwung Selatan</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-58">Durian</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-59">Bangka</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-60">Berangah</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-61">Petoak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-62">Berombok</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-63">Paok Dandak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-64">Petorok</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-65">Mt. Bila</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-66">Pendem</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-67">Gelung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-68">Piling</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-69">Jangka</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-70">Penuntut</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-71">Maliko</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-72">Kr. Majelo</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-73">Montor</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-74">Kuang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-75">Jelitong</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-76">Lk. Bangkon</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-77">Langko gading</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-78">Langko Lauk</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-79">Langko Tengak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-80">Langko Daye</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-81">Langko Gunting</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-82">Rempung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-83">Pondok</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-84">Lingkok Belek</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-85">Lengarak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-86">Lewok</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-87">Bakan Daye</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-88">Bakan Tengak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-89">Tapon</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-90">Kedatok</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-91">Dasan baru</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-92">Tanak kaken</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-93">Sangkor</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-94">Suge</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-95">Lebui</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-96">Danasari</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-97">Loang Tuna</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-98">Montong Nagka</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-99">Kerembong Barat</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-100">Kerembong Timur</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-101">Kuang Mayung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-102">Momong</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-103">Tubu</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-104">Presak Randu</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-105">Juring Barat</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-106">Juring Timur</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-107">Gemek</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-108">Sisik</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-109">Katon</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-110">Jango Utara</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-111">Rungkang Timur</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-112">Puntik Baru</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-113">Gerepek</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-114">Kenyalu I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-115">Kenyalu II</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-116">Jango Selatan</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-117">Rungkang Barat</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-118">Ketangan</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-119">Sepang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-120">Tego</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-121">Monyel</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-122">Guci</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-123">Teruwai</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-124">Bunkelok</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-125">Kampih</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-126">Sewar</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-127">Gerintuk</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-128">Surak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-129">Terep</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-130">Barelantan</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-131">Dasan Ambon</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-132">Sehati</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-133">Tolot-Tolot</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-134">Pejeruk</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-135">Bale Montong I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-136">Bale Montong II</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-137">Batu Bangka</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-138">Pengadang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-139">Balen Along</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-140">Dayen Kubur</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-141">Gubuk Dirik</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-142">Karang Daye</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-143">Buntereng</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-144">Gonjong</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-145">Gilik</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-146">Gampung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-147">Taman Bumi Gora</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-148">Karang Jangkong</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-149">Wareng</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-150">Sarang Angin</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-151">Kadikh</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-152">Penaok</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-153">Lamben</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-154">Anak Anjan</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-155">Karang Baru</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-156">Tenang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-157">Bolok</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-158">Lambeng</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-159">Pengeleng</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-160">Mongge</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-161">Mongge 2</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-162">Lemah</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-163">Jerulang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-164">Sape</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-165">Sanggeng</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-166">Mt. Tekot</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-167">Bajak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-168">Pogem</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-169">Petewong</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-170">Kener</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-171">Bunpengorong</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-172">Begung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-173">Beldu</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-174">Pemasah</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-175">Sebuta</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-176">Bulurua</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-177">Tempit</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-178">Bagik Rempung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-179">Batu Putik</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-180">Gelogor</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-181">Ketapak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-182">Penombang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-183">Bunut Baok</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-184">Papak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-185">Rembuah</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-186">Lenser</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-187">Mong II</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-188">Mong I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-189">Merendeng</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-190">Baturiti</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-191">Kuta I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-192">Kuta II</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-193">Mengalung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-194">Ketapang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-195">Rangkep I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-196">Rangkep II</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-197">Ujung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-198">Ngolang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-199">Ebunut</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-200">Aik Lengis</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-201">Nandus</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-202">Sereneng II</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-203">Sereneng I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-204">Berami</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-205">Pako</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-206">Mertak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-207">Lengkoq Patung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-208">Semunduk</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-209">Tambuk</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-210">Bumbang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-211">Takar-Akar</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-212">Awang Kebun</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-213">Awang Balak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-214">Bun Prie</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-215">Nusa Jaya</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-216">Gunung Malang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-217">Mule Jati</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-218">Mekar Jati</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-219">Menanti</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-220">Pade Girang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-221">Raju Rame</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-222">Kembang Gunung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-223">Tunas Paice</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-224">Mandar Sejati</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-225">Beriuk Dateng</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-226">Silaturrahmi</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-227">Reban</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-228">Dayen Rurung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-229">Mekar Sari</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-230">Bagik Payung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-231">Ketara</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-232">Sempalan</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-233">Abe</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-234">Embung Rungkas</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-235">Selak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-236">Sarah</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-237">Rojet</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-238">Renong</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-239">Sangkong</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-240">Tarung-Arung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-241">Pasung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-242">Buntembok</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-243">Gerepek</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-244">Batu Bolong</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-245">Celuakan</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-246">Sangi</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-247">Bunpetung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-248">Batu Gulung</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-249">Bun Gumbuk</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-250">Mertak Are</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-251">Bungawan Lauk</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-252">Monte</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-253">Batu Bare</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-254">Gunung Tinggang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-255">Bungawan Daye</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-256">Dusun Uluan</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-257">Melati</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-258">Pelangi</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-259">Rajan</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-260">Bunga Seroja</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-261">Penyampi</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-262">Tawah</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-263">Sepit</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-264">Tamping</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-265">Siwang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-266">Mawar</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-267">Keramat</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-268">Perigi</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-269">Teratai I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-270">Seroja</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-271">Teratai II</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-272">Angsoka II</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-273">Angsoka I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-274">Mawar I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-275">Melati I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-276">Mawar II</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-277">Sakura</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-278">Anggrek I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-279">Anggrek III</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-280">Anggrek III</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-281">Cempaka I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-282">Cempaka II</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-283">Kamboja I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-284">Kamboja II</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-285">Dahlia</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-286">Tanak Awu I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-287">Tanak Awu II</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-288">Tanak Awu Bat</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-289">Tampuk</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-290">Singe</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-291">Perendek</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-292">Rebile</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-293">Tatak</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-294">Selawang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-295">Gantang Lauk</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-296">Gantang Daye</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-297">Jambik</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-298">Reak I</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-299">Reak II</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-300">Tunas Harapan</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-301">Semundal</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-302">Sanggar Guri</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-303">Piyang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-304">Manis</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-305">Sedo</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-306">Gerupuk</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-307">Puji Rahayu</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-308">Tunjung Tilah</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-309">Melati</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-310">Kekale</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-311">Sabuk saje sereneng</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-312">Sekong</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-313">Gentang</span>
-         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-314">Girang Belong</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-27">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-28">Selebung Daye</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-29">Selebung Lauk</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-30">Penandak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-31">Menges</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-32">Pucung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-33">Nyngget Lauk</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-34">Nyangget Daye</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-35">Jali</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-36">Nyiuh</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-37">Mekar Sari</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-38">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-39">Tibu Sisuk</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-40">Kemiri</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-41">Bata Anten</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-42">Pemantek</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-43">Jonggek</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-44">Bila Penanggak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-45">Dasan Tengak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-46">Prako</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-47">Tarekat</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-48">Embung Belo</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-49">Londar</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-50">Loang Maka</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-51">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-52">Juna</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-53">Londar</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-54">Setuta timur</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-55">Setuta Barat</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-56">Batu Belek</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-57">Bile tawah</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-58">Liwung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-59">Siwi</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-60">Liwung Selatan</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-61">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-62">Durian</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-63">Bangka</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-64">Berangah</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-65">Petoak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-66">Berombok</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-67">Paok Dandak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-68">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-69">Petorok</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-70">Mt. Bila</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-71">Pendem</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-72">Gelung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-73">Piling</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-74">Jangka</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-75">Penuntut</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-76">Maliko</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-77">Kr. Majelo</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-78">Montor</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-79">Kuang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-80">Jelitong</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-81">Lk. Bangkon</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-82">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-83">Langko gading</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-84">Langko Lauk</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-85">Langko Tengak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-86">Langko Daye</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-87">Langko Gunting</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-88">Rempung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-89">Pondok</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-90">Lingkok Belek</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-91">Lengarak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-92">Lewok</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-93">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-94">Bakan Daye</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-95">Bakan Tengak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-96">Tapon</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-97">Kedatok</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-98">Dasan baru</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-99">Tanak kaken</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-100">Sangkor</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-101">Suge</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-102">Lebui</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-103">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-104">Danasari</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-105">Loang Tuna</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-106">Montong Nagka</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-107">Kerembong Barat</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-108">Kerembong Timur</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-109">Kuang Mayung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-110">Momong</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-111">Tubu</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-112">Presak Randu</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-113">Juring Barat</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-114">Juring Timur</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-115">Gemek</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-116">Sisik</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-117">Katon</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-118">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-119">Jango Utara</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-120">Rungkang Timur</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-121">Puntik Baru</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-122">Gerepek</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-123">Kenyalu I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-124">Kenyalu II</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-125">Jango Selatan</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-126">Rungkang Barat</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-127">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-128">Ketangan</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-129">Sepang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-130">Tego</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-131">Monyel</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-132">Guci</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-133">Teruwai</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-134">Bunkelok</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-135">Kampih</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-136">Sewar</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-137">Gerintuk</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-138">Surak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-139">Terep</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-140">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-141">Barelantan</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-142">Dasan Ambon</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-143">Sehati</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-144">Tolot-Tolot</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-145">Pejeruk</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-146">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-147">Bale Montong I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-148">Bale Montong II</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-149">Batu Bangka</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-150">Pengadang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-151">Balen Along</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-152">Dayen Kubur</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-153">Gubuk Dirik</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-154">Karang Daye</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-155">Buntereng</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-156">Gonjong</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-157">Gilik</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-158">Gampung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-159">Taman Bumi Gora</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-160">Karang Jangkong</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-161">Wareng</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-162">Sarang Angin</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-163">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-164">Kadikh</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-165">Penaok</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-166">Lamben</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-167">Anak Anjan</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-168">Karang Baru</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-169">Tenang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-170">Bolok</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-171">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-172">Lambeng</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-173">Pengeleng</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-174">Mongge</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-175">Mongge 2</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-176">Lemah</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-177">Jerulang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-178">Sape</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-179">Sanggeng</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-180">Mt. Tekot</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-181">Bajak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-182">Pogem</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-183">Petewong</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-184">Kener</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-185">Bunpengorong</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-186">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-187">Begung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-188">Beldu</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-189">Pemasah</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-190">Sebuta</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-191">Bulurua</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-192">Tempit</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-193">Bagik Rempung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-194">Batu Putik</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-195">Gelogor</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-196">Ketapak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-197">Penombang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-198">Bunut Baok</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-199">Papak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-200">Rembuah</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-201">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-202">Lenser</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-203">Mong II</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-204">Mong I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-205">Merendeng</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-206">Baturiti</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-207">Kuta I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-208">Kuta II</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-209">Mengalung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-210">Ketapang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-211">Rangkep I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-212">Rangkep II</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-213">Ujung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-214">Ngolang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-215">Ebunut</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-216">Aik Lengis</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-217">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-218">Nandus</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-219">Sereneng II</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-220">Sereneng I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-221">Berami</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-222">Pako</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-223">Mertak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-224">Lengkoq Patung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-225">Semunduk</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-226">Tambuk</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-227">Bumbang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-228">Takar-Akar</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-229">Awang Kebun</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-230">Awang Balak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-231">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-232">Bun Prie</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-233">Nusa Jaya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-234">Gunung Malang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-235">Mule Jati</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-236">Mekar Jati</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-237">Menanti</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-238">Pade Girang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-239">Raju Rame</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-240">Kembang Gunung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-241">Tunas Paice</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-242">Mandar Sejati</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-243">Beriuk Dateng</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-244">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-245">Silaturrahmi</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-246">Reban</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-247">Dayen Rurung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-248">Mekar Sari</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-249">Bagik Payung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-250">Ketara</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-251">Sempalan</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-252">Abe</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-253">Embung Rungkas</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-254">Selak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-255">Sarah</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-256">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-257">Rojet</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-258">Renong</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-259">Sangkong</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-260">Tarung-Arung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-261">Pasung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-262">Buntembok</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-263">Gerepek</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-264">Batu Bolong</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-265">Celuakan</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-266">Sangi</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-267">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-268">Bunpetung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-269">Batu Gulung</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-270">Bun Gumbuk</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-271">Mertak Are</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-272">Bungawan Lauk</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-273">Monte</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-274">Batu Bare</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-275">Gunung Tinggang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-276">Bungawan Daye</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-277">Dusun Uluan</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-278">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-279">Melati</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-280">Pelangi</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-281">Rajan</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-282">Bunga Seroja</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-283">Penyampi</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-284">Tawah</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-285">Sepit</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-286">Tamping</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-287">Siwang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-288">Mawar</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-289">Keramat</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-290">Perigi</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-291">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-292">Teratai I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-293">Seroja</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-294">Teratai II</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-295">Angsoka II</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-296">Angsoka I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-297">Mawar I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-298">Melati I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-299">Mawar II</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-300">Sakura</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-301">Anggrek I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-302">Anggrek III</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-303">Anggrek III</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-304">Cempaka I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-305">Cempaka II</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-306">Kamboja I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-307">Kamboja II</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-308">Dahlia</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-309">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-310">Tanak Awu I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-311">Tanak Awu II</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-312">Tanak Awu Bat</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-313">Tampuk</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-314">Singe</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-315">Perendek</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-316">Rebile</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-317">Tatak</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-318">Selawang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-319">Gantang Lauk</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-320">Gantang Daye</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-321">Jambik</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-322">Reak I</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-323">Reak II</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-324">Lainnya</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-325">Tunas Harapan</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-326">Semundal</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-327">Sanggar Guri</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-328">Piyang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-329">Manis</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-330">Sedo</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-331">Gerupuk</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-332">Puji Rahayu</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-333">Tunjung Tilah</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-334">Melati</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-335">Kekale</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-336">Sabuk saje sereneng</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-337">Sekong</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-338">Gentang</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-339">Girang Belong</span>
+         <span lang="default" class="option-label active" data-itext-id="static_instance-dusun-340">Lainnya</span>
       </span>
    </label>
    <label class="question or-branch pre-init non-select ">
       <span lang="" class="question-label active">dusun</span>
-      <input type="text" name="/Register_ANC/dusunl" data-relevant=" /Register_ANC/kabupaten ='Lombok Barat' or  /Register_ANC/kabupaten ='Lombok Timur'" data-type-xml="string" />
-   </label>
-   <label class="question or-branch pre-init non-select ">
-      <span lang="" class="question-label active">dusun</span>
-      <input type="text" name="/Register_ANC/dusunq" data-relevant=" /Register_ANC/dusun ='Lainnya'" data-type-xml="string" />
+      <input type="text" name="/Register_ANC/dusunl" data-relevant=" /Register_ANC/kabupaten ='Lombok Barat' or  /Register_ANC/kabupaten ='Lombok Timur' or  /Register_ANC/kecamatan ='Lainnya' or  /Register_ANC/desa ='Lainnya' or  /Register_ANC/dusun ='Lainnya'" data-type-xml="string" />
    </label>
    <fieldset class="question ">
       <fieldset>
@@ -612,6 +632,14 @@
                <input type="radio" name="/Register_ANC/asuransi_jiwa" data-name="/Register_ANC/asuransi_jiwa" value="tidak_ada_asuransi" data-type-xml="select1" />
                <span lang="" class="option-label active">Tidak memiliki asuransi/pembiayaan</span>
             </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/asuransi_jiwa" data-name="/Register_ANC/asuransi_jiwa" value="jika_ya" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Ya (v)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/asuransi_jiwa" data-name="/Register_ANC/asuransi_jiwa" value="jika_tidak" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak (x)</span>
+            </label>
          </div>
       </fieldset>
    </fieldset>
@@ -688,7 +716,7 @@
       <span lang="" class="or-constraint-msg active">abortus tidak boleh lebih dari Gravida - Partus</span>
       <span lang="" class="question-label active">Abortus</span>
       <span lang="" class="or-hint active">Menunjukkan Jumlah Berapa Kali Ibu Keguguran</span>
-      <input type="number" name="/Register_ANC/abortus" data-constraint=".&gt;-1 and .&lt;=( /Register_ANC/gravida - /Register_ANC/abortus )" data-type-xml="int" />
+      <input type="number" name="/Register_ANC/abortus" data-constraint=".&gt;-1 and .&lt;=( /Register_ANC/gravida - /Register_ANC/partus )" data-calculate=" /Register_ANC/gravida - /Register_ANC/partus " data-type-xml="int" />
    </label>
    <label class="question non-select ">
       <span lang="" class="or-constraint-msg active">Nilai tidak boleh minus</span>
@@ -703,12 +731,6 @@
       <input type="number" name="/Register_ANC/hamil_ke" data-constraint=".&gt;-1 and .&lt;100" data-type-xml="int" />
    </label>
    <label class="question non-select ">
-      <span lang="" class="or-constraint-msg active">Jarak kehamilan tidak boleh minus</span>
-      <span lang="" class="question-label active">Jarak Kehamilan Terakhir</span>
-      <span lang="" class="or-hint active">Menunjukkan jarak dari kehamilan terakhir hingga kehamilan terkini (diisi dalam tahun)</span>
-      <input type="number" name="/Register_ANC/jarakkehamilan" data-constraint=".&gt;-1 and .&lt;100" data-type-xml="int" />
-   </label>
-   <label class="question non-select ">
       <span lang="" class="question-label active">Tanggal Periksa</span>
       <span lang="" class="or-hint active">Tanggal Pemeriksaan Kehamilan Pertama Kali Oleh Bidan</span>
       <input type="date" name="/Register_ANC/tanggal_periksa" data-type-xml="date" />
@@ -716,7 +738,7 @@
    <label class="question non-select ">
       <span lang="" class="question-label active">Tanggal HPHT</span>
       <span lang="" class="or-hint active">Tanggal Hari Pertama Haid Terakhir Ibu</span>
-      <input type="date" name="/Register_ANC/B01027" data-type-xml="date" />
+      <input type="date" name="/Register_ANC/tanggal_hpht" data-type-xml="date" />
    </label>
    <label class="note non-select ">
       <span lang="" class="question-label active">
@@ -744,41 +766,48 @@
                <input type="radio" name="/Register_ANC/persalinan_sebelumnya" data-name="/Register_ANC/persalinan_sebelumnya" value="tidak_ada_persalinan_sebelumnya" data-relevant=" /Register_ANC/gravida  != '1'" data-type-xml="select1" />
                <span lang="" class="option-label active">Tidak pernah bersalin sebelumnya</span>
             </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/persalinan_sebelumnya" data-name="/Register_ANC/persalinan_sebelumnya" value="normal" data-relevant=" /Register_ANC/gravida  != '1'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Normal (N)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/persalinan_sebelumnya" data-name="/Register_ANC/persalinan_sebelumnya" value="tidak_normal" data-relevant=" /Register_ANC/gravida  != '1'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Tidak Normal (dengan tindakan) (TN)</span>
+            </label>
          </div>
       </fieldset>
    </fieldset>
+   <label class="question non-select ">
+      <span lang="" class="or-constraint-msg active">Berat badan tidak boleh kurang dari nol</span>
+      <span lang="" class="question-label active">BB (Kg)</span>
+      <span class="required">*</span>
+      <span lang="" class="or-hint active">Berat Badan Ibu Sebelum Kehamilan (Kg)</span>
+      <input type="number" name="/Register_ANC/bb_kg_1" required="required" data-constraint=".&gt;0 and .&lt;150" data-type-xml="decimal" step="any" />
+   </label>
+   <label class="question non-select ">
+      <span lang="" class="or-constraint-msg active">Tinggi badan tidak boleh kurang dari nol</span>
+      <span lang="" class="question-label active">TB (Cm)</span>
+      <span lang="" class="or-hint active">Menunjukkan Tinggi Badan Ibu (CM)</span>
+      <input type="number" name="/Register_ANC/tb_cm" data-constraint=".&gt;0 and .&lt;200" data-type-xml="decimal" step="any" />
+   </label>
    <fieldset class="question ">
       <fieldset>
          <legend>
-            <span lang="" class="question-label active">Apakah berat badan Ibu sebelum hamil diketahui?</span>
-            <span lang="" class="or-hint active">Menunjukkan berat badan Ibu sebelum kehamilan</span>
+            <span lang="" class="question-label active">Kelainan Bentuk Panggul</span>
+            <span lang="" class="or-hint active">Menunjukkan apakah panggul Ibu mengalami kelainan atau tidak</span>
          </legend>
          <div class="option-wrapper">
             <label class="">
-               <input type="radio" name="/Register_ANC/bbsebelumhamil" data-name="/Register_ANC/bbsebelumhamil" value="Ya" data-type-xml="select1" />
+               <input type="radio" name="/Register_ANC/kelainanbentuk" data-name="/Register_ANC/kelainanbentuk" value="Ya" data-type-xml="select1" />
                <span lang="" class="option-label active">Ya</span>
             </label>
             <label class="">
-               <input type="radio" name="/Register_ANC/bbsebelumhamil" data-name="/Register_ANC/bbsebelumhamil" value="Tidak" data-type-xml="select1" />
+               <input type="radio" name="/Register_ANC/kelainanbentuk" data-name="/Register_ANC/kelainanbentuk" value="Tidak" data-type-xml="select1" />
                <span lang="" class="option-label active">Tidak</span>
             </label>
          </div>
       </fieldset>
    </fieldset>
-   <label class="question or-branch pre-init non-select ">
-      <span lang="" class="or-constraint-msg active">Berat badan tidak boleh kurang dari nol</span>
-      <span lang="" class="question-label active">BB (Kg)</span>
-      <span class="required">*</span>
-      <span lang="" class="or-hint active">Berat Badan Ibu Sebelum Kehamilan (Kg)</span>
-      <input type="number" name="/Register_ANC/bb_kg" required="required" data-constraint=".&gt;0 and .&lt;150" data-relevant=" /Register_ANC/bbsebelumhamil  = 'Ya'" data-type-xml="decimal" step="any" />
-   </label>
-   <label class="question non-select ">
-      <span lang="" class="or-constraint-msg active">Tinggi badan tidak boleh kurang dari nol</span>
-      <span lang="" class="question-label active">TB (Cm)</span>
-      <span class="required">*</span>
-      <span lang="" class="or-hint active">Menunjukkan Tinggi Badan Ibu (CM). Jika tidak tahu isi dengan perkiraan yang mendekati.</span>
-      <input type="number" name="/Register_ANC/tb_cm" required="required" data-constraint=".&gt;0 and .&lt;200" data-type-xml="decimal" step="any" />
-   </label>
    <fieldset class="question ">
       <fieldset>
          <legend>
@@ -794,30 +823,20 @@
                <input type="radio" name="/Register_ANC/buku_kia" data-name="/Register_ANC/buku_kia" value="tidak_memiliki" data-type-xml="select1" />
                <span lang="" class="option-label active">Tidak Memiliki (TM)</span>
             </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/buku_kia" data-name="/Register_ANC/buku_kia" value="memiliki" data-type-xml="select1" />
+               <span lang="" class="option-label active">Memiliki (M)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/buku_kia" data-name="/Register_ANC/buku_kia" value="tidak_memiliki" data-type-xml="select1" />
+               <span lang="" class="option-label active">Tidak Memiliki (TM)</span>
+            </label>
          </div>
       </fieldset>
    </fieldset>
    <label class="question or-branch pre-init non-select ">
       <span lang="" class="question-label active">Tanggal memperoleh Buku KIA</span>
-      <span lang="" class="or-hint active">Menunjukkan tanggal Ibu memperoleh buku KIA</span>
       <input type="date" name="/Register_ANC/tanggal_memperoleh_buku_kia" data-relevant=" /Register_ANC/buku_kia  = 'memiliki'" data-type-xml="date" />
-   </label>
-   <label class="question non-select ">
-      <span lang="" class="question-label active">Stiker P4K</span>
-      <span lang="" class="or-hint active">Menunjukkan tanggal Ibu memperoleh stiker P4K</span>
-      <input type="date" name="/Register_ANC/stikerp4k" data-type-xml="date" />
-   </label>
-   <label class="question non-select ">
-      <span lang="" class="or-constraint-msg active">Nilai LILA tidak boleh kurang dari nol atau lebih dari 100</span>
-      <span lang="" class="question-label active">Hasil Pemeriksaan / LILA</span>
-      <span lang="" class="or-hint active">Hasil Pemeriksaan Lingkar Lengan Ibu (Cm)</span>
-      <input type="number" name="/Register_ANC/hasil_pemeriksaan_lila" data-constraint=".&gt;0 and .&lt;100" data-type-xml="decimal" step="any" />
-   </label>
-   <label class="question non-select ">
-      <span lang="" class="or-constraint-msg active">Berat badan tidak boleh kurang dari nol</span>
-      <span lang="" class="question-label active">Hasil Pemeriksaan / Berat Badan</span>
-      <span lang="" class="or-hint active">Hasil Pemeriksaan Berat Badan Ibu (Kg)</span>
-      <input type="number" name="/Register_ANC/hasil_pemeriksaan_berat_badan" data-constraint=".&gt;0 and .&lt;150" data-type-xml="decimal" step="any" />
    </label>
    <fieldset class="question ">
       <fieldset>
@@ -877,6 +896,38 @@
                <input type="checkbox" name="/Register_ANC/riwayat_komplikasi_kebidanan" value="lainnya" required="required" data-relevant=" /Register_ANC/rkk  = 'Ya'" data-type-xml="select" />
                <span lang="" class="option-label active">Lainnya</span>
             </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/riwayat_komplikasi_kebidanan" value="abortus_berulang" required="required" data-relevant=" /Register_ANC/rkk  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Abortus Berulang</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/riwayat_komplikasi_kebidanan" value="ket" required="required" data-relevant=" /Register_ANC/rkk  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">KET</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/riwayat_komplikasi_kebidanan" value="mola" required="required" data-relevant=" /Register_ANC/rkk  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Mola Hidatidosa</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/riwayat_komplikasi_kebidanan" value="kpd" required="required" data-relevant=" /Register_ANC/rkk  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">KPD</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/riwayat_komplikasi_kebidanan" value="cacat_kongenital" required="required" data-relevant=" /Register_ANC/rkk  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Cacat Kongenital</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/riwayat_komplikasi_kebidanan" value="riwayat_sc" required="required" data-relevant=" /Register_ANC/rkk  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Riwayat SC</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/riwayat_komplikasi_kebidanan" value="riwayat_ve_forseps" required="required" data-relevant=" /Register_ANC/rkk  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Riwayat VE/Forseps</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/riwayat_komplikasi_kebidanan" value="lainnya" required="required" data-relevant=" /Register_ANC/rkk  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Lainnya</span>
+            </label>
          </div>
       </fieldset>
    </fieldset>
@@ -884,7 +935,7 @@
       <span lang="" class="question-label active">Komplikasi Lainnya</span>
       <span class="required">*</span>
       <span lang="" class="or-hint active">Menunjukkan keterangan komplikasi lain yang diderita Ibu hamil</span>
-      <input type="text" name="/Register_ANC/rkklainnya" required="required" data-relevant=" /Register_ANC/riwayat_komplikasi_kebidanan  = 'lainnya'" data-type-xml="string" />
+      <input type="text" name="/Register_ANC/rkklainnya" required="required" data-relevant="selected( /Register_ANC/riwayat_komplikasi_kebidanan , 'lainnya')" data-type-xml="string" />
    </label>
    <fieldset class="question ">
       <fieldset>
@@ -964,19 +1015,991 @@
                <input type="checkbox" name="/Register_ANC/penyakit_kronis" value="lainnya" required="required" data-relevant=" /Register_ANC/kronis  = 'Ya'" data-type-xml="select" />
                <span lang="" class="option-label active">Lainnya</span>
             </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/penyakit_kronis" value="hipertensi" required="required" data-relevant=" /Register_ANC/kronis  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Hipertensi</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/penyakit_kronis" value="diabetes_melitus" required="required" data-relevant=" /Register_ANC/kronis  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Diabetes Melitus</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/penyakit_kronis" value="kelainan_jantung" required="required" data-relevant=" /Register_ANC/kronis  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Kelainan Jantung</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/penyakit_kronis" value="kelainan_ginjal" required="required" data-relevant=" /Register_ANC/kronis  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Kelainan Ginjal</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/penyakit_kronis" value="kelainan_hati" required="required" data-relevant=" /Register_ANC/kronis  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Kelainan Hati</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/penyakit_kronis" value="STI/BBVs" required="required" data-relevant=" /Register_ANC/kronis  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">STI/BBVs</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/penyakit_kronis" value="malaria" required="required" data-relevant=" /Register_ANC/kronis  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Malaria</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/penyakit_kronis" value="asma" required="required" data-relevant=" /Register_ANC/kronis  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Asma</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/penyakit_kronis" value="sifilis" required="required" data-relevant=" /Register_ANC/kronis  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">IMS Sifilis</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/penyakit_kronis" value="hbsag" required="required" data-relevant=" /Register_ANC/kronis  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">IMS HbsAg</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/penyakit_kronis" value="hiv_aids" required="required" data-relevant=" /Register_ANC/kronis  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">HIV/AIDS</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/penyakit_kronis" value="tbc" required="required" data-relevant=" /Register_ANC/kronis  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Tubercolusis</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/penyakit_kronis" value="lainnya" required="required" data-relevant=" /Register_ANC/kronis  = 'Ya'" data-type-xml="select" />
+               <span lang="" class="option-label active">Lainnya</span>
+            </label>
          </div>
       </fieldset>
    </fieldset>
    <label class="question or-branch pre-init non-select ">
       <span lang="" class="question-label active">Penyakit Kronis Lainnya</span>
       <span lang="" class="or-hint active">Menunjukkan keterangan penyakit kronis</span>
-      <input type="text" name="/Register_ANC/rpklainnya" data-relevant=" /Register_ANC/penyakit_kronis  = 'lainnya'" data-type-xml="string" />
+      <input type="text" name="/Register_ANC/rpklainnya" data-relevant="selected( /Register_ANC/penyakit_kronis , 'lainnya')" data-type-xml="string" />
    </label>
    <label class="question non-select ">
       <span lang="" class="question-label active">Alergi</span>
       <span class="required">*</span>
       <span lang="" class="or-hint active">Alergi Yang dimiliki Oleh Ibu (Isi NA jika tidak ada alergi)</span>
       <input type="text" name="/Register_ANC/alergi" required="required" data-type-xml="string" />
+   </label>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">Tanggal kunjungan ANC</span>
+      <span class="required">*</span>
+      <span lang="" class="or-hint active">Tanggal kujungan ibu setiap pemeriksaan</span>
+      <input type="date" name="/Register_ANC/anc_date" required="required" data-type-xml="date" />
+   </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Jamkesmas</span>
+            <span lang="" class="or-hint active">Apa ibu Membawa Jamkesmas Atau Tidak</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/jamkesmas" data-name="/Register_ANC/jamkesmas" value="jaminan_kesehatan_masyarakat" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jaminan Kesehatan Masyarakat (Jamkesmas)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/jamkesmas" data-name="/Register_ANC/jamkesmas" value="Jamsostek" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jaminan Sosial dan Ketenagakerjaan (Jamsostek)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/jamkesmas" data-name="/Register_ANC/jamkesmas" value="jaminan_kesehatan_daerah" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jaminan Kesehatan Daerah (Jamkesda)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/jamkesmas" data-name="/Register_ANC/jamkesmas" value="asuransi_kesehatan" data-type-xml="select1" />
+               <span lang="" class="option-label active">Asuransi Kesehatan (Askes)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/jamkesmas" data-name="/Register_ANC/jamkesmas" value="jaminan_persalinan" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jaminan Persalinan (Jampersal)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/jamkesmas" data-name="/Register_ANC/jamkesmas" value="tidak_ada_asuransi" data-type-xml="select1" />
+               <span lang="" class="option-label active">Tidak memiliki asuransi/pembiayaan</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/jamkesmas" data-name="/Register_ANC/jamkesmas" value="jika_ya" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Ya (v)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/jamkesmas" data-name="/Register_ANC/jamkesmas" value="jika_tidak" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Cara Masuk Tempat Pelayanan</span>
+            <span lang="" class="or-hint active">Cara ibu untuk masuk ketempat pelayanan</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/cara_masuk_tempat_pelayanan" data-name="/Register_ANC/cara_masuk_tempat_pelayanan" value="atas_permintaan_sendiri" data-type-xml="select1" />
+               <span lang="" class="option-label active">Atas Permintaan Sendiri (APS)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/cara_masuk_tempat_pelayanan" data-name="/Register_ANC/cara_masuk_tempat_pelayanan" value="rujukan_dokter" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Dokter (Dr)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/cara_masuk_tempat_pelayanan" data-name="/Register_ANC/cara_masuk_tempat_pelayanan" value="rujukan_bidan" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Bidan (Bd)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/cara_masuk_tempat_pelayanan" data-name="/Register_ANC/cara_masuk_tempat_pelayanan" value="rujukan_dukun" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Dukun (RD)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/cara_masuk_tempat_pelayanan" data-name="/Register_ANC/cara_masuk_tempat_pelayanan" value="rujukan_polindes" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Polindes (Pol)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/cara_masuk_tempat_pelayanan" data-name="/Register_ANC/cara_masuk_tempat_pelayanan" value="rujukan_puskesmas_pembantu" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Puskesmas Pembantu ( PST)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/cara_masuk_tempat_pelayanan" data-name="/Register_ANC/cara_masuk_tempat_pelayanan" value="rujukan_puskesmas" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Puskesmas (PKS)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/cara_masuk_tempat_pelayanan" data-name="/Register_ANC/cara_masuk_tempat_pelayanan" value="rujukan_rumah_bersalin" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Rumah Bersalin (RB)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/cara_masuk_tempat_pelayanan" data-name="/Register_ANC/cara_masuk_tempat_pelayanan" value="RSIA" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rujukan Rumah Sakit Ibu dan Anak (RSIA)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="note non-select ">
+      <span lang="" class="question-label active">
+         Usia Klinis :
+         <span class="or-output" data-value=" /Register_ANC/usia_klinis " />
+      </span>
+      <input type="text" name="/Register_ANC/generated_note_name_62" data-type-xml="string" readonly="readonly" />
+   </label>
+   <label class="note non-select ">
+      <span lang="" class="question-label active">
+         Trimester Ke:
+         <span class="or-output" data-value=" /Register_ANC/trimester_ke " />
+      </span>
+      <input type="text" name="/Register_ANC/generated_note_name_64" data-type-xml="string" readonly="readonly" />
+   </label>
+   <label class="question non-select ">
+      <span lang="" class="or-constraint-msg active">Kunjungan ANC harus sesuai dengan trimester dari ibu</span>
+      <span lang="" class="question-label active">Kunjungan ANC ke-</span>
+      <input type="number" name="/Register_ANC/anc_ke" data-constraint="if(( /Register_ANC/trimester_ke ='1'), .=1, (if( /Register_ANC/trimester_ke ='2', .=2, (if( /Register_ANC/trimester_ke ='3', .&gt;=3, '')))))" data-type-xml="int" />
+   </label>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">Anamnesis Ibu</span>
+      <span lang="" class="or-hint active">Diisi dengan keluhan atau hal-hal yang dirasakan ibu selama hamil</span>
+      <input type="text" name="/Register_ANC/anamnesis_ibu" data-type-xml="string" />
+   </label>
+   <label class="question non-select ">
+      <span lang="" class="or-constraint-msg active">Nilai tidak boleh minus</span>
+      <span lang="" class="question-label active">BB (Kg)</span>
+      <span lang="" class="or-hint active">Menunjukkan Berat Badan Ibu pada saat Kunjungan ANC (Kg)</span>
+      <input type="number" name="/Register_ANC/bb_kg_2" data-constraint=".&gt;0 and .&lt;200" data-type-xml="decimal" step="any" />
+   </label>
+   <label class="question non-select ">
+      <span lang="" class="or-constraint-msg active">Nilai tidak boleh minus</span>
+      <span lang="" class="question-label active">TD (Sistolik)</span>
+      <span lang="" class="or-hint active">Menunjukkan Tekanan Darah (sistolik) Ibu pada saat Kunjungan ANC (mmHg)</span>
+      <input type="number" name="/Register_ANC/td_sistolik" data-constraint=".&gt;0 and .&lt;1000" data-type-xml="int" />
+   </label>
+   <label class="question non-select ">
+      <span lang="" class="or-constraint-msg active">Nilai tidak boleh minus</span>
+      <span lang="" class="question-label active">TD (Diastolik)</span>
+      <span lang="" class="or-hint active">Menunjukkan Tekanan Darah (Diastolik) Ibu pada saat Kunjungan ANC (mmHg)</span>
+      <input type="number" name="/Register_ANC/td_diastolik" data-constraint=".&gt;0 and .&lt;1000" data-type-xml="int" />
+   </label>
+   <label class="question non-select ">
+      <span lang="" class="or-constraint-msg active">Nilai tidak boleh minus</span>
+      <span lang="" class="question-label active">LILA (cm)</span>
+      <span lang="" class="or-hint active">Menunjukkan Lingkar Lengan Ibu pada saat Kunjungan ANC (cm)</span>
+      <input type="number" name="/Register_ANC/lila_cm" data-constraint=".&gt;0 and .&lt;200" data-type-xml="decimal" step="any" />
+   </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Status Gizi ibu</span>
+            <span lang="" class="or-hint active">Menunjukkan Status Gizi Ibu pada saat Kunjungan ANC (Kg)</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/status_gizi_ibu" data-name="/Register_ANC/status_gizi_ibu" value="kekurangan_energi_kronis" data-type-xml="select1" />
+               <span lang="" class="option-label active">Kekurangan Energi Kronis (KEK)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/status_gizi_ibu" data-name="/Register_ANC/status_gizi_ibu" value="normal" data-type-xml="select1" />
+               <span lang="" class="option-label active">Normal (N)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question or-branch pre-init non-select ">
+      <span lang="" class="or-constraint-msg active">Nilai tidak boleh minus</span>
+      <span lang="" class="question-label active">TFU</span>
+      <span lang="" class="or-hint active">Menunjukkan Tinggi Fundus Uteri Ibu pada saat Kunjungan ANC (cm)</span>
+      <input type="number" name="/Register_ANC/tfu" data-constraint=".&gt;0 and .&lt;50" data-relevant=" /Register_ANC/usia_klinis &gt;=20" data-type-xml="int" />
+   </label>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Refleks Patela Ibu</span>
+            <span lang="" class="or-hint active">Menunjukkan hasil Pemeriksaan Refleks Patella Ibu pada saat Kunjungan ANC</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/refleks_patela_ibu" data-name="/Register_ANC/refleks_patela_ibu" value="ada" data-relevant=" /Register_ANC/usia_klinis &gt;=20" data-type-xml="select1" />
+               <span lang="" class="option-label active">Ada (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/refleks_patela_ibu" data-name="/Register_ANC/refleks_patela_ibu" value="tidak" data-relevant=" /Register_ANC/usia_klinis &gt;=20" data-type-xml="select1" />
+               <span lang="" class="option-label active">Tidak (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question or-branch pre-init non-select ">
+      <span lang="" class="or-constraint-msg active">Nilai tidak boleh minus</span>
+      <span lang="" class="question-label active">DJJ</span>
+      <span lang="" class="or-hint active">Menunjukkan Hasil perhitungan Denyut Jantung Janin per menit pada saat kunjungan ANC</span>
+      <input type="number" name="/Register_ANC/djj" data-constraint=".&gt;0 and .&lt;1000" data-relevant=" /Register_ANC/usia_klinis &gt;=20" data-type-xml="int" />
+   </label>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Kepala Janin Terhadap PAP</span>
+            <span class="required">*</span>
+            <span lang="" class="or-hint active">Menunjukkan apakah kepala janin sudah masuk Pintu atas Panggul atau tidak</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/kepala_terhadap_janin_pap" data-name="/Register_ANC/kepala_terhadap_janin_pap" value="masuk" required="required" data-relevant=" /Register_ANC/usia_klinis &gt;=20" data-type-xml="select1" />
+               <span lang="" class="option-label active">Masuk (M)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/kepala_terhadap_janin_pap" data-name="/Register_ANC/kepala_terhadap_janin_pap" value="belum_masuk" required="required" data-relevant=" /Register_ANC/usia_klinis &gt;=20" data-type-xml="select1" />
+               <span lang="" class="option-label active">Belum Masuk (BM)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="note non-select ">
+      <span lang="" class="question-label active">
+         Taksiran Berat Janin:
+         <span class="or-output" data-value=" /Register_ANC/taksiran_berat_janin " />
+      </span>
+      <span lang="" class="or-hint active">Menunjukkan berapa hasil Perhitungan Taksiran Berat badan janin (gram)</span>
+      <input type="text" name="/Register_ANC/aaaaaa" data-type-xml="string" readonly="readonly" />
+   </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Persentasi Janin</span>
+            <span lang="" class="or-hint active">Bagian terendah dari janin dalam perut ibu</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/persentasi_janin" data-name="/Register_ANC/persentasi_janin" value="kepala" data-type-xml="select1" />
+               <span lang="" class="option-label active">Kepala (KP)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/persentasi_janin" data-name="/Register_ANC/persentasi_janin" value="bokong___sungsang" data-type-xml="select1" />
+               <span lang="" class="option-label active">Bokong / Sungsang (BS)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/persentasi_janin" data-name="/Register_ANC/persentasi_janin" value="letak_lintang___obligue" data-type-xml="select1" />
+               <span lang="" class="option-label active">Letak Lintang / Obligue (LLO)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Jumlah Janin</span>
+            <span lang="" class="or-hint active">Berapa jumlah janin yang ada dalam uterus ibu</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/jumlah_janin" data-name="/Register_ANC/jumlah_janin" value="tunggal" data-type-xml="select1" />
+               <span lang="" class="option-label active">Tunggal (T)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/jumlah_janin" data-name="/Register_ANC/jumlah_janin" value="ganda" data-type-xml="select1" />
+               <span lang="" class="option-label active">Ganda (G)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Status Imunisasi TT</span>
+            <span lang="" class="or-hint active">Menunjukkan Status Imunisasi TT yang diberikan kepada ibu</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/status_imunisasi_tt" data-name="/Register_ANC/status_imunisasi_tt" value="tt_ke_0" data-type-xml="select1" />
+               <span lang="" class="option-label active">TT Ke 0 (T0)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/status_imunisasi_tt" data-name="/Register_ANC/status_imunisasi_tt" value="tt_ke_1" data-type-xml="select1" />
+               <span lang="" class="option-label active">TT ke 1 (T1)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/status_imunisasi_tt" data-name="/Register_ANC/status_imunisasi_tt" value="tt_ke_2" data-type-xml="select1" />
+               <span lang="" class="option-label active">TT Ke 2 (T2)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/status_imunisasi_tt" data-name="/Register_ANC/status_imunisasi_tt" value="tt_ke_3__tt_ke_4" data-type-xml="select1" />
+               <span lang="" class="option-label active">TT ke 3 (T3) TT ke 4 (TT4)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/status_imunisasi_tt" data-name="/Register_ANC/status_imunisasi_tt" value="tt_ke_ke_5" data-type-xml="select1" />
+               <span lang="" class="option-label active">TT ke Ke 5 (TT5)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/status_imunisasi_tt" data-name="/Register_ANC/status_imunisasi_tt" value="lengkap" data-type-xml="select1" />
+               <span lang="" class="option-label active">Ibu telah menerima imunisasi TT yang lengkap</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Pelayanan / Injeksi TT</span>
+            <span lang="" class="or-hint active">Menunjukkan apakah ibu mendapatkan suntik TT pada saat kunjungan ANC atau tidak</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/pelayanan_injeksi_tt" data-name="/Register_ANC/pelayanan_injeksi_tt" value="jika_dilakukan" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (v)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/pelayanan_injeksi_tt" data-name="/Register_ANC/pelayanan_injeksi_tt" value="jika_tidak_dilakukan" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Pelayanan / Catat di Buku Kia</span>
+            <span lang="" class="or-hint active">Semua Hasil Pemeriksaan Di cata dibuku KIA</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/pelayanan_catat_buku_kia" data-name="/Register_ANC/pelayanan_catat_buku_kia" value="jika_dilakukan" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (v)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/pelayanan_catat_buku_kia" data-name="/Register_ANC/pelayanan_catat_buku_kia" value="jika_tidak_dilakukan" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Pelayanan Fe</span>
+            <span lang="" class="or-hint active">Menunjukkan pelayanan Fe dilakukan atau tidak</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/pelayananfe" data-name="/Register_ANC/pelayananfe" value="Ya" data-type-xml="select1" />
+               <span lang="" class="option-label active">Ya</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/pelayananfe" data-name="/Register_ANC/pelayananfe" value="Tidak" data-type-xml="select1" />
+               <span lang="" class="option-label active">Tidak</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question or-branch pre-init non-select ">
+      <span lang="" class="or-constraint-msg active">Nilai tidak boleh minus</span>
+      <span lang="" class="question-label active">Pelayanan / Fe</span>
+      <span lang="" class="or-hint active">Menunjukkan Jumlah Fe yang Diberikan Saat kunjungan ANC (tab/botol)</span>
+      <input type="number" name="/Register_ANC/pelayanan_fe" data-constraint=".&gt;0 and .&lt;100" data-relevant=" /Register_ANC/pelayananfe ='Ya'" data-type-xml="int" />
+   </label>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Apakah anda melakukan pemeriksaan Laboratorium?</span>
+            <span lang="" class="or-hint active">Menunjukan apakah ibu melakukan pemeriksaan laboratorium terkait Hb, Protein Uria, Gula Darah, Thalasemia dan Sifilis</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/Labcheck" data-name="/Register_ANC/Labcheck" value="Ya" data-type-xml="select1" />
+               <span lang="" class="option-label active">Ya</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/Labcheck" data-name="/Register_ANC/Labcheck" value="Tidak" data-type-xml="select1" />
+               <span lang="" class="option-label active">Tidak</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Laboratorium / Periksa Hb / Dilakukan</span>
+            <span class="required">*</span>
+            <span lang="" class="or-hint active">Menunjukkan apakah ibu melakukan sudah pemeriksaan Hb di Laboratorium atau tidak</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/laboratorium_periksa_hb_dilakukan" data-name="/Register_ANC/laboratorium_periksa_hb_dilakukan" value="Ya" required="required" data-relevant=" /Register_ANC/Labcheck ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (v)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/laboratorium_periksa_hb_dilakukan" data-name="/Register_ANC/laboratorium_periksa_hb_dilakukan" value="Tidak" required="required" data-relevant=" /Register_ANC/Labcheck ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question or-branch pre-init non-select ">
+      <span lang="" class="or-constraint-msg active">Nilai tidak boleh minus</span>
+      <span lang="" class="question-label active">Laboratorium / Periksa Hb / Hasil</span>
+      <span lang="" class="or-hint active">Hasil pemeriksaan Hb ibu dari Laboratorium</span>
+      <input type="number" name="/Register_ANC/laboratorium_periksa_hb_hasil" data-constraint=".&gt;0 and .&lt;1000" data-relevant=" /Register_ANC/laboratorium_periksa_hb_dilakukan  = 'Ya'" data-type-xml="int" />
+   </label>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Laboratorium / Periksa Hb / Anemia</span>
+            <span lang="" class="or-hint active">Menunjukkan apakah ibu mengalami anemia atau tidak</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/laboratorium_periksa_hb_anemia" data-name="/Register_ANC/laboratorium_periksa_hb_anemia" value="positif" data-relevant=" /Register_ANC/laboratorium_periksa_hb_dilakukan  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/laboratorium_periksa_hb_anemia" data-name="/Register_ANC/laboratorium_periksa_hb_anemia" value="negatif" data-relevant=" /Register_ANC/laboratorium_periksa_hb_dilakukan  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Laboratorium / Protein Uria</span>
+            <span lang="" class="or-hint active">Menunjukkan Kadar Protein Pada Urine Ibu</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/laboratorium_protein_uria" data-name="/Register_ANC/laboratorium_protein_uria" value="positif" data-relevant=" /Register_ANC/Labcheck ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/laboratorium_protein_uria" data-name="/Register_ANC/laboratorium_protein_uria" value="negatif" data-relevant=" /Register_ANC/Labcheck ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Laboratorium / Gula Darah</span>
+            <span lang="" class="or-hint active">Menunjukkan Tingkat Gula Darah Ibu apakah &gt;140 mg/dl atau &lt; 140 mg/dl</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/laboratorium_gula_darah" data-name="/Register_ANC/laboratorium_gula_darah" value="&gt;_140_mg_dl" data-relevant=" /Register_ANC/Labcheck ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">&gt; 140 mg/dl (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/laboratorium_gula_darah" data-name="/Register_ANC/laboratorium_gula_darah" value="&lt;_140_mg_dl" data-relevant=" /Register_ANC/Labcheck ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">&lt; 140 mg/dl (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Laboratorium / Thalasemia</span>
+            <span lang="" class="or-hint active">Menunjukkan Apakah Ibu Mengidap Penyakit Thalasemia atau tidak</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/laboratorium_thalasemia" data-name="/Register_ANC/laboratorium_thalasemia" value="positif" data-relevant=" /Register_ANC/Labcheck ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/laboratorium_thalasemia" data-name="/Register_ANC/laboratorium_thalasemia" value="negatif" data-relevant=" /Register_ANC/Labcheck ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Laboratorium / Sifilis</span>
+            <span lang="" class="or-hint active">Menunjukkan Apakah ibu Mengidap Sifilis atau tidak</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/laboratorium_sifilis" data-name="/Register_ANC/laboratorium_sifilis" value="positif" data-relevant=" /Register_ANC/Labcheck ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/laboratorium_sifilis" data-name="/Register_ANC/laboratorium_sifilis" value="negatif" data-relevant=" /Register_ANC/Labcheck ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Laboratorium / HbsAg</span>
+            <span lang="" class="or-hint active">Menunjukkan Apakah ibu mengidap Hepatitis B surface Antigen</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/laboratorium_hbsag" data-name="/Register_ANC/laboratorium_hbsag" value="positif" data-relevant=" /Register_ANC/Labcheck ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/laboratorium_hbsag" data-name="/Register_ANC/laboratorium_hbsag" value="negatif" data-relevant=" /Register_ANC/Labcheck ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Apakah anda melakukan Integrasi Program terhadap Ibu Hamil?</span>
+            <span lang="" class="or-hint active">Menunjukan detail Integrasi Program yang diberikan kepada Ibu Hamil</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/program_integration" data-name="/Register_ANC/program_integration" value="Ya" data-type-xml="select1" />
+               <span lang="" class="option-label active">Ya</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/program_integration" data-name="/Register_ANC/program_integration" value="Tidak" data-type-xml="select1" />
+               <span lang="" class="option-label active">Tidak</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / PMTCT / VCT</span>
+            <span lang="" class="or-hint active">Menunjukkan Apakah Ibu Melakukan Voluntary Counseling Test atau tidak</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_pmtct_vct" data-name="/Register_ANC/integrasi_program_pmtct_vct" value="jika_dilakukan" data-relevant=" /Register_ANC/program_integration ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (v)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_pmtct_vct" data-name="/Register_ANC/integrasi_program_pmtct_vct" value="jika_tidak_dilakukan" data-relevant=" /Register_ANC/program_integration ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / PMTCT / Periksa Dahak</span>
+            <span lang="" class="or-hint active">Menunjukkan Jika Ibu Melakukan Pemeriksaan Darah Untuk Uji PMTCT atau tidak</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_pmtct_periksa_dahak" data-name="/Register_ANC/integrasi_program_pmtct_periksa_dahak" value="jika_dilakukan" data-relevant=" /Register_ANC/program_integration ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (v)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_pmtct_periksa_dahak" data-name="/Register_ANC/integrasi_program_pmtct_periksa_dahak" value="jika_tidak_dilakukan" data-relevant=" /Register_ANC/program_integration ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / PMTCT / Serologi</span>
+            <span lang="" class="or-hint active">Menunjukkan Hasil Pemeriksaan Serologi Pada Ibu Hamil</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_pmtct_serologi" data-name="/Register_ANC/integrasi_program_pmtct_serologi" value="positif" data-relevant=" /Register_ANC/program_integration ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_pmtct_serologi" data-name="/Register_ANC/integrasi_program_pmtct_serologi" value="negatif" data-relevant=" /Register_ANC/program_integration ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question or-branch pre-init non-select ">
+      <span lang="" class="question-label active">Integrasi Program / PMTCT / ARV Profilaksis</span>
+      <span lang="" class="or-hint active">Menunjukkan Jenis Obat pada Ibu yang mengalami PMTCT</span>
+      <input type="text" name="/Register_ANC/integrasi_program_pmtct_arv" data-relevant=" /Register_ANC/program_integration ='Ya'" data-type-xml="string" />
+   </label>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / Malaria / Periksa Dahak</span>
+            <span class="required">*</span>
+            <span lang="" class="or-hint active">Menunjukkan apakah ibu melakukan Pemeriksaan Darah, yang Bertujuan Memastikan Apakah ada Parasit Penyebab Malaria Dalam Darah Ibu</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_malaria_periksa_dahak" data-name="/Register_ANC/integrasi_program_malaria_periksa_dahak" value="Ya" required="required" data-relevant=" /Register_ANC/program_integration ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (v)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_malaria_periksa_dahak" data-name="/Register_ANC/integrasi_program_malaria_periksa_dahak" value="Tidak" required="required" data-relevant=" /Register_ANC/program_integration ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / Malaria / Malaria</span>
+            <span lang="" class="or-hint active">Menunjukkan Apakah ibu Mengidap Malaria atau tidak</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_malaria_malaria" data-name="/Register_ANC/integrasi_program_malaria_malaria" value="positif" data-relevant=" /Register_ANC/integrasi_program_malaria_periksa_dahak  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_malaria_malaria" data-name="/Register_ANC/integrasi_program_malaria_malaria" value="negatif" data-relevant=" /Register_ANC/integrasi_program_malaria_periksa_dahak  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / Malaria / Obat</span>
+            <span lang="" class="or-hint active">Menunjukkan Jenis Obat Malaria yang Diberikan Ke Ibu</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_malaria_obat" data-name="/Register_ANC/integrasi_program_malaria_obat" value="ZDV" data-relevant=" /Register_ANC/integrasi_program_malaria_periksa_dahak  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">(ZDV)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_malaria_obat" data-name="/Register_ANC/integrasi_program_malaria_obat" value="NVP" data-relevant=" /Register_ANC/integrasi_program_malaria_periksa_dahak  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">(NVP)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_malaria_obat" data-name="/Register_ANC/integrasi_program_malaria_obat" value="TC" data-relevant=" /Register_ANC/integrasi_program_malaria_periksa_dahak  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">(TC)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / Malaria / Kelambu Berinsektisida</span>
+            <span lang="" class="or-hint active">Menunjukkan Apakah Ibu Memasang Kelambu Berinsektisida atau tidak</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_malaria_kelambu" data-name="/Register_ANC/integrasi_program_malaria_kelambu" value="jika_dilakukan" data-relevant=" /Register_ANC/integrasi_program_malaria_periksa_dahak  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (v)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_malaria_kelambu" data-name="/Register_ANC/integrasi_program_malaria_kelambu" value="jika_tidak_dilakukan" data-relevant=" /Register_ANC/integrasi_program_malaria_periksa_dahak  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / TB / Dahak</span>
+            <span lang="" class="or-hint active">Menunjukkan Apakah Ibu melakukan Pemeriksaan Dahak Untuk tes TB</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_tb_dahak" data-name="/Register_ANC/integrasi_program_tb_dahak" value="Ya" data-relevant=" /Register_ANC/program_integration ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">JIka dilakukan (v)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_tb_dahak" data-name="/Register_ANC/integrasi_program_tb_dahak" value="Tidak" data-relevant=" /Register_ANC/program_integration ='Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Jika Tidak dilakukan (x)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / TB / TBC</span>
+            <span lang="" class="or-hint active">Menunjukkan Apakah Ibu Mengidap TBC atau tidak</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_tb_tbc" data-name="/Register_ANC/integrasi_program_tb_tbc" value="positif" data-relevant=" /Register_ANC/integrasi_program_tb_dahak  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Positif (+)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_tb_tbc" data-name="/Register_ANC/integrasi_program_tb_tbc" value="negatif" data-relevant=" /Register_ANC/integrasi_program_tb_dahak  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Negatif (-)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Integrasi Program / TB / Obat</span>
+            <span lang="" class="or-hint active">Nama Obat TBC yang diberikan Kepada Ibu</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_tb_obat" data-name="/Register_ANC/integrasi_program_tb_obat" value="rifampisin" data-relevant=" /Register_ANC/integrasi_program_tb_dahak  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rifampisin (R)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_tb_obat" data-name="/Register_ANC/integrasi_program_tb_obat" value="inh" data-relevant=" /Register_ANC/integrasi_program_tb_dahak  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">INH (H)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_tb_obat" data-name="/Register_ANC/integrasi_program_tb_obat" value="pyrazinamid" data-relevant=" /Register_ANC/integrasi_program_tb_dahak  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Pyrazinamid (Z)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/integrasi_program_tb_obat" data-name="/Register_ANC/integrasi_program_tb_obat" value="etahmbutol" data-relevant=" /Register_ANC/integrasi_program_tb_dahak  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Etahmbutol</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Resiko Terdeteksi Pertama Kali Oleh</span>
+            <span lang="" class="or-hint active">Pendeteksi pertama komplikasi pada kehamilan Ibu</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/resiko_terdeksi_pertama_kali" data-name="/Register_ANC/resiko_terdeksi_pertama_kali" value="pasien" data-type-xml="select1" />
+               <span lang="" class="option-label active">Pasien (P)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/resiko_terdeksi_pertama_kali" data-name="/Register_ANC/resiko_terdeksi_pertama_kali" value="keluarga" data-type-xml="select1" />
+               <span lang="" class="option-label active">Keluarga (K)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/resiko_terdeksi_pertama_kali" data-name="/Register_ANC/resiko_terdeksi_pertama_kali" value="masyarakat" data-type-xml="select1" />
+               <span lang="" class="option-label active">Masyarakat (M)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/resiko_terdeksi_pertama_kali" data-name="/Register_ANC/resiko_terdeksi_pertama_kali" value="dukun" data-type-xml="select1" />
+               <span lang="" class="option-label active">Dukun (D)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/resiko_terdeksi_pertama_kali" data-name="/Register_ANC/resiko_terdeksi_pertama_kali" value="kader" data-type-xml="select1" />
+               <span lang="" class="option-label active">Kader (K)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/resiko_terdeksi_pertama_kali" data-name="/Register_ANC/resiko_terdeksi_pertama_kali" value="bidan" data-type-xml="select1" />
+               <span lang="" class="option-label active">Bidan (B)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/resiko_terdeksi_pertama_kali" data-name="/Register_ANC/resiko_terdeksi_pertama_kali" value="dokter" data-type-xml="select1" />
+               <span lang="" class="option-label active">Dokter (D)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/resiko_terdeksi_pertama_kali" data-name="/Register_ANC/resiko_terdeksi_pertama_kali" value="DSOG" data-type-xml="select1" />
+               <span lang="" class="option-label active">Dokter Spesialis Obsestri dan Gemotologi (DSOG)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/resiko_terdeksi_pertama_kali" data-name="/Register_ANC/resiko_terdeksi_pertama_kali" value="tidak_ada" data-type-xml="select1" />
+               <span lang="" class="option-label active">Tidak ada resiko terdeteksi</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Komplikasi dalam Kehamilan</span>
+            <span lang="" class="or-hint active">Menunjukkan Komplikasi Kehamilan pada Ibu</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/komplikasi_dalam_kehamilan" value="hipertensi_dalam_kehamilan" data-type-xml="select" />
+               <span lang="" class="option-label active">Hipertensi dalam Kehamilan (HDK)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/komplikasi_dalam_kehamilan" value="abortus" data-type-xml="select" />
+               <span lang="" class="option-label active">Abortus (AS)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/komplikasi_dalam_kehamilan" value="mola" data-type-xml="select" />
+               <span lang="" class="option-label active">Mola (ML)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/komplikasi_dalam_kehamilan" value="kehamilan_ektopit_terganggu" data-type-xml="select" />
+               <span lang="" class="option-label active">Kehamilan Ektopit Terganggu (KET)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/komplikasi_dalam_kehamilan" value="hemoragi_post_partum" data-type-xml="select" />
+               <span lang="" class="option-label active">Hemoragi Post Partum (HPP)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/komplikasi_dalam_kehamilan" value="ante_partum_beleding" data-type-xml="select" />
+               <span lang="" class="option-label active">Ante Partum Beleding (APB)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/komplikasi_dalam_kehamilan" value="injeksi_jalan_lahir" data-type-xml="select" />
+               <span lang="" class="option-label active">Injeksi Jalan Lahir (IJL)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/komplikasi_dalam_kehamilan" value="partum_kasep" data-type-xml="select" />
+               <span lang="" class="option-label active">Partum Kasep (PK)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/komplikasi_dalam_kehamilan" value="partus_lama" data-type-xml="select" />
+               <span lang="" class="option-label active">Partus Lama (PL)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/komplikasi_dalam_kehamilan" value="demam_berdarah" data-type-xml="select" />
+               <span lang="" class="option-label active">Demam Berdarah (DB)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/komplikasi_dalam_kehamilan" value="tifus_abdominalis" data-type-xml="select" />
+               <span lang="" class="option-label active">Tifus Abdominalis (TA)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/komplikasi_dalam_kehamilan" value="sepsis" data-type-xml="select" />
+               <span lang="" class="option-label active">Sepsis (S)</span>
+            </label>
+            <label class="">
+               <input type="checkbox" name="/Register_ANC/komplikasi_dalam_kehamilan" value="tidak_ada_komplikasi" data-type-xml="select" />
+               <span lang="" class="option-label active">Tidak ada komplikasi kehamilan</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Apakah Anda merujuk Ibu Hamil ke fasilitas kesehatan lainnya?</span>
+            <span lang="" class="or-hint active">Menunjukkan bahwa bidan merujuk ibu hamil ke ke tempat fasilitas kesehatan lainnya</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/rujukan" data-name="/Register_ANC/rujukan" value="Ya" data-type-xml="select1" />
+               <span lang="" class="option-label active">Ya</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/rujukan" data-name="/Register_ANC/rujukan" value="Tidak" data-type-xml="select1" />
+               <span lang="" class="option-label active">Tidak</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Dirujuk Ke</span>
+            <span lang="" class="or-hint active">Lokasi Tujuan Rujukan Ibu Jika Mengalami Komplikasi Kehamilan</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/dirujuk_ke" data-name="/Register_ANC/dirujuk_ke" value="pusat_kesehatan_masyarakat" data-relevant=" /Register_ANC/rujukan  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Pusat Kesehatan Masyarakat (Puskesmas )</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/dirujuk_ke" data-name="/Register_ANC/dirujuk_ke" value="rumah_bersalin" data-relevant=" /Register_ANC/rujukan  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rumah Bersalin (RB)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/dirujuk_ke" data-name="/Register_ANC/dirujuk_ke" value="rumah_sakit_ibu_dan_anak" data-relevant=" /Register_ANC/rujukan  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rumah Sakit Ibu dan Anak (RSIA)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/dirujuk_ke" data-name="/Register_ANC/dirujuk_ke" value="rumah_sakit" data-relevant=" /Register_ANC/rujukan  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Rumah Sakit (RS)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/dirujuk_ke" data-name="/Register_ANC/dirujuk_ke" value="lain_lain" data-relevant=" /Register_ANC/rujukan  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Lain-lain (LN)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question or-branch pre-init non-select ">
+      <span lang="" class="question-label active">lain-lain</span>
+      <span lang="" class="or-hint active">Lokasi Tujuan Rujukan selain yang disebutkan Jika ibu Mengalami Komplikasi Kehamilan</span>
+      <input type="text" name="/Register_ANC/dirujuk_keL" data-relevant=" /Register_ANC/dirujuk_ke  = 'lain_lain'" data-type-xml="string" />
+   </label>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Keadaan Ibu saat Tiba</span>
+            <span lang="" class="or-hint active">Keadaan saat ibu tiba Tempat rujukan</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/keadaan_ibu_saat_tiba" data-name="/Register_ANC/keadaan_ibu_saat_tiba" value="hidup" data-relevant=" /Register_ANC/rujukan  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Hidup (H)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/keadaan_ibu_saat_tiba" data-name="/Register_ANC/keadaan_ibu_saat_tiba" value="mati" data-relevant=" /Register_ANC/rujukan  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Mati (M)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <fieldset class="question or-branch pre-init ">
+      <fieldset>
+         <legend>
+            <span lang="" class="question-label active">Keadaan Ibu saat Pulang</span>
+            <span lang="" class="or-hint active">Keadaan saat ibu Pulang dari Tempat Rujukan</span>
+         </legend>
+         <div class="option-wrapper">
+            <label class="">
+               <input type="radio" name="/Register_ANC/keadaan_ibu_saat_pulang" data-name="/Register_ANC/keadaan_ibu_saat_pulang" value="hidup" data-relevant=" /Register_ANC/rujukan  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Hidup (H)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/Register_ANC/keadaan_ibu_saat_pulang" data-name="/Register_ANC/keadaan_ibu_saat_pulang" value="mati" data-relevant=" /Register_ANC/rujukan  = 'Ya'" data-type-xml="select1" />
+               <span lang="" class="option-label active">Mati (M)</span>
+            </label>
+         </div>
+      </fieldset>
+   </fieldset>
+   <label class="question or-branch pre-init non-select ">
+      <span lang="" class="question-label active">Keterangan</span>
+      <span lang="" class="or-hint active">diisi dengan keterangan</span>
+      <input type="text" name="/Register_ANC/keterangan" data-relevant=" /Register_ANC/rujukan  = 'Ya'" data-type-xml="string" />
    </label>
    <fieldset class="question or-branch pre-init ">
       <fieldset>
@@ -994,7 +2017,7 @@
          </legend>
          <div class="option-wrapper">
             <label>
-               <input value="OK" type="radio" name="/Register_ANC/high_risk_note" required="required" data-relevant=" /Register_ANC/is_high_risk_pregnancy  = 'yes' or  /Register_ANC/is_high_risk  = 'yes' or  /Register_ANC/is_high_risk_labour  = 'yes' or  /Register_ANC/is_other_risk  = 'yes' or /Register_ANC/is_high_risk_anc = 'yes'" data-type-xml="string" />
+               <input value="OK" type="radio" name="/Register_ANC/high_risk_note" required="required" data-relevant=" /Register_ANC/is_high_risk_pregnancy  = 'yes' or  /Register_ANC/is_high_risk  = 'yes' or  /Register_ANC/is_high_risk_labour  = 'yes' or  /Register_ANC/is_other_risk  = 'yes' or  /Register_ANC/is_high_risk  = 'yes' or  /Register_ANC/is_high_risk_pregnancy  = 'yes' or  /Register_ANC/is_high_risk_labour  = 'yes'" data-type-xml="string" />
                <span class="option-label active" lang="">OK</span>
             </label>
          </div>
@@ -1028,10 +2051,52 @@
          <input type="hidden" name="/Register_ANC/umur" data-constraint=".&gt;0 and .&lt;61" data-calculate="int(( /Register_ANC/today  -  /Register_ANC/tanggal_lahir ) div 365)" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
-         <input type="hidden" name="/Register_ANC/edd" data-calculate="date( /Register_ANC/B01027 +280)" data-type-xml="string" />
+         <input type="hidden" name="/Register_ANC/edd" data-calculate="date( /Register_ANC/tanggal_hpht +280)" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
          <input type="hidden" name="/Register_ANC/htp" data-calculate="format-date( /Register_ANC/edd , '%Y-%n-%e')" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/usia_klinis" data-calculate="int((( /Register_ANC/today  -  /Register_ANC/tanggal_hpht ) div 7)+1)" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/trimester_ke" data-calculate="if(( /Register_ANC/usia_klinis &lt;='12'), 1, (if( /Register_ANC/usia_klinis &gt;'12' and  /Register_ANC/usia_klinis &lt;='24', 2, (if( /Register_ANC/usia_klinis &gt;'24', 3, '')))))" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/taksiran_berat_janin" data-calculate="if(selected( /Register_ANC/kepala_terhadap_janin_pap ,'masuk'), (( /Register_ANC/tfu -11)*155), (if(selected( /Register_ANC/kepala_terhadap_janin_pap ,'belum_masuk'), (( /Register_ANC/tfu -12)*155), 0)))" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/Protein_energy_Malnutrition_risk" data-calculate="if( /Register_ANC/lila_cm  &lt; 23.5, 'kekurangan_energi_kronis', '')" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/anemia_risk" data-calculate="if( /Register_ANC/laboratorium_periksa_hb_hasil  &gt;= 7 and  /Register_ANC/laboratorium_periksa_hb_hasil  &lt; 11, 'anemia', (if ( /Register_ANC/laboratorium_periksa_hb_hasil  &lt; 7, 'severe_anemia', '')))" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/PIH_risk" data-calculate="if( /Register_ANC/td_sistolik  &gt;= 140 or  /Register_ANC/td_diastolik  &gt;= 90, 'PIH', '')" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/diabetes_risk" data-calculate="if( /Register_ANC/laboratorium_gula_darah  = '&gt;_140_mg_dl', 'Diabetes', '')" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/fetus_number_risk" data-calculate="if( /Register_ANC/jumlah_janin  ='ganda', 'Kelainan jumlah janin', '')" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/fetus_size_risk" data-calculate="if( /Register_ANC/taksiran_berat_janin  &gt;4000, 'Kelainan Berat janin', '')" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/fetus_Malpresentation_risk" data-calculate="if( /Register_ANC/persentasi_janin  ='bokong___sungsang' or  /Register_ANC/persentasi_janin  ='letak_lintang___obligue', 'Malpresentasi janin', '')" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/TBC_risk" data-calculate="if( /Register_ANC/integrasi_program_tb_tbc  ='positif', 'Tuberculosis', '')" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/malaria_risk" data-calculate="if( /Register_ANC/integrasi_program_malaria_malaria  ='positif', 'Malaria', '')" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/Too_young_risk" data-calculate="if( /Register_ANC/umur  &lt;20, 'Ibu Terlalu muda','')" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/Too_old_mother" data-calculate="if( /Register_ANC/umur  &gt;35, 'Ibu Terlalu tua','')" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
          <input type="hidden" name="/Register_ANC/TB_risk" data-calculate="if( /Register_ANC/tb_cm  &lt;= 145, 'Tinggi_badan_kurang', '')" data-type-xml="string" />
@@ -1040,16 +2105,7 @@
          <input type="hidden" name="/Register_ANC/Too_many_children_risk" data-calculate="if( /Register_ANC/partus  &gt;3, 'Anak Lebih dari 3', '')" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
-         <input type="hidden" name="/Register_ANC/Protein_energy_Malnutrition_risk" data-calculate="if( /Register_ANC/hasil_pemeriksaan_lila  &lt;= 23.5, 'Kekurangan energi kronis', '')" data-type-xml="string" />
-      </label>
-      <label class="calculation non-select ">
          <input type="hidden" name="/Register_ANC/abortus_risk" data-calculate="if( /Register_ANC/abortus  &gt; 3, 'Riwayat aborsi', '')" data-type-xml="string" />
-      </label>
-      <label class="calculation non-select ">
-         <input type="hidden" name="/Register_ANC/Too_young_risk" data-calculate="if( /Register_ANC/umur  &lt;20, 'Ibu Terlalu muda','')" data-type-xml="string" />
-      </label>
-      <label class="calculation non-select ">
-         <input type="hidden" name="/Register_ANC/Too_old_mother" data-calculate="if( /Register_ANC/umur  &gt;35, 'Ibu Terlalu tua','')" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
          <input type="hidden" name="/Register_ANC/Section_Cesarea_record_risk" data-calculate="(if(selected( /Register_ANC/riwayat_komplikasi_kebidanan ,'riwayat_sc'), 'Riwayat SC',''))" data-type-xml="string" />
@@ -1091,28 +2147,22 @@
          <input type="hidden" name="/Register_ANC/HIV_AIDS_risk" data-calculate="(if(selected( /Register_ANC/penyakit_kronis ,'hiv_aids'), 'hiv_aids',''))" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
-         <input type="hidden" name="/Register_ANC/Short_delivery_intervals_risk" data-calculate="if( /Register_ANC/jarakkehamilan  &lt;=2, 'Jarak persalinan terlalu dekat','')" data-type-xml="string" />
+         <input type="hidden" name="/Register_ANC/is_high_risk" data-calculate="if(( /Register_ANC/Cardiovascular_Disease_Record_risk  != '' or  /Register_ANC/Kidney_Disorder_risk  != '' or  /Register_ANC/Heart_Disorder_risk  != '' or  /Register_ANC/Asthma_risk  != '' or  /Register_ANC/Tuberculosis_risk  != '' or  /Register_ANC/Malaria_risk  != '' or  /Register_ANC/HIV_AIDS_risk  != '' or  /Register_ANC/STI_BBVs_risk  != '' or  /Register_ANC/Ectopic_Pregnancy_risk  != ''or  /Register_ANC/TBC_risk  !='' or  /Register_ANC/malaria_risk  !='' or  /Register_ANC/Too_young_risk  !='' or  /Register_ANC/Too_old_mother  !=''), 'yes', 'no')" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
-         <input type="hidden" name="/Register_ANC/is_high_risk" data-calculate="if(( /Register_ANC/Too_young_risk  !='' or  /Register_ANC/Too_old_mother  !=''), 'yes','no')" data-type-xml="string" />
+         <input type="hidden" name="/Register_ANC/high_risk_reason" data-calculate="concat( /Register_ANC/Cardiovascular_Disease_Record_risk , ' ',  /Register_ANC/Kidney_Disorder_risk , ' ',  /Register_ANC/Heart_Disorder_risk , ' ',  /Register_ANC/Asthma_risk , ' ',  /Register_ANC/Tuberculosis_risk , ' ',  /Register_ANC/Malaria_risk , ' ',  /Register_ANC/HIV_AIDS_risk , ' ',  /Register_ANC/STI_BBVs_risk , ' ',  /Register_ANC/Ectopic_Pregnancy_risk , ' ',  /Register_ANC/TBC_risk , ' ',  /Register_ANC/malaria_risk , ' ',  /Register_ANC/Too_young_risk , ' ',  /Register_ANC/Too_old_mother )" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
-         <input type="hidden" name="/Register_ANC/is_high_risk_anc" data-calculate="if(( /Register_ANC/Cardiovascular_Disease_Record_risk  != '' or  /Register_ANC/Kidney_Disorder_risk  != '' or  /Register_ANC/Heart_Disorder_risk  != '' or  /Register_ANC/Asthma_risk  != '' or  /Register_ANC/Tuberculosis_risk  != '' or  /Register_ANC/Malaria_risk  != '' or  /Register_ANC/HIV_AIDS_risk  != '' or  /Register_ANC/STI_BBVs_risk  != '' or  /Register_ANC/Ectopic_Pregnancy_risk  != ''), 'yes','no')" data-type-xml="string" />
+         <input type="hidden" name="/Register_ANC/is_high_risk_pregnancy" data-calculate="if(( /Register_ANC/Too_many_children_risk  != '' or  /Register_ANC/Protein_energy_Malnutrition_risk  != '' or  /Register_ANC/abortus_risk  != '' or  /Register_ANC/Protein_energy_Malnutrition_risk  != '' or  /Register_ANC/anemia_risk  != '' or  /Register_ANC/PIH_risk  != '' or  /Register_ANC/diabetes_risk  != ''), 'yes', 'no')" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
-         <input type="hidden" name="/Register_ANC/high_risk_reason" data-calculate="concat( /Register_ANC/Too_young_risk ,' ', /Register_ANC/Too_old_mother , ' ',  /Register_ANC/Cardiovascular_Disease_Record_risk , ' ',  /Register_ANC/Kidney_Disorder_risk , ' ',  /Register_ANC/Heart_Disorder_risk , ' ',  /Register_ANC/Asthma_risk , ' ',  /Register_ANC/Tuberculosis_risk , ' ',  /Register_ANC/Malaria_risk , ' ',  /Register_ANC/HIV_AIDS_risk , ' ',  /Register_ANC/Short_delivery_intervals_risk , ' ',  /Register_ANC/STI_BBVs_risk , ' ',  /Register_ANC/Ectopic_Pregnancy_risk )" data-type-xml="string" />
+         <input type="hidden" name="/Register_ANC/high_risk_pregnancy_reason" data-calculate="concat( /Register_ANC/Too_many_children_risk , ' ,',  /Register_ANC/Protein_energy_Malnutrition_risk , ' ,',  /Register_ANC/abortus_risk , ' ,',  /Register_ANC/Protein_energy_Malnutrition_risk , ' ,',  /Register_ANC/anemia_risk , ' ,',  /Register_ANC/PIH_risk , ' ,',  /Register_ANC/diabetes_risk )" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
-         <input type="hidden" name="/Register_ANC/is_high_risk_pregnancy" data-calculate="if(( /Register_ANC/Too_many_children_risk  != '' or  /Register_ANC/Protein_energy_Malnutrition_risk  != '' or  /Register_ANC/abortus_risk  != ''), 'yes', 'no')" data-type-xml="string" />
+         <input type="hidden" name="/Register_ANC/is_high_risk_labour" data-calculate="if(( /Register_ANC/TB_risk  !='' or  /Register_ANC/Section_Cesarea_record_risk  !='' or  /Register_ANC/fetus_number_risk  != '' or  /Register_ANC/fetus_size_risk  != '' or  /Register_ANC/fetus_Malpresentation_risk  != '' or  /Register_ANC/PIH_risk  != ''), 'yes', 'no')" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
-         <input type="hidden" name="/Register_ANC/high_risk_pregnancy_reason" data-calculate="concat( /Register_ANC/Too_many_children_risk , ' ,',  /Register_ANC/Protein_energy_Malnutrition_risk , ' ,',  /Register_ANC/abortus_risk )" data-type-xml="string" />
-      </label>
-      <label class="calculation non-select ">
-         <input type="hidden" name="/Register_ANC/is_high_risk_labour" data-calculate="if(( /Register_ANC/TB_risk  !='' or  /Register_ANC/Section_Cesarea_record_risk  !=''), 'yes','no')" data-type-xml="string" />
-      </label>
-      <label class="calculation non-select ">
-         <input type="hidden" name="/Register_ANC/high_risk_labour_reason" data-calculate="concat( /Register_ANC/TB_risk , ' ,',  /Register_ANC/Section_Cesarea_record_risk )" data-type-xml="string" />
+         <input type="hidden" name="/Register_ANC/high_risk_labour_reason" data-calculate="concat( /Register_ANC/TB_risk , ' ,',  /Register_ANC/Section_Cesarea_record_risk , ' ,',  /Register_ANC/fetus_number_risk , ' ,',  /Register_ANC/fetus_size_risk , ' ,',  /Register_ANC/fetus_Malpresentation_risk , ' ,',  /Register_ANC/PIH_risk )" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
          <input type="hidden" name="/Register_ANC/is_other_risk" data-calculate="if(( /Register_ANC/Mola_Hidatidosa_risk  != '' or  /Register_ANC/congenital_abnormality_risk  != '' or  /Register_ANC/early_waterbreak_risk  != ''), 'yes', 'no')" data-type-xml="string" />

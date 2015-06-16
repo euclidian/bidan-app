@@ -61,20 +61,12 @@
         "bind":"/model/instance/Register_ANC/desal"
       },
       {
-        "name":"desaq",
-        "bind":"/model/instance/Register_ANC/desaq"
-      },
-      {
         "name":"dusun",
         "bind":"/model/instance/Register_ANC/dusun"
       },
       {
         "name":"dusunl",
         "bind":"/model/instance/Register_ANC/dusunl"
-      },
-      {
-        "name":"dusunq",
-        "bind":"/model/instance/Register_ANC/dusunq"
       },
       {
         "name":"pendidikan",

@@ -89,7 +89,7 @@
    </label>
    <label class="question non-select ">
       <span lang="" class="or-constraint-msg active">Kunjungan ANC harus sesuai dengan trimester dari ibu</span>
-      <span lang="" class="question-label active">Kunjungan ANC ke-</span>
+      <span lang="" class="question-label active">K1 - K4?</span>
       <input type="number" name="/ANC_Visit/anc_ke" data-constraint="if(( /ANC_Visit/trimester_ke ='1'), .=1, (if( /ANC_Visit/trimester_ke ='2', .=2, (if( /ANC_Visit/trimester_ke ='3', .&gt;=3, '')))))" data-type-xml="int" />
    </label>
    <label class="question non-select ">
