@@ -50,7 +50,7 @@ public class AllConstants {
     public static final String DEFAULT_WOMAN_IMAGE_PLACEHOLDER_PATH = "../../img/woman-placeholder.png";
     public static final String DEFAULT_GIRL_INFANT_IMAGE_PLACEHOLDER_PATH = "../../img/icons/child-girlinfant@3x.png";
     public static final String DEFAULT_BOY_INFANT_IMAGE_PLACEHOLDER_PATH = "../../img/icons/child-infant@3x.png";
-    public static final String FEMALE_GENDER = "female";
+    public static final String FEMALE_GENDER = "perempuan";
     public static final String FORM_DATE_TIME_FORMAT = "EEE, dd MMM yyyy HH:mm:ss ZZZ";
     public static final String SHORT_DATE_FORMAT = "dd/MM";
     public static final String FILE_PATH_STARTING_STRING = "file:///";
