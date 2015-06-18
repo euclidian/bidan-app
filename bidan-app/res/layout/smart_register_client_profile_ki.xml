@@ -105,10 +105,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-
             android:layout_toLeftOf="@+id/txt_age"
             android:singleLine="true"
-            style="@style/CustomFontTextViewStyle.ListView.Normal.Bold"/>
+            android:textStyle="bold"
+            style="@style/CustomFontTextViewStyle.ListView.Medium"/>
 
         <org.ei.bidan.view.customControls.CustomFontTextView
             android:id="@+id/txt_husband_name"
@@ -134,8 +134,9 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:paddingTop="@dimen/client_age_padding"
-            android:paddingRight="5dp"
-            android:paddingLeft="5dp"
+            android:paddingRight="2dp"
+            android:paddingLeft="2dp"
+            android:background="#FFFFFF"
             style="@style/CustomFontTextViewStyle.ListView.Small.NoHeight"/>
 
         <org.ei.bidan.view.customControls.CustomFontTextView
