@@ -51,11 +51,11 @@
                 "bind": "/model/instance/ANC_Visit/bb_kg"
             },
             {
-                "name": "tdSistolik",
+                "name": "tandaVitalTDSistolik",
                 "bind": "/model/instance/ANC_Visit/td_sistolik"
             },
             {
-                "name": "tdDiastolik",
+                "name": "tandaVitalTDDiastolik",
                 "bind": "/model/instance/ANC_Visit/td_diastolik"
             },
             {

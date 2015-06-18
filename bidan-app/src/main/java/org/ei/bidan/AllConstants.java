@@ -402,8 +402,8 @@ public class AllConstants {
         public static final String PLANNING = "Rencana";
         public static final String COMPLICATION = "komplikasi";
         public static final String OTHER_COMPLICATION = "komplikasi_lainnya";
-        public static final String VITAL_SIGNS_TD_DIASTOLIC = "tandaVitalTDSistolik";
-        public static final String VITAL_SIGNS_TD_SISTOLIC = "tandaVitalTDDiastolik";
+        public static final String VITAL_SIGNS_TD_DIASTOLIC = "tandaVitalTDDiastolik";
+        public static final String VITAL_SIGNS_TD_SISTOLIC = "tandaVitalTDSistolik";
         public static final String VITAL_SIGNS_TEMP = "tandaVitalSuhu";
         public static final String MOTHER_CONDITION = "keadaanIbu";
     }
