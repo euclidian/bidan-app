@@ -221,14 +221,15 @@ public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartR
        this.golonganDarah = golonganDarah;
     }
 
-    public void setEdd(String edd) {
+    public KartuIbuClient withEdd(String edd) {
         if(status.size() != 0) {
             if(status.get("type").equalsIgnoreCase("pnc")) {
                 this.edd = null;
-                return;
+                return this;
             }
         }
         this.edd = edd;
+        return this;
     }
 
     public void setVillage(String village) {
@@ -366,12 +367,19 @@ public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartR
         return this;
     }
 
-    public void setKbMethod(String kbMethod) {
+    public KartuIbuClient withKbMethod(String kbMethod) {
         this.kbMethod = kbMethod;
+        return this;
     }
 
-    public void setKbStart(String kbStart) {
+    public KartuIbuClient withHighRiskFromANC(boolean isHighRisk) {
+        setIsHighRiskFromANC(isHighRisk);
+        return this;
+    }
+
+    public KartuIbuClient withKbStart(String kbStart) {
         this.kbStart = kbStart;
+        return this;
     }
 
     public KartuIbuClient withKBInformation(String kbMethod, String kbStart) {
@@ -389,16 +397,18 @@ public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartR
         return children;
     }
 
-    public void setIsHighRisk(String isHighRisk) {
+    public KartuIbuClient withIsHighRisk(String isHighRisk) {
         this.IsHighRisk = isHighRisk;
+        return this;
     }
 
     public void setIsHighRiskANC(String isHighRiskANC) {
         this.isHighRiskANC = isHighRiskANC;
     }
 
-    public void setIsHighPriority(String isHighPriority) {
+    public KartuIbuClient withHighPriority(String isHighPriority) {
         this.isHighPriority = isHighPriority;
+        return this;
     }
 
     @Override
@@ -411,11 +421,13 @@ public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartR
         return Strings.isNullOrEmpty(kbStart) ? "-" : kbStart;
     }
 
-    public void setHighRiskLabour(String highRiskLabour) {
+    public KartuIbuClient withHighRiskLabour(String highRiskLabour) {
         setIsHighRiskLabour(!Strings.isNullOrEmpty(highRiskLabour) && highRiskLabour.equalsIgnoreCase("yes"));
+        return this;
     }
 
-    public void setIsHighRiskPregnancy(String highRiskPregnancy) {
+    public KartuIbuClient withIsHighRiskPregnancy(String highRiskPregnancy) {
         setIsHighRiskPregnancy(!Strings.isNullOrEmpty(highRiskPregnancy) && highRiskPregnancy.equalsIgnoreCase("yes"));
+        return this;
     }
 }

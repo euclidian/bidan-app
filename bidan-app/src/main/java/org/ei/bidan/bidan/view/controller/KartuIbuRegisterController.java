@@ -71,12 +71,12 @@ public class KartuIbuRegisterController  extends CommonController{
                             .withParity(kartuIbu.getDetail(NUMBER_PARTUS))
                             .withNumberOfAbortions(kartuIbu.getDetail(NUMBER_ABORTIONS))
                             .withNumberOfPregnancies(kartuIbu.getDetail(NUMBER_OF_PREGNANCIES))
-                            .withNumberOfLivingChildren(kartuIbu.getDetail(NUMBER_OF_LIVING_CHILDREN));
-                    kartuIbuClient.setIsHighPriority(kartuIbu.getDetail(IS_HIGH_PRIORITY));
-                    kartuIbuClient.setIsHighRisk(kartuIbu.getDetail(IS_HIGH_RISK));
-                    kartuIbuClient.setEdd(kartuIbu.getDetail(EDD));
-                    kartuIbuClient.setIsHighRiskPregnancy(kartuIbu.getDetail(IS_HIGH_RISK_PREGNANCY));
-                    kartuIbuClient.setHighRiskLabour(kartuIbu.getDetail(IS_HIGH_RISK_LABOUR));
+                            .withNumberOfLivingChildren(kartuIbu.getDetail(NUMBER_OF_LIVING_CHILDREN))
+                            .withHighPriority(kartuIbu.getDetail(IS_HIGH_PRIORITY))
+                            .withIsHighRisk(kartuIbu.getDetail(IS_HIGH_RISK))
+                            .withEdd(kartuIbu.getDetail(EDD))
+                            .withIsHighRiskPregnancy(kartuIbu.getDetail(IS_HIGH_RISK_PREGNANCY))
+                            .withHighRiskLabour(kartuIbu.getDetail(IS_HIGH_RISK_LABOUR));
                     updateStatusInformation(kartuIbu, kartuIbuClient);
                     updateChildrenInformation(kartuIbuClient);
                     kartuIbuClients.add(kartuIbuClient);
@@ -119,15 +119,15 @@ public class KartuIbuRegisterController  extends CommonController{
         Ibu ibu = allKohort.findIbuWithOpenStatusByKIId(kartuIbu.getCaseId());
 
         if(ibu!=null) {
-            kartuIbuClient.setIsHighRiskFromANC(!Strings.isNullOrEmpty(ibu.getDetail(CHRONIC_DISEASE)));
+            kartuIbuClient.withHighRiskFromANC(!Strings.isNullOrEmpty(ibu.getDetail(CHRONIC_DISEASE)));
         }
 
         if( ibu == null && kartuIbu.hasKBMethod()) {
             kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, KELUARGA_BERENCANA)
                             .put(STATUS_DATE_FIELD, kartuIbu.getDetail(VISITS_DATE)).map());
 
-            kartuIbuClient.setKbMethod(kartuIbu.getDetail(CONTRACEPTION_METHOD));
-            kartuIbuClient.setKbStart(kartuIbu.getDetail(VISITS_DATE));
+            kartuIbuClient.withKbMethod(kartuIbu.getDetail(CONTRACEPTION_METHOD));
+            kartuIbuClient.withKbStart(kartuIbu.getDetail(VISITS_DATE));
             return;
         }
 
@@ -135,14 +135,14 @@ public class KartuIbuRegisterController  extends CommonController{
             kartuIbuClient
                     .withStatus(EasyMap.create(STATUS_TYPE_FIELD, ANC_STATUS)
                             .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
-            kartuIbuClient.setKbMethod("-");
+            kartuIbuClient.withKbMethod("-");
             return;
         }
 
         if (ibu != null && ibu.isPNC()) {
             kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, PNC_STATUS)
                     .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
-            kartuIbuClient.setKbMethod("-");
+            kartuIbuClient.withKbMethod("-");
             return;
         }
     }
