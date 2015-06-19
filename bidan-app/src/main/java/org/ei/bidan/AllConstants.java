@@ -396,6 +396,7 @@ public class AllConstants {
         public static final String HEIGHT = "tb";
         public static final String ALLERGY = "Alergi";
         public static final String HPHT_DATE = "tanggalHPHT";
+        public static final String HIGH_RISK_PREGNANCY_REASON = "highRiskPregnancyReason";
     }
 
     public class KartuPNCFields {

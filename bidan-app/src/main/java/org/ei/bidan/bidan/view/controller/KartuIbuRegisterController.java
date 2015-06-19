@@ -4,6 +4,8 @@ import android.util.Log;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Iterables;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.ei.bidan.AllConstants;
 import org.ei.bidan.bidan.domain.Anak;
@@ -17,9 +19,12 @@ import org.ei.bidan.bidan.repository.AllKartuIbus;
 import org.ei.bidan.util.Cache;
 import org.ei.bidan.util.CacheableData;
 import org.ei.bidan.util.EasyMap;
+import org.ei.bidan.view.contract.ECClient;
 import org.ei.bidan.view.contract.SmartRegisterClient;
+import org.ei.bidan.view.contract.SmartRegisterClients;
 import org.joda.time.LocalDate;
 
+import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
 import static java.util.Collections.sort;
@@ -48,6 +53,30 @@ public class KartuIbuRegisterController  extends CommonController{
         this.cache = cache;
         this.kartuIbuClientsCache = kartuIbuClientsCache;
         this.allKohort = allKohort;
+    }
+
+    public String get() {
+        return cache.get(KI_CLIENTS_LIST, new CacheableData<String>() {
+            @Override
+            public String fetch() {
+                List<KartuIbu> kartuIbus = allKartuIbus.all();
+                KartuIbuClients kartuIbuClients = new KartuIbuClients();
+
+                for (KartuIbu kartuIbu : kartuIbus) {
+                    KartuIbuClient kartuIbuClient = new KartuIbuClient(kartuIbu.getCaseId(),
+                            kartuIbu.getDetail(PUSKESMAS_NAME), kartuIbu.getDetail(PROPINSI),
+                            kartuIbu.getDetail(KABUPATEN), kartuIbu.getDetail(POSYANDU_NAME),
+                            kartuIbu.getDetail(MOTHER_ADDRESS), kartuIbu.getDetail(MOTHER_NUMBER),
+                            kartuIbu.getDetail(MOTHER_NAME), kartuIbu.getDetail(MOTHER_AGE),
+                            kartuIbu.getDetail(MOTHER_BLOOD_TYPE),
+                            kartuIbu.getDetail(HUSBAND_NAME),
+                            kartuIbu.dusun());
+                    kartuIbuClients.add(kartuIbuClient);
+                }
+                sortByName(kartuIbuClients);
+                return new Gson().toJson(kartuIbuClients);
+            }
+        });
     }
 
     public KartuIbuClients getKartuIbuClients() {
@@ -148,11 +177,11 @@ public class KartuIbuRegisterController  extends CommonController{
     }
 
     public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {
-        return onRandomNameChars(
-                client,
-                getKartuIbuClients(),
-                allKartuIbus.randomDummyName(),
-                AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
+        String clients = this.get();
+        List<SmartRegisterClient> actualClients = new Gson().fromJson(clients, new TypeToken<List<KartuIbuClient>>() {
+        }.getType());
+
+        return onRandomNameChars(client, actualClients, allKartuIbus.randomDummyName(), AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
     }
 
 }

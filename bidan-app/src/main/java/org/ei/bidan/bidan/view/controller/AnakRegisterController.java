@@ -1,5 +1,6 @@
 package org.ei.bidan.bidan.view.controller;
 
+import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 
 import org.apache.commons.lang3.ArrayUtils;
@@ -50,6 +51,26 @@ public class AnakRegisterController extends CommonController {
         this.serviceProvidedService = serviceProvidedService;
         this.cache = cache;
         this.smartRegisterClientsCache = smartRegisterClientsCache;
+    }
+
+    public String get() {
+        return cache.get(ANAK_CLIENTS_LIST, new CacheableData<String>() {
+            @Override
+            public String fetch() {
+                List<Anak> anakList = allKohort.allAnakWithIbuAndKI();
+                SmartRegisterClients anakClients = new SmartRegisterClients();
+
+                for(Anak a : anakList) {
+                    AnakClient anakClient = new AnakClient(a.getCaseId(),
+                            a.getGender(),
+                            a.getDetail(BIRTH_WEIGHT),
+                            a.getDetails())
+                            .withName(a.getDetail(CHILD_NAME));
+                    anakClients.add(anakClient);
+                }
+                return new Gson().toJson(anakClients);
+            }
+        });
     }
 
     public SmartRegisterClients getClient() {
@@ -135,9 +156,13 @@ public class AnakRegisterController extends CommonController {
     }
 
     public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {
+        String clients = get();
+        List<SmartRegisterClient> anakClients = new Gson().fromJson(clients, new TypeToken<List<AnakClient>>() {
+        }.getType());
+
         return onRandomNameChars(
                 client,
-                getClient(),
+                anakClients,
                 allKohort.randomDummyAnakName(),
                 AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
     }

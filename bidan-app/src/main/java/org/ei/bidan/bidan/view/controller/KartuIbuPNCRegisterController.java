@@ -1,5 +1,8 @@
 package org.ei.bidan.bidan.view.controller;
 
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+
 import org.apache.commons.lang3.tuple.Pair;
 import org.ei.bidan.AllConstants;
 import org.ei.bidan.bidan.domain.Anak;
@@ -39,6 +42,42 @@ public class KartuIbuPNCRegisterController extends CommonController {
         this.allKohort = allKohort;
         this.cache = cache;
         this.kartuIbuPNCClientsCache = kartuIbuPNCClientsCache;
+    }
+
+    public String get() {
+        return cache.get(KI_PNC_CLIENTS_LIST, new CacheableData<String>() {
+            @Override
+            public String fetch() {
+                KartuIbuPNCClients pncClients = new KartuIbuPNCClients();
+                List<Pair<Ibu, KartuIbu>> pncsWithKis = allKohort.allPNCsWithKartuIbu();
+
+                for (Pair<Ibu, KartuIbu> pncsWithKi : pncsWithKis) {
+                    Ibu pnc = pncsWithKi.getLeft();
+                    KartuIbu ki = pncsWithKi.getRight();
+
+                    KartuIbuPNCClient kartuIbuClient = new KartuIbuPNCClient(
+                            pnc.getId(),
+                            ki.dusun(),
+                            ki.getDetail(PUSKESMAS_NAME),
+                            ki.getDetail(MOTHER_NAME),
+                            ki.getDetail(MOTHER_DOB))
+                            .withHusband(ki.getDetail(HUSBAND_NAME))
+                            .withKINumber(ki.getDetail(MOTHER_NUMBER))
+                            .withEDD(pnc.getDetail(EDD))
+                            .withPlan(pnc.getDetail(PLANNING))
+                            .withKomplikasi(pnc.getDetail(COMPLICATION))
+                            .withOtherKomplikasi(pnc.getDetail(OTHER_COMPLICATION))
+                            .withMetodeKontrasepsi(pnc.getDetail(CONTRACEPTION_METHOD))
+                            .withChildren(findChildren(pnc))
+                            .withTandaVital(pnc.getDetail(VITAL_SIGNS_TD_DIASTOLIC),
+                                    pnc.getDetail(VITAL_SIGNS_TD_SISTOLIC),
+                                    pnc.getDetail(VITAL_SIGNS_TEMP));
+                    pncClients.add(kartuIbuClient);
+                }
+
+                return new Gson().toJson(pncClients);
+            }
+        });
     }
 
     public KartuIbuPNCClients getKartuIbuPNCClients() {
@@ -91,9 +130,12 @@ public class KartuIbuPNCRegisterController extends CommonController {
     }
 
     public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {
+        String clients = get();
+        List<SmartRegisterClient> pncClients = new Gson().fromJson(clients, new TypeToken<List<KartuIbuPNCClient>>(){}.getType());
+
         return onRandomNameChars(
                 client,
-                getKartuIbuPNCClients(),
+                pncClients,
                 allKohort.randomDummyPNCName(),
                 AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
     }

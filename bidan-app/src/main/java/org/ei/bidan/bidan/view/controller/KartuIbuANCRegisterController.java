@@ -1,5 +1,8 @@
 package org.ei.bidan.bidan.view.controller;
 
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+
 import org.apache.commons.lang3.tuple.Pair;
 import org.ei.bidan.AllConstants;
 import org.ei.bidan.bidan.domain.Ibu;
@@ -33,6 +36,29 @@ public class KartuIbuANCRegisterController extends CommonController{
         this.allKohort = allKohort;
         this.cache = cache;
         this.kartuIbuANCClientsCache = kartuIbuANCClientsCache;
+    }
+
+    public String get() {
+        return cache.get(KI_ANC_CLIENTS_LIST, new CacheableData<String>() {
+            @Override
+            public String fetch() {
+                KartuIbuANCClients ancClients = new KartuIbuANCClients();
+                List<Pair<Ibu, KartuIbu>> ancsWithKis = allKohort.allANCsWithKartuIbu();
+
+                for (Pair<Ibu, KartuIbu> ancsWithKi : ancsWithKis) {
+                    Ibu anc = ancsWithKi.getLeft();
+                    KartuIbu ki = ancsWithKi.getRight();
+
+                    KartuIbuANCClient kartuIbuClient = new KartuIbuANCClient(anc.getId(),
+                            ki.dusun(),
+                            ki.getDetail(PUSKESMAS_NAME),
+                            ki.getDetail(MOTHER_NAME),
+                            ki.getDetail(MOTHER_DOB));
+                    ancClients.add(kartuIbuClient);
+                }
+                return new Gson().toJson(ancClients);
+            }
+        });
     }
 
     public KartuIbuANCClients getKartuIbuANCClients() {
@@ -70,7 +96,7 @@ public class KartuIbuANCRegisterController extends CommonController{
                     kartuIbuClient.setIsHighRiskANC(ki.getDetail(IS_HIGH_RISK));
                     kartuIbuClient.setIsHighRiskPregnancy(ki.getDetail(IS_HIGH_RISK_PREGNANCY));
                     kartuIbuClient.setHighRiskLabour(ki.getDetail(IS_HIGH_RISK_LABOUR));
-                    kartuIbuClient.setHigRiskPregnancyReason(ki.getDetail("highRiskPregnancyReason"));
+                    kartuIbuClient.setHigRiskPregnancyReason(ki.getDetail(HIGH_RISK_PREGNANCY_REASON));
                     kartuIbuClient.setRiwayatKomplikasiKebidanan(anc.getDetail(COMPLICATION_HISTORY));
                     ancClients.add(kartuIbuClient);
                 }
@@ -90,9 +116,12 @@ public class KartuIbuANCRegisterController extends CommonController{
     }
 
     public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {
+        String clients = get();
+        List<SmartRegisterClient> ancClients = new Gson().fromJson(clients, new TypeToken<List<KartuIbuANCClient>>() {
+        }.getType());
         return onRandomNameChars(
                 client,
-                getKartuIbuANCClients(),
+                ancClients,
                 allKohort.randomDummyANCName(),
                 AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
     }
