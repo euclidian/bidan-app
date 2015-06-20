@@ -1,6 +1,6 @@
 <model>
     <instance>
-        <Penutupan_ANC id="Penutupan_ANC" version="201506040851">
+        <Penutupan_ANC id="Penutupan_ANC" version="201506190658">
           <formhub>
             <uuid/>
           </formhub>
@@ -40,9 +40,12 @@
             <date_maternal_death/>
             <maternal_death_cause/>
             <other_maternal_death_cause/>
+            <place_of_death/>
+            <other_place_of_death/>
+            <not_maternal_death_cause/>
           </maternal_death_group>
           <rh_injection_given/>
-          <confirm_anc_close/>
+          <confirm_Penutupan_ANC/>
           <confirm_anc_left/>
           <end/>
           <meta>

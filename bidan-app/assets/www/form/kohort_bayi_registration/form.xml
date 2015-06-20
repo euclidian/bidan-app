@@ -2,31 +2,33 @@
 <form autocomplete="off" novalidate="novalidate" class="or clearfix" id="register_baby_only">
    <!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.-->
    <section class="form-logo" />
-   <h3 id="form-title">Register Anak</h3>
+   <h3 id="form-title">Register Baby Only</h3>
    <label class="question non-select ">
-      <span lang="" class="question-label active">Tanggal Pendaftaran</span>
+      <span lang="" class="question-label active">Tanggal pendaftaran</span>
       <span lang="" class="or-hint active">Tanggal melakukan pendaftaran bayi</span>
       <input type="date" name="/register_baby_only/tanggal_pendaftaran" data-type-xml="date" />
    </label>
    <label class="question non-select ">
-        <span class="or-constraint-msg active" lang="">harus terdiri dari 8 digit</span>
-        <span class="question-label active" lang="">No. bayi</span>
-    </label>
+      <span lang="" class="question-label active">No. bayi</span>
+      <span lang="" class="or-hint active">Diisi dengan nomor bayi</span>
+      <input type="number" name="/register_baby_only/no_bayi" data-type-xml="int" />
+   </label>
    <label class="question non-select ">
-      <span lang="" class="question-label active">Nama Bayi</span>
-      <span lang="" class="or-hint active">Nama bayi, dikosongkan jika belum diberikan nama</span>
+      <span lang="" class="question-label active">Nama bayi</span>
+      <span lang="" class="or-hint active">Apabila nama bayi belum ada, isi dengan: Bayi 'nama_ibu'. misal nama ibu Ratna, maka isi dengan Bayi Ratna</span>
       <input type="text" name="/register_baby_only/nama_bayi" data-type-xml="string" />
    </label>
    <label class="question non-select ">
-      <span lang="" class="question-label active">Tanggal Lahir</span>
-      <span lang="" class="or-hint active">Tanggal lahir Bayi</span>
-      <input type="date" name="/register_baby_only/tanggal_lahir" data-type-xml="date" />
+      <span lang="" class="or-constraint-msg active">Tanggal lahir bayi harus diisi dengan sebelum tanggal pendaftaran</span>
+      <span lang="" class="question-label active">Tanggal lahir</span>
+      <span lang="" class="or-hint active">Diisi dengan tanggal lahir bayi</span>
+      <input type="date" name="/register_baby_only/tanggal_lahir_anak" data-constraint=".&lt;=  /register_baby_only/tanggal_pendaftaran " data-type-xml="date" />
    </label>
    <fieldset class="question ">
       <fieldset>
          <legend>
-            <span lang="" class="question-label active">Jenis Kelamin</span>
-            <span lang="" class="or-hint active">Jenis kelamin Bayi</span>
+            <span lang="" class="question-label active">Jenis kelamin</span>
+            <span lang="" class="or-hint active">Diisi dengan jenis kelamin bayi</span>
          </legend>
          <div class="option-wrapper">
             <label class="">
@@ -44,7 +46,7 @@
       <fieldset>
          <legend>
             <span lang="" class="question-label active">Kepemilikan buku KIA</span>
-            <span lang="" class="or-hint active">Diisi jika ibu memiliki buku KIA</span>
+            <span lang="" class="or-hint active">Diisi dengan status kepemilikan buku KIA</span>
          </legend>
          <div class="option-wrapper">
             <label class="">
@@ -60,27 +62,10 @@
    </fieldset>
    <label class="question non-select ">
       <span lang="" class="or-constraint-msg active">Berat badan harus lebih dari 0</span>
-      <span lang="" class="question-label active">Berat Lahir</span>
-      <span lang="" class="or-hint active">Berat badan bayi saat lahir (gram)</span>
+      <span lang="" class="question-label active">Berat lahir</span>
+      <span lang="" class="or-hint active">Diisi dengan berat badan bayi saat lahir (gram)</span>
       <input type="number" name="/register_baby_only/berat_lahir" data-constraint=".&gt;0 and .&lt;5000" data-type-xml="int" />
    </label>
-   <fieldset class="question or-branch pre-init ">
-      <fieldset>
-         <legend>
-            <span lang="" class="question-label active">
-               Termasuk kategori RT (Resiko Tinggi), karena :
-               <span class="or-output" data-value=" /register_baby_only/high_risk_child_reason " />
-            </span>
-            <span class="required">*</span>
-         </legend>
-         <div class="option-wrapper">
-            <label>
-               <input value="OK" type="radio" name="/register_baby_only/high_risk_note" required="required" data-relevant=" /register_baby_only/is_high_risk_child  = 'yes'" data-type-xml="string" />
-               <span class="option-label active" lang="">OK</span>
-            </label>
-         </div>
-      </fieldset>
-   </fieldset>
    <fieldset id="or-preload-items" style="display:none;">
       <label class="calculation non-select ">
          <input type="hidden" name="/register_baby_only/start" data-preload="timestamp" data-preload-params="start" data-type-xml="dateTime" />
@@ -102,26 +87,14 @@
       </label>
    </fieldset>
    <fieldset id="or-calculated-items" style="display:none;">
-      <label class="calculation non-select ">
-         <input type="hidden" name="/register_baby_only/Low_Birthweght_risk" data-calculate="if( /register_baby_only/berat_lahir  &gt; 1500 and  /register_baby_only/berat_lahir  &lt;= 2500, 'BBLR', '')" data-type-xml="string" />
-      </label>
-      <label class="calculation non-select ">
-         <input type="hidden" name="/register_baby_only/Very_Low_Birthweight_risk" data-calculate="if( /register_baby_only/berat_lahir  &lt;= 1500, 'BBLSR', '')" data-type-xml="string" />
-      </label>
-      <label class="calculation non-select ">
-         <input type="hidden" name="/register_baby_only/is_high_risk_child" data-calculate="if(( /register_baby_only/Low_Birthweght_risk  != '' or  /register_baby_only/Very_Low_Birthweight_risk  != ''), 'yes', 'no')" data-type-xml="string" />
-      </label>
-      <label class="calculation non-select ">
-         <input type="hidden" name="/register_baby_only/high_risk_child_reason" data-calculate="concat( /register_baby_only/Low_Birthweght_risk , ' - ',  /register_baby_only/Very_Low_Birthweight_risk )" data-type-xml="string" />
-      </label>
-      <label class="calculation non-select ">
+   <label class="calculation non-select ">
          <input autocomplete="off" type="hidden" name="/register_baby_only/reg_date" data-calculate=" /register_baby_only/today " data-type-xml="date" />
       </label>
       <label class="calculation non-select ">
          <input type="hidden" name="/register_baby_only/meta/instanceID" data-calculate="concat('uuid:', uuid())" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
-         <input type="hidden" name="/register_baby_only/formhub/uuid" data-calculate="'41d804e1680d4b6280c8887465c1e70d'" data-type-xml="string" />
+         <input type="hidden" name="/register_baby_only/formhub/uuid" data-calculate="'2e2e452a915040e79f20d26f3761df13'" data-type-xml="string" />
       </label>
    </fieldset>
 </form>

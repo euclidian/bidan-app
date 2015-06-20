@@ -33,7 +33,7 @@
             },
             {
                 "name": "tanggalLahirAnak",
-                "bind": "/model/instance/register_baby_only/tanggal_lahir",
+                "bind": "/model/instance/register_baby_only/tanggal_lahir_anak",
                 "source": "kartu_ibu.ibu.anak.tanggalLahirAnak"
             },
             {
@@ -55,11 +55,6 @@
                 "name": "registrationDate",
                 "bind": "/model/instance/register_baby_only/reg_date",
                 "source": "kartu_ibu.ibu.anak.registrationDate"
-            },
-            {
-                "name": "isHighRiskChild",
-                "bind": "/model/instance/register_baby_only/is_high_risk_child",
-                "source": "kartu_ibu.ibu.anak.isHighRiskChild"
             },
             {
                 "name": "isClosed",

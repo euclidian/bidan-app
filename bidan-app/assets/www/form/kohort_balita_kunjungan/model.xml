@@ -1,6 +1,6 @@
 <model>
     <instance>
-        <balita_kunjungan id="balita_kunjungan" version="201506080821">
+        <balita_kunjungan id="balita_kunjungan" version="201506200244">
           <formhub>
             <uuid/>
           </formhub>
@@ -12,10 +12,12 @@
           <phonenumber/>
           <tanggal_pemeriksaan_anak_balita/>
           <hasil_penimbangan_anak_balita/>
-          <Indikator_berat_badan_bayi/>
+          <hasil_pengukuran_tinggi_anak_balita/>
+          <indikator_berat_badan_bayi/>
           <hasil_dilakukannya_kpsp/>
           <kpsp_penyimpangan/>
-          <pemberian_vit_a_dan_kondisi_balita_saat_sakit/>
+          <pelayanan_vita/>
+          <keterangan/>
           <end/>
           <meta>
             <instanceID/>

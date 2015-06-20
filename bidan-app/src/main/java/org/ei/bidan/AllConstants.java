@@ -391,7 +391,7 @@ public class AllConstants {
         public static final String IMMUNIZATION_TT_STATUS = "StatusImunisasiTT";
         public static final String CLINICAL_AGE = "UsiaKlinis";
         public static final String WEIGHT_BEFORE = "bbSebelumHamil";
-        public static final String WEIGHT_CHECK_RESULT = "hasilPemeriksaanBeratBadan";
+        public static final String WEIGHT_CHECK_RESULT = "bbKg";
         public static final String LILA_CHECK_RESULT = "hasilPemeriksaanLILA";
         public static final String HEIGHT = "tb";
         public static final String ALLERGY = "Alergi";

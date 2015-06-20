@@ -1,23 +1,24 @@
 <model>
     <instance>
-        <ANC_Visit id="ANC_Visit" version="201506110731">
+        <ANC_Visit id="ANC_Visit" version="201506190714">
           <formhub>
             <uuid/>
           </formhub>
           <start/>
           <today/>
+          <reg_date/>
           <deviceid/>
           <simserial/>
           <phonenumber/>
           <anc_date/>
           <hpht/>
+          <usia_klinis/>
+          <generated_note_name_10/>
+          <trimester_ke/>
+          <generated_note_name_12/>
+          <anc_ke/>
           <jamkesmas/>
           <cara_masuk_tempat_pelayanan/>
-          <usia_klinis/>
-          <generated_note_name_12/>
-          <trimester_ke/>
-          <generated_note_name_14/>
-          <anc_ke/>
           <anamnesis_ibu>tidak ada keluhan</anamnesis_ibu>
           <bb_kg/>
           <td_sistolik/>
@@ -48,10 +49,10 @@
           <laboratorium_hbsag/>
           <program_integration/>
           <integrasi_program_pmtct_vct/>
-          <integrasi_program_pmtct_periksa_dahak/>
+          <integrasi_program_pmtct_periksa_darah/>
           <integrasi_program_pmtct_serologi/>
           <integrasi_program_pmtct_arv/>
-          <integrasi_program_malaria_periksa_dahak/>
+          <integrasi_program_malaria_periksa_darah/>
           <integrasi_program_malaria_malaria/>
           <integrasi_program_malaria_obat/>
           <integrasi_program_malaria_kelambu/>

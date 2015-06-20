@@ -1,21 +1,24 @@
 <model>
     <instance>
-        <Register_ANC id="Register_ANC" version="201506150235">
+        <Register_ANC id="Register_ANC" version="201506190755">
           <formhub>
             <uuid/>
           </formhub>
           <start/>
           <today/>
+          <reg_date/>
           <deviceid/>
           <simserial/>
           <phonenumber/>
+          <tanggal_periksa/>
+          <generated_note_name_8/>
           <puskesmas/>
           <no_ibu/>
           <nama_lengkap/>
           <nama_suami/>
-          <tanggal_lahir/>
+          <tanggal_lahir_ibu/>
           <umur/>
-          <generated_note_name_13/>
+          <generated_note_name_15/>
           <alamat_domisili/>
           <propinsi>Nusa Tenggara Barat</propinsi>
           <kabupaten>Lombok Tengah</kabupaten>
@@ -36,38 +39,38 @@
           <golongan_darah/>
           <nomortelpon/>
           <nomor_telpon_hp/>
+          <generated_note_name_36/>
           <gravida/>
           <partus/>
           <abortus/>
           <hidup/>
-          <hamil_ke/>
-          <tanggal_periksa/>
-          <tanggal_hpht/>
-          <edd/>
-          <htp/>
-          <edd_note/>
           <persalinan_sebelumnya/>
-          <bb_kg_1/>
-          <tb_cm/>
-          <kelainanbentuk/>
-          <buku_kia/>
-          <tanggal_memperoleh_buku_kia/>
           <rkk/>
           <riwayat_komplikasi_kebidanan/>
           <rkklainnya/>
           <kronis/>
           <penyakit_kronis/>
           <rpklainnya/>
+          <memiliki_alergi/>
           <alergi/>
-          <anc_date/>
+          <kelainanbentuk/>
+          <generated_note_name_51/>
+          <tanggal_hpht/>
+          <edd/>
+          <htp/>
+          <edd_note/>
+          <usia_klinis/>
+          <generated_note_name_57/>
+          <trimester_ke/>
+          <generated_note_name_59/>
+          <anc_ke/>
+          <buku_kia/>
+          <tanggal_memperoleh_buku_kia/>
           <jamkesmas/>
           <cara_masuk_tempat_pelayanan/>
-          <usia_klinis/>
-          <generated_note_name_62/>
-          <trimester_ke/>
-          <generated_note_name_64/>
-          <anc_ke/>
           <anamnesis_ibu>tidak ada keluhan</anamnesis_ibu>
+          <bb_kg_1/>
+          <tb_cm/>
           <bb_kg_2/>
           <td_sistolik/>
           <td_diastolik/>
@@ -97,10 +100,10 @@
           <laboratorium_hbsag/>
           <program_integration/>
           <integrasi_program_pmtct_vct/>
-          <integrasi_program_pmtct_periksa_dahak/>
+          <integrasi_program_pmtct_periksa_darah/>
           <integrasi_program_pmtct_serologi/>
           <integrasi_program_pmtct_arv/>
-          <integrasi_program_malaria_periksa_dahak/>
+          <integrasi_program_malaria_periksa_darah/>
           <integrasi_program_malaria_malaria/>
           <integrasi_program_malaria_obat/>
           <integrasi_program_malaria_kelambu/>

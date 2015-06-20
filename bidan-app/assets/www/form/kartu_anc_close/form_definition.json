@@ -66,6 +66,10 @@
                 "bind": "/model/instance/Penutupan_ANC/spontaneous_abortion_group/case_w_rh_negative"
             },
             {
+                "name": "rhInjectionGiven1",
+                "bind": "/model/instance/Penutupan_ANC/induced_abortion_group/rh_injection_given1"
+            },
+            {
                 "name": "numberOfInducedAbortions",
                 "bind": "/model/instance/Penutupan_ANC/induced_abortion_group/case_num_abortions_induced"
             },
@@ -82,12 +86,12 @@
                 "bind": "/model/instance/Penutupan_ANC/induced_abortion_group/date_induced"
             },
             {
-                "name": "maternalDeathDate",
-                "bind": "/model/instance/Penutupan_ANC/maternal_death_group/date_maternal_death"
+                "name": "rhInjectionGiven2",
+                "bind": "/model/instance/Penutupan_ANC/induced_abortion_group/rh_injection_given2"
             },
             {
-                "name": "maternalDeathTrimester",
-                "bind": "/model/instance/Penutupan_ANC/maternal_death_group/death_trimester"
+                "name": "maternalDeathDate",
+                "bind": "/model/instance/Penutupan_ANC/maternal_death_group/date_maternal_death"
             },
             {
                 "name": "maternalDeathCause",
@@ -96,6 +100,18 @@
             {
                 "name": "otherMaternalDeathCause",
                 "bind": "/model/instance/Penutupan_ANC/maternal_death_group/other_maternal_death_cause"
+            },
+            {
+                "name": "placeOfDeath",
+                "bind": "/model/instance/Penutupan_ANC/maternal_death_group/place_of_death"
+            },
+            {
+                "name": "otherPlaceOfDeath",
+                "bind": "/model/instance/Penutupan_ANC/maternal_death_group/other_place_of_death"
+            },
+            {
+                "name": "notMaternalDeathCause",
+                "bind": "/model/instance/Penutupan_ANC/maternal_death_group/not_maternal_death_cause"
             },
             {
                 "name": "rhInjectionGiven",

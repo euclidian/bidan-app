@@ -1,165 +1,66 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <model>
     <instance>
-        <register_baby id="register_baby" version="201506150357">
+        <register_baby id="register_baby" version="201506200332">
           <formhub>
-            <uuid />
+            <uuid/>
           </formhub>
-          <start />
-          <today />
-	  <reg_date  />
-          <deviceid />
-          <simserial />
-          <phonenumber />
-          <puskesmas />
-          <no_ibu />
-          <nama_lengkap />
-          <nama_suami />
-          <tanggal_lahir />
-          <umur />
-          <generated_note_name_13 />
-          <alamat_domisili />
+          <start/>
+          <today/>
+          <reg_date/>
+          <deviceid/>
+          <simserial/>
+          <phonenumber/>
+          <identitasibu/>
+          <puskesmas/>
+          <no_ibu/>
+          <nama_ibu/>
+          <nama_bapak/>
+          <tanggal_lahir_ibu/>
+          <umur/>
+          <generated_note_name_14/>
+          <alamat_domisili/>
           <propinsi>Nusa Tenggara Barat</propinsi>
           <kabupaten>Lombok Tengah</kabupaten>
-          <kecamatan />
-          <kecamatanl />
-          <desa />
-          <desal />
-          <dusun />
-          <dusunl />
-          <pendidikan />
-          <agama />
+          <kecamatan/>
+          <kecamatanl/>
+          <desa/>
+          <desal/>
+          <dusun/>
+          <dusunl/>
+          <pendidikan/>
+          <agama/>
           <pekerjaan>Ibu rumah tangga</pekerjaan>
-          <gakin_tidak />
-          <posyandu />
-          <nama_kader />
-          <nama_dukun />
-          <asuransi_jiwa />
-          <golongan_darah />
-          <nomortelpon />
-          <nomor_telponhp />
-          <tanggal_pendaftaran />
-          <no_bayi />
-          <nama_bayi />
-          <tanggal_lahir_anak />
-          <jenis_kelamin />
-          <kepemilikan_buku_kia />
-          <berat_lahir />
-          <Low_Birthweght_risk />
-          <is_high_risk_child />
-          <high_risk_child_reason />
-          <high_risk_note />
-          <end />
+          <gakin_tidak/>
+          <posyandu/>
+          <nama_kader/>
+          <nama_dukun/>
+          <asuransi_jiwa/>
+          <golongan_darah/>
+          <nomortelpon/>
+          <nomor_telponhp/>
+          <registerbayi/>
+          <tanggal_pendaftaran/>
+          <no_bayi/>
+          <nama_bayi/>
+          <tanggal_lahir_anak/>
+          <jenis_kelamin/>
+          <kepemilikan_buku_kia/>
+          <berat_lahir/>
+          <Low_Birthweght_risk/>
+          <is_high_risk_child/>
+          <high_risk_child_reason/>
+          <high_risk_note/>
+          <end/>
           <meta>
-            <instanceID />
+            <instanceID/>
           </meta>
         </register_baby>
       </instance>
-    <instance id="after_delivery_to_5_hours___baby'_condition">
+    <instance id="province">
         <root>
           <item>
-            <itextId>static_instance-after_delivery_to_5_hours___baby'_condition-0</itextId>
-            <name>normal</name>
-          </item>
-          <item>
-            <itextId>static_instance-after_delivery_to_5_hours___baby'_condition-1</itextId>
-            <name>komplikasi</name>
-          </item>
-        </root>
-      </instance>
-    <instance id="individual_accompanying_during_labor">
-        <root>
-          <item>
-            <itextId>static_instance-individual_accompanying_during_labor-0</itextId>
-            <name>suami</name>
-          </item>
-          <item>
-            <itextId>static_instance-individual_accompanying_during_labor-1</itextId>
-            <name>keluarga</name>
-          </item>
-          <item>
-            <itextId>static_instance-individual_accompanying_during_labor-2</itextId>
-            <name>teman</name>
-          </item>
-          <item>
-            <itextId>static_instance-individual_accompanying_during_labor-3</itextId>
-            <name>tetangga</name>
-          </item>
-          <item>
-            <itextId>static_instance-individual_accompanying_during_labor-4</itextId>
-            <name>lain-lain</name>
-          </item>
-          <item>
-            <itextId>static_instance-individual_accompanying_during_labor-5</itextId>
-            <name>tidak_ada</name>
-          </item>
-        </root>
-      </instance>
-    <instance id="after_delivery_to_5_hours___types_of_treatment_of_given_after_delivery">
-        <root>
-          <item>
-            <itextId>static_instance-after_delivery_to_5_hours___types_of_treatment_of_given_after_delivery-0</itextId>
-            <name>first_breast_feeding</name>
-          </item>
-          <item>
-            <itextId>static_instance-after_delivery_to_5_hours___types_of_treatment_of_given_after_delivery-1</itextId>
-            <name>vit-k_injection</name>
-          </item>
-          <item>
-            <itextId>static_instance-after_delivery_to_5_hours___types_of_treatment_of_given_after_delivery-2</itextId>
-            <name>salep_mata</name>
-          </item>
-        </root>
-      </instance>
-    <instance id="education">
-        <root>
-          <item>
-            <itextId>static_instance-education-0</itextId>
-            <name>sekolah_dasar</name>
-          </item>
-          <item>
-            <itextId>static_instance-education-1</itextId>
-            <name>sekolah_menengah_pertama</name>
-          </item>
-          <item>
-            <itextId>static_instance-education-2</itextId>
-            <name>sekolah_menengah_atas</name>
-          </item>
-          <item>
-            <itextId>static_instance-education-3</itextId>
-            <name>perguruan_tinggi</name>
-          </item>
-          <item>
-            <itextId>static_instance-education-4</itextId>
-            <name>tidak_sekolah</name>
-          </item>
-        </root>
-      </instance>
-    <instance id="insurance">
-        <root>
-          <item>
-            <itextId>static_instance-insurance-0</itextId>
-            <name>jaminan_kesehatan_masyarakat</name>
-          </item>
-          <item>
-            <itextId>static_instance-insurance-1</itextId>
-            <name>Jamsostek</name>
-          </item>
-          <item>
-            <itextId>static_instance-insurance-2</itextId>
-            <name>jaminan_kesehatan_daerah</name>
-          </item>
-          <item>
-            <itextId>static_instance-insurance-3</itextId>
-            <name>asuransi_kesehatan</name>
-          </item>
-          <item>
-            <itextId>static_instance-insurance-4</itextId>
-            <name>jaminan_persalinan</name>
-          </item>
-          <item>
-            <itextId>static_instance-insurance-5</itextId>
-            <name>tidak_ada_asuransi</name>
+            <itextId>static_instance-province-0</itextId>
+            <name>NTB</name>
           </item>
         </root>
       </instance>
@@ -191,15 +92,67 @@
           </item>
         </root>
       </instance>
-    <instance id="condition_of_house">
+    <instance id="poor_family_not">
         <root>
           <item>
-            <itextId>static_instance-condition_of_house-0</itextId>
-            <name>permanen</name>
+            <itextId>static_instance-poor_family_not-0</itextId>
+            <name>ya</name>
           </item>
           <item>
-            <itextId>static_instance-condition_of_house-1</itextId>
-            <name>tidak_permanen</name>
+            <itextId>static_instance-poor_family_not-1</itextId>
+            <name>tidak</name>
+          </item>
+        </root>
+      </instance>
+    <instance id="gender">
+        <root>
+          <item>
+            <itextId>static_instance-gender-0</itextId>
+            <name>laki</name>
+          </item>
+          <item>
+            <itextId>static_instance-gender-1</itextId>
+            <name>perempuan</name>
+          </item>
+        </root>
+      </instance>
+    <instance id="kecamatan">
+        <root>
+          <item>
+            <itextId>static_instance-kecamatan-0</itextId>
+            <name>Pujut</name>
+          </item>
+          <item>
+            <itextId>static_instance-kecamatan-1</itextId>
+            <name>Janapria</name>
+          </item>
+          <item>
+            <itextId>static_instance-kecamatan-2</itextId>
+            <name>Lainnya</name>
+          </item>
+        </root>
+      </instance>
+    <instance id="blood_type">
+        <root>
+          <item>
+            <itextId>static_instance-blood_type-0</itextId>
+            <name>a</name>
+          </item>
+          <item>
+            <itextId>static_instance-blood_type-1</itextId>
+            <name>b</name>
+          </item>
+          <item>
+            <itextId>static_instance-blood_type-2</itextId>
+            <name>ab</name>
+          </item>
+          <item>
+            <itextId>static_instance-blood_type-3</itextId>
+            <name>o</name>
+          </item>
+          <item>
+            <itextId>static_instance-blood_type-4</itextId>
+            <name>NA</name>
           </item>
         </root>
       </instance>
@@ -231,30 +184,6 @@
           </item>
         </root>
       </instance>
-    <instance id="blood_donor">
-        <root>
-          <item>
-            <itextId>static_instance-blood_donor-0</itextId>
-            <name>suami</name>
-          </item>
-          <item>
-            <itextId>static_instance-blood_donor-1</itextId>
-            <name>keluarga</name>
-          </item>
-          <item>
-            <itextId>static_instance-blood_donor-2</itextId>
-            <name>teman</name>
-          </item>
-          <item>
-            <itextId>static_instance-blood_donor-3</itextId>
-            <name>lain-lain</name>
-          </item>
-          <item>
-            <itextId>static_instance-blood_donor-4</itextId>
-            <name>tidak_ada</name>
-          </item>
-        </root>
-      </instance>
     <instance id="maternal_and_child_health_booklet">
         <root>
           <item>
@@ -264,6 +193,42 @@
           <item>
             <itextId>static_instance-maternal_and_child_health_booklet-1</itextId>
             <name>tidak_memiliki</name>
+          </item>
+        </root>
+      </instance>
+    <instance id="maternal_and_child_health_booklet_ownership">
+        <root>
+          <item>
+            <itextId>static_instance-maternal_and_child_health_booklet_ownership-0</itextId>
+            <name>ya</name>
+          </item>
+          <item>
+            <itextId>static_instance-maternal_and_child_health_booklet_ownership-1</itextId>
+            <name>tidak</name>
+          </item>
+        </root>
+      </instance>
+    <instance id="education">
+        <root>
+          <item>
+            <itextId>static_instance-education-0</itextId>
+            <name>sekolah_dasar</name>
+          </item>
+          <item>
+            <itextId>static_instance-education-1</itextId>
+            <name>sekolah_menengah_pertama</name>
+          </item>
+          <item>
+            <itextId>static_instance-education-2</itextId>
+            <name>sekolah_menengah_atas</name>
+          </item>
+          <item>
+            <itextId>static_instance-education-3</itextId>
+            <name>perguruan_tinggi</name>
+          </item>
+          <item>
+            <itextId>static_instance-education-4</itextId>
+            <name>tidak_sekolah</name>
           </item>
         </root>
       </instance>
@@ -2317,99 +2282,31 @@
           </item>
         </root>
       </instance>
-    <instance id="blood_type">
+    <instance id="insurance">
         <root>
           <item>
-            <itextId>static_instance-blood_type-0</itextId>
-            <name>a</name>
+            <itextId>static_instance-insurance-0</itextId>
+            <name>jaminan_kesehatan_masyarakat</name>
           </item>
           <item>
-            <itextId>static_instance-blood_type-1</itextId>
-            <name>b</name>
+            <itextId>static_instance-insurance-1</itextId>
+            <name>Jamsostek</name>
           </item>
           <item>
-            <itextId>static_instance-blood_type-2</itextId>
-            <name>ab</name>
+            <itextId>static_instance-insurance-2</itextId>
+            <name>jaminan_kesehatan_daerah</name>
           </item>
           <item>
-            <itextId>static_instance-blood_type-3</itextId>
-            <name>o</name>
+            <itextId>static_instance-insurance-3</itextId>
+            <name>asuransi_kesehatan</name>
           </item>
           <item>
-            <itextId>static_instance-blood_type-4</itextId>
-            <name>NA</name>
-          </item>
-        </root>
-      </instance>
-    <instance id="province">
-        <root>
-          <item>
-            <itextId>static_instance-province-0</itextId>
-            <name>NTB</name>
-          </item>
-        </root>
-      </instance>
-    <instance id="transportation">
-        <root>
-          <item>
-            <itextId>static_instance-transportation-0</itextId>
-            <name>sepeda_motor</name>
+            <itextId>static_instance-insurance-4</itextId>
+            <name>jaminan_persalinan</name>
           </item>
           <item>
-            <itextId>static_instance-transportation-1</itextId>
-            <name>mobil</name>
-          </item>
-          <item>
-            <itextId>static_instance-transportation-2</itextId>
-            <name>lain-lain</name>
-          </item>
-        </root>
-      </instance>
-    <instance id="intended_place_for_labor">
-        <root>
-          <item>
-            <itextId>static_instance-intended_place_for_labor-0</itextId>
-            <name>rumah</name>
-          </item>
-          <item>
-            <itextId>static_instance-intended_place_for_labor-1</itextId>
-            <name>podok_bersalin_desa</name>
-          </item>
-          <item>
-            <itextId>static_instance-intended_place_for_labor-2</itextId>
-            <name>puskesmas_pembantu</name>
-          </item>
-          <item>
-            <itextId>static_instance-intended_place_for_labor-3</itextId>
-            <name>pusat_kesehatan_masyarakat</name>
-          </item>
-          <item>
-            <itextId>static_instance-intended_place_for_labor-4</itextId>
-            <name>rumah_bersalin</name>
-          </item>
-          <item>
-            <itextId>static_instance-intended_place_for_labor-5</itextId>
-            <name>rumah_sakit_ibu_dan_anak</name>
-          </item>
-          <item>
-            <itextId>static_instance-intended_place_for_labor-6</itextId>
-            <name>rumah_sakit</name>
-          </item>
-          <item>
-            <itextId>static_instance-intended_place_for_labor-7</itextId>
-            <name>RS_Odha</name>
-          </item>
-        </root>
-      </instance>
-    <instance id="maternal_and_child_health_booklet_ownership">
-        <root>
-          <item>
-            <itextId>static_instance-maternal_and_child_health_booklet_ownership-0</itextId>
-            <name>ya</name>
-          </item>
-          <item>
-            <itextId>static_instance-maternal_and_child_health_booklet_ownership-1</itextId>
-            <name>tidak</name>
+            <itextId>static_instance-insurance-5</itextId>
+            <name>tidak_ada_asuransi</name>
           </item>
         </root>
       </instance>
@@ -2576,90 +2473,6 @@
           <item>
             <itextId>static_instance-yes_no-1</itextId>
             <name>Tidak</name>
-          </item>
-        </root>
-      </instance>
-    <instance id="poor_family_not">
-        <root>
-          <item>
-            <itextId>static_instance-poor_family_not-0</itextId>
-            <name>ya</name>
-          </item>
-          <item>
-            <itextId>static_instance-poor_family_not-1</itextId>
-            <name>tidak</name>
-          </item>
-        </root>
-      </instance>
-    <instance id="gender">
-        <root>
-          <item>
-            <itextId>static_instance-gender-0</itextId>
-            <name>laki</name>
-          </item>
-          <item>
-            <itextId>static_instance-gender-1</itextId>
-            <name>perempuan</name>
-          </item>
-        </root>
-      </instance>
-    <instance id="kecamatan">
-        <root>
-          <item>
-            <itextId>static_instance-kecamatan-0</itextId>
-            <name>Pujut</name>
-          </item>
-          <item>
-            <itextId>static_instance-kecamatan-1</itextId>
-            <name>Janapria</name>
-          </item>
-          <item>
-            <itextId>static_instance-kecamatan-2</itextId>
-            <name>Lainnya</name>
-          </item>
-        </root>
-      </instance>
-    <instance id="labor_attendant">
-        <root>
-          <item>
-            <itextId>static_instance-labor_attendant-0</itextId>
-            <name>keluarga</name>
-          </item>
-          <item>
-            <itextId>static_instance-labor_attendant-1</itextId>
-            <name>dukun</name>
-          </item>
-          <item>
-            <itextId>static_instance-labor_attendant-2</itextId>
-            <name>bidan</name>
-          </item>
-          <item>
-            <itextId>static_instance-labor_attendant-3</itextId>
-            <name>dr.umum__dr.spesialis</name>
-          </item>
-          <item>
-            <itextId>static_instance-labor_attendant-4</itextId>
-            <name>lain-lain</name>
-          </item>
-          <item>
-            <itextId>static_instance-labor_attendant-5</itextId>
-            <name>tidak_ada</name>
-          </item>
-        </root>
-      </instance>
-    <instance id="stock_of_labor_tools">
-        <root>
-          <item>
-            <itextId>static_instance-stock_of_labor_tools-0</itextId>
-            <name>kain</name>
-          </item>
-          <item>
-            <itextId>static_instance-stock_of_labor_tools-1</itextId>
-            <name>handuk</name>
-          </item>
-          <item>
-            <itextId>static_instance-stock_of_labor_tools-2</itextId>
-            <name>pakaian_bersih_dan_kering</name>
           </item>
         </root>
       </instance>

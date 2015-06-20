@@ -19,9 +19,27 @@
                <input type="radio" name="/penutupan_kb/kb_close_reason" data-name="/penutupan_kb/kb_close_reason" value="permanent_relocation" required="required" data-type-xml="select1" />
                <span lang="" class="option-label active">Relokasi</span>
             </label>
+            <label class="">
+               <input type="radio" name="/penutupan_kb/kb_close_reason" data-name="/penutupan_kb/kb_close_reason" value="dropout" required="required" data-type-xml="select1" />
+               <span lang="" class="option-label active">Drop Out (DO)</span>
+            </label>
+            <label class="">
+               <input type="radio" name="/penutupan_kb/kb_close_reason" data-name="/penutupan_kb/kb_close_reason" value="gagal" required="required" data-type-xml="select1" />
+               <span lang="" class="option-label active">Gagal (G)</span>
+            </label>
          </div>
       </fieldset>
    </fieldset>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">Keterangan DO</span>
+      <span lang="" class="or-hint active">Berikan alasan dan penjelasan penyebab peserta KB Drop Out</span>
+      <input type="text" name="/penutupan_kb/keterangan_do" data-type-xml="string" />
+   </label>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">Keterangan Gagal</span>
+      <span lang="" class="or-hint active">Berikan alasan dan penjelasan tambahan berkaitan peserta gagal KB</span>
+      <input type="text" name="/penutupan_kb/keterangan_gagal" data-type-xml="string" />
+   </label>
    <section class="or-group-data or-branch pre-init " name="/penutupan_kb/death_mother_group" data-relevant=" /penutupan_kb/kb_close_reason  = 'death_of_mother'">
       <label class="question non-select ">
          <span lang="" class="or-constraint-msg active">Tanggal kematian ibu hari ini atau hari-hari sebelumnya</span>
@@ -76,7 +94,7 @@
          <input type="hidden" name="/penutupan_kb/meta/instanceID" data-calculate="concat('uuid:', uuid())" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
-         <input type="hidden" name="/penutupan_kb/formhub/uuid" data-calculate="'965cd25a325d4b728bccf2a0b576b99d'" data-type-xml="string" />
+         <input type="hidden" name="/penutupan_kb/formhub/uuid" data-calculate="'4e64f357989e4b8691ae46c7d9ad8b48'" data-type-xml="string" />
       </label>
    </fieldset>
 </form>

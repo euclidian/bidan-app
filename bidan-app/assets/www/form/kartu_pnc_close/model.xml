@@ -1,30 +1,30 @@
 <model>
     <instance>
-        <PNC_Close id="PNC_Close" version="201506081154">
-            <formhub>
-                <uuid />
-            </formhub>
-            <start />
-            <today />
-            <reg_date />
-            <deviceid />
-            <simserial />
-            <phonenumber />
-            <is_mother_dead />
-            <pnc_close_reason />
-            <death_mother_group>
-                <is_mother_closed />
-                <woman_survived />
-                <death_date />
-                <maternal_death />
-                <maternal_death_cause />
-                <other_maternal_death_cause />
-            </death_mother_group>
-            <confirm_pnc_close />
-            <end />
-            <meta>
-                <instanceID />
-            </meta>
+        <PNC_Close id="PNC_Close" version="201506200347">
+          <formhub>
+            <uuid/>
+          </formhub>
+          <start/>
+          <today/>
+          <deviceid/>
+          <simserial/>
+          <phonenumber/>
+          <pnc_close_reason/>
+          <death_mother_group>
+            <woman_survived/>
+            <death_date/>
+            <maternal_death/>
+            <maternal_death_cause/>
+            <other_maternal_death_cause/>
+            <place_of_death/>
+            <other_place_of_death/>
+            <not_maternal_death_cause/>
+          </death_mother_group>
+          <confirm_pnc_close/>
+          <end/>
+          <meta>
+            <instanceID/>
+          </meta>
         </PNC_Close>
-    </instance>
-</model>
+      </instance>
+  </model>

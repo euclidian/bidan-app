@@ -1,13 +1,17 @@
 {
-	"form_data_definition_version": "1",
-	"form": {
-		"bind_type": "kartu_ibu",
-		"default_bind_path": "/model/instance/register_kb/",
-		"fields": [
-			{
-				"name": "id",
-				"shouldLoadValue": true
-			},
+    "form_data_definition_version": "1",
+    "form": {
+        "bind_type": "kartu_ibu",
+        "default_bind_path": "/model/instance/register_kb/",
+        "fields": [
+            {
+                "name": "id",
+                "shouldLoadValue": true
+            },
+            {
+                "name": "tanggalkunjungan",
+                "bind": "/model/instance/register_kb/tanggal_periksa"
+            },
             {
                 "name": "puskesmas",
                 "bind": "/model/instance/register_kb/puskesmas"
@@ -26,7 +30,7 @@
             },
             {
                 "name": "tanggalLahir",
-                "bind": "/model/instance/register_kb/tanggal_lahir"
+                "bind": "/model/instance/register_kb/tanggal_lahir_ibu"
             },
             {
                 "name": "umur",
@@ -61,20 +65,12 @@
                 "bind": "/model/instance/register_kb/desal"
             },
             {
-                "name": "desaq",
-                "bind": "/model/instance/register_kb/desaq"
-            },
-            {
                 "name": "dusun",
                 "bind": "/model/instance/register_kb/dusun"
             },
             {
                 "name": "dusunl",
                 "bind": "/model/instance/register_kb/dusunl"
-            },
-            {
-                "name": "dusunq",
-                "bind": "/model/instance/register_kb/dusunq"
             },
             {
                 "name": "pendidikan",
@@ -98,7 +94,7 @@
             },
             {
                 "name": "namaKader",
-				"bind": "/model/instance/register_kb/nama_kader"
+                "bind": "/model/instance/register_kb/nama_kader"
             },
             {
                 "name": "namaDukun",
@@ -116,61 +112,58 @@
                 "name": "telponMemilikiTidak",
                 "bind": "/model/instance/register_kb/nomortelpon"
             },
-			{
+            {
                 "name": "NomorTelponHp",
                 "bind": "/model/instance/register_kb/nomor_telpon_hp"
             },
-			
-			{
-				"name": "alki",
-				"bind": "/model/instance/register_kb/alki"
-			},
-			{
-				"name": "alkihb",
-				"bind": "/model/instance/register_kb/alki_hb"
-			},
-			
-			{
-				"name": "alkilila",
-				"bind": "/model/instance/register_kb/alki_lila"
-			},
-			{
-				"name": "alkiPenyakitKronis",
-				"bind": "/model/instance/register_kb/alki_penyakit_kronis"
-			},
-			{
-				"name": "alkiPenyakitIms",
-				"bind": "/model/instance/register_kb/alki_penyakit_ims"
-			},
-			{
-				"name": "tanggalkunjungan",
-				"bind": "/model/instance/register_kb/tanggal_kunjungan"
-			},
-			{
-				"name": "keteranganTentangPesertaKB",
-				"bind": "/model/instance/register_kb/keterangan_tentang_peserta_kb"
-			},
-			{
-				"name": "jenisKontrasepsi",
-				"bind": "/model/instance/register_kb/jenis_kontrasepsi_yang_digunakan"
-			},
-			
             {
-                 "name": "submissionDate",
-                 "bind": "/model/instance/register_kb/today"
-          	},
-		    {
-                 "name": "registrationDate",
-		         "bind": "/model/instance/register_kb/reg_date"
+                "name": "paritas",
+                "bind": "/model/instance/register_kb/paritas"
             },
-          {
-            "name": "isClosed",
-            "value": "false"
-          },
-          {
-            "name": "isOutOfArea",
-            "value": "false"
-          }
-		]
-	}
+            {
+                "name": "alki",
+                "bind": "/model/instance/register_kb/alki"
+            },
+            {
+                "name": "alkihb",
+                "bind": "/model/instance/register_kb/alki_hb"
+            },
+            {
+                "name": "alkilila",
+                "bind": "/model/instance/register_kb/alki_lila"
+            },
+            {
+                "name": "alkiPenyakitKronis",
+                "bind": "/model/instance/register_kb/alki_penyakit_kronis"
+            },
+            {
+                "name": "alkiPenyakitIms",
+                "bind": "/model/instance/register_kb/alki_penyakit_ims"
+            },
+            {
+                "name": "keteranganTentangPesertaKB",
+                "bind": "/model/instance/register_kb/keterangan_tentang_peserta_kb"
+            },
+            {
+                "name": "jenisKontrasepsi",
+                "bind": "/model/instance/register_kb/jenis_kontrasepsi_yang_digunakan"
+            },
+            {
+                "name": "submissionDate",
+                "bind": "/model/instance/register_kb/today"
+            },
+            {
+                "name": "registrationDate",
+                "bind": "/model/instance/register_kb/reg_date"
+            },
+            {
+                "name": "isClosed",
+                "value": "false"
+            },
+            {
+                "name": "isOutOfArea",
+                "value": "false"
+            }
+        ]
+    }
 }

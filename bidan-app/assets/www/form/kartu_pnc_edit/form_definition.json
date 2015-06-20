@@ -9,9 +9,20 @@
         "shouldLoadValue": true
       },
       {
-        "name": "kiId",
+        "name": "childId",
         "shouldLoadValue": true,
-        "source": "ibu.kartu_ibu.id"
+        "source": "ibu.anak.id"
+      },
+      {
+        "name": "hpht",
+        "bind": "/model/instance/dokumentasi_persalinan/hpht",
+        "source": "ibu.tanggalHPHT",
+        "shouldLoadValue": true
+      },
+      {
+        "name": "usiaKehamilan",
+        "bind": "/model/instance/dokumentasi_persalinan/usia_kehamilan",
+        "shouldLoadValue": true
       },
       {
         "name": "keadaanIbu",

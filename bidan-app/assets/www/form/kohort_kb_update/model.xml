@@ -1,19 +1,15 @@
 <model>
     <instance>
-        <Update_KB id="Update_KB" version="201506080846">
+        <kohort_pelayanan_kb id="kohort_pelayanan_kb" version="201506200421">
           <formhub>
             <uuid/>
           </formhub>
           <start/>
           <today/>
+          <reg_date/>
           <deviceid/>
           <simserial/>
           <phonenumber/>
-          <alki/>
-          <alki_hb/>
-          <alki_lila/>
-          <alki_penyakit_kronis/>
-          <alki_penyakit_ims/>
           <tanggal_kunjungan/>
           <keterangan_tentang_peserta_kb/>
           <jenis_kontrasepsi_yang_digunakan/>
@@ -26,6 +22,6 @@
           <meta>
             <instanceID/>
           </meta>
-        </Update_KB>
+        </kohort_pelayanan_kb>
       </instance>
   </model>

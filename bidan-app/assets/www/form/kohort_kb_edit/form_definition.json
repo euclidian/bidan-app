@@ -1,86 +1,66 @@
 {
   "form_data_definition_version": "1",
   "form": {
-	"bind_type": "kartu_ibu",
-	"default_bind_path": "/model/instance/Register_KB_Only/",
-	"fields": [
-	  {
-		"name": "id",
-		"shouldLoadValue": true
-	  },
-	  {
-		"name": "alki",
-		"bind": "/model/instance/Register_KB_Only/alki",
-		"shouldLoadValue" : true
-	  },
-	  {
-		"name": "alkihb",
-		"bind": "/model/instance/Register_KB_Only/alki_hb",
-		"shouldLoadValue" : true
-	  },
-	  {
-		"name": "alkilila",
-		"bind": "/model/instance/Register_KB_Only/alki_lila",
-		"shouldLoadValue" : true
-	  },
-	  {
-		"name": "alkiPenyakitKronis",
-		"bind": "/model/instance/Register_KB_Only/alki_penyakit_kronis",
-		"shouldLoadValue" : true
-	  },
-	  {
-		"name": "alkiPenyakitIms",
-		"bind": "/model/instance/Register_KB_Only/alki_penyakit_ims",
-		"shouldLoadValue" : true
-	  },
-	  {
-		"name": "tanggalkunjungan",
-		"bind": "/model/instance/Register_KB_Only/tanggal_kunjungan",
-		"shouldLoadValue" : true
-	  },
-	  {
-		"name": "keteranganTentangPesertaKB",
-		"bind": "/model/instance/Register_KB_Only/keterangan_tentang_peserta_kb",
-		"shouldLoadValue" : true
-	  },
-	  {
-		"name": "jenisKontrasepsi",
-		"bind": "/model/instance/Register_KB_Only/jenis_kontrasepsi_yang_digunakan",
-		"shouldLoadValue" : true
-	  },
-	  {
-		"name": "keterangantentangPesertaKB2",
-		"bind": "/model/instance/Register_KB_Only/keterangan_tentang_peserta_kb_2",
-		"shouldLoadValue" : true
-	  },
-	  {
-		"name": "keterangando",
-		"bind": "/model/instance/Register_KB_Only/keterangan_do",
-		"shouldLoadValue" : true
-	  },
-	  {
-		"name": "keteranganGantiCara",
-		"bind": "/model/instance/Register_KB_Only/keterangan_ganti_cara",
-		"shouldLoadValue" : true
-	  },
-	  {
-		"name": "keteranganEfekSamping",
-		"bind": "/model/instance/Register_KB_Only/keterangan_efek_samping",
-		"shouldLoadValue" : true
-	  },
-	  {
-		"name": "keteranganKomplikasi",
-		"bind": "/model/instance/Register_KB_Only/keterangan_komplikasi",
-		"shouldLoadValue" : true
-	  },
-	  {
-		"name": "submissionDate",
-		"bind": "/model/instance/Register_KB_Only/today"
-	  },
-	  {
-		"name": "registrationDate",
-		"bind": "/model/instance/Register_KB_Only/reg_date"
-	  }
-	]
+    "bind_type": "kartu_ibu",
+    "default_bind_path": "/model/instance/tambah_kb/",
+    "fields": [
+      {
+        "name": "id",
+        "shouldLoadValue": true
+      },
+      {
+        "name": "tanggalkunjungan",
+        "bind": "/model/instance/tambah_kb/tanggal_kunjungan",
+        "shouldLoadValue": true
+      },
+      {
+        "name": "paritas",
+        "bind": "/model/instance/tambah_kb/paritas",
+        "shouldLoadValue": true
+      },
+      {
+        "name": "alki",
+        "bind": "/model/instance/tambah_kb/alki",
+        "shouldLoadValue": true
+      },
+      {
+        "name": "alkihb",
+        "bind": "/model/instance/tambah_kb/alki_hb",
+        "shouldLoadValue": true
+      },
+      {
+        "name": "alkilila",
+        "bind": "/model/instance/tambah_kb/alki_lila",
+        "shouldLoadValue": true
+      },
+      {
+        "name": "alkiPenyakitKronis",
+        "bind": "/model/instance/tambah_kb/alki_penyakit_kronis",
+        "shouldLoadValue": true
+      },
+      {
+        "name": "alkiPenyakitIms",
+        "bind": "/model/instance/tambah_kb/alki_penyakit_ims",
+        "shouldLoadValue": true
+      },
+      {
+        "name": "keteranganTentangPesertaKB",
+        "bind": "/model/instance/tambah_kb/keterangan_tentang_peserta_kb",
+        "shouldLoadValue": true
+      },
+      {
+        "name": "jenisKontrasepsi",
+        "bind": "/model/instance/tambah_kb/jenis_kontrasepsi_yang_digunakan",
+        "shouldLoadValue": true
+      },
+      {
+        "name": "submissionDate",
+        "bind": "/model/instance/tambah_kb/today"
+      },
+      {
+        "name": "registrationDate",
+        "bind": "/model/instance/tambah_kb/reg_date"
+      }
+    ]
   }
 }

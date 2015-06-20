@@ -1,12 +1,12 @@
 <model>
     <instance>
-        <kartu_ibu id="kartu_ibu" version="201506150230">
+        <kartu_ibu id="kartu_ibu" version="201506190523">
           <formhub>
             <uuid/>
           </formhub>
           <start/>
           <today/>
-	  <reg_date/>
+          <reg_date/>
           <deviceid/>
           <simserial/>
           <phonenumber/>
@@ -14,7 +14,7 @@
           <no_ibu/>
           <nama_lengkap/>
           <nama_suami/>
-          <tanggal_lahir/>
+          <tanggal_lahir_ibu/>
           <umur/>
           <generated_note_name_13/>
           <alamat_domisili/>
@@ -37,6 +37,7 @@
           <golongan_darah/>
           <nomortelpon/>
           <nomor_telpon_hp/>
+          <pptest/>
           <Too_young_risk/>
           <Too_old_mother/>
           <is_high_risk/>
@@ -2370,6 +2371,22 @@
           </item>
         </root>
       </instance>
+    <instance id="kabupaten">
+        <root>
+          <item>
+            <itextId>static_instance-kabupaten-0</itextId>
+            <name>Lombok Barat</name>
+          </item>
+          <item>
+            <itextId>static_instance-kabupaten-1</itextId>
+            <name>Lombok Tengah</name>
+          </item>
+          <item>
+            <itextId>static_instance-kabupaten-2</itextId>
+            <name>Lombok Timur</name>
+          </item>
+        </root>
+      </instance>
     <instance id="education">
         <root>
           <item>
@@ -2394,19 +2411,15 @@
           </item>
         </root>
       </instance>
-    <instance id="kabupaten">
+    <instance id="pn">
         <root>
           <item>
-            <itextId>static_instance-kabupaten-0</itextId>
-            <name>Lombok Barat</name>
+            <itextId>static_instance-pn-0</itextId>
+            <name>positive</name>
           </item>
           <item>
-            <itextId>static_instance-kabupaten-1</itextId>
-            <name>Lombok Tengah</name>
-          </item>
-          <item>
-            <itextId>static_instance-kabupaten-2</itextId>
-            <name>Lombok Timur</name>
+            <itextId>static_instance-pn-1</itextId>
+            <name>negative</name>
           </item>
         </root>
       </instance>

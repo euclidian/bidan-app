@@ -2,10 +2,14 @@
 <form autocomplete="off" novalidate="novalidate" class="or clearfix" id="register_baby">
    <!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.-->
    <section class="form-logo" />
-   <h3 id="form-title">Register Baby</h3>
+   <h3 id="form-title">Register Bayi</h3>
    <select id="form-languages" style="display:none;" data-default-lang="default">
       <option value="default">default</option>
    </select>
+   <label class="note non-select ">
+      <span lang="" class="question-label active">IDENTITAS IBU</span>
+      <input type="text" name="/register_baby/identitasibu" data-type-xml="string" readonly="readonly" />
+   </label>
    <label class="question non-select ">
       <span lang="" class="question-label active">Puskesmas</span>
       <span class="required">*</span>
@@ -13,33 +17,34 @@
       <input type="text" name="/register_baby/puskesmas" required="required" data-type-xml="string" />
    </label>
    <label class="question non-select ">
-		<span lang="" class="question-label active">No. Ibu</span>
-		<input type="number" name="/register_baby/no_ibu" data-type-xml="int" />
-	</label>
-   <label class="question non-select ">
-      <span lang="" class="question-label active">Nama lengkap</span>
+      <span lang="" class="question-label active">No. Ibu</span>
       <span class="required">*</span>
-      <span lang="" class="or-hint active">Nama Lengkap Ibu</span>
-      <input type="text" name="/register_baby/nama_lengkap" required="required" data-type-xml="string" />
+      <input type="number" name="/register_baby/no_ibu" required="required" data-type-xml="int" />
    </label>
    <label class="question non-select ">
-      <span lang="" class="question-label active">Nama suami</span>
+      <span lang="" class="question-label active">Nama ibu</span>
       <span class="required">*</span>
-      <span lang="" class="or-hint active">Nama Lengkap Suami</span>
-      <input type="text" name="/register_baby/nama_suami" required="required" data-type-xml="string" />
+      <span lang="" class="or-hint active">Nama lengkap ibu</span>
+      <input type="text" name="/register_baby/nama_ibu" required="required" data-type-xml="string" />
    </label>
    <label class="question non-select ">
-      <span lang="" class="question-label active">Tanggal lahir</span>
+      <span lang="" class="question-label active">Nama bapak</span>
+      <span class="required">*</span>
+      <span lang="" class="or-hint active">Nama bapak</span>
+      <input type="text" name="/register_baby/nama_bapak" required="required" data-type-xml="string" />
+   </label>
+   <label class="question non-select ">
+      <span lang="" class="question-label active">Tanggal lahir ibu</span>
       <span class="required">*</span>
       <span lang="" class="or-hint active">Tanggal Lahir Ibu</span>
-      <input type="date" name="/register_baby/tanggal_lahir" required="required" data-type-xml="date" />
+      <input type="date" name="/register_baby/tanggal_lahir_ibu" required="required" data-type-xml="date" />
    </label>
    <label class="note non-select ">
       <span lang="" class="question-label active">
-         Umur:
+         Umur ibu:
          <span class="or-output" data-value=" /register_baby/umur " />
       </span>
-      <input type="text" name="/register_baby/generated_note_name_13" data-type-xml="string" readonly="readonly" />
+      <input type="text" name="/register_baby/generated_note_name_14" data-type-xml="string" readonly="readonly" />
    </label>
    <label class="question non-select ">
       <span lang="" class="question-label active">Alamat domisili</span>
@@ -97,12 +102,13 @@
    </fieldset>
    <label class="question or-branch pre-init non-select ">
       <span lang="" class="question-label active">kecamatan</span>
+      <span lang="" class="or-hint active">kecamatan Tempat Tinggal Ibu</span>
       <input type="text" name="/register_baby/kecamatanl" data-relevant=" /register_baby/kabupaten ='Lombok Barat' or  /register_baby/kabupaten ='Lombok Timur' or  /register_baby/kecamatan ='Lainnya'" data-type-xml="string" />
    </label>
    <label class="question or-appearance-minimal  or-branch pre-init ">
       <span lang="" class="question-label active">desa</span>
       <span lang="" class="or-hint active">desa Tempat tinggal Ibu</span>
-      <select name="/register_baby/desa" data-name="/register_baby/desa" data-relevant=" /register_baby/kabupaten ='Lombok Tengah'" data-type-xml="select1">
+      <select name="/register_baby/desa" data-name="/register_baby/desa" data-relevant=" /register_baby/kabupaten ='Lombok Tengah' and  /register_baby/kecamatan  != 'Lainnya'" data-type-xml="select1">
          <option class="itemset-template" value="" data-items-path="instance('desa')/root/item[kecamatan= /register_baby/kecamatan ]">...</option>
       </select>
       <span class="or-option-translations" style="display:none;" />
@@ -141,12 +147,13 @@
    </label>
    <label class="question or-branch pre-init non-select ">
       <span lang="" class="question-label active">desa</span>
+      <span lang="" class="or-hint active">desa Tempat tinggal Ibu</span>
       <input type="text" name="/register_baby/desal" data-relevant=" /register_baby/kabupaten ='Lombok Barat' or  /register_baby/kabupaten ='Lombok Timur' or  /register_baby/kecamatan ='Lainnya' or  /register_baby/desa ='Lainnya'" data-type-xml="string" />
    </label>
    <label class="question or-appearance-minimal  or-branch pre-init ">
       <span lang="" class="question-label active">dusun</span>
       <span lang="" class="or-hint active">dusun Tempat tinggal Ibu</span>
-      <select name="/register_baby/dusun" data-name="/register_baby/dusun" data-relevant=" /register_baby/kabupaten ='Lombok Tengah'" data-type-xml="select1">
+      <select name="/register_baby/dusun" data-name="/register_baby/dusun" data-relevant=" /register_baby/kabupaten ='Lombok Tengah' and  /register_baby/kecamatan  != 'Lainnya'" data-type-xml="select1">
          <option class="itemset-template" value="" data-items-path="instance('dusun')/root/item[kecamatan= /register_baby/kecamatan  and desa= /register_baby/desa ]">...</option>
       </select>
       <span class="or-option-translations" style="display:none;" />
@@ -496,72 +503,36 @@
    </label>
    <label class="question or-branch pre-init non-select ">
       <span lang="" class="question-label active">dusun</span>
+      <span lang="" class="or-hint active">dusun Tempat tinggal Ibu</span>
       <input type="text" name="/register_baby/dusunl" data-relevant=" /register_baby/kabupaten ='Lombok Barat' or  /register_baby/kabupaten ='Lombok Timur' or  /register_baby/kecamatan ='Lainnya' or  /register_baby/desa ='Lainnya' or  /register_baby/dusun ='Lainnya'" data-type-xml="string" />
    </label>
-   <fieldset class="question ">
-      <fieldset>
-         <legend>
-            <span lang="" class="question-label active">Pendidikan</span>
-            <span lang="" class="or-hint active">Pendidikan Terakhir Ibu</span>
-         </legend>
-         <div class="option-wrapper">
-            <label class="">
-               <input type="radio" name="/register_baby/pendidikan" data-name="/register_baby/pendidikan" value="sekolah_dasar" data-type-xml="select1" />
-               <span lang="" class="option-label active">Sekolah Dasar (SD)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/pendidikan" data-name="/register_baby/pendidikan" value="sekolah_menengah_pertama" data-type-xml="select1" />
-               <span lang="" class="option-label active">Sekolah Menengah Pertama (SMP)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/pendidikan" data-name="/register_baby/pendidikan" value="sekolah_menengah_atas" data-type-xml="select1" />
-               <span lang="" class="option-label active">Sekolah Menengah Atas (SMA)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/pendidikan" data-name="/register_baby/pendidikan" value="perguruan_tinggi" data-type-xml="select1" />
-               <span lang="" class="option-label active">Perguruan Tinggi</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/pendidikan" data-name="/register_baby/pendidikan" value="tidak_sekolah" data-type-xml="select1" />
-               <span lang="" class="option-label active">Tidak sekolah</span>
-            </label>
-         </div>
-      </fieldset>
-   </fieldset>
-   <fieldset class="question ">
-      <fieldset>
-         <legend>
-            <span lang="" class="question-label active">Agama</span>
-            <span lang="" class="or-hint active">Agama Ibu</span>
-         </legend>
-         <div class="option-wrapper">
-            <label class="">
-               <input type="radio" name="/register_baby/agama" data-name="/register_baby/agama" value="islam" data-type-xml="select1" />
-               <span lang="" class="option-label active">Islam</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/agama" data-name="/register_baby/agama" value="hindu" data-type-xml="select1" />
-               <span lang="" class="option-label active">Hindu</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/agama" data-name="/register_baby/agama" value="kristen" data-type-xml="select1" />
-               <span lang="" class="option-label active">Kristen</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/agama" data-name="/register_baby/agama" value="katolik" data-type-xml="select1" />
-               <span lang="" class="option-label active">Katolik</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/agama" data-name="/register_baby/agama" value="budha" data-type-xml="select1" />
-               <span lang="" class="option-label active">Budha</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/agama" data-name="/register_baby/agama" value="lainnya" data-type-xml="select1" />
-               <span lang="" class="option-label active">Lainnya</span>
-            </label>
-         </div>
-      </fieldset>
-   </fieldset>
+   <label class="question or-appearance-minimal ">
+      <span lang="" class="question-label active">Pendidikan</span>
+      <span lang="" class="or-hint active">Pendidikan Terakhir Ibu</span>
+      <select name="/register_baby/pendidikan" data-name="/register_baby/pendidikan" data-type-xml="select1">
+         <option value="">...</option>
+         <option value="sekolah_dasar">Sekolah Dasar (SD)</option>
+         <option value="sekolah_menengah_pertama">Sekolah Menengah Pertama (SMP)</option>
+         <option value="sekolah_menengah_atas">Sekolah Menengah Atas (SMA)</option>
+         <option value="perguruan_tinggi">Perguruan Tinggi</option>
+         <option value="tidak_sekolah">Tidak sekolah</option>
+      </select>
+      <span class="or-option-translations" style="display:none;" />
+   </label>
+   <label class="question or-appearance-minimal ">
+      <span lang="" class="question-label active">Agama</span>
+      <span lang="" class="or-hint active">Agama Ibu</span>
+      <select name="/register_baby/agama" data-name="/register_baby/agama" data-type-xml="select1">
+         <option value="">...</option>
+         <option value="islam">Islam</option>
+         <option value="hindu">Hindu</option>
+         <option value="kristen">Kristen</option>
+         <option value="katolik">Katolik</option>
+         <option value="budha">Budha</option>
+         <option value="lainnya">Lainnya</option>
+      </select>
+      <span class="or-option-translations" style="display:none;" />
+   </label>
    <label class="question non-select ">
       <span lang="" class="question-label active">Pekerjaan</span>
       <span lang="" class="or-hint active">Pekerjaan Ibu</span>
@@ -601,71 +572,34 @@
       <span lang="" class="or-hint active">Nama Dukun yang Menemani Ibu pada saat Menerima Pelayanan Kesehatan</span>
       <input type="text" name="/register_baby/nama_dukun" data-type-xml="string" />
    </label>
-   <fieldset class="question ">
-      <fieldset>
-         <legend>
-            <span lang="" class="question-label active">Asuransi Jiwa</span>
-            <span lang="" class="or-hint active">Jenis Asuransi yang Dimiliki Ibu</span>
-         </legend>
-         <div class="option-wrapper">
-            <label class="">
-               <input type="radio" name="/register_baby/asuransi_jiwa" data-name="/register_baby/asuransi_jiwa" value="jaminan_kesehatan_masyarakat" data-type-xml="select1" />
-               <span lang="" class="option-label active">Jaminan Kesehatan Masyarakat (Jamkesmas)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/asuransi_jiwa" data-name="/register_baby/asuransi_jiwa" value="Jamsostek" data-type-xml="select1" />
-               <span lang="" class="option-label active">Jaminan Sosial dan Ketenagakerjaan (Jamsostek)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/asuransi_jiwa" data-name="/register_baby/asuransi_jiwa" value="jaminan_kesehatan_daerah" data-type-xml="select1" />
-               <span lang="" class="option-label active">Jaminan Kesehatan Daerah (Jamkesda)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/asuransi_jiwa" data-name="/register_baby/asuransi_jiwa" value="asuransi_kesehatan" data-type-xml="select1" />
-               <span lang="" class="option-label active">Asuransi Kesehatan (Askes)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/asuransi_jiwa" data-name="/register_baby/asuransi_jiwa" value="jaminan_persalinan" data-type-xml="select1" />
-               <span lang="" class="option-label active">Jaminan Persalinan (Jampersal)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/asuransi_jiwa" data-name="/register_baby/asuransi_jiwa" value="tidak_ada_asuransi" data-type-xml="select1" />
-               <span lang="" class="option-label active">Tidak memiliki asuransi/pembiayaan</span>
-            </label>
-         </div>
-      </fieldset>
-   </fieldset>
-   <fieldset class="question ">
-      <fieldset>
-         <legend>
-            <span lang="" class="question-label active">Golongan Darah</span>
-            <span class="required">*</span>
-            <span lang="" class="or-hint active">Menunjukan Golongan Darah Ibu</span>
-         </legend>
-         <div class="option-wrapper">
-            <label class="">
-               <input type="radio" name="/register_baby/golongan_darah" data-name="/register_baby/golongan_darah" value="a" required="required" data-type-xml="select1" />
-               <span lang="" class="option-label active">A (A)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/golongan_darah" data-name="/register_baby/golongan_darah" value="b" required="required" data-type-xml="select1" />
-               <span lang="" class="option-label active">B (B)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/golongan_darah" data-name="/register_baby/golongan_darah" value="ab" required="required" data-type-xml="select1" />
-               <span lang="" class="option-label active">AB (AB)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/golongan_darah" data-name="/register_baby/golongan_darah" value="o" required="required" data-type-xml="select1" />
-               <span lang="" class="option-label active">O (O)</span>
-            </label>
-            <label class="">
-               <input type="radio" name="/register_baby/golongan_darah" data-name="/register_baby/golongan_darah" value="NA" required="required" data-type-xml="select1" />
-               <span lang="" class="option-label active">Belum diketahui</span>
-            </label>
-         </div>
-      </fieldset>
-   </fieldset>
+   <label class="question or-appearance-minimal ">
+      <span lang="" class="question-label active">Asuransi Jiwa</span>
+      <span lang="" class="or-hint active">Jenis Asuransi yang Dimiliki Ibu</span>
+      <select name="/register_baby/asuransi_jiwa" data-name="/register_baby/asuransi_jiwa" data-type-xml="select1">
+         <option value="">...</option>
+         <option value="jaminan_kesehatan_masyarakat">Jaminan Kesehatan Masyarakat (Jamkesmas)</option>
+         <option value="Jamsostek">Jaminan Sosial dan Ketenagakerjaan (Jamsostek)</option>
+         <option value="jaminan_kesehatan_daerah">Jaminan Kesehatan Daerah (Jamkesda)</option>
+         <option value="asuransi_kesehatan">Asuransi Kesehatan (Askes)</option>
+         <option value="jaminan_persalinan">Jaminan Persalinan (Jampersal)</option>
+         <option value="tidak_ada_asuransi">Tidak memiliki asuransi/pembiayaan</option>
+      </select>
+      <span class="or-option-translations" style="display:none;" />
+   </label>
+   <label class="question or-appearance-minimal ">
+      <span lang="" class="question-label active">Golongan Darah</span>
+      <span class="required">*</span>
+      <span lang="" class="or-hint active">Menunjukan Golongan Darah Ibu</span>
+      <select name="/register_baby/golongan_darah" data-name="/register_baby/golongan_darah" required="required" data-type-xml="select1">
+         <option value="">...</option>
+         <option value="a">A (A)</option>
+         <option value="b">B (B)</option>
+         <option value="ab">AB (AB)</option>
+         <option value="o">O (O)</option>
+         <option value="NA">Belum diketahui</option>
+      </select>
+      <span class="or-option-translations" style="display:none;" />
+   </label>
    <fieldset class="question ">
       <fieldset>
          <legend>
@@ -692,25 +626,30 @@
       <span lang="" class="or-hint active">Nomor Telpon/Hp yang dimiliki Oleh Ibu</span>
       <input type="text" name="/register_baby/nomor_telponhp" required="required" data-constraint=".&gt;0 and .&lt;100000000000" data-relevant=" /register_baby/nomortelpon  = 'Ya'" data-type-xml="string" />
    </label>
+   <label class="note non-select ">
+      <span lang="" class="question-label active">REGISTER BAYI</span>
+      <input type="text" name="/register_baby/registerbayi" data-type-xml="string" readonly="readonly" />
+   </label>
    <label class="question non-select ">
       <span lang="" class="question-label active">Tanggal Pendaftaran</span>
       <span lang="" class="or-hint active">Tanggal melakukan pendaftaran bayi</span>
       <input type="date" name="/register_baby/tanggal_pendaftaran" data-type-xml="date" />
    </label>
    <label class="question non-select ">
-      <span lang="" class="or-constraint-msg active">harus terdiri dari 8 digit</span>
       <span lang="" class="question-label active">No. bayi</span>
-      <input type="number" name="/register_baby/no_bayi" data-constraint=".&gt;9999999 and .&lt;100000000" data-type-xml="int" />
+      <span lang="" class="or-hint active">diisi dengan nomor bayi</span>
+      <input type="number" name="/register_baby/no_bayi" data-type-xml="int" />
    </label>
    <label class="question non-select ">
       <span lang="" class="question-label active">Nama Bayi</span>
-      <span lang="" class="or-hint active">Nama bayi, dikosongkan jika belum diberikan nama</span>
+      <span lang="" class="or-hint active">Apabila nama bayi belum ada, isi dengan: Bayi 'nama_ibu'. misal nama ibu Ratna, maka isi dengan Bayi Ratna</span>
       <input type="text" name="/register_baby/nama_bayi" data-type-xml="string" />
    </label>
    <label class="question non-select ">
-      <span lang="" class="question-label active">Tanggal Lahir Anak</span>
+      <span lang="" class="or-constraint-msg active">Tanggal lahir bayi harus diisi dengan sebelum tanggal pendaftaran</span>
+      <span lang="" class="question-label active">Tanggal Lahir</span>
       <span lang="" class="or-hint active">Tanggal lahir Bayi</span>
-      <input type="date" name="/register_baby/tanggal_lahir_anak" data-type-xml="date" />
+      <input type="date" name="/register_baby/tanggal_lahir_anak" data-constraint=".&lt;=  /register_baby/tanggal_pendaftaran " data-type-xml="date" />
    </label>
    <fieldset class="question ">
       <fieldset>
@@ -734,7 +673,7 @@
       <fieldset>
          <legend>
             <span lang="" class="question-label active">Kepemilikan buku KIA</span>
-            <span lang="" class="or-hint active">Diisi untuk menerangkan apakah ibu memiliki buku KIA atau tidak</span>
+            <span lang="" class="or-hint active">Diisi jika ibu memiliki buku KIA</span>
          </legend>
          <div class="option-wrapper">
             <label class="">
@@ -797,7 +736,7 @@
                 data-type-xml="date" type="hidden" />
         </label>
       <label class="calculation non-select ">
-         <input type="hidden" name="/register_baby/umur" data-constraint=".&gt;0 and .&lt;61" data-calculate="int(( /register_baby/today  -  /register_baby/tanggal_lahir ) div 365)" data-type-xml="string" />
+         <input type="hidden" name="/register_baby/umur" data-calculate="int(( /register_baby/today  -  /register_baby/tanggal_lahir_ibu ) div 365)" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
          <input type="hidden" name="/register_baby/Low_Birthweght_risk" data-calculate="if( /register_baby/berat_lahir  &gt;= 1500 and  /register_baby/berat_lahir  &lt; 2500, 'Berat badan rendah', (if ( /register_baby/berat_lahir  &lt; 1500, 'berat badan sangat rendah', '')))" data-type-xml="string" />
@@ -812,7 +751,7 @@
          <input type="hidden" name="/register_baby/meta/instanceID" data-calculate="concat('uuid:', uuid())" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
-         <input type="hidden" name="/register_baby/formhub/uuid" data-calculate="'c896c4e94f784ac2b95d2248dd9fb1ab'" data-type-xml="string" />
+         <input type="hidden" name="/register_baby/formhub/uuid" data-calculate="'37c7d91977ca4da49f2a099606da9997'" data-type-xml="string" />
       </label>
    </fieldset>
 </form>

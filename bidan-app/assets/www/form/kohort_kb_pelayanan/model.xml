@@ -1,25 +1,31 @@
 <model>
     <instance>
-        <Register_KB_Only id="Register_KB_Only" version="201506080846">
+        <tambah_kb id="tambah_kb" version="201506200410">
           <formhub>
             <uuid/>
           </formhub>
           <start/>
           <today/>
+          <reg_date/>
           <deviceid/>
           <simserial/>
           <phonenumber/>
-	  <tanggal_kunjungan/>
+          <tanggal_kunjungan/>
+          <tanggal_lahir_ibu/>
+          <umur/>
+          <generated_note_name_10/>
+          <paritas/>
           <alki/>
           <alki_hb/>
           <alki_lila/>
           <alki_penyakit_kronis/>
           <alki_penyakit_ims/>
-          
+          <keterangan_tentang_peserta_kb/>
+          <jenis_kontrasepsi_yang_digunakan/>
           <end/>
           <meta>
             <instanceID/>
           </meta>
-        </Register_KB_Only>
+        </tambah_kb>
       </instance>
   </model>

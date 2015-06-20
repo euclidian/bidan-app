@@ -9,8 +9,17 @@
                 "shouldLoadValue":true
             },
             {
+                "name":"kiId",
+                "shouldLoadValue":true,
+                "source":"ibu.kartu_ibu.id"
+            },
+            {
                 "name":"referenceDate",
                 "bind":"/model/instance/PNC_Visit/tanggal_kunjungan"
+            },
+            {
+                "name":"tanggalLahirAnak",
+                "bind":"/model/instance/PNC_Visit/tanggal_lahir_anak"
             },
             {
                 "name":"hariKeKF",
@@ -83,6 +92,14 @@
             {
                 "name":"dirujukKeLainnya",
                 "bind":"/model/instance/PNC_Visit/dirujuk_ke_lainnya"
+            },
+            {
+                "name":"keadaanTiba",
+                "bind":"/model/instance/PNC_Visit/keadaan_tiba"
+            },
+            {
+                "name":"keterangan",
+                "bind":"/model/instance/PNC_Visit/keterangan"
             },
             {
                 "name":"keadaanTiba",

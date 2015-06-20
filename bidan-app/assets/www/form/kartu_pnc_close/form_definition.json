@@ -38,6 +38,14 @@
                 "bind":"/model/instance/PNC_Close/death_mother_group/other_maternal_death_cause"
             },
             {
+                "name":"placeOfDeath",
+                "bind":"/model/instance/PNC_Close/death_mother_group/place_of_death"
+            },
+            {
+                "name":"otherPlaceOfDeath",
+                "bind":"/model/instance/PNC_Close/death_mother_group/other_place_of_death"
+            },
+            {
                 "name":"submissionDate",
                 "bind":"/model/instance/PNC_Close/today"
             },

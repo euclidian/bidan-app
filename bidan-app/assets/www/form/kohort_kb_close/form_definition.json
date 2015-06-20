@@ -13,6 +13,14 @@
                 "bind": "/model/instance/Penutupan_KB/kb_close_reason"
             },
             {
+                "name": "keteranganGagal",
+                "bind": "/model/instance/Penutupan_KB/keterangan_gagal"
+            },
+            {
+                "name": "kbCloseReason",
+                "bind": "/model/instance/Penutupan_KB/kb_close_reason"
+            },
+            {
                 "name": "didWomanSurvive",
                 "bind": "/model/instance/Penutupan_KB/woman_survived"
             },
