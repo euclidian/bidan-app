@@ -5,6 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.bidan.view.controller.KIDetailController;
@@ -31,11 +33,8 @@ public class KIDetailActivity extends SecuredActivity {
 
     @Override
     protected void onCreation() {
-
         setContentView(R.layout.ki_detail_views);
-
         initialize();
-
         setupNavBarViews();
     }
 
@@ -48,6 +47,8 @@ public class KIDetailActivity extends SecuredActivity {
         // ViewGroup itemView;
         // itemView = (ViewGroup) getLayoutInflater().inflate(R.layout.ki_detail_views, null);
         KartuIbuClient kartuIbuClient = controller().get();
+
+        String json = new Gson().toJson(kartuIbuClient);
 
         puskesmasTextView = (TextView) findViewById(R.id.txt_puskesmas_ki_detail);
         puskesmasTextView.setText(kartuIbuClient.getPuskesmas());

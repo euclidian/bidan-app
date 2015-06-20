@@ -2,11 +2,34 @@ package org.ei.bidan.bidan.view.controller;
 
 import android.content.Context;
 
+import com.google.gson.Gson;
+
 import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.bidan.repository.AllKartuIbus;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 
 import java.util.Map;
+
+import static org.ei.bidan.AllConstants.KartuIbuFields.EDD;
+import static org.ei.bidan.AllConstants.KartuIbuFields.HUSBAND_NAME;
+import static org.ei.bidan.AllConstants.KartuIbuFields.IS_HIGH_PRIORITY;
+import static org.ei.bidan.AllConstants.KartuIbuFields.IS_HIGH_RISK;
+import static org.ei.bidan.AllConstants.KartuIbuFields.IS_HIGH_RISK_LABOUR;
+import static org.ei.bidan.AllConstants.KartuIbuFields.IS_HIGH_RISK_PREGNANCY;
+import static org.ei.bidan.AllConstants.KartuIbuFields.KABUPATEN;
+import static org.ei.bidan.AllConstants.KartuIbuFields.MOTHER_ADDRESS;
+import static org.ei.bidan.AllConstants.KartuIbuFields.MOTHER_AGE;
+import static org.ei.bidan.AllConstants.KartuIbuFields.MOTHER_BLOOD_TYPE;
+import static org.ei.bidan.AllConstants.KartuIbuFields.MOTHER_DOB;
+import static org.ei.bidan.AllConstants.KartuIbuFields.MOTHER_NAME;
+import static org.ei.bidan.AllConstants.KartuIbuFields.MOTHER_NUMBER;
+import static org.ei.bidan.AllConstants.KartuIbuFields.NUMBER_ABORTIONS;
+import static org.ei.bidan.AllConstants.KartuIbuFields.NUMBER_OF_LIVING_CHILDREN;
+import static org.ei.bidan.AllConstants.KartuIbuFields.NUMBER_OF_PREGNANCIES;
+import static org.ei.bidan.AllConstants.KartuIbuFields.NUMBER_PARTUS;
+import static org.ei.bidan.AllConstants.KartuIbuFields.POSYANDU_NAME;
+import static org.ei.bidan.AllConstants.KartuIbuFields.PROPINSI;
+import static org.ei.bidan.AllConstants.KartuIbuFields.PUSKESMAS_NAME;
 
 /**
  * Created by Dimas Ciputra on 4/17/15.
@@ -25,15 +48,35 @@ public class KIDetailController {
     public KartuIbuClient get() {
         KartuIbu kartuIbu = allKartuIbus.findByCaseID(caseId);
         KartuIbuClient kartuIbuClient = new KartuIbuClient(kartuIbu.getCaseId(),
-                kartuIbu.getDetails().get("puskesmas"), kartuIbu.getDetails().get("propinsi"),
-                kartuIbu.getDetails().get("kabupaten"), kartuIbu.getDetails().get("posyandu"),
-                kartuIbu.getDetails().get("alamatDomisili"), kartuIbu.getDetails().get("noIbu"),
-                kartuIbu.getDetails().get("namalengkap"), kartuIbu.getDetails().get("umur"),
-                kartuIbu.getDetails().get("golonganDarah"),
-                kartuIbu.getDetails().get("namaSuami"),
-                kartuIbu.getDetails().get("dusun"))
-                .withDateOfBirth(kartuIbu.getDetails().get("tanggalLahir"));
+                kartuIbu.getDetail(PUSKESMAS_NAME), kartuIbu.getDetail(PROPINSI),
+                kartuIbu.getDetail(KABUPATEN), kartuIbu.getDetail(POSYANDU_NAME),
+                kartuIbu.getDetail(MOTHER_ADDRESS), kartuIbu.getDetail(MOTHER_NUMBER),
+                kartuIbu.getDetail(MOTHER_NAME), kartuIbu.getDetail(MOTHER_AGE),
+                kartuIbu.getDetail(MOTHER_BLOOD_TYPE),
+                kartuIbu.getDetail(HUSBAND_NAME),
+                kartuIbu.dusun())
+                .withDateOfBirth(kartuIbu.getDetail(MOTHER_DOB))
+                .withParity(kartuIbu.getDetail(NUMBER_PARTUS))
+                .withNumberOfAbortions(kartuIbu.getDetail(NUMBER_ABORTIONS))
+                .withNumberOfPregnancies(kartuIbu.getDetail(NUMBER_OF_PREGNANCIES))
+                .withNumberOfLivingChildren(kartuIbu.getDetail(NUMBER_OF_LIVING_CHILDREN))
+                .withHighPriority(kartuIbu.getDetail(IS_HIGH_PRIORITY))
+                .withIsHighRisk(kartuIbu.getDetail(IS_HIGH_RISK))
+                .withEdd(kartuIbu.getDetail(EDD))
+                .withIsHighRiskPregnancy(kartuIbu.getDetail(IS_HIGH_RISK_PREGNANCY))
+                .withHighRiskLabour(kartuIbu.getDetail(IS_HIGH_RISK_LABOUR));
+
+        kartuIbuClient.setReligion(kartuIbu.getDetail("agama"));
+        kartuIbuClient.setJob(kartuIbu.getDetail("pekerjaan"));
+        kartuIbuClient.setEducation(kartuIbu.getDetail("pendidikan"));
+        kartuIbuClient.setInsurance(kartuIbu.getDetail("asuransiJiwa"));
+        kartuIbuClient.setPhoneNumber(kartuIbu.getDetail("NomorTelponHp"));
+
         return kartuIbuClient;
+    }
+
+    public String getClientJson() {
+        return new Gson().toJson(get());
     }
 
 }

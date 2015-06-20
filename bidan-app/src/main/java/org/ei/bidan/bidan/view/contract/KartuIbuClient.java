@@ -57,6 +57,11 @@ public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartR
     private String IsHighRisk;
     private String isHighRiskANC;
     private String isHighPriority;
+    private String religion;
+    private String education;
+    private String job;
+    private String insurance;
+    private String phoneNumber;
 
     public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String husbandName, String village) {
         this.entityId = entityId;
@@ -72,6 +77,46 @@ public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartR
         this.husbandName = husbandName;
         this.village = village;
         this.children = new ArrayList<KIChildClient>();
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    public void setInsurance(String insurance) {
+        this.insurance = insurance;
+    }
+
+    public void setReligion(String religion) {
+        this.religion = religion;
+    }
+
+    public String getPhoneNumber() {
+        return humanize(phoneNumber);
+    }
+
+    public String getReligion() {
+        return humanize(religion);
+    }
+
+    public String getEducation() {
+        return humanize(education);
+    }
+
+    public String getJob() {
+        return humanize(job);
+    }
+
+    public String getInsurance() {
+        return humanize(insurance);
     }
 
     // Getter
@@ -104,7 +149,7 @@ public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartR
     }
 
     public String getWifeName() {
-        return wifeName;
+        return Strings.isNullOrEmpty(this.wifeName) ? "" : humanize(this.wifeName);
     }
 
     public String getWifeAge() {
