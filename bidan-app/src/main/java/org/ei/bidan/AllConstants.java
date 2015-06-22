@@ -393,10 +393,16 @@ public class AllConstants {
         public static final String WEIGHT_BEFORE = "bbSebelumHamil";
         public static final String WEIGHT_CHECK_RESULT = "bbKg";
         public static final String LILA_CHECK_RESULT = "hasilPemeriksaanLILA";
-        public static final String HEIGHT = "tb";
+        public static final String HEIGHT = "tbCM";
         public static final String ALLERGY = "Alergi";
         public static final String HPHT_DATE = "tanggalHPHT";
         public static final String HIGH_RISK_PREGNANCY_REASON = "highRiskPregnancyReason";
+        public static final String HB_RESULT = "laboratoriumPeriksaHbHasil";
+        public static final String SUGAR_BLOOD_LEVEL = "laboratoriumGulaDarah";
+        public static final String PELVIC_DEFORMITY = "kelainanBentuk";
+        public static final String FETUS_SIZE = "taksiranBeratJanin";
+        public static final String FETUS_NUMBER = "jumlahJanin";
+        public static final String FETUS_POSITION = "persentasi_janin";
     }
 
     public class KartuPNCFields {
@@ -407,6 +413,8 @@ public class AllConstants {
         public static final String VITAL_SIGNS_TD_SISTOLIC = "tandaVitalTDSistolik";
         public static final String VITAL_SIGNS_TEMP = "tandaVitalSuhu";
         public static final String MOTHER_CONDITION = "keadaanIbu";
+        public static final String PREGNANCY_AGE = "usiaKehamilan";
+        public static final String DELIVERY_METHOD = "caraPersalinanIbu";
     }
 
     public class KartuAnakFields {

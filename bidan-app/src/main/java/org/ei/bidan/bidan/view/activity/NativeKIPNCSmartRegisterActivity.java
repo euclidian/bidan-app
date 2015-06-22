@@ -13,6 +13,7 @@ import org.ei.bidan.bidan.view.contract.BidanVillageController;
 import org.ei.bidan.bidan.view.contract.KartuIbuPNCClient;
 import org.ei.bidan.bidan.view.controller.KartuIbuANCRegisterController;
 import org.ei.bidan.bidan.view.controller.KartuIbuPNCRegisterController;
+import org.ei.bidan.bidan.view.dialog.AllHighRiskSort;
 import org.ei.bidan.bidan.view.dialog.KartuIbuANCOverviewServiceMode;
 import org.ei.bidan.bidan.view.dialog.KartuIbuPNCOverviewServiceMode;
 import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
@@ -105,7 +106,7 @@ public class NativeKIPNCSmartRegisterActivity extends BidanSecuredNativeSmartReg
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort(), new WifeAgeSort(), new DusunSort()};
+                return new DialogOption[]{new NameSort(), new WifeAgeSort(), new DusunSort(), new AllHighRiskSort()};
             }
 
             @Override
@@ -140,14 +141,16 @@ public class NativeKIPNCSmartRegisterActivity extends BidanSecuredNativeSmartReg
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.profile_info_layout:
-                    // TODO : show info of timeline event
-                    // showProfileView((ECClient) view.getTag());
+                case R.id.profile_info_layout_ki:
+                    showProfileView((KartuIbuPNCClient) view.getTag());
                     break;
                 case R.id.btn_edit:
                     showFragmentDialog(new EditDialogOptionModel(), view.getTag());
                     break;
             }
+        }
+        private void showProfileView(KartuIbuPNCClient kartuIbuClient) {
+            navigationController.startKI(kartuIbuClient.getKartuIbuEntityId());
         }
     }
 

@@ -9,6 +9,7 @@ import org.ei.bidan.bidan.provider.KBClientsProvider;
 import org.ei.bidan.bidan.view.contract.BidanVillageController;
 import org.ei.bidan.bidan.view.contract.KBClient;
 import org.ei.bidan.bidan.view.controller.KohortKBRegisterController;
+import org.ei.bidan.bidan.view.dialog.AllHighRiskSort;
 import org.ei.bidan.bidan.view.dialog.AllKBServiceMode;
 import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
@@ -107,8 +108,8 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort(), new WifeAgeSort(), new DusunSort(),
-                        new KBMethodSort()};
+                return new DialogOption[]{new NameSort(), new WifeAgeSort(),
+                        new KBMethodSort(), new AllHighRiskSort()};
             }
 
             @Override

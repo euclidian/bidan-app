@@ -112,6 +112,29 @@ public class KartuIbuPNCRegisterController extends CommonController {
                     kartuIbuClient.setTempatPersalinan(pnc.getDetail("tempatBersalin"));
                     kartuIbuClient.setTipePersalinan(pnc.getDetail("caraPersalinanIbu"));
                     kartuIbuClient.setMotherCondition(pnc.getDetail(MOTHER_CONDITION));
+
+                    kartuIbuClient.setIsInPNCorANC(true);
+                    kartuIbuClient.setIsPregnant(false);
+
+                    kartuIbuClient.setChronicDisease(pnc.getDetail(CHRONIC_DISEASE));
+                    kartuIbuClient.setrLila(pnc.getDetail(AllConstants.KartuANCFields.LILA_CHECK_RESULT));
+                    kartuIbuClient.setrHbLevels(pnc.getDetail(AllConstants.KartuANCFields.HB_RESULT));
+                    kartuIbuClient.setrTdDiastolik(pnc.getDetail(VITAL_SIGNS_TD_DIASTOLIC));
+                    kartuIbuClient.setrTdSistolik(pnc.getDetail(VITAL_SIGNS_TD_SISTOLIC));
+                    kartuIbuClient.setrBloodSugar(pnc.getDetail(AllConstants.KartuANCFields.SUGAR_BLOOD_LEVEL));
+                    kartuIbuClient.setrAbortus(ki.getDetail(NUMBER_ABORTIONS));
+                    kartuIbuClient.setrPartus(ki.getDetail(NUMBER_PARTUS));
+                    kartuIbuClient.setrPregnancyComplications(pnc.getDetail(AllConstants.KartuANCFields.COMPLICATION_HISTORY));
+                    kartuIbuClient.setrFetusNumber(pnc.getDetail(AllConstants.KartuANCFields.FETUS_NUMBER));
+                    kartuIbuClient.setrFetusSize(pnc.getDetail(AllConstants.KartuANCFields.FETUS_SIZE));
+                    kartuIbuClient.setrFetusPosition(pnc.getDetail(AllConstants.KartuANCFields.FETUS_POSITION));
+                    kartuIbuClient.setrPelvicDeformity(pnc.getDetail(AllConstants.KartuANCFields.PELVIC_DEFORMITY));
+                    kartuIbuClient.setrHeight(pnc.getDetail(AllConstants.KartuANCFields.HEIGHT));
+                    kartuIbuClient.setrDeliveryMethod(pnc.getDetail(AllConstants.KartuPNCFields.DELIVERY_METHOD));
+                    kartuIbuClient.setLaborComplication(pnc.getDetail(COMPLICATION));
+
+                    kartuIbuClient.setKartuIbuEntityId(pnc.getKartuIbuId());
+
                     pncClients.add(kartuIbuClient);
                 }
                 sortByName(pncClients);

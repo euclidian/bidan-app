@@ -8,8 +8,10 @@ import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.provider.AnakRegisterClientsProvider;
+import org.ei.bidan.bidan.view.contract.AnakClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.bidan.view.controller.AnakRegisterController;
+import org.ei.bidan.bidan.view.dialog.AllHighRiskSort;
 import org.ei.bidan.bidan.view.dialog.AnakImmunizationServiceMode;
 import org.ei.bidan.bidan.view.dialog.AnakOverviewServiceMode;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
@@ -96,7 +98,7 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort(), new ReverseNameSort()};
+                return new DialogOption[]{new NameSort(), new ReverseNameSort(), new AllHighRiskSort()};
             }
 
             @Override
@@ -127,8 +129,7 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.profile_info_layout:
-                    // TODO : show info of timeline event
-                    // showProfileView((ECClient) view.getTag());
+                    showProfileView((AnakClient) view.getTag());
                     break;
                 case R.id.btn_edit:
                     showFragmentDialog(new EditDialogOptionModel(), view.getTag());
@@ -137,6 +138,10 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
                     formController.startFormActivity(BAYI_IMUNISASI, "" + view.getTag(), null);
                     break;
             }
+        }
+
+        public void showProfileView(AnakClient client) {
+            navigationController.startAnakDetail(client.entityId());
         }
     }
 

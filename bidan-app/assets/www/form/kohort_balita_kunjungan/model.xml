@@ -6,7 +6,6 @@
           </formhub>
           <start/>
           <today/>
-          <reg_date/>
           <deviceid/>
           <simserial/>
           <phonenumber/>
@@ -18,6 +17,7 @@
           <kpsp_penyimpangan/>
           <pelayanan_vita/>
           <keterangan/>
+		  <reg_date>
           <end/>
           <meta>
             <instanceID/>

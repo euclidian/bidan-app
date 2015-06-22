@@ -63,7 +63,6 @@ public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartR
     private String insurance;
     private String phoneNumber;
     private List<String> highRiskPregnancyReason;
-    private String lila;
 
     public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String husbandName, String village) {
         this.highRiskPregnancyReason = new ArrayList<>();
@@ -80,21 +79,6 @@ public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartR
         this.husbandName = husbandName;
         this.village = village;
         this.children = new ArrayList<KIChildClient>();
-    }
-
-    public String getLila() {
-        return lila;
-    }
-
-    public void setLila(String lila) {
-        this.lila = lila;
-        if(!Strings.isNullOrEmpty(lila)) {
-            Float _lila = Float.parseFloat(lila);
-            if(_lila < 23.5) {
-                highRiskPregnancyReason.add("Protein energy Malnutrition");
-                setIsHighRiskPregnancy(true);
-            }
-        }
     }
 
     public void setPhoneNumber(String phoneNumber) {
@@ -157,10 +141,6 @@ public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartR
     public String getPosyandu() {
         return posyandu;
     }
-
-    public List<String> getHighRiskPregnancyReason() { return highRiskPregnancyReason; }
-
-    public void addHighRiskPregnancyReason(String reason) { highRiskPregnancyReason.add(reason); }
 
     public String getHouseholdAddress() {
         return householdAddress;
@@ -421,13 +401,6 @@ public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartR
 
     public KartuIbuClient withParity(String parity) {
         this.parity = parity;
-        if(!Strings.isNullOrEmpty(parity)) {
-            int partus = Integer.parseInt(parity);
-            if(partus > 3) {
-                setIsHighRiskPregnancy(true);
-                highRiskPregnancyReason.add("Anak lebih dari 3");
-            }
-        }
         return this;
     }
 

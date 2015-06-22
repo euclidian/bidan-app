@@ -9,11 +9,11 @@
                 "shouldLoadValue": true
             },
             {
-                "name": "tanggalPemeriksaanAnakBalita",
+                "name": "tanggalKunjunganBayiPerbulan",
                 "bind": "/model/instance/balita_kunjungan/tanggal_pemeriksaan_anak_balita"
             },
             {
-                "name": "hasilPenimbanganAnakBalita",
+                "name": "beratBadanBayiSetiapKunjunganBayiPerbulan",
                 "bind": "/model/instance/balita_kunjungan/hasil_penimbangan_anak_balita"
             },
             {

@@ -29,6 +29,7 @@ public class BidanClientProfileView extends RelativeLayout {
     private ImageView badgeHPView;
     private ImageView badgeHRPView;
     private ImageView badgeHRLView;
+    private ImageView badgeHRPPView;
 
     @SuppressWarnings("UnusedDeclaration")
     public BidanClientProfileView(Context context) {
@@ -54,6 +55,7 @@ public class BidanClientProfileView extends RelativeLayout {
         this.badgeHPView = (ImageView) findViewById(R.id.img_hp_badge);
         this.badgeHRPView = (ImageView) findViewById(R.id.img_hrp_badge);
         this.badgeHRLView = (ImageView) findViewById(R.id.img_hrl_badge);
+        this.badgeHRPPView = (ImageView) findViewById(R.id.img_hrpp_badge);
     }
 
     public void bindData(BidanSmartRegisterClient client, ProfilePhotoLoader photoLoader) {
@@ -66,6 +68,7 @@ public class BidanClientProfileView extends RelativeLayout {
         this.badgeHPView.setVisibility(client.isHighPriority() ? View.VISIBLE : View.GONE);
         this.badgeHRPView.setVisibility(client.isHighRiskPregnancy() ? View.VISIBLE: View.GONE);
         this.badgeHRLView.setVisibility(client.isHighRiskLabour() ? View.VISIBLE: View.GONE);
+        this.badgeHRPPView.setVisibility(client.isHighRiskPostPartum() ? View.VISIBLE : View.GONE);
     }
 
     private boolean isAnANCClient(SmartRegisterClient client) {

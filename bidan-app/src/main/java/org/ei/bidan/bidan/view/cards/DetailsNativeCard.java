@@ -6,30 +6,41 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.common.base.Strings;
+
 import org.ei.bidan.R;
+import org.ei.bidan.bidan.view.contract.AnakClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
+import org.ei.bidan.util.EasyMap;
+import org.ei.bidan.util.StringUtil;
+import org.ei.bidan.view.contract.SmartRegisterClient;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import it.gmariotti.cardslib.library.internal.Card;
 import it.gmariotti.cardslib.library.internal.CardHeader;
 import it.gmariotti.cardslib.library.prototypes.CardWithList;
 import it.gmariotti.cardslib.library.prototypes.LinearListView;
 
+import static org.ei.bidan.util.EasyMap.create;
+
 /**
  * Created by Dimas Ciputra on 6/20/15.
  */
 public class DetailsNativeCard extends CardWithList {
 
-    KartuIbuClient kartuIbuClient;
+    SmartRegisterClient client;
 
     public DetailsNativeCard(Context context) {
         super(context);
     }
 
-    public void setKartuIbuClient(KartuIbuClient kartuIbuClient) {
-        this.kartuIbuClient = kartuIbuClient;
+    public void setClient(SmartRegisterClient client) {
+        this.client = client;
     }
 
     @Override
@@ -40,13 +51,13 @@ public class DetailsNativeCard extends CardWithList {
             public void setupInnerViewElements(ViewGroup parent, View view) {
                 super.setupInnerViewElements(parent, view);
                 TextView subTitle = (TextView) view.findViewById(R.id.carddemo_googlenow_main_inner_lastupdate);
-                if(subTitle!=null) {
+                if (subTitle != null) {
                     subTitle.setText("Ringkasan detail");
                 }
             }
         };
 
-        header.setTitle(kartuIbuClient.name());
+        header.setTitle(client.name());
         return header;
     }
 
@@ -61,10 +72,10 @@ public class DetailsNativeCard extends CardWithList {
         });
     }
 
-    @Override
-    protected List<ListObject> initChildren() {
+    protected List<ListObject> initKIChildren() {
         // Init the list
         List<ListObject> mObjects = new ArrayList<>();
+        KartuIbuClient kartuIbuClient = (KartuIbuClient) client;
 
         // Add an object
         StockObject s1 = new StockObject(this);
@@ -133,6 +144,54 @@ public class DetailsNativeCard extends CardWithList {
         return mObjects;
     }
 
+    protected List<ListObject> initAnakChildren() {
+
+        List<ListObject> mObjects = new ArrayList<>();
+        AnakClient anakClient = (AnakClient) client;
+
+        String service = anakClient.getServiceAtBirth();
+
+        Map<String, String> map = new LinkedHashMap<>();
+
+        map.put("Umur Anak", anakClient.format(anakClient.ageInDays()));
+        map.put("Nama Ibu", anakClient.motherName());
+        map.put("Nama Ayah", anakClient.fatherName());
+        map.put("Tanggal Lahir", anakClient.dateOfBirth());
+        map.put("Berat Lahir", anakClient.birthWeight());
+        map.put("Berat Sekarang", anakClient.currentWeight());
+
+        if(!Strings.isNullOrEmpty(service)) {
+            String[] serviceAtBirth = service.split("\\s+");
+            for(int i = 0; i < serviceAtBirth.length ; i++) {
+                map.put("Pelayanan " + (i+1), StringUtil.humanize(serviceAtBirth[i]));
+            }
+        }
+
+        Iterator it = map.entrySet().iterator();
+
+        while(it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            StockObject stockObject = new StockObject(this);
+            stockObject.subject = pair.getKey() + "";
+            stockObject.value = pair.getValue() + "";
+            mObjects.add(stockObject);
+        }
+
+        return mObjects;
+    }
+
+
+    @Override
+    protected List<ListObject> initChildren() {
+        if (isAnKIClient(client)) {
+            return initKIChildren();
+        } else if (isAnakClient(client)) {
+            return initAnakChildren();
+        }
+
+        return null;
+    }
+
     @Override
     public View setupChildView(int i, ListObject listObject, View convertView, ViewGroup viewGroup) {
         //Setup the ui elements inside the item
@@ -181,6 +240,16 @@ public class DetailsNativeCard extends CardWithList {
             return subject;
         }
 
-        public String getValue() { return value; }
+        public String getValue() {
+            return value;
+        }
+    }
+
+    private boolean isAnKIClient(SmartRegisterClient client) {
+        return client instanceof KartuIbuClient;
+    }
+
+    private boolean isAnakClient(SmartRegisterClient client) {
+        return client instanceof AnakClient;
     }
 }

@@ -13,6 +13,7 @@ import org.joda.time.Days;
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -57,12 +58,21 @@ public class AnakClient extends BidanSmartRegisterClient{
     private String hbGiven;
     private String visitDate;
     private String babyNo;
+    private String pregnancyAge;
 
     public AnakClient(String entityId, String gender, String weight, Map<String, String> details) {
         this.entityId = entityId;
         this.gender = gender;
         this.birthWeight = weight;
         this.details = details;
+    }
+
+    public String getPregnancyAge() {
+        return pregnancyAge;
+    }
+
+    public void setPregnancyAge(String pregnancyAge) {
+        this.pregnancyAge = pregnancyAge;
     }
 
     public String getBabyNo() {
@@ -176,13 +186,6 @@ public class AnakClient extends BidanSmartRegisterClient{
     public boolean isST() {
         return false;
     }
-
-    @Override
-    public boolean isHighRisk() {
-        if(Strings.isNullOrEmpty(isHighRisk)) return false;
-        return isHighRisk.equalsIgnoreCase("yes");
-    }
-
     @Override
     public boolean isHighPriority() { return false; }
 
@@ -232,13 +235,13 @@ public class AnakClient extends BidanSmartRegisterClient{
         int WEEKS_THRESHOLD = 119;
         int MONTHS_THRESHOLD = 720;
         if (days_since < DAYS_THRESHOLD) {
-            return (int) Math.floor(days_since) + "d";
+            return (int) Math.floor(days_since) + "h";
         } else if (days_since < WEEKS_THRESHOLD) {
-            return (int) Math.floor(days_since / 7) + "w";
+            return (int) Math.floor(days_since / 7) + "m";
         } else if (days_since < MONTHS_THRESHOLD) {
-            return (int) Math.floor(days_since / 30) + "m";
+            return (int) Math.floor(days_since / 30) + "b";
         } else {
-            return (int) Math.floor(days_since / 365) + "y";
+            return (int) Math.floor(days_since / 365) + "t";
         }
     }
 
@@ -369,4 +372,45 @@ public class AnakClient extends BidanSmartRegisterClient{
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
     }
+
+    public boolean isChildAgeNoMoreThan28days() {
+        return ageInDays() < 28;
+    }
+
+    public boolean isPreterm() {
+        if(Strings.isNullOrEmpty(getPregnancyAge())) return false;
+        return isChildAgeNoMoreThan28days() && Integer.parseInt(getPregnancyAge()) < 37;
+    }
+
+    public boolean isLowBirthWeight() {
+        if(birthWeight().equalsIgnoreCase("-")) return false;
+        return isChildAgeNoMoreThan28days() && Integer.parseInt(birthWeight()) > 1500 && Integer.parseInt(birthWeight()) < 2500;
+    }
+
+    public boolean isVeryLowBirthWeigth() {
+        if(birthWeight().equalsIgnoreCase("-")) return false;
+        return isChildAgeNoMoreThan28days() && Integer.parseInt(birthWeight()) <= 1500;
+    }
+
+    @Override
+    public boolean isHighRisk() {
+        return isPreterm() || isLowBirthWeight() || isVeryLowBirthWeigth();
+    }
+
+    @Override
+    public List<String> highRiskReason() {
+        List<String> reason = new ArrayList<>();
+
+        if(isPreterm()) {
+            reason.add("Anak lahir prematur");
+        }
+        if(isLowBirthWeight()) {
+            reason.add("Berat badan rendah");
+        } else if(isVeryLowBirthWeigth()) {
+            reason.add("Berat badan sangat rendah");
+        }
+
+        return reason;
+    }
+
 }

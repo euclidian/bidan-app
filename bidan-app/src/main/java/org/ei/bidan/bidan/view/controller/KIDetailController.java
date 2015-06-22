@@ -1,8 +1,6 @@
 package org.ei.bidan.bidan.view.controller;
 
 import android.content.Context;
-
-import com.google.common.base.Strings;
 import com.google.gson.Gson;
 
 import org.ei.bidan.AllConstants;
@@ -11,31 +9,8 @@ import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.bidan.repository.AllKartuIbus;
 import org.ei.bidan.bidan.repository.AllKohort;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
-import org.ei.bidan.util.EasyMap;
 
-import java.util.Map;
-
-import static org.ei.bidan.AllConstants.KartuIbuFields.CHRONIC_DISEASE;
-import static org.ei.bidan.AllConstants.KartuIbuFields.EDD;
-import static org.ei.bidan.AllConstants.KartuIbuFields.HUSBAND_NAME;
-import static org.ei.bidan.AllConstants.KartuIbuFields.IS_HIGH_PRIORITY;
-import static org.ei.bidan.AllConstants.KartuIbuFields.IS_HIGH_RISK;
-import static org.ei.bidan.AllConstants.KartuIbuFields.IS_HIGH_RISK_LABOUR;
-import static org.ei.bidan.AllConstants.KartuIbuFields.IS_HIGH_RISK_PREGNANCY;
-import static org.ei.bidan.AllConstants.KartuIbuFields.KABUPATEN;
-import static org.ei.bidan.AllConstants.KartuIbuFields.MOTHER_ADDRESS;
-import static org.ei.bidan.AllConstants.KartuIbuFields.MOTHER_AGE;
-import static org.ei.bidan.AllConstants.KartuIbuFields.MOTHER_BLOOD_TYPE;
-import static org.ei.bidan.AllConstants.KartuIbuFields.MOTHER_DOB;
-import static org.ei.bidan.AllConstants.KartuIbuFields.MOTHER_NAME;
-import static org.ei.bidan.AllConstants.KartuIbuFields.MOTHER_NUMBER;
-import static org.ei.bidan.AllConstants.KartuIbuFields.NUMBER_ABORTIONS;
-import static org.ei.bidan.AllConstants.KartuIbuFields.NUMBER_OF_LIVING_CHILDREN;
-import static org.ei.bidan.AllConstants.KartuIbuFields.NUMBER_OF_PREGNANCIES;
-import static org.ei.bidan.AllConstants.KartuIbuFields.NUMBER_PARTUS;
-import static org.ei.bidan.AllConstants.KartuIbuFields.POSYANDU_NAME;
-import static org.ei.bidan.AllConstants.KartuIbuFields.PROPINSI;
-import static org.ei.bidan.AllConstants.KartuIbuFields.PUSKESMAS_NAME;
+import static org.ei.bidan.AllConstants.KartuIbuFields.*;
 
 /**
  * Created by Dimas Ciputra on 4/17/15.
@@ -80,16 +55,45 @@ public class KIDetailController {
         kartuIbuClient.setInsurance(kartuIbu.getDetail("asuransiJiwa"));
         kartuIbuClient.setPhoneNumber(kartuIbu.getDetail("NomorTelponHp"));
 
+        getMotherInformation(kartuIbu, kartuIbuClient);
+
+        return kartuIbuClient;
+    }
+
+    public void getMotherInformation(KartuIbu kartuIbu, KartuIbuClient kartuIbuClient) {
         Ibu ibu = allKohort.findIbuWithOpenStatusByKIId(kartuIbu.getCaseId());
 
         if(ibu!=null) {
+
             kartuIbuClient.setChronicDisease(ibu.getDetail(CHRONIC_DISEASE));
-            kartuIbuClient.withHighRiskFromANC(!Strings.isNullOrEmpty(ibu.getDetail(CHRONIC_DISEASE)));
+            kartuIbuClient.setrLila(ibu.getDetail(AllConstants.KartuANCFields.LILA_CHECK_RESULT));
+            kartuIbuClient.setrHbLevels(ibu.getDetail(AllConstants.KartuANCFields.HB_RESULT));
+            kartuIbuClient.setrTdDiastolik(ibu.getDetail(AllConstants.KartuPNCFields.VITAL_SIGNS_TD_DIASTOLIC));
+            kartuIbuClient.setrTdSistolik(ibu.getDetail(AllConstants.KartuPNCFields.VITAL_SIGNS_TD_SISTOLIC));
+            kartuIbuClient.setrBloodSugar(ibu.getDetail(AllConstants.KartuANCFields.SUGAR_BLOOD_LEVEL));
+            kartuIbuClient.setrAbortus(kartuIbu.getDetail(NUMBER_ABORTIONS));
+            kartuIbuClient.setrPartus(kartuIbu.getDetail(NUMBER_PARTUS));
+            kartuIbuClient.setrPregnancyComplications(ibu.getDetail(AllConstants.KartuANCFields.COMPLICATION_HISTORY));
+            kartuIbuClient.setrFetusNumber(ibu.getDetail(AllConstants.KartuANCFields.FETUS_NUMBER));
+            kartuIbuClient.setrFetusSize(ibu.getDetail(AllConstants.KartuANCFields.FETUS_SIZE));
+            kartuIbuClient.setrFetusPosition(ibu.getDetail(AllConstants.KartuANCFields.FETUS_POSITION));
+            kartuIbuClient.setrHeight(ibu.getDetail(AllConstants.KartuANCFields.HEIGHT));
+            kartuIbuClient.setrPelvicDeformity(ibu.getDetail(AllConstants.KartuANCFields.PELVIC_DEFORMITY));
+            kartuIbuClient.setrDeliveryMethod(ibu.getDetail(AllConstants.KartuPNCFields.DELIVERY_METHOD));
+            kartuIbuClient.setLaborComplication(ibu.getDetail(AllConstants.KartuPNCFields.COMPLICATION));
+
+            kartuIbuClient.setIsInPNCorANC(true);
+            if(ibu.isANC()) {
+                kartuIbuClient.setrLila(ibu.getDetail(AllConstants.KartuANCFields.LILA_CHECK_RESULT));
+                kartuIbuClient.setrHbLevels(ibu.getDetail(AllConstants.KartuANCFields.HB_RESULT));
+                kartuIbuClient.setIsPregnant(true);
+            } else if(ibu.isPNC()) {
+                kartuIbuClient.setIsPregnant(false);
+            }
+        } else {
+            kartuIbuClient.setIsInPNCorANC(false);
+            kartuIbuClient.setIsPregnant(false);
         }
-        if (ibu != null && ibu.isANC()) {
-            kartuIbuClient.setLila(ibu.getDetail(AllConstants.KartuANCFields.LILA_CHECK_RESULT));
-        }
-        return kartuIbuClient;
     }
 
     public String getClientJson() {

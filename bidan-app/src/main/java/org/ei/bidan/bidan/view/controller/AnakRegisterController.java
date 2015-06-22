@@ -114,6 +114,7 @@ public class AnakRegisterController extends CommonController {
                     anakClient.setVisitDate(a.getDetail(CHILD_VISIT_DATE));
                     anakClient.setCurrentWeight(a.getDetail(CHILD_CURRENT_WEIGTH));
                     anakClient.setBabyNo(a.getDetail(BABY_NO));
+                    anakClient.setPregnancyAge(a.getIbu().getDetail(AllConstants.KartuPNCFields.PREGNANCY_AGE));
                     anakSmartClient.add(anakClient);
                 }
                 sortByName(anakSmartClient);

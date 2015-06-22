@@ -148,8 +148,9 @@ public class KartuIbuRegisterController  extends CommonController{
     private void updateStatusInformation(KartuIbu kartuIbu, KartuIbuClient kartuIbuClient) {
         Ibu ibu = allKohort.findIbuWithOpenStatusByKIId(kartuIbu.getCaseId());
 
-        if(ibu!=null) {
-            kartuIbuClient.withHighRiskFromANC(!Strings.isNullOrEmpty(ibu.getDetail(CHRONIC_DISEASE)));
+        if(ibu == null) {
+            kartuIbuClient.setIsInPNCorANC(false);
+            kartuIbuClient.setIsPregnant(false);
         }
 
         if( ibu == null && kartuIbu.hasKBMethod()) {
@@ -161,21 +162,41 @@ public class KartuIbuRegisterController  extends CommonController{
             return;
         }
 
-        if (ibu != null && ibu.isANC()) {
-            kartuIbuClient
-                    .withStatus(EasyMap.create(STATUS_TYPE_FIELD, ANC_STATUS)
-                            .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
-            kartuIbuClient.setLila(ibu.getDetail(AllConstants.KartuANCFields.LILA_CHECK_RESULT));
+        if(ibu!=null) {
             kartuIbuClient.withKbMethod("-");
+            kartuIbuClient.setIsInPNCorANC(true);
+
+            kartuIbuClient.setChronicDisease(ibu.getDetail(CHRONIC_DISEASE));
+            kartuIbuClient.setrLila(ibu.getDetail(AllConstants.KartuANCFields.LILA_CHECK_RESULT));
+            kartuIbuClient.setrHbLevels(ibu.getDetail(AllConstants.KartuANCFields.HB_RESULT));
+            kartuIbuClient.setrTdDiastolik(ibu.getDetail(AllConstants.KartuPNCFields.VITAL_SIGNS_TD_DIASTOLIC));
+            kartuIbuClient.setrTdSistolik(ibu.getDetail(AllConstants.KartuPNCFields.VITAL_SIGNS_TD_SISTOLIC));
+            kartuIbuClient.setrBloodSugar(ibu.getDetail(AllConstants.KartuANCFields.SUGAR_BLOOD_LEVEL));
+            kartuIbuClient.setrAbortus(kartuIbu.getDetail(NUMBER_ABORTIONS));
+            kartuIbuClient.setrPartus(kartuIbu.getDetail(NUMBER_PARTUS));
+            kartuIbuClient.setrPregnancyComplications(ibu.getDetail(AllConstants.KartuANCFields.COMPLICATION_HISTORY));
+            kartuIbuClient.setrFetusNumber(ibu.getDetail(AllConstants.KartuANCFields.FETUS_NUMBER));
+            kartuIbuClient.setrFetusSize(ibu.getDetail(AllConstants.KartuANCFields.FETUS_SIZE));
+            kartuIbuClient.setrFetusPosition(ibu.getDetail(AllConstants.KartuANCFields.FETUS_POSITION));
+            kartuIbuClient.setrPelvicDeformity(ibu.getDetail(AllConstants.KartuANCFields.PELVIC_DEFORMITY));
+            kartuIbuClient.setrHeight(ibu.getDetail(AllConstants.KartuANCFields.HEIGHT));
+            kartuIbuClient.setrDeliveryMethod(ibu.getDetail(AllConstants.KartuPNCFields.DELIVERY_METHOD));
+            kartuIbuClient.setLaborComplication(ibu.getDetail(AllConstants.KartuPNCFields.COMPLICATION));
+
+            if(ibu.isANC()) {
+                kartuIbuClient
+                        .withStatus(EasyMap.create(STATUS_TYPE_FIELD, ANC_STATUS)
+                                .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
+                kartuIbuClient.setIsPregnant(true);
+            } else if(ibu.isPNC()) {
+                kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, PNC_STATUS)
+                        .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
+
+                kartuIbuClient.setIsPregnant(false);
+            }
             return;
         }
 
-        if (ibu != null && ibu.isPNC()) {
-            kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, PNC_STATUS)
-                    .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
-            kartuIbuClient.withKbMethod("-");
-            return;
-        }
     }
 
     public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {

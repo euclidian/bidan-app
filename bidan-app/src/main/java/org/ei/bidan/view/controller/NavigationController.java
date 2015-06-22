@@ -109,6 +109,11 @@ public class NavigationController {
     }
 
     @JavascriptInterface
+    public void startAnakDetail(String entityId) {
+        navigateToAnakProfile(activity, entityId);
+    }
+
+    @JavascriptInterface
     public void startANC(String entityId) {
         navigateToANCProfile(activity, entityId);
     }

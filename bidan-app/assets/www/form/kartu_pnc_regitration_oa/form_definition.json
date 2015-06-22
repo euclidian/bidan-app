@@ -107,9 +107,9 @@
         "bind":"/model/instance/register_pnc/nomor_telponhp"
       },
       {
-        "name":"usiaKehamilanSaatPersalinan",
+        "name":"usiaKehamilan",
         "bind":"/model/instance/register_pnc/usia_kehamilan_saat_persalinan",
-        "source":"kartu_ibu.ibu.usiaKehamilanSaatPersalinan"
+        "source":"kartu_ibu.ibu.usiaKehamilan"
       },
       {
         "name":"usiaKehamilanBerdasarkanHPHT",

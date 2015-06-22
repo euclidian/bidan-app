@@ -5,19 +5,18 @@ import android.view.View;
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.cards.DetailsNativeCard;
 import org.ei.bidan.bidan.view.cards.RiskFlagsNativeCard;
+import org.ei.bidan.bidan.view.controller.AnakDetailController;
 import org.ei.bidan.bidan.view.controller.KIDetailController;
 import org.ei.bidan.view.activity.SecuredActivity;
-
-import java.util.List;
 
 import it.gmariotti.cardslib.library.view.CardViewNative;
 
 /**
  * Created by Dimas Ciputra on 6/19/15.
  */
-public class NativeDetailActivity extends SecuredActivity {
+public class NativeAnakDetailActivity extends SecuredActivity {
 
-    private KIDetailController kiDetailController;
+    private AnakDetailController anakDetailController;
     private String caseId;
 
     private final NavBarActionsHandler navBarActionsHandler = new NavBarActionsHandler();
@@ -84,11 +83,11 @@ public class NativeDetailActivity extends SecuredActivity {
         return caseId;
     }
 
-    private KIDetailController controller() {
-        if(kiDetailController == null) {
-            kiDetailController = new KIDetailController(this, caseId(), context.allKartuIbus(), context.allKohort());
+    private AnakDetailController controller() {
+        if(anakDetailController == null) {
+            anakDetailController = new AnakDetailController(this, caseId(), context.allKartuIbus(), context.allKohort());
         }
-        return kiDetailController;
+        return anakDetailController;
     }
 
 

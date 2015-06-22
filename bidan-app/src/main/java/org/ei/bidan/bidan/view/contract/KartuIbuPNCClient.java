@@ -60,6 +60,7 @@ public class KartuIbuPNCClient extends BidanSmartRegisterClient implements Kartu
     private String tempatPersalinan;
     private String tipePersalinan;
     private String motherCondition;
+    private String kartuIbuEntityId;
 
     private List<AnakClient> children;
     private List<AlertDTO> alerts;
@@ -203,11 +204,6 @@ public class KartuIbuPNCClient extends BidanSmartRegisterClient implements Kartu
 
     @Override
     public boolean isST() {
-        return false;
-    }
-
-    @Override
-    public boolean isHighRisk() {
         return false;
     }
 
@@ -358,4 +354,12 @@ public class KartuIbuPNCClient extends BidanSmartRegisterClient implements Kartu
     }
 
     public String motherCondition() {return humanize(this.motherCondition);}
+
+    public String getKartuIbuEntityId() {
+        return kartuIbuEntityId;
+    }
+
+    public void setKartuIbuEntityId(String kartuIbuEntityId) {
+        this.kartuIbuEntityId = kartuIbuEntityId;
+    }
 }

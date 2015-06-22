@@ -36,6 +36,30 @@
         android:src="@drawable/flag_orange_rtp"
         android:visibility="gone"/>
 
+    <ImageView
+        android:id="@+id/img_rtk_badge"
+        android:layout_width="@dimen/client_profile_badge_width"
+        android:layout_height="@dimen/client_profile_badge_height"
+        android:layout_marginLeft="12dp"
+        android:scaleType="fitStart"
+        android:layout_weight="3"
+        android:layout_centerInParent="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/flag_red_rtk"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/img_hrpp_badge"
+        android:layout_width="@dimen/client_profile_badge_width"
+        android:layout_height="@dimen/client_profile_badge_height"
+        android:layout_marginLeft="12dp"
+        android:scaleType="fitStart"
+        android:layout_weight="3"
+        android:layout_centerInParent="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/flag_orange_rtpp"
+        android:visibility="gone"/>
+
 
     <TextView
         android:layout_width="180dp"

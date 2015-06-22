@@ -9,7 +9,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.ei.bidan.R;
+import org.ei.bidan.bidan.domain.Bidan;
 import org.ei.bidan.bidan.domain.KartuIbu;
+import org.ei.bidan.bidan.view.contract.BidanSmartRegisterClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.util.StringUtil;
 
@@ -26,12 +28,12 @@ import it.gmariotti.cardslib.library.prototypes.LinearListView;
  */
 public class RiskFlagsNativeCard extends CardWithList {
 
-    KartuIbuClient kartuIbuClient;
+    BidanSmartRegisterClient bidanClient;
 
     public RiskFlagsNativeCard(Context context) { super(context); }
 
-    public void setKartuIbuClient(KartuIbuClient kartuIbuClient) {
-        this.kartuIbuClient = kartuIbuClient;
+    public void setBidanClient(BidanSmartRegisterClient bidanClient) {
+        this.bidanClient = bidanClient;
     }
 
     @Override
@@ -43,12 +45,12 @@ public class RiskFlagsNativeCard extends CardWithList {
                 super.setupInnerViewElements(parent, view);
                 TextView subTitle = (TextView) view.findViewById(R.id.carddemo_googlenow_main_inner_lastupdate);
                 if(subTitle!=null) {
-                    subTitle.setText("Daftar resiko yang dimiliki Ibu");
+                    subTitle.setText("Daftar resiko yang dimiliki");
                 }
             }
         };
 
-        header.setTitle("Resiko Ibu");
+        header.setTitle("Resiko");
         return header;
     }
 
@@ -66,21 +68,34 @@ public class RiskFlagsNativeCard extends CardWithList {
     @Override
     protected List<ListObject> initChildren() {
 
-        List<String> reasons = kartuIbuClient.highRiskReason();
         List<ListObject> mObject = new ArrayList<>();
 
-        for(String reason : reasons ) {
+        for(String reason : bidanClient.highRiskReason()) {
             StockObject highRiskReason = new StockObject(this);
             highRiskReason.value = StringUtil.humanize(reason);
             highRiskReason.subject = "high_risk";
             mObject.add(highRiskReason);
         }
 
-        for(String reason : kartuIbuClient.getHighRiskPregnancyReason()) {
+        for(String reason1 : bidanClient.highPregnancyReason()) {
             StockObject highRiskPregnancyReason = new StockObject(this);
-            highRiskPregnancyReason.value = StringUtil.humanize(reason);
+            highRiskPregnancyReason.value = StringUtil.humanize(reason1);
             highRiskPregnancyReason.subject = "high_risk_pregnancy";
             mObject.add(highRiskPregnancyReason);
+        }
+
+        for(String reason : bidanClient.highRiskLabourReason()) {
+            StockObject highRiskLabourReason = new StockObject(this);
+            highRiskLabourReason.value = StringUtil.humanize(reason);
+            highRiskLabourReason.subject = "high_risk_labour";
+            mObject.add(highRiskLabourReason);
+        }
+
+        for(String reason : bidanClient.highRiskPostPartumReason()) {
+            StockObject hrReason = new StockObject(this);
+            hrReason.value = reason;
+            hrReason.subject = "high_risk_post_partum";
+            mObject.add(hrReason);
         }
 
         return mObject;
@@ -92,6 +107,8 @@ public class RiskFlagsNativeCard extends CardWithList {
         TextView textViewSubject = (TextView) convertView.findViewById(R.id.text_view_reason);
         ImageView hrpBadge = (ImageView) convertView.findViewById(R.id.img_hp_badge);
         ImageView rtpBadge = (ImageView) convertView.findViewById(R.id.img_rtp_badge);
+        ImageView rtkBadge = (ImageView) convertView.findViewById(R.id.img_rtk_badge);
+        ImageView hrppBadge = (ImageView) convertView.findViewById(R.id.img_hrpp_badge);
 
         //Retrieve the values from the object
         StockObject stockObject = (StockObject) listObject;
@@ -99,8 +116,12 @@ public class RiskFlagsNativeCard extends CardWithList {
 
         if(stockObject.subject.equalsIgnoreCase("high_risk")) {
             hrpBadge.setVisibility(View.VISIBLE);
-        } else if(stockObject.subject.equalsIgnoreCase("high_risk_pregnancy")) {
+        } else if(stockObject.subject.equalsIgnoreCase("high_risk_labour")) {
             rtpBadge.setVisibility(View.VISIBLE);
+        } else if(stockObject.subject.equalsIgnoreCase("high_risk_pregnancy")) {
+            rtkBadge.setVisibility(View.VISIBLE);
+        } else if(stockObject.subject.equalsIgnoreCase("high_risk_post_partum")) {
+            hrppBadge.setVisibility(View.VISIBLE);
         }
 
         return convertView;

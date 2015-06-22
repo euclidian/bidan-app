@@ -280,11 +280,6 @@ public class KBClient extends BidanSmartRegisterClient implements KISmartRegiste
     }
 
     @Override
-    public boolean isHighRisk() {
-        return false;
-    }
-
-    @Override
     public boolean isHighPriority() {
         return false;
     }

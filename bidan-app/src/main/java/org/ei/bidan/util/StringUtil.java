@@ -1,5 +1,7 @@
 package org.ei.bidan.util;
 
+import com.google.common.base.Strings;
+
 import org.apache.commons.lang3.text.WordUtils;
 
 import static org.apache.commons.lang3.StringUtils.capitalize;
@@ -22,5 +24,7 @@ public class StringUtil {
     public static String humanizeAndDoUPPERCASE(String value) {
         return upperCase(humanize(value));
     }
+
+    public static String getValueFromNumber(String value) { return Strings.isNullOrEmpty(value) ? "0" : value; }
 
 }

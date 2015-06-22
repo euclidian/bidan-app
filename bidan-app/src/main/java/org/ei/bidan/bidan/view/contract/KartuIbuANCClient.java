@@ -61,6 +61,7 @@ public class KartuIbuANCClient extends BidanSmartRegisterClient implements Kartu
     private String tanggalHPHT;
     private String riwayatKomplikasiKebidanan;
     private String highRiskPregnancyReason;
+    private String kartuIbuCaseId;
 
     private List<AlertDTO> alerts;
     private List<ServiceProvidedDTO> services_provided;
@@ -292,11 +293,6 @@ public class KartuIbuANCClient extends BidanSmartRegisterClient implements Kartu
         return this;
     }
 
-    public KartuIbuANCClient withRiskFactors(String riskFactors) {
-        this.riskFactors = riskFactors;
-        return this;
-    }
-
     public KartuIbuANCClient withKunjunganData(String kunjungan) {
         this.kunjungan = kunjungan;
         return this;
@@ -350,7 +346,6 @@ public class KartuIbuANCClient extends BidanSmartRegisterClient implements Kartu
 
     public void setPenyakitKronis(String penyakitKronis) {
         this.penyakitKronis = penyakitKronis;
-        setIsHighRiskFromANC(!Strings.isNullOrEmpty(this.penyakitKronis));
     }
 
     public String getAlergi() {
@@ -359,18 +354,6 @@ public class KartuIbuANCClient extends BidanSmartRegisterClient implements Kartu
 
     public void setAlergi(String alergi) {
         this.alergi = alergi;
-    }
-
-    public void setIsHighRisk(String isHighRisk) {
-        if(Strings.isNullOrEmpty(isHighRisk)) {
-            this.isHighRisk = false;
-            return;
-        }
-        this.isHighRisk = isHighRisk.equalsIgnoreCase("yes");
-    }
-
-    public void setIsHighRiskANC(String isHighRiskANC) {
-       // setIsHighRiskFromANC(!Strings.isNullOrEmpty(this.penyakitKronis) && isHighRiskANC.equalsIgnoreCase("yes"));
     }
 
     public String tanggalHPHT() {
@@ -389,17 +372,19 @@ public class KartuIbuANCClient extends BidanSmartRegisterClient implements Kartu
         return Strings.isNullOrEmpty(highRiskPregnancyReason) ? "" : humanize(highRiskPregnancyReason) + ",";
     }
 
-
-    public void setIsHighRiskPregnancy(String highRiskPregnancy) {
-        setIsHighRiskPregnancy(!Strings.isNullOrEmpty(highRiskPregnancy) && highRiskPregnancy.equalsIgnoreCase("yes"));
-    }
-
     public void setRiwayatKomplikasiKebidanan(String riwayatKomplikasiKebidanan) {
         this.riwayatKomplikasiKebidanan = riwayatKomplikasiKebidanan;
-        setIsHighRiskFromANC(!Strings.isNullOrEmpty(this.riwayatKomplikasiKebidanan));
     }
 
     public String getRiwayatKomplikasiKebidanan() {
         return Strings.isNullOrEmpty(riwayatKomplikasiKebidanan)? "" : humanize(this.riwayatKomplikasiKebidanan) + ",";
+    }
+
+    public String getKartuIbuCaseId() {
+        return kartuIbuCaseId;
+    }
+
+    public void setKartuIbuCaseId(String kartuIbuCaseId) {
+        this.kartuIbuCaseId = kartuIbuCaseId;
     }
 }
