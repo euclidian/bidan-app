@@ -62,9 +62,9 @@ public abstract class BidanSmartRegisterClient implements SmartRegisterClient {
 
     public int riskFlagsCount() {
         int i = 0;
-        i += isHighRiskLabour() ? 1 : 0;
-        i += isHighRiskPregnancy() ? 1 : 0;
-        i += isHighRisk() ? 1 : 0;
+        i += isHighRiskLabour() ? 3 : 0;
+        i += isHighRiskPregnancy() ? 4 : 0;
+        i += isHighRisk() ? 2 : 0;
         return i;
     }
 
@@ -72,9 +72,9 @@ public abstract class BidanSmartRegisterClient implements SmartRegisterClient {
         List<String> reason = new ArrayList<>();
 
         if(age() < 20) {
-            reason.add("Mother too young");
+            reason.add("Ibu terlalu muda");
         } else if(age() > 35) {
-            reason.add("Mother too old");
+            reason.add("Ibu terlalu tua");
         }
 
         if(!Strings.isNullOrEmpty(getChronicDisease())) {
