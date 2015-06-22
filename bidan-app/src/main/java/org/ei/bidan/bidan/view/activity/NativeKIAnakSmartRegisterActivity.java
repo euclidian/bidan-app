@@ -19,6 +19,7 @@ import org.ei.bidan.util.StringUtil;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.dialog.AllClientsFilter;
 import org.ei.bidan.view.dialog.DialogOption;
+import org.ei.bidan.view.dialog.DialogOptionMapper;
 import org.ei.bidan.view.dialog.DialogOptionModel;
 import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.FilterOption;
@@ -31,6 +32,8 @@ import org.ei.bidan.view.dialog.SortOption;
 import java.util.Collections;
 import java.util.List;
 
+import static com.google.common.collect.Iterables.concat;
+import static com.google.common.collect.Iterables.toArray;
 import static org.ei.bidan.AllConstants.FormNames.*;
 
 /**
@@ -41,6 +44,7 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
     private SmartRegisterClientsProvider clientProvider = null;
     private AnakRegisterController controller;
     private final ClientActionHandler clientActionHandler = new ClientActionHandler();
+    private DialogOptionMapper dialogOptionMapper;
 
     @Override
     protected SmartRegisterPaginatedAdapter adapter() {
@@ -87,7 +91,9 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
 
             @Override
             public DialogOption[] filterOptions() {
-                return new DialogOption[]{new AllClientsFilter()};
+                Iterable<? extends DialogOption> villageFilterOptions =
+                        dialogOptionMapper.mapToVillageFilterOptions(controller.villages());
+                return toArray(concat(DEFAULT_FILTER_OPTIONS, villageFilterOptions), DialogOption.class);
             }
 
             @Override
@@ -115,9 +121,11 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
                 context.alertService(),
                 context.serviceProvidedService(),
                 context.listCache(),
-                context.smartRegisterClientsCache());
+                context.smartRegisterClientsCache(),
+                context.villagesCache());
 
         clientsProvider().onServiceModeSelected(new AnakOverviewServiceMode(clientsProvider()));
+        dialogOptionMapper = new DialogOptionMapper();
     }
     @Override
     protected void startRegistration() {

@@ -18,9 +18,12 @@ import org.ei.bidan.view.contract.AlertDTO;
 import org.ei.bidan.view.contract.ServiceProvidedDTO;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.contract.SmartRegisterClients;
+import org.ei.bidan.view.contract.Village;
+import org.ei.bidan.view.contract.Villages;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 import static java.lang.String.valueOf;
@@ -44,13 +47,15 @@ public class AnakRegisterController extends CommonController {
     private final ServiceProvidedService serviceProvidedService;
     private final Cache<String> cache;
     private final Cache<SmartRegisterClients> smartRegisterClientsCache;
+    private final Cache<Villages> villagesCache;
 
-    public AnakRegisterController(AllKohort allKohort, AlertService alertService, ServiceProvidedService serviceProvidedService, Cache<String> cache, Cache<SmartRegisterClients> smartRegisterClientsCache) {
+    public AnakRegisterController(AllKohort allKohort, AlertService alertService, ServiceProvidedService serviceProvidedService, Cache<String> cache, Cache<SmartRegisterClients> smartRegisterClientsCache, Cache<Villages> villageCache) {
         this.allKohort = allKohort;
         this.alertService = alertService;
         this.serviceProvidedService = serviceProvidedService;
         this.cache = cache;
         this.smartRegisterClientsCache = smartRegisterClientsCache;
+        this.villagesCache = villageCache;
     }
 
     public String get() {
@@ -65,7 +70,8 @@ public class AnakRegisterController extends CommonController {
                             a.getGender(),
                             a.getDetail(BIRTH_WEIGHT),
                             a.getDetails())
-                            .withName(a.getDetail(CHILD_NAME));
+                            .withName(a.getDetail(CHILD_NAME))
+                            .withVillage(a.getKartuIbu().dusun());
                     anakClients.add(anakClient);
                 }
                 return new Gson().toJson(anakClients);
@@ -102,7 +108,8 @@ public class AnakRegisterController extends CommonController {
                             .withBirthCondition(a.getDetail(BIRTH_CONDITION))
                             .withServiceAtBirth(a.getDetail(SERVICE_AT_BIRTH))
                             .withPhotoPath(photoPath)
-                            .withIsHighRisk(a.getDetail(IS_HIGH_RISK_CHILD));
+                            .withIsHighRisk(a.getDetail(IS_HIGH_RISK_CHILD))
+                            .withVillage(a.getKartuIbu().dusun());
                     anakClient.setHb07(a.getDetail(IMMUNIZATION_HB_0_7_DATES));
                     anakClient.setBcgPol1(a.getDetail(IMMUNIZATION_BCG_AND_POLIO1));
                     anakClient.setDptHb1Pol2(a.getDetail(IMMUNIZATION_DPT_HB1_POLIO2));
@@ -160,6 +167,28 @@ public class AnakRegisterController extends CommonController {
             }
         });
     }
+
+    public Villages villages() {
+        return villagesCache.get(ANAK_CLIENTS_LIST, new CacheableData<Villages>() {
+            @Override
+            public Villages fetch() {
+                List<Anak> anakList = allKohort.allAnakWithIbuAndKI();
+                List<String> villageNameList = new ArrayList<>();
+                Villages villagesList = new Villages();
+
+                for(Anak client : anakList) {
+                    villageNameList.add(client.getKartuIbu().dusun());
+                }
+                villageNameList = new ArrayList<>(new LinkedHashSet<>(villageNameList));
+                for(String name : villageNameList) {
+                    Village village = new Village(name);
+                    villagesList.add(new Village(name));
+                }
+                return villagesList;
+            }
+        });
+    }
+
 
     public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {
         String clients = get();

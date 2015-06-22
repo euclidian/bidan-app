@@ -37,9 +37,4 @@ public class BidanVillageController {
             }
         });
     }
-
-    public List<String> getAllVillages() {
-        return new ArrayList<>(Arrays.asList("Lainnya", "Saba", "Selebung Rembiga", "Loang Maka", "Setuta", "Durian", "Lekor", "Janapria", "Pendem", "Langko", "Bakan", "Kerembong", "Jango", "Lainnya", "Teruwai", "Gapura", "Kawo", "Segala Anyar", "Sukadana", "Pengengat", "Kuta", "Mertak", "Tumpak", "Ketara", "Bangket Parak", "Prabu", "Pengembur", "Rembitan", "Tanak Awu", "Sengkol"));
-    }
-
 }

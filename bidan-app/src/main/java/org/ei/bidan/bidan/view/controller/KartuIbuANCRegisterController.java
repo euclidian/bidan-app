@@ -13,8 +13,12 @@ import org.ei.bidan.bidan.view.contract.KartuIbuANCClients;
 import org.ei.bidan.util.Cache;
 import org.ei.bidan.util.CacheableData;
 import org.ei.bidan.view.contract.SmartRegisterClient;
+import org.ei.bidan.view.contract.Village;
+import org.ei.bidan.view.contract.Villages;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 import static java.util.Collections.sort;
@@ -31,10 +35,12 @@ public class KartuIbuANCRegisterController extends CommonController {
     private final AllKohort allKohort;
     private final Cache<String> cache;
     private final Cache<KartuIbuANCClients> kartuIbuANCClientsCache;
+    private final Cache<Villages> villagesCache;
 
-    public KartuIbuANCRegisterController(AllKohort allKohort, Cache<String> cache, Cache<KartuIbuANCClients> kartuIbuANCClientsCache) {
+    public KartuIbuANCRegisterController(AllKohort allKohort, Cache<String> cache, Cache<KartuIbuANCClients> kartuIbuANCClientsCache, Cache<Villages> villagesCache) {
         this.allKohort = allKohort;
         this.cache = cache;
+        this.villagesCache = villagesCache;
         this.kartuIbuANCClientsCache = kartuIbuANCClientsCache;
     }
 
@@ -129,6 +135,29 @@ public class KartuIbuANCRegisterController extends CommonController {
             @Override
             public int compare(SmartRegisterClient o1, SmartRegisterClient o2) {
                 return o1.name().compareToIgnoreCase(o2.name());
+            }
+        });
+    }
+
+    public Villages villages() {
+        return villagesCache.get(KI_ANC_CLIENTS_LIST, new CacheableData<Villages>() {
+            @Override
+            public Villages fetch() {
+                List<SmartRegisterClient> clients = new Gson().fromJson(get(), new TypeToken<List<KartuIbuANCClient>>() {
+                }.getType());
+                List<String> villageNameList = new ArrayList<>();
+                Villages villagesList = new Villages();
+
+                for(SmartRegisterClient client : clients) {
+                    villageNameList.add(client.village());
+                }
+
+                villageNameList = new ArrayList<>(new LinkedHashSet<>(villageNameList));
+                for(String name : villageNameList) {
+                    Village village = new Village(name);
+                    villagesList.add(new Village(name));
+                }
+                return villagesList;
             }
         });
     }

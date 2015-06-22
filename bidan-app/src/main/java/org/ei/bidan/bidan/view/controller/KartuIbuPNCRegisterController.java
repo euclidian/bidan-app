@@ -15,9 +15,12 @@ import org.ei.bidan.bidan.view.contract.KartuIbuPNCClients;
 import org.ei.bidan.util.Cache;
 import org.ei.bidan.util.CacheableData;
 import org.ei.bidan.view.contract.SmartRegisterClient;
+import org.ei.bidan.view.contract.Village;
+import org.ei.bidan.view.contract.Villages;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 import static java.util.Collections.sort;
@@ -37,10 +40,12 @@ public class KartuIbuPNCRegisterController extends CommonController {
     private final AllKohort allKohort;
     private final Cache<String> cache;
     private final Cache<KartuIbuPNCClients> kartuIbuPNCClientsCache;
+    private final Cache<Villages> villagesCache;
 
-    public KartuIbuPNCRegisterController(AllKohort allKohort, Cache<String> cache, Cache<KartuIbuPNCClients> kartuIbuPNCClientsCache) {
+    public KartuIbuPNCRegisterController(AllKohort allKohort, Cache<String> cache, Cache<KartuIbuPNCClients> kartuIbuPNCClientsCache, Cache<Villages> villagesCache) {
         this.allKohort = allKohort;
         this.cache = cache;
+        this.villagesCache = villagesCache;
         this.kartuIbuPNCClientsCache = kartuIbuPNCClientsCache;
     }
 
@@ -161,6 +166,30 @@ public class KartuIbuPNCRegisterController extends CommonController {
                 pncClients,
                 allKohort.randomDummyPNCName(),
                 AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
+    }
+
+
+    public Villages villages() {
+        return villagesCache.get(KI_PNC_CLIENTS_LIST, new CacheableData<Villages>() {
+            @Override
+            public Villages fetch() {
+                List<SmartRegisterClient> clients = new Gson().fromJson(get(), new TypeToken<List<KartuIbuPNCClient>>() {
+                }.getType());
+                List<String> villageNameList = new ArrayList<>();
+                Villages villagesList = new Villages();
+
+                for(SmartRegisterClient client : clients) {
+                    villageNameList.add(client.village());
+                }
+
+                villageNameList = new ArrayList<>(new LinkedHashSet<>(villageNameList));
+                for(String name : villageNameList) {
+                    Village village = new Village(name);
+                    villagesList.add(new Village(name));
+                }
+                return villagesList;
+            }
+        });
     }
 
     private List<AnakClient> findChildren(Ibu mother) {

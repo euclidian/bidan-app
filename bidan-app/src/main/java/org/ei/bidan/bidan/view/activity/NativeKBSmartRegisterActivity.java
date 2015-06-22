@@ -97,7 +97,7 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
             @Override
             public DialogOption[] filterOptions() {
                 Iterable<? extends DialogOption> villageFilterOptions =
-                        dialogOptionMapper.mapToVillageFilterOptions(villageController.getVillagesIndonesia());
+                        dialogOptionMapper.mapToVillageFilterOptions(controller.villages());
                 return toArray(concat(DEFAULT_FILTER_OPTIONS, villageFilterOptions), DialogOption.class);
             }
 
@@ -131,7 +131,7 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
     @Override
     protected void onInitialization() {
         controller = new KohortKBRegisterController(context.allKartuIbus(),
-                context.listCache(),context.kbClientsCache(),context.allKohort());
+                context.listCache(),context.kbClientsCache(),context.allKohort(), context.villagesCache());
         villageController = new BidanVillageController(context.villagesCache(), context.allKartuIbus());
         dialogOptionMapper = new DialogOptionMapper();
     }

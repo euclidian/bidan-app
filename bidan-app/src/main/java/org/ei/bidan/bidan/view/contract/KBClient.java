@@ -141,7 +141,7 @@ public class KBClient extends BidanSmartRegisterClient implements KISmartRegiste
     }
 
     public String getVillage() {
-        return village;
+        return Strings.isNullOrEmpty(village) ? "" : humanize(village);
     }
 
     public String getJenisKontrasepsi() {

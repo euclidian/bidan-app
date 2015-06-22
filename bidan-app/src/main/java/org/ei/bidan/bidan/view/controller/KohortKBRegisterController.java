@@ -17,9 +17,13 @@ import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.util.Cache;
 import org.ei.bidan.util.CacheableData;
 import org.ei.bidan.view.contract.SmartRegisterClient;
+import org.ei.bidan.view.contract.Village;
+import org.ei.bidan.view.contract.Villages;
 import org.joda.time.LocalDate;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 import static java.util.Collections.sort;
@@ -36,12 +40,14 @@ public class KohortKBRegisterController extends CommonController{
     private final Cache<String> cache;
     private final Cache<KBClients> kbClientsCache;
     private final AllKohort allKohort;
+    private final Cache<Villages> villagesCache;
 
-    public KohortKBRegisterController(AllKartuIbus allKartuIbus, Cache<String> cache, Cache<KBClients> kbClientsCache, AllKohort allKohort) {
+    public KohortKBRegisterController(AllKartuIbus allKartuIbus, Cache<String> cache, Cache<KBClients> kbClientsCache, AllKohort allKohort, Cache<Villages> villagesCache) {
         this.allKartuIbus = allKartuIbus;
         this.cache = cache;
         this.kbClientsCache = kbClientsCache;
         this.allKohort = allKohort;
+        this.villagesCache = villagesCache;
     }
 
     public String get() {
@@ -140,6 +146,31 @@ public class KohortKBRegisterController extends CommonController{
             }
         });
     }
+
+
+    public Villages villages() {
+        return villagesCache.get(KB_CLIENTS_LIST, new CacheableData<Villages>() {
+            @Override
+            public Villages fetch() {
+                List<SmartRegisterClient> clients = new Gson().fromJson(get(), new TypeToken<List<KBClient>>() {
+                }.getType());
+                List<String> villageNameList = new ArrayList<>();
+                Villages villagesList = new Villages();
+
+                for(SmartRegisterClient client : clients) {
+                    villageNameList.add(client.village());
+                }
+
+                villageNameList = new ArrayList<>(new LinkedHashSet<>(villageNameList));
+                for(String name : villageNameList) {
+                    Village village = new Village(name);
+                    villagesList.add(new Village(name));
+                }
+                return villagesList;
+            }
+        });
+    }
+
 
     public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {
         String clients = get();

@@ -23,6 +23,7 @@ import static org.ei.bidan.AllConstants.FEMALE_GENDER;
 import static org.ei.bidan.AllConstants.IN_AREA;
 import static org.ei.bidan.AllConstants.OUT_OF_AREA;
 import static org.ei.bidan.util.DateUtil.formatDate;
+import static org.ei.bidan.util.StringUtil.humanize;
 
 /**
  * Created by Dimas Ciputra on 4/8/15.
@@ -154,7 +155,7 @@ public class AnakClient extends BidanSmartRegisterClient{
 
     @Override
     public String village() {
-        return null;
+        return Strings.isNullOrEmpty(village) ? "" : humanize(village);
     }
 
     @Override

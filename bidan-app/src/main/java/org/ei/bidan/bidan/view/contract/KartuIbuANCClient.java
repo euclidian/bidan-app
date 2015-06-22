@@ -179,7 +179,7 @@ public class KartuIbuANCClient extends BidanSmartRegisterClient implements Kartu
 
     @Override
     public String village() {
-        return humanize(village);
+        return Strings.isNullOrEmpty(village) ? "" : humanize(village);
     }
 
     @Override
