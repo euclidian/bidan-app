@@ -164,8 +164,6 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
                         KOHORT_BAYI_KUNJUNGAN, formController),
                 new OpenFormOption(getString(R.string.str_anak_balita_visit),
                         BALITA_KUNJUNGAN, formController),
-                new OpenFormOption(getString(R.string.str_imunisasi_bayi),
-                        BAYI_IMUNISASI, formController),
                 new OpenFormOption(getString(R.string.str_anak_edit),
                         KOHORT_BAYI_EDIT, formController),
                 new OpenFormOption(getString(R.string.str_tutup_anak),

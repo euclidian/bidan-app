@@ -8,11 +8,6 @@
                 "name": "id",
                 "shouldLoadValue": true
             },
-            {
-                "name": "motherId",
-                "source": "kartu_ibu.ibu.id",
-                "shouldLoadValue": true
-            },
 			{
                 "name": "metodeKontrasepsi",
                 "bind": "/model/instance/postpartum_kb/metode_kontrasepsi"
