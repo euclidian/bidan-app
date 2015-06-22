@@ -23,4 +23,9 @@ public class OpenFormOption implements EditOption {
     public void doEdit(SmartRegisterClient client) {
         formController.startFormActivity(formName, client.entityId(), null);
     }
+
+    @Override
+    public void doEditWithMetadata(SmartRegisterClient client, String metadata) {
+        formController.startFormActivity(formName, client.entityId(), metadata);
+    }
 }

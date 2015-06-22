@@ -110,6 +110,10 @@ public class AnakClient extends BidanSmartRegisterClient{
         return isBlank(dob) ? "-" : formatDate(dob);
     }
 
+    public String dobString() {
+        return dob;
+    }
+
     public String getBirthCondition() { return Strings.isNullOrEmpty(birthCondition) ? "-" : StringUtil.humanize(birthCondition); }
 
     public String getServiceAtBirth() { return serviceAtBirth; }

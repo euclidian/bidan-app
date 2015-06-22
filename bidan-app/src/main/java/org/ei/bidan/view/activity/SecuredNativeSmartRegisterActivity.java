@@ -315,8 +315,23 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
         builder.setItems(charSequences, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if((charSequences[which]).toString().toLowerCase().equals(client.name().toLowerCase())) {
+                if ((charSequences[which]).toString().toLowerCase().equals(client.name().toLowerCase())) {
                     onEditSelection(editOption, client);
+                }
+            }
+        });
+        builder.show();
+    }
+
+    protected void onShowDialogOptionSelectionWithMetadata(final EditOption editOption, final SmartRegisterClient client, final CharSequence[] charSequences, final String metadata) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.title_double_selection);
+
+        builder.setItems(charSequences, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if ((charSequences[which]).toString().toLowerCase().equals(client.name().toLowerCase())) {
+                    onEditSelectionWithMetadata(editOption, client, metadata);
                 }
             }
         });
@@ -325,6 +340,10 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
 
     protected void onEditSelection(EditOption editOption, SmartRegisterClient client) {
         editOption.doEdit(client);
+    }
+
+    protected void onEditSelectionWithMetadata(EditOption editOption, SmartRegisterClient client, String metadata) {
+        editOption.doEditWithMetadata(client, metadata);
     }
 
     private void goBack() {

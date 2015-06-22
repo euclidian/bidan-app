@@ -10,6 +10,7 @@ import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.provider.KartuIbuANCClientsProvider;
 import org.ei.bidan.bidan.provider.KartuIbuPNCClientsProvider;
 import org.ei.bidan.bidan.view.contract.BidanVillageController;
+import org.ei.bidan.bidan.view.contract.KartuIbuPNCClient;
 import org.ei.bidan.bidan.view.controller.KartuIbuANCRegisterController;
 import org.ei.bidan.bidan.view.controller.KartuIbuPNCRegisterController;
 import org.ei.bidan.bidan.view.dialog.KartuIbuANCOverviewServiceMode;
@@ -30,6 +31,8 @@ import org.ei.bidan.view.dialog.NameSort;
 import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Collections;
 import java.util.List;
@@ -157,7 +160,14 @@ public class NativeKIPNCSmartRegisterActivity extends BidanSecuredNativeSmartReg
         @Override
         public void onDialogOptionSelection(DialogOption option, Object tag) {
             SmartRegisterClient client = (SmartRegisterClient) tag;
-            onShowDialogOptionSelection((EditOption)option, client, controller.getRandomNameChars(client));
+            JSONObject obj = new JSONObject();
+            try {
+                obj.put(AllConstants.KartuAnakFields.DATE_OF_BIRTH, ((KartuIbuPNCClient) client).getLastChild().dateOfBirth());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            FieldOverrides fieldOverrides = new FieldOverrides(obj.toString());
+            onShowDialogOptionSelectionWithMetadata((EditOption)option, client, controller.getRandomNameChars(client), fieldOverrides.getJSONString());
         }
     }
 
