@@ -2,6 +2,8 @@ package org.ei.bidan.bidan.view.activity;
 
 import android.view.View;
 
+import com.flurry.android.FlurryAgent;
+
 import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
@@ -135,6 +137,19 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
         villageController = new BidanVillageController(context.villagesCache(), context.allKartuIbus());
         dialogOptionMapper = new DialogOptionMapper();
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FlurryAgent.logEvent("kb_dashboard", true);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        FlurryAgent.endTimedEvent("kb_dashboard");
+    }
+
 
     @Override
     protected void startRegistration() {

@@ -36,6 +36,8 @@ public class AllConstants {
     public static final String FORM_SUBMISSION_ROUTER = "formSubmissionRouter";
     public static final String ANM_LOCATION_CONTROLLER = "anmLocationContext";
 
+    public static final String FLURRY_KEY = "SNRSKHM2HK6XMFSYBR7Z";
+
     public static final String REPOSITORY = "formDataRepositoryContext";
 
     public static final String NEW_FP_METHOD_FIELD_NAME = "newMethod";

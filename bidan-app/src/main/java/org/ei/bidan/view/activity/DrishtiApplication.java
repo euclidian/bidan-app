@@ -2,6 +2,11 @@ package org.ei.bidan.view.activity;
 
 import android.app.Application;
 import android.content.res.Configuration;
+import android.util.Log;
+
+import com.flurry.android.FlurryAgent;
+
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.Context;
 import org.ei.bidan.sync.DrishtiSyncScheduler;
 
@@ -16,6 +21,15 @@ public class DrishtiApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        // Configure Flurry
+        FlurryAgent.setLogEnabled(true);
+        FlurryAgent.setLogEvents(true);
+        FlurryAgent.setLogLevel(Log.VERBOSE);
+
+        // init Flurry
+        FlurryAgent.init(this, AllConstants.FLURRY_KEY);
+
         context = Context.getInstance();
         context.updateApplicationContext(getApplicationContext());
         applyUserLanguagePreference();

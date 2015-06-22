@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.view.View;
 
+import com.flurry.android.FlurryAgent;
+
 import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
@@ -154,6 +156,19 @@ public class NativeKIANCSmartRegisterActivity extends BidanSecuredNativeSmartReg
         villageController = new BidanVillageController(context.villagesCache(), context.allKartuIbus());
         dialogOptionMapper = new DialogOptionMapper();
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FlurryAgent.logEvent("anc_dashboard", true);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        FlurryAgent.endTimedEvent("anc_dashboard");
+    }
+
 
     @Override
     protected void startRegistration() {

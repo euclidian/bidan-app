@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.webkit.JavascriptInterface;
 
+import com.flurry.android.FlurryAgent;
+
 import org.ei.bidan.bidan.view.activity.KIDetailActivity;
 import org.ei.bidan.bidan.view.activity.NativeKBSmartRegisterActivity;
 import org.ei.bidan.bidan.view.activity.NativeKIANCSmartRegisterActivity;
@@ -30,11 +32,13 @@ public class NavigationController {
 
     @JavascriptInterface
     public void startReports() {
+        FlurryAgent.logEvent("start_reports");
         activity.startActivity(new Intent(activity, ReportsActivity.class));
     }
 
     @JavascriptInterface
     public void startVideos() {
+        FlurryAgent.logEvent("start_videos");
         activity.startActivity(new Intent(activity, VideosActivity.class));
     }
 

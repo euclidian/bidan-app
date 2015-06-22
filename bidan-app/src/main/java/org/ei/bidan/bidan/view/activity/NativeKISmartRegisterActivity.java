@@ -2,6 +2,8 @@ package org.ei.bidan.bidan.view.activity;
 
 import android.view.View;
 
+import com.flurry.android.FlurryAgent;
+
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.view.contract.BidanVillageController;
@@ -143,6 +145,7 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
     @Override
     protected void onInitialization() {
+        FlurryAgent.logEvent("kohort_ibu_dashboard");
         controller = new KartuIbuRegisterController(context.allKartuIbus(),
                 context.listCache(),context.kiClientsCache(),context.allKohort());
         villageController = new BidanVillageController(context.villagesCache(), context.allKartuIbus());
@@ -151,6 +154,7 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
     @Override
     protected void startRegistration() {
+        FlurryAgent.logEvent("new_registration");
         FieldOverrides fieldOverrides = new FieldOverrides(context.anmLocationController().getLocationJSON());
         startFormActivity(KARTU_IBU_REGISTRATION, null, fieldOverrides.getJSONString());
     }

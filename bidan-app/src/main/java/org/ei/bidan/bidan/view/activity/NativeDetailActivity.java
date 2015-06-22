@@ -2,6 +2,8 @@ package org.ei.bidan.bidan.view.activity;
 
 import android.view.View;
 
+import com.flurry.android.FlurryAgent;
+
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.cards.DetailsNativeCard;
 import org.ei.bidan.bidan.view.cards.RiskFlagsNativeCard;
@@ -29,6 +31,7 @@ public class NativeDetailActivity extends SecuredActivity {
         setContentView(R.layout.detail_main_card_view);
         initialize();
         setupNavBarViews();
+        FlurryAgent.logEvent("detail_view");
     }
 
     @Override

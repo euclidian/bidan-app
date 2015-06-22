@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.view.View;
 
+import com.flurry.android.FlurryAgent;
+
 import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
@@ -127,6 +129,19 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
         clientsProvider().onServiceModeSelected(new AnakOverviewServiceMode(clientsProvider()));
         dialogOptionMapper = new DialogOptionMapper();
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FlurryAgent.logEvent("anak_dashboard", true);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        FlurryAgent.endTimedEvent("anak_dashboard");
+    }
+
     @Override
     protected void startRegistration() {
         startFormActivity(AllConstants.FormNames.ANAK_NEW_REGISTRATION, null, null);
