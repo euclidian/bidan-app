@@ -354,7 +354,7 @@ public class KartuIbuANCClient extends BidanSmartRegisterClient implements Kartu
     }
 
     public String getAlergi() {
-        return StringUtil.humanize(alergi);
+        return Strings.isNullOrEmpty(alergi) ? "-" : StringUtil.humanize(alergi);
     }
 
     public void setAlergi(String alergi) {

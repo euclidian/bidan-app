@@ -322,7 +322,7 @@ public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartR
 
     @Override
     public String village() {
-        return humanize(village);
+        return Strings.isNullOrEmpty(village) ? "" : humanize(village);
     }
 
     @Override

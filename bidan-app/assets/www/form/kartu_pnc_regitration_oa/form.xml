@@ -1213,6 +1213,9 @@
 		<label class="calculation non-select ">
 			<input type="hidden" name="/register_pnc/formhub/uuid" data-calculate="'96b2b9630829496fb1c44a6d6408b3e6'" data-type-xml="string" />
 		</label>
+		<label class="calculation non-select ">
+			<input type="hidden" name="/register_pnc/dusun" data-calculate="if( /register_pnc/dusunl != '', /register_pnc/dusunl, /register_pnc/dusun)" data-type-xml="string" />
+		</label>
 	</fieldset>
 </form>
 

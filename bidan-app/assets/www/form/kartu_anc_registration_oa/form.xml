@@ -2053,5 +2053,8 @@
       <label class="calculation non-select ">
          <input type="hidden" name="/Register_ANC/formhub/uuid" data-calculate="'e5cfee94fffd4e85bd7db0424b8ea03a'" data-type-xml="string" />
       </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/dusun" data-calculate="if( /Register_ANC/dusunl != '', /Register_ANC/dusunl, /Register_ANC/dusun)" data-type-xml="string" />
+      </label>
    </fieldset>
 </form>

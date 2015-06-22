@@ -802,5 +802,8 @@
       <label class="calculation non-select ">
          <input type="hidden" name="/register_kb/formhub/uuid" data-calculate="'5b2b43892b2b4fc6b3e572f62cdf143c'" data-type-xml="string" />
       </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/register_kb/dusun" data-calculate="if( /register_kb/dusunl != '', /register_kb/dusunl, /register_kb/dusun)" data-type-xml="string" />
+      </label>
    </fieldset>
 </form>

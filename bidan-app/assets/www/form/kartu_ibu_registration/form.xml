@@ -688,6 +688,9 @@
       <label class="calculation non-select ">
          <input type="hidden" name="/kartu_ibu/Too_old_mother" data-calculate="if( /kartu_ibu/umur  &gt;35, 'Ibu Terlalu tua','')" data-type-xml="string" />
       </label>
+       <label class="calculation non-select ">
+           <input type="hidden" name="/kartu_ibu/dusun" data-calculate="if( /kartu_ibu/dusunl != '', /kartu_ibu/dusunl, /kartu_ibu/dusun)" data-type-xml="string" />
+       </label>
       <label class="calculation non-select ">
          <input type="hidden" name="/kartu_ibu/is_high_risk" data-calculate="if(( /kartu_ibu/Too_young_risk  != '' or  /kartu_ibu/Too_old_mother  != ''), 'yes', 'no')" data-type-xml="string" />
       </label>

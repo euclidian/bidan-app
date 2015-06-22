@@ -30,7 +30,7 @@
       },
       {
         "name": "tanggalLahir",
-        "bind": "/model/instance/kartu_ibu/tanggal_lahir",
+        "bind": "/model/instance/kartu_ibu/tanggal_lahir_ibu",
         "shouldLoadValue": true
       },
       {

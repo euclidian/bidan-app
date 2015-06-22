@@ -753,5 +753,8 @@
       <label class="calculation non-select ">
          <input type="hidden" name="/register_baby/formhub/uuid" data-calculate="'37c7d91977ca4da49f2a099606da9997'" data-type-xml="string" />
       </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/register_baby/dusun" data-calculate="if( /register_baby/dusunl != '', /register_baby/dusunl, /register_baby/dusun)" data-type-xml="string" />
+      </label>
    </fieldset>
 </form>
