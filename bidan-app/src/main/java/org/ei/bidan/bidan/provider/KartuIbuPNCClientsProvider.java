@@ -94,7 +94,7 @@ public class KartuIbuPNCClientsProvider implements SmartRegisterClientsProvider 
     private void setupMetodeKontrasepsiView(KartuIbuPNCClient client, NativeKIPNCRegisterViewHolder viewHolder) {
         viewHolder.kondisiIbu().setText(client.motherCondition());
         viewHolder.kondisiAnak1().setText(client.getLastChild().getBirthCondition());
-        viewHolder.kondisiAnak2().setText(client.getLastChild().gender() + " , " + client.getLastChild().weight());
+        viewHolder.kondisiAnak2().setText(client.getLastChild().gender() + " , " + client.getLastChild().birthWeight());
     }
 
     private void setupKomplikasiView(KartuIbuPNCClient client, NativeKIPNCRegisterViewHolder viewHolder) {

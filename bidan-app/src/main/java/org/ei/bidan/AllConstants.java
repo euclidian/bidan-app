@@ -412,8 +412,8 @@ public class AllConstants {
     public class KartuAnakFields {
         public static final String BIRTH_WEIGHT = "beratLahir";
         public static final String CHILD_NAME = "namaBayi";
-        public static final String BIRTH_CONDITION = "keadaanBayi";
-        public static final String SERVICE_AT_BIRTH = "pelayanan";
+        public static final String BIRTH_CONDITION = "saatLahirsd5JamKondisibayi";
+        public static final String SERVICE_AT_BIRTH = "jenisPelayananYangDiberikanSaatLahir";
         public static final String DATE_OF_BIRTH = "tanggalLahirAnak";
         public static final String GENDER = "jenisKelamin";
         public static final String IS_HIGH_RISK_CHILD = "isHighRiskChild";
@@ -423,6 +423,10 @@ public class AllConstants {
         public static final String IMMUNIZATION_DPT_HB2_POLIO3 = "tanggalpemberianimunisasiDPTHB2Polio3";
         public static final String IMMUNIZATION_DPT_HB3_POLIO4 = "tanggalpemberianimunisasiDPTHB3Polio4";
         public static final String IMMUNIZATION_MEASLES = "tanggalpemberianimunisasiCampak";
+        public static final String HB_GIVEN = "saatLahirsd5JamPemberianImunisasihbJikaDilakukan";
+        public static final String BIRTH_PLACE = "tempatBersalin";
+        public static final String CHILD_VISIT_DATE = "tanggalKunjunganBayiPerbulan";
+        public static final String CHILD_CURRENT_WEIGTH = "beratBadanBayiSetiapKunjunganBayiPerbulan";
     }
 
     public class KeluargaBerencanaFields {

@@ -109,6 +109,10 @@ public class AnakRegisterController extends CommonController {
                     anakClient.setDptHb2Pol3(a.getDetail(IMMUNIZATION_DPT_HB2_POLIO3));
                     anakClient.setDptHb3Pol4(a.getDetail(IMMUNIZATION_DPT_HB3_POLIO4));
                     anakClient.setCampak(a.getDetail(IMMUNIZATION_MEASLES));
+                    anakClient.setBirthPlace(a.getIbu().getDetail(BIRTH_PLACE));
+                    anakClient.setHbGiven(a.getDetail(HB_GIVEN));
+                    anakClient.setVisitDate(a.getDetail(CHILD_VISIT_DATE));
+                    anakClient.setCurrentWeight(a.getDetail(CHILD_CURRENT_WEIGTH));
                     anakSmartClient.add(anakClient);
                 }
                 sortByName(anakSmartClient);

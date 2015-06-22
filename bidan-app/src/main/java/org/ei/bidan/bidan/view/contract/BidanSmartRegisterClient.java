@@ -24,10 +24,10 @@ public abstract class BidanSmartRegisterClient implements SmartRegisterClient {
     private String riskLila;
     private String hbLevels;
     private String bloodSugar;
-    private String tdSistolik;
-    private String tdDiastolik;
-    private String partus;
-    private String abortus;
+    private String rTdSistolik;
+    private String rTdDiastolik;
+    private String rPartus;
+    private String rAbortus;
     private String chronicDisease;
 
     public String getChronicDisease() {

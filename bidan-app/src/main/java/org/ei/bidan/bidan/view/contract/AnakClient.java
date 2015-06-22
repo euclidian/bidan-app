@@ -31,7 +31,8 @@ public class AnakClient extends BidanSmartRegisterClient{
     private final String entityId;
     private Map<String, String> details;
     private String gender;
-    private String weight;
+    private String birthWeight;
+    private String currentWeight;
     private String name;
     private String motherName;
     private String dob;
@@ -52,11 +53,14 @@ public class AnakClient extends BidanSmartRegisterClient{
     private String dptHb2Pol3;
     private String dptHb3Pol4;
     private String campak;
+    private String birthPlace;
+    private String hbGiven;
+    private String visitDate;
 
     public AnakClient(String entityId, String gender, String weight, Map<String, String> details) {
         this.entityId = entityId;
         this.gender = gender;
-        this.weight = weight;
+        this.birthWeight = weight;
         this.details = details;
     }
 
@@ -64,27 +68,51 @@ public class AnakClient extends BidanSmartRegisterClient{
         return StringUtil.humanize(motherName);
     }
 
+    public String getHbGiven() {
+        return Strings.isNullOrEmpty(hbGiven) ? "-" : hbGiven;
+    }
+
+    public void setHbGiven(String hbGiven) {
+        this.hbGiven = hbGiven;
+    }
+
+    public String getVisitDate() {
+        return Strings.isNullOrEmpty(visitDate) ? "-" : formatDate(visitDate);
+    }
+
+    public void setVisitDate(String visitDate) {
+        this.visitDate = visitDate;
+    }
+
+    public String birthPlace() { return Strings.isNullOrEmpty(birthPlace) ? "-" : StringUtil.humanize(birthPlace); }
+
+    public void setBirthPlace(String birthPlace) { this.birthPlace = birthPlace; }
+
     public String fatherName() {
         return StringUtil.humanize(fatherName);
     }
 
     public String gender() { return StringUtil.humanize(gender); }
 
-    public String weight() {
-        return Strings.isNullOrEmpty(weight) ? "-" : weight ;
+    public String birthWeight() {
+        return Strings.isNullOrEmpty(birthWeight) ? "-" : birthWeight ;
     }
+
+    public String currentWeight() { return Strings.isNullOrEmpty(currentWeight) ? "-" : currentWeight; }
+
+    public void setCurrentWeight(String currentWeight) { this.currentWeight = currentWeight; }
 
     public String motherKiNumber() {
         return kiNumber;
     }
 
     public String dateOfBirth() {
-        return isBlank(dob) ? "" : formatDate(dob);
+        return isBlank(dob) ? "-" : formatDate(dob);
     }
 
-    public String getBirthCondition() { return StringUtil.humanize(birthCondition); }
+    public String getBirthCondition() { return Strings.isNullOrEmpty(birthCondition) ? "-" : StringUtil.humanize(birthCondition); }
 
-    public String getServiceAtBirth() { return StringUtil.humanize(serviceAtBirth); }
+    public String getServiceAtBirth() { return serviceAtBirth; }
 
     @Override
     public String entityId() {

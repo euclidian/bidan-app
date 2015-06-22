@@ -522,6 +522,7 @@
     <string name="header_risk_factors">Faktor Risk</string>
     <string name="str_pnc_dob_label"></string>
     <string name="header_dob">Tgl Lahir</string>
+    <string name="header_dok_persalinan">Dok Prsalinan</string>
 
     <string name="app_name">Bidan</string>
 
