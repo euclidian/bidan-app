@@ -321,11 +321,11 @@ public class KartuIbuPNCClient extends BidanSmartRegisterClient implements Kartu
     }
 
     public String komplikasi() {
-        return Strings.isNullOrEmpty(komplikasi) ? "-" : humanize(komplikasi);
+        return Strings.isNullOrEmpty(komplikasi) ? "-" : komplikasi.equalsIgnoreCase("tidak_ada_komplikasi") ? " - "  : humanize(komplikasi);
     }
 
     public String otherKomplikasi() {
-        return Strings.isNullOrEmpty(otherKomplikasi) ? "" : humanize(otherKomplikasi);
+        return Strings.isNullOrEmpty(otherKomplikasi) ? "" : otherKomplikasi.equalsIgnoreCase("tidak_ada_komplikasi") ? " - "  : humanize(otherKomplikasi);
     }
 
     public String tdSuhu() {

@@ -123,7 +123,7 @@
       },
       {
         "name": "noBayi",
-        "source": "ibu.anak.no_bayi"
+        "source": "ibu.anak.no_bayi",
         "bind": "/model/instance/dokumentasi_persalinan/no_bayi"
       },
       {
