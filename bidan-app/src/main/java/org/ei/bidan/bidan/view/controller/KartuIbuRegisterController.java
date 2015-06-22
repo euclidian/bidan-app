@@ -19,6 +19,7 @@ import org.ei.bidan.bidan.repository.AllKartuIbus;
 import org.ei.bidan.util.Cache;
 import org.ei.bidan.util.CacheableData;
 import org.ei.bidan.util.EasyMap;
+import org.ei.bidan.util.IntegerUtil;
 import org.ei.bidan.view.contract.ECClient;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.contract.SmartRegisterClients;
@@ -96,6 +97,7 @@ public class KartuIbuRegisterController  extends CommonController{
                             kartuIbu.getDetail(MOTHER_BLOOD_TYPE),
                             kartuIbu.getDetail(HUSBAND_NAME),
                             kartuIbu.dusun())
+                            .withIsHighRiskPregnancy(kartuIbu.getDetail(IS_HIGH_RISK_PREGNANCY))
                             .withDateOfBirth(kartuIbu.getDetail(MOTHER_DOB))
                             .withParity(kartuIbu.getDetail(NUMBER_PARTUS))
                             .withNumberOfAbortions(kartuIbu.getDetail(NUMBER_ABORTIONS))
@@ -104,7 +106,6 @@ public class KartuIbuRegisterController  extends CommonController{
                             .withHighPriority(kartuIbu.getDetail(IS_HIGH_PRIORITY))
                             .withIsHighRisk(kartuIbu.getDetail(IS_HIGH_RISK))
                             .withEdd(kartuIbu.getDetail(EDD))
-                            .withIsHighRiskPregnancy(kartuIbu.getDetail(IS_HIGH_RISK_PREGNANCY))
                             .withHighRiskLabour(kartuIbu.getDetail(IS_HIGH_RISK_LABOUR));
                     updateStatusInformation(kartuIbu, kartuIbuClient);
                     updateChildrenInformation(kartuIbuClient);
@@ -164,6 +165,7 @@ public class KartuIbuRegisterController  extends CommonController{
             kartuIbuClient
                     .withStatus(EasyMap.create(STATUS_TYPE_FIELD, ANC_STATUS)
                             .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
+            kartuIbuClient.setLila(ibu.getDetail(AllConstants.KartuANCFields.LILA_CHECK_RESULT));
             kartuIbuClient.withKbMethod("-");
             return;
         }

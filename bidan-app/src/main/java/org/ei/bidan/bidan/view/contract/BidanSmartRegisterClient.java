@@ -2,10 +2,14 @@ package org.ei.bidan.bidan.view.contract;
 
 import android.util.Log;
 
+import com.google.common.base.Strings;
+
 import org.ei.bidan.util.IntegerUtil;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * Created by Dimas Ciputra on 6/11/15.
@@ -15,6 +19,24 @@ public abstract class BidanSmartRegisterClient implements SmartRegisterClient {
     private boolean isHighRiskLabour = false;
     private boolean isHighRiskFromANC = false;
     private boolean isHighRiskPregnancy = false;
+
+    // High Risk Factors
+    private String riskLila;
+    private String hbLevels;
+    private String bloodSugar;
+    private String tdSistolik;
+    private String tdDiastolik;
+    private String partus;
+    private String abortus;
+    private String chronicDisease;
+
+    public String getChronicDisease() {
+        return chronicDisease;
+    }
+
+    public void setChronicDisease(String chronicDisease) {
+        this.chronicDisease = chronicDisease;
+    }
 
     public void setIsHighRiskLabour(boolean isHighRiskLabour) {
         this.isHighRiskLabour = isHighRiskLabour;
@@ -45,6 +67,26 @@ public abstract class BidanSmartRegisterClient implements SmartRegisterClient {
         i += isHighRisk() ? 1 : 0;
         return i;
     }
+
+    public List<String> highRiskReason() {
+        List<String> reason = new ArrayList<>();
+
+        if(age() < 20) {
+            reason.add("Mother too young");
+        } else if(age() > 35) {
+            reason.add("Mother too old");
+        }
+
+        if(!Strings.isNullOrEmpty(getChronicDisease())) {
+            String[] chronicDisease = getChronicDisease().split("\\s+");
+            for(int i=0; i < chronicDisease.length; i++) {
+                reason.add(chronicDisease[i]);
+            }
+        }
+
+        return reason;
+    }
+
 
     @Override
     public boolean isHighRisk() {

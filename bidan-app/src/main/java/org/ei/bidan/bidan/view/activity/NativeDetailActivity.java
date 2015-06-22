@@ -8,6 +8,8 @@ import org.ei.bidan.bidan.view.cards.RiskFlagsNativeCard;
 import org.ei.bidan.bidan.view.controller.KIDetailController;
 import org.ei.bidan.view.activity.SecuredActivity;
 
+import java.util.List;
+
 import it.gmariotti.cardslib.library.view.CardViewNative;
 
 /**
@@ -46,6 +48,7 @@ public class NativeDetailActivity extends SecuredActivity {
         detailsCardView.setCard(detailsCard);
 
         riskFlagsCard = new RiskFlagsNativeCard(this);
+        riskFlagsCard.setKartuIbuClient(controller().get());
         riskFlagsCard.init();
 
         // Set card in cardView
@@ -83,7 +86,7 @@ public class NativeDetailActivity extends SecuredActivity {
 
     private KIDetailController controller() {
         if(kiDetailController == null) {
-            kiDetailController = new KIDetailController(this, caseId(), context.allKartuIbus());
+            kiDetailController = new KIDetailController(this, caseId(), context.allKartuIbus(), context.allKohort());
         }
         return kiDetailController;
     }

@@ -81,7 +81,7 @@ public class KIDetailActivity extends SecuredActivity {
 
     private KIDetailController controller() {
         if(kiDetailController == null) {
-            kiDetailController = new KIDetailController(this, caseId(), context.allKartuIbus());
+            kiDetailController = new KIDetailController(this, caseId(), context.allKartuIbus(), context.allKohort());
         }
         return kiDetailController;
     }

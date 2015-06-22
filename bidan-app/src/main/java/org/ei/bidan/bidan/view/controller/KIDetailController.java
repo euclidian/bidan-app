@@ -2,14 +2,20 @@ package org.ei.bidan.bidan.view.controller;
 
 import android.content.Context;
 
+import com.google.common.base.Strings;
 import com.google.gson.Gson;
 
+import org.ei.bidan.AllConstants;
+import org.ei.bidan.bidan.domain.Ibu;
 import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.bidan.repository.AllKartuIbus;
+import org.ei.bidan.bidan.repository.AllKohort;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
+import org.ei.bidan.util.EasyMap;
 
 import java.util.Map;
 
+import static org.ei.bidan.AllConstants.KartuIbuFields.CHRONIC_DISEASE;
 import static org.ei.bidan.AllConstants.KartuIbuFields.EDD;
 import static org.ei.bidan.AllConstants.KartuIbuFields.HUSBAND_NAME;
 import static org.ei.bidan.AllConstants.KartuIbuFields.IS_HIGH_PRIORITY;
@@ -38,11 +44,13 @@ public class KIDetailController {
     private final Context context;
     private final String caseId;
     private final AllKartuIbus allKartuIbus;
+    private final AllKohort allKohort;
 
-    public KIDetailController(Context context, String caseId, AllKartuIbus allKartuIbus) {
+    public KIDetailController(Context context, String caseId, AllKartuIbus allKartuIbus, AllKohort allKohort) {
         this.context = context;
         this.caseId = caseId;
         this.allKartuIbus = allKartuIbus;
+        this.allKohort = allKohort;
     }
 
     public KartuIbuClient get() {
@@ -55,6 +63,7 @@ public class KIDetailController {
                 kartuIbu.getDetail(MOTHER_BLOOD_TYPE),
                 kartuIbu.getDetail(HUSBAND_NAME),
                 kartuIbu.dusun())
+                .withIsHighRiskPregnancy(kartuIbu.getDetail(IS_HIGH_RISK_PREGNANCY))
                 .withDateOfBirth(kartuIbu.getDetail(MOTHER_DOB))
                 .withParity(kartuIbu.getDetail(NUMBER_PARTUS))
                 .withNumberOfAbortions(kartuIbu.getDetail(NUMBER_ABORTIONS))
@@ -63,7 +72,6 @@ public class KIDetailController {
                 .withHighPriority(kartuIbu.getDetail(IS_HIGH_PRIORITY))
                 .withIsHighRisk(kartuIbu.getDetail(IS_HIGH_RISK))
                 .withEdd(kartuIbu.getDetail(EDD))
-                .withIsHighRiskPregnancy(kartuIbu.getDetail(IS_HIGH_RISK_PREGNANCY))
                 .withHighRiskLabour(kartuIbu.getDetail(IS_HIGH_RISK_LABOUR));
 
         kartuIbuClient.setReligion(kartuIbu.getDetail("agama"));
@@ -72,6 +80,15 @@ public class KIDetailController {
         kartuIbuClient.setInsurance(kartuIbu.getDetail("asuransiJiwa"));
         kartuIbuClient.setPhoneNumber(kartuIbu.getDetail("NomorTelponHp"));
 
+        Ibu ibu = allKohort.findIbuWithOpenStatusByKIId(kartuIbu.getCaseId());
+
+        if(ibu!=null) {
+            kartuIbuClient.setChronicDisease(ibu.getDetail(CHRONIC_DISEASE));
+            kartuIbuClient.withHighRiskFromANC(!Strings.isNullOrEmpty(ibu.getDetail(CHRONIC_DISEASE)));
+        }
+        if (ibu != null && ibu.isANC()) {
+            kartuIbuClient.setLila(ibu.getDetail(AllConstants.KartuANCFields.LILA_CHECK_RESULT));
+        }
         return kartuIbuClient;
     }
 
