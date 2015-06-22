@@ -167,7 +167,7 @@ public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartR
     }
 
     public String getNoIbu() {
-        return noIbu;
+        return Strings.isNullOrEmpty(noIbu) ? "0" : noIbu;
     }
 
     public String getWifeName() {
