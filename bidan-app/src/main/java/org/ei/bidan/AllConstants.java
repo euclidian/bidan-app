@@ -410,6 +410,7 @@ public class AllConstants {
     }
 
     public class KartuAnakFields {
+        public static final String BABY_NO = "noBayi";
         public static final String BIRTH_WEIGHT = "beratLahir";
         public static final String CHILD_NAME = "namaBayi";
         public static final String BIRTH_CONDITION = "saatLahirsd5JamKondisibayi";

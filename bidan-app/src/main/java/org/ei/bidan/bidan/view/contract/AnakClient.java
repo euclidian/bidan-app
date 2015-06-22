@@ -56,12 +56,21 @@ public class AnakClient extends BidanSmartRegisterClient{
     private String birthPlace;
     private String hbGiven;
     private String visitDate;
+    private String babyNo;
 
     public AnakClient(String entityId, String gender, String weight, Map<String, String> details) {
         this.entityId = entityId;
         this.gender = gender;
         this.birthWeight = weight;
         this.details = details;
+    }
+
+    public String getBabyNo() {
+        return Strings.isNullOrEmpty(babyNo) ? "-" : babyNo;
+    }
+
+    public void setBabyNo(String babyNo) {
+        this.babyNo = babyNo;
     }
 
     public String motherName() {

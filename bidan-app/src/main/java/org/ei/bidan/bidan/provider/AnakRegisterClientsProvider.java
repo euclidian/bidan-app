@@ -86,7 +86,7 @@ public class AnakRegisterClientsProvider implements SmartRegisterClientsProvider
     }
 
     private void setupIdDetailsView(AnakClient client, NativeAnakRegisterViewHolder viewHolder) {
-        viewHolder.getTxtIbuKiNo().setText(client.motherKiNumber());
+        viewHolder.getTxtIbuKiNo().setText(client.getBabyNo());
     }
 
     @Override
