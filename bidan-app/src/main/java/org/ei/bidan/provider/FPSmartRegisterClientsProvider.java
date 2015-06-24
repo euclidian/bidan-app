@@ -49,7 +49,7 @@ public class FPSmartRegisterClientsProvider implements SmartRegisterClientsProvi
     }
 
     @Override
-    public View getView(SmartRegisterClient smartRegisterClient, View convertView, ViewGroup viewGroup) {
+    public View getView(int i,SmartRegisterClient smartRegisterClient, View convertView, ViewGroup viewGroup) {
         ViewGroup itemView;
         NativeFPSmartRegisterViewHolder viewHolder;
         if (convertView == null) {

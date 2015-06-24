@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
@@ -65,7 +66,7 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
     }
 
     @Override
-    public View getView(SmartRegisterClient client, View convertView, ViewGroup viewGroup) {
+    public View getView(int i, SmartRegisterClient client, View convertView, ViewGroup viewGroup) {
         ViewGroup itemView;
         NativeKIRegisterViewHolder viewHolder;
         if (convertView == null) {
@@ -75,6 +76,12 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
         } else {
             itemView = (ViewGroup) convertView;
             viewHolder = (NativeKIRegisterViewHolder) itemView.getTag();
+        }
+
+        if(i%2>0) {
+            itemView.setBackgroundColor(Color.parseColor(AllConstants.HIGHLIGHT_COLOR));
+        } else {
+            itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         }
 
         KartuIbuClient kartuIbuClient = (KartuIbuClient) client;

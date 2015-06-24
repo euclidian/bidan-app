@@ -64,6 +64,8 @@ public class AllConstants {
     public static final String OUT_OF_AREA = "out_of_area";
     public static final String IN_AREA = "in_area";
 
+    public static final String HIGHLIGHT_COLOR = "#EEEEEE";
+
     public class FormNames {
         public static final String EC_REGISTRATION = "ec_registration";
         public static final String FP_COMPLICATIONS = "fp_complications";
