@@ -119,7 +119,6 @@ public class LoginActivity extends Activity {
     private void localLogin(View view, String userName, String password) {
         if (context.userService().isValidLocalLogin(userName, password)) {
             localLoginWith(userName, password);
-            FlurryAgent.setUserId(userName);
         } else {
             showErrorDialog(getString(R.string.login_failed_dialog_message));
             view.setClickable(true);
@@ -130,7 +129,6 @@ public class LoginActivity extends Activity {
         tryRemoteLogin(userName, password, new Listener<LoginResponse>() {
             public void onEvent(LoginResponse loginResponse) {
                 if (loginResponse == SUCCESS) {
-                    FlurryAgent.setUserId(userName);
                     remoteLoginWith(userName, password, loginResponse.payload());
                 } else {
                     if (loginResponse == null) {

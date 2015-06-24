@@ -72,6 +72,7 @@ public class KartuIbuRegisterController  extends CommonController{
                             kartuIbu.getDetail(MOTHER_BLOOD_TYPE),
                             kartuIbu.getDetail(HUSBAND_NAME),
                             kartuIbu.dusun());
+                    updateStatusInformation(kartuIbu, kartuIbuClient);
                     kartuIbuClients.add(kartuIbuClient);
                 }
                 sortByName(kartuIbuClients);
@@ -107,6 +108,7 @@ public class KartuIbuRegisterController  extends CommonController{
                             .withIsHighRisk(kartuIbu.getDetail(IS_HIGH_RISK))
                             .withEdd(kartuIbu.getDetail(EDD))
                             .withHighRiskLabour(kartuIbu.getDetail(IS_HIGH_RISK_LABOUR));
+
                     updateStatusInformation(kartuIbu, kartuIbuClient);
                     updateChildrenInformation(kartuIbuClient);
                     kartuIbuClients.add(kartuIbuClient);
@@ -148,6 +150,8 @@ public class KartuIbuRegisterController  extends CommonController{
     private void updateStatusInformation(KartuIbu kartuIbu, KartuIbuClient kartuIbuClient) {
         Ibu ibu = allKohort.findIbuWithOpenStatusByKIId(kartuIbu.getCaseId());
 
+        kartuIbuClient.withKbMethod(kartuIbu.getDetail(CONTRACEPTION_METHOD));
+
         if(ibu == null) {
             kartuIbuClient.setIsInPNCorANC(false);
             kartuIbuClient.setIsPregnant(false);
@@ -155,15 +159,12 @@ public class KartuIbuRegisterController  extends CommonController{
 
         if( ibu == null && kartuIbu.hasKBMethod()) {
             kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, KELUARGA_BERENCANA)
-                            .put(STATUS_DATE_FIELD, kartuIbu.getDetail(VISITS_DATE)).map());
-
-            kartuIbuClient.withKbMethod(kartuIbu.getDetail(CONTRACEPTION_METHOD));
+                    .put(STATUS_DATE_FIELD, kartuIbu.getDetail(VISITS_DATE)).map());
             kartuIbuClient.withKbStart(kartuIbu.getDetail(VISITS_DATE));
             return;
         }
 
         if(ibu!=null) {
-            kartuIbuClient.withKbMethod("-");
             kartuIbuClient.setIsInPNCorANC(true);
 
             kartuIbuClient.setChronicDisease(ibu.getDetail(CHRONIC_DISEASE));

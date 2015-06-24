@@ -1,5 +1,7 @@
 package org.ei.bidan.service;
 
+import com.flurry.android.FlurryAgent;
+
 import org.ei.bidan.domain.LoginResponse;
 import org.ei.bidan.util.Session;
 import org.ei.bidan.DristhiConfiguration;
@@ -7,6 +9,9 @@ import org.ei.bidan.repository.AllSettings;
 import org.ei.bidan.repository.AllSharedPreferences;
 import org.ei.bidan.repository.Repository;
 import org.ei.bidan.sync.SaveANMLocationTask;
+
+import main.java.com.mindscapehq.android.raygun4android.RaygunClient;
+import main.java.com.mindscapehq.android.raygun4android.messages.RaygunUserInfo;
 
 import static org.ei.bidan.AllConstants.*;
 import static org.ei.bidan.event.Event.ON_LOGOUT;
@@ -41,6 +46,14 @@ public class UserService {
     }
 
     private void loginWith(String userName, String password) {
+
+        FlurryAgent.setUserId(userName);
+        RaygunUserInfo user = new RaygunUserInfo();
+        user.FullName = userName;
+        user.FirstName = userName;
+        user.IsAnonymous = false;
+        RaygunClient.SetUser(user);
+
         setupContextForLogin(userName, password);
         changeUserRegistration(userName, password);
     }

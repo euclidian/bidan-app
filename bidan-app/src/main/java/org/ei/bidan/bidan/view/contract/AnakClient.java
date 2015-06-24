@@ -82,7 +82,7 @@ public class AnakClient extends BidanSmartRegisterClient{
 
     public void setBabyNo(String babyNo) {
         this.babyNo = babyNo;
-    }
+}
 
     public String motherName() {
         return StringUtil.humanize(motherName);

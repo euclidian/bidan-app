@@ -60,6 +60,14 @@ public class KartuIbuANCRegisterController extends CommonController {
                             ki.getDetail(PUSKESMAS_NAME),
                             ki.getDetail(MOTHER_NAME),
                             ki.getDetail(MOTHER_DOB));
+
+                    kartuIbuClient.setIsInPNCorANC(true);
+                    kartuIbuClient.setIsPregnant(true);
+
+                    kartuIbuClient.setAncVisitNumber(ki.getDetail(ANC_VISIT_NUMBER));
+                    kartuIbuClient.setRiwayatKomplikasiKebidanan(anc.getDetail(COMPLICATION_HISTORY));
+                    kartuIbuClient.setLaborComplication(anc.getDetail(AllConstants.KartuPNCFields.COMPLICATION));
+
                     ancClients.add(kartuIbuClient);
                 }
                 return new Gson().toJson(ancClients);

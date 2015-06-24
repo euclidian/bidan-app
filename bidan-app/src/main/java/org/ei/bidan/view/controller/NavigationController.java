@@ -11,6 +11,7 @@ import org.ei.bidan.bidan.view.activity.NativeKBSmartRegisterActivity;
 import org.ei.bidan.bidan.view.activity.NativeKIANCSmartRegisterActivity;
 import org.ei.bidan.bidan.view.activity.NativeKIAnakSmartRegisterActivity;
 import org.ei.bidan.bidan.view.activity.NativeKIPNCSmartRegisterActivity;
+import org.ei.bidan.bidan.view.activity.NativeReportingActivity;
 import org.ei.bidan.view.activity.NativeANCSmartRegisterActivity;
 import org.ei.bidan.view.activity.NativeChildSmartRegisterActivity;
 import org.ei.bidan.view.activity.NativeECSmartRegisterActivity;
@@ -33,7 +34,8 @@ public class NavigationController {
     @JavascriptInterface
     public void startReports() {
         FlurryAgent.logEvent("start_reports");
-        activity.startActivity(new Intent(activity, ReportsActivity.class));
+        activity.startActivity(new Intent(activity, NativeReportingActivity.class));
+        //activity.startActivity(new Intent(activity, ReportsActivity.class));
     }
 
     @JavascriptInterface

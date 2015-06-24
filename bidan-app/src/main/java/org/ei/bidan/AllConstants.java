@@ -35,8 +35,9 @@ public class AllConstants {
     public static final String ZIGGY_FILE_LOADER = "ziggyFileLoader";
     public static final String FORM_SUBMISSION_ROUTER = "formSubmissionRouter";
     public static final String ANM_LOCATION_CONTROLLER = "anmLocationContext";
-
-    public static final String FLURRY_KEY = "SNRSKHM2HK6XMFSYBR7Z";
+    // Bidan Testh
+    // public static final String FLURRY_KEY = "SNRSKHM2HK6XMFSYBR7Z";
+    public static final String FLURRY_KEY = "HCZF47NFBDPXGJTZMQ7P";
 
     public static final String REPOSITORY = "formDataRepositoryContext";
 
@@ -405,6 +406,7 @@ public class AllConstants {
         public static final String FETUS_SIZE = "taksiranBeratJanin";
         public static final String FETUS_NUMBER = "jumlahJanin";
         public static final String FETUS_POSITION = "persentasi_janin";
+        public static final String ANC_VISIT_NUMBER = "ancKe";
     }
 
     public class KartuPNCFields {

@@ -10,6 +10,9 @@ import org.ei.bidan.AllConstants;
 import org.ei.bidan.Context;
 import org.ei.bidan.sync.DrishtiSyncScheduler;
 
+import main.java.com.mindscapehq.android.raygun4android.RaygunClient;
+import main.java.com.mindscapehq.android.raygun4android.messages.RaygunUserInfo;
+
 import java.util.Locale;
 
 import static org.ei.bidan.util.Log.logInfo;
@@ -21,6 +24,10 @@ public class DrishtiApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        // Init Raygun
+        RaygunClient.Init(getApplicationContext());
+        RaygunClient.AttachExceptionHandler();
 
         // Configure Flurry
         FlurryAgent.setLogEnabled(true);

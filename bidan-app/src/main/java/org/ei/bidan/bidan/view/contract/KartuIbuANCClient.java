@@ -62,6 +62,7 @@ public class KartuIbuANCClient extends BidanSmartRegisterClient implements Kartu
     private String riwayatKomplikasiKebidanan;
     private String highRiskPregnancyReason;
     private String kartuIbuCaseId;
+    private String ancVisitNumber;
 
     private List<AlertDTO> alerts;
     private List<ServiceProvidedDTO> services_provided;
@@ -386,5 +387,13 @@ public class KartuIbuANCClient extends BidanSmartRegisterClient implements Kartu
 
     public void setKartuIbuCaseId(String kartuIbuCaseId) {
         this.kartuIbuCaseId = kartuIbuCaseId;
+    }
+
+    public String getAncVisitNumber() {
+        return ancVisitNumber;
+    }
+
+    public void setAncVisitNumber(String ancVisitNumber) {
+        this.ancVisitNumber = ancVisitNumber;
     }
 }

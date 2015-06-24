@@ -72,6 +72,12 @@ public class AnakRegisterController extends CommonController {
                             a.getDetails())
                             .withName(a.getDetail(CHILD_NAME))
                             .withVillage(a.getKartuIbu().dusun());
+
+                    anakClient.setHb07(a.getDetail(IMMUNIZATION_HB_0_7_DATES));
+                    anakClient.setBcgPol1(a.getDetail(IMMUNIZATION_BCG_AND_POLIO1));
+                    anakClient.setDptHb1Pol2(a.getDetail(IMMUNIZATION_DPT_HB1_POLIO2));
+                    anakClient.setDptHb2Pol3(a.getDetail(IMMUNIZATION_DPT_HB2_POLIO3));
+                    anakClient.setDptHb3Pol4(a.getDetail(IMMUNIZATION_DPT_HB3_POLIO4));
                     anakClients.add(anakClient);
                 }
                 return new Gson().toJson(anakClients);
