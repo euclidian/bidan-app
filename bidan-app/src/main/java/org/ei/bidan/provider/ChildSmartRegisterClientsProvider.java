@@ -52,7 +52,7 @@ public class ChildSmartRegisterClientsProvider implements SmartRegisterClientsPr
     }
 
     @Override
-    public View getView(SmartRegisterClient smartRegisterClient, View convertView, ViewGroup viewGroup) {
+    public View getView(int i, SmartRegisterClient smartRegisterClient, View convertView, ViewGroup viewGroup) {
         ViewGroup itemView;
         NativeChildSmartRegisterViewHolder viewHolder;
         if (convertView == null) {

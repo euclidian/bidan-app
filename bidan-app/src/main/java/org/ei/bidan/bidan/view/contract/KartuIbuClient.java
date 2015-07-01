@@ -10,6 +10,8 @@ import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
+import org.joda.time.Months;
+import org.joda.time.Years;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
@@ -27,7 +29,7 @@ import static org.joda.time.LocalDateTime.parse;
 /**
  * Created by Dimas Ciputra on 2/17/15.
  */
-public class KartuIbuClient implements KISmartRegisterClient {
+public class KartuIbuClient extends BidanSmartRegisterClient implements KISmartRegisterClient {
 
     private String entityId;
     private String puskesmas;
@@ -39,9 +41,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
     private String wifeName;
     private String wifeAge;
     private String golonganDarah;
-    private String riwayatKomplikasi;
     private String husbandName;
-    private String tglPeriksa;
     private String edd;
     private String village;
     private String dateOfBirth;
@@ -55,8 +55,17 @@ public class KartuIbuClient implements KISmartRegisterClient {
     private String kbMethod;
     private String kbStart;
     private String IsHighRisk;
+    private String isHighRiskANC;
+    private String isHighPriority;
+    private String religion;
+    private String education;
+    private String job;
+    private String insurance;
+    private String phoneNumber;
+    private List<String> highRiskPregnancyReason;
 
-    public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String riwayatKomplikasi, String husbandName, String tglPeriksa, String village) {
+    public KartuIbuClient(String entityId,String puskesmas, String province, String kabupaten, String posyandu, String householdAddress, String noIbu, String wifeName, String wifeAge, String golonganDarah, String husbandName, String village) {
+        this.highRiskPregnancyReason = new ArrayList<>();
         this.entityId = entityId;
         this.puskesmas = puskesmas;
         this.province = province;
@@ -67,11 +76,49 @@ public class KartuIbuClient implements KISmartRegisterClient {
         this.wifeName = wifeName;
         this.wifeAge = wifeAge;
         this.golonganDarah = golonganDarah;
-        this.riwayatKomplikasi = riwayatKomplikasi;
         this.husbandName = husbandName;
-        this.tglPeriksa = tglPeriksa;
         this.village = village;
         this.children = new ArrayList<KIChildClient>();
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    public void setInsurance(String insurance) {
+        this.insurance = insurance;
+    }
+
+    public void setReligion(String religion) {
+        this.religion = religion;
+    }
+
+    public String getPhoneNumber() {
+        return humanize(phoneNumber);
+    }
+
+    public String getReligion() {
+        return humanize(religion);
+    }
+
+    public String getEducation() {
+        return humanize(education);
+    }
+
+    public String getJob() {
+        return humanize(job);
+    }
+
+    public String getInsurance() {
+        return humanize(insurance);
     }
 
     // Getter
@@ -100,11 +147,11 @@ public class KartuIbuClient implements KISmartRegisterClient {
     }
 
     public String getNoIbu() {
-        return noIbu;
+        return Strings.isNullOrEmpty(noIbu) ? "-" : noIbu;
     }
 
     public String getWifeName() {
-        return wifeName;
+        return Strings.isNullOrEmpty(this.wifeName) ? "" : humanize(this.wifeName);
     }
 
     public String getWifeAge() {
@@ -114,12 +161,6 @@ public class KartuIbuClient implements KISmartRegisterClient {
     public String getGolongan_darah() {
         return golonganDarah;
     }
-
-    public String getRiwayat_komplikasi() {
-        return riwayatKomplikasi;
-    }
-
-    public String getTglPeriksa() { return tglPeriksa; }
 
     public String getEdd() {
         if(Strings.isNullOrEmpty(edd)) return "-";
@@ -132,9 +173,37 @@ public class KartuIbuClient implements KISmartRegisterClient {
         return "" + date.toString(formatter2);
     }
 
-    public LocalDateTime edd() {
+    public String getDueEdd() {
+        String _edd = getEdd();
+        String _dueEdd = "";
 
+        if(!getEdd().equalsIgnoreCase("-")) {
+            DateTimeFormatter formatter = DateTimeFormat.forPattern("dd MMM YYYY");
+            LocalDate date = parse(_edd, formatter).toLocalDate();
+            LocalDate dateNow = LocalDate.now();
+
+            date = date.withDayOfMonth(1);
+            dateNow = dateNow.withDayOfMonth(1);
+
+            int months = Months.monthsBetween(dateNow, date).getMonths();
+            if(months >= 1) {
+                _dueEdd = "" + months + " bulan lagi";
+            } else if(months == 0){
+                if(DateUtil.dayDifference(dateNow, date) > 0) {
+                    _dueEdd = "Bulan ini";
+                }
+                _dueEdd = "Sudah melahirkan";
+            } else {
+                _dueEdd = "Sudah melahirkan";
+            }
+        }
+
+        return _dueEdd;
+    }
+
+    public LocalDateTime edd() {
         if(Strings.isNullOrEmpty(edd)) return null;
+        if(edd.equalsIgnoreCase("invalid date")) return null;
         return parse(edd);
     }
 
@@ -199,22 +268,15 @@ public class KartuIbuClient implements KISmartRegisterClient {
        this.golonganDarah = golonganDarah;
     }
 
-    public void setRiwayatKomplikasi(String riwayatKomplikasi) {
-        this.riwayatKomplikasi = riwayatKomplikasi;
-    }
-
-    public void setTglPeriksa(String tglPeriksa) {
-        this.tglPeriksa = tglPeriksa;
-    }
-
-    public void setEdd(String edd) {
+    public KartuIbuClient withEdd(String edd) {
         if(status.size() != 0) {
             if(status.get("type").equalsIgnoreCase("pnc")) {
                 this.edd = null;
-                return;
+                return this;
             }
         }
         this.edd = edd;
+        return this;
     }
 
     public void setVillage(String village) {
@@ -240,7 +302,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
 
     @Override
     public String village() {
-        return village;
+        return Strings.isNullOrEmpty(village) ? "" : humanize(village);
     }
 
     @Override
@@ -255,7 +317,7 @@ public class KartuIbuClient implements KISmartRegisterClient {
 
     @Override
     public int age() {
-        return Integer.parseInt(wifeAge);
+        return StringUtils.isBlank(dateOfBirth) ? 0 : Years.yearsBetween(LocalDate.parse(dateOfBirth), LocalDate.now()).getYears();
     }
 
     @Override
@@ -279,14 +341,9 @@ public class KartuIbuClient implements KISmartRegisterClient {
     }
 
     @Override
-    public boolean isHighRisk() {
-        if(Strings.isNullOrEmpty(IsHighRisk)) return false;
-        return IsHighRisk.equalsIgnoreCase("ya") ? true : false;
-    }
-
-    @Override
     public boolean isHighPriority() {
-        return false;
+        if(Strings.isNullOrEmpty(isHighPriority)) return false;
+        return isHighPriority.equalsIgnoreCase("yes");
     }
 
     @Override
@@ -357,12 +414,19 @@ public class KartuIbuClient implements KISmartRegisterClient {
         return this;
     }
 
-    public void setKbMethod(String kbMethod) {
+    public KartuIbuClient withKbMethod(String kbMethod) {
         this.kbMethod = kbMethod;
+        return this;
     }
 
-    public void setKbStart(String kbStart) {
+    public KartuIbuClient withHighRiskFromANC(boolean isHighRisk) {
+        setIsHighRiskFromANC(isHighRisk);
+        return this;
+    }
+
+    public KartuIbuClient withKbStart(String kbStart) {
         this.kbStart = kbStart;
+        return this;
     }
 
     public KartuIbuClient withKBInformation(String kbMethod, String kbStart) {
@@ -380,8 +444,18 @@ public class KartuIbuClient implements KISmartRegisterClient {
         return children;
     }
 
-    public void setIsHighRisk(String isHighRisk) {
+    public KartuIbuClient withIsHighRisk(String isHighRisk) {
         this.IsHighRisk = isHighRisk;
+        return this;
+    }
+
+    public void setIsHighRiskANC(String isHighRiskANC) {
+        this.isHighRiskANC = isHighRiskANC;
+    }
+
+    public KartuIbuClient withHighPriority(String isHighPriority) {
+        this.isHighPriority = isHighPriority;
+        return this;
     }
 
     @Override
@@ -392,5 +466,15 @@ public class KartuIbuClient implements KISmartRegisterClient {
     @Override
     public String kbDate() {
         return Strings.isNullOrEmpty(kbStart) ? "-" : kbStart;
+    }
+
+    public KartuIbuClient withHighRiskLabour(String highRiskLabour) {
+        setIsHighRiskLabour(!Strings.isNullOrEmpty(highRiskLabour) && highRiskLabour.equalsIgnoreCase("yes"));
+        return this;
+    }
+
+    public KartuIbuClient withIsHighRiskPregnancy(String highRiskPregnancy) {
+        setIsHighRiskPregnancy(!Strings.isNullOrEmpty(highRiskPregnancy) && highRiskPregnancy.equalsIgnoreCase("yes"));
+        return this;
     }
 }

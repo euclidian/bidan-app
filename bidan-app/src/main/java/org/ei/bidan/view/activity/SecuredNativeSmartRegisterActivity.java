@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.*;
 
+import com.flurry.android.FlurryAgent;
+
 import org.ei.bidan.util.StringUtil;
 import org.ei.bidan.view.dialog.DialogOption;
 import org.ei.bidan.view.dialog.EditOption;
@@ -215,6 +217,8 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
             @Override
             public void afterTextChanged(Editable editable) {
             }
+
+
         });
         searchCancelView = findViewById(R.id.btn_search_cancel);
         searchCancelView.setOnClickListener(searchCancelHandler);
@@ -312,11 +316,36 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.title_double_selection);
 
+        FlurryAgent.logEvent("double_selection_dialog");
+
         builder.setItems(charSequences, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if((charSequences[which]).toString().toLowerCase().equals(client.name().toLowerCase())) {
+                if ((charSequences[which]).toString().toLowerCase().equals(client.name().toLowerCase())) {
                     onEditSelection(editOption, client);
+                    FlurryAgent.logEvent("success_double_selection_dialog");
+                } else {
+                    FlurryAgent.logEvent("fail_double_selection_dialog");
+                }
+            }
+        });
+        builder.show();
+    }
+
+    protected void onShowDialogOptionSelectionWithMetadata(final EditOption editOption, final SmartRegisterClient client, final CharSequence[] charSequences, final String metadata) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.title_double_selection);
+
+        FlurryAgent.logEvent("double_selection_dialog_with_metadata");
+
+        builder.setItems(charSequences, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if ((charSequences[which]).toString().toLowerCase().equals(client.name().toLowerCase())) {
+                    onEditSelectionWithMetadata(editOption, client, metadata);
+                    FlurryAgent.logEvent("success_double_selection_dialog_with_metadata");
+                } else {
+                    FlurryAgent.logEvent("fail_double_selection_dialog_with_metadata");
                 }
             }
         });
@@ -325,6 +354,10 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
 
     protected void onEditSelection(EditOption editOption, SmartRegisterClient client) {
         editOption.doEdit(client);
+    }
+
+    protected void onEditSelectionWithMetadata(EditOption editOption, SmartRegisterClient client, String metadata) {
+        editOption.doEditWithMetadata(client, metadata);
     }
 
     private void goBack() {
@@ -449,12 +482,14 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
         }
 
         private void gotoNextPage() {
+            FlurryAgent.logEvent("go_next_page");
             clientsAdapter.nextPage();
             clientsAdapter.notifyDataSetChanged();
         }
 
         private void goBackToPreviousPage() {
             clientsAdapter.previousPage();
+            FlurryAgent.logEvent("go_previous_page");
             clientsAdapter.notifyDataSetChanged();
         }
     }
@@ -466,18 +501,22 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
             switch (view.getId()) {
                 case R.id.title_layout:
                 case R.id.btn_back_to_home:
+                    FlurryAgent.logEvent("back_to_home");
                     goBack();
                     break;
                 case R.id.register_client:
                     startRegistration();
                     break;
                 case R.id.filter_selection:
+                    FlurryAgent.logEvent("filter_selection");
                     showFragmentDialog(new FilterDialogOptionModel());
                     break;
                 case R.id.sort_selection:
+                    FlurryAgent.logEvent("sort_selection");
                     showFragmentDialog(new SortDialogOptionModel());
                     break;
                 case R.id.service_mode_selection:
+                    FlurryAgent.logEvent("service_mode_selection");
                     showFragmentDialog(new ServiceModeDialogOptionModel());
                     break;
             }

@@ -1,209 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="org.ei.bidan"
-          android:versionCode="32"
-          android:versionName="0.0.1"
-          android:installLocation="auto">
+    package="org.ei.bidan"
+    android:installLocation="auto"
+    android:versionCode="32"
+    android:versionName="0.0.1">
 
     <compatible-screens>
         <screen
-                android:screenSize="large"
-                android:screenDensity="ldpi"/>
+            android:screenDensity="ldpi"
+            android:screenSize="large" />
         <screen
-                android:screenSize="large"
-                android:screenDensity="mdpi"/>
+            android:screenDensity="mdpi"
+            android:screenSize="large" />
         <screen
-                android:screenSize="large"
-                android:screenDensity="hdpi"/>
+            android:screenDensity="hdpi"
+            android:screenSize="large" />
         <screen
-                android:screenSize="large"
-                android:screenDensity="xhdpi"/>
+            android:screenDensity="xhdpi"
+            android:screenSize="large" />
 
         <screen
-                android:screenSize="xlarge"
-                android:screenDensity="ldpi"/>
+            android:screenDensity="ldpi"
+            android:screenSize="xlarge" />
         <screen
-                android:screenSize="xlarge"
-                android:screenDensity="mdpi"/>
+            android:screenDensity="mdpi"
+            android:screenSize="xlarge" />
         <screen
-                android:screenSize="xlarge"
-                android:screenDensity="hdpi"/>
+            android:screenDensity="hdpi"
+            android:screenSize="xlarge" />
         <screen
-                android:screenSize="xlarge"
-                android:screenDensity="xhdpi"/>
+            android:screenDensity="xhdpi"
+            android:screenSize="xlarge" />
 
         <!-- Special case for Nexus 7 -->
         <screen
-                android:screenSize="large"
-                android:screenDensity="213"/>
+            android:screenDensity="213"
+            android:screenSize="large" />
     </compatible-screens>
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-feature
-            android:name="android.hardware.camera"
-            android:required="false"/>
+        android:name="android.hardware.camera"
+        android:required="false" />
     <uses-sdk
-            android:minSdkVersion="16"
-            android:targetSdkVersion="16"/>
+        android:minSdkVersion="16"
+        android:targetSdkVersion="16" />
 
     <application
-            android:label="@string/app_name"
-            android:icon="@drawable/ic_bidan_logo"
-            android:clearTaskOnLaunch="true"
-            android:name=".view.activity.DrishtiApplication"
-            android:largeHeap="true" >
+        android:name=".view.activity.DrishtiApplication"
+        android:clearTaskOnLaunch="true"
+        android:icon="@drawable/ic_bidan_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true">
+        <service   android:name="main.java.com.mindscapehq.android.raygun4android.RaygunPostService"
+            android:exported="false"
+            android:process=":raygunpostservice"/>
+        <meta-data android:name="com.mindscapehq.android.raygun4android.apikey"
+            android:value="ohL6PsO4tlwM/9e0coSrcQ==" />
         <activity
-                android:name=".view.activity.LoginActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar"
-                android:clearTaskOnLaunch="true"
-                android:windowSoftInputMode="adjustResize|stateHidden"
-                android:screenOrientation="landscape"
-                android:configChanges="orientation|keyboardHidden|screenSize">
+            android:name=".view.activity.LoginActivity"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar"
+            android:windowSoftInputMode="adjustResize|stateHidden">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-                android:name=".view.activity.HomeActivity"
-                android:screenOrientation="landscape"/>
+            android:name=".view.activity.HomeActivity"
+            android:screenOrientation="landscape" />
         <activity
-                android:name=".view.activity.ReportsActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="landscape"/>
+            android:name=".view.activity.ReportsActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-                android:name="org.ei.bidan.view.activity.VideosActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="landscape"/>
+            android:name="org.ei.bidan.view.activity.VideosActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-                android:name=".view.activity.ReportIndicatorListViewActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="landscape"/>
+            android:name=".view.activity.ReportIndicatorListViewActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-                android:name=".view.activity.ReportIndicatorDetailActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="landscape"/>
+            android:name=".view.activity.ReportIndicatorDetailActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-                android:name=".view.activity.ReportIndicatorCaseListActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="landscape"/>
+            android:name=".view.activity.ReportIndicatorCaseListActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-                android:name=".view.activity.EligibleCoupleDetailActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="landscape"/>
+            android:name=".view.activity.EligibleCoupleDetailActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-                android:name="org.ei.bidan.view.activity.ANCDetailActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="landscape"/>
+            android:name="org.ei.bidan.view.activity.ANCDetailActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-                android:name=".view.activity.PNCDetailActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="landscape"/>
+            android:name=".view.activity.PNCDetailActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-                android:name=".view.activity.ChildDetailActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="landscape"/>
+            android:name=".view.activity.ChildDetailActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-                android:name=".view.activity.CameraLaunchActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar"
-                android:screenOrientation="landscape"/>
+            android:name=".view.activity.CameraLaunchActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar" />
         <activity
-                android:name=".view.activity.ECSmartRegisterActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="landscape"/>
+            android:name=".view.activity.ECSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-                android:name=".view.activity.FPSmartRegisterActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="landscape"/>
+            android:name=".view.activity.FPSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-                android:name="org.ei.bidan.view.activity.ANCSmartRegisterActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="landscape"/>
+            android:name="org.ei.bidan.view.activity.ANCSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-                android:name="org.ei.bidan.view.activity.PNCSmartRegisterActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="landscape"/>
+            android:name="org.ei.bidan.view.activity.PNCSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-                android:name=".view.activity.ChildSmartRegisterActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="landscape"/>
+            android:name=".view.activity.ChildSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
         <activity
-                android:name="org.ei.bidan.view.activity.FormActivity"
-                android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-                android:screenOrientation="portrait"/>
+            android:name="org.ei.bidan.view.activity.FormActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-                android:name=".view.activity.MicroFormActivity"
-                android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
-                android:screenOrientation="landscape"/>
+            android:name=".view.activity.MicroFormActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar" />
         <activity
-                android:name="org.ei.bidan.view.activity.NativeECSmartRegisterActivity"
-                android:screenOrientation="landscape"
-                android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+            android:name="org.ei.bidan.view.activity.NativeECSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
 
         <activity
-                android:name="org.ei.bidan.view.activity.NativeChildSmartRegisterActivity"
-                android:screenOrientation="landscape"
-                android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+            android:name="org.ei.bidan.view.activity.NativeChildSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
 
         <activity
-                android:name=".view.activity.NativeFPSmartRegisterActivity"
-                android:screenOrientation="landscape"
-                android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+            android:name=".view.activity.NativeFPSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
 
         <activity
-                android:name="org.ei.bidan.view.activity.NativeANCSmartRegisterActivity"
-                android:screenOrientation="landscape"
-                android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
-
-        <activity android:name=".bidan.view.activity.NativeKISmartRegisterActivity"
-                  android:screenOrientation="landscape"
-                  android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+            android:name="org.ei.bidan.view.activity.NativeANCSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
 
         <activity
-                android:name="org.ei.bidan.view.activity.NativePNCSmartRegisterActivity"
-                android:screenOrientation="landscape"
-                android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+            android:name=".bidan.view.activity.NativeKISmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
 
+        <activity
+            android:name="org.ei.bidan.view.activity.NativePNCSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
 
-        <activity android:name="org.ei.bidan.view.activity.NativeHomeActivity"
-                  android:screenOrientation="landscape">
-        </activity>
+        <activity
+            android:name="org.ei.bidan.view.activity.NativeHomeActivity"
+            android:screenOrientation="landscape" />
 
-        <activity android:name=".bidan.view.activity.BidanHomeActivity"
-            android:screenOrientation="landscape">
-        </activity>
+        <activity
+            android:name=".bidan.view.activity.BidanHomeActivity"
+            android:screenOrientation="landscape" />
 
-        <activity android:name="org.ei.bidan.bidan.view.activity.NativeKIANCSmartRegisterActivity"
+        <activity
+            android:name="org.ei.bidan.bidan.view.activity.NativeKIANCSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+
+        <activity
+            android:name="org.ei.bidan.bidan.view.activity.NativeKIPNCSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+
+        <activity
+            android:name="org.ei.bidan.bidan.view.activity.NativeKIAnakSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+
+        <activity
+            android:name="org.ei.bidan.bidan.view.activity.NativeKBSmartRegisterActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+
+        <activity
+            android:name=".bidan.view.activity.NativeProfileDetailActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
         </activity>
 
-        <activity android:name="org.ei.bidan.bidan.view.activity.NativeKIPNCSmartRegisterActivity"
+        <activity
+            android:name="org.ei.bidan.bidan.view.activity.NativeAnakDetailActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
         </activity>
 
-        <activity android:name="org.ei.bidan.bidan.view.activity.NativeKIAnakSmartRegisterActivity"
+        <activity
+            android:name="org.ei.bidan.bidan.view.activity.NativeReportingActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
         </activity>
 
-        <activity android:name="org.ei.bidan.bidan.view.activity.NativeKBSmartRegisterActivity"
-            android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
-        </activity>
-
-        <activity android:name="org.ei.bidan.bidan.view.activity.KIDetailActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
-        </activity>
-
-        <receiver android:name=".view.receiver.SyncBroadcastReceiver"/>
+        <receiver android:name=".view.receiver.SyncBroadcastReceiver" />
         <receiver android:name="org.ei.bidan.view.receiver.ConnectivityChangeReceiver">
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
     </application>

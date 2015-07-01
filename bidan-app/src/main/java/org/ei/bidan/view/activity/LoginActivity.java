@@ -15,6 +15,9 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.flurry.android.FlurryAgent;
+
 import org.ei.bidan.Context;
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.activity.BidanHomeActivity;

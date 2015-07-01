@@ -7,7 +7,6 @@ import org.ei.bidan.bidan.domain.Anak;
 import org.ei.bidan.bidan.domain.Ibu;
 import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.bidan.repository.AllKohort;
-import org.ei.bidan.bidan.service.DummyNameService;
 import org.ei.bidan.bidan.view.contract.KIChildClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClients;
@@ -15,16 +14,16 @@ import org.ei.bidan.bidan.repository.AllKartuIbus;
 import org.ei.bidan.util.Cache;
 import org.ei.bidan.util.CacheableData;
 import org.ei.bidan.util.EasyMap;
-import org.ei.bidan.util.StringUtil;
 import org.ei.bidan.view.contract.SmartRegisterClient;
-import org.ei.bidan.view.contract.SmartRegisterClients;
 import org.joda.time.LocalDate;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import static java.util.Collections.sort;
+import static org.ei.bidan.AllConstants.KartuIbuFields.*;
+import static org.ei.bidan.AllConstants.KeluargaBerencanaFields.*;
+import static org.ei.bidan.AllConstants.KartuPNCFields.*;
+import static org.ei.bidan.AllConstants.KartuANCFields.*;
 
 /**
  * Created by Dimas Ciputra on 2/18/15.
@@ -35,7 +34,6 @@ public class KartuIbuRegisterController  extends CommonController{
     public static final String ANC_STATUS = "anc";
     public static final String PNC_STATUS = "pnc";
     public static final String STATUS_TYPE_FIELD = "type";
-    public static final String STATUS_EDD_FIELD = "edd";
 
     private final AllKartuIbus allKartuIbus;
     private final Cache<String> cache;
@@ -59,22 +57,26 @@ public class KartuIbuRegisterController  extends CommonController{
                 KartuIbuClients kartuIbuClients = new KartuIbuClients();
 
                 for (KartuIbu kartuIbu : kartuIbus) {
-
                     KartuIbuClient kartuIbuClient = new KartuIbuClient(kartuIbu.getCaseId(),
-                            kartuIbu.getDetails().get("puskesmas"), kartuIbu.getDetails().get("Propinsi"),
-                            kartuIbu.getDetails().get("Kabupaten"), kartuIbu.getDetails().get("Posyandu"),
-                            kartuIbu.getDetails().get("Alamatdomisili"), kartuIbu.getDetails().get("NoIbu"),
-                            kartuIbu.getDetails().get("Namalengkap"), kartuIbu.getDetails().get("Umur"),
-                            kartuIbu.getDetails().get("GolonganDarah"), kartuIbu.getDetails().get("RiwayatKomplikasiKebidanan"),
-                            kartuIbu.getDetails().get("Namasuami"), kartuIbu.getDetails().get("TanggalPeriksa"), kartuIbu.getDetails().get("Dusun"))
-                            .withDateOfBirth(kartuIbu.getDetails().get("Tanggallahir"))
-                            .withNumberOfLivingChildren(kartuIbu.getDetails().get("Hidup"))
-                            .withNumberOfPregnancies(kartuIbu.getDetails().get("Gravida"))
-                            .withNumberOfAbortions(kartuIbu.getDetails().get("Abortus"))
-                            .withParity(kartuIbu.getDetails().get("Partus"));
-                    kartuIbuClient.setIsHighRisk(kartuIbu.getDetail("IsHighRisk"));
+                            kartuIbu.getDetail(PUSKESMAS_NAME), kartuIbu.getDetail(PROPINSI),
+                            kartuIbu.getDetail(KABUPATEN), kartuIbu.getDetail(POSYANDU_NAME),
+                            kartuIbu.getDetail(MOTHER_ADDRESS), kartuIbu.getDetail(MOTHER_NUMBER),
+                            kartuIbu.getDetail(MOTHER_NAME), kartuIbu.getDetail(MOTHER_AGE),
+                            kartuIbu.getDetail(MOTHER_BLOOD_TYPE),
+                            kartuIbu.getDetail(HUSBAND_NAME),
+                            kartuIbu.dusun())
+                            .withIsHighRiskPregnancy(kartuIbu.getDetail(IS_HIGH_RISK_PREGNANCY))
+                            .withDateOfBirth(kartuIbu.getDetail(MOTHER_DOB))
+                            .withParity(kartuIbu.getDetail(NUMBER_PARTUS))
+                            .withNumberOfAbortions(kartuIbu.getDetail(NUMBER_ABORTIONS))
+                            .withNumberOfPregnancies(kartuIbu.getDetail(NUMBER_OF_PREGNANCIES))
+                            .withNumberOfLivingChildren(kartuIbu.getDetail(NUMBER_OF_LIVING_CHILDREN))
+                            .withHighPriority(kartuIbu.getDetail(IS_HIGH_PRIORITY))
+                            .withIsHighRisk(kartuIbu.getDetail(IS_HIGH_RISK))
+                            .withEdd(kartuIbu.getDetail(EDD))
+                            .withHighRiskLabour(kartuIbu.getDetail(IS_HIGH_RISK_LABOUR));
+
                     updateStatusInformation(kartuIbu, kartuIbuClient);
-                    kartuIbuClient.setEdd(kartuIbu.getDetail("EDD"));
                     updateChildrenInformation(kartuIbuClient);
                     kartuIbuClients.add(kartuIbuClient);
                 }
@@ -115,35 +117,58 @@ public class KartuIbuRegisterController  extends CommonController{
     private void updateStatusInformation(KartuIbu kartuIbu, KartuIbuClient kartuIbuClient) {
         Ibu ibu = allKohort.findIbuWithOpenStatusByKIId(kartuIbu.getCaseId());
 
-        if( ibu == null && kartuIbu.hasKBMethod()) {
-            kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, "KB")
-                            .put(STATUS_DATE_FIELD, kartuIbu.getDetail("TanggalKunjungan")).map());
+        kartuIbuClient.withKbMethod(kartuIbu.getDetail(CONTRACEPTION_METHOD));
 
-            kartuIbuClient.setKbMethod(kartuIbu.getDetail("JenisKontrasepsi"));
-            kartuIbuClient.setKbStart(kartuIbu.getDetail("TanggalKunjungan"));
+        if(ibu == null) {
+            kartuIbuClient.setIsInPNCorANC(false);
+            kartuIbuClient.setIsPregnant(false);
         }
 
-        if (ibu != null && ibu.isANC()) {
-            kartuIbuClient
-                    .withStatus(EasyMap.create(STATUS_TYPE_FIELD, ANC_STATUS)
-                            .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
-            kartuIbuClient.setKbMethod("-");
+        if( ibu == null && kartuIbu.hasKBMethod()) {
+            kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, KELUARGA_BERENCANA)
+                    .put(STATUS_DATE_FIELD, kartuIbu.getDetail(VISITS_DATE)).map());
+            kartuIbuClient.withKbStart(kartuIbu.getDetail(VISITS_DATE));
             return;
         }
 
-        if (ibu != null && ibu.isPNC()) {
-            kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, PNC_STATUS)
-                    .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
-            kartuIbuClient.setKbMethod("-");
+        if(ibu!=null) {
+            kartuIbuClient.setIsInPNCorANC(true);
+
+            kartuIbuClient.setChronicDisease(ibu.getDetail(CHRONIC_DISEASE));
+            kartuIbuClient.setrLila(ibu.getDetail(LILA_CHECK_RESULT));
+            kartuIbuClient.setrHbLevels(ibu.getDetail(HB_RESULT));
+            kartuIbuClient.setrTdDiastolik(ibu.getDetail(VITAL_SIGNS_TD_DIASTOLIC));
+            kartuIbuClient.setrTdSistolik(ibu.getDetail(VITAL_SIGNS_TD_SISTOLIC));
+            kartuIbuClient.setrBloodSugar(ibu.getDetail(SUGAR_BLOOD_LEVEL));
+            kartuIbuClient.setrAbortus(kartuIbu.getDetail(NUMBER_ABORTIONS));
+            kartuIbuClient.setrPartus(kartuIbu.getDetail(NUMBER_PARTUS));
+            kartuIbuClient.setrPregnancyComplications(ibu.getDetail(COMPLICATION_HISTORY));
+            kartuIbuClient.setrFetusNumber(ibu.getDetail(FETUS_NUMBER));
+            kartuIbuClient.setrFetusSize(ibu.getDetail(FETUS_SIZE));
+            kartuIbuClient.setrFetusPosition(ibu.getDetail(FETUS_POSITION));
+            kartuIbuClient.setrPelvicDeformity(ibu.getDetail(PELVIC_DEFORMITY));
+            kartuIbuClient.setrHeight(ibu.getDetail(HEIGHT));
+            kartuIbuClient.setrDeliveryMethod(ibu.getDetail(DELIVERY_METHOD));
+            kartuIbuClient.setLaborComplication(ibu.getDetail(COMPLICATION));
+
+            if(ibu.isANC()) {
+                kartuIbuClient
+                        .withStatus(EasyMap.create(STATUS_TYPE_FIELD, ANC_STATUS)
+                                .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
+                kartuIbuClient.setIsPregnant(true);
+            } else if(ibu.isPNC()) {
+                kartuIbuClient.withStatus(EasyMap.create(STATUS_TYPE_FIELD, PNC_STATUS)
+                        .put(STATUS_DATE_FIELD, ibu.getReferenceDate()).map());
+
+                kartuIbuClient.setIsPregnant(false);
+            }
+            return;
         }
+
     }
 
     public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {
-        return onRandomNameChars(
-                client,
-                getKartuIbuClients(),
-                allKartuIbus.randomDummyName(),
-                AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
+        return onRandomNameChars(client, getKartuIbuClients(), allKartuIbus.randomDummyName(), AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
     }
 
 }

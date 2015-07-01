@@ -105,8 +105,16 @@
     <string name="str_close_ki_form">Tutup Kartu Ibu</string>
     <string name="str_kb_update">Update KB</string>
     <string name="str_kb_edit">Edit KB</string>
+
+    <!-- ANAK -->
     <string name="str_register_anak_form">Register Anak</string>
     <string name="str_tutup_anak">Tutup Anak</string>
+    <string name="str_imunisasi_bayi">"Imunisasi Bayi"</string>
+    <string name="str_anak_edit">Edit Anak</string>
+    <string name="str_anak_bayi_visit">Kunjungan Bayi</string>
+    <string name="str_anak_balita_visit">Kunjungan Balita</string>
+    <string name="str_anak_neonatal">Bayi Neonatal Periode</string>
+
     <string name="str_kunjungan_anak">Kunjungan</string>
     <string name="anc_edit">Edit ANC</string>
     <string name="pnc_edit">Edit PNC</string>
@@ -123,7 +131,6 @@
     <string name="header_tanda_vital">Tanda Vital</string>
     <string name="header_pemeriksaan">Pemeriksaan</string>
 
-    <string name="str_imunisasi_bayi">"Imunisasi Bayi"</string>
     <string name="str_delivery_at">Persalinan Di</string>
     <string name="videos_cannot_play_video_dialog_title">Tidak bisa memutar video.</string>
     <string name="videos_unknown_error_dialog_message">Tidak bisa memutar video dikarenakan kesalahan teknis.</string>

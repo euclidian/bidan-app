@@ -6,37 +6,39 @@
     android:layout_weight="@integer/child_list_id_no_view_weight">
 
     <org.ei.bidan.view.customControls.CustomFontTextView
-        android:id="@+id/lbl_birth_weight"
+        android:id="@+id/lbl_visit_date"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Berat lahir (g) : "
-        style="@style/CustomFontTextViewStyle.ListView.Normal"/>
+        android:text="Tgl Kunjungan : "
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
 
     <org.ei.bidan.view.customControls.CustomFontTextView
-        android:id="@+id/lbl_birth_condition"
+        android:id="@+id/lbl_current_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@id/lbl_birth_weight"
-        android:text="Kondisi lahir : "
-        style="@style/CustomFontTextViewStyle.ListView.Normal"/>
+        android:layout_below="@id/lbl_visit_date"
+        android:text="Berat Badan : "
+        style="@style/CustomFontTextViewStyle.ListView.Medium"/>
 
     <org.ei.bidan.view.customControls.CustomFontTextView
-        android:id="@+id/txt_birth_weight"
+        android:id="@+id/txt_visit_date"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/lbl_birth_weight"
+        android:layout_toRightOf="@id/lbl_visit_date"
         android:layout_alignParentTop="true"
         style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"/>
 
     <org.ei.bidan.view.customControls.CustomFontTextView
-        android:id="@+id/txt_birth_condition"
+        android:id="@+id/txt_current_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/lbl_birth_condition"
-        android:layout_below="@id/txt_birth_weight"
+        android:layout_toRightOf="@id/lbl_current_weight"
+        android:layout_below="@id/txt_visit_date"
         style="@style/CustomFontTextViewStyle.ListView.Medium.NoPadding"/>
 
 </org.ei.bidan.bidan.view.customControls.ClientAnakBirthStatusView>

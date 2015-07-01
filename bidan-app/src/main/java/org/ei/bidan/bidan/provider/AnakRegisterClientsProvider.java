@@ -1,13 +1,16 @@
 package org.ei.bidan.bidan.provider;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.contract.AnakClient;
+import org.ei.bidan.bidan.view.contract.BidanSmartRegisterClient;
 import org.ei.bidan.bidan.view.controller.AnakRegisterController;
 import org.ei.bidan.bidan.view.dialog.BidanServiceModeOption;
 import org.ei.bidan.bidan.view.viewHolder.AnakRegisterProfilePhotoLoader;
@@ -55,7 +58,7 @@ public class AnakRegisterClientsProvider implements SmartRegisterClientsProvider
     }
 
     @Override
-    public View getView(SmartRegisterClient smartRegisterClient, View convertView, ViewGroup viewGroup) {
+    public View getView(int i, SmartRegisterClient smartRegisterClient, View convertView, ViewGroup viewGroup) {
         ViewGroup itemView;
         NativeAnakRegisterViewHolder viewHolder;
         if (convertView == null) {
@@ -65,6 +68,12 @@ public class AnakRegisterClientsProvider implements SmartRegisterClientsProvider
         } else {
             itemView = (ViewGroup) convertView;
             viewHolder = (NativeAnakRegisterViewHolder) itemView.getTag();
+        }
+
+        if(i%2>0) {
+            itemView.setBackgroundColor(Color.parseColor(AllConstants.HIGHLIGHT_COLOR));
+        } else {
+            itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         }
 
         AnakClient client = (AnakClient)smartRegisterClient;
@@ -78,14 +87,14 @@ public class AnakRegisterClientsProvider implements SmartRegisterClientsProvider
         return itemView;
     }
 
-    private void setupClientProfileView(SmartRegisterClient client, NativeAnakRegisterViewHolder viewHolder) {
+    private void setupClientProfileView(AnakClient client, NativeAnakRegisterViewHolder viewHolder) {
         viewHolder.getProfileViewLayout().bindData(client, photoLoader);
         viewHolder.getProfileViewLayout().setOnClickListener(onClickListener);
         viewHolder.getProfileViewLayout().setTag(client);
     }
 
     private void setupIdDetailsView(AnakClient client, NativeAnakRegisterViewHolder viewHolder) {
-        viewHolder.getTxtIbuKiNo().setText(client.motherKiNumber());
+        viewHolder.getTxtIbuKiNo().setText(client.getBabyNo());
     }
 
     @Override

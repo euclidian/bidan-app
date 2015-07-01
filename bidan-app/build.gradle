@@ -51,19 +51,19 @@ android {
     }
 
     defaultConfig {
+        // multiDexEnabled = true
         applicationId "org.ei.bidan"
         minSdkVersion 16
         targetSdkVersion 21
         versionCode 1
         versionName "0.1"
-        testInstrumentationRunner "android.test.InstrumentationTestRunner"
     }
 
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
             java.srcDir 'src/main/java'
-            res.srcDir 'res'
+            res.srcDirs = ['res']
             assets.srcDir 'assets'
             jniLibs.srcDirs 'src/main/native'
             resources.srcDir 'resources'
@@ -95,9 +95,6 @@ android {
     }
 }
 
-task createJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-}
 
 def filesToCopy = copySpec{
     from "${projectDir}/src/test/resources"
@@ -127,19 +124,21 @@ dependencies {
     compile 'org.apache.commons:commons-lang3:3.1'
     compile 'com.google.guava:guava:16.0'
     compile 'info.guardianproject:sqlcipher:2.2.0'
-    compile('ch.acra:acra:4.5.0') {
-        exclude group: 'org.json'
-    }
     compile 'org.ei.drishti:drishti-interface:0.1-SNAPSHOT'
     compile 'org.mozilla:rhino:1.7R4'
-    compile "com.ocpsoft:ocpsoft-pretty-time:1.0.7"
+    compile 'com.ocpsoft:ocpsoft-pretty-time:1.0.7'
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    // CardLib
+    // Core
+    compile 'com.github.gabrielemariotti.cards:cardslib-core:2.1.0'
+    //CardView
+    compile 'com.android.support:cardview-v7:22.1.1'
+    // Google Play Service
+    compile 'com.google.android.gms:play-services-base:6.5.87'
 }
 
 dependencies {
-    // Espresso
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
-    androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+//    // Espresso
     androidTestCompile 'com.jayway.android.robotium:robotium-solo:4.3'
 
     testCompile group: 'com.google.android', name: 'android-test', version:'4.1.1.4'

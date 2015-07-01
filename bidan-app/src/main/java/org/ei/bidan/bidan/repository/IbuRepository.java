@@ -41,9 +41,9 @@ public class IbuRepository extends DrishtiRepository {
     private static final String IS_CLOSED_COLUMN = "isClosed";
     public static final String[] IBU_TABLE_COLUMNS = {ID_COLUMN, KI_ID_COLUMN, TYPE_COLUMN, REF_DATE_COLUMN, DETAILS_COLUMN, IS_CLOSED_COLUMN};
 
-    public static final String TYPE_ANC = "ANC";
+    public static final String TYPE_ANC = "anc";
     private static final String NOT_CLOSED = "false";
-    public static final String TYPE_PNC = "PNC";
+    public static final String TYPE_PNC = "pnc";
 
     @Override
     protected void onCreate(SQLiteDatabase database) {
@@ -54,7 +54,7 @@ public class IbuRepository extends DrishtiRepository {
 
     public void add(Ibu ibu) {
         SQLiteDatabase database = masterRepository.getWritableDatabase();
-        database.insert(IBU_TABLE_NAME, null, createValuesFor(ibu, "ANC"));
+        database.insert(IBU_TABLE_NAME, null, createValuesFor(ibu, TYPE_ANC));
     }
 
     public void switchToPNC(String caseId) {
@@ -142,7 +142,7 @@ public class IbuRepository extends DrishtiRepository {
 
             KartuIbu kartuIbu = new KartuIbu(cursor.getString(6),
                     new Gson().<Map<String, String>>fromJson(cursor.getString(7), new TypeToken<Map<String, String>>() {
-                    }.getType()));
+                    }.getType()), cursor.getString(8));
 
             ancOrPncsWithKartuIbu.add(Pair.of(ibu, kartuIbu));
             cursor.moveToNext();

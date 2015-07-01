@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
@@ -24,6 +25,8 @@ import org.ei.bidan.view.viewHolder.OnClickFormLauncher;
 import org.ei.bidan.view.viewHolder.ProfilePhotoLoader;
 
 import android.graphics.Color;
+
+import java.util.List;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
@@ -65,7 +68,7 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
     }
 
     @Override
-    public View getView(SmartRegisterClient client, View convertView, ViewGroup viewGroup) {
+    public View getView(int i, SmartRegisterClient client, View convertView, ViewGroup viewGroup) {
         ViewGroup itemView;
         NativeKIRegisterViewHolder viewHolder;
         if (convertView == null) {
@@ -75,6 +78,12 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
         } else {
             itemView = (ViewGroup) convertView;
             viewHolder = (NativeKIRegisterViewHolder) itemView.getTag();
+        }
+
+        if(i%2>0) {
+            itemView.setBackgroundColor(Color.parseColor(AllConstants.HIGHLIGHT_COLOR));
+        } else {
+            itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         }
 
         KartuIbuClient kartuIbuClient = (KartuIbuClient) client;
@@ -118,6 +127,7 @@ public class KIClientsProvider implements SmartRegisterClientsProvider {
 
     private void setupClientEDDView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {
         viewHolder.txtEdd().setText(String.valueOf(client.getEdd()));
+        viewHolder.txtEddDue().setText(String.valueOf(client.getDueEdd()));
     }
 
     private void setupEditView(KartuIbuClient client, NativeKIRegisterViewHolder viewHolder) {

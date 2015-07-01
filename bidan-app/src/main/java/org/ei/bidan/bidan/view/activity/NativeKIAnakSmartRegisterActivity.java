@@ -4,11 +4,16 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.view.View;
 
+import com.flurry.android.FlurryAgent;
+
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.provider.AnakRegisterClientsProvider;
+import org.ei.bidan.bidan.view.contract.AnakClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.bidan.view.controller.AnakRegisterController;
+import org.ei.bidan.bidan.view.dialog.AllHighRiskSort;
 import org.ei.bidan.bidan.view.dialog.AnakImmunizationServiceMode;
 import org.ei.bidan.bidan.view.dialog.AnakOverviewServiceMode;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
@@ -16,6 +21,7 @@ import org.ei.bidan.util.StringUtil;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.dialog.AllClientsFilter;
 import org.ei.bidan.view.dialog.DialogOption;
+import org.ei.bidan.view.dialog.DialogOptionMapper;
 import org.ei.bidan.view.dialog.DialogOptionModel;
 import org.ei.bidan.view.dialog.EditOption;
 import org.ei.bidan.view.dialog.FilterOption;
@@ -28,6 +34,8 @@ import org.ei.bidan.view.dialog.SortOption;
 import java.util.Collections;
 import java.util.List;
 
+import static com.google.common.collect.Iterables.concat;
+import static com.google.common.collect.Iterables.toArray;
 import static org.ei.bidan.AllConstants.FormNames.*;
 
 /**
@@ -38,6 +46,7 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
     private SmartRegisterClientsProvider clientProvider = null;
     private AnakRegisterController controller;
     private final ClientActionHandler clientActionHandler = new ClientActionHandler();
+    private DialogOptionMapper dialogOptionMapper;
 
     @Override
     protected SmartRegisterPaginatedAdapter adapter() {
@@ -84,7 +93,9 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
 
             @Override
             public DialogOption[] filterOptions() {
-                return new DialogOption[]{new AllClientsFilter()};
+                Iterable<? extends DialogOption> villageFilterOptions =
+                        dialogOptionMapper.mapToVillageFilterOptions(controller.villages());
+                return toArray(concat(DEFAULT_FILTER_OPTIONS, villageFilterOptions), DialogOption.class);
             }
 
             @Override
@@ -95,7 +106,7 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort(), new ReverseNameSort()};
+                return new DialogOption[]{new NameSort(), new ReverseNameSort(), new AllHighRiskSort()};
             }
 
             @Override
@@ -112,12 +123,28 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
                 context.alertService(),
                 context.serviceProvidedService(),
                 context.listCache(),
-                context.smartRegisterClientsCache());
+                context.smartRegisterClientsCache(),
+                context.villagesCache());
 
         clientsProvider().onServiceModeSelected(new AnakOverviewServiceMode(clientsProvider()));
+        dialogOptionMapper = new DialogOptionMapper();
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FlurryAgent.logEvent("anak_dashboard", true);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        FlurryAgent.endTimedEvent("anak_dashboard");
+    }
+
     @Override
     protected void startRegistration() {
+        startFormActivity(AllConstants.FormNames.ANAK_NEW_REGISTRATION, null, null);
     }
 
     private class ClientActionHandler implements View.OnClickListener {
@@ -125,8 +152,7 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.profile_info_layout:
-                    // TODO : show info of timeline event
-                    // showProfileView((ECClient) view.getTag());
+                    showProfileView((AnakClient) view.getTag());
                     break;
                 case R.id.btn_edit:
                     showFragmentDialog(new EditDialogOptionModel(), view.getTag());
@@ -135,6 +161,10 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
                     formController.startFormActivity(BAYI_IMUNISASI, "" + view.getTag(), null);
                     break;
             }
+        }
+
+        public void showProfileView(AnakClient client) {
+            navigationController.startAnakDetail(client.entityId());
         }
     }
 
@@ -156,18 +186,14 @@ public class NativeKIAnakSmartRegisterActivity extends BidanSecuredNativeSmartRe
 
     private DialogOption[] getEditOptions() {
         return new DialogOption[]{
-                new OpenFormOption("Edit Data",
-                        KOHORT_BAYI_EDIT, formController),
-                new OpenFormOption("Monitoring Pertumbuhan dan Nutrisi",
-                        KOHORT_BAYI_MONITORING, formController),
-                new OpenFormOption("Balita Data",
-                        BALITA_KUNJUNGAN, formController),
-                new OpenFormOption(getString(R.string.str_imunisasi_bayi),
-                        BAYI_IMUNISASI, formController),
-                new OpenFormOption("Bayi Neonatal Period",
+                new OpenFormOption(getString(R.string.str_anak_neonatal),
                         BAYI_NEONATAL_PERIOD, formController),
-                new OpenFormOption(getString(R.string.str_kunjungan_anak),
-                        KARTU_IBU_ANAK_VISIT, formController),
+                new OpenFormOption(getString(R.string.str_anak_bayi_visit),
+                        KOHORT_BAYI_KUNJUNGAN, formController),
+                new OpenFormOption(getString(R.string.str_anak_balita_visit),
+                        BALITA_KUNJUNGAN, formController),
+                new OpenFormOption(getString(R.string.str_anak_edit),
+                        KOHORT_BAYI_EDIT, formController),
                 new OpenFormOption(getString(R.string.str_tutup_anak),
                         KARTU_IBU_ANAK_CLOSE, formController),
         };

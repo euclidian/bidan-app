@@ -2,17 +2,23 @@ package org.ei.bidan.bidan.view.activity;
 
 import android.view.View;
 
+import com.flurry.android.FlurryAgent;
+
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
+import org.ei.bidan.bidan.view.contract.BidanVillageController;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
+import org.ei.bidan.bidan.view.dialog.AllHighRiskSort;
 import org.ei.bidan.bidan.view.dialog.AllKartuIbuServiceMode;
 import org.ei.bidan.bidan.view.controller.KartuIbuRegisterController;
+import org.ei.bidan.bidan.view.dialog.EstimatedDateOfDeliverySortKIANC;
 import org.ei.bidan.bidan.view.dialog.NoIbuSort;
 import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
 import org.ei.bidan.bidan.provider.KIClientsProvider;
 import org.ei.bidan.domain.form.FieldOverrides;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
 import org.ei.bidan.view.contract.SmartRegisterClient;
+import org.ei.bidan.view.controller.VillageController;
 import org.ei.bidan.view.dialog.AllClientsFilter;
 import org.ei.bidan.view.dialog.DialogOption;
 import org.ei.bidan.view.dialog.DialogOptionMapper;
@@ -29,6 +35,13 @@ import org.ei.bidan.view.dialog.ReverseNameSort;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import main.java.com.mindscapehq.android.raygun4android.RaygunClient;
+
+import static com.google.common.collect.Iterables.concat;
+import static com.google.common.collect.Iterables.toArray;
 import static org.ei.bidan.AllConstants.FormNames.ANAK_BAYI_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_ANC_REGISTRATION;
 import static org.ei.bidan.AllConstants.FormNames.KARTU_IBU_CLOSE;
@@ -44,6 +57,7 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
     private SmartRegisterClientsProvider clientProvider = null;
     private KartuIbuRegisterController controller;
     private DialogOptionMapper dialogOptionMapper;
+    private BidanVillageController villageController;
 
     private final ClientActionHandler clientActionHandler = new ClientActionHandler();
 
@@ -101,7 +115,9 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
             @Override
             public DialogOption[] filterOptions() {
-                return new DialogOption[]{new AllClientsFilter()};
+                Iterable<? extends DialogOption> villageFilterOptions =
+                        dialogOptionMapper.mapToVillageFilterOptions(villageController.getVillagesIndonesia());
+                return toArray(concat(DEFAULT_FILTER_OPTIONS, villageFilterOptions), DialogOption.class);
             }
 
             @Override
@@ -112,9 +128,8 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
             @Override
             public DialogOption[] sortingOptions() {
                 return new DialogOption[]{new NameSort(),
-                        new ReverseNameSort(), new WifeAgeSort(), new NoIbuSort(),
-                        new EstimatedDateOfDeliverySort(), new HighRiskSort(), new DusunSort(),
-                new KBMethodSort()};
+                        new ReverseNameSort(), new NoIbuSort(),
+                        new EstimatedDateOfDeliverySort(), new AllHighRiskSort()};
             }
 
             @Override
@@ -135,13 +150,16 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
     @Override
     protected void onInitialization() {
+        FlurryAgent.logEvent("kohort_ibu_dashboard");
         controller = new KartuIbuRegisterController(context.allKartuIbus(),
                 context.listCache(),context.kiClientsCache(),context.allKohort());
+        villageController = new BidanVillageController(context.villagesCache(), context.allKartuIbus());
         dialogOptionMapper = new DialogOptionMapper();
     }
 
     @Override
     protected void startRegistration() {
+        FlurryAgent.logEvent("new_registration");
         FieldOverrides fieldOverrides = new FieldOverrides(context.anmLocationController().getLocationJSON());
         startFormActivity(KARTU_IBU_REGISTRATION, null, fieldOverrides.getJSONString());
     }

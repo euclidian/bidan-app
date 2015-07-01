@@ -3,6 +3,7 @@ package org.ei.bidan.bidan.domain;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.ei.bidan.AllConstants;
 
 import java.util.Map;
 
@@ -15,12 +16,14 @@ import static org.ei.bidan.AllConstants.ECRegistrationFields.CURRENT_FP_METHOD;
 public class KartuIbu {
     private String caseId;
     private Map<String, String> details;
+    private String dusun;
     private boolean isClosed;
 
-    public KartuIbu(String caseId, Map<String, String> details) {
+    public KartuIbu(String caseId, Map<String, String> details, String dusun) {
         this.caseId = caseId;
         this.details = details;
         this.isClosed = false;
+        this.dusun = dusun;
     }
 
     // Getter
@@ -50,13 +53,15 @@ public class KartuIbu {
     }
 
     public boolean hasKBMethod() {
-        String kbMethod = getDetail("JenisKontrasepsi");
+        String kbMethod = getDetail(AllConstants.KeluargaBerencanaFields.CONTRACEPTION_METHOD);
         return isNotBlank(kbMethod);
     }
 
     public String getDetail(String name) {
         return details.get(name);
     }
+
+    public String dusun() { return this.dusun; }
 
     // Tools
     @Override

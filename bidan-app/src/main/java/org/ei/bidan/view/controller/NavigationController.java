@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.webkit.JavascriptInterface;
 
-import org.ei.bidan.bidan.view.activity.KIDetailActivity;
+import com.flurry.android.FlurryAgent;
+
 import org.ei.bidan.bidan.view.activity.NativeKBSmartRegisterActivity;
 import org.ei.bidan.bidan.view.activity.NativeKIANCSmartRegisterActivity;
 import org.ei.bidan.bidan.view.activity.NativeKIAnakSmartRegisterActivity;
 import org.ei.bidan.bidan.view.activity.NativeKIPNCSmartRegisterActivity;
+import org.ei.bidan.bidan.view.activity.NativeReportingActivity;
 import org.ei.bidan.view.activity.NativeANCSmartRegisterActivity;
 import org.ei.bidan.view.activity.NativeChildSmartRegisterActivity;
 import org.ei.bidan.view.activity.NativeECSmartRegisterActivity;
@@ -30,11 +32,13 @@ public class NavigationController {
 
     @JavascriptInterface
     public void startReports() {
-        activity.startActivity(new Intent(activity, ReportsActivity.class));
+        FlurryAgent.logEvent("start_reports");
+        activity.startActivity(new Intent(activity, NativeReportingActivity.class));
     }
 
     @JavascriptInterface
     public void startVideos() {
+        FlurryAgent.logEvent("start_videos");
         activity.startActivity(new Intent(activity, VideosActivity.class));
     }
 
@@ -106,6 +110,11 @@ public class NavigationController {
     @JavascriptInterface
     public void startKI(String entityId) {
         navigateToKIProfile(activity, entityId);
+    }
+
+    @JavascriptInterface
+    public void startAnakDetail(String entityId) {
+        navigateToAnakProfile(activity, entityId);
     }
 
     @JavascriptInterface

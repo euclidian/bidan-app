@@ -11,6 +11,7 @@ import android.widget.AbsListView;
 
 import com.google.common.base.Strings;
 
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.contract.KartuIbuANCClient;
 import org.ei.bidan.bidan.view.controller.KartuIbuANCRegisterController;
@@ -62,7 +63,7 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
     }
 
     @Override
-    public View getView(SmartRegisterClient client, View convertView, ViewGroup viewGroup) {
+    public View getView(int i, SmartRegisterClient client, View convertView, ViewGroup viewGroup) {
         ViewGroup itemView;
         NativeKIANCRegisterViewHolder viewHolder;
         if (convertView == null) {
@@ -72,6 +73,12 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
         } else {
             itemView = (ViewGroup) convertView;
             viewHolder = (NativeKIANCRegisterViewHolder) itemView.getTag();
+        }
+
+        if(i%2>0) {
+            itemView.setBackgroundColor(Color.parseColor(AllConstants.HIGHLIGHT_COLOR));
+        } else {
+            itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         }
 
         KartuIbuANCClient kartuIbuClient = (KartuIbuANCClient) client;
@@ -110,21 +117,24 @@ public class KartuIbuANCClientsProvider implements SmartRegisterClientsProvider 
     }
 
     private void setupANCStatusView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
-        viewHolder.ancStatusBB().setText(client.getBB()==null?"-":client.getBB() + " kg");
-        viewHolder.ancStatusTB().setText(client.getTB()==null?"-":client.getTB() + " cm");
+        viewHolder.ancStatusHtpt().setText(client.tanggalHPHT()==null?"-":client.tanggalHPHT());
+        viewHolder.ancStatusUsiaKlinis().setText(client.usiaKlinis()==null?"-":client.usiaKlinis());
     }
 
     private void setupPemeriksaanView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
-        viewHolder.getPemeriksaanBB().setText(client.getLILA());
-        viewHolder.getPemeriksaanLILA().setText(client.getBeratBadan());
+        viewHolder.getPemeriksaanBB().setText(client.getBeratBadan());
+        viewHolder.getPemeriksaanLILA().setText(client.getLILA());
     }
 
     private void setupResikoView(KartuIbuANCClient client, NativeKIANCRegisterViewHolder viewHolder) {
-        String penyakit = client.getPenyakitKronis();
+        String penyakit = client.getPenyakitKronis() + "" +
+                client.getRiwayatKomplikasiKebidanan() + "" + client.getHighRiskPregnancyReason() + "" +
+                (!client.getAlergi().equalsIgnoreCase("NA") ? "(Alergi : "+client.getAlergi()+" )" : "");
+
         String alergi = client.getAlergi();
 
         viewHolder.getPenyakitKronis().setText(Strings.isNullOrEmpty(penyakit) ? "-" : penyakit);
-        viewHolder.getAlergi().setText(Strings.isNullOrEmpty(alergi) ? "-" : alergi);
+        // viewHolder.getAlergi().setText(Strings.isNullOrEmpty(alergi) ? "-" : alergi);
 
         if(!Strings.isNullOrEmpty(penyakit) || !Strings.isNullOrEmpty(alergi)) {
             viewHolder.getLayoutResikoANC().setBackgroundColor(Color.parseColor("#FAD5D5"));
