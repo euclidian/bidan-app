@@ -145,7 +145,7 @@ public class AnakRepositoryTest extends AndroidTestCase {
                 .put("name", "chinnu")
                 .put("isChildHighRisk", "yes")
                 .map();
-        KartuIbu ki = new KartuIbu("ec id 1", ecDetails);
+        KartuIbu ki = new KartuIbu("ec id 1", ecDetails, "dusun");
         Ibu mother = new Ibu("mother id 1", "ec id 1", "2013-01-01").withDetails(Collections.<String, String>emptyMap());
         Anak child = new Anak("child id 1", "mother id 1", "2013-01-02", "female", childDetails).withIbu(mother).withKI(ki);
         anakRepository.add(child);

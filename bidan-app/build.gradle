@@ -57,7 +57,6 @@ android {
         targetSdkVersion 21
         versionCode 1
         versionName "0.1"
-        testInstrumentationRunner "android.test.InstrumentationTestRunner"
     }
 
     sourceSets {
@@ -96,9 +95,6 @@ android {
     }
 }
 
-task createJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-}
 
 def filesToCopy = copySpec{
     from "${projectDir}/src/test/resources"
@@ -142,9 +138,7 @@ dependencies {
 }
 
 dependencies {
-    // Espresso
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
-    androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+//    // Espresso
     androidTestCompile 'com.jayway.android.robotium:robotium-solo:4.3'
 
     testCompile group: 'com.google.android', name: 'android-test', version:'4.1.1.4'

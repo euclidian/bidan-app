@@ -26,6 +26,8 @@ import org.ei.bidan.view.viewHolder.ProfilePhotoLoader;
 
 import android.graphics.Color;
 
+import java.util.List;
+
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 /**

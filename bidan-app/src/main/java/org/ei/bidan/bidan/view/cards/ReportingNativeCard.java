@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.controller.ReportingController;
+import org.ei.bidan.util.DateUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,8 +64,10 @@ public class ReportingNativeCard extends CardWithList {
 
         for(Map<String, String> d : data) {
             StockObject stockObject = new StockObject(this);
-            stockObject.subject = d.get("subject") + "";
-            stockObject.value = d.get("value") + "";
+            String subject = d.get("subject")+"";
+            String value = d.get("value")+"";
+            stockObject.subject = subject;
+            stockObject.value =  value;
             mObjects.add(stockObject);
         }
 

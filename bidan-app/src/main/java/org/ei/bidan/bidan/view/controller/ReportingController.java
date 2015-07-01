@@ -37,8 +37,7 @@ public class ReportingController {
     public List<Map<String, String>> getReports() {
         List<Map<String, String>> reports = new ArrayList<>();
 
-        List<KartuIbuClient> kiClients = new Gson().fromJson(kartuIbuRegisterController.get(), new TypeToken<List<KartuIbuClient>>() {
-        }.getType());
+        KartuIbuClients kiClients = kartuIbuRegisterController.getKartuIbuClients();
 
         List<KartuIbuANCClient> ancClients = new Gson().fromJson(kartuIbuANCRegisterController.get(), new TypeToken<List<KartuIbuANCClient>>() {
         }.getType());
@@ -74,23 +73,24 @@ public class ReportingController {
             }
         }
 
-        for(KartuIbuClient client : kiClients) {
-            if(client.hasLaborComplication()) {
+        for(SmartRegisterClient client : kiClients) {
+            KartuIbuClient kartuIbuClient = (KartuIbuClient) client;
+            if(kartuIbuClient.hasLaborComplication()) {
                 komplikasi2++;
             }
-            if(!client.kbMethod().equalsIgnoreCase("-")) {
+            if(!kartuIbuClient.kbMethod().equalsIgnoreCase("-")) {
                 kb++;
             }
-            if(client.isPregnant() && (client.isAnemia() || client.isSevereAnemia())) {
+            if(kartuIbuClient.isPregnant() && (kartuIbuClient.isAnemia() || kartuIbuClient.isSevereAnemia())) {
                anemia++;
             }
-            if(client.isPregnant() && client.isProteinEnergyMalnutrition()) {
+            if(kartuIbuClient.isPregnant() && kartuIbuClient.isProteinEnergyMalnutrition()) {
                kek++;
             }
-            if(client.isPregnant() && client.isHypertension()) {
+            if(kartuIbuClient.isPregnant() && kartuIbuClient.isHypertension()) {
                 hipertensi++;
             }
-            if(client.isPregnant() && client.isDiabetes()) {
+            if(kartuIbuClient.isPregnant() && kartuIbuClient.isDiabetes()) {
                 diabetes++;
             }
         }

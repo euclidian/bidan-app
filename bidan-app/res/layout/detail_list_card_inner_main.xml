@@ -13,10 +13,10 @@
     android:background="@android:color/white">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textColor="@android:color/tertiary_text_dark"
         android:layout_weight="3"
         tools:text="Nama Ibu"
@@ -24,6 +24,14 @@
         android:layout_alignParentLeft="true"
         android:id="@+id/textViewCode"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="@android:color/tertiary_text_dark"
+        tools:text="Klik Sini"
+        android:layout_centerInParent="true"
+        android:id="@+id/txt_clickable"/>
 
     <TextView
         android:layout_width="180dp"

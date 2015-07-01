@@ -7,8 +7,7 @@ import com.flurry.android.FlurryAgent;
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.cards.DetailsNativeCard;
 import org.ei.bidan.bidan.view.cards.RiskFlagsNativeCard;
-import org.ei.bidan.bidan.view.controller.AnakDetailController;
-import org.ei.bidan.bidan.view.controller.KIDetailController;
+import org.ei.bidan.bidan.view.controller.ProfileChildDetailController;
 import org.ei.bidan.view.activity.SecuredActivity;
 
 import it.gmariotti.cardslib.library.view.CardViewNative;
@@ -18,7 +17,7 @@ import it.gmariotti.cardslib.library.view.CardViewNative;
  */
 public class NativeAnakDetailActivity extends SecuredActivity {
 
-    private AnakDetailController anakDetailController;
+    private ProfileChildDetailController profileChildDetailController;
     private String caseId;
 
     private final NavBarActionsHandler navBarActionsHandler = new NavBarActionsHandler();
@@ -41,7 +40,7 @@ public class NativeAnakDetailActivity extends SecuredActivity {
     private void initialize() {
 
         // Create a card
-        detailsCard = new DetailsNativeCard(this);
+        detailsCard = new DetailsNativeCard(this, controller().detailMap());
         detailsCard.setClient(controller().get());
         detailsCard.init();
 
@@ -86,11 +85,11 @@ public class NativeAnakDetailActivity extends SecuredActivity {
         return caseId;
     }
 
-    private AnakDetailController controller() {
-        if(anakDetailController == null) {
-            anakDetailController = new AnakDetailController(this, caseId(), context.allKartuIbus(), context.allKohort());
+    private ProfileChildDetailController controller() {
+        if(profileChildDetailController == null) {
+            profileChildDetailController = new ProfileChildDetailController(this, caseId(), context.allKartuIbus(), context.allKohort());
         }
-        return anakDetailController;
+        return profileChildDetailController;
     }
 
 

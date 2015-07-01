@@ -2,6 +2,7 @@ package org.ei.bidan.bidan.view.controller;
 
 import android.content.Context;
 
+import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 
 import org.ei.bidan.AllConstants;
@@ -12,6 +13,8 @@ import org.ei.bidan.bidan.repository.AllKartuIbus;
 import org.ei.bidan.bidan.repository.AllKohort;
 import org.ei.bidan.bidan.view.contract.AnakClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
+
+import java.util.Map;
 
 import static org.ei.bidan.AllConstants.KartuAnakFields.BABY_NO;
 import static org.ei.bidan.AllConstants.KartuAnakFields.BIRTH_CONDITION;
@@ -54,13 +57,13 @@ import static org.ei.bidan.AllConstants.KartuIbuFields.PUSKESMAS_NAME;
 /**
  * Created by Dimas Ciputra on 4/17/15.
  */
-public class AnakDetailController {
+public class ProfileChildDetailController {
     private final Context context;
     private final String caseId;
     private final AllKohort allKohort;
     private final AllKartuIbus allKartuIbus;
 
-    public AnakDetailController(Context context, String caseId, AllKartuIbus allKartuIbus, AllKohort allKohort) {
+    public ProfileChildDetailController(Context context, String caseId, AllKartuIbus allKartuIbus, AllKohort allKohort) {
         this.context = context;
         this.caseId = caseId;
         this.allKohort = allKohort;
@@ -97,6 +100,11 @@ public class AnakDetailController {
         anakClient.setBabyNo(a.getDetail(BABY_NO));
         anakClient.setPregnancyAge(ibu.getDetail(AllConstants.KartuPNCFields.PREGNANCY_AGE));
         return anakClient;
+    }
+
+    public Map<String, String> detailMap() {
+        Anak child = allKohort.findAnakWithCaseID(caseId);
+        return child.getDetails();
     }
 
     public String getClientJson() {

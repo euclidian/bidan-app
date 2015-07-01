@@ -6,18 +6,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.common.base.Strings;
-
 import org.ei.bidan.R;
+import org.ei.bidan.bidan.service.DetailListObject;
 import org.ei.bidan.bidan.view.contract.AnakClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
-import org.ei.bidan.util.EasyMap;
+import org.ei.bidan.util.DateUtil;
 import org.ei.bidan.util.StringUtil;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,17 +24,18 @@ import it.gmariotti.cardslib.library.internal.CardHeader;
 import it.gmariotti.cardslib.library.prototypes.CardWithList;
 import it.gmariotti.cardslib.library.prototypes.LinearListView;
 
-import static org.ei.bidan.util.EasyMap.create;
-
 /**
  * Created by Dimas Ciputra on 6/20/15.
  */
 public class DetailsNativeCard extends CardWithList {
 
     SmartRegisterClient client;
+    private final Map<String, String> detailList;
+    int pivotList = 10;
 
-    public DetailsNativeCard(Context context) {
+    public DetailsNativeCard(Context context, Map<String,String> detailList) {
         super(context);
+        this.detailList = detailList;
     }
 
     public void setClient(SmartRegisterClient client) {
@@ -72,124 +71,54 @@ public class DetailsNativeCard extends CardWithList {
         });
     }
 
-    protected List<ListObject> initKIChildren() {
-        // Init the list
-        List<ListObject> mObjects = new ArrayList<>();
-        KartuIbuClient kartuIbuClient = (KartuIbuClient) client;
-
-        // Add an object
-        StockObject s1 = new StockObject(this);
-        s1.subject = "Umur Ibu";
-        s1.value = kartuIbuClient.ageInString() + " th";
-        mObjects.add(s1);
-
-        // Add an object
-        StockObject s2 = new StockObject(this);
-        s2.subject = "Nama Suami";
-        s2.value = kartuIbuClient.husbandName();
-        mObjects.add(s2);
-
-        // Add an object
-        StockObject s3 = new StockObject(this);
-        s3.subject = "HTP";
-        s3.value = kartuIbuClient.getEdd() + "";
-        mObjects.add(s3);
-
-        // Add an object
-        StockObject s4 = new StockObject(this);
-        s4.subject = "Dusun";
-        s4.value = kartuIbuClient.village();
-        mObjects.add(s4);
-
-        StockObject s5 = new StockObject(this);
-        s5.subject = "Posyandu";
-        s5.value = kartuIbuClient.getPosyandu();
-        mObjects.add(s5);
-
-        StockObject s6 = new StockObject(this);
-        s6.subject = "Golongan Darah";
-        s6.value = kartuIbuClient.getGolongan_darah();
-        mObjects.add(s6);
-
-        StockObject s7 = new StockObject(this);
-        s7.subject = "Puskesmas";
-        s7.value = kartuIbuClient.getPuskesmas();
-        mObjects.add(s7);
-
-        StockObject s8 = new StockObject(this);
-        s8.subject = "Agama";
-        s8.value = kartuIbuClient.getReligion();
-        mObjects.add(s8);
-
-        StockObject s9 = new StockObject(this);
-        s9.subject = "Edukasi";
-        s9.value = kartuIbuClient.getEducation();
-        mObjects.add(s9);
-
-        StockObject s10 = new StockObject(this);
-        s10.subject = "Pekerjaan";
-        s10.value = kartuIbuClient.getJob();
-        mObjects.add(s10);
-
-        StockObject s11 = new StockObject(this);
-        s11.subject = "Asuransi";
-        s11.value = kartuIbuClient.getInsurance();
-        mObjects.add(s11);
-
-        StockObject s12 = new StockObject(this);
-        s12.subject = "No Telepon";
-        s12.value = kartuIbuClient.getPhoneNumber();
-        mObjects.add(s12);
-
-        return mObjects;
-    }
-
-    protected List<ListObject> initAnakChildren() {
+    @Override
+    protected List<ListObject> initChildren() {
 
         List<ListObject> mObjects = new ArrayList<>();
-        AnakClient anakClient = (AnakClient) client;
 
-        String service = anakClient.getServiceAtBirth();
+        Iterator it = detailList.entrySet().iterator();
 
-        Map<String, String> map = new LinkedHashMap<>();
-
-        map.put("Umur Anak", anakClient.format(anakClient.ageInDays()));
-        map.put("Nama Ibu", anakClient.motherName());
-        map.put("Nama Ayah", anakClient.fatherName());
-        map.put("Tanggal Lahir", anakClient.dateOfBirth());
-        map.put("Berat Lahir", anakClient.birthWeight());
-        map.put("Berat Sekarang", anakClient.currentWeight());
-
-        if(!Strings.isNullOrEmpty(service)) {
-            String[] serviceAtBirth = service.split("\\s+");
-            for(int i = 0; i < serviceAtBirth.length ; i++) {
-                map.put("Pelayanan " + (i+1), StringUtil.humanize(serviceAtBirth[i]));
-            }
-        }
-
-        Iterator it = map.entrySet().iterator();
-
-        while(it.hasNext()) {
+        while (it.hasNext()) {
             Map.Entry pair = (Map.Entry)it.next();
-            StockObject stockObject = new StockObject(this);
-            stockObject.subject = pair.getKey() + "";
-            stockObject.value = pair.getValue() + "";
+            String subject = pair.getKey() + "";
+            String value = pair.getValue()+"";
+
+            DetailListObject stockObject = new DetailListObject(this);
+            stockObject.subject = StringUtil.splitCamelCase(subject);
+            stockObject.value = DateUtil.isValidDate(value) ? DateUtil.formatDate(value) : StringUtil.humanize(value);
             mObjects.add(stockObject);
         }
 
-        return mObjects;
-    }
+        List<ListObject> cObjects = new ArrayList<>(mObjects);
 
+        if(detailList.size() > 10) {
+            cObjects = cObjects.subList(0, pivotList);
 
-    @Override
-    protected List<ListObject> initChildren() {
-        if (isAnKIClient(client)) {
-            return initKIChildren();
-        } else if (isAnakClient(client)) {
-            return initAnakChildren();
+            DetailListObject stockObject1 = new DetailListObject(this);
+            stockObject1.clickableText = "Show more...";
+            ShowMoreButtonListener itemClickListener = new ShowMoreButtonListener(pivotList, mObjects);
+            stockObject1.setOnItemClickListener(itemClickListener);
+            cObjects.add(stockObject1);
         }
 
-        return null;
+        return cObjects;
+    }
+
+    public class ShowMoreButtonListener implements OnItemClickListener {
+        private int position;
+        private List<ListObject> objects;
+
+        public ShowMoreButtonListener(int position, List<ListObject> objects) {
+            this.position = position;
+            this.objects = objects;
+        }
+
+        @Override
+        public void onItemClick(LinearListView linearListView, View view, int i, ListObject listObject) {
+            mLinearListAdapter.remove(mLinearListAdapter.getItem(position));
+            int lsize = objects.size();
+            mLinearListAdapter.addAll(new ArrayList<>(objects.subList(position, lsize)));
+        }
     }
 
     @Override
@@ -197,11 +126,13 @@ public class DetailsNativeCard extends CardWithList {
         //Setup the ui elements inside the item
         TextView textViewSubject = (TextView) convertView.findViewById(R.id.textViewCode);
         TextView textViewValue = (TextView) convertView.findViewById(R.id.textViewPerc);
+        TextView textClick = (TextView)convertView.findViewById(R.id.txt_clickable);
 
         //Retrieve the values from the object
-        StockObject stockObject = (StockObject) listObject;
+        DetailListObject stockObject = (DetailListObject) listObject;
         textViewSubject.setText(stockObject.subject);
         textViewValue.setText(stockObject.value);
+        textClick.setText(stockObject.clickableText);
 
         return convertView;
     }
@@ -209,40 +140,6 @@ public class DetailsNativeCard extends CardWithList {
     @Override
     public int getChildLayoutId() {
         return R.layout.detail_list_card_inner_main;
-    }
-
-    // -------------------------------------------------------------
-    // Weather Object
-    // -------------------------------------------------------------
-
-    public class StockObject extends DefaultListObject {
-
-        public String subject;
-        public String value;
-
-        public StockObject(Card parentCard) {
-            super(parentCard);
-            init();
-        }
-
-        private void init() {
-            //OnClick Listener
-            setOnItemClickListener(new OnItemClickListener() {
-                @Override
-                public void onItemClick(LinearListView parent, View view, int position, ListObject object) {
-                    Toast.makeText(getContext(), getObjectId() + " : " + getValue(), Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-
-        @Override
-        public String getObjectId() {
-            return subject;
-        }
-
-        public String getValue() {
-            return value;
-        }
     }
 
     private boolean isAnKIClient(SmartRegisterClient client) {

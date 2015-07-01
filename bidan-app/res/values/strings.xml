@@ -751,4 +751,7 @@
     <string name="title_double_selection">"Pick the name again"</string>
     <string name="title_app">"Bidan"</string>
 
+    <string name="detail_subtitle">Daftar resiko yang dimiliki</string>
+    <string name="risk_flags_subtitle">Daftar resiko yang dimiliki</string>
+    <string name="risk_flags_title">Resiko</string>
 </resources>

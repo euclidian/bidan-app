@@ -3,9 +3,8 @@ package org.ei.bidan.view.controller;
 import android.content.Context;
 import android.content.Intent;
 
-import org.ei.bidan.bidan.view.activity.KIDetailActivity;
 import org.ei.bidan.bidan.view.activity.NativeAnakDetailActivity;
-import org.ei.bidan.bidan.view.activity.NativeDetailActivity;
+import org.ei.bidan.bidan.view.activity.NativeProfileDetailActivity;
 import org.ei.bidan.view.activity.ANCDetailActivity;
 import org.ei.bidan.view.activity.ChildDetailActivity;
 import org.ei.bidan.view.activity.EligibleCoupleDetailActivity;
@@ -40,7 +39,7 @@ public class ProfileNavigationController {
     }
 
     public static void navigateToKIProfile(Context context, String caseId) {
-        Intent intent = new Intent(context.getApplicationContext(), NativeDetailActivity.class);
+        Intent intent = new Intent(context.getApplicationContext(), NativeProfileDetailActivity.class);
         intent.putExtra(CASE_ID, caseId);
         context.startActivity(intent);
     }

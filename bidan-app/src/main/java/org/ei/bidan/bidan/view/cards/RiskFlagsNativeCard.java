@@ -1,18 +1,14 @@
 package org.ei.bidan.bidan.view.cards;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
-import org.ei.bidan.bidan.domain.Bidan;
-import org.ei.bidan.bidan.domain.KartuIbu;
 import org.ei.bidan.bidan.view.contract.BidanSmartRegisterClient;
-import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.util.StringUtil;
 
 import java.util.ArrayList;
@@ -45,24 +41,19 @@ public class RiskFlagsNativeCard extends CardWithList {
                 super.setupInnerViewElements(parent, view);
                 TextView subTitle = (TextView) view.findViewById(R.id.carddemo_googlenow_main_inner_lastupdate);
                 if(subTitle!=null) {
-                    subTitle.setText("Daftar resiko yang dimiliki");
+                    subTitle.setText(
+                            getContext().getResources().getString(R.string.risk_flags_subtitle));
                 }
             }
         };
 
-        header.setTitle("Resiko");
+        header.setTitle(getContext().getResources().getString(R.string.risk_flags_title));
         return header;
     }
 
     @Override
     protected void initCard() {
         setSwipeable(true);
-        setOnSwipeListener(new OnSwipeListener() {
-            @Override
-            public void onSwipe(Card card) {
-                Toast.makeText(getContext(), "Swipe on " + card.getCardHeader().getTitle(), Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override
@@ -73,28 +64,28 @@ public class RiskFlagsNativeCard extends CardWithList {
         for(String reason : bidanClient.highRiskReason()) {
             StockObject highRiskReason = new StockObject(this);
             highRiskReason.value = StringUtil.humanize(reason);
-            highRiskReason.subject = "high_risk";
+            highRiskReason.subject = AllConstants.HIGH_RISK;
             mObject.add(highRiskReason);
         }
 
         for(String reason1 : bidanClient.highPregnancyReason()) {
             StockObject highRiskPregnancyReason = new StockObject(this);
             highRiskPregnancyReason.value = StringUtil.humanize(reason1);
-            highRiskPregnancyReason.subject = "high_risk_pregnancy";
+            highRiskPregnancyReason.subject = AllConstants.HIGH_RISK_PREGNANCY;
             mObject.add(highRiskPregnancyReason);
         }
 
         for(String reason : bidanClient.highRiskLabourReason()) {
             StockObject highRiskLabourReason = new StockObject(this);
             highRiskLabourReason.value = StringUtil.humanize(reason);
-            highRiskLabourReason.subject = "high_risk_labour";
+            highRiskLabourReason.subject = AllConstants.HIGH_RISK_LABOUR;
             mObject.add(highRiskLabourReason);
         }
 
         for(String reason : bidanClient.highRiskPostPartumReason()) {
             StockObject hrReason = new StockObject(this);
             hrReason.value = reason;
-            hrReason.subject = "high_risk_post_partum";
+            hrReason.subject = AllConstants.HIGH_RISK_POST_PARTUM;
             mObject.add(hrReason);
         }
 
@@ -114,14 +105,21 @@ public class RiskFlagsNativeCard extends CardWithList {
         StockObject stockObject = (StockObject) listObject;
         textViewSubject.setText(stockObject.value);
 
-        if(stockObject.subject.equalsIgnoreCase("high_risk")) {
-            hrpBadge.setVisibility(View.VISIBLE);
-        } else if(stockObject.subject.equalsIgnoreCase("high_risk_labour")) {
-            rtpBadge.setVisibility(View.VISIBLE);
-        } else if(stockObject.subject.equalsIgnoreCase("high_risk_pregnancy")) {
-            rtkBadge.setVisibility(View.VISIBLE);
-        } else if(stockObject.subject.equalsIgnoreCase("high_risk_post_partum")) {
-            hrppBadge.setVisibility(View.VISIBLE);
+        switch (stockObject.subject) {
+            case AllConstants.HIGH_RISK :
+                hrpBadge.setVisibility(View.VISIBLE);
+                break;
+            case AllConstants.HIGH_RISK_LABOUR :
+                rtpBadge.setVisibility(View.VISIBLE);
+                break;
+            case AllConstants.HIGH_RISK_PREGNANCY :
+                rtkBadge.setVisibility(View.VISIBLE);
+                break;
+            case AllConstants.HIGH_RISK_POST_PARTUM :
+                hrppBadge.setVisibility(View.VISIBLE);
+                break;
+            default:
+                break;
         }
 
         return convertView;
@@ -147,7 +145,7 @@ public class RiskFlagsNativeCard extends CardWithList {
             setOnItemClickListener(new OnItemClickListener() {
                 @Override
                 public void onItemClick(LinearListView parent, View view, int position, ListObject object) {
-                    Toast.makeText(getContext(), getObjectId() + " : " + getValue(), Toast.LENGTH_SHORT).show();
+
                 }
             });
         }

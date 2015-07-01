@@ -4,22 +4,21 @@ import android.view.View;
 
 import com.flurry.android.FlurryAgent;
 
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.cards.DetailsNativeCard;
 import org.ei.bidan.bidan.view.cards.RiskFlagsNativeCard;
-import org.ei.bidan.bidan.view.controller.KIDetailController;
+import org.ei.bidan.bidan.view.controller.ProfileDetailController;
 import org.ei.bidan.view.activity.SecuredActivity;
-
-import java.util.List;
 
 import it.gmariotti.cardslib.library.view.CardViewNative;
 
 /**
  * Created by Dimas Ciputra on 6/19/15.
  */
-public class NativeDetailActivity extends SecuredActivity {
+public class NativeProfileDetailActivity extends SecuredActivity {
 
-    private KIDetailController kiDetailController;
+    private ProfileDetailController profileDetailController;
     private String caseId;
 
     private final NavBarActionsHandler navBarActionsHandler = new NavBarActionsHandler();
@@ -42,7 +41,7 @@ public class NativeDetailActivity extends SecuredActivity {
     private void initialize() {
 
         // Create a card
-        detailsCard = new DetailsNativeCard(this);
+        detailsCard = new DetailsNativeCard(this, controller().detailMap());
         detailsCard.setClient(controller().get());
         detailsCard.init();
 
@@ -82,17 +81,16 @@ public class NativeDetailActivity extends SecuredActivity {
 
     private String caseId() {
         if(caseId == null) {
-            caseId = (String) getIntent().getExtras().get("caseId");
+            caseId = (String) getIntent().getExtras().get(AllConstants.CASE_ID);
         }
         return caseId;
     }
 
-    private KIDetailController controller() {
-        if(kiDetailController == null) {
-            kiDetailController = new KIDetailController(this, caseId(), context.allKartuIbus(), context.allKohort());
+    private ProfileDetailController controller() {
+        if(profileDetailController == null) {
+            profileDetailController = new ProfileDetailController(caseId(), context.kartuIbuRegisterController(),
+                    context.allKartuIbus(), context.allKohort());
         }
-        return kiDetailController;
+        return profileDetailController;
     }
-
-
 }

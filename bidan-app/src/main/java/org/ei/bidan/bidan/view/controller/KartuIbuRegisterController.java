@@ -1,11 +1,6 @@
 package org.ei.bidan.bidan.view.controller;
 
-import android.util.Log;
-
-import com.google.common.base.Strings;
 import com.google.common.collect.Iterables;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import org.ei.bidan.AllConstants;
 import org.ei.bidan.bidan.domain.Anak;
@@ -19,18 +14,16 @@ import org.ei.bidan.bidan.repository.AllKartuIbus;
 import org.ei.bidan.util.Cache;
 import org.ei.bidan.util.CacheableData;
 import org.ei.bidan.util.EasyMap;
-import org.ei.bidan.util.IntegerUtil;
-import org.ei.bidan.view.contract.ECClient;
 import org.ei.bidan.view.contract.SmartRegisterClient;
-import org.ei.bidan.view.contract.SmartRegisterClients;
 import org.joda.time.LocalDate;
 
-import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
 import static java.util.Collections.sort;
 import static org.ei.bidan.AllConstants.KartuIbuFields.*;
 import static org.ei.bidan.AllConstants.KeluargaBerencanaFields.*;
+import static org.ei.bidan.AllConstants.KartuPNCFields.*;
+import static org.ei.bidan.AllConstants.KartuANCFields.*;
 
 /**
  * Created by Dimas Ciputra on 2/18/15.
@@ -56,31 +49,6 @@ public class KartuIbuRegisterController  extends CommonController{
         this.allKohort = allKohort;
     }
 
-    public String get() {
-        return cache.get(KI_CLIENTS_LIST, new CacheableData<String>() {
-            @Override
-            public String fetch() {
-                List<KartuIbu> kartuIbus = allKartuIbus.all();
-                KartuIbuClients kartuIbuClients = new KartuIbuClients();
-
-                for (KartuIbu kartuIbu : kartuIbus) {
-                    KartuIbuClient kartuIbuClient = new KartuIbuClient(kartuIbu.getCaseId(),
-                            kartuIbu.getDetail(PUSKESMAS_NAME), kartuIbu.getDetail(PROPINSI),
-                            kartuIbu.getDetail(KABUPATEN), kartuIbu.getDetail(POSYANDU_NAME),
-                            kartuIbu.getDetail(MOTHER_ADDRESS), kartuIbu.getDetail(MOTHER_NUMBER),
-                            kartuIbu.getDetail(MOTHER_NAME), kartuIbu.getDetail(MOTHER_AGE),
-                            kartuIbu.getDetail(MOTHER_BLOOD_TYPE),
-                            kartuIbu.getDetail(HUSBAND_NAME),
-                            kartuIbu.dusun());
-                    updateStatusInformation(kartuIbu, kartuIbuClient);
-                    kartuIbuClients.add(kartuIbuClient);
-                }
-                sortByName(kartuIbuClients);
-                return new Gson().toJson(kartuIbuClients);
-            }
-        });
-    }
-
     public KartuIbuClients getKartuIbuClients() {
         return kartuIbuClientsCache.get(KI_CLIENTS_LIST, new CacheableData<KartuIbuClients>() {
             @Override
@@ -89,7 +57,6 @@ public class KartuIbuRegisterController  extends CommonController{
                 KartuIbuClients kartuIbuClients = new KartuIbuClients();
 
                 for (KartuIbu kartuIbu : kartuIbus) {
-
                     KartuIbuClient kartuIbuClient = new KartuIbuClient(kartuIbu.getCaseId(),
                             kartuIbu.getDetail(PUSKESMAS_NAME), kartuIbu.getDetail(PROPINSI),
                             kartuIbu.getDetail(KABUPATEN), kartuIbu.getDetail(POSYANDU_NAME),
@@ -168,21 +135,21 @@ public class KartuIbuRegisterController  extends CommonController{
             kartuIbuClient.setIsInPNCorANC(true);
 
             kartuIbuClient.setChronicDisease(ibu.getDetail(CHRONIC_DISEASE));
-            kartuIbuClient.setrLila(ibu.getDetail(AllConstants.KartuANCFields.LILA_CHECK_RESULT));
-            kartuIbuClient.setrHbLevels(ibu.getDetail(AllConstants.KartuANCFields.HB_RESULT));
-            kartuIbuClient.setrTdDiastolik(ibu.getDetail(AllConstants.KartuPNCFields.VITAL_SIGNS_TD_DIASTOLIC));
-            kartuIbuClient.setrTdSistolik(ibu.getDetail(AllConstants.KartuPNCFields.VITAL_SIGNS_TD_SISTOLIC));
-            kartuIbuClient.setrBloodSugar(ibu.getDetail(AllConstants.KartuANCFields.SUGAR_BLOOD_LEVEL));
+            kartuIbuClient.setrLila(ibu.getDetail(LILA_CHECK_RESULT));
+            kartuIbuClient.setrHbLevels(ibu.getDetail(HB_RESULT));
+            kartuIbuClient.setrTdDiastolik(ibu.getDetail(VITAL_SIGNS_TD_DIASTOLIC));
+            kartuIbuClient.setrTdSistolik(ibu.getDetail(VITAL_SIGNS_TD_SISTOLIC));
+            kartuIbuClient.setrBloodSugar(ibu.getDetail(SUGAR_BLOOD_LEVEL));
             kartuIbuClient.setrAbortus(kartuIbu.getDetail(NUMBER_ABORTIONS));
             kartuIbuClient.setrPartus(kartuIbu.getDetail(NUMBER_PARTUS));
-            kartuIbuClient.setrPregnancyComplications(ibu.getDetail(AllConstants.KartuANCFields.COMPLICATION_HISTORY));
-            kartuIbuClient.setrFetusNumber(ibu.getDetail(AllConstants.KartuANCFields.FETUS_NUMBER));
-            kartuIbuClient.setrFetusSize(ibu.getDetail(AllConstants.KartuANCFields.FETUS_SIZE));
-            kartuIbuClient.setrFetusPosition(ibu.getDetail(AllConstants.KartuANCFields.FETUS_POSITION));
-            kartuIbuClient.setrPelvicDeformity(ibu.getDetail(AllConstants.KartuANCFields.PELVIC_DEFORMITY));
-            kartuIbuClient.setrHeight(ibu.getDetail(AllConstants.KartuANCFields.HEIGHT));
-            kartuIbuClient.setrDeliveryMethod(ibu.getDetail(AllConstants.KartuPNCFields.DELIVERY_METHOD));
-            kartuIbuClient.setLaborComplication(ibu.getDetail(AllConstants.KartuPNCFields.COMPLICATION));
+            kartuIbuClient.setrPregnancyComplications(ibu.getDetail(COMPLICATION_HISTORY));
+            kartuIbuClient.setrFetusNumber(ibu.getDetail(FETUS_NUMBER));
+            kartuIbuClient.setrFetusSize(ibu.getDetail(FETUS_SIZE));
+            kartuIbuClient.setrFetusPosition(ibu.getDetail(FETUS_POSITION));
+            kartuIbuClient.setrPelvicDeformity(ibu.getDetail(PELVIC_DEFORMITY));
+            kartuIbuClient.setrHeight(ibu.getDetail(HEIGHT));
+            kartuIbuClient.setrDeliveryMethod(ibu.getDetail(DELIVERY_METHOD));
+            kartuIbuClient.setLaborComplication(ibu.getDetail(COMPLICATION));
 
             if(ibu.isANC()) {
                 kartuIbuClient
@@ -201,11 +168,7 @@ public class KartuIbuRegisterController  extends CommonController{
     }
 
     public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {
-        String clients = this.get();
-        List<SmartRegisterClient> actualClients = new Gson().fromJson(clients, new TypeToken<List<KartuIbuClient>>() {
-        }.getType());
-
-        return onRandomNameChars(client, actualClients, allKartuIbus.randomDummyName(), AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
+        return onRandomNameChars(client, getKartuIbuClients(), allKartuIbus.randomDummyName(), AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
     }
 
 }

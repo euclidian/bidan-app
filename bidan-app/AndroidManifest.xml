@@ -203,11 +203,7 @@
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
 
         <activity
-            android:name="org.ei.bidan.bidan.view.activity.KIDetailActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
-
-        <activity
-            android:name="org.ei.bidan.bidan.view.activity.NativeDetailActivity"
+            android:name=".bidan.view.activity.NativeProfileDetailActivity"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
         </activity>

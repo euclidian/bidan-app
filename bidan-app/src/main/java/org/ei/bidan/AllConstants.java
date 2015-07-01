@@ -35,6 +35,11 @@ public class AllConstants {
     public static final String ZIGGY_FILE_LOADER = "ziggyFileLoader";
     public static final String FORM_SUBMISSION_ROUTER = "formSubmissionRouter";
     public static final String ANM_LOCATION_CONTROLLER = "anmLocationContext";
+
+    public static final String HIGH_RISK = "high_risk";
+    public static final String HIGH_RISK_PREGNANCY = "high_risk_pregnancy";
+    public static final String HIGH_RISK_LABOUR = "high_risk_labour";
+    public static final String HIGH_RISK_POST_PARTUM = "high_risk_post_partum";
     // Bidan Testh
     // public static final String FLURRY_KEY = "SNRSKHM2HK6XMFSYBR7Z";
     public static final String FLURRY_KEY = "HCZF47NFBDPXGJTZMQ7P";

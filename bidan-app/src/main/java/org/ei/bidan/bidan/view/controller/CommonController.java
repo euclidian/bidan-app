@@ -2,10 +2,12 @@ package org.ei.bidan.bidan.view.controller;
 
 import org.ei.bidan.util.StringUtil;
 import org.ei.bidan.view.contract.SmartRegisterClient;
+import org.ei.bidan.view.contract.SmartRegisterClients;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Dimas Ciputra on 5/20/15.
@@ -13,35 +15,30 @@ import java.util.List;
 public class CommonController {
 
     public CharSequence[] onRandomNameChars(final SmartRegisterClient client,
-                                            List<SmartRegisterClient> clients,
+                                            final List<SmartRegisterClient> smartRegisterClients,
                                             List<String> randomDummyName,
                                             int optionSize) {
 
         List<String> randomName = new ArrayList<String>();
 
-        // Shuffle clients array
-        Collections.shuffle(clients);
-
-        // If clients size array less than option dialog size
-        if(clients.size() < optionSize) {
-            randomName = randomDummyName.subList(0, optionSize - clients.size());
-        }
-
-        // Slice clients list
-        clients = clients.subList(0, optionSize - randomName.size());
-
-        // If the sliced clients not contain the current client then add it
-        if(!clients.contains(client)) {
-            clients =  clients.subList(0, clients.size()-1);
-            clients.add(client);
-        }
-
-        // Clients list to String list
-        for(int i = 0; i < clients.size(); i++) {
-            randomName.add(StringUtil.humanize(clients.get(i).name()));
+        for(SmartRegisterClient smartRegisterClient : smartRegisterClients) {
+            randomName.add(smartRegisterClient.name());
         }
 
         Collections.shuffle(randomName);
+
+        if(randomName.size() < optionSize) {
+            randomName.addAll(randomDummyName.subList(0, optionSize - randomName.size()));
+            return randomName.toArray(new CharSequence[randomName.size()]);
+        }
+
+        randomName = randomName.subList(0, optionSize);
+
+        if(!randomName.contains(client.name())) {
+            randomName = randomName.subList(0, optionSize-1);
+            Random random = new Random();
+            randomName.add(random.nextInt(optionSize),client.name());
+        }
 
         return randomName.toArray(new CharSequence[randomName.size()]);
     }
