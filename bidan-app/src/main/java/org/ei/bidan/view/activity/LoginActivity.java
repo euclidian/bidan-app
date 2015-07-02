@@ -24,6 +24,7 @@ import org.ei.bidan.bidan.view.activity.BidanHomeActivity;
 import org.ei.bidan.domain.LoginResponse;
 import org.ei.bidan.event.Listener;
 import org.ei.bidan.sync.DrishtiSyncScheduler;
+import org.ei.bidan.util.EasyMap;
 import org.ei.bidan.view.BackgroundAction;
 import org.ei.bidan.view.LockingBackgroundTask;
 import org.ei.bidan.view.ProgressIndicator;
@@ -31,6 +32,7 @@ import org.ei.bidan.view.ProgressIndicator;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
+import java.util.Map;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -118,8 +120,10 @@ public class LoginActivity extends Activity {
 
     private void localLogin(View view, String userName, String password) {
         if (context.userService().isValidLocalLogin(userName, password)) {
+            FlurryAgent.logEvent("local_login_success");
             localLoginWith(userName, password);
         } else {
+            FlurryAgent.logEvent("local_login_failed", EasyMap.create("username",userName).put("password",password).map());
             showErrorDialog(getString(R.string.login_failed_dialog_message));
             view.setClickable(true);
         }
@@ -129,11 +133,22 @@ public class LoginActivity extends Activity {
         tryRemoteLogin(userName, password, new Listener<LoginResponse>() {
             public void onEvent(LoginResponse loginResponse) {
                 if (loginResponse == SUCCESS) {
+                    FlurryAgent.logEvent("remote_login_success");
                     remoteLoginWith(userName, password, loginResponse.payload());
                 } else {
                     if (loginResponse == null) {
+                        FlurryAgent.logEvent("remote_login_failed",
+                                EasyMap.create("reason", "Unknown reason")
+                                        .put("username", userName)
+                                        .put("password", password)
+                                        .map());
                         showErrorDialog("Login failed. Unknown reason. Try Again");
                     } else {
+                        FlurryAgent.logEvent("remote_login_failed",
+                                EasyMap.create("reason", loginResponse.message())
+                                        .put("username", userName)
+                                        .put("password", password)
+                                        .map());
                         showErrorDialog(loginResponse.message());
                     }
                     view.setClickable(true);

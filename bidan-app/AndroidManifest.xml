@@ -138,7 +138,7 @@
         <activity
             android:name="org.ei.bidan.view.activity.FormActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Holo"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".view.activity.MicroFormActivity"
@@ -167,7 +167,7 @@
         <activity
             android:name=".bidan.view.activity.NativeKISmartRegisterActivity"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
 
         <activity
             android:name="org.ei.bidan.view.activity.NativePNCSmartRegisterActivity"
@@ -185,22 +185,22 @@
         <activity
             android:name="org.ei.bidan.bidan.view.activity.NativeKIANCSmartRegisterActivity"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
 
         <activity
             android:name="org.ei.bidan.bidan.view.activity.NativeKIPNCSmartRegisterActivity"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
 
         <activity
             android:name="org.ei.bidan.bidan.view.activity.NativeKIAnakSmartRegisterActivity"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
 
         <activity
             android:name="org.ei.bidan.bidan.view.activity.NativeKBSmartRegisterActivity"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
 
         <activity
             android:name=".bidan.view.activity.NativeProfileDetailActivity"

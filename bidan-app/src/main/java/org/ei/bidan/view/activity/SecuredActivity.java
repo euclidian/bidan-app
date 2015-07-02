@@ -12,6 +12,7 @@ import com.flurry.android.FlurryAgent;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.ei.bidan.util.EasyMap;
 import org.ei.bidan.view.controller.ANMController;
 import org.ei.bidan.view.controller.FormController;
 import org.ei.bidan.view.controller.NavigationController;

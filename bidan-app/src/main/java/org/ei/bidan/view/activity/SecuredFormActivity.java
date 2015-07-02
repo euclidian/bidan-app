@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.webkit.WebSettings;
 
+import com.flurry.android.FlurryAgent;
+
 import org.apache.commons.io.IOUtils;
 import org.ei.bidan.Context;
 import org.ei.bidan.R;
@@ -89,6 +91,7 @@ public abstract class SecuredFormActivity extends SecuredWebActivity {
 
     @Override
     public void onBackPressed() {
+        FlurryAgent.logEvent("on_back_button_pressed");
         new AlertDialog.Builder(this)
                 .setMessage(R.string.form_back_confirm_dialog_message)
                 .setTitle(R.string.form_back_confirm_dialog_title)
@@ -104,12 +107,14 @@ public abstract class SecuredFormActivity extends SecuredWebActivity {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,
                                                 int whichButton) {
+                                FlurryAgent.logEvent("canceled_back_to_dashboard");
                             }
                         })
                 .show();
     }
 
     private void goBack() {
+        FlurryAgent.logEvent("back_to_dashboard");
         super.onBackPressed();
     }
 }
