@@ -42,7 +42,7 @@
    <label class="note non-select ">
       <span lang="" class="question-label active">
          Umur ibu:
-         <span class="or-output" data-value=" /register_baby/umur " />
+         <span class="or-output" data-value=" /register_baby/umur_ibu " />
       </span>
       <input type="text" name="/register_baby/generated_note_name_14" data-type-xml="string" readonly="readonly" />
    </label>
@@ -736,7 +736,7 @@
                 data-type-xml="date" type="hidden" />
         </label>
       <label class="calculation non-select ">
-         <input type="hidden" name="/register_baby/umur" data-calculate="int(( /register_baby/today  -  /register_baby/tanggal_lahir_ibu ) div 365)" data-type-xml="string" />
+         <input type="hidden" name="/register_baby/umur_ibu" data-calculate="int(( /register_baby/today  -  /register_baby/tanggal_lahir_ibu ) div 365)" data-type-xml="string" />
       </label>
       <label class="calculation non-select ">
          <input type="hidden" name="/register_baby/Low_Birthweght_risk" data-calculate="if( /register_baby/berat_lahir  &gt;= 1500 and  /register_baby/berat_lahir  &lt; 2500, 'Berat badan rendah', (if ( /register_baby/berat_lahir  &lt; 1500, 'berat badan sangat rendah', '')))" data-type-xml="string" />

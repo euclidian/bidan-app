@@ -9,14 +9,6 @@
         "shouldLoadValue": true
       },
       {
-        "name": "motherId",
-        "source": "anak.ibu.id"
-      },
-      {
-        "name": "kiId",
-        "source": "anak.ibu.kartu_ibu.id"
-      },
-      {
         "name": "puskesmas",
         "bind": "/model/instance/register_baby/puskesmas",
         "source": "anak.ibu.kartu_ibu.puskesmas"
@@ -28,22 +20,22 @@
       },
       {
         "name": "namalengkap",
-        "bind": "/model/instance/register_baby/nama_lengkap",
+        "bind": "/model/instance/register_baby/nama_ibu",
         "source": "anak.ibu.kartu_ibu.namalengkap"
       },
       {
         "name": "namaSuami",
-        "bind": "/model/instance/register_baby/nama_suami",
+        "bind": "/model/instance/register_baby/nama_bapak",
         "source": "anak.ibu.kartu_ibu.namaSuami"
       },
       {
-        "name": "tanggalLahirIbu",
+        "name": "tanggalLahir",
         "bind": "/model/instance/register_baby/tanggal_lahir_ibu",
-        "source": "anak.ibu.kartu_ibu.tanggalLahirIbu"
+        "source": "anak.ibu.kartu_ibu.tanggalLahir"
       },
       {
         "name": "umur",
-        "bind": "/model/instance/register_baby/umur",
+        "bind": "/model/instance/register_baby/umur_ibu",
         "source": "anak.ibu.kartu_ibu.umur"
       },
       {
@@ -179,9 +171,17 @@
         "bind": "/model/instance/register_baby/is_high_risk_child"
       },
       {
-        "name": "isMotherClosed",
+        "name": "motherId",
+        "source": "anak.ibu.id"
+      },
+      {
+        "name": "kiId",
+        "source": "anak.ibu.kartu_ibu.id"
+      },
+      {
+        "name": "isClosed",
         "source": "anak.ibu.isClosed",
-        "value": true
+        "value": false
       },
       {
         "name": "isClosed",
