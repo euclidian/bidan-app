@@ -150,7 +150,6 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
     @Override
     protected void onInitialization() {
-        FlurryAgent.logEvent("kohort_ibu_dashboard");
         controller = new KartuIbuRegisterController(context.allKartuIbus(),
                 context.listCache(),context.kiClientsCache(),context.allKohort());
         villageController = new BidanVillageController(context.villagesCache(), context.allKartuIbus());
@@ -162,6 +161,18 @@ public class NativeKISmartRegisterActivity extends BidanSecuredNativeSmartRegist
         FlurryAgent.logEvent("new_registration");
         FieldOverrides fieldOverrides = new FieldOverrides(context.anmLocationController().getLocationJSON());
         startFormActivity(KARTU_IBU_REGISTRATION, null, fieldOverrides.getJSONString());
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FlurryAgent.logEvent("kohort_ibu_dashboard", true);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        FlurryAgent.endTimedEvent("kohort_ibu_dashboard");
     }
 
     private class ClientActionHandler implements View.OnClickListener {

@@ -12,6 +12,7 @@ import com.flurry.android.FlurryAgent;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.ei.bidan.util.EasyMap;
 import org.ei.bidan.view.controller.ANMController;
 import org.ei.bidan.view.controller.FormController;
 import org.ei.bidan.view.controller.NavigationController;
@@ -75,10 +76,12 @@ public abstract class SecuredActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            /*
             case R.id.switchLanguageMenuItem: {
                 String newLanguagePreference = context.userService().switchLanguagePreference();
                 Toast.makeText(this, "Language preference set to " + newLanguagePreference + ". Please restart the application.", LENGTH_SHORT).show();
             }
+            */
             default:
                 return super.onOptionsItemSelected(item);
         }

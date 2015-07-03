@@ -35,7 +35,7 @@ public class DrishtiApplication extends Application {
         FlurryAgent.setLogLevel(Log.VERBOSE);
 
         // init Flurry
-        //FlurryAgent.init(this, AllConstants.FLURRY_KEY);
+        FlurryAgent.init(this, AllConstants.FLURRY_KEY);
 
         context = Context.getInstance();
         context.updateApplicationContext(getApplicationContext());

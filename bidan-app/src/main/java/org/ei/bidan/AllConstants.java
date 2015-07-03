@@ -40,9 +40,11 @@ public class AllConstants {
     public static final String HIGH_RISK_PREGNANCY = "high_risk_pregnancy";
     public static final String HIGH_RISK_LABOUR = "high_risk_labour";
     public static final String HIGH_RISK_POST_PARTUM = "high_risk_post_partum";
-    // Bidan Testh
-    // public static final String FLURRY_KEY = "SNRSKHM2HK6XMFSYBR7Z";
-    public static final String FLURRY_KEY = "HCZF47NFBDPXGJTZMQ7P";
+
+    // Flurry Bidan Testing
+    public static final String FLURRY_KEY = "SNRSKHM2HK6XMFSYBR7Z";
+
+    // public static final String FLURRY_KEY = "HCZF47NFBDPXGJTZMQ7P";
 
     public static final String REPOSITORY = "formDataRepositoryContext";
 

@@ -5,6 +5,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.flurry.android.FlurryAgent;
+
 import org.ei.bidan.Context;
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.contract.BidanHomeContext;
@@ -111,6 +113,14 @@ public class BidanHomeActivity extends SecuredActivity {
         updateRemainingFormsToSyncCount();
     }
 
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if(hasFocus) {
+            FlurryAgent.logEvent("home_dashboard");
+        }
+    }
+
     private void updateRegisterCounts() {
         NativeUpdateBidanDetailsTask task = new NativeUpdateBidanDetailsTask(this, Context.getInstance().bidanController());
         task.fetch(new NativeAfterBidanDetailsFetchListener() {
@@ -154,6 +164,7 @@ public class BidanHomeActivity extends SecuredActivity {
     }
 
     public void updateFromServer() {
+        FlurryAgent.logEvent("clicked_update_from_server");
         UpdateActionsTask updateActionsTask = new UpdateActionsTask(
                 this, context.actionService(), context.formSubmissionSyncService(), new SyncProgressIndicator());
         updateActionsTask.updateFromServer(new SyncAfterFetchListener());

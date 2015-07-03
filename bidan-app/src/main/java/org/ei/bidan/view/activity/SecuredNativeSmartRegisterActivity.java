@@ -3,19 +3,27 @@ package org.ei.bidan.view.activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.database.DataSetObserver;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
 import com.flurry.android.FlurryAgent;
+import com.google.common.base.Strings;
 
+import org.ei.bidan.bidan.view.customControls.BidanEditText;
+import org.ei.bidan.util.EasyMap;
 import org.ei.bidan.util.StringUtil;
 import org.ei.bidan.view.dialog.DialogOption;
 import org.ei.bidan.view.dialog.EditOption;
@@ -50,7 +58,7 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
     private TextView serviceModeView;
     private TextView appliedVillageFilterView;
     private TextView appliedSortView;
-    private EditText searchView;
+    private BidanEditText searchView;
     private View searchCancelView;
     private TextView titleLabelView;
 
@@ -104,7 +112,20 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
 
     @Override
     protected void onCreation() {
+
         setContentView(R.layout.smart_register_activity);
+
+        View smartView = this.findViewById(android.R.id.content);
+
+        if (!(smartView instanceof BidanEditText)) {
+            smartView.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    hideSoftKeyboard();
+                    return false;
+                }
+            });
+        }
 
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
@@ -152,6 +173,14 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
         clientsProgressView = (ProgressBar) findViewById(R.id.client_list_progress);
         clientsView = (ListView) findViewById(R.id.list);
 
+        clientsView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                hideSoftKeyboard();
+                return false;
+            }
+        });
+
         setupStatusBarViews();
         paginationViewHandler.addPagination(clientsView);
 
@@ -197,11 +226,27 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
     }
 
     private void setupSearchView() {
-        searchView = (EditText) findViewById(R.id.edt_search);
+        searchView = (BidanEditText) findViewById(R.id.edt_search);
         searchView.setHint(navBarOptionsProvider.searchHint());
+        searchView.clearFocus();
+        searchView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    FlurryAgent.logEvent("search_view_selected");
+                } else {
+                    String searchText = searchView.getText().toString();
+                    if (!Strings.isNullOrEmpty(searchText)) {
+                        FlurryAgent.logEvent("searched_by_param",
+                                EasyMap.create("search_text", searchText).map());
+                    }
+                }
+            }
+        });
         searchView.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+
             }
 
             @Override
@@ -287,6 +332,7 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
     }
 
     protected void onServiceModeSelection(ServiceModeOption serviceModeOption) {
+        FlurryAgent.logEvent("service_mode_by_" + serviceModeOption.name().replace(" ", "_").toLowerCase());
         currentServiceModeOption = serviceModeOption;
         serviceModeView.setText(serviceModeOption.name());
         clientsAdapter
@@ -297,6 +343,7 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
     }
 
     protected void onSortSelection(SortOption sortBy) {
+        FlurryAgent.logEvent("sorted_by_" + sortBy.name().replace(" ", "_").toLowerCase());
         currentSortOption = sortBy;
         appliedSortView.setText(sortBy.name());
         clientsAdapter
@@ -305,6 +352,7 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
     }
 
     protected void onFilterSelection(FilterOption filter) {
+        FlurryAgent.logEvent("filtered_by_" + filter.name().replace(" ", "_").toLowerCase());
         currentVillageFilter = filter;
         appliedVillageFilterView.setText(filter.name());
         clientsAdapter
@@ -313,43 +361,49 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
     }
 
     protected void onShowDialogOptionSelection(final EditOption editOption, final SmartRegisterClient client, final CharSequence[] charSequences) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.title_double_selection);
-
-        FlurryAgent.logEvent("double_selection_dialog");
-
-        builder.setItems(charSequences, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if ((charSequences[which]).toString().toLowerCase().equals(client.name().toLowerCase())) {
-                    onEditSelection(editOption, client);
-                    FlurryAgent.logEvent("success_double_selection_dialog");
-                } else {
-                    FlurryAgent.logEvent("fail_double_selection_dialog");
-                }
-            }
-        });
-        builder.show();
+        showDoubleSelectionDialog(editOption, client, charSequences, null);
     }
 
     protected void onShowDialogOptionSelectionWithMetadata(final EditOption editOption, final SmartRegisterClient client, final CharSequence[] charSequences, final String metadata) {
+        showDoubleSelectionDialog(editOption, client, charSequences, metadata);
+    }
+
+    protected void showDoubleSelectionDialog(final EditOption editOption, final SmartRegisterClient client, final CharSequence[] charSequences, final String metadata) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.title_double_selection);
 
-        FlurryAgent.logEvent("double_selection_dialog_with_metadata");
+        FlurryAgent.logEvent(editOption.name().replace(" ", "_").toLowerCase(), EasyMap.create("nama", client.name()).put("id", client.entityId()).map());
+
+        FlurryAgent.logEvent("on_double_selection_dialog_showed");
 
         builder.setItems(charSequences, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if ((charSequences[which]).toString().toLowerCase().equals(client.name().toLowerCase())) {
-                    onEditSelectionWithMetadata(editOption, client, metadata);
-                    FlurryAgent.logEvent("success_double_selection_dialog_with_metadata");
+                    FlurryAgent.logEvent("success_on_double_selection_dialog");
+                    if (Strings.isNullOrEmpty(metadata)) {
+                        onEditSelection(editOption, client);
+                    } else {
+                        onEditSelectionWithMetadata(editOption, client, metadata);
+                    }
                 } else {
-                    FlurryAgent.logEvent("fail_double_selection_dialog_with_metadata");
+                    FlurryAgent.logEvent("fail_on_double_selection_dialog",
+                            EasyMap.create("selected_name", (charSequences[which]).toString())
+                                    .put("name", client.name())
+                                    .map());
                 }
             }
         });
-        builder.show();
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                FlurryAgent.logEvent("double_selection_dialog_dismissed");
+            }
+        });
+
+        alertDialog.show();
     }
 
     protected void onEditSelection(EditOption editOption, SmartRegisterClient client) {
@@ -489,7 +543,7 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
 
         private void goBackToPreviousPage() {
             clientsAdapter.previousPage();
-            FlurryAgent.logEvent("go_previous_page");
+            FlurryAgent.logEvent("go_back_previous_page");
             clientsAdapter.notifyDataSetChanged();
         }
     }
@@ -528,10 +582,23 @@ public abstract class SecuredNativeSmartRegisterActivity extends SecuredActivity
         @Override
         public void onClick(View view) {
             clearSearchText();
+            FlurryAgent.logEvent("cleared_search_view");
         }
 
         private void clearSearchText() {
             searchView.setText("");
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        FlurryAgent.logEvent("back_to_home");
+        super.onBackPressed();
+    }
+
+    public void hideSoftKeyboard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) this.getSystemService(this.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), 0);
+        this.getCurrentFocus().clearFocus();
     }
 }
