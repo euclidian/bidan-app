@@ -754,4 +754,6 @@
     <string name="detail_subtitle">Daftar resiko yang dimiliki</string>
     <string name="risk_flags_subtitle">Daftar resiko yang dimiliki</string>
     <string name="risk_flags_title">Resiko</string>
+
+    <string name="show_more_button">Lihat lebih...</string>
 </resources>

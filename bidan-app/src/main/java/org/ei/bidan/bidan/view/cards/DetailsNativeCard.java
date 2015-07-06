@@ -95,7 +95,7 @@ public class DetailsNativeCard extends CardWithList {
             cObjects = cObjects.subList(0, pivotList);
 
             DetailListObject stockObject1 = new DetailListObject(this);
-            stockObject1.clickableText = "Show more...";
+            stockObject1.clickableText = org.ei.bidan.Context.getInstance().getStringResource(R.string.show_more_button);
             ShowMoreButtonListener itemClickListener = new ShowMoreButtonListener(pivotList, mObjects);
             stockObject1.setOnItemClickListener(itemClickListener);
             cObjects.add(stockObject1);
