@@ -414,4 +414,28 @@ public class AnakClient extends BidanSmartRegisterClient{
         return reason;
     }
 
+    public boolean isHbSevenDone() {
+        return !isBlank(hb07);
+    }
+
+    public boolean isBcgDone() {
+        return !isBlank(bcgPol1);
+    }
+
+    public boolean isDpt1Done() {
+        return !isBlank(dptHb1Pol2);
+    }
+
+    public boolean isDpt2Done() {
+        return !isBlank(dptHb2Pol3);
+    }
+
+    public boolean isDpt3Done() {
+        return !isBlank(dptHb3Pol4);
+    }
+
+    public boolean isCampakDone() {
+        return !isBlank(campak);
+    }
+
 }

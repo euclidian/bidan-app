@@ -567,9 +567,9 @@
 
     <string name="child_register_title_in_short">Child:</string>
     <string name="child_service_mode_overview">Overview</string>
-    <string name="child_service_mode_immunization">Immunization</string>
-    <string name="child_service_mode_immunization_0_to_9">Immunization 0-9</string>
-    <string name="child_service_mode_immunization_9_plus">Immunization 9+</string>
+    <string name="child_service_mode_immunization">Imunisasi</string>
+    <string name="child_service_mode_immunization_0_to_9">Imunisasi 0-9</string>
+    <string name="child_service_mode_immunization_9_plus">Imunisasi 9+</string>
     <string name="header_id_no">ID NO</string>
     <string name="header_sick_status">SICK STATUS</string>
     <string name="header_bcg">BCG</string>
@@ -613,7 +613,7 @@
     <string name="illness_report"><b>Illness Report:</b> %s</string>
     <string name="illness_date">Date:</string>
     <string name="str_bcg">BCG</string>
-    <string name="str_bcg_on">On</string>
+    <string name="str_bcg_on">Pada</string>
     <string name="hep_b_birth">Hep B</string>
     <string name="opv">OPV</string>
     <string name="tt">TT</string>

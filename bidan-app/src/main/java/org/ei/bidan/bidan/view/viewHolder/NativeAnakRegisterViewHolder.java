@@ -28,13 +28,6 @@ public class NativeAnakRegisterViewHolder {
     private final TextView txtLastServiceDate;
     private final TextView txtLastServiceName;
 
-    private final TextView hb07;
-    private final TextView bcgPolio1;
-    private final TextView dptHb1Polio2;
-    private final TextView dptHb2Polio3;
-    private final TextView dptHb3Polio4;
-    private final TextView campak;
-
     // Overview Service Mode
     private final TextView txtVisitDate;
     private final TextView txtCurrentWeight;
@@ -50,6 +43,43 @@ public class NativeAnakRegisterViewHolder {
     private final ImageView immuniHBFalseIcon;
     private final ImageView vitKFalseIcon;
     private final ImageView slepMataFalseIcon;
+
+    // Immunization
+    private final ViewGroup layoutHb07;
+    private final TextView txtHb07PendingView;
+    private final View layoutHb07On;
+    private final TextView txtHb07DoneOn;
+    private final TextView txtHb07Done;
+
+    private final ViewGroup layoutBcg;
+    private final TextView txtBcgPendingView;
+    private final View layoutBcgOn;
+    private final TextView txtBcgDoneOn;
+    private final TextView txtBcgDone;
+
+    private final ViewGroup layoutDpt1;
+    private final TextView txtDpt1PendingView;
+    private final View layoutDpt1On;
+    private final TextView txtDpt1DoneOn;
+    private final TextView txtDpt1Done;
+
+    private final ViewGroup layoutDpt2;
+    private final TextView txtDpt2PendingView;
+    private final View layoutDpt2On;
+    private final TextView txtDpt2DoneOn;
+    private final TextView txtDpt2Done;
+
+    private final ViewGroup layoutDpt3;
+    private final TextView txtDpt3PendingView;
+    private final View layoutDpt3On;
+    private final TextView txtDpt3DoneOn;
+    private final TextView txtDpt3Done;
+
+    private final ViewGroup layoutCampak;
+    private final TextView txtCampakPendingView;
+    private final View layoutCampakOn;
+    private final TextView txtCampakDoneOn;
+    private final TextView txtCampakDone;
 
     public NativeAnakRegisterViewHolder(ViewGroup itemView) {
         profileViewLayout = (BidanClientProfileView) itemView.findViewById(R.id.profile_info_layout);
@@ -73,13 +103,6 @@ public class NativeAnakRegisterViewHolder {
         txtBirthWeight = (TextView) serviceModeOverviewView.findViewById(R.id.berat_lahir);
         txtBirthCondition = (TextView) serviceModeOverviewView.findViewById(R.id.tipe_lahir);
 
-        hb07 = (TextView) serviceModeImmunizationView.findViewById(R.id.hb_0_7);
-        bcgPolio1 = (TextView) serviceModeImmunizationView.findViewById(R.id.bcg_polio1);
-        dptHb1Polio2 = (TextView) serviceModeImmunizationView.findViewById(R.id.dpt_hb1_polio2);
-        dptHb2Polio3 = (TextView) serviceModeImmunizationView.findViewById(R.id.dpt_hb2_polio3);
-        dptHb3Polio4 = (TextView) serviceModeImmunizationView.findViewById(R.id.dpt_hb3_polio4);
-        campak = (TextView) serviceModeImmunizationView.findViewById(R.id.campak);
-
         birthPlace = (TextView) serviceModeOverviewView.findViewById(R.id.tempat_lahir);
 
         imdTrueIcon = (ImageView) serviceModeOverviewView.findViewById(R.id.icon_imd_yes);
@@ -94,6 +117,42 @@ public class NativeAnakRegisterViewHolder {
 
         txtCurrentWeight = (TextView) serviceModeOverviewView.findViewById(R.id.txt_current_weight);
         txtVisitDate = (TextView) serviceModeOverviewView.findViewById(R.id.txt_visit_date);
+
+        layoutHb07 = (ViewGroup) itemView.findViewById(R.id.layout_hb07);
+        txtHb07PendingView = (TextView) layoutHb07.findViewById(R.id.txt_immunization_pending);
+        layoutHb07On = layoutHb07.findViewById(R.id.layout_immunization_on);
+        txtHb07Done = (TextView) layoutHb07On.findViewById(R.id.txt_immunization_done);
+        txtHb07DoneOn = (TextView) layoutHb07On.findViewById(R.id.txt_immunization_on);
+
+        layoutBcg = (ViewGroup) itemView.findViewById(R.id.layout_bcg);
+        txtBcgPendingView = (TextView) layoutBcg.findViewById(R.id.txt_immunization_pending);
+        layoutBcgOn = layoutBcg.findViewById(R.id.layout_immunization_on);
+        txtBcgDone = (TextView) layoutBcg.findViewById(R.id.txt_immunization_done);
+        txtBcgDoneOn = (TextView) layoutBcg.findViewById(R.id.txt_immunization_on);
+
+        layoutDpt1 = (ViewGroup) itemView.findViewById(R.id.layout_dpt_hb1_polio2);
+        txtDpt1PendingView = (TextView) layoutDpt1.findViewById(R.id.txt_immunization_pending);
+        layoutDpt1On = layoutDpt1.findViewById(R.id.layout_immunization_on);
+        txtDpt1Done = (TextView) layoutDpt1.findViewById(R.id.txt_immunization_done);
+        txtDpt1DoneOn = (TextView) layoutDpt1.findViewById(R.id.txt_immunization_on);
+
+        layoutDpt2 = (ViewGroup) itemView.findViewById(R.id.layout_dpt_hb2_polio3);
+        txtDpt2PendingView = (TextView) layoutDpt2.findViewById(R.id.txt_immunization_pending);
+        layoutDpt2On = layoutDpt2.findViewById(R.id.layout_immunization_on);
+        txtDpt2Done = (TextView) layoutDpt2.findViewById(R.id.txt_immunization_done);
+        txtDpt2DoneOn = (TextView) layoutDpt2.findViewById(R.id.txt_immunization_on);
+
+        layoutDpt3 = (ViewGroup) itemView.findViewById(R.id.layout_dpt_hb3_polio4);
+        txtDpt3PendingView = (TextView) layoutDpt3.findViewById(R.id.txt_immunization_pending);
+        layoutDpt3On = layoutDpt3.findViewById(R.id.layout_immunization_on);
+        txtDpt3Done = (TextView) layoutDpt3.findViewById(R.id.txt_immunization_done);
+        txtDpt3DoneOn = (TextView) layoutDpt3.findViewById(R.id.txt_immunization_on);
+
+        layoutCampak = (ViewGroup) itemView.findViewById(R.id.layout_campak);
+        txtCampakPendingView = (TextView) layoutCampak.findViewById(R.id.txt_immunization_pending);
+        layoutCampakOn = layoutCampak.findViewById(R.id.layout_immunization_on);
+        txtCampakDone = (TextView) layoutCampak.findViewById(R.id.txt_immunization_done);
+        txtCampakDoneOn = (TextView) layoutCampak.findViewById(R.id.txt_immunization_on);
     }
 
     public void hideAllServiceModeOptions() {
@@ -149,30 +208,6 @@ public class NativeAnakRegisterViewHolder {
         return txtLastServiceName;
     }
 
-    public TextView getHb07() {
-        return hb07;
-    }
-
-    public TextView getBcgPolio1() {
-        return bcgPolio1;
-    }
-
-    public TextView getDptHb1Polio2() {
-        return dptHb1Polio2;
-    }
-
-    public TextView getDptHb2Polio3() {
-        return dptHb2Polio3;
-    }
-
-    public TextView getDptHb3Polio4() {
-        return dptHb3Polio4;
-    }
-
-    public TextView getCampak() {
-        return campak;
-    }
-
     public TextView getTxtVisitDate() {
         return txtVisitDate;
     }
@@ -215,5 +250,119 @@ public class NativeAnakRegisterViewHolder {
 
     public ImageView getSlepMataFalseIcon() {
         return slepMataFalseIcon;
+    }
+
+    public TextView getTxtHb07PendingView() { return txtHb07PendingView; }
+
+    public View getLayoutHb07On() { return layoutHb07On; }
+
+    public TextView getTxtHb07DoneOn() { return txtHb07DoneOn; }
+
+    public TextView getTxtHb07Done() {
+        return txtHb07Done;
+    }
+
+    public ViewGroup getLayoutHb07() {
+        return layoutHb07;
+    }
+
+    public ViewGroup getLayoutBcg() {
+        return layoutBcg;
+    }
+
+    public TextView getTxtBcgPendingView() {
+        return txtBcgPendingView;
+    }
+
+    public View getLayoutBcgOn() {
+        return layoutBcgOn;
+    }
+
+    public TextView getTxtBcgDoneOn() {
+        return txtBcgDoneOn;
+    }
+
+    public TextView getTxtBcgDone() {
+        return txtBcgDone;
+    }
+
+    public ViewGroup getLayoutDpt1() {
+        return layoutDpt1;
+    }
+
+    public TextView getTxtDpt1PendingView() {
+        return txtDpt1PendingView;
+    }
+
+    public View getLayoutDpt1On() {
+        return layoutDpt1On;
+    }
+
+    public TextView getTxtDpt1DoneOn() {
+        return txtDpt1DoneOn;
+    }
+
+    public TextView getTxtDpt1Done() {
+        return txtDpt1Done;
+    }
+
+    public ViewGroup getLayoutDpt2() {
+        return layoutDpt2;
+    }
+
+    public TextView getTxtDpt2PendingView() {
+        return txtDpt2PendingView;
+    }
+
+    public View getLayoutDpt2On() {
+        return layoutDpt2On;
+    }
+
+    public TextView getTxtDpt2DoneOn() {
+        return txtDpt2DoneOn;
+    }
+
+    public TextView getTxtDpt2Done() {
+        return txtDpt2Done;
+    }
+
+    public ViewGroup getLayoutDpt3() {
+        return layoutDpt3;
+    }
+
+    public TextView getTxtDpt3PendingView() {
+        return txtDpt3PendingView;
+    }
+
+    public View getLayoutDpt3On() {
+        return layoutDpt3On;
+    }
+
+    public TextView getTxtDpt3DoneOn() {
+        return txtDpt3DoneOn;
+    }
+
+    public TextView getTxtDpt3Done() {
+        return txtDpt3Done;
+    }
+
+    public ViewGroup getLayoutCampak() {
+        return layoutCampak;
+    }
+
+    public TextView getTxtCampakPendingView() {
+        return txtCampakPendingView;
+    }
+
+    public View getLayoutCampakOn() {
+        return layoutCampakOn;
+    }
+
+    public TextView getTxtCampakDoneOn() {
+        return txtCampakDoneOn;
+    }
+
+    public TextView getTxtCampakDone() {
+        return txtCampakDone;
     }
 }
