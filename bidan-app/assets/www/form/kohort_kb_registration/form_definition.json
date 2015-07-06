@@ -60,18 +60,12 @@
                 "name": "desa",
                 "bind": "/model/instance/register_kb/desa"
             },
-            {
-                "name": "desal",
-                "bind": "/model/instance/register_kb/desal"
-            },
+            
             {
                 "name": "dusun",
                 "bind": "/model/instance/register_kb/dusun"
             },
-            {
-                "name": "dusunl",
-                "bind": "/model/instance/register_kb/dusunl"
-            },
+            
             {
                 "name": "pendidikan",
                 "bind": "/model/instance/register_kb/pendidikan"

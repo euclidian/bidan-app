@@ -23,10 +23,12 @@
 			<kabupaten>Lombok Tengah</kabupaten>
 			<kecamatan />
 			<kecamatanl />
-			<desa />
-			<desal />
-			<dusun />
-			<dusunl />
+			<desa1 />
+          <desa2 />
+          <desa />
+          <dusun1 />
+          <dusun2 />
+          <dusun />
 			<pendidikan />
 			<agama />
 			<pekerjaan>Ibu rumah tangga</pekerjaan>

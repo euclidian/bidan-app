@@ -66,18 +66,12 @@
         "name": "desa",
         "bind": "/model/instance/Register_ANC/desa"
       },
-      {
-        "name": "desal",
-        "bind": "/model/instance/Register_ANC/desal"
-      },
+     
       {
         "name": "dusun",
         "bind": "/model/instance/Register_ANC/dusun"
       },
-      {
-        "name": "dusunl",
-        "bind": "/model/instance/Register_ANC/dusunl"
-      },
+     
       {
         "name": "pendidikan",
         "bind": "/model/instance/Register_ANC/pendidikan"

@@ -110,9 +110,9 @@
       <input type="text" name="/Register_ANC/kecamatanl" data-relevant=" /Register_ANC/kabupaten ='Lombok Barat' or  /Register_ANC/kabupaten ='Lombok Timur' or  /Register_ANC/kecamatan ='Lainnya'" data-type-xml="string" />
    </label>
    <label class="question or-appearance-minimal  or-branch pre-init ">
-      <span lang="" class="question-label active">desa</span>
-      <span lang="" class="or-hint active">Desa tempat tinggal Ibu</span>
-      <select name="/Register_ANC/desa" data-name="/Register_ANC/desa" data-relevant=" /Register_ANC/kabupaten ='Lombok Tengah' and  /Register_ANC/kecamatan  != 'Lainnya'" data-type-xml="select1">
+      <span lang="" class="question-label active">Desa</span>
+      <span lang="" class="or-hint active">desa Tempat tinggal Ibu</span>
+      <select name="/Register_ANC/desa1" data-name="/Register_ANC/desa1" data-relevant=" /Register_ANC/kabupaten ='Lombok Tengah' and  /Register_ANC/kecamatan  != 'Lainnya'" data-type-xml="select1">
          <option class="itemset-template" value="" data-items-path="instance('desa')/root/item[kecamatan= /Register_ANC/kecamatan ]">...</option>
       </select>
       <span class="or-option-translations" style="display:none;" />
@@ -150,15 +150,15 @@
       </span>
    </label>
    <label class="question or-branch pre-init non-select ">
-      <span lang="" class="question-label active">desa</span>
-      <span lang="" class="or-hint active">Desa tempat tinggal Ibu</span>
-      <input type="text" name="/Register_ANC/desal" data-relevant=" /Register_ANC/kabupaten ='Lombok Barat' or  /Register_ANC/kabupaten ='Lombok Timur' or  /Register_ANC/kecamatan ='Lainnya' or  /Register_ANC/desa ='Lainnya'" data-type-xml="string" />
+      <span lang="" class="question-label active">Desa</span>
+      <span lang="" class="or-hint active">desa Tempat tinggal Ibu</span>
+      <input type="text" name="/Register_ANC/desa2" data-relevant=" /Register_ANC/kabupaten ='Lombok Barat' or  /Register_ANC/kabupaten ='Lombok Timur' or  /Register_ANC/kecamatan ='Lainnya' or  /Register_ANC/desa1 ='Lainnya'" data-type-xml="string" />
    </label>
    <label class="question or-appearance-minimal  or-branch pre-init ">
-      <span lang="" class="question-label active">dusun</span>
-      <span lang="" class="or-hint active">Dusun tempat tinggal Ibu</span>
-      <select name="/Register_ANC/dusun" data-name="/Register_ANC/dusun" data-relevant=" /Register_ANC/kabupaten ='Lombok Tengah' and  /Register_ANC/kecamatan  != 'Lainnya'" data-type-xml="select1">
-         <option class="itemset-template" value="" data-items-path="instance('dusun')/root/item[kecamatan= /Register_ANC/kecamatan  and desa= /Register_ANC/desa ]">...</option>
+      <span lang="" class="question-label active">Dusun</span>
+      <span lang="" class="or-hint active">dusun Tempat tinggal Ibu</span>
+      <select name="/Register_ANC/dusun1" data-name="/Register_ANC/dusun1" data-relevant=" /Register_ANC/kabupaten ='Lombok Tengah' and  /Register_ANC/kecamatan  != 'Lainnya'" data-type-xml="select1">
+         <option class="itemset-template" value="" data-items-path="instance('dusun')/root/item[kecamatan= /Register_ANC/kecamatan  and desa= /Register_ANC/desa1 ]">...</option>
       </select>
       <span class="or-option-translations" style="display:none;" />
       <span class="itemset-labels" data-value-ref="name" data-label-type="itext" data-label-ref="itextId">
@@ -506,9 +506,9 @@
       </span>
    </label>
    <label class="question or-branch pre-init non-select ">
-      <span lang="" class="question-label active">dusun</span>
-      <span lang="" class="or-hint active">Dusun tempat tinggal Ibu</span>
-      <input type="text" name="/Register_ANC/dusunl" data-relevant=" /Register_ANC/kabupaten ='Lombok Barat' or  /Register_ANC/kabupaten ='Lombok Timur' or  /Register_ANC/kecamatan ='Lainnya' or  /Register_ANC/desa ='Lainnya' or  /Register_ANC/dusun ='Lainnya'" data-type-xml="string" />
+      <span lang="" class="question-label active">Dusun</span>
+      <span lang="" class="or-hint active">dusun Tempat tinggal Ibu</span>
+      <input type="text" name="/Register_ANC/dusun2" data-relevant=" /Register_ANC/kabupaten ='Lombok Barat' or  /Register_ANC/kabupaten ='Lombok Timur' or  /Register_ANC/kecamatan ='Lainnya' or  /Register_ANC/desa1 ='Lainnya' or  /Register_ANC/dusun1 ='Lainnya'" data-type-xml="string" />
    </label>
    <label class="question or-appearance-minimal ">
       <span lang="" class="question-label active">Pendidikan</span>
@@ -1921,6 +1921,12 @@
       </label>
    </fieldset>
    <fieldset id="or-calculated-items" style="display:none;">
+   <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/desa" data-calculate="if(( /Register_ANC/desa1  != '' and  /Register_ANC/desa1  != 'Lainnya'),  /Register_ANC/desa1 ,  /Register_ANC/desa2 )" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/Register_ANC/dusun" data-calculate="if(( /Register_ANC/dusun1  != '' and  /Register_ANC/dusun1  != 'Lainnya'),  /Register_ANC/dusun1 ,  /Register_ANC/dusun2 )" data-type-xml="string" />
+      </label>
    <label class="calculation non-select ">
          <input autocomplete="off" type="hidden" name="/Register_ANC/reg_date" data-calculate=" /Register_ANC/today " data-type-xml="date" />
       </label>

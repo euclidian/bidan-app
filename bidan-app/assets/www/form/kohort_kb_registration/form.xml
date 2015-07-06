@@ -106,9 +106,9 @@
       <input type="text" name="/register_kb/kecamatanl" data-relevant=" /register_kb/kabupaten ='Lombok Barat' or  /register_kb/kabupaten ='Lombok Timur' or  /register_kb/kecamatan ='Lainnya'" data-type-xml="string" />
    </label>
    <label class="question or-appearance-minimal  or-branch pre-init ">
-      <span lang="" class="question-label active">desa</span>
+      <span lang="" class="question-label active">Desa</span>
       <span lang="" class="or-hint active">desa Tempat tinggal Ibu</span>
-      <select name="/register_kb/desa" data-name="/register_kb/desa" data-relevant=" /register_kb/kabupaten ='Lombok Tengah' and  /register_kb/kecamatan  != 'Lainnya'" data-type-xml="select1">
+      <select name="/register_kb/desa1" data-name="/register_kb/desa1" data-relevant=" /register_kb/kabupaten ='Lombok Tengah' and  /register_kb/kecamatan  != 'Lainnya'" data-type-xml="select1">
          <option class="itemset-template" value="" data-items-path="instance('desa')/root/item[kecamatan= /register_kb/kecamatan ]">...</option>
       </select>
       <span class="or-option-translations" style="display:none;" />
@@ -146,15 +146,15 @@
       </span>
    </label>
    <label class="question or-branch pre-init non-select ">
-      <span lang="" class="question-label active">desa</span>
+      <span lang="" class="question-label active">Desa</span>
       <span lang="" class="or-hint active">desa Tempat tinggal Ibu</span>
-      <input type="text" name="/register_kb/desal" data-relevant=" /register_kb/kabupaten ='Lombok Barat' or  /register_kb/kabupaten ='Lombok Timur' or  /register_kb/kecamatan ='Lainnya' or  /register_kb/desa ='Lainnya'" data-type-xml="string" />
+      <input type="text" name="/register_kb/desa2" data-relevant=" /register_kb/kabupaten ='Lombok Barat' or  /register_kb/kabupaten ='Lombok Timur' or  /register_kb/kecamatan ='Lainnya' or  /register_kb/desa1 ='Lainnya'" data-type-xml="string" />
    </label>
    <label class="question or-appearance-minimal  or-branch pre-init ">
-      <span lang="" class="question-label active">dusun</span>
+      <span lang="" class="question-label active">Dusun</span>
       <span lang="" class="or-hint active">dusun Tempat tinggal Ibu</span>
-      <select name="/register_kb/dusun" data-name="/register_kb/dusun" data-relevant=" /register_kb/kabupaten ='Lombok Tengah' and  /register_kb/kecamatan  != 'Lainnya'" data-type-xml="select1">
-         <option class="itemset-template" value="" data-items-path="instance('dusun')/root/item[kecamatan= /register_kb/kecamatan  and desa= /register_kb/desa ]">...</option>
+      <select name="/register_kb/dusun1" data-name="/register_kb/dusun1" data-relevant=" /register_kb/kabupaten ='Lombok Tengah' and  /register_kb/kecamatan  != 'Lainnya'" data-type-xml="select1">
+         <option class="itemset-template" value="" data-items-path="instance('dusun')/root/item[kecamatan= /register_kb/kecamatan  and desa= /register_kb/desa1 ]">...</option>
       </select>
       <span class="or-option-translations" style="display:none;" />
       <span class="itemset-labels" data-value-ref="name" data-label-type="itext" data-label-ref="itextId">
@@ -502,9 +502,9 @@
       </span>
    </label>
    <label class="question or-branch pre-init non-select ">
-      <span lang="" class="question-label active">dusun</span>
+      <span lang="" class="question-label active">Dusun</span>
       <span lang="" class="or-hint active">dusun Tempat tinggal Ibu</span>
-      <input type="text" name="/register_kb/dusunl" data-relevant=" /register_kb/kabupaten ='Lombok Barat' or  /register_kb/kabupaten ='Lombok Timur' or  /register_kb/kecamatan ='Lainnya' or  /register_kb/desa ='Lainnya' or  /register_kb/dusun ='Lainnya'" data-type-xml="string" />
+      <input type="text" name="/register_kb/dusun2" data-relevant=" /register_kb/kabupaten ='Lombok Barat' or  /register_kb/kabupaten ='Lombok Timur' or  /register_kb/kecamatan ='Lainnya' or  /register_kb/desa1 ='Lainnya' or  /register_kb/dusun1 ='Lainnya'" data-type-xml="string" />
    </label>
    <label class="question or-appearance-minimal ">
       <span lang="" class="question-label active">Pendidikan</span>
@@ -790,6 +790,12 @@
       </label>
    </fieldset>
    <fieldset id="or-calculated-items" style="display:none;">
+   <label class="calculation non-select ">
+         <input type="hidden" name="/register_kb/desa" data-calculate="if(( /register_kb/desa1  != '' and  /register_kb/desa1  != 'Lainnya'),  /register_kb/desa1 ,  /register_kb/desa2 )" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/register_kb/dusun" data-calculate="if(( /register_kb/dusun1  != '' and  /register_kb/dusun1  != 'Lainnya'),  /register_kb/dusun1 ,  /register_kb/dusun2 )" data-type-xml="string" />
+      </label>
     <label class="calculation non-select ">
          <input autocomplete="off" type="hidden" name="/register_kb/reg_date" data-calculate=" /register_kb/today " data-type-xml="date" />
       </label>

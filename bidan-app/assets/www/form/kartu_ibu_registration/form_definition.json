@@ -56,18 +56,12 @@
         "name": "desa",
         "bind": "/model/instance/kartu_ibu/desa"
       },
-      {
-        "name": "desal",
-        "bind": "/model/instance/kartu_ibu/desal"
-      },
+    
       {
         "name": "dusun",
         "bind": "/model/instance/kartu_ibu/dusun"
       },
-      {
-        "name": "dusunl",
-        "bind": "/model/instance/kartu_ibu/dusunl"
-      },
+     
       {
         "name": "pendidikan",
         "bind": "/model/instance/kartu_ibu/pendidikan"

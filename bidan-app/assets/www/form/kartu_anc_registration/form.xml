@@ -28,7 +28,7 @@
       <span lang="" class="or-constraint-msg active">abortus tidak boleh lebih dari Gravida - Partus</span>
       <span lang="" class="question-label active">Abortus</span>
       <span lang="" class="or-hint active">Menunjukkan jumlah berapa kali Ibu keguguran</span>
-      <input type="number" name="/Register_ANC_only/abortus" data-constraint=".&gt;-1 and .&lt;=( /Register_ANC_only/gravida - /Register_ANC_only/partus )" data-calculate=" /Register_ANC_only/gravida - /Register_ANC_only/partus " data-type-xml="int" />
+      <input type="number" name="/Register_ANC_only/abortus" data-constraint=".&gt;-1 and .&lt;=( /Register_ANC_only/gravida - /Register_ANC_only/partus )" data-type-xml="int" />
    </label>
    <label class="question non-select ">
       <span lang="" class="or-constraint-msg active">Nilai yang dimasukkan tidak memenuhi syarat, mohon periksa kembali</span>

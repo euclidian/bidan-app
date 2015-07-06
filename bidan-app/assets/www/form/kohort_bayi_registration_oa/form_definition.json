@@ -68,21 +68,13 @@
         "bind": "/model/instance/register_baby/desa",
         "source": "anak.ibu.kartu_ibu.desa"
       },
-      {
-        "name": "desal",
-        "bind": "/model/instance/register_baby/desal",
-        "source": "anak.ibu.kartu_ibu.desal"
-      },
+      
       {
         "name": "dusun",
         "bind": "/model/instance/register_baby/dusun",
         "source": "anak.ibu.kartu_ibu.dusun"
       },
-      {
-        "name": "dusunl",
-        "bind": "/model/instance/register_baby/dusunl",
-        "source": "anak.ibu.kartu_ibu.dusunl"
-      },
+     
       {
         "name": "pendidikan",
         "bind": "/model/instance/register_baby/pendidikan",

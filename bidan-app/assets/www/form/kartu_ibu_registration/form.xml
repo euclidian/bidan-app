@@ -103,7 +103,7 @@
    <label class="question or-appearance-minimal  or-branch pre-init ">
       <span lang="" class="question-label active">Desa</span>
       <span lang="" class="or-hint active">desa Tempat tinggal Ibu</span>
-      <select name="/kartu_ibu/desa" data-name="/kartu_ibu/desa" data-relevant=" /kartu_ibu/kabupaten ='Lombok Tengah' and  /kartu_ibu/kecamatan  != 'Lainnya'" data-type-xml="select1">
+      <select name="/kartu_ibu/desa1" data-name="/kartu_ibu/desa1" data-relevant=" /kartu_ibu/kabupaten ='Lombok Tengah' and  /kartu_ibu/kecamatan  != 'Lainnya'" data-type-xml="select1">
          <option class="itemset-template" value="" data-items-path="instance('desa')/root/item[kecamatan= /kartu_ibu/kecamatan ]">...</option>
       </select>
       <span class="or-option-translations" style="display:none;" />
@@ -143,13 +143,13 @@
    <label class="question or-branch pre-init non-select ">
       <span lang="" class="question-label active">Desa</span>
       <span lang="" class="or-hint active">desa Tempat tinggal Ibu</span>
-      <input type="text" name="/kartu_ibu/desal" data-relevant=" /kartu_ibu/kabupaten ='Lombok Barat' or  /kartu_ibu/kabupaten ='Lombok Timur' or  /kartu_ibu/kecamatan ='Lainnya' or  /kartu_ibu/desa ='Lainnya'" data-type-xml="string" />
+      <input type="text" name="/kartu_ibu/desa2" data-relevant=" /kartu_ibu/kabupaten ='Lombok Barat' or  /kartu_ibu/kabupaten ='Lombok Timur' or  /kartu_ibu/kecamatan ='Lainnya' or  /kartu_ibu/desa1 ='Lainnya'" data-type-xml="string" />
    </label>
    <label class="question or-appearance-minimal  or-branch pre-init ">
       <span lang="" class="question-label active">Dusun</span>
       <span lang="" class="or-hint active">dusun Tempat tinggal Ibu</span>
-      <select name="/kartu_ibu/dusun" data-name="/kartu_ibu/dusun" data-relevant=" /kartu_ibu/kabupaten ='Lombok Tengah' and  /kartu_ibu/kecamatan  != 'Lainnya'" data-type-xml="select1">
-         <option class="itemset-template" value="" data-items-path="instance('dusun')/root/item[kecamatan= /kartu_ibu/kecamatan  and desa= /kartu_ibu/desa ]">...</option>
+      <select name="/kartu_ibu/dusun1" data-name="/kartu_ibu/dusun1" data-relevant=" /kartu_ibu/kabupaten ='Lombok Tengah' and  /kartu_ibu/kecamatan  != 'Lainnya'" data-type-xml="select1">
+         <option class="itemset-template" value="" data-items-path="instance('dusun')/root/item[kecamatan= /kartu_ibu/kecamatan  and desa= /kartu_ibu/desa1 ]">...</option>
       </select>
       <span class="or-option-translations" style="display:none;" />
       <span class="itemset-labels" data-value-ref="name" data-label-type="itext" data-label-ref="itextId">
@@ -499,7 +499,7 @@
    <label class="question or-branch pre-init non-select ">
       <span lang="" class="question-label active">Dusun</span>
       <span lang="" class="or-hint active">dusun Tempat tinggal Ibu</span>
-      <input type="text" name="/kartu_ibu/dusunl" data-relevant=" /kartu_ibu/kabupaten ='Lombok Barat' or  /kartu_ibu/kabupaten ='Lombok Timur' or  /kartu_ibu/kecamatan ='Lainnya' or  /kartu_ibu/desa ='Lainnya' or  /kartu_ibu/dusun ='Lainnya'" data-type-xml="string" />
+      <input type="text" name="/kartu_ibu/dusun2" data-relevant=" /kartu_ibu/kabupaten ='Lombok Barat' or  /kartu_ibu/kabupaten ='Lombok Timur' or  /kartu_ibu/kecamatan ='Lainnya' or  /kartu_ibu/desa1 ='Lainnya' or  /kartu_ibu/dusun1 ='Lainnya'" data-type-xml="string" />
    </label>
    <label class="question or-appearance-minimal ">
       <span lang="" class="question-label active">Pendidikan</span>
@@ -676,6 +676,12 @@
       </label>
    </fieldset>
    <fieldset id="or-calculated-items" style="display:none;">
+   <label class="calculation non-select ">
+         <input type="hidden" name="/kartu_ibu/desa" data-calculate="if(( /kartu_ibu/desa1  != '' and  /kartu_ibu/desa1  != 'Lainnya'),  /kartu_ibu/desa1 ,  /kartu_ibu/desa2 )" data-type-xml="string" />
+      </label>
+      <label class="calculation non-select ">
+         <input type="hidden" name="/kartu_ibu/dusun" data-calculate="if(( /kartu_ibu/dusun1  != '' and  /kartu_ibu/dusun1  != 'Lainnya'),  /kartu_ibu/dusun1 ,  /kartu_ibu/dusun2 )" data-type-xml="string" />
+      </label>
    <label class="calculation non-select ">
          <input autocomplete="off" type="hidden" name="/kartu_ibu/reg_date" data-calculate=" /kartu_ibu/today " data-type-xml="date" />
       </label>
