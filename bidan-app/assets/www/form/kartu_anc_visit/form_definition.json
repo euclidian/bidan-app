@@ -316,6 +316,10 @@
       {
         "name": "registrationDate",
         "bind": "/model/instance/ANC_Visit/reg_date"
+      },
+      {
+        "name": "hiddenAncKe",
+        "bind": "/model/instance/ANC_Visit/hidden_anc_ke"
       }
     ]
   }

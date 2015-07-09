@@ -27,7 +27,7 @@ public class ProfileDetailController {
     private final String caseId;
     private final KartuIbuRegisterController controller;
     private final AllKartuIbus allKartuIbus;
-    private CharSequence[] filterKeys = {"isoutofarea", "high", "submission", "registration", "risk", "namalengkap" };
+    private CharSequence[] filterKeys = {"isoutofarea", "high", "submission", "registration", "risk", "namalengkap", "hidden"};
     private CharSequence[] filterValues = {"invalid"};
     private final AllKohort allKohort;
 

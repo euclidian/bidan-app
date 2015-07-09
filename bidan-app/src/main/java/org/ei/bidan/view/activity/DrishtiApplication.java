@@ -26,8 +26,8 @@ public class DrishtiApplication extends Application {
         super.onCreate();
 
         // Init Raygun
-        //RaygunClient.Init(getApplicationContext());
-        //RaygunClient.AttachExceptionHandler();
+        RaygunClient.Init(getApplicationContext());
+        RaygunClient.AttachExceptionHandler();
 
         // Configure Flurry
         FlurryAgent.setLogEnabled(true);

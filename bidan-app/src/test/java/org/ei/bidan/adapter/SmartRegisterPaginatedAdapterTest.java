@@ -164,7 +164,7 @@ public class SmartRegisterPaginatedAdapterTest {
         }
 
         @Override
-        public View getView(SmartRegisterClient client, View parentView, ViewGroup viewGroup) {
+        public View getView(int i, SmartRegisterClient client, View parentView, ViewGroup viewGroup) {
             this.getViewCurrentClient = client;
             return null;
         }
