@@ -28,14 +28,15 @@ import static org.apache.commons.lang3.StringUtils.repeat;
  */
 public class KartuIbuRepository extends DrishtiRepository{
 
-    private static final String KI_SQL = "CREATE TABLE kartu_ibu(id VARCHAR PRIMARY KEY, details VARCHAR, isClosed VARCHAR)";
+    private static final String KI_SQL = "CREATE TABLE kartu_ibu(id VARCHAR PRIMARY KEY, details VARCHAR, dusun VARCHAR, isClosed VARCHAR)";
     public static final String ID_COLUMN = "id";
     public static final String DETAILS_COLUMN = "details";
     private static final String IS_CLOSED_COLUMN = "isClosed";
-    public static final String WIFE_NAME_COLUMN = "Namalengkap";
+    public static final String DUSUN_COLUMN = "dusun";
 
     public static final String KI_TABLE_NAME = "kartu_ibu";
     public static final String[] KI_TABLE_COLUMNS = new String[]{ID_COLUMN, DETAILS_COLUMN,
+            DUSUN_COLUMN,
             IS_CLOSED_COLUMN};
 
     public static final String NOT_CLOSED = "false";
@@ -123,7 +124,7 @@ public class KartuIbuRepository extends DrishtiRepository{
     private long getKIsUsingKBMethod(List<Map<String, String>> detailsList) {
         long kbCount = 0;
         for (Map<String, String> details : detailsList) {
-            if (!(isBlank(details.get(AllConstants.KIRegistrationFields.CURRENT_KONTRASEPSI)))) {
+            if (!(isBlank(details.get(AllConstants.KeluargaBerencanaFields.CONTRACEPTION_METHOD)))) {
                 kbCount++;
             }
         }
@@ -140,9 +141,24 @@ public class KartuIbuRepository extends DrishtiRepository{
         ContentValues values = new ContentValues();
         values.put(ID_COLUMN, kartuIbu.getCaseId());
         values.put(DETAILS_COLUMN, new Gson().toJson(kartuIbu.getDetails()));
+        values.put(DUSUN_COLUMN, kartuIbu.dusun());
         values.put(IS_CLOSED_COLUMN, Boolean.toString(kartuIbu.isClosed()));
         return values;
     }
+
+    public List<String> villages() {
+        SQLiteDatabase database = masterRepository.getReadableDatabase();
+        Cursor cursor = database.query(true, KI_TABLE_NAME, new String[]{DUSUN_COLUMN}, IS_CLOSED_COLUMN + " = ?", new String[]{ NOT_CLOSED}, null, null, null, null);
+        cursor.moveToFirst();
+        List<String> villages = new ArrayList<String>();
+        while (!cursor.isAfterLast()) {
+            villages.add(cursor.getString(0));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return villages;
+    }
+
 
     private List<KartuIbu> readAllKartuIbus(Cursor cursor) {
         cursor.moveToFirst();
@@ -150,8 +166,8 @@ public class KartuIbuRepository extends DrishtiRepository{
         while (!cursor.isAfterLast()) {
             KartuIbu kartuIbu = new KartuIbu(cursor.getString(0),
                     new Gson().<Map<String, String>>fromJson(cursor.getString(1), new TypeToken<Map<String, String>>() {
-                    }.getType()));
-            kartuIbu.setClosed(Boolean.valueOf(cursor.getString(2)));
+                    }.getType()), cursor.getString(2));
+            kartuIbu.setClosed(Boolean.valueOf(cursor.getString(3)));
             kartuIbus.add(kartuIbu);
             cursor.moveToNext();
         }

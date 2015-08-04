@@ -1,0 +1,4 @@
+rootProject.name = 'bidan-app-parent'
+include ':bidan-app'
+
+project(':bidan-app').projectDir = "$rootDir/bidan-app" as File

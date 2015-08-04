@@ -1,5 +1,8 @@
 package org.ei.bidan.bidan.view.controller;
 
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+
 import org.apache.commons.lang3.tuple.Pair;
 import org.ei.bidan.AllConstants;
 import org.ei.bidan.bidan.domain.Ibu;
@@ -10,27 +13,66 @@ import org.ei.bidan.bidan.view.contract.KartuIbuANCClients;
 import org.ei.bidan.util.Cache;
 import org.ei.bidan.util.CacheableData;
 import org.ei.bidan.view.contract.SmartRegisterClient;
+import org.ei.bidan.view.contract.Village;
+import org.ei.bidan.view.contract.Villages;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 import static java.util.Collections.sort;
+import static org.ei.bidan.AllConstants.KartuIbuFields.*;
+import static org.ei.bidan.AllConstants.KartuANCFields.*;
 
 /**
  * Created by Dimas Ciputra on 3/4/15.
  */
-public class KartuIbuANCRegisterController extends CommonController{
+public class KartuIbuANCRegisterController extends CommonController {
 
     private static final String KI_ANC_CLIENTS_LIST = "KIANCClientsList";
 
     private final AllKohort allKohort;
     private final Cache<String> cache;
     private final Cache<KartuIbuANCClients> kartuIbuANCClientsCache;
+    private final Cache<Villages> villagesCache;
 
-    public KartuIbuANCRegisterController(AllKohort allKohort, Cache<String> cache, Cache<KartuIbuANCClients> kartuIbuANCClientsCache) {
+    public KartuIbuANCRegisterController(AllKohort allKohort, Cache<String> cache, Cache<KartuIbuANCClients> kartuIbuANCClientsCache, Cache<Villages> villagesCache) {
         this.allKohort = allKohort;
         this.cache = cache;
+        this.villagesCache = villagesCache;
         this.kartuIbuANCClientsCache = kartuIbuANCClientsCache;
+    }
+
+    public String get() {
+        return cache.get(KI_ANC_CLIENTS_LIST, new CacheableData<String>() {
+            @Override
+            public String fetch() {
+                KartuIbuANCClients ancClients = new KartuIbuANCClients();
+                List<Pair<Ibu, KartuIbu>> ancsWithKis = allKohort.allANCsWithKartuIbu();
+
+                for (Pair<Ibu, KartuIbu> ancsWithKi : ancsWithKis) {
+                    Ibu anc = ancsWithKi.getLeft();
+                    KartuIbu ki = ancsWithKi.getRight();
+
+                    KartuIbuANCClient kartuIbuClient = new KartuIbuANCClient(anc.getId(),
+                            ki.dusun(),
+                            ki.getDetail(PUSKESMAS_NAME),
+                            ki.getDetail(MOTHER_NAME),
+                            ki.getDetail(MOTHER_DOB));
+
+                    kartuIbuClient.setIsInPNCorANC(true);
+                    kartuIbuClient.setIsPregnant(true);
+
+                    kartuIbuClient.setAncVisitNumber(ki.getDetail(ANC_VISIT_NUMBER));
+                    kartuIbuClient.setRiwayatKomplikasiKebidanan(anc.getDetail(COMPLICATION_HISTORY));
+                    kartuIbuClient.setLaborComplication(anc.getDetail(AllConstants.KartuPNCFields.COMPLICATION));
+
+                    ancClients.add(kartuIbuClient);
+                }
+                return new Gson().toJson(ancClients);
+            }
+        });
     }
 
     public KartuIbuANCClients getKartuIbuANCClients() {
@@ -45,25 +87,48 @@ public class KartuIbuANCRegisterController extends CommonController{
                     KartuIbu ki = ancsWithKi.getRight();
 
                     KartuIbuANCClient kartuIbuClient = new KartuIbuANCClient(anc.getId(),
-                            ki.getDetails().get("Desa"), ki.getDetails().get("puskesmas"),
-                            ki.getDetails().get("Namalengkap"), ki.getDetails().get("Umur")
-                    )
-                            .withHusband(ki.getDetails().get("Namasuami"))
-                            .withKINumber(ki.getDetails().get("NoIbu"))
-                            .withEDD(ki.getDetail("EDD"))
-                            .withANCStatus(anc.getDetails().get("StatusGiziibu"))
-                            .withRiskFactors(anc.getDetail("KomplikasidalamKehamilan"))
-                            .withKunjunganData(anc.getDetail("TrimesterKe"))
-                            .withTTImunisasiData(anc.getDetail("StatusImunisasiTT"))
-                            .withUsiaKlinisData(anc.getDetail("UsiaKlinis"));
+                            ki.dusun(),
+                            ki.getDetail(PUSKESMAS_NAME),
+                            ki.getDetail(MOTHER_NAME),
+                            ki.getDetail(MOTHER_DOB))
+                            .withHusband(ki.getDetail(HUSBAND_NAME))
+                            .withKINumber(ki.getDetail(MOTHER_NUMBER))
+                            .withEDD(ki.getDetail(EDD))
+                            .withANCStatus(anc.getDetail(MOTHER_NUTRITION_STATUS))
+                            .withKunjunganData(anc.getDetail(TRIMESTER))
+                            .withTTImunisasiData(anc.getDetail(IMMUNIZATION_TT_STATUS))
+                            .withTanggalHPHT(anc.getDetail(HPHT_DATE));
 
-                    kartuIbuClient.setBB(anc.getDetail("BB"));
-                    kartuIbuClient.setTB(anc.getDetail("TB"));
-                    kartuIbuClient.setLILA(anc.getDetail("berat_badan"));
-                    kartuIbuClient.setBeratBadan(anc.getDetail("lila"));
-                    kartuIbuClient.setPenyakitKronis(anc.getDetail("PenyakitKronis"));
-                    kartuIbuClient.setAlergi(anc.getDetail("Alergi"));
-                    kartuIbuClient.setIsHighRisk(ki.getDetail("IsHighRisk"));
+                    kartuIbuClient.setKartuIbuCaseId(anc.getKartuIbuId());
+                    kartuIbuClient.setBB(anc.getDetail(WEIGHT_BEFORE));
+                    kartuIbuClient.setTB(anc.getDetail(HEIGHT));
+                    kartuIbuClient.setLILA(anc.getDetail(LILA_CHECK_RESULT));
+                    kartuIbuClient.setBeratBadan(anc.getDetail(WEIGHT_CHECK_RESULT));
+                    kartuIbuClient.setPenyakitKronis(anc.getDetail(CHRONIC_DISEASE));
+                    kartuIbuClient.setAlergi(anc.getDetail(ALLERGY));
+                    kartuIbuClient.setHighRiskLabour(ki.getDetail(IS_HIGH_RISK_LABOUR));
+                    kartuIbuClient.setHigRiskPregnancyReason(ki.getDetail(HIGH_RISK_PREGNANCY_REASON));
+                    kartuIbuClient.setRiwayatKomplikasiKebidanan(anc.getDetail(COMPLICATION_HISTORY));
+
+                    kartuIbuClient.setIsInPNCorANC(true);
+                    kartuIbuClient.setIsPregnant(true);
+
+                    kartuIbuClient.setChronicDisease(anc.getDetail(CHRONIC_DISEASE));
+                    kartuIbuClient.setrLila(anc.getDetail(AllConstants.KartuANCFields.LILA_CHECK_RESULT));
+                    kartuIbuClient.setrHbLevels(anc.getDetail(AllConstants.KartuANCFields.HB_RESULT));
+                    kartuIbuClient.setrTdDiastolik(anc.getDetail(AllConstants.KartuPNCFields.VITAL_SIGNS_TD_DIASTOLIC));
+                    kartuIbuClient.setrTdSistolik(anc.getDetail(AllConstants.KartuPNCFields.VITAL_SIGNS_TD_SISTOLIC));
+                    kartuIbuClient.setrBloodSugar(anc.getDetail(AllConstants.KartuANCFields.SUGAR_BLOOD_LEVEL));
+                    kartuIbuClient.setrAbortus(ki.getDetail(NUMBER_ABORTIONS));
+                    kartuIbuClient.setrPartus(ki.getDetail(NUMBER_PARTUS));
+                    kartuIbuClient.setrPregnancyComplications(anc.getDetail(AllConstants.KartuANCFields.COMPLICATION_HISTORY));
+                    kartuIbuClient.setrFetusNumber(anc.getDetail(AllConstants.KartuANCFields.FETUS_NUMBER));
+                    kartuIbuClient.setrFetusSize(anc.getDetail(AllConstants.KartuANCFields.FETUS_SIZE));
+                    kartuIbuClient.setrFetusPosition(anc.getDetail(AllConstants.KartuANCFields.FETUS_POSITION));
+                    kartuIbuClient.setrPelvicDeformity(anc.getDetail(AllConstants.KartuANCFields.PELVIC_DEFORMITY));
+                    kartuIbuClient.setrHeight(anc.getDetail(AllConstants.KartuANCFields.HEIGHT));
+                    kartuIbuClient.setrDeliveryMethod(anc.getDetail(AllConstants.KartuPNCFields.DELIVERY_METHOD));
+                    kartuIbuClient.setLaborComplication(anc.getDetail(AllConstants.KartuPNCFields.COMPLICATION));
 
                     ancClients.add(kartuIbuClient);
                 }
@@ -73,7 +138,7 @@ public class KartuIbuANCRegisterController extends CommonController{
         });
     }
 
-    private void sortByName(List<?extends SmartRegisterClient> kiClients) {
+    private void sortByName(List<? extends SmartRegisterClient> kiClients) {
         sort(kiClients, new Comparator<SmartRegisterClient>() {
             @Override
             public int compare(SmartRegisterClient o1, SmartRegisterClient o2) {
@@ -82,10 +147,36 @@ public class KartuIbuANCRegisterController extends CommonController{
         });
     }
 
+    public Villages villages() {
+        return villagesCache.get(KI_ANC_CLIENTS_LIST, new CacheableData<Villages>() {
+            @Override
+            public Villages fetch() {
+                List<SmartRegisterClient> clients = new Gson().fromJson(get(), new TypeToken<List<KartuIbuANCClient>>() {
+                }.getType());
+                List<String> villageNameList = new ArrayList<>();
+                Villages villagesList = new Villages();
+
+                for(SmartRegisterClient client : clients) {
+                    villageNameList.add(client.village());
+                }
+
+                villageNameList = new ArrayList<>(new LinkedHashSet<>(villageNameList));
+                for(String name : villageNameList) {
+                    Village village = new Village(name);
+                    villagesList.add(new Village(name));
+                }
+                return villagesList;
+            }
+        });
+    }
+
     public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {
+        String clients = get();
+        List<SmartRegisterClient> ancClients = new Gson().fromJson(clients, new TypeToken<List<KartuIbuANCClient>>() {
+        }.getType());
         return onRandomNameChars(
                 client,
-                getKartuIbuANCClients(),
+                ancClients,
                 allKohort.randomDummyANCName(),
                 AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
     }

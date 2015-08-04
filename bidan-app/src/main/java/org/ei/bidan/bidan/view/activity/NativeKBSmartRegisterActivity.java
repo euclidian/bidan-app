@@ -2,12 +2,16 @@ package org.ei.bidan.bidan.view.activity;
 
 import android.view.View;
 
+import com.flurry.android.FlurryAgent;
+
 import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
 import org.ei.bidan.adapter.SmartRegisterPaginatedAdapter;
 import org.ei.bidan.bidan.provider.KBClientsProvider;
+import org.ei.bidan.bidan.view.contract.BidanVillageController;
 import org.ei.bidan.bidan.view.contract.KBClient;
 import org.ei.bidan.bidan.view.controller.KohortKBRegisterController;
+import org.ei.bidan.bidan.view.dialog.AllHighRiskSort;
 import org.ei.bidan.bidan.view.dialog.AllKBServiceMode;
 import org.ei.bidan.bidan.view.dialog.WifeAgeSort;
 import org.ei.bidan.provider.SmartRegisterClientsProvider;
@@ -25,6 +29,9 @@ import org.ei.bidan.view.dialog.OpenFormOption;
 import org.ei.bidan.view.dialog.ServiceModeOption;
 import org.ei.bidan.view.dialog.SortOption;
 
+import static com.google.common.collect.Iterables.concat;
+import static com.google.common.collect.Iterables.toArray;
+
 /**
  * Created by Dimas Ciputra on 2/18/15.
  */
@@ -33,6 +40,7 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
     private SmartRegisterClientsProvider clientProvider = null;
     private KohortKBRegisterController controller;
     private DialogOptionMapper dialogOptionMapper;
+    private BidanVillageController villageController;
 
     private final ClientActionHandler clientActionHandler = new ClientActionHandler();
 
@@ -43,10 +51,12 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
     private DialogOption[] getEditOptions() {
         return new DialogOption[]{
-            new OpenFormOption(getString(R.string.str_kb_edit),
-                    AllConstants.FormNames.KOHORT_KB_EDIT, formController),
             new OpenFormOption(getString(R.string.str_kb_update),
                     AllConstants.FormNames.KOHORT_KB_UPDATE, formController),
+            new OpenFormOption(getString(R.string.str_kb_edit),
+                    AllConstants.FormNames.KOHORT_KB_EDIT, formController),
+            new OpenFormOption(getString(R.string.str_kb_close),
+                        AllConstants.FormNames.KOHORT_KB_CLOSE, formController),
         };
     }
 
@@ -88,7 +98,9 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
             @Override
             public DialogOption[] filterOptions() {
-                return new DialogOption[]{new AllClientsFilter()};
+                Iterable<? extends DialogOption> villageFilterOptions =
+                        dialogOptionMapper.mapToVillageFilterOptions(controller.villages());
+                return toArray(concat(DEFAULT_FILTER_OPTIONS, villageFilterOptions), DialogOption.class);
             }
 
             @Override
@@ -98,8 +110,8 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
 
             @Override
             public DialogOption[] sortingOptions() {
-                return new DialogOption[]{new NameSort(), new WifeAgeSort(), new DusunSort(),
-                        new KBMethodSort()};
+                return new DialogOption[]{new NameSort(), new WifeAgeSort(),
+                        new KBMethodSort(), new AllHighRiskSort()};
             }
 
             @Override
@@ -121,14 +133,27 @@ public class NativeKBSmartRegisterActivity extends BidanSecuredNativeSmartRegist
     @Override
     protected void onInitialization() {
         controller = new KohortKBRegisterController(context.allKartuIbus(),
-                context.listCache(),context.kbClientsCache(),context.allKohort());
+                context.listCache(),context.kbClientsCache(),context.allKohort(), context.villagesCache());
+        villageController = new BidanVillageController(context.villagesCache(), context.allKartuIbus());
         dialogOptionMapper = new DialogOptionMapper();
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        FlurryAgent.logEvent("kb_dashboard", true);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        FlurryAgent.endTimedEvent("kb_dashboard");
+    }
+
+
+    @Override
     protected void startRegistration() {
-        //FieldOverrides fieldOverrides = new FieldOverrides(context.anmLocationController().getLocationJSON());
-        //startFormActivity(KARTU_IBU_REGISTRATION, null, fieldOverrides.getJSONString());
+        startFormActivity(AllConstants.FormNames.KOHORT_KB_REGISTER, null, null);
     }
 
     private class ClientActionHandler implements View.OnClickListener {

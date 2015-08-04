@@ -2,13 +2,18 @@ package org.ei.bidan.bidan.view.contract;
 
 import com.google.common.base.Strings;
 
+import org.apache.commons.lang3.StringUtils;
 import org.ei.bidan.domain.ANCServiceType;
-import org.ei.bidan.util.IntegerUtil;
+import org.ei.bidan.util.DateUtil;
+import org.ei.bidan.util.StringUtil;
 import org.ei.bidan.view.contract.AlertDTO;
 import org.ei.bidan.view.contract.ServiceProvidedDTO;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.contract.Visits;
+import org.joda.time.Days;
+import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
+import org.joda.time.Years;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
@@ -19,13 +24,12 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import static org.ei.bidan.AllConstants.FORM_DATE_TIME_FORMAT;
 import static org.joda.time.LocalDateTime.parse;
 
 /**
  * Created by Dimas Ciputra on 3/4/15.
  */
-public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
+public class KartuIbuANCClient extends BidanSmartRegisterClient implements KartuIbuANCSmartRegisterClient {
 
     public static final String CATEGORY_ANC = "anc";
     public static final String CATEGORY_TT = "tt";
@@ -39,36 +43,37 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     private String puskesmas;
     private String name;
     private String ancNumber;
-    private String age;
+    private String dateOfBirth;
     private String husbandName;
-    private String photo_path;
-    private boolean isHighPriority;
     private boolean isHighRisk;
     private String riskFactors;
-    private String locationStatus;
     private String edd;
     private String village;
     private String ancStatus;
     private String kunjungan;
     private String ttImunisasi;
-    private String usiaKlinis;
     private String BB;
     private String TB;
     private String beratBadan;
     private String LILA;
     private String penyakitKronis;
     private String alergi;
+    private String tanggalHPHT;
+    private String riwayatKomplikasiKebidanan;
+    private String highRiskPregnancyReason;
+    private String kartuIbuCaseId;
+    private String ancVisitNumber;
 
     private List<AlertDTO> alerts;
     private List<ServiceProvidedDTO> services_provided;
     private String entityIdToSavePhoto;
     private Map<String, Visits> serviceToVisitsMap;
 
-    public KartuIbuANCClient(String entityId, String village, String puskesmas, String name, String age) {
+    public KartuIbuANCClient(String entityId, String village, String puskesmas, String name, String dateOfBirth) {
         this.entityId = entityId;
         this.puskesmas = puskesmas;
         this.name = name;
-        this.age = age;
+        this.dateOfBirth = dateOfBirth;
         this.village = village;
         this.serviceToVisitsMap = new HashMap<String, Visits>();
     }
@@ -87,7 +92,10 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public LocalDateTime edd() {
-        return parse(edd);
+        if(Strings.isNullOrEmpty(edd)) return null;
+        if(edd.equalsIgnoreCase("invalid date")) return null;
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("YYYY-MM-dd");
+        return parse(edd, formatter);
     }
 
     @Override
@@ -162,42 +170,42 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public String name() {
-        return name;
+        return Strings.isNullOrEmpty(name) ? "-" : humanize(name);
     }
 
     @Override
     public String displayName() {
-        return name;
+        return name();
     }
 
     @Override
     public String village() {
-        return village;
+        return Strings.isNullOrEmpty(village) ? "" : humanize(village);
     }
 
     @Override
     public String wifeName() {
-        return name;
+        return name();
     }
 
     @Override
     public String husbandName() {
-        return husbandName;
+        return Strings.isNullOrEmpty(husbandName) ? "-" : husbandName;
     }
 
     @Override
     public int age() {
-        return Integer.parseInt(age);
+        return StringUtils.isBlank(dateOfBirth) ? 0 : Years.yearsBetween(LocalDate.parse(dateOfBirth), LocalDate.now()).getYears();
     }
 
     @Override
     public int ageInDays() {
-        return Integer.parseInt(age) * 365;
+        return StringUtils.isBlank(dateOfBirth) ? 0 : Days.daysBetween(LocalDate.parse(dateOfBirth), DateUtil.today()).getDays();
     }
 
     @Override
     public String ageInString() {
-        return "(" + age + ")";
+        return "(" + age() + ")";
     }
 
     @Override
@@ -208,11 +216,6 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     @Override
     public boolean isST() {
         return false;
-    }
-
-    @Override
-    public boolean isHighRisk() {
-        return isHighRisk;
     }
 
     @Override
@@ -249,7 +252,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     }
 
     public String getPuskesmas() {
-        return puskesmas;
+        return Strings.isNullOrEmpty(puskesmas) ? "-" : puskesmas;
     }
 
     public String kiNumber() {
@@ -262,7 +265,14 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
 
     public String kunjungan() { return kunjungan == null ? "-" : humanize(kunjungan); }
 
-    public String usiaKlinis() { return usiaKlinis == null ? "-" : humanize(usiaKlinis); }
+    public String usiaKlinis() {
+        if(Strings.isNullOrEmpty(tanggalHPHT)) return "-";
+
+        LocalDate startDate = DateUtil.getLocalDateFromISOString(tanggalHPHT);
+        LocalDate endDate = DateUtil.today();
+
+        return DateUtil.weekDifference(startDate, endDate) + " minggu";
+    }
 
     public KartuIbuANCClient withHusband(String husbandName) {
         this.husbandName = husbandName;
@@ -284,11 +294,6 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
         return this;
     }
 
-    public KartuIbuANCClient withRiskFactors(String riskFactors) {
-        this.riskFactors = riskFactors;
-        return this;
-    }
-
     public KartuIbuANCClient withKunjunganData(String kunjungan) {
         this.kunjungan = kunjungan;
         return this;
@@ -299,8 +304,8 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
         return this;
     }
 
-    public KartuIbuANCClient withUsiaKlinisData(String usiaKlinis) {
-        this.usiaKlinis = usiaKlinis;
+    public KartuIbuANCClient withTanggalHPHT(String tanggalHPHT){
+        this.tanggalHPHT = tanggalHPHT;
         return this;
     }
 
@@ -337,7 +342,7 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     }
 
     public String getPenyakitKronis() {
-        return humanize(penyakitKronis);
+        return Strings.isNullOrEmpty(penyakitKronis) ? "" : humanize(penyakitKronis) + ",";
     }
 
     public void setPenyakitKronis(String penyakitKronis) {
@@ -345,19 +350,50 @@ public class KartuIbuANCClient implements KartuIbuANCSmartRegisterClient {
     }
 
     public String getAlergi() {
-        return alergi;
+        return Strings.isNullOrEmpty(alergi) ? "-" : StringUtil.humanize(alergi);
     }
 
     public void setAlergi(String alergi) {
         this.alergi = alergi;
     }
 
-    public void setIsHighRisk(String isHighRisk) {
-        if(Strings.isNullOrEmpty(isHighRisk)) {
-            this.isHighRisk = false;
-            return;
-        }
-        this.isHighRisk = isHighRisk.equalsIgnoreCase("ya") ? true : false;
+    public String tanggalHPHT() {
+        return Strings.isNullOrEmpty(tanggalHPHT) ? "-" : DateUtil.formatDate(tanggalHPHT, "dd MMM YYYY");
     }
 
+    public void setHighRiskLabour(String highRiskLabour) {
+        setIsHighRiskLabour(!Strings.isNullOrEmpty(highRiskLabour) && highRiskLabour.equalsIgnoreCase("yes"));
+    }
+
+    public void setHigRiskPregnancyReason(String highRiskPregnancyReason) {
+        this.highRiskPregnancyReason = highRiskPregnancyReason;
+    }
+
+    public String getHighRiskPregnancyReason() {
+        return Strings.isNullOrEmpty(highRiskPregnancyReason) ? "" : humanize(highRiskPregnancyReason) + ",";
+    }
+
+    public void setRiwayatKomplikasiKebidanan(String riwayatKomplikasiKebidanan) {
+        this.riwayatKomplikasiKebidanan = riwayatKomplikasiKebidanan;
+    }
+
+    public String getRiwayatKomplikasiKebidanan() {
+        return Strings.isNullOrEmpty(riwayatKomplikasiKebidanan)? "" : humanize(this.riwayatKomplikasiKebidanan) + ",";
+    }
+
+    public String getKartuIbuCaseId() {
+        return kartuIbuCaseId;
+    }
+
+    public void setKartuIbuCaseId(String kartuIbuCaseId) {
+        this.kartuIbuCaseId = kartuIbuCaseId;
+    }
+
+    public String getAncVisitNumber() {
+        return ancVisitNumber;
+    }
+
+    public void setAncVisitNumber(String ancVisitNumber) {
+        this.ancVisitNumber = ancVisitNumber;
+    }
 }

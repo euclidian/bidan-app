@@ -1,5 +1,7 @@
 package org.ei.bidan.bidan.view.contract;
 
+import com.google.common.base.Strings;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -11,6 +13,7 @@ import org.joda.time.Days;
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,16 +23,18 @@ import static org.ei.bidan.AllConstants.FEMALE_GENDER;
 import static org.ei.bidan.AllConstants.IN_AREA;
 import static org.ei.bidan.AllConstants.OUT_OF_AREA;
 import static org.ei.bidan.util.DateUtil.formatDate;
+import static org.ei.bidan.util.StringUtil.humanize;
 
 /**
  * Created by Dimas Ciputra on 4/8/15.
  */
-public class AnakClient implements SmartRegisterClient{
+public class AnakClient extends BidanSmartRegisterClient{
 
     private final String entityId;
     private Map<String, String> details;
     private String gender;
-    private String weight;
+    private String birthWeight;
+    private String currentWeight;
     private String name;
     private String motherName;
     private String dob;
@@ -38,7 +43,7 @@ public class AnakClient implements SmartRegisterClient{
     private String village;
     private String locationStatus;
     private String economicStatus;
-    private boolean isHighRisk;
+    private String isHighRisk;
     private String photo_path;
     private String kiNumber;
     private String birthCondition;
@@ -50,17 +55,58 @@ public class AnakClient implements SmartRegisterClient{
     private String dptHb2Pol3;
     private String dptHb3Pol4;
     private String campak;
+    private String birthPlace;
+    private String hbGiven;
+    private String visitDate;
+    private String babyNo;
+    private String pregnancyAge;
 
     public AnakClient(String entityId, String gender, String weight, Map<String, String> details) {
         this.entityId = entityId;
         this.gender = gender;
-        this.weight = weight;
+        this.birthWeight = weight;
         this.details = details;
     }
+
+    public String getPregnancyAge() {
+        return pregnancyAge;
+    }
+
+    public void setPregnancyAge(String pregnancyAge) {
+        this.pregnancyAge = pregnancyAge;
+    }
+
+    public String getBabyNo() {
+        return Strings.isNullOrEmpty(babyNo) ? "-" : babyNo;
+    }
+
+    public void setBabyNo(String babyNo) {
+        this.babyNo = babyNo;
+}
 
     public String motherName() {
         return StringUtil.humanize(motherName);
     }
+
+    public String getHbGiven() {
+        return Strings.isNullOrEmpty(hbGiven) ? "-" : hbGiven;
+    }
+
+    public void setHbGiven(String hbGiven) {
+        this.hbGiven = hbGiven;
+    }
+
+    public String getVisitDate() {
+        return Strings.isNullOrEmpty(visitDate) ? "-" : formatDate(visitDate);
+    }
+
+    public void setVisitDate(String visitDate) {
+        this.visitDate = visitDate;
+    }
+
+    public String birthPlace() { return Strings.isNullOrEmpty(birthPlace) ? "-" : StringUtil.humanize(birthPlace); }
+
+    public void setBirthPlace(String birthPlace) { this.birthPlace = birthPlace; }
 
     public String fatherName() {
         return StringUtil.humanize(fatherName);
@@ -68,21 +114,29 @@ public class AnakClient implements SmartRegisterClient{
 
     public String gender() { return StringUtil.humanize(gender); }
 
-    public String weight() {
-        return weight;
+    public String birthWeight() {
+        return Strings.isNullOrEmpty(birthWeight) ? "-" : birthWeight ;
     }
+
+    public String currentWeight() { return Strings.isNullOrEmpty(currentWeight) ? "-" : currentWeight; }
+
+    public void setCurrentWeight(String currentWeight) { this.currentWeight = currentWeight; }
 
     public String motherKiNumber() {
         return kiNumber;
     }
 
     public String dateOfBirth() {
-        return isBlank(dob) ? "" : formatDate(dob);
+        return isBlank(dob) ? "-" : formatDate(dob);
     }
 
-    public String getBirthCondition() { return StringUtil.humanize(birthCondition); }
+    public String dobString() {
+        return dob;
+    }
 
-    public String getServiceAtBirth() { return StringUtil.humanize(serviceAtBirth); }
+    public String getBirthCondition() { return Strings.isNullOrEmpty(birthCondition) ? "-" : StringUtil.humanize(birthCondition); }
+
+    public String getServiceAtBirth() { return serviceAtBirth; }
 
     @Override
     public String entityId() {
@@ -91,7 +145,7 @@ public class AnakClient implements SmartRegisterClient{
 
     @Override
     public String name() {
-        return isBlank(name) ? "" : StringUtil.humanize(name);
+        return isBlank(name) ? "B/o " + motherName() : StringUtil.humanize(name);
     }
 
     @Override
@@ -101,7 +155,7 @@ public class AnakClient implements SmartRegisterClient{
 
     @Override
     public String village() {
-        return null;
+        return Strings.isNullOrEmpty(village) ? "" : humanize(village);
     }
 
     @Override
@@ -133,13 +187,6 @@ public class AnakClient implements SmartRegisterClient{
     public boolean isST() {
         return false;
     }
-
-    @Override
-    public boolean isHighRisk() {
-        return isHighRisk;
-    }
-
-
     @Override
     public boolean isHighPriority() { return false; }
 
@@ -189,13 +236,13 @@ public class AnakClient implements SmartRegisterClient{
         int WEEKS_THRESHOLD = 119;
         int MONTHS_THRESHOLD = 720;
         if (days_since < DAYS_THRESHOLD) {
-            return (int) Math.floor(days_since) + "d";
+            return (int) Math.floor(days_since) + "h";
         } else if (days_since < WEEKS_THRESHOLD) {
-            return (int) Math.floor(days_since / 7) + "w";
+            return (int) Math.floor(days_since / 7) + "m";
         } else if (days_since < MONTHS_THRESHOLD) {
-            return (int) Math.floor(days_since / 30) + "m";
+            return (int) Math.floor(days_since / 30) + "b";
         } else {
-            return (int) Math.floor(days_since / 365) + "y";
+            return (int) Math.floor(days_since / 365) + "t";
         }
     }
 
@@ -239,7 +286,7 @@ public class AnakClient implements SmartRegisterClient{
         return this;
     }
 
-    public AnakClient withIsHighRisk(boolean isHighRisk) {
+    public AnakClient withIsHighRisk(String isHighRisk) {
         this.isHighRisk = isHighRisk;
         return this;
     }
@@ -326,4 +373,69 @@ public class AnakClient implements SmartRegisterClient{
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
     }
+
+    public boolean isChildAgeNoMoreThan28days() {
+        return ageInDays() < 28;
+    }
+
+    public boolean isPreterm() {
+        if(Strings.isNullOrEmpty(getPregnancyAge())) return false;
+        return isChildAgeNoMoreThan28days() && Integer.parseInt(getPregnancyAge()) < 37;
+    }
+
+    public boolean isLowBirthWeight() {
+        if(birthWeight().equalsIgnoreCase("-")) return false;
+        return isChildAgeNoMoreThan28days() && Integer.parseInt(birthWeight()) > 1500 && Integer.parseInt(birthWeight()) < 2500;
+    }
+
+    public boolean isVeryLowBirthWeigth() {
+        if(birthWeight().equalsIgnoreCase("-")) return false;
+        return isChildAgeNoMoreThan28days() && Integer.parseInt(birthWeight()) <= 1500;
+    }
+
+    @Override
+    public boolean isHighRisk() {
+        return isPreterm() || isLowBirthWeight() || isVeryLowBirthWeigth();
+    }
+
+    @Override
+    public List<String> highRiskReason() {
+        List<String> reason = new ArrayList<>();
+
+        if(isPreterm()) {
+            reason.add("Anak lahir prematur");
+        }
+        if(isLowBirthWeight()) {
+            reason.add("Berat badan rendah");
+        } else if(isVeryLowBirthWeigth()) {
+            reason.add("Berat badan sangat rendah");
+        }
+
+        return reason;
+    }
+
+    public boolean isHbSevenDone() {
+        return !isBlank(hb07);
+    }
+
+    public boolean isBcgDone() {
+        return !isBlank(bcgPol1);
+    }
+
+    public boolean isDpt1Done() {
+        return !isBlank(dptHb1Pol2);
+    }
+
+    public boolean isDpt2Done() {
+        return !isBlank(dptHb2Pol3);
+    }
+
+    public boolean isDpt3Done() {
+        return !isBlank(dptHb3Pol4);
+    }
+
+    public boolean isCampakDone() {
+        return !isBlank(campak);
+    }
+
 }

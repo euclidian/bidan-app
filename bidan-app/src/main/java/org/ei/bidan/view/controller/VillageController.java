@@ -8,6 +8,7 @@ import org.ei.bidan.view.contract.Village;
 import org.ei.bidan.view.contract.Villages;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class VillageController {
@@ -15,6 +16,7 @@ public class VillageController {
     private AllEligibleCouples allEligibleCouples;
     private Cache<String> cache;
     private Cache<Villages> villagesCache;
+    private Cache<Villages> villagesCacheIna;
 
     public VillageController(AllEligibleCouples allEligibleCouples, Cache<String> cache,
                              Cache<Villages> villagesCache) {
@@ -49,5 +51,24 @@ public class VillageController {
                 return villagesList;
             }
         });
+    }
+
+    // TODO : Change this
+    public Villages getVillagesIndonesia() {
+        return villagesCacheIna.get(VILLAGE_LIST, new CacheableData<Villages>() {
+            @Override
+            public Villages fetch() {
+                Villages villagesList = new Villages();
+                List<String> villages = getAllVillages();
+                for(String village : villages) {
+                    villagesList.add(new Village(village));
+                }
+                return villagesList;
+            }
+        });
+    }
+
+    public List<String> getAllVillages() {
+        return new ArrayList<>(Arrays.asList("Lainnya","Saba","Selebung Rembiga","Loang Maka","Setuta","Durian","Lekor","Janapria","Pendem","Langko","Bakan","Kerembong","Jango","Lainnya","Teruwai","Gapura","Kawo","Segala Anyar","Sukadana","Pengengat","Kuta","Mertak","Tumpak","Ketara","Bangket Parak","Prabu","Pengembur","Rembitan","Tanak Awu","Sengkol"));
     }
 }

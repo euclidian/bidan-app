@@ -51,7 +51,7 @@ public class PNCSmartRegisterClientsProvider implements SmartRegisterClientsProv
     }
 
     @Override
-    public View getView(SmartRegisterClient smartRegisterClient, View convertView, ViewGroup viewGroup) {
+    public View getView(int i, SmartRegisterClient smartRegisterClient, View convertView, ViewGroup viewGroup) {
         ViewGroup itemView;
         NativePNCSmartRegisterViewHolder viewHolder;
         if (convertView == null) {

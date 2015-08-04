@@ -5,6 +5,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.flurry.android.FlurryAgent;
+
 import org.ei.bidan.Context;
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.contract.BidanHomeContext;
@@ -16,8 +18,6 @@ import org.ei.bidan.sync.SyncAfterFetchListener;
 import org.ei.bidan.sync.SyncProgressIndicator;
 import org.ei.bidan.sync.UpdateActionsTask;
 import org.ei.bidan.view.activity.SecuredActivity;
-
-import javax.xml.soap.Text;
 
 import static java.lang.String.valueOf;
 import static org.ei.bidan.event.Event.ACTION_HANDLED;
@@ -113,8 +113,16 @@ public class BidanHomeActivity extends SecuredActivity {
         updateRemainingFormsToSyncCount();
     }
 
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if(hasFocus) {
+            FlurryAgent.logEvent("home_dashboard");
+        }
+    }
+
     private void updateRegisterCounts() {
-        NativeUpdateBidanDetailsTask task = new NativeUpdateBidanDetailsTask(Context.getInstance().bidanController());
+        NativeUpdateBidanDetailsTask task = new NativeUpdateBidanDetailsTask(this, Context.getInstance().bidanController());
         task.fetch(new NativeAfterBidanDetailsFetchListener() {
             @Override
             public void afterFetch(BidanHomeContext bidanDetails) {
@@ -123,12 +131,14 @@ public class BidanHomeActivity extends SecuredActivity {
         });
     }
 
-    private void updateRegisterCounts(BidanHomeContext homeContext) {
-        kartuIbuRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuCount()));
-        kartuIbuANCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuANCCount()));
-        kartuIbuPNCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuPNCCount()));
-        anakRegisterClientCountView.setText(valueOf(homeContext.getAnakCount()));
-        kohortKbCountView.setText(valueOf(homeContext.getKBCount()));
+    public void updateRegisterCounts(BidanHomeContext homeContext) {
+        if(homeContext != null) {
+            kartuIbuRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuCount()));
+            kartuIbuANCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuANCCount()));
+            kartuIbuPNCRegisterClientCountView.setText(valueOf(homeContext.getKartuIbuPNCCount()));
+            anakRegisterClientCountView.setText(valueOf(homeContext.getAnakCount()));
+            kohortKbCountView.setText(valueOf(homeContext.getKBCount()));
+        }
     }
 
     @Override
@@ -154,6 +164,7 @@ public class BidanHomeActivity extends SecuredActivity {
     }
 
     public void updateFromServer() {
+        FlurryAgent.logEvent("clicked_update_from_server");
         UpdateActionsTask updateActionsTask = new UpdateActionsTask(
                 this, context.actionService(), context.formSubmissionSyncService(), new SyncProgressIndicator());
         updateActionsTask.updateFromServer(new SyncAfterFetchListener());

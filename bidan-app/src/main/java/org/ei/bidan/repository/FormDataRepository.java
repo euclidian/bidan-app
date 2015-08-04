@@ -2,6 +2,8 @@ package org.ei.bidan.repository;
 
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.webkit.JavascriptInterface;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import net.sqlcipher.database.SQLiteDatabase;
@@ -55,10 +57,12 @@ public class FormDataRepository extends DrishtiRepository {
     }
 
     @Override
+    @JavascriptInterface
     protected void onCreate(SQLiteDatabase database) {
         database.execSQL(FORM_SUBMISSION_SQL);
     }
 
+    @JavascriptInterface
     public String queryUniqueResult(String sql) {
         SQLiteDatabase database = masterRepository.getReadableDatabase();
         Cursor cursor = database.rawQuery(sql, new String[]{});
@@ -70,6 +74,7 @@ public class FormDataRepository extends DrishtiRepository {
         return new Gson().toJson(result);
     }
 
+    @JavascriptInterface
     public String queryList(String sql) {
         SQLiteDatabase database = masterRepository.getReadableDatabase();
         Cursor cursor = database.rawQuery(sql, new String[]{});
@@ -83,6 +88,7 @@ public class FormDataRepository extends DrishtiRepository {
         return new Gson().toJson(results);
     }
 
+    @JavascriptInterface
     public String saveFormSubmission(String paramsJSON, String data, String formDataDefinitionVersion) {
         SQLiteDatabase database = masterRepository.getWritableDatabase();
         Map<String, String> params = new Gson().fromJson(paramsJSON, new TypeToken<Map<String, String>>() {
@@ -91,29 +97,34 @@ public class FormDataRepository extends DrishtiRepository {
         return params.get(INSTANCE_ID_PARAM);
     }
 
+    @JavascriptInterface
     public void saveFormSubmission(FormSubmission formSubmission) {
         SQLiteDatabase database = masterRepository.getWritableDatabase();
         database.insert(FORM_SUBMISSION_TABLE_NAME, null, createValuesForFormSubmission(formSubmission));
     }
 
+    @JavascriptInterface
     public FormSubmission fetchFromSubmission(String instanceId) {
         SQLiteDatabase database = masterRepository.getReadableDatabase();
         Cursor cursor = database.query(FORM_SUBMISSION_TABLE_NAME, FORM_SUBMISSION_TABLE_COLUMNS, INSTANCE_ID_COLUMN + " = ?", new String[]{instanceId}, null, null, null);
         return readFormSubmission(cursor).get(0);
     }
 
+    @JavascriptInterface
     public List<FormSubmission> getPendingFormSubmissions() {
         SQLiteDatabase database = masterRepository.getReadableDatabase();
         Cursor cursor = database.query(FORM_SUBMISSION_TABLE_NAME, FORM_SUBMISSION_TABLE_COLUMNS, SYNC_STATUS_COLUMN + " = ?", new String[]{PENDING.value()}, null, null, null);
         return readFormSubmission(cursor);
     }
 
+    @JavascriptInterface
     public long getPendingFormSubmissionsCount() {
         return longForQuery(masterRepository.getReadableDatabase(), "SELECT COUNT(1) FROM " + FORM_SUBMISSION_TABLE_NAME
                 + " WHERE " + SYNC_STATUS_COLUMN + " = ? ",
                 new String[]{PENDING.value()});
     }
 
+    @JavascriptInterface
     public void markFormSubmissionsAsSynced(List<FormSubmission> formSubmissions) {
         SQLiteDatabase database = masterRepository.getWritableDatabase();
         for (FormSubmission submission : formSubmissions) {
@@ -122,6 +133,7 @@ public class FormDataRepository extends DrishtiRepository {
         }
     }
 
+    @JavascriptInterface
     public void updateServerVersion(String instanceId, String serverVersion) {
         SQLiteDatabase database = masterRepository.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -129,6 +141,7 @@ public class FormDataRepository extends DrishtiRepository {
         database.update(FORM_SUBMISSION_TABLE_NAME, values, INSTANCE_ID_COLUMN + " = ?", new String[]{instanceId});
     }
 
+    @JavascriptInterface
     public boolean submissionExists(String instanceId) {
         SQLiteDatabase database = masterRepository.getReadableDatabase();
         Cursor cursor = database.query(FORM_SUBMISSION_TABLE_NAME, new String[]{INSTANCE_ID_COLUMN}, INSTANCE_ID_COLUMN + " = ?", new String[]{instanceId}, null, null, null);
@@ -137,6 +150,7 @@ public class FormDataRepository extends DrishtiRepository {
         return isThere;
     }
 
+    @JavascriptInterface
     public String saveEntity(String entityType, String fields) {
         SQLiteDatabase database = masterRepository.getWritableDatabase();
         Map<String, String> updatedFieldsMap = new Gson().fromJson(fields, new TypeToken<Map<String, String>>() {
@@ -150,6 +164,7 @@ public class FormDataRepository extends DrishtiRepository {
         return entityId;
     }
 
+    @JavascriptInterface
     private ContentValues createValuesForFormSubmission(FormSubmission submission) {
         ContentValues values = new ContentValues();
         values.put(INSTANCE_ID_COLUMN, submission.instanceId());
@@ -163,6 +178,7 @@ public class FormDataRepository extends DrishtiRepository {
         return values;
     }
 
+    @JavascriptInterface
     private ContentValues createValuesForFormSubmission(Map<String, String> params, String data, String formDataDefinitionVersion) {
         ContentValues values = new ContentValues();
         values.put(INSTANCE_ID_COLUMN, params.get(INSTANCE_ID_PARAM));
@@ -179,6 +195,7 @@ public class FormDataRepository extends DrishtiRepository {
         return values;
     }
 
+    @JavascriptInterface
     private List<FormSubmission> readFormSubmission(Cursor cursor) {
         cursor.moveToFirst();
         List<FormSubmission> submissions = new ArrayList<FormSubmission>();
@@ -199,6 +216,7 @@ public class FormDataRepository extends DrishtiRepository {
         return submissions;
     }
 
+    @JavascriptInterface
     private Map<String, String> readARow(Cursor cursor) {
         Map<String, String> columnValues = new HashMap<String, String>();
         if (cursor.isAfterLast())
@@ -217,6 +235,7 @@ public class FormDataRepository extends DrishtiRepository {
         return columnValues;
     }
 
+    @JavascriptInterface
     private ContentValues getContentValues(Map<String, String> updatedFieldsMap, String entityType, Map<String, String> entityMap) {
         List<String> columns = asList(TABLE_COLUMN_MAP.get(entityType));
         ContentValues contentValues = initializeContentValuesBasedExistingValues(entityMap);
@@ -234,6 +253,7 @@ public class FormDataRepository extends DrishtiRepository {
         return contentValues;
     }
 
+    @JavascriptInterface
     private Map<String, String> initializeDetailsBasedOnExistingValues(Map<String, String> entityMap) {
         Map<String, String> details;
         String detailsJSON = entityMap.get(DETAILS_COLUMN_NAME);
@@ -246,6 +266,7 @@ public class FormDataRepository extends DrishtiRepository {
         return details;
     }
 
+    @JavascriptInterface
     private ContentValues initializeContentValuesBasedExistingValues(Map<String, String> entityMap) {
         ContentValues contentValues = new ContentValues();
         for (String column : entityMap.keySet()) {
@@ -254,6 +275,7 @@ public class FormDataRepository extends DrishtiRepository {
         return contentValues;
     }
 
+    @JavascriptInterface
     private Map<String, String> loadEntityMap(String entityType, SQLiteDatabase database, String entityId) {
         Map<String, String> entityMap = new HashMap<String, String>();
         Cursor cursor = database.query(entityType,
@@ -268,6 +290,7 @@ public class FormDataRepository extends DrishtiRepository {
         return entityMap;
     }
 
+    @JavascriptInterface
     public String generateIdFor(String entityType) {
         return randomUUID().toString();
     }

@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by Dimas Ciputra on 3/4/15.
  */
-public interface KartuIbuANCSmartRegisterClient extends SmartRegisterClient {
+public interface KartuIbuANCSmartRegisterClient {
 
     Comparator<SmartRegisterClient> EDD_COMPARATOR = new Comparator<SmartRegisterClient>() {
         @Override

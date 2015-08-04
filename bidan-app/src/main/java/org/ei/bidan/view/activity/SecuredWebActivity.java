@@ -8,7 +8,6 @@ import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import org.acra.ACRA;
 import org.ei.bidan.sync.SyncProgressIndicator;
 import org.ei.bidan.R;
 import org.ei.bidan.sync.SyncAfterFetchListener;
@@ -135,6 +134,6 @@ public abstract class SecuredWebActivity extends SecuredActivity {
     }
 
     protected void reportException(String message) {
-        ACRA.getErrorReporter().handleSilentException(new RuntimeException(message));
+
     }
 }

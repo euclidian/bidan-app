@@ -1,7 +1,10 @@
 package org.ei.bidan.bidan.view.dialog;
 
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.View;
+
+import com.google.common.base.Strings;
 
 import org.ei.bidan.Context;
 import org.ei.bidan.R;
@@ -50,13 +53,13 @@ public class AnakOverviewServiceMode extends BidanServiceModeOption {
 
             @Override
             public int[] weights() {
-                return new int[]{26, 14, 12, 15, 23, 10};
+                return new int[]{26, 10, 16, 15, 23, 8};
             }
 
             @Override
             public int[] headerTextResourceIds() {
                 return new int[]{
-                        R.string.header_name, R.string.header_id_no, R.string.header_dob,
+                        R.string.header_name, R.string.header_id_no, R.string.header_dok_persalinan,
                         R.string.header_last_service, R.string.header_birth_status, R.string.header_edit};
             }
         };
@@ -68,7 +71,7 @@ public class AnakOverviewServiceMode extends BidanServiceModeOption {
                               View.OnClickListener clientSectionClickListener) {
         viewHolder.getServiceModeOverviewView().setVisibility(VISIBLE);
 
-        setupDobView(client, viewHolder);
+        setupDokPersalinanView(client, viewHolder);
         setupLastServiceView(client, viewHolder);
         setupBirthStatus(client, viewHolder);
         setupEditView(client, viewHolder, clientSectionClickListener);
@@ -104,14 +107,42 @@ public class AnakOverviewServiceMode extends BidanServiceModeOption {
 
     }
 
-    private void setupDobView(AnakClient client, NativeAnakRegisterViewHolder viewHolder) {
+    private void setupDokPersalinanView(AnakClient client, NativeAnakRegisterViewHolder viewHolder) {
         viewHolder.getTxtDobView().setText(client.dateOfBirth());
+        viewHolder.getBirthPlace().setText(client.birthPlace());
+        viewHolder.getTxtBirthWeight().setText(client.birthWeight());
+        viewHolder.getTxtBirthCondition().setText(client.getBirthCondition());
     }
 
     private void setupLastServiceView(AnakClient client, NativeAnakRegisterViewHolder viewHolder) {
         // ServiceProvidedDTO lastService = client.lastServiceProvided();
-        viewHolder.getTxtLastServiceDate().setText("-");
-        viewHolder.getTxtLastServiceName().setText(client.getServiceAtBirth());
+        String hbGiven = client.getHbGiven();
+        String service = client.getServiceAtBirth();
+
+        if(!Strings.isNullOrEmpty(service)) {
+            String[] serviceAtBirth = service.split("\\s+");
+
+            for(int i = 0; i < serviceAtBirth.length; i++) {
+                switch (serviceAtBirth[i]) {
+                    case "first_breast_feeding" :
+                        viewHolder.getImdTrueIcon().setVisibility(View.VISIBLE);
+                        viewHolder.getImdFalseIcon().setVisibility(View.GONE);
+                        break;
+                    case "vit-k_injection" :
+                        viewHolder.getVitKTrueIcon().setVisibility(View.VISIBLE);
+                        viewHolder.getVitKFalseIcon().setVisibility(View.GONE);
+                        break;
+                    case "salep_mata" :
+                        viewHolder.getSlepMataTrueIcon().setVisibility(View.VISIBLE);
+                        viewHolder.getSlepMataFalseIcon().setVisibility(View.GONE);
+                }
+            }
+        }
+
+        if(hbGiven.equalsIgnoreCase("ya")) {
+            viewHolder.getImmuniHBTrueIcon().setVisibility(View.VISIBLE);
+            viewHolder.getImmuniHBFalseIcon().setVisibility(View.GONE);
+        }
     }
 
     private void setupBirthStatus(AnakClient client,

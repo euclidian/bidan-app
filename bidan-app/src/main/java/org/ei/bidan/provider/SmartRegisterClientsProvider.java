@@ -11,7 +11,7 @@ import org.ei.bidan.view.viewHolder.OnClickFormLauncher;
 
 public interface SmartRegisterClientsProvider {
 
-    public View getView(SmartRegisterClient client, View parentView, ViewGroup viewGroup);
+    public View getView(int i, SmartRegisterClient client, View parentView, ViewGroup viewGroup);
 
     public SmartRegisterClients getClients();
 

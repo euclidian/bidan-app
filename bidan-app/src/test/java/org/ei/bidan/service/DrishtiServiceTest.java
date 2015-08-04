@@ -39,8 +39,8 @@ public class DrishtiServiceTest {
 
     @Test
     public void shouldFetchAlertActions() throws Exception {
-        when(httpAgent.fetch(EXPECTED_URL)).thenReturn(new Response<String>(ResponseStatus.success, IOUtils.toString(getClass().getResource("/alerts.json"))));
-
+        when(httpAgent.fetch(EXPECTED_URL)).thenReturn(new Response<String>(ResponseStatus.success,
+                IOUtils.toString(getClass().getResource("/alerts.json"))));
         Response<List<Action>> actions = drishtiService.fetchNewActions("anm1", "0");
 
         verify(httpAgent).fetch(EXPECTED_URL);
@@ -51,7 +51,7 @@ public class DrishtiServiceTest {
 
     @Test
     public void shouldFetchNoAlertActionsWhenJsonIsForEmptyList() throws Exception {
-        when(httpAgent.fetch(EXPECTED_URL)).thenReturn(new Response<String>(ResponseStatus.success, "[]"));
+        when(httpAgent.fetch(EXPECTED_URL)).thenReturn(new Response<String>(ResponseStatus.success, null));
 
         Response<List<Action>> actions = drishtiService.fetchNewActions("anm1", "0");
 

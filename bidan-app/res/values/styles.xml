@@ -35,7 +35,7 @@
 
     <style name="CustomFontTextViewStyle.ListView.Small" parent="CustomFontTextViewStyle">
         <item name="fontVariant">medium</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">13sp</item>
         <item name="android:height">18dp</item>
     </style>
 
@@ -76,7 +76,7 @@
 
     <style name="CustomFontTextViewStyle.ListView.Medium" parent="CustomFontTextViewStyle">
         <item name="fontVariant">bold</item>
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">15sp</item>
     </style>
 
     <style name="CustomFontTextViewStyle.ListView.Medium.TwoLine">
@@ -85,6 +85,15 @@
         <item name="android:paddingRight">5dp</item>
         <item name="android:ellipsize">none</item>
     </style>
+
+
+    <style name="CustomFontTextViewStyle.ListView.Medium.FourLine">
+        <item name="android:maxLines">4</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:ellipsize">none</item>
+    </style>
+
 
     <style name="CustomFontTextViewStyle.ListView.Normal.MultipleLines">
         <item name="android:textSize">16sp</item>
@@ -98,6 +107,10 @@
 
     <style name="CustomFontTextViewStyle.ListView.Medium.NoPadding">
         <item name="android:paddingLeft">0dp</item>
+    </style>
+
+    <style name="CustomFontTextViewStyle.ListView.Medium.NoPadding.NoBold">
+        <item name="fontVariant">medium</item>
     </style>
 
     <style name="CustomFontTextViewStyle.ListView.Medium.White">
@@ -232,6 +245,15 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:background">#BDBDBD</item>
+    </style>
+    
+    <style name="CardViewContainerPadding">
+        <item name="android:clipToPadding">false</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
     </style>
 
 </resources>

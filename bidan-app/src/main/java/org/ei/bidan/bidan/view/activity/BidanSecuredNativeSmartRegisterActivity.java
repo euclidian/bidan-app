@@ -14,11 +14,13 @@ public abstract class BidanSecuredNativeSmartRegisterActivity extends SecuredNat
 
     private static final String DIALOG_TAG = "dialog";
 
-    void showFragmentDialog(DialogOptionModel dialogOptionModel) {
+    @Override
+    protected void showFragmentDialog(DialogOptionModel dialogOptionModel) {
         showFragmentDialog(dialogOptionModel, null);
     }
 
-    void showFragmentDialog(DialogOptionModel dialogOptionModel, Object tag) {
+    @Override
+    protected void showFragmentDialog(DialogOptionModel dialogOptionModel, Object tag) {
         if (dialogOptionModel.getDialogOptions().length <= 0) {
             return;
         }

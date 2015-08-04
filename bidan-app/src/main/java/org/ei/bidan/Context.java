@@ -13,6 +13,10 @@ import org.ei.bidan.bidan.service.formSubmissionHandler.KIANCCloseHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.KIPNCCloseHandler;
 import org.ei.bidan.bidan.view.contract.KBClients;
 import org.ei.bidan.bidan.view.contract.KartuIbuPNCClients;
+import org.ei.bidan.bidan.view.controller.AnakRegisterController;
+import org.ei.bidan.bidan.view.controller.KartuIbuANCRegisterController;
+import org.ei.bidan.bidan.view.controller.KartuIbuPNCRegisterController;
+import org.ei.bidan.bidan.view.controller.KartuIbuRegisterController;
 import org.ei.bidan.repository.AlertRepository;
 import org.ei.bidan.repository.AllAlerts;
 import org.ei.bidan.repository.AllBeneficiaries;
@@ -164,6 +168,11 @@ public class Context {
 
     private ANMController anmController;
     private ANMLocationController anmLocationController;
+
+    private KartuIbuRegisterController kartuIbuRegisterController;
+    private KartuIbuANCRegisterController kartuIbuANCRegisterController;
+    private KartuIbuPNCRegisterController kartuIbuPNCRegisterController;
+    private AnakRegisterController anakRegisterController;
 
     private BidanController bidanController;
 
@@ -706,6 +715,34 @@ public class Context {
             anmLocationController = new ANMLocationController(allSettings(), listCache());
         }
         return anmLocationController;
+    }
+
+    public KartuIbuRegisterController kartuIbuRegisterController() {
+        if (kartuIbuRegisterController == null) {
+            kartuIbuRegisterController = new KartuIbuRegisterController(allKartuIbus(), listCache(), kiClientsCache(), allKohort());
+        }
+        return kartuIbuRegisterController;
+    }
+
+    public KartuIbuANCRegisterController kartuIbuANCRegisterController() {
+        if (kartuIbuANCRegisterController == null) {
+            kartuIbuANCRegisterController = new KartuIbuANCRegisterController(allKohort(), listCache(), kartuIbuANCClientsCache(), villagesCache());
+        }
+        return kartuIbuANCRegisterController;
+    }
+
+    public AnakRegisterController anakRegisterController() {
+        if (anakRegisterController == null) {
+            anakRegisterController = new AnakRegisterController(allKohort(), alertService(), serviceProvidedService(), listCache(), smartRegisterClientsCache(), villagesCache());
+        }
+        return anakRegisterController;
+    }
+
+    public KartuIbuPNCRegisterController kartuIbuPNCRegisterController() {
+        if (kartuIbuPNCRegisterController == null) {
+            kartuIbuPNCRegisterController = new KartuIbuPNCRegisterController(allKohort(), listCache(), kartuIbuPNCClientsCache(), villagesCache());
+        }
+        return kartuIbuPNCRegisterController;
     }
 
     //#TODO: Refactor to use one cache object

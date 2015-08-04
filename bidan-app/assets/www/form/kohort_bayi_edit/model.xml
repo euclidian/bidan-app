@@ -1,38 +1,31 @@
 <model>
     <instance>
-        <kohort_bayi id="kohort_bayi" version="201504080847">
+        <register_baby_only id="register_baby_only" version="201506080836">
           <formhub>
             <uuid/>
           </formhub>
+          <start/>
           <today/>
-          <case_kartu_ibu_number/>
-          <case_puskesmas/>
-          <case_address/>
-          <case_province/>
-          <case_kabupaten/>
-          <case_kecamatan/>
-          <case_desa/>
-          <case_rtrw/>
-          <case_no_telpon/>
-          <case_woman_name/>
-          <case_husband_name/>
-          <child_reg_date/>
-          <child_birth_date/>
-          <child_age/>
-          <child_age_note/>
-          <child_sex/>
-          <child_name/>
-          <kia_book/>
-          <birth_weight/>
-          <birth_condition/>
-          <service_at_birth/>
-          <dead_or_alive/>
-          <child_immunization_hb/>
-          <mother_name/>
-          <father_name/>
+          <reg_date/>
+          <deviceid/>
+          <simserial/>
+          <phonenumber/>
+          <tanggal_pendaftaran/>
+          <no_bayi/>
+          <nama_bayi/>
+          <tanggal_lahir/>
+          <jenis_kelamin/>
+          <kepemilikan_buku_kia/>
+          <berat_lahir/>
+          <Low_Birthweght_risk />
+          <Very_Low_Birthweight_risk />
+          <is_high_risk_child />
+          <high_risk_child_reason />
+          <high_risk_note />
+          <end/>
           <meta>
             <instanceID/>
           </meta>
-        </kohort_bayi>
+        </register_baby_only>
       </instance>
-</model>
+  </model>

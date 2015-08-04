@@ -41,8 +41,18 @@
                 android:layout_height="@dimen/client_profile_badge_height"
                 android:layout_marginBottom="-5dp"
                 android:scaleType="fitStart"
-                android:src="@drawable/flag_rt"
+                android:src="@drawable/flag_yellow_rt"
                 android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/img_hrl_badge"
+                android:layout_width="@dimen/client_profile_badge_width"
+                android:layout_height="@dimen/client_profile_badge_height"
+                android:layout_marginBottom="-5dp"
+                android:scaleType="fitStart"
+                android:src="@drawable/flag_orange_rtp"
+                android:visibility="gone"/>
+
 
             <ImageView
                 android:id="@+id/img_bpl_badge"
@@ -51,6 +61,24 @@
                 android:layout_marginBottom="-5dp"
                 android:scaleType="fitStart"
                 android:src="@drawable/flag_bpl"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/img_hrp_badge"
+                android:layout_width="@dimen/client_profile_badge_width"
+                android:layout_height="@dimen/client_profile_badge_height"
+                android:layout_marginBottom="-5dp"
+                android:scaleType="fitStart"
+                android:src="@drawable/flag_red_rtk"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/img_hrpp_badge"
+                android:layout_width="@dimen/client_profile_badge_width"
+                android:layout_height="@dimen/client_profile_badge_height"
+                android:layout_marginBottom="-5dp"
+                android:scaleType="fitStart"
+                android:src="@drawable/flag_orange_rtpp"
                 android:visibility="gone"/>
 
             <ImageView
@@ -86,10 +114,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-
             android:layout_toLeftOf="@+id/txt_age"
             android:singleLine="true"
-            style="@style/CustomFontTextViewStyle.ListView.Normal.Bold"/>
+            android:textStyle="bold"
+            style="@style/CustomFontTextViewStyle.ListView.Medium"/>
 
         <org.ei.bidan.view.customControls.CustomFontTextView
             android:id="@+id/txt_husband_name"
@@ -115,8 +143,9 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:paddingTop="@dimen/client_age_padding"
-            android:paddingRight="5dp"
-            android:paddingLeft="5dp"
+            android:paddingRight="2dp"
+            android:paddingLeft="2dp"
+            android:background="#FFFFFF"
             style="@style/CustomFontTextViewStyle.ListView.Small.NoHeight"/>
 
         <org.ei.bidan.view.customControls.CustomFontTextView

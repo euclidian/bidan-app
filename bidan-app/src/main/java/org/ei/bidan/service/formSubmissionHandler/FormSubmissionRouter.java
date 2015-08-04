@@ -1,5 +1,7 @@
 package org.ei.bidan.service.formSubmissionHandler;
 
+import android.webkit.JavascriptInterface;
+
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.ei.bidan.bidan.service.formSubmissionHandler.AnakBayiRegistrationHandler;
 import org.ei.bidan.bidan.service.formSubmissionHandler.AnakCloseHandler;
@@ -94,6 +96,7 @@ public class FormSubmissionRouter {
         handlerMap.put(KARTU_IBU_ANAK_CLOSE, anakCloseHandler);
     }
 
+    @JavascriptInterface
     public void route(String instanceId) throws Exception {
         FormSubmission submission = formDataRepository.fetchFromSubmission(instanceId);
         FormSubmissionHandler handler = handlerMap.get(submission.formName());

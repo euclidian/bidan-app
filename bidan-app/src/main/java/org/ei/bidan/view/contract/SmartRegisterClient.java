@@ -1,5 +1,6 @@
 package org.ei.bidan.view.contract;
 
+import org.ei.bidan.bidan.view.contract.BidanSmartRegisterClient;
 import org.ei.bidan.bidan.view.contract.KBClient;
 import org.ei.bidan.bidan.view.contract.KBSmartRegisterClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuANCClient;
@@ -106,6 +107,14 @@ public interface SmartRegisterClient {
         }
     };
 
+
+    Comparator<SmartRegisterClient> ALL_HIGH_RISK_COMPARATOR = new Comparator<SmartRegisterClient>() {
+        @Override
+        public int compare(SmartRegisterClient client, SmartRegisterClient anotherClient) {
+            return IntegerUtil.compare(((BidanSmartRegisterClient) anotherClient).riskFlagsCount(), ((BidanSmartRegisterClient) client).riskFlagsCount());
+        }
+    };
+
     Comparator<SmartRegisterClient> AGE_COMPARATOR = new Comparator<SmartRegisterClient>() {
         @Override
         public int compare(SmartRegisterClient client, SmartRegisterClient anotherClient) {
@@ -130,6 +139,15 @@ public interface SmartRegisterClient {
         public int compare(SmartRegisterClient client, SmartRegisterClient anotherClient) {
             KartuIbuClient kartuIbuClient = (KartuIbuClient) client;
             KartuIbuClient kartuIbuClient1 = (KartuIbuClient) anotherClient;
+            if(kartuIbuClient.getNoIbu().equalsIgnoreCase("-") && kartuIbuClient1.getNoIbu().equalsIgnoreCase("-")) {
+                return 0;
+            }
+            if(kartuIbuClient.getNoIbu().equalsIgnoreCase("-")) {
+                return 1;
+            }
+            if(kartuIbuClient1.getNoIbu().equalsIgnoreCase("-")) {
+                return -1;
+            }
             return IntegerUtil.compare(Integer.parseInt(kartuIbuClient.getNoIbu()),
                     Integer.parseInt(kartuIbuClient1.getNoIbu()));
         }
@@ -152,6 +170,14 @@ public interface SmartRegisterClient {
                 return -1;
             }
 
+            if (kartuIbuClient.getDueEdd().equalsIgnoreCase("Sudah melahirkan")) {
+                return 1;
+            }
+
+            if (anotherKartuIbuClient.getDueEdd().equalsIgnoreCase("Sudah melahirkan")) {
+                return -1;
+            }
+
             return ((KartuIbuClient) client).edd()
                     .compareTo(((KartuIbuClient) anotherClient).edd());
         }
@@ -160,6 +186,19 @@ public interface SmartRegisterClient {
     Comparator<SmartRegisterClient> EDD_COMPARATOR_KI_ANC = new Comparator<SmartRegisterClient>() {
         @Override
         public int compare(SmartRegisterClient client, SmartRegisterClient anotherClient) {
+            KartuIbuANCClient kartuIbuClient = (KartuIbuANCClient) client;
+            KartuIbuANCClient anotherKartuIbuClient = (KartuIbuANCClient) anotherClient;
+            if (kartuIbuClient.edd() == null && anotherKartuIbuClient.edd() == null) {
+                return 0;
+            }
+
+            if (kartuIbuClient.edd() == null) {
+                return 1;
+            }
+
+            if (anotherKartuIbuClient.edd() == null) {
+                return -1;
+            }
             return ((KartuIbuANCClient) client).edd()
                     .compareTo(((KartuIbuANCClient) anotherClient).edd());
         }

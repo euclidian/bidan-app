@@ -13,10 +13,8 @@ import org.ei.bidan.bidan.view.contract.AnakClient;
  * Created by Dimas Ciputra on 4/10/15.
  */
 public class ClientAnakBirthStatusView extends RelativeLayout {
-    private TextView txtBirthWeight;
-    private TextView txtBirthCondition;
-    private TextView lblBirthWeight;
-    private TextView lblBirthCondition;
+    private TextView txtVisitDate;
+    private TextView txtCurrentWeight;
 
     @SuppressWarnings("UnusedDeclaration")
     public ClientAnakBirthStatusView(Context context) {
@@ -33,17 +31,15 @@ public class ClientAnakBirthStatusView extends RelativeLayout {
     }
 
     public void initialize() {
-        txtBirthWeight = (TextView) findViewById(R.id.txt_birth_weight);
-        txtBirthCondition = (TextView) findViewById(R.id.txt_birth_condition);
-        lblBirthWeight = (TextView) findViewById(R.id.lbl_birth_weight);
-        lblBirthCondition = (TextView) findViewById(R.id.lbl_birth_condition);
+        txtVisitDate = (TextView) findViewById(R.id.txt_visit_date);
+        txtCurrentWeight = (TextView) findViewById(R.id.txt_current_weight);
     }
 
     public void bindData(AnakClient client) {
-        String birthWeight = client.weight();
-        String birthCondition = client.getBirthCondition();
+        String birthWeight = client.currentWeight();
+        String visitDate = client.getVisitDate();
 
-        txtBirthWeight.setText(birthWeight);
-        txtBirthCondition.setText(birthCondition);
+        txtVisitDate.setText(visitDate);
+        txtCurrentWeight.setText(birthWeight);
     }
 }

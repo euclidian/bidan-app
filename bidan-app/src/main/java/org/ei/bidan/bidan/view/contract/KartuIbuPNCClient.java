@@ -1,12 +1,21 @@
 package org.ei.bidan.bidan.view.contract;
 
+import com.google.common.base.Strings;
+
+import org.apache.commons.lang3.StringUtils;
+import org.ei.bidan.bidan.domain.Anak;
 import org.ei.bidan.domain.ANCServiceType;
+import org.ei.bidan.util.DateUtil;
 import org.ei.bidan.view.contract.AlertDTO;
 import org.ei.bidan.view.contract.ServiceProvidedDTO;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.contract.Visits;
+import org.joda.time.Days;
+import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
+import org.joda.time.Years;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -18,7 +27,7 @@ import static org.joda.time.LocalDateTime.parse;
 /**
  * Created by Dimas Ciputra on 3/4/15.
  */
-public class KartuIbuPNCClient implements KartuIbuANCSmartRegisterClient {
+public class KartuIbuPNCClient extends BidanSmartRegisterClient implements KartuIbuANCSmartRegisterClient {
 
     public static final String CATEGORY_PNC = "pnc";
     public static final String CATEGORY_TT = "tt";
@@ -32,7 +41,7 @@ public class KartuIbuPNCClient implements KartuIbuANCSmartRegisterClient {
     private String puskesmas;
     private String name;
     private String pncNumber;
-    private String age;
+    private String dateOfBirth;
     private String husbandName;
     private String photo_path;
     private boolean isHighPriority;
@@ -43,21 +52,27 @@ public class KartuIbuPNCClient implements KartuIbuANCSmartRegisterClient {
     private String village;
     private String plan;
     private String komplikasi;
+    private String otherKomplikasi;
     private String metodeKontrasepsi;
     private String tdSistolik;
     private String tdDiastolik;
     private String tdSuhu;
+    private String tempatPersalinan;
+    private String tipePersalinan;
+    private String motherCondition;
+    private String kartuIbuEntityId;
 
+    private List<AnakClient> children;
     private List<AlertDTO> alerts;
     private List<ServiceProvidedDTO> services_provided;
     private String entityIdToSavePhoto;
     private Map<String, Visits> serviceToVisitsMap;
 
-    public KartuIbuPNCClient(String entityId, String village, String puskesmas, String name, String age) {
+    public KartuIbuPNCClient(String entityId, String village, String puskesmas, String name, String dateOfBirth) {
         this.entityId = entityId;
         this.puskesmas = puskesmas;
         this.name = name;
-        this.age = age;
+        this.dateOfBirth = dateOfBirth;
         this.village = village;
         this.serviceToVisitsMap = new HashMap<String, Visits>();
     }
@@ -144,42 +159,42 @@ public class KartuIbuPNCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public String name() {
-        return name;
+        return Strings.isNullOrEmpty(name) ? "" : name;
     }
 
     @Override
     public String displayName() {
-        return name;
+        return humanize(name());
     }
 
     @Override
     public String village() {
-        return village;
+        return Strings.isNullOrEmpty(village) ? "" : humanize(village);
     }
-
     @Override
     public String wifeName() {
-        return name;
+        return humanize(name());
     }
 
     @Override
     public String husbandName() {
-        return husbandName;
+        return Strings.isNullOrEmpty(husbandName) ? "" : husbandName;
     }
 
     @Override
     public int age() {
-        return Integer.parseInt(age);
+        return StringUtils.isBlank(dateOfBirth) ? 0 : Years.yearsBetween(LocalDate.parse(dateOfBirth), LocalDate.now()).getYears();
     }
 
     @Override
     public int ageInDays() {
-        return Integer.parseInt(age) * 365;
+        return StringUtils.isBlank(dateOfBirth) ? 0 : Days.daysBetween(LocalDate.parse(dateOfBirth), DateUtil.today()).getDays();
     }
+
 
     @Override
     public String ageInString() {
-        return "(" + age + ")";
+        return "(" + age() + ")";
     }
 
     @Override
@@ -189,11 +204,6 @@ public class KartuIbuPNCClient implements KartuIbuANCSmartRegisterClient {
 
     @Override
     public boolean isST() {
-        return false;
-    }
-
-    @Override
-    public boolean isHighRisk() {
         return false;
     }
 
@@ -238,6 +248,22 @@ public class KartuIbuPNCClient implements KartuIbuANCSmartRegisterClient {
         return kiNumber;
     }
 
+    public void setTempatPersalinan(String tempatPersalinan) {
+        this.tempatPersalinan = tempatPersalinan;
+    }
+
+    public String tempatPersalinan() {
+        return Strings.isNullOrEmpty(tempatPersalinan) ? "-" :humanize(tempatPersalinan);
+    }
+
+    public void setTipePersalinan(String tipePersalinan) {
+        this.tipePersalinan = tipePersalinan;
+    }
+
+    public String tipePersalinan() {
+        return Strings.isNullOrEmpty(tipePersalinan) ? "-" : humanize(tipePersalinan);
+    }
+
     public String plan() { return humanize(plan); }
 
     public KartuIbuPNCClient withHusband(String husbandName) {
@@ -265,6 +291,11 @@ public class KartuIbuPNCClient implements KartuIbuANCSmartRegisterClient {
         return this;
     }
 
+    public KartuIbuPNCClient withOtherKomplikasi(String otherKomplikasi) {
+        this.otherKomplikasi = otherKomplikasi;
+        return this;
+    }
+
     public KartuIbuPNCClient withMetodeKontrasepsi(String metodeKontrasepsi) {
         this.metodeKontrasepsi = metodeKontrasepsi;
         return this;
@@ -278,24 +309,57 @@ public class KartuIbuPNCClient implements KartuIbuANCSmartRegisterClient {
     }
 
     public String tdDiastolik() {
-        return tdDiastolik == null ? "-" : tdDiastolik;
+        return Strings.isNullOrEmpty(tdDiastolik) ? "-" : tdDiastolik;
     }
 
     public String tdSistolik() {
-        return tdSistolik == null ? "-" : tdSistolik;
+        return Strings.isNullOrEmpty(tdSistolik) ? "-" : tdSistolik;
     }
 
     public String komplikasi() {
-        return humanize(komplikasi);
+        return Strings.isNullOrEmpty(komplikasi) ? "-" : komplikasi.equalsIgnoreCase("tidak_ada_komplikasi") ? " - "  : humanize(komplikasi);
+    }
+
+    public String otherKomplikasi() {
+        return Strings.isNullOrEmpty(otherKomplikasi) ? "" : otherKomplikasi.equalsIgnoreCase("tidak_ada_komplikasi") ? " - "  : humanize(otherKomplikasi);
     }
 
     public String tdSuhu() {
-        return tdSuhu == null ? "-" : tdSuhu;
+        return Strings.isNullOrEmpty(tdSuhu) ? "-" : tdSuhu;
     }
 
     public String metodeKontrasepsi() {
         return humanize(metodeKontrasepsi);
     }
 
+    public KartuIbuPNCClient withChildren(List<AnakClient> children) {
+        this.children = children;
+        return this;
+    }
 
+    public List<AnakClient> children() {
+        return children;
+    }
+
+    public AnakClient getLastChild() { return children.get(children.size()-1); }
+
+    public String getLastBirth() {
+        if(children==null) return "";
+
+        return getLastChild().dateOfBirth();
+    }
+
+    public void setMotherCondition(String motherCondition) {
+        this.motherCondition = motherCondition;
+    }
+
+    public String motherCondition() {return humanize(this.motherCondition);}
+
+    public String getKartuIbuEntityId() {
+        return kartuIbuEntityId;
+    }
+
+    public void setKartuIbuEntityId(String kartuIbuEntityId) {
+        this.kartuIbuEntityId = kartuIbuEntityId;
+    }
 }

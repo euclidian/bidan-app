@@ -1,21 +1,31 @@
 <model>
     <instance>
-        <kohort_kb_pelayanan id="kohort_kb_pelayanan" version="201412290800">
+        <tambah_kb id="tambah_kb" version="201506200410">
           <formhub>
             <uuid/>
           </formhub>
-          <B03011/>
-          <B03012/>
-          <B03013/>
-          <B03014/>
-          <B03015/>
-          <B03016/>
-          <B03017/>
-          <B03018/>
-          <B03019/>
+          <start/>
+          <today/>
+          <reg_date/>
+          <deviceid/>
+          <simserial/>
+          <phonenumber/>
+          <tanggal_kunjungan/>
+          <tanggal_lahir_ibu/>
+          <umur/>
+          <generated_note_name_10/>
+          <paritas/>
+          <alki/>
+          <alki_hb/>
+          <alki_lila/>
+          <alki_penyakit_kronis/>
+          <alki_penyakit_ims/>
+          <keterangan_tentang_peserta_kb/>
+          <jenis_kontrasepsi_yang_digunakan/>
+          <end/>
           <meta>
             <instanceID/>
           </meta>
-        </kohort_kb_pelayanan>
+        </tambah_kb>
       </instance>
- </model>
+  </model>

@@ -7,9 +7,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.flurry.android.FlurryAgent;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.ei.bidan.util.EasyMap;
 import org.ei.bidan.view.controller.ANMController;
 import org.ei.bidan.view.controller.FormController;
 import org.ei.bidan.view.controller.NavigationController;
@@ -18,6 +21,7 @@ import org.ei.bidan.Context;
 import org.ei.bidan.R;
 import org.ei.bidan.event.Listener;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import static android.widget.Toast.LENGTH_SHORT;
@@ -72,10 +76,12 @@ public abstract class SecuredActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            /*
             case R.id.switchLanguageMenuItem: {
                 String newLanguagePreference = context.userService().switchLanguagePreference();
                 Toast.makeText(this, "Language preference set to " + newLanguagePreference + ". Please restart the application.", LENGTH_SHORT).show();
             }
+            */
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -98,6 +104,11 @@ public abstract class SecuredActivity extends Activity {
     protected abstract void onResumption();
 
     public void startFormActivity(String formName, String entityId, String metaData) {
+        Map<String, String> param = new HashMap<>();
+        param.put("form_name", formName);
+        param.put("entity_id", entityId);
+        param.put("metadata", metaData);
+        FlurryAgent.logEvent("start_form", param);
         launchForm(formName, entityId, metaData, FormActivity.class);
     }
 
@@ -130,6 +141,7 @@ public abstract class SecuredActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (isSuccessfulFormSubmission(resultCode)) {
+            FlurryAgent.logEvent("form_successfully_saved");
             logInfo("Form successfully saved. MetaData: " + metaData);
             if (hasMetadata()) {
                 Map<String, String> metaDataMap = new Gson().fromJson(metaData, new TypeToken<Map<String, String>>() {

@@ -31,18 +31,18 @@ import static org.ei.bidan.bidan.repository.IbuRepository.IBU_TABLE_NAME;
  */
 public class AnakRepository extends DrishtiRepository {
 
-    private static final String ANAK_SQL = "CREATE TABLE anak(id VARCHAR PRIMARY KEY, ibuCaseId VARCHAR, dateOfBirth VARCHAR, gender VARCHAR, details VARCHAR, isClosed VARCHAR, photoPath VARCHAR)";
+    private static final String ANAK_SQL = "CREATE TABLE anak(id VARCHAR PRIMARY KEY, ibuCaseId VARCHAR, tanggalLahirAnak VARCHAR, jenisKelamin VARCHAR, details VARCHAR, isClosed VARCHAR, photoPath VARCHAR)";
     public static final String ANAK_TABLE_NAME = "anak";
     private static final String ID_COLUMN = "id";
     private static final String IBU_ID_COLUMN = "ibuCaseId";
-    private static final String DATE_OF_BIRTH_COLUMN = "dateOfBirth";
-    private static final String GENDER_COLUMN = "gender";
+    private static final String DATE_OF_BIRTH_COLUMN = "tanggalLahirAnak";
+    private static final String GENDER_COLUMN = "jenisKelamin";
     private static final String DETAILS_COLUMN = "details";
     private static final String IS_CLOSED_COLUMN = "isClosed";
     public static final String PHOTO_PATH_COLUMN = "photoPath";
     public static final String[] ANAK_TABLE_COLUMNS = {ID_COLUMN, IBU_ID_COLUMN, DATE_OF_BIRTH_COLUMN, GENDER_COLUMN, DETAILS_COLUMN, IS_CLOSED_COLUMN, PHOTO_PATH_COLUMN};
     public static final String NOT_CLOSED = "false";
-    public static final String ANAK_NAME = "name";
+    public static final String ANAK_NAME = "namaBayi";
 
     @Override
     protected void onCreate(SQLiteDatabase database) {
@@ -133,7 +133,8 @@ public class AnakRepository extends DrishtiRepository {
         return new KartuIbu(
                 getColumnValueByAlias(cursor, KI_TABLE_NAME, KartuIbuRepository.ID_COLUMN),
                 new Gson().<Map<String, String>>fromJson(getColumnValueByAlias(cursor, KI_TABLE_NAME, KartuIbuRepository.DETAILS_COLUMN), new TypeToken<Map<String, String>>() {
-                }.getType()));
+                }.getType()),
+                getColumnValueByAlias(cursor, KI_TABLE_NAME, KartuIbuRepository.DUSUN_COLUMN));
     }
 
     private Ibu ibuFromCursor(Cursor cursor) {

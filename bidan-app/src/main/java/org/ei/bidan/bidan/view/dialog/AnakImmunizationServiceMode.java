@@ -2,6 +2,9 @@ package org.ei.bidan.bidan.view.dialog;
 
 import android.view.View;
 
+import com.google.common.base.Strings;
+
+import org.ei.bidan.AllConstants;
 import org.ei.bidan.Context;
 import org.ei.bidan.R;
 import org.ei.bidan.bidan.view.contract.AnakClient;
@@ -20,6 +23,9 @@ import org.ei.bidan.view.viewHolder.NativeANCSmartRegisterViewHolder;
 import org.ei.bidan.view.viewHolder.NativeChildSmartRegisterViewHolder;
 import org.ei.bidan.view.viewHolder.NativeFPSmartRegisterViewHolder;
 import org.ei.bidan.view.viewHolder.NativePNCSmartRegisterViewHolder;
+import org.ei.bidan.view.viewHolder.OnClickFormLauncher;
+
+import static org.ei.bidan.AllConstants.FormNames.CHILD_IMMUNIZATIONS;
 
 /**
  * Created by Dimas Ciputra on 4/27/15.
@@ -66,18 +72,104 @@ public class AnakImmunizationServiceMode extends BidanServiceModeOption {
     @Override
     public void setupListView(AnakClient client, NativeAnakRegisterViewHolder viewHolder, View.OnClickListener clientSectionClickListener) {
         viewHolder.getServiceModeImmunizationView().setVisibility(View.VISIBLE);
-        viewHolder.getServiceModeImmunizationView().setOnClickListener(clientSectionClickListener);
+        //viewHolder.getServiceModeImmunizationView().setOnClickListener(clientSectionClickListener);
         viewHolder.getServiceModeImmunizationView().setTag(client.entityId());
-        setupAllImunisasi(client, viewHolder);
+        setupHbView(client, viewHolder);
+        setupBcgView(client, viewHolder);
+        setupDpt1View(client, viewHolder);
+        setupDpt2View(client, viewHolder);
+        setupDpt3View(client, viewHolder);
+        setupCampakView(client, viewHolder);
     }
 
-    private void setupAllImunisasi(AnakClient client, NativeAnakRegisterViewHolder viewHolder) {
-        viewHolder.getHb07().setText(client.getHb07());
-        viewHolder.getBcgPolio1().setText(client.getBcgPol1());
-        viewHolder.getDptHb1Polio2().setText(client.getDptHb1Pol2());
-        viewHolder.getDptHb2Polio3().setText(client.getDptHb2Pol3());
-        viewHolder.getDptHb3Polio4().setText(client.getDptHb3Pol4());
-        viewHolder.getCampak().setText(client.getCampak());
+    private void setupHbView(AnakClient client, NativeAnakRegisterViewHolder viewHolder) {
+        viewHolder.getTxtHb07PendingView().setText("Hb");
+        viewHolder.getTxtHb07Done().setText("Hb");
+
+        if(client.isHbSevenDone()) {
+            viewHolder.getLayoutHb07On().setVisibility(View.VISIBLE);
+            viewHolder.getTxtHb07DoneOn().setText(client.getHb07());
+            viewHolder.getTxtHb07PendingView().setVisibility(View.INVISIBLE);
+        } else {
+            viewHolder.getLayoutHb07On().setVisibility(View.INVISIBLE);
+            viewHolder.getTxtHb07PendingView().setVisibility(View.VISIBLE);
+            viewHolder.getTxtHb07PendingView().setOnClickListener(launchChildImmunizationForm(client));
+        }
+    }
+
+    private void setupBcgView(AnakClient client, NativeAnakRegisterViewHolder viewHolder) {
+        viewHolder.getTxtBcgPendingView().setText("Bcg/Pol1");
+        viewHolder.getTxtBcgDone().setText("Bcg/Pol1");
+
+        if(client.isBcgDone()) {
+            viewHolder.getLayoutBcgOn().setVisibility(View.VISIBLE);
+            viewHolder.getTxtBcgDoneOn().setText(client.getBcgPol1());
+            viewHolder.getTxtBcgPendingView().setVisibility(View.INVISIBLE);
+        } else {
+            viewHolder.getLayoutBcgOn().setVisibility(View.INVISIBLE);
+            viewHolder.getTxtBcgPendingView().setVisibility(View.VISIBLE);
+            viewHolder.getTxtBcgPendingView().setOnClickListener(launchChildImmunizationForm(client));
+        }
+    }
+
+    private void setupDpt1View(AnakClient client, NativeAnakRegisterViewHolder viewHolder) {
+        viewHolder.getTxtDpt1PendingView().setText("Dpt/Hb1/Pol2");
+        viewHolder.getTxtDpt1Done().setText("Dpt/Hb1/Pol2");
+
+        if(client.isDpt1Done()) {
+            viewHolder.getLayoutDpt1On().setVisibility(View.VISIBLE);
+            viewHolder.getTxtDpt1DoneOn().setText(client.getDptHb1Pol2());
+            viewHolder.getTxtDpt1PendingView().setVisibility(View.INVISIBLE);
+        } else {
+            viewHolder.getLayoutDpt1On().setVisibility(View.INVISIBLE);
+            viewHolder.getTxtDpt1PendingView().setVisibility(View.VISIBLE);
+            viewHolder.getTxtDpt1PendingView().setOnClickListener(launchChildImmunizationForm(client));
+        }
+    }
+
+    private void setupDpt2View(AnakClient client, NativeAnakRegisterViewHolder viewHolder) {
+        viewHolder.getTxtDpt2PendingView().setText("Dpt/Hb2/Pol3");
+        viewHolder.getTxtDpt2Done().setText("Dpt/Hb2/Pol3");
+
+        if(client.isDpt2Done()) {
+            viewHolder.getLayoutDpt2On().setVisibility(View.VISIBLE);
+            viewHolder.getTxtDpt2DoneOn().setText(client.getDptHb2Pol3());
+            viewHolder.getTxtDpt2PendingView().setVisibility(View.INVISIBLE);
+        } else {
+            viewHolder.getLayoutDpt2On().setVisibility(View.INVISIBLE);
+            viewHolder.getTxtDpt2PendingView().setVisibility(View.VISIBLE);
+            viewHolder.getTxtDpt2PendingView().setOnClickListener(launchChildImmunizationForm(client));
+        }
+    }
+
+    private void setupDpt3View(AnakClient client, NativeAnakRegisterViewHolder viewHolder) {
+        viewHolder.getTxtDpt3PendingView().setText("Dpt/Hb3/Pol4");
+        viewHolder.getTxtDpt3Done().setText("Dpt/Hb3/Pol4");
+
+        if(client.isDpt3Done()) {
+            viewHolder.getLayoutDpt3On().setVisibility(View.VISIBLE);
+            viewHolder.getTxtDpt3DoneOn().setText(client.getDptHb3Pol4());
+            viewHolder.getTxtDpt3PendingView().setVisibility(View.INVISIBLE);
+        } else {
+            viewHolder.getLayoutDpt3On().setVisibility(View.INVISIBLE);
+            viewHolder.getTxtDpt3PendingView().setVisibility(View.VISIBLE);
+            viewHolder.getTxtDpt3PendingView().setOnClickListener(launchChildImmunizationForm(client));
+        }
+    }
+
+    private void setupCampakView(AnakClient client, NativeAnakRegisterViewHolder viewHolder) {
+        viewHolder.getTxtCampakPendingView().setText("Campak");
+        viewHolder.getTxtCampakDone().setText("Campak");
+
+        if(client.isCampakDone()) {
+            viewHolder.getLayoutCampakOn().setVisibility(View.VISIBLE);
+            viewHolder.getTxtCampakDoneOn().setText(client.getCampak());
+            viewHolder.getTxtCampakPendingView().setVisibility(View.INVISIBLE);
+        } else {
+            viewHolder.getLayoutCampakOn().setVisibility(View.INVISIBLE);
+            viewHolder.getTxtCampakPendingView().setVisibility(View.VISIBLE);
+            viewHolder.getTxtCampakPendingView().setOnClickListener(launchChildImmunizationForm(client));
+        }
     }
 
     @Override
@@ -108,6 +200,10 @@ public class AnakImmunizationServiceMode extends BidanServiceModeOption {
     @Override
     public void setupListView(PNCSmartRegisterClient client, NativePNCSmartRegisterViewHolder viewHolder, View.OnClickListener clientSectionClickListener) {
 
+    }
+
+    private OnClickFormLauncher launchChildImmunizationForm(AnakClient client) {
+        return provider().newFormLauncher(AllConstants.FormNames.BAYI_IMUNISASI, client.entityId(), null);
     }
 
 }

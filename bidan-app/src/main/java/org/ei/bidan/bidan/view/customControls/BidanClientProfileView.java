@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import org.ei.bidan.AllConstants;
 import org.ei.bidan.R;
+import org.ei.bidan.bidan.view.contract.BidanSmartRegisterClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuANCSmartRegisterClient;
 import org.ei.bidan.bidan.view.contract.KartuIbuClient;
 import org.ei.bidan.view.contract.SmartRegisterClient;
@@ -25,6 +26,10 @@ public class BidanClientProfileView extends RelativeLayout {
     private TextView txtVillageNameView;
     private TextView txtHusbandName;
     private ImageView badgeHRView;
+    private ImageView badgeHPView;
+    private ImageView badgeHRPView;
+    private ImageView badgeHRLView;
+    private ImageView badgeHRPPView;
 
     @SuppressWarnings("UnusedDeclaration")
     public BidanClientProfileView(Context context) {
@@ -47,15 +52,23 @@ public class BidanClientProfileView extends RelativeLayout {
         this.txtHusbandName = (TextView) findViewById(R.id.txt_husband_name);
         this.txtVillageNameView = (TextView) findViewById(R.id.txt_village_name);
         this.badgeHRView = (ImageView) findViewById(R.id.img_hr_badge);
+        this.badgeHPView = (ImageView) findViewById(R.id.img_hp_badge);
+        this.badgeHRPView = (ImageView) findViewById(R.id.img_hrp_badge);
+        this.badgeHRLView = (ImageView) findViewById(R.id.img_hrl_badge);
+        this.badgeHRPPView = (ImageView) findViewById(R.id.img_hrpp_badge);
     }
 
-    public void bindData(SmartRegisterClient client, ProfilePhotoLoader photoLoader) {
+    public void bindData(BidanSmartRegisterClient client, ProfilePhotoLoader photoLoader) {
         this.imgProfileView.setBackground(photoLoader.get(client));
         this.txtNameView.setText(client.wifeName() != null ? client.wifeName() : "");
         this.txtVillageNameView.setText(client.village() != null ? client.village() : "");
         this.txtAgeView.setText(client.ageInString() != null ? client.ageInString() : "");
         this.txtHusbandName.setText(client.husbandName() != null ? client.husbandName() : "-");
         this.badgeHRView.setVisibility(client.isHighRisk() ? View.VISIBLE : View.GONE);
+        this.badgeHPView.setVisibility(client.isHighPriority() ? View.VISIBLE : View.GONE);
+        this.badgeHRPView.setVisibility(client.isHighRiskPregnancy() ? View.VISIBLE: View.GONE);
+        this.badgeHRLView.setVisibility(client.isHighRiskLabour() ? View.VISIBLE: View.GONE);
+        this.badgeHRPPView.setVisibility(client.isHighRiskPostPartum() ? View.VISIBLE : View.GONE);
     }
 
     private boolean isAnANCClient(SmartRegisterClient client) {

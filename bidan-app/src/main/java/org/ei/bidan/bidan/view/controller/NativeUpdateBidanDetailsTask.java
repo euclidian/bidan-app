@@ -2,6 +2,7 @@ package org.ei.bidan.bidan.view.controller;
 
 import android.os.AsyncTask;
 
+import org.ei.bidan.bidan.view.activity.BidanHomeActivity;
 import org.ei.bidan.bidan.view.contract.BidanHomeContext;
 import org.ei.bidan.view.contract.HomeContext;
 import org.ei.bidan.view.controller.NativeAfterANMDetailsFetchListener;
@@ -16,10 +17,12 @@ import static org.ei.bidan.util.Log.logWarn;
  */
 public class NativeUpdateBidanDetailsTask {
     private final BidanController bidanController;
+    private final BidanHomeActivity bidanHomeActivity;
     private static final ReentrantLock lock = new ReentrantLock();
 
-    public NativeUpdateBidanDetailsTask(BidanController bidanController) {
+    public NativeUpdateBidanDetailsTask(BidanHomeActivity bidanHomeActivity, BidanController bidanController) {
         this.bidanController = bidanController;
+        this.bidanHomeActivity = bidanHomeActivity;
     }
 
     public void fetch(final NativeAfterBidanDetailsFetchListener afterFetchListener) {
@@ -40,7 +43,9 @@ public class NativeUpdateBidanDetailsTask {
 
             @Override
             protected void onPostExecute(BidanHomeContext bidan) {
-                afterFetchListener.afterFetch(bidan);
+                if(bidanHomeActivity != null) {
+                    afterFetchListener.afterFetch(bidan);
+                }
             }
         }.executeOnExecutor(THREAD_POOL_EXECUTOR);
     }

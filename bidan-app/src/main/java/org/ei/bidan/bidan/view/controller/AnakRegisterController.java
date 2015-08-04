@@ -1,5 +1,6 @@
 package org.ei.bidan.bidan.view.controller;
 
+import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 
 import org.apache.commons.lang3.ArrayUtils;
@@ -17,9 +18,12 @@ import org.ei.bidan.view.contract.AlertDTO;
 import org.ei.bidan.view.contract.ServiceProvidedDTO;
 import org.ei.bidan.view.contract.SmartRegisterClient;
 import org.ei.bidan.view.contract.SmartRegisterClients;
+import org.ei.bidan.view.contract.Village;
+import org.ei.bidan.view.contract.Villages;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 import static java.lang.String.valueOf;
@@ -28,6 +32,9 @@ import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.ei.bidan.domain.ServiceProvided.CHILD_ILLNESS_SERVICE_PROVIDED_NAME;
 import static org.ei.bidan.domain.ServiceProvided.PNC_SERVICE_PROVIDED_NAME;
 import static org.ei.bidan.domain.ServiceProvided.VITAMIN_A_SERVICE_PROVIDED_NAME;
+
+import static org.ei.bidan.AllConstants.KartuAnakFields.*;
+import static org.ei.bidan.AllConstants.KartuIbuFields.*;
 
 /**
  * Created by Dimas Ciputra on 4/8/15.
@@ -40,13 +47,42 @@ public class AnakRegisterController extends CommonController {
     private final ServiceProvidedService serviceProvidedService;
     private final Cache<String> cache;
     private final Cache<SmartRegisterClients> smartRegisterClientsCache;
+    private final Cache<Villages> villagesCache;
 
-    public AnakRegisterController(AllKohort allKohort, AlertService alertService, ServiceProvidedService serviceProvidedService, Cache<String> cache, Cache<SmartRegisterClients> smartRegisterClientsCache) {
+    public AnakRegisterController(AllKohort allKohort, AlertService alertService, ServiceProvidedService serviceProvidedService, Cache<String> cache, Cache<SmartRegisterClients> smartRegisterClientsCache, Cache<Villages> villageCache) {
         this.allKohort = allKohort;
         this.alertService = alertService;
         this.serviceProvidedService = serviceProvidedService;
         this.cache = cache;
         this.smartRegisterClientsCache = smartRegisterClientsCache;
+        this.villagesCache = villageCache;
+    }
+
+    public String get() {
+        return cache.get(ANAK_CLIENTS_LIST, new CacheableData<String>() {
+            @Override
+            public String fetch() {
+                List<Anak> anakList = allKohort.allAnakWithIbuAndKI();
+                SmartRegisterClients anakClients = new SmartRegisterClients();
+
+                for(Anak a : anakList) {
+                    AnakClient anakClient = new AnakClient(a.getCaseId(),
+                            a.getGender(),
+                            a.getDetail(BIRTH_WEIGHT),
+                            a.getDetails())
+                            .withName(a.getDetail(CHILD_NAME))
+                            .withVillage(a.getKartuIbu().dusun());
+
+                    anakClient.setHb07(a.getDetail(IMMUNIZATION_HB_0_7_DATES));
+                    anakClient.setBcgPol1(a.getDetail(IMMUNIZATION_BCG_AND_POLIO1));
+                    anakClient.setDptHb1Pol2(a.getDetail(IMMUNIZATION_DPT_HB1_POLIO2));
+                    anakClient.setDptHb2Pol3(a.getDetail(IMMUNIZATION_DPT_HB2_POLIO3));
+                    anakClient.setDptHb3Pol4(a.getDetail(IMMUNIZATION_DPT_HB3_POLIO4));
+                    anakClients.add(anakClient);
+                }
+                return new Gson().toJson(anakClients);
+            }
+        });
     }
 
     public SmartRegisterClients getClient() {
@@ -67,22 +103,31 @@ public class AnakRegisterController extends CommonController {
                     // List<ServiceProvidedDTO> services = getServicesProvided(a.getCaseId());
 
                     AnakClient anakClient = new AnakClient(a.getCaseId(), a.getGender(),
-                            a.getDetail("birthWeight"), a.getDetails())
-                            .withMotherName(a.getKartuIbu().getDetails().get("Namalengkap"))
-                            .withMotherAge(a.getKartuIbu().getDetails().get("Umur"))
-                            .withFatherName(a.getKartuIbu().getDetails().get("Namasuami"))
+                            a.getDetail(BIRTH_WEIGHT),
+                            a.getDetails())
+                            .withMotherName(a.getKartuIbu().getDetail(MOTHER_NAME))
+                            .withMotherAge(a.getKartuIbu().getDetail(MOTHER_AGE))
+                            .withFatherName(a.getKartuIbu().getDetail(HUSBAND_NAME))
                             .withDOB(a.getDateOfBirth())
-                            .withName(a.getDetail("name"))
-                            .withKINumber(a.getKartuIbu().getDetails().get("NoIbu"))
-                            .withBirthCondition(a.getDetail("birthCondition"))
-                            .withServiceAtBirth(a.getDetail("serviceAtBirth"))
-                            .withPhotoPath(photoPath);
-                    anakClient.setHb07(a.getDetail("TanggalPemberianImunisasiHb0_7Hari"));
-                    anakClient.setBcgPol1(a.getDetail("TanggalpemberianimunisasiBCGdanpolio1"));
-                    anakClient.setDptHb1Pol2(a.getDetail("TanggalPemberianImunisasiDPT_HB1_Polio2"));
-                    anakClient.setDptHb2Pol3(a.getDetail("TanggalPemberianImunisasiDPT_HB2_Polio3"));
-                    anakClient.setDptHb3Pol4(a.getDetail("TanggalPemberianImunisasiDPT_HB3_Polio4"));
-                    anakClient.setCampak(a.getDetail("TanggalPemberianImunisasiCampak"));
+                            .withName(a.getDetail(CHILD_NAME))
+                            .withKINumber(a.getKartuIbu().getDetail(MOTHER_NUMBER))
+                            .withBirthCondition(a.getDetail(BIRTH_CONDITION))
+                            .withServiceAtBirth(a.getDetail(SERVICE_AT_BIRTH))
+                            .withPhotoPath(photoPath)
+                            .withIsHighRisk(a.getDetail(IS_HIGH_RISK_CHILD))
+                            .withVillage(a.getKartuIbu().dusun());
+                    anakClient.setHb07(a.getDetail(IMMUNIZATION_HB_0_7_DATES));
+                    anakClient.setBcgPol1(a.getDetail(IMMUNIZATION_BCG_AND_POLIO1));
+                    anakClient.setDptHb1Pol2(a.getDetail(IMMUNIZATION_DPT_HB1_POLIO2));
+                    anakClient.setDptHb2Pol3(a.getDetail(IMMUNIZATION_DPT_HB2_POLIO3));
+                    anakClient.setDptHb3Pol4(a.getDetail(IMMUNIZATION_DPT_HB3_POLIO4));
+                    anakClient.setCampak(a.getDetail(IMMUNIZATION_MEASLES));
+                    anakClient.setBirthPlace(a.getIbu().getDetail(BIRTH_PLACE));
+                    anakClient.setHbGiven(a.getDetail(HB_GIVEN));
+                    anakClient.setVisitDate(a.getDetail(CHILD_VISIT_DATE));
+                    anakClient.setCurrentWeight(a.getDetail(CHILD_CURRENT_WEIGTH));
+                    anakClient.setBabyNo(a.getDetail(BABY_NO));
+                    anakClient.setPregnancyAge(a.getIbu().getDetail(AllConstants.KartuPNCFields.PREGNANCY_AGE));
                     anakSmartClient.add(anakClient);
                 }
                 sortByName(anakSmartClient);
@@ -129,10 +174,36 @@ public class AnakRegisterController extends CommonController {
         });
     }
 
+    public Villages villages() {
+        return villagesCache.get(ANAK_CLIENTS_LIST, new CacheableData<Villages>() {
+            @Override
+            public Villages fetch() {
+                List<Anak> anakList = allKohort.allAnakWithIbuAndKI();
+                List<String> villageNameList = new ArrayList<>();
+                Villages villagesList = new Villages();
+
+                for(Anak client : anakList) {
+                    villageNameList.add(client.getKartuIbu().dusun());
+                }
+                villageNameList = new ArrayList<>(new LinkedHashSet<>(villageNameList));
+                for(String name : villageNameList) {
+                    Village village = new Village(name);
+                    villagesList.add(new Village(name));
+                }
+                return villagesList;
+            }
+        });
+    }
+
+
     public CharSequence[] getRandomNameChars(final SmartRegisterClient client) {
+        String clients = get();
+        List<SmartRegisterClient> anakClients = new Gson().fromJson(clients, new TypeToken<List<AnakClient>>() {
+        }.getType());
+
         return onRandomNameChars(
                 client,
-                getClient(),
+                anakClients,
                 allKohort.randomDummyAnakName(),
                 AllConstants.DIALOG_DOUBLE_SELECTION_NUM);
     }
